@@ -1,6 +1,6 @@
 {
   "sourceFiles": 1635,
-  "sourceBytes": 155000902,
+  "sourceBytes": 155001070,
   "gitHistoryIncluded": false,
   "privateJournalIncluded": false,
   "runtimeAssetsIncluded": false,
@@ -8,7 +8,7 @@
   "files": {
     ".github/ISSUE_TEMPLATE/bug_report.yml": "7a7211f1c56e7706aa2e7e97bba90945323c3949aa109662d995f89cda79797d",
     ".github/pull_request_template.md": "ffd42b82856efc633b144c4cd9566c714b686d9ff7883d42333129609b62be01",
-    ".github/workflows/source-checks.yml": "39db24775613a9106a4a558390db389ed347ff672f0f4781a255b775ced76c87",
+    ".github/workflows/source-checks.yml": "606771175c65295f1a1e078f6d184f6a567162fb50d6e06191f2139307537c47",
     ".gitignore": "ca203c1c0cc7bd2e5ee64c158304097fbdec7991d84e605d6b6d9f9fe7358769",
     "AGENTS.md": "6e44592e64b7a8dfe912f1d773e9a9b74cbdd1edb0e506018d7ad1c5ba40089f",
     "CONTRIBUTING.md": "72780d47801444bbdc596438b1c065340093ed1ae050f0b4ac0d78c16caff8d7",
