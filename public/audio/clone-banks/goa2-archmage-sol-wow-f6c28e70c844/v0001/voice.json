@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-archmage-sol-wow-f6c28e70c844",
+  "revision": 1,
+  "name": "Sol — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "280d3c05cbc20dda7d1f26d16d2698bbd2a218c79ca64bdb19440ce2e87ba488",
+    "transcript_sha256": "a0fe46b91ca360ed5522565bf96bc6a05df8f592a79aabc3c1c36c97018489a3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 293070,
+      "seconds": 12.21125,
+      "peak": 1.0,
+      "rms_dbfs": -14.71,
+      "clipped_samples": 72
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

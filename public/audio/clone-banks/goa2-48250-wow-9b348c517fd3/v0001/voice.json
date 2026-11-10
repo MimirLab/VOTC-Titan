@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48250-wow-9b348c517fd3",
+  "revision": 1,
+  "name": "Brannon Stormsong — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6d3d483c4fc071ebbf1be6943acd7b04e795487bebeaebf403f42d98e7373a25",
+    "transcript_sha256": "887f069483510d4594b8ea1b1fe46ce3a8413cf5ba87c634993d9e42289d94ac",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376921,
+      "seconds": 15.705041666666666,
+      "peak": 0.970459,
+      "rms_dbfs": -17.51,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

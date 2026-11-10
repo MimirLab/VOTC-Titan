@@ -1,0 +1,705 @@
+import { ceCommandFile } from '../ceBridge';
+import { app } from 'electron';
+import * as fs from "fs";
+import * as path from "path";
+import { Character } from "../../shared/gameData/Character.js";
+import { GameData } from '../../shared/gameData/GameData.js';
+import { Letter as ILetter, LetterType, StoredLetter, LetterSummary, LetterAssociatedAction } from "./letterInterfaces.js";
+import { randomUUID } from 'crypto';
+import { Config } from '../../shared/Config.js';
+import { parseLettersFromLog } from './parseLogForLetters.js';
+import { timelineRegistryPath } from '../campaignDataPaths.js';
+import type { CampaignPlayerIdentity } from '../../shared/gameData/CampaignIdentity.js';
+
+/**
+ * The registry node committed last, i.e. the node the save's timeline state
+ * currently points at: every checkpoint bump goes through a transition that
+ * commits a node, so the newest commit is the current branch head. Used to
+ * reject delivery-time timeline writes from stale/abandoned branches. Any
+ * read failure is non-fatal: the timeline block is then applied as-is (the
+ * generation-time behaviour).
+ */
+function readCampaignRegistryHeadNodeId(campaignId: string | undefined, playerId: string | undefined): string | undefined {
+    if (!campaignId || !playerId) return undefined;
+    try {
+        const registryPath = timelineRegistryPath(app.getPath('userData'), { campaignId, playerId } as CampaignPlayerIdentity);
+        if (!fs.existsSync(registryPath)) return undefined;
+        const data = JSON.parse(fs.readFileSync(registryPath, 'utf8')) as { nodes?: Record<string, { createdAt?: string }> };
+        let headNodeId: string | undefined;
+        let headCreatedAt = '';
+        for (const [nodeId, node] of Object.entries(data.nodes ?? {})) {
+            const createdAt = typeof node?.createdAt === 'string' ? node.createdAt : '';
+            if (createdAt > headCreatedAt || (createdAt === headCreatedAt && headNodeId !== undefined && nodeId > headNodeId)) {
+                headCreatedAt = createdAt;
+                headNodeId = nodeId;
+            }
+        }
+        return headNodeId;
+    } catch (error) {
+        console.warn('[LetterManager] Could not read the campaign timeline registry for delivery validation:', error);
+        return undefined;
+    }
+}
+
+// Parent of one specific node, used to tell "the save still sits on the
+// branch point this reply was allocated from" (apply the script) apart from
+// "the save has moved onto a different branch" (skip it).
+function readCampaignRegistryNodeParentId(campaignId: string | undefined, playerId: string | undefined, nodeId: string): string | null | undefined {
+    if (!campaignId || !playerId) return undefined;
+    try {
+        const registryPath = timelineRegistryPath(app.getPath('userData'), { campaignId, playerId } as CampaignPlayerIdentity);
+        if (!fs.existsSync(registryPath)) return undefined;
+        const data = JSON.parse(fs.readFileSync(registryPath, 'utf8')) as { nodes?: Record<string, { parentId?: string | null }> };
+        const node = data.nodes?.[nodeId];
+        if (!node) return undefined;
+        return node.parentId ?? null;
+    } catch (error) {
+        console.warn('[LetterManager] Could not read the campaign timeline registry for delivery validation:', error);
+        return undefined;
+    }
+}
+import { LetterActionTrigger } from './LetterActionTrigger.js';
+
+export class LetterManager {
+    private static instance: LetterManager;
+    private letterHistoryPath!: string;
+    private letterSummaryPath!: string;
+
+    private constructor() {
+        // Paths are initialized lazily now
+    }
+
+    private initPaths(): void {
+        if (!this.letterHistoryPath) {
+            this.letterHistoryPath = path.join(app.getPath('userData'), 'votc_data', 'letter_history');
+            if (!fs.existsSync(this.letterHistoryPath)) {
+                fs.mkdirSync(this.letterHistoryPath, { recursive: true });
+            }
+        }
+        if (!this.letterSummaryPath) {
+            this.letterSummaryPath = path.join(app.getPath('userData'), 'votc_data', 'letter_summaries');
+            if (!fs.existsSync(this.letterSummaryPath)) {
+                fs.mkdirSync(this.letterSummaryPath, { recursive: true });
+            }
+        }
+    }
+
+    public static getInstance(): LetterManager {
+        if (!LetterManager.instance) {
+            LetterManager.instance = new LetterManager();
+        }
+        return LetterManager.instance;
+    }
+
+    public getLetterFilePath(playerId: string, characterId: string): string {
+        this.initPaths();
+        const playerFolderPath = path.join(this.letterHistoryPath, playerId);
+        if (!fs.existsSync(playerFolderPath)) {
+            fs.mkdirSync(playerFolderPath, { recursive: true });
+        }
+        return path.join(playerFolderPath, `${characterId}.json`);
+    }
+
+    public getLetters(playerId: string, characterId: string): ILetter[] {
+        const filePath = this.getLetterFilePath(playerId, characterId);
+        if (fs.existsSync(filePath)) {
+            try {
+                const data = fs.readFileSync(filePath, 'utf8');
+                const letters = JSON.parse(data) as ILetter[];
+                const playerNumericId = Number(playerId);
+                // Re-hydrate dates
+                return letters.map(l => ({
+                    ...l,
+                    timestamp: new Date(l.timestamp),
+                    creationTimestamp: l.creationTimestamp ? new Date(l.creationTimestamp) : new Date(l.timestamp),
+                    isPlayerSender: l.sender.id === playerNumericId,
+                    totalDays: l.totalDays ?? 1 // Default to day 1 if missing
+                }));
+            } catch (error) {
+                console.error(`Error reading letter history for player ${playerId}, character ${characterId}:`, error);
+                return [];
+            }
+        }
+        return [];
+    }
+
+    public getAllLetters(playerId: string): ILetter[] {
+        const playerFolderPath = path.join(this.letterHistoryPath, playerId);
+        if (!fs.existsSync(playerFolderPath)) {
+            return [];
+        }
+
+        let allLetters: ILetter[] = [];
+        const files = fs.readdirSync(playerFolderPath);
+
+        for (const file of files) {
+            if (file.endsWith('.json')) {
+                const characterId = file.replace('.json', '');
+                const letters = this.getLetters(playerId, characterId);
+                allLetters.push(...letters);
+            }
+        }
+
+        // Sort all letters by date, most recent first
+        allLetters.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+        return allLetters;
+    }
+
+    public getAllPlayerIdsWithLetters(): { id: string, name: string, latestTimestamp?: number }[] {
+        this.initPaths();
+        const playerFolderPath = this.letterHistoryPath;
+        if (!fs.existsSync(playerFolderPath)) {
+            return [];
+        }
+
+        const playerDirs = fs.readdirSync(playerFolderPath, { withFileTypes: true })
+            .filter(dirent => dirent.isDirectory())
+            .map(dirent => {
+                const playerId = dirent.name;
+                const mapPath = path.join(this.letterHistoryPath, '..', 'conversation_summaries', playerId, '_character_map.json');
+                let playerName = `Player ${playerId}`;
+                if (fs.existsSync(mapPath)) {
+                    try {
+                        const mapData = JSON.parse(fs.readFileSync(mapPath, 'utf8'));
+                        if (mapData[playerId]) {
+                            playerName = mapData[playerId];
+                        }
+                    } catch (e) {
+                        console.error(`Error reading character map for player ${playerId}:`, e);
+                    }
+                }
+
+                const allLetters = this.getAllLetters(playerId);
+                let latestTimestamp = 0;
+                if (allLetters.length > 0) {
+                    const timestamps = allLetters.map(l => l.creationTimestamp ? new Date(l.creationTimestamp).getTime() : 0);
+                    latestTimestamp = Math.max(0, ...timestamps.filter(t => !isNaN(t)));
+                }
+
+                return { id: playerId, name: playerName, latestTimestamp };
+            });
+
+        // Sort by the latest timestamp in descending order
+        playerDirs.sort((a, b) => b.latestTimestamp - a.latestTimestamp);
+
+        // Keep latestTimestamp (additive field) so callers can sort merged lists by recency.
+        return playerDirs;
+    }
+
+    public getCorrespondedCharacters(playerId: string): {id: string, name: string}[] {
+        const allLetters = this.getAllLetters(playerId);
+        const characterInfo = new Map<string, string>();
+
+        const playerNumericId = Number(playerId);
+
+        allLetters.forEach(letter => {
+            if (letter.sender && letter.sender.id !== playerNumericId) {
+                characterInfo.set(String(letter.sender.id), letter.sender.fullName);
+            }
+            if (letter.recipient && letter.recipient.id !== playerNumericId) {
+                characterInfo.set(String(letter.recipient.id), letter.recipient.fullName);
+            }
+        });
+
+        return Array.from(characterInfo.entries()).map(([id, name]) => ({ id, name }));
+    }
+
+    public saveLetter(letter: ILetter, playerId: string): void {
+        // Letters are stored based on the conversation between player and another character.
+        // The file is named after the other character.
+        const otherCharacterId = letter.sender.id === Number(playerId) ? String(letter.recipient.id) : String(letter.sender.id);
+
+        const filePath = this.getLetterFilePath(playerId, otherCharacterId);
+
+        let history: ILetter[] = [];
+        if (fs.existsSync(filePath)) {
+            history = this.getLetters(playerId, otherCharacterId);
+        }
+
+        // Avoid duplicates by checking for a letter with the same subject (e.g., letter_5),
+        // sent on the same day, between the same two characters.
+        const isDuplicate = history.some(l =>
+            l.subject === letter.subject &&
+            l.totalDays === letter.totalDays &&
+            l.sender.id === letter.sender.id &&
+            l.recipient.id === letter.recipient.id
+        );
+
+        if (!isDuplicate) {
+            history.push(letter);
+            // Sort by date
+            history.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+            console.log(`Saved new unique letter: ${letter.subject} from day ${letter.totalDays}`);
+        }
+
+        try {
+            fs.writeFileSync(filePath, JSON.stringify(history, null, 2), 'utf8');
+        } catch (error) {
+            console.error(`Error saving letter for player ${playerId}, character ${otherCharacterId}:`, error);
+        }
+    }
+
+    public markAsRead(playerId: string, characterId: string, letterId: string, config: Config): void {
+        const letters = this.getLetters(playerId, characterId);
+        const letterIndex = letters.findIndex(l => l.id === letterId);
+        if (letterIndex > -1) {
+            letters[letterIndex].isRead = true;
+            const filePath = this.getLetterFilePath(playerId, characterId);
+            try {
+            // Non-blocking write: the previous synchronous, pretty-printed full-file
+            // rewrite on every unread-letter click stalled the Electron main event loop
+            // (and all IPC behind it), causing visible letters-tab lag. The in-memory
+            // flag is already set above; persist compact JSON in the background.
+            // ponytail: fire-and-forget persist - a same-tick re-read could miss this
+            // pending write; upgrade path is a per-file write queue.
+            fs.promises.writeFile(filePath, JSON.stringify(letters), 'utf8')
+                .catch(error => console.error(`Error marking letter as read for player ${playerId}, character ${characterId}:`, error));
+            const letter = letters[letterIndex];
+            // Guard: never auto-execute letter actions when manual approval is enabled.
+            // This branch is currently dead (associatedAction is never assigned), but if it
+            // is ever enabled, it must still respect manualLetterActionApproval.
+            if (!config.manualLetterActionApproval && letter.associatedAction?.triggerOn === 'read') {
+                LetterActionTrigger.executeLetterAction(letter, letter.associatedAction, config);
+            }
+            } catch (error) {
+                console.error(`Error marking letter ${letterId} as read for player ${playerId}, character ${characterId}:`, error);
+            }
+        }
+    }
+
+
+
+    public getLetterSummaryFilePath(playerId: string, characterId: string): string {
+        this.initPaths();
+        const playerFolderPath = path.join(this.letterSummaryPath, playerId);
+        if (!fs.existsSync(playerFolderPath)) {
+            fs.mkdirSync(playerFolderPath, { recursive: true });
+        }
+        return path.join(playerFolderPath, `${characterId}.json`);
+    }
+
+    public getLetterSummaries(playerId: string, characterId: string): LetterSummary[] {
+        const filePath = this.getLetterSummaryFilePath(playerId, characterId);
+        if (fs.existsSync(filePath)) {
+            try {
+                const data = fs.readFileSync(filePath, 'utf8');
+                const summaries = JSON.parse(data) as any[];
+                return summaries.map(s => ({
+                    id: s.id || randomUUID(), // Add UUID if missing
+                    ...s
+                }));
+            } catch (error) {
+                console.error(`Error reading letter summary for player ${playerId}, character ${characterId}:`, error);
+                return [];
+            }
+        }
+        return [];
+    }
+
+    public saveLetterSummaries(playerId: string, characterId: string, summaries: LetterSummary[]): void {
+        const filePath = this.getLetterSummaryFilePath(playerId, characterId);
+        try {
+            fs.writeFileSync(filePath, JSON.stringify(summaries, null, 2), 'utf8');
+        } catch (error) {
+            console.error(`Error saving letter summaries for player ${playerId}, character ${characterId}:`, error);
+        }
+    }
+
+    public getAllLetterSummaries(playerId: string): (LetterSummary & { characterId: string, characterName: string })[] {
+        this.initPaths();
+        const playerFolderPath = path.join(this.letterSummaryPath, playerId);
+        if (!fs.existsSync(playerFolderPath)) {
+            return [];
+        }
+
+        const characterMapPath = path.join(this.letterHistoryPath, '..', 'conversation_summaries', playerId, '_character_map.json');
+        let characterMap: {[key: string]: string} = {};
+        if (fs.existsSync(characterMapPath)) {
+            try {
+                characterMap = JSON.parse(fs.readFileSync(characterMapPath, 'utf8'));
+            } catch (e) {
+                console.error('Error reading character map for letters:', e);
+            }
+        }
+
+        let allSummaries: (LetterSummary & { characterId: string, characterName: string })[] = [];
+        const files = fs.readdirSync(playerFolderPath);
+
+        for (const file of files) {
+            if (file.endsWith('.json') && file !== '_character_map.json') {
+                const characterId = file.replace('.json', '');
+                const summaries = this.getLetterSummaries(playerId, characterId);
+                const characterName = characterMap[characterId] || `Character ${characterId}`;
+                const summariesWithCharId = summaries.map(s => ({...s, characterId, characterName}));
+                allSummaries.push(...summariesWithCharId);
+            }
+        }
+
+        allSummaries.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        return allSummaries;
+    }
+
+    public markAsDelivered(playerId: string, characterId: string, letterId: string, deliveryDate: Date): void {
+        const letters = this.getLetters(playerId, characterId);
+        const letterIndex = letters.findIndex(l => l.id === letterId);
+        if (letterIndex > -1) {
+            const letter = letters[letterIndex];
+            letter.delivered = true;
+            // Safeguard: A letter cannot be delivered before it was written.
+            if (deliveryDate < letter.timestamp) {
+                console.warn(`Delivery date for letter ${letterId} is before its written date. Adjusting delivery date.`);
+                letter.deliveryTimestamp = new Date(letter.timestamp);
+            } else {
+                letter.deliveryTimestamp = deliveryDate;
+            }
+            const filePath = this.getLetterFilePath(playerId, characterId);
+            try {
+                fs.writeFileSync(filePath, JSON.stringify(letters, null, 2), 'utf8');
+                console.log(`Marked letter ${letterId} as delivered on ${letter.deliveryTimestamp}.`);
+            } catch (error) {
+                console.error(`Error updating delivered status for letter ${letterId}:`, error);
+            }
+        }
+    }
+
+    public deliverLetter(storedLetter: StoredLetter, config: Config, gameDate: string, currentTimelineNodeId?: string) {
+        const userFolderPath = config.userFolderPath;
+        if (!userFolderPath) {
+            console.error("Cannot deliver letter, user folder path is not set.");
+            return;
+        }
+
+        const letter = storedLetter.originalLetter;
+        const replyContent = storedLetter.letter.content;
+        const letterId = letter.subject; // This is 'letter_5' etc.
+
+        const runFolderPath = path.join(userFolderPath, "run");
+        if (!fs.existsSync(runFolderPath)) {
+            fs.mkdirSync(runFolderPath, { recursive: true });
+        }
+
+        const letterFilePath = path.join(runFolderPath, ceCommandFile(config.userFolderPath, "letters.txt"));
+
+        // Single-channel note: letters.txt is one shared, whole-file-overwrite
+        // channel polled by the mod-side letters_runner (~2s). A delivery and
+        // a generation-failure fallback written inside the same window clobber
+        // each other; per-slot runner files would need mod-side changes
+        // (letters_runner.gui) and are out of scope here.
+
+        const escapedReply = replyContent.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+
+        let gameCommand = `debug_log = "[Localize('talk_event.9999.desc')]"
+remove_global_variable ?= votc_${letterId}
+create_artifact = {
+\tname = votc_huixin_title${letterId.replace(/letter_/, "")}
+\tdescription = "${escapedReply}"
+\ttype = journal
+\tvisuals = scroll
+\tcreator = global_var:message_second_scope_${letterId}
+\tmodifier = artifact_monthly_minor_prestige_1_modifier
+\twealth = 0
+\tsave_scope_as = votc_latest_letter
+}
+if = {
+\tlimit = { exists = scope:votc_latest_letter }
+\tscope:votc_latest_letter = {
+\t\tset_variable = { name = votc_letter_artifact value = yes}
+\t}
+\tset_global_variable = {
+\t\tname = votc_latest_letter
+\t\tvalue = scope:votc_latest_letter
+\t}
+}
+trigger_event = message_event.362`;
+
+        // Re-validate at delivery time: the reply may travel several in-game
+        // days and conversations can advance the checkpoint meanwhile. The
+        // allocated script is only applied while the save still sits on the
+        // branch point the reply was allocated from (the reply node's parent),
+        // or already on the reply node itself (idempotent re-delivery) — so a
+        // save that has moved past the letter's origin is never rolled back.
+        // The save's current node comes from game evidence (the caller's
+        // snapshot / load line), NOT from the registry's newest node: after a
+        // rollback to a sibling branch the newest registry node belongs to the
+        // abandoned branch, and trusting it would re-point the save at the
+        // wrong branch. The registry head is only a last-resort fallback for
+        // when no snapshot evidence exists at all.
+        const timelineScript = storedLetter.letter.timelineScript;
+        let appliedTimelineScript = timelineScript;
+        if (timelineScript && storedLetter.letter.timelineNodeId) {
+            const currentNodeId = currentTimelineNodeId ?? readCampaignRegistryHeadNodeId(
+                storedLetter.letter.timelineCampaignId,
+                storedLetter.letter.timelinePlayerId
+            );
+            if (currentNodeId !== undefined && currentNodeId !== storedLetter.letter.timelineNodeId) {
+                const parentNodeId = readCampaignRegistryNodeParentId(
+                    storedLetter.letter.timelineCampaignId,
+                    storedLetter.letter.timelinePlayerId,
+                    storedLetter.letter.timelineNodeId
+                );
+                if (currentNodeId !== parentNodeId) {
+                    console.warn(`[LetterManager] Letter ${letter.id} timeline skipped: the save's current timeline node is ${currentNodeId}, not the ${storedLetter.letter.timelineNodeId} allocated for this reply or its parent ${parentNodeId ?? 'unknown'}.`);
+                    appliedTimelineScript = undefined;
+                }
+            }
+        }
+        if (appliedTimelineScript) {
+            gameCommand += '\n' + appliedTimelineScript;
+        }
+
+        fs.writeFileSync(letterFilePath, '\uFEFF' + gameCommand, 'utf8');
+        console.log(`Delivered letter ${letter.id} by writing to: ${letterFilePath}`);
+    }
+
+    /**
+     * Generation-failure handoff: the fallback block clears the letter thread
+     * and applies the journal-created node through the same letters.txt
+     * channel the mod-side letters_runner polls.
+     */
+    public deliverLetterFallback(letterNumber: string, deliveryId: number, runBlock: string, config: Config): void {
+        const userFolderPath = config.userFolderPath;
+        if (!userFolderPath) {
+            console.error("Cannot deliver letter fallback, user folder path is not set.");
+            return;
+        }
+
+        const runFolderPath = path.join(userFolderPath, "run");
+        if (!fs.existsSync(runFolderPath)) {
+            fs.mkdirSync(runFolderPath, { recursive: true });
+        }
+
+        const letterFilePath = path.join(runFolderPath, ceCommandFile(config.userFolderPath, "letters.txt"));
+        // Shares the whole-file-overwrite channel with deliverLetter - see
+        // the single-channel note there.
+        fs.writeFileSync(letterFilePath, '\uFEFF' + runBlock, 'utf8');
+        console.log(`Delivered letter fallback (letter_${letterNumber}/${deliveryId}) by writing to: ${letterFilePath}`);
+    }
+
+    /**
+     * Fallback blocks waiting for the shared letters.txt channel. A fallback
+     * must never be written while a normal delivery is still awaiting
+     * VOTC:LETTER_ACCEPTED: the whole-file overwrite would destroy that
+     * reply, which has already left the pending queue and would not be
+     * re-queued. Queued blocks are flushed one per delivery pass, only when
+     * the channel is idle (checkAndDeliverLetters).
+     */
+    private pendingLetterFallbacks: Array<{letterNumber: string; deliveryId: number; runBlock: string}> = [];
+
+    public queueLetterFallback(letterNumber: string, deliveryId: number, runBlock: string): void {
+        this.pendingLetterFallbacks.push({letterNumber, deliveryId, runBlock});
+        console.log(`Queued letter fallback (letter_${letterNumber}/${deliveryId}); ${this.pendingLetterFallbacks.length} fallback(s) pending an idle letters.txt channel.`);
+    }
+
+    public hasPendingLetterFallbacks(): boolean {
+        return this.pendingLetterFallbacks.length > 0;
+    }
+
+    /** Write the oldest queued fallback into letters.txt. Caller must hold the channel. */
+    public flushNextLetterFallback(config: Config): boolean {
+        const next = this.pendingLetterFallbacks.shift();
+        if (!next) return false;
+        this.deliverLetterFallback(next.letterNumber, next.deliveryId, next.runBlock, config);
+        return true;
+    }
+
+    public clearLettersFile(config: Config): void {
+        const ck3Folder = config.userFolderPath;
+        console.log(`LetterManager.clearLettersFile: CK3 user path: ${ck3Folder}`);
+
+        if (!ck3Folder) {
+          console.warn("LetterManager.clearLettersFile: CK3 user folder is not configured; cannot clear letters file.");
+          return;
+        }
+
+        const runFolder = path.join(ck3Folder, "run");
+        const letterFilePath = path.join(runFolder, ceCommandFile(config.userFolderPath, "letters.txt"));
+        console.log(`LetterManager.clearLettersFile: Letter file path: ${letterFilePath}`);
+
+        // Never empty this file: line 1 is the date heartbeat. The mod-side
+        // letters_runner executes run/letters.txt every ~2s and the app reads
+        // the current game date from the VOTC:DATE line the placeholder logs
+        // (talk_event.9999.desc localizes to VOTC:DATE/<totalDays>). Writing ''
+        // here freezes the app's date tracking — pending letter deliveries
+        // never reach their delivery day and the whole game integration goes
+        // silent. "Clearing" means restoring the placeholder.
+        const placeholder = '\uFEFF' + "debug_log = \"[Localize('talk_event.9999.desc')]\"";
+        fs.writeFileSync(letterFilePath, placeholder, "utf-8");
+        console.log("Reset letters.txt to the blank heartbeat pt letters.txt to the blank heartbeat placeholder");
+    }
+
+    public async importLettersFromLog(config: Config, gameData: GameData, playerId: string, gameDate: string, recipientId?: string): Promise<ILetter[]> {
+        const ck3Folder = config.userFolderPath;
+        if (!ck3Folder) {
+            console.warn("LetterManager.importLettersFromLog: CK3 user folder is not configured.");
+            return [];
+        }
+        const debugLogPath = path.join(ck3Folder, 'logs', 'debug.log');
+
+        // Pass gameData to parseLettersFromLog so it can save letters immediately.
+        const newLetters = await parseLettersFromLog(debugLogPath, gameData, gameDate, config, playerId, recipientId);
+
+        if (newLetters.length > 0) {
+            console.log(`Imported and saved ${newLetters.length} new letters.`);
+        }
+        return newLetters;
+    }
+
+    public getLatestLetter(playerId: string): ILetter | null {
+        const allLetters = this.getAllLetters(playerId);
+        if (allLetters.length === 0) {
+            return null;
+        }
+
+        // Sort by real-world creation timestamp, most recent first
+        allLetters.sort((a, b) => {
+            const timeA = a.creationTimestamp ? new Date(a.creationTimestamp).getTime() : 0;
+            const timeB = b.creationTimestamp ? new Date(b.creationTimestamp).getTime() : 0;
+            return timeB - timeA;
+        });
+
+        return allLetters[0];
+    }
+
+    public updateLetterStatus(playerId: string, characterId: string, letterId: string, status: 'generating' | 'pending' | 'sent' | 'failed' | 'read'): void {
+        const letters = this.getLetters(playerId, characterId);
+        const letterIndex = letters.findIndex(l => l.id === letterId);
+        if (letterIndex > -1) {
+            letters[letterIndex].status = status;
+            const filePath = this.getLetterFilePath(playerId, characterId);
+            try {
+                fs.writeFileSync(filePath, JSON.stringify(letters, null, 2), 'utf8');
+                console.log(`Updated status of letter ${letterId} to ${status}`);
+            } catch (error) {
+                console.error(`Error updating letter status for letter ${letterId}:`, error);
+            }
+        } else {
+            console.warn(`Could not find letter ${letterId} for player ${playerId} / char ${characterId} to update status.`);
+        }
+    }
+
+    public updateLetterActions(playerId: string, characterId: string, letterId: string, actions: LetterAssociatedAction[]): void {
+        const letters = this.getLetters(playerId, characterId);
+        const letterIndex = letters.findIndex(l => l.id === letterId);
+        if (letterIndex > -1) {
+            // Preserve any user-set approval/denial status from the stored actions so that
+            // reply regeneration does not reset approved/denied actions back to pending.
+            // New actions (no prior stored match) keep no status and stay pending.
+            const storedActions = letters[letterIndex].triggeredActions || [];
+            const storedByKey = new Map<string, LetterAssociatedAction>();
+            for (const stored of storedActions) {
+                storedByKey.set(`${stored.signature}|${stored.triggerOn}`, stored);
+            }
+            for (const action of actions) {
+                const stored = storedByKey.get(`${action.signature}|${action.triggerOn}`);
+                if (stored && stored.status) {
+                    action.status = stored.status;
+                }
+            }
+            letters[letterIndex].triggeredActions = actions;
+            const filePath = this.getLetterFilePath(playerId, characterId);
+            try {
+                fs.writeFileSync(filePath, JSON.stringify(letters, null, 2), 'utf8');
+                console.log(`Updated triggered actions of letter ${letterId} (${actions.length} actions)`);
+            } catch (error) {
+                console.error(`Error updating triggered actions for letter ${letterId}:`, error);
+            }
+        } else {
+            console.warn(`Could not find letter ${letterId} for player ${playerId} / char ${characterId} to update actions.`);
+        }
+    }
+
+    public updateLetterActionStatus(playerId: string, characterId: string, letterId: string, actionSignature: string, status: 'approved' | 'denied'): void {
+        const letters = this.getLetters(playerId, characterId);
+        const letterIndex = letters.findIndex(l => l.id === letterId);
+        if (letterIndex > -1) {
+            const letter = letters[letterIndex];
+            if (letter.triggeredActions) {
+                const action = letter.triggeredActions.find(a => a.signature === actionSignature);
+                if (action) {
+                    action.status = status;
+                    const filePath = this.getLetterFilePath(playerId, characterId);
+                    try {
+                        fs.writeFileSync(filePath, JSON.stringify(letters, null, 2), 'utf8');
+                        console.log(`Updated action '${actionSignature}' status to '${status}' for letter ${letterId}`);
+                    } catch (error) {
+                        console.error(`Error updating action status for letter ${letterId}:`, error);
+                    }
+                }
+            }
+        }
+    }
+
+    public deleteLetter(playerId: string, characterId: string, letterId: string): { success: boolean, error?: string } {
+        this.initPaths();
+        const filePath = this.getLetterFilePath(playerId, characterId);
+
+        if (!fs.existsSync(filePath)) {
+            console.warn(`Letter file not found for deletion: ${filePath}`);
+            return { success: true };
+        }
+
+        try {
+            const letters = this.getLetters(playerId, characterId);
+
+            const letterToDelete = letters.find(l => l.id === letterId);
+            if (!letterToDelete) {
+                console.warn(`Letter with id ${letterId} not found for deletion.`);
+                return { success: true }; // Idempotent
+            }
+
+            const idsToDelete: string[] = [];
+            if (letterToDelete.replyToId) { // Deleting a reply
+                idsToDelete.push(letterToDelete.replyToId);
+                idsToDelete.push(letterToDelete.id);
+            } else { // Deleting an original letter
+                idsToDelete.push(letterToDelete.id);
+                const reply = letters.find(l => l.replyToId === letterToDelete.id);
+                if (reply) {
+                    idsToDelete.push(reply.id);
+                }
+            }
+            const uniqueIdsToDelete = [...new Set(idsToDelete)];
+
+            const lettersToKeep = letters.filter(l => !uniqueIdsToDelete.includes(l.id));
+
+            if (lettersToKeep.length === letters.length) {
+                console.warn(`No letters were removed for letterId ${letterId}.`);
+                return { success: true };
+            }
+
+            if (lettersToKeep.length > 0) {
+                lettersToKeep.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+                fs.writeFileSync(filePath, JSON.stringify(lettersToKeep, null, 2), 'utf8');
+                console.log(`Deleted letter(s) with IDs ${uniqueIdsToDelete.join(', ')} from ${filePath}.`);
+            } else {
+                fs.unlinkSync(filePath);
+                console.log(`Deleted empty letter file: ${filePath}`);
+            }
+
+            // Now, handle summaries.
+            const summaryFilePath = this.getLetterSummaryFilePath(playerId, characterId);
+            if (fs.existsSync(summaryFilePath)) {
+                const summaries = this.getLetterSummaries(playerId, characterId);
+
+                const summariesToKeep = summaries.filter(summary =>
+                    !summary.letterIds.some(id => uniqueIdsToDelete.includes(id))
+                );
+
+                if (summariesToKeep.length < summaries.length) {
+                    if (summariesToKeep.length > 0) {
+                        this.saveLetterSummaries(playerId, characterId, summariesToKeep);
+                        console.log(`Updated letter summaries for player ${playerId}, character ${characterId}.`);
+                    } else {
+                        fs.unlinkSync(summaryFilePath);
+                        console.log(`Deleted empty letter summary file: ${summaryFilePath}`);
+                    }
+                }
+            }
+
+            return { success: true };
+        } catch (error: any) {
+            console.error(`Error deleting letter ${letterId} for player ${playerId}, character ${characterId}:`, error);
+            return { success: false, error: error.message };
+        }
+    }
+}

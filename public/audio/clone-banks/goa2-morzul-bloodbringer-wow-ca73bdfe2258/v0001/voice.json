@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-morzul-bloodbringer-wow-ca73bdfe2258",
+  "revision": 1,
+  "name": "Mor'zul Bloodbringer — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "345f18b708d4cca7d9438233e530ecb94a74082a84edf7b4b9b7a7dbf14daa5a",
+    "transcript_sha256": "0e017ea335ad6dafd9ef7ad5263f32b93b5711fe2944a482dc0ac5aa88a48cda",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 375821,
+      "seconds": 15.659208333333334,
+      "peak": 0.988098,
+      "rms_dbfs": -19.49,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

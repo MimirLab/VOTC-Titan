@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-maximillian-of-northshire-wow-20d0913b7286",
+  "revision": 1,
+  "name": "Maximillian Northshire — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "cea61bb63fc2f54f13c2239d19a13e66cdaa402fc91f9c0140fc4d5e5715c348",
+    "transcript_sha256": "7355bc150b652c9ad0a3431a9aef54e708caa06b9b9cd22a75969fcb148c870a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 400756,
+      "seconds": 16.698166666666665,
+      "peak": 0.89444,
+      "rms_dbfs": -17.5,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

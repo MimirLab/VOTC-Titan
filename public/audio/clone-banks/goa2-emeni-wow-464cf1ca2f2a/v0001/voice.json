@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-emeni-wow-464cf1ca2f2a",
+  "revision": 1,
+  "name": "Emeni — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "dd10e4f46fd5a6986930e00dabf485c29afc91d0ae7c03f60274db8fdc5e4b02",
+    "transcript_sha256": "708731abde8ab74a6c723e0b14c21479e6098345f30d2e3c4011b9be0b150213",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 375876,
+      "seconds": 15.6615,
+      "peak": 0.704285,
+      "rms_dbfs": -17.91,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

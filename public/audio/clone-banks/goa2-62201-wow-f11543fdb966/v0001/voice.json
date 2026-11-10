@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62201-wow-f11543fdb966",
+  "revision": 1,
+  "name": "Sintharia — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "5e58cf7ae293f66fa015bee232e86879bc50cc3171ef55278f99022ebc5a2d63",
+    "transcript_sha256": "37186be3519f1daa2e3c1253a46f09a3720b69868f9be005be4e2a50e774bb64",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 215580,
+      "seconds": 8.9825,
+      "peak": 1.0,
+      "rms_dbfs": -15.22,
+      "clipped_samples": 19
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-430000-wow-4913c5205c4c",
+  "revision": 1,
+  "name": "Tichondrius — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7a24366a0545dee0181191c039246725d30b50e70ab66268ed873a0e2aa34fdd",
+    "transcript_sha256": "a836a6ad58f5cb045cde6e34cef726757d8c3eb0af27c3d5e8030c80ccc5f4e0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 394114,
+      "seconds": 16.421416666666666,
+      "peak": 1.0,
+      "rms_dbfs": -14.02,
+      "clipped_samples": 50
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

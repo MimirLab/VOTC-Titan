@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60030-wc3-garithos",
+  "revision": 1,
+  "name": "Othmar Garithos — ordinary (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b5bcd19a33fe906737bbcd9708d12975e67920281d74e888f230555ce6d5e92e",
+    "transcript_sha256": "15a115ba6374cea2ad1f5ca75d33a0825ef74771f8a972ce79425107749361d0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 386339,
+      "seconds": 16.097458333333332,
+      "peak": 0.945374,
+      "rms_dbfs": -20.76,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

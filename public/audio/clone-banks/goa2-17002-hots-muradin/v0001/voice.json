@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-17002-hots-muradin",
+  "revision": 1,
+  "name": "Muradin Bronzebeard — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b1141f0ff91897757fa3069abc5d3a66c34618aabce9f0ceeac20fd0b2c9ca2f",
+    "transcript_sha256": "699a8ede15c01c998db53bc7bf991332c6db7da51246be2e6eef89234906d058",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 412649,
+      "seconds": 17.193708333333333,
+      "peak": 0.835754,
+      "rms_dbfs": -17.71,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

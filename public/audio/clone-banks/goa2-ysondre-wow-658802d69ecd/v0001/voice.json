@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ysondre-wow-658802d69ecd",
+  "revision": 1,
+  "name": "Ysondre — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a802efbd5998798d378ee892009d2623851a77670bdf56656efa592f332ae6a1",
+    "transcript_sha256": "1472e3f68b36c2d74222c6e4278aa8366a68eda4fafca52d422310165e4e0f41",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 417862,
+      "seconds": 17.410916666666665,
+      "peak": 1.0,
+      "rms_dbfs": -16.43,
+      "clipped_samples": 22
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

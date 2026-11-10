@@ -1,0 +1,63 @@
+//Made by: Durond
+
+/**@typedef {import('../../gamedata_typedefs.js').GameData} GameData */
+module.exports = {
+    signature: "emotionSad",
+    args: [],
+    description: {
+        en: `Executed when a character feels sad. The source (character1) is the character who caused the emotion. The target (character2) is the character FEELING the emotion.`,
+        zh: `当一个角色感到悲伤时执行。`,
+        ru: `Выполняется, когда персонаж чувствует грусть.`,
+        fr: `Exécuté lorsqu'un personnage se sent triste.`,
+        es: `Ejecutado cuando un personaje se siente triste.`,
+        de: `Wird ausgeführt, wenn ein Charakter sich traurig fühlt.`,
+        ja: `キャラクターが悲しいと感じたときに実行されます。`,
+        ko: `캐릭터가 슬픔을 느낄 때 실행됩니다.`,
+        pl: `Wykonywane, gdy postać czuje się smutna.`,
+        pt: `Executado quando um personagem se sente triste.`,
+        tr: `Bir karakter üzgün hissettiğinde çalıştırılır.`
+    },
+  canPerformAtDistance: true,
+    /**
+     * @param {GameData} gameData 
+     * @param {number} sourceId
+     * @param {number} targetId
+     */
+    check: (gameData, sourceId, targetId) =>{
+        return true;
+    },
+
+    /**
+     * @param {GameData} gameData 
+     * @param {Function} runGameEffect
+     * @param {string[]} args 
+     * @param {number} sourceId
+     * @param {number} targetId
+     */
+    run: (gameData, runGameEffect, args, sourceId, targetId) => {
+        runGameEffect(
+            `global_var:votcce_action_target = {
+                set_global_variable = {
+                    name = talk_pose
+                    value = flag:sad
+                }
+            }`
+        )
+    },
+    chatMessage: () =>{
+        return {
+            en: `{{character2Name}} feels sad.`,
+            zh: `{{character2Name}}感到悲伤。`,
+            ru: `{{character2Name}} грустит.`,
+            fr: `{{character2Name}} se sent triste.`,
+            es: `{{character2Name}} se siente triste.`,
+            de: `{{character2Name}} ist traurig.`,
+            ja: `{{character2Name}}は悲しんでいます。`,
+            ko: `{{character2Name}}는 슬픔을 느낍니다.`,
+            pl: `{{character2Name}} jest smutny.`,
+            pt: `{{character2Name}} sente-se triste.`,
+            tr: `{{character2Name}} üzgün hissediyor.`
+        }
+    },
+    chatMessageClass: "neutral-action-message",
+}

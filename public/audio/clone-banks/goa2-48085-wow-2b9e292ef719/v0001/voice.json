@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48085-wow-2b9e292ef719",
+  "revision": 1,
+  "name": "Katherine Proudmoore — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "46a519ea205f68f12faf7e83988b1fb25b21a12f8b03e59aaa61b17891a67adc",
+    "transcript_sha256": "8ae39884d7a2b6d2a94b5d918adf626a040506a5e0c9b35fe576db543dc59f5f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378978,
+      "seconds": 15.79075,
+      "peak": 0.999969,
+      "rms_dbfs": -17.2,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

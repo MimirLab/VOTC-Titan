@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-57000-hots-zuljinbase",
+  "revision": 1,
+  "name": "Zul'jin — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4691c2607088f60b86ef703b63c862c18a455dbc42870621322f07eb3fbec552",
+    "transcript_sha256": "dab9ecbc782def97500700372b487d786eae7131b89a8d5a35723ca7375d73bc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365627,
+      "seconds": 15.234458333333333,
+      "peak": 0.796783,
+      "rms_dbfs": -16.04,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

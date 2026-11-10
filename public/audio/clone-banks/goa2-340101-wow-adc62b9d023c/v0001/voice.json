@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340101-wow-adc62b9d023c",
+  "revision": 1,
+  "name": "Sira Moonwarden — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "25efcf0c49336150a0a2f49c9826842a2cb7fb1866a514d44af10d82a79f1997",
+    "transcript_sha256": "072c842681bc4f70580d0dc51acc66cc0a3b77043d2dc9cb5ae8c7d5a3a79fad",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 76958,
+      "seconds": 3.206583333333333,
+      "peak": 0.992126,
+      "rms_dbfs": -14.35,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

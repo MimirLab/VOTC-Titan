@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ban-bearheart-wow-822b7de7732b",
+  "revision": 1,
+  "name": "Ban Bearheart — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "04334fdec4f6ec26e6a10613f76a7f31f46801cd70d8e21df23ad38891d16092",
+    "transcript_sha256": "2ffe56f827ae94f83db75106404543fa16eb5ce959e713e047b422bef7dddf72",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 84437,
+      "seconds": 3.5182083333333334,
+      "peak": 0.90976,
+      "rms_dbfs": -14.11,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

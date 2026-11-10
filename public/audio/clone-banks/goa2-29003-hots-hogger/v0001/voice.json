@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-29003-hots-hogger",
+  "revision": 1,
+  "name": "Hogger — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "88a0d862cfa9692f59cead13aaaea247fd91bd4c291e09cb8ed7bd9c71b1f4bf",
+    "transcript_sha256": "5a57b1609e707d9f1d24d9326a41000b2d53fcf3bae187cd8c776ba49c9679f3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365020,
+      "seconds": 15.209166666666667,
+      "peak": 0.864136,
+      "rms_dbfs": -16.03,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

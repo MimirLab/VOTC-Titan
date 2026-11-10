@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-little-lu-wow-6de363f27434",
+  "revision": 1,
+  "name": "Lu Karasshi — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d7d99907d95150b3e285c6d853d23eaf13a3061377141a47997cf24b4c021783",
+    "transcript_sha256": "a423ad68286c4652e01f69c8f7789081a7ec5f866e0887d3cbf2383305b0d214",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 128860,
+      "seconds": 5.369166666666667,
+      "peak": 0.97464,
+      "rms_dbfs": -15.43,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-dark-ranger-velonara-wow-988298de2663",
+  "revision": 1,
+  "name": "Velonara — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fbe07fd08c54b6339ffeedcb33664e5cffcbd43a1e07d766f116cf734a27970a",
+    "transcript_sha256": "0c27b6e0044fd039000096cd2497185e33053cca70242ee9b8c4720e784964b3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 385214,
+      "seconds": 16.050583333333332,
+      "peak": 0.999969,
+      "rms_dbfs": -17.03,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

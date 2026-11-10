@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-belath-dawnblade-wow-5fc0b646edf2",
+  "revision": 1,
+  "name": "Belath Dawnblade — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "99a8f88bec2f059402994f2224a57b22affa2fb5bfb276cc89e7f27654ac0d46",
+    "transcript_sha256": "6fe9e901225bcdf6a01a59e8cc47458b23f542406a45df1969decd25b5d4509a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 103141,
+      "seconds": 4.297541666666667,
+      "peak": 0.948303,
+      "rms_dbfs": -17.22,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-460000-wow-bacae4f59713",
+  "revision": 1,
+  "name": "Ulfar Inath — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "82ca642190758a12ed9a194e9ce61302a14989b743925ce825c8c03686b82230",
+    "transcript_sha256": "f0668586609e47d4a14678e7d3d3ad9a78ba8e19ca1bcacac6935276d9097d61",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 437765,
+      "seconds": 18.24020833333333,
+      "peak": 0.999969,
+      "rms_dbfs": -14.33,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

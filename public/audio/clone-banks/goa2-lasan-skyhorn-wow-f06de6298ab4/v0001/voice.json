@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lasan-skyhorn-wow-f06de6298ab4",
+  "revision": 1,
+  "name": "Lasan Skyhorn — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "210959bc047a71a0b5c8397913f6b8951064fe7a7dd9d1f77f3b2d38659de4df",
+    "transcript_sha256": "aafefbb06d9499c9271b05eb2c81253eef40ecf79d7aebc0f0903533263c5370",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378666,
+      "seconds": 15.77775,
+      "peak": 0.936462,
+      "rms_dbfs": -16.71,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

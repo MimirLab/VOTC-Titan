@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60020-wow-234a1d611b73",
+  "revision": 1,
+  "name": "Darion Mograine — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a1049449ea3852bb3c60703c4ec78e1d684e8979aca128e5c845135bb04cf391",
+    "transcript_sha256": "b7b9d3a2fce9dd9108962ddfcbe1192b617f0e83347100b09431fbbe4d4a838e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 398525,
+      "seconds": 16.605208333333334,
+      "peak": 0.926208,
+      "rms_dbfs": -17.71,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

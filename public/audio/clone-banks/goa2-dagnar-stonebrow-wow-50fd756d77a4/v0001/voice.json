@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-dagnar-stonebrow-wow-50fd756d77a4",
+  "revision": 1,
+  "name": "Dagnar Stonebrow — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ad99af03c216aa326d0ebe1980cd8aaa4473e64f5900f143817699ae26b5af7d",
+    "transcript_sha256": "74aa4dc2438127f0d91a5b06d4d765b163f849bef12e68e5140df29372765f4c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 401317,
+      "seconds": 16.721541666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -17.14,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

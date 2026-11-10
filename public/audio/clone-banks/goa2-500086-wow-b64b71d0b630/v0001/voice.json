@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-500086-wow-b64b71d0b630",
+  "revision": 1,
+  "name": "Taran dynn_Zhu — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "04038de4d26ddd0280deaf5de1a8134d40a897ad2aaeafddc883c174824139ce",
+    "transcript_sha256": "7a5db2d2be018e120f25a419197b37926ef9f91d3be48fe16de0f79ceab5d648",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 404009,
+      "seconds": 16.833708333333334,
+      "peak": 0.99765,
+      "rms_dbfs": -16.55,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

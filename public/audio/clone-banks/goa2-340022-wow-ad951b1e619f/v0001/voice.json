@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340022-wow-ad951b1e619f",
+  "revision": 1,
+  "name": "Jarod Shadowsong — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9fb1df0afaf8cf53d4cdabec28193de87ae3f9963e98e95bbf31b0462f3ed6cc",
+    "transcript_sha256": "e04e96d5bf781f5526eb0b1c00702e0ea5842b97ecf2591481c93fae8abac3e2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 399839,
+      "seconds": 16.659958333333332,
+      "peak": 0.999969,
+      "rms_dbfs": -18.25,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

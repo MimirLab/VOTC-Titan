@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lyleth-lunastre-wow-4f7ae6fa892c",
+  "revision": 1,
+  "name": "Ly'leth Lunastre — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "65cdac45e6635538f1d1f2b5fdda971c9dc8d0bf5560e9f36d18984ca55142f1",
+    "transcript_sha256": "a7676ad0f831a4fbaf11ac068e9792c863ffa0382d0c8401da376c57efea91b8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 381947,
+      "seconds": 15.914458333333334,
+      "peak": 0.999969,
+      "rms_dbfs": -16.29,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

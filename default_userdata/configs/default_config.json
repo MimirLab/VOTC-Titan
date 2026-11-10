@@ -1,0 +1,188 @@
+{
+  "lorebookEnabled": true,
+  "userFolderPath": "",
+  "cultureRoleplayEnabled": true,
+  "faithRoleplayEnabled": true,
+  "goaLoreEnabled": true,
+  "languageRoutingEnabled": true,
+  "cultureGameInstallPath": "",
+  "language": "en",
+  "activePromptPreset": "Default",
+  "activeModPreset": "Default",
+  "disabledMegamodNotifications": [],
+  "stream": false,
+  "maxTokens": 5000,
+  "maxMemoryTokens": 600,
+  "maxSummaries": 5,
+  "percentOfContextToSummarize": 40,
+  "selectedDescScript": "standard/pList.js",
+  "selectedExMsgScript": "standard/aliChat.js",
+  "selectedBookmarkScript": "",
+  "selectedSelfTalkExMsgScript": "self-talk/default.js",
+  "inputSequence": "[INST]",
+  "outputSequence": "[/INST]",
+  "textGenerationApiConnectionConfig": {
+    "connection": {
+      "type": "player2",
+      "baseUrl": "https://api.player2.game/v1",
+      "key": "",
+      "model": "gpt-oss-120b",
+      "forceInstruct": false,
+      "overwriteContext": false,
+      "customContext": 8192
+    },
+    "parameters": {
+      "temperature": 0.8,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0,
+      "top_p": 0.9,
+      "enableTemperature": true,
+      "enableFrequencyPenalty": true,
+      "enablePresencePenalty": true,
+      "enableTopP": true
+    }
+  },
+  "summarizationApiConnectionConfig": {
+    "connection": {
+      "type": "player2",
+      "baseUrl": "https://api.player2.game/v1",
+      "key": "",
+      "model": "gpt-oss-120b",
+      "forceInstruct": false,
+      "overwriteContext": false,
+      "customContext": 8192
+    },
+    "parameters": {
+      "temperature": 0.5,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0,
+      "top_p": 0.9,
+      "enableTemperature": true,
+      "enableFrequencyPenalty": true,
+      "enablePresencePenalty": true,
+      "enableTopP": true
+    }
+  },
+  "actionsApiConnectionConfig": {
+    "connection": {
+      "type": "player2",
+      "baseUrl": "https://api.player2.game/v1",
+      "key": "",
+      "model": "gpt-oss-120b",
+      "forceInstruct": false,
+      "overwriteContext": false,
+      "customContext": 8192
+    },
+    "parameters": {
+      "temperature": 0.5,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0,
+      "top_p": 0.9,
+      "enableTemperature": true,
+      "enableFrequencyPenalty": true,
+      "enablePresencePenalty": true,
+      "enableTopP": true
+    }
+  },
+  "embeddingApiConnectionConfig": {
+    "connection": {
+      "type": "openai",
+      "baseUrl": "https://api.openai.com/v1",
+      "key": "",
+      "model": "text-embedding-3-small",
+      "forceInstruct": false,
+      "overwriteContext": false,
+      "customContext": 8192,
+      "embeddingDimension": 1536,
+      "useCustomEmbeddingDimension": false
+    },
+    "parameters": {
+      "temperature": 0.0,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0,
+      "top_p": 1.0,
+      "enableTemperature": false,
+      "enableFrequencyPenalty": false,
+      "enablePresencePenalty": false,
+      "enableTopP": false
+    }
+  },
+  "summarizationUseTextGenApi": true,
+  "actionsUseTextGenApi": true,
+  "actionsEnableAll": true,
+  "manualActionApproval": true,
+  "manualLetterActionApproval": true,
+  "showPreviousConversations": true,
+  "disableHistoricalConversations": false,
+  "maxHistoricalConversations": 5,
+  "maxConversationsInHistoryWindow": 15,
+  "narrativeEnable": true,
+  "disabledActions": [
+    "woundCharacter",
+    "undressCharacter",
+    "intercourse"
+  ],
+  "actionProbability": 0.3,
+  "maxConsecutiveActions": 3,
+  "cleanMessages": true,
+  "debugMode": false,
+  "aiStartConversationChance": 25,
+  "diaryGenerationChance": 50,
+  "aiCanStartConversation": true,
+  "checkForUpdatesOnStartup": true,
+  "shuffleCharacterOrder": false,
+  "nonTargetedCharacterResponseChance": 15,
+  "questionPlayerActionsChance": 10,
+  "aiToAiChatChance": 20,
+  "dynamicCharacterSelection": false,
+  "validateCharacterIdentity": false,
+  "showSuggestionsButton": true,
+  "generateSceneDescription": true,
+  "autoGenerateSuggestions": false,
+  "autoSendSuggestion": false,
+  "showTokenizerDisplay": true,
+  "earlyAccessUpdates": true,
+  "lastAnnouncementVersion": "",
+  "summariesInsertDepth": 6,
+  "memoriesInsertDepth": 5,
+  "descInsertDepth": 4,
+  "enableSuffixPrompt": false,
+  "enableMemoryCompaction": true,
+  "compactionPhase1Threshold": 70,
+  "compactionPhase2Threshold": 5,
+  "compactionTokenBudget": {
+    "phase1": 30,
+    "phase2": 10
+  },
+  "compactionCooldownMinutes": 5,
+  "compactionPriorityElements": [
+    "secrets",
+    "rivalries",
+    "friendships",
+    "alliances",
+    "major_life_events"
+  ],
+  "compactionEntityExtractionMode": "hybrid",
+  "compactionRelationshipsDirectional": true,
+  "compactionApiConnectionConfig": {
+    "connection": {
+      "type": "player2",
+      "baseUrl": "https://api.player2.game/v1",
+      "key": "",
+      "model": "gpt-oss-120b",
+      "forceInstruct": false,
+      "overwriteContext": false,
+      "customContext": 8192
+    },
+    "parameters": {
+      "temperature": 0.5,
+      "frequency_penalty": 0.0,
+      "presence_penalty": 0.0,
+      "top_p": 0.9,
+      "enableTemperature": true,
+      "enableFrequencyPenalty": true,
+      "enablePresencePenalty": true,
+      "enableTopP": true
+    }
+  }
+}

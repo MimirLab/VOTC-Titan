@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-millhouse-manastorm-wow-e2655543ffc0",
+  "revision": 1,
+  "name": "Millhouse Manastorm — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ad84c63059fde4cb7bbdec12066f92cdd79e8823b960b61cb672947c1ee1c118",
+    "transcript_sha256": "b6426d7625b7244f66362a83bf1b4196bd50edce82d20b6fd50927d256f4687a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 391987,
+      "seconds": 16.332791666666665,
+      "peak": 0.975494,
+      "rms_dbfs": -17.63,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

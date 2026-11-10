@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340009-wc3-illidanmorphed",
+  "revision": 1,
+  "name": "Illidan Stormrage — metamorphosis (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f2b1aaf95ee897a7d6fdf6a0c6f56f8e064d86e57bac185f1f36c08513acfc13",
+    "transcript_sha256": "dbf1ce5bc13bea8869c94cffb102716cd529a12f4d906db54a9a0a69653b6573",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 45378,
+      "seconds": 1.89075,
+      "peak": 0.478699,
+      "rms_dbfs": -21.41,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

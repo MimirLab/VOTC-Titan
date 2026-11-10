@@ -1,0 +1,47 @@
+titan_scene_current_captor_trigger = { OR = {
+ global_var:titan_scene_anchor = { faith = global_var:titan_scene_anchor.location.county.faith is_at_same_location = global_var:titan_scene_anchor global_var:titan_scene_admission_subject = { is_imprisoned_by = prev } }
+ global_var:titan_scene_recipient = { faith = global_var:titan_scene_anchor.location.county.faith is_at_same_location = global_var:titan_scene_anchor global_var:titan_scene_admission_subject = { is_imprisoned_by = prev } }
+ global_var:titan_scene_anchor = {
+  OR = {
+   AND = { NOT = { has_global_variable = titan_scene_group_mode } any_pinned_character = { faith = global_var:titan_scene_anchor.location.county.faith is_at_same_location = global_var:titan_scene_anchor global_var:titan_scene_admission_subject = { is_imprisoned_by = prev } } }
+   AND = { has_global_variable = titan_scene_group_mode has_variable_list = mcc_characters_selected any_in_list = { variable = mcc_characters_selected faith = global_var:titan_scene_anchor.location.county.faith is_at_same_location = global_var:titan_scene_anchor global_var:titan_scene_admission_subject = { is_imprisoned_by = prev } } }
+  }
+ }
+ AND = { has_global_variable_list = mcc_characters_list_v2 any_in_global_list = { variable = mcc_characters_list_v2 faith = global_var:titan_scene_anchor.location.county.faith is_at_same_location = global_var:titan_scene_anchor global_var:titan_scene_admission_subject = { is_imprisoned_by = prev } } }
+} }
+
+titan_check_scene_admission_subject_effect = {
+ set_global_variable = { name = titan_scene_admission_subject value = this }
+ if = { limit = { NOT = { is_at_same_location = global_var:titan_scene_anchor } }
+  set_global_variable = { name = titan_scene_admission_failed value = yes }
+ }
+ else_if = { limit = { NOT = { OR = { faith = global_var:titan_scene_anchor.location.county.faith titan_scene_current_captor_trigger = yes } } }
+  set_global_variable = { name = titan_scene_admission_failed value = yes }
+ }
+ remove_global_variable = titan_scene_admission_subject
+}
+titan_prepare_scene_admission_effect = {
+ remove_global_variable = titan_scene_faith_access
+ remove_global_variable = titan_scene_admission_anchor
+ remove_global_variable = titan_scene_admission_failed
+ remove_global_variable = titan_scene_admission_subject
+ if = { limit = { exists = global_var:titan_scene_recipient this = global_var:titan_scene_anchor }
+  titan_check_scene_admission_subject_effect = yes
+  global_var:titan_scene_recipient = { titan_check_scene_admission_subject_effect = yes }
+  if = { limit = { NOT = { has_global_variable = titan_scene_group_mode } }
+   every_pinned_character = { limit = { is_at_same_location = global_var:titan_scene_anchor } titan_check_scene_admission_subject_effect = yes }
+  }
+  else_if = { limit = { has_variable_list = mcc_characters_selected }
+   every_in_list = { variable = mcc_characters_selected titan_check_scene_admission_subject_effect = yes }
+  }
+  if = { limit = { has_global_variable_list = mcc_characters_list_v2 }
+   every_in_global_list = { variable = mcc_characters_list_v2 titan_check_scene_admission_subject_effect = yes }
+  }
+  if = { limit = { NOT = { has_global_variable = titan_scene_admission_failed } }
+   set_global_variable = { name = titan_scene_faith_access value = yes }
+   set_global_variable = { name = titan_scene_admission_anchor value = this }
+  }
+ }
+ remove_global_variable = titan_scene_admission_failed
+ remove_global_variable = titan_scene_admission_subject
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60014-wow-90e110e13b80",
+  "revision": 1,
+  "name": "Tirion Fordring — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fff8e763c41e3087e2ca810e3e961f244c4e62133e5f57056a7fc5122bc1d5f3",
+    "transcript_sha256": "054ea880a0058073116a2fa7939a1fd693695b788414df65c89b74c226459d4a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376577,
+      "seconds": 15.690708333333333,
+      "peak": 1.0,
+      "rms_dbfs": -18.27,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

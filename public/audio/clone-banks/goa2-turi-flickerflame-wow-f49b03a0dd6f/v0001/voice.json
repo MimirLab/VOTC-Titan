@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-turi-flickerflame-wow-f49b03a0dd6f",
+  "revision": 1,
+  "name": "Turi Flickerflame — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "388fb45549eea2e3121a0e96d4bb885004cadb4206e34fbc702b533831b22ec4",
+    "transcript_sha256": "5bfec9e7196042fa006aaa18c1ab7aae6c9fa56480b6a28c64277d864406f155",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 387318,
+      "seconds": 16.13825,
+      "peak": 0.914337,
+      "rms_dbfs": -17.48,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

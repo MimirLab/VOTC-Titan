@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-helnurath-wow-135483cd02f4",
+  "revision": 1,
+  "name": "Hel'nurath — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "949fb16433b996de496711a955395305e34928f30d40a97839c9ced129e33402",
+    "transcript_sha256": "f07d1d30c280b8f86b8947bc729661d703d1d036b59c9ea9db4c2b5d5bbc4897",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 426115,
+      "seconds": 17.754791666666666,
+      "peak": 1.0,
+      "rms_dbfs": -14.94,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

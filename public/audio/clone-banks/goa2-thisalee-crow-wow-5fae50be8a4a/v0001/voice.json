@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-thisalee-crow-wow-5fae50be8a4a",
+  "revision": 1,
+  "name": "Thisalee Crow — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1ff6e7f3fdd8c81a71a5c80e426b15766733acb26deda1dcc3911ee589844718",
+    "transcript_sha256": "6c24bc907eb18bb7de5ae6f4b29fc9198952987f7319cdfc554c8df7d69609db",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 385738,
+      "seconds": 16.072416666666665,
+      "peak": 0.886169,
+      "rms_dbfs": -18.21,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

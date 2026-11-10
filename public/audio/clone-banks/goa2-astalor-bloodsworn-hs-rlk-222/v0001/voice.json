@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-astalor-bloodsworn-hs-rlk-222",
+  "revision": 1,
+  "name": "Astalor Bloodsworn — Astalor Bloodsworn (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "97b5bd2f9c19754d2926578bb4e09ec66d441d8d9c8af243d7d7fb5da2a9f720",
+    "transcript_sha256": "794afe678ff045c8e833f5e461b4074b682dc5ff7072013d0fcc8574f37d5bf8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 68144,
+      "seconds": 2.8393333333333333,
+      "peak": 0.954285,
+      "rms_dbfs": -15.09,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60686-wow-8e6318b520f8",
+  "revision": 1,
+  "name": "Bolvar Fordragon — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "048be08447b4663ebae5a71dede09f396cbc04ca54846a4d9d507866be6e6cc1",
+    "transcript_sha256": "2cc3b5243fa92fff44e7c647dececfb01974740c28e3f1a7470b88aad306e9c5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 423648,
+      "seconds": 17.652,
+      "peak": 0.935516,
+      "rms_dbfs": -17.19,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

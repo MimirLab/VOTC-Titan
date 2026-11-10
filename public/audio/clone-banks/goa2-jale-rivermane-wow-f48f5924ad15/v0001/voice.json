@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-jale-rivermane-wow-f48f5924ad15",
+  "revision": 1,
+  "name": "Jale Rivermane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1593802f0f87c1e0409adeb4ff88aed006da08b5fd894cf46a199085d32f50dd",
+    "transcript_sha256": "acc9235f0c318365096529ff7d9639d1831762566db0a2fd94c23ec3c0b35182",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 439650,
+      "seconds": 18.31875,
+      "peak": 0.984314,
+      "rms_dbfs": -17.35,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

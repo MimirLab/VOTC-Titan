@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ritssyn-flamescowl-wow-235525aaf1f4",
+  "revision": 1,
+  "name": "Ritssyn Flamescowl — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2779df7b8700941c1e5ae1ae3898edf940d6ad0492f8d5cde2907fe691bce894",
+    "transcript_sha256": "7066dba7c84880a7c500e64028d90c765eb6bb4e3702043908d88a250c3fcac4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 412577,
+      "seconds": 17.190708333333333,
+      "peak": 1.0,
+      "rms_dbfs": -17.02,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

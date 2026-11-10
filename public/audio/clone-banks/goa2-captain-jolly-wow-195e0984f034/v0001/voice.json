@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-captain-jolly-wow-195e0984f034",
+  "revision": 1,
+  "name": "Jolly — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0288422832ed18ee4bb49289657b429d52961728a7f816ff66bb747ab1f18337",
+    "transcript_sha256": "6a5528d5af63b6496120cd811a0313cf2f48377d17ccc3c040fd67e9ec924bb4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 236307,
+      "seconds": 9.846125,
+      "peak": 0.792999,
+      "rms_dbfs": -18.15,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10560-wow-a1b13b35ec31",
+  "revision": 1,
+  "name": "Malkorok — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "62834c4e8aff18fddaf0dd705e39d8ac26cd133807eb9e50fa62303f5f3d4de4",
+    "transcript_sha256": "ae5005c5cbdc36593f9ed95342c592a84333d7f0aae7058e63c558ef65e22796",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 349347,
+      "seconds": 14.556125,
+      "peak": 1.0,
+      "rms_dbfs": -16.83,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

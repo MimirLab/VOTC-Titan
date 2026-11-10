@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62202-wow-selected-e5bdd77fe4",
+  "revision": 1,
+  "name": "Nefarian Black Dragonflight — Nefarian; WoW Blackwing Descent recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2c7e6580407443dfe8b199863b3839d3777f6ece3499c9c28647130fea52b05a",
+    "transcript_sha256": "1bca53e79c0f97cc5466974bb9c946859a18307e152c61fca5ce1b5392dde4c6",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 390609,
+      "seconds": 16.275375,
+      "peak": 0.999969,
+      "rms_dbfs": -16.52,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

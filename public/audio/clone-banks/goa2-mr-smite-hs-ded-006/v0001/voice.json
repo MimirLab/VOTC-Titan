@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-mr-smite-hs-ded-006",
+  "revision": 1,
+  "name": "Smite — Mr. Smite (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b21ed1ea44687f65e205411c157f5704814cc03a73961c6e8606e67e1819ef93",
+    "transcript_sha256": "0f9f4b1b2bec61e061f1b691cf1959e82c5072caa11a021bf7c4fc824cf3f9cc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 53020,
+      "seconds": 2.2091666666666665,
+      "peak": 0.960022,
+      "rms_dbfs": -15.35,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

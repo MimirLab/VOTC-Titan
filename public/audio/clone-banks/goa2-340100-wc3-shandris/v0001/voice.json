@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340100-wc3-shandris",
+  "revision": 1,
+  "name": "Shandris Feathermoon — ordinary (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8d74d8c490ccce424e7cfeaeddef83553b33c8eb0e0f25eec6a3c2f4261a7cfe",
+    "transcript_sha256": "c7a16eb5a988d24bd87c0aea9707778b13b94203a401c01bb5b6717c22332bd3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 254509,
+      "seconds": 10.604541666666666,
+      "peak": 0.596375,
+      "rms_dbfs": -19.31,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

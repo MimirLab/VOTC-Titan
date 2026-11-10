@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-brother-korloff-wow-1d0a990a6109",
+  "revision": 1,
+  "name": "Korloff — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8b1167f4a9f6d7a2ca9ba3beda88a7d0d439107f8755316772c52b6d586d8e5e",
+    "transcript_sha256": "0137583d25cb5b7bb56693bd456324533fa9a26c2f8b30f021b3204d1720915b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 159391,
+      "seconds": 6.641291666666667,
+      "peak": 1.0,
+      "rms_dbfs": -18.56,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

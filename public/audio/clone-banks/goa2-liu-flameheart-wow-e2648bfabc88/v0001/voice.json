@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-liu-flameheart-wow-e2648bfabc88",
+  "revision": 1,
+  "name": "Liu Flameheart — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1b4be6e765c1d9bdf1d34622501f2f12c6208d5e6e7a741ef2f9fd471a456d07",
+    "transcript_sha256": "ce8e737b3c798271ce993750f4f31be05164f3ba63137f1696cab88da8c400d3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 401171,
+      "seconds": 16.715458333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.16,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

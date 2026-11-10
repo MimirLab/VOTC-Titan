@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-erik-the-swift-wow-22096137b55d",
+  "revision": 1,
+  "name": "Erik Viking — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a00099506f183d173117b4c926a104b8b2a90ab4076c23e29267c3ef6991085f",
+    "transcript_sha256": "6df351b25a261b234682546903635e0f1e5c201cfd0ee4e0920882e87e1b3e69",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 408181,
+      "seconds": 17.00754166666667,
+      "peak": 0.933533,
+      "rms_dbfs": -18.51,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

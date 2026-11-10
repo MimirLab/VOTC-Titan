@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-gu-cloudstrike-wow-a8e9428f50fe",
+  "revision": 1,
+  "name": "Gu Cloudstrike — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c1f48e31d984ea45da5afb6de57175804b1d6e7c5e96cb7ec0c2216945002752",
+    "transcript_sha256": "95c18812102e3f0eac223e6fb07f40ea040ea125dbef52b7ab20d2ac33ceba9e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 99769,
+      "seconds": 4.157041666666666,
+      "peak": 0.92749,
+      "rms_dbfs": -16.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

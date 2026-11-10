@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-chao-the-voice-wow-f7a9f6b3285d",
+  "revision": 1,
+  "name": "Chao — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7780c9a96235d2e5de5186d702b578f88286e2acc9e2da95ed720c7f9cebca57",
+    "transcript_sha256": "c463008fce425d388e5d5a59f800826a460af0127e8ff45ae7b95057ebd6a3d4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 135118,
+      "seconds": 5.6299166666666665,
+      "peak": 0.968445,
+      "rms_dbfs": -19.16,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

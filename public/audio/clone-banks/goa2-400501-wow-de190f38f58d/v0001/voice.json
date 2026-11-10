@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400501-wow-de190f38f58d",
+  "revision": 1,
+  "name": "Loken — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6b2d2ff7e2909bfecae7b9c36e5255e10caf6f7ac88c7fc0aadf159dc2dd3e31",
+    "transcript_sha256": "3cc352c832b109ef44b1834bf82a958f57cd6445a63f1b74101257262d6425e9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 67391,
+      "seconds": 2.807958333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -14.6,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

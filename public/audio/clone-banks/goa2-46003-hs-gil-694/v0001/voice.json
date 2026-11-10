@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46003-hs-gil-694",
+  "revision": 1,
+  "name": "Liam Greymane — Prince Liam (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ea22ba63590a8e075430939663c620f0006d870ef3a2a7773c48434b66489396",
+    "transcript_sha256": "3c713eacc9bbb22ab344a55bf4621b818c65a3fdc860e9eb49ea4d89af35a78c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 101364,
+      "seconds": 4.2235,
+      "peak": 0.986115,
+      "rms_dbfs": -17.36,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

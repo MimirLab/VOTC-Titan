@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-umbra-tortollan-hs-ung-900",
+  "revision": 1,
+  "name": "Umbra Numur — Spiritsinger Umbra (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "403c38e875eff71a89182bcdab6f5fe03ab396ea75658b849cd1e0c64e2e3333",
+    "transcript_sha256": "3ad5af11965b4a01b1e692243a9e022ccf593dff80199571d668560e6531a714",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 93191,
+      "seconds": 3.8829583333333333,
+      "peak": 0.979797,
+      "rms_dbfs": -16.53,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

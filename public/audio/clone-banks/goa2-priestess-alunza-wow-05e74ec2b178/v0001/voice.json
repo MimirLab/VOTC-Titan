@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-priestess-alunza-wow-05e74ec2b178",
+  "revision": 1,
+  "name": "Alun'za Dazar'ai — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "011bea8decec63f298d2f28634e3bf6a6d9191bd6d62eedc217e5d716917d866",
+    "transcript_sha256": "a767f072ce90bfef8877fa687166e08ad1edbbc12595641280af0eddea8f0a95",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393918,
+      "seconds": 16.41325,
+      "peak": 0.999969,
+      "rms_dbfs": -17.71,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

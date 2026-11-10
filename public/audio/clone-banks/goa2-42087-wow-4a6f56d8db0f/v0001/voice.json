@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42087-wow-4a6f56d8db0f",
+  "revision": 1,
+  "name": "Vereesa Windrunner — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "305db98319c9bb66984b7c351eb99d342c50598350ed0286860c34289b59da50",
+    "transcript_sha256": "5065879d5a5e4bdec5a9a39a5976001c92e86696d450adf5d92bcfa5c1dae121",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 431571,
+      "seconds": 17.982125,
+      "peak": 0.999969,
+      "rms_dbfs": -17.86,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

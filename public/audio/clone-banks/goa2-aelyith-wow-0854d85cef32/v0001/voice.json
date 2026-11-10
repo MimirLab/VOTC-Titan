@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-aelyith-wow-0854d85cef32",
+  "revision": 1,
+  "name": "Ael'Yith — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "bc75640ab15bd6267a9124c830d3fd3090c170c55ad4f8fea0b38bf996ce878f",
+    "transcript_sha256": "b3b61a248bac42d6e816d0429ff377009231dfb0e1c532a2d7fe28c512bd1841",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378349,
+      "seconds": 15.764541666666666,
+      "peak": 1.0,
+      "rms_dbfs": -16.47,
+      "clipped_samples": 26
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

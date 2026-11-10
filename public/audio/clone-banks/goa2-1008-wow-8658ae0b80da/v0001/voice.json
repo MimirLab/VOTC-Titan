@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-1008-wow-8658ae0b80da",
+  "revision": 1,
+  "name": "Anduin Lothar — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2e25a9b2b642453b35ed7fd8b00e7a376d2c1d0718856f204199d33a6b91a427",
+    "transcript_sha256": "9208a6448a75515738907f43f9ef2a3314aa61323e4a5e53548963a00c8c0ab4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 359482,
+      "seconds": 14.978416666666666,
+      "peak": 1.0,
+      "rms_dbfs": -17.19,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

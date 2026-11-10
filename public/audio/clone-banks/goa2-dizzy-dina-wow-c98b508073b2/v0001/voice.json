@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-dizzy-dina-wow-c98b508073b2",
+  "revision": 1,
+  "name": "Dizzy Dina — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6c9f9d2b6a3a5bb9292b1806657b9b5f9a51078eb5fa2e69a6c5cce3dcf4d004",
+    "transcript_sha256": "61d8f774567fcf11d801071f2efec54a35fb5c3097cf0ebee1ca02613754dd32",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 234162,
+      "seconds": 9.75675,
+      "peak": 0.938873,
+      "rms_dbfs": -18.81,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

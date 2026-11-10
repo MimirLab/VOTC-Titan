@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lashk-tortollan-wow-0f5d9500bd09",
+  "revision": 1,
+  "name": "Lashk Yazla — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7a20a315cf380baee239ef765e2dae665b85bca9aeb37019ccdcc263a2d4b0cd",
+    "transcript_sha256": "7d198a5329a76c05fcd4b4d06ab2e72baf9231a35f1ad701cddca881c361dd84",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 381287,
+      "seconds": 15.886958333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.32,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

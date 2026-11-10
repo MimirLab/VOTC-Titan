@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-wise-mari-wow-1d51764434af",
+  "revision": 1,
+  "name": "Mari — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "caeeaa034dd23dfb2e3377c468d47ee18c80577a651f73c8130e39605c12e24a",
+    "transcript_sha256": "e3c55e3aef5ea4ae34092e76013d0d3ab54406772ccc55e8f49a902e13518e65",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 297869,
+      "seconds": 12.411208333333333,
+      "peak": 0.918579,
+      "rms_dbfs": -16.62,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

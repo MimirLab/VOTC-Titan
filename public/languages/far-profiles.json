@@ -1,0 +1,1742 @@
+{
+  "version": "titan-essence-0.2",
+  "design_authority": "User essence direction, including body form. Sources inspire portraits; no copied official word-parser vocabulary.",
+  "roots": {
+    "human": {
+      "onset": "d t b v n r l s m f g p br tr st",
+      "nucleus": "a e i o ae ei",
+      "coda": "n r l t s d",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "elven": {
+      "onset": "l n r s th sh d v",
+      "nucleus": "a e i ae ia",
+      "coda": "n l r",
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "aqir": {
+      "onset": "k t q kh z ch",
+      "nucleus": "a i u e",
+      "coda": "k t n r sh",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "northern": {
+      "onset": "v h r th d k br sk",
+      "nucleus": "a o u ei ae",
+      "coda": "r n d k th",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "avian": {
+      "onset": "k r t s z h kr v",
+      "nucleus": "ii ai i e a",
+      "coda": "r s k",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "elemental": {
+      "onset": "k g t d m r sh th",
+      "nucleus": "a o u e ae",
+      "coda": "k m r n sh",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "argusic": {
+      "onset": "v d r k zh n l dr",
+      "nucleus": "a e i u aa",
+      "coda": "r n sh m th",
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        2,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "pandaric": {
+      "onset": "m n b d l r sh k j",
+      "nucleus": "a o u e ao",
+      "coda": "n m ng l",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0
+    },
+    "ordered": {
+      "onset": "d t k v r m n z b",
+      "nucleus": "a e o ae u",
+      "coda": "n r k l m",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        2,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "cells": [
+        [
+          "d",
+          "o",
+          "r"
+        ],
+        [
+          "r",
+          "e",
+          "k"
+        ],
+        [
+          "v",
+          "a",
+          "l"
+        ],
+        [
+          "",
+          "e",
+          "n"
+        ],
+        [
+          "k",
+          "e",
+          "t"
+        ],
+        [
+          "t",
+          "e",
+          "r"
+        ],
+        [
+          "z",
+          "a",
+          "d"
+        ],
+        [
+          "d",
+          "o",
+          "r"
+        ],
+        [
+          "r",
+          "ae",
+          "k"
+        ],
+        [
+          "k",
+          "o",
+          "n"
+        ],
+        [
+          "d",
+          "e",
+          "t"
+        ],
+        [
+          "v",
+          "a",
+          "r"
+        ],
+        [
+          "k",
+          "o",
+          "r"
+        ],
+        [
+          "n",
+          "e",
+          "l"
+        ],
+        [
+          "",
+          "a",
+          "z"
+        ],
+        [
+          "",
+          "e",
+          "k"
+        ],
+        [
+          "t",
+          "a",
+          "l"
+        ],
+        [
+          "",
+          "u",
+          "m"
+        ],
+        [
+          "b",
+          "a",
+          "r"
+        ],
+        [
+          "m",
+          "a",
+          "r"
+        ],
+        [
+          "n",
+          "o",
+          "r"
+        ],
+        [
+          "r",
+          "u",
+          "n"
+        ],
+        [
+          "k",
+          "a",
+          "l"
+        ],
+        [
+          "z",
+          "e",
+          "n"
+        ],
+        [
+          "t",
+          "o",
+          "r"
+        ],
+        [
+          "v",
+          "e",
+          "k"
+        ],
+        [
+          "d",
+          "a",
+          "n"
+        ],
+        [
+          "b",
+          "e",
+          "l"
+        ],
+        [
+          "k",
+          "u",
+          "r"
+        ],
+        [
+          "r",
+          "a",
+          "m"
+        ],
+        [
+          "n",
+          "a",
+          "l"
+        ],
+        [
+          "m",
+          "o",
+          "d"
+        ],
+        [
+          "d",
+          "u",
+          "r"
+        ],
+        [
+          "t",
+          "ae",
+          "l"
+        ],
+        [
+          "v",
+          "o",
+          "n"
+        ],
+        [
+          "z",
+          "u",
+          "l"
+        ],
+        [
+          "b",
+          "o",
+          "r"
+        ],
+        [
+          "k",
+          "a",
+          "d"
+        ],
+        [
+          "m",
+          "e",
+          "l"
+        ],
+        [
+          "n",
+          "ae",
+          "r"
+        ],
+        [
+          "r",
+          "o",
+          "k"
+        ],
+        [
+          "d",
+          "ae",
+          "n"
+        ],
+        [
+          "t",
+          "u",
+          "m"
+        ],
+        [
+          "b",
+          "u",
+          "r"
+        ],
+        [
+          "z",
+          "o",
+          "n"
+        ],
+        [
+          "k",
+          "e",
+          "l"
+        ],
+        [
+          "m",
+          "u",
+          "n"
+        ],
+        [
+          "v",
+          "ae",
+          "r"
+        ]
+      ]
+    }
+  },
+  "profiles": {
+    "language_common": {
+      "label": "Common",
+      "root": "human",
+      "family": "Common voices"
+    },
+    "language_low_common": {
+      "label": "Low Common",
+      "root": "human",
+      "family": "Common voices",
+      "vowel_map": {
+        "ae": "e",
+        "ei": "i"
+      },
+      "medial_elision": 0.45,
+      "keep_syllables": 2,
+      "final_codas": "n k r t",
+      "changes": [
+        [
+          "rrr+",
+          "rr"
+        ]
+      ]
+    },
+    "language_gutterspeak": {
+      "label": "Gutterspeak",
+      "root": "human",
+      "family": "Common voices",
+      "onset_map": {
+        "tr": "vr",
+        "st": "sk",
+        "d": "z",
+        "s": "zh",
+        "b": "v"
+      },
+      "vowel_map": {
+        "ae": "ei",
+        "ei": "ui",
+        "a": "e"
+      },
+      "medial_elision": 0.35,
+      "final_codas": "sh v s n",
+      "changes": [
+        [
+          "zhzh",
+          "zh"
+        ]
+      ]
+    },
+    "language_dwarven": {
+      "label": "Dwarven",
+      "root": "ordered",
+      "family": "Ordered stone voices",
+      "keep_syllables": 2,
+      "vowel_map": {
+        "ae": "a",
+        "e": "u"
+      },
+      "onset_map": {
+        "v": "br",
+        "z": "gr"
+      },
+      "tail_rate": 0.6,
+      "tails": [
+        "dun",
+        "rek",
+        "gar",
+        "rum",
+        "vel"
+      ],
+      "separator": "-",
+      "separator_rate": 0.12,
+      "compound_span": 2
+    },
+    "language_gnomish": {
+      "label": "Gnomish",
+      "onset": "t k p z v n gl kl sp kr",
+      "nucleus": "i e a ui",
+      "coda": "t k n z l",
+      "counts": [
+        2,
+        3,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        2,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "t k n z",
+      "separator": "-",
+      "separator_rate": 0.1,
+      "compound_span": 2
+    },
+    "language_darnassian": {
+      "label": "Darnassian",
+      "root": "elven",
+      "family": "Elven voices",
+      "open_medial": true,
+      "final_codas": "_ _ _ _ _ _ _ _ n l"
+    },
+    "language_high_darnassian": {
+      "label": "High Darnassian",
+      "root": "elven",
+      "family": "Elven voices",
+      "open_medial": true,
+      "final_codas": "_",
+      "echo_vowel": true,
+      "echo_onsets": "l r n",
+      "short_echo_rate": 0.35
+    },
+    "language_elunic": {
+      "label": "Elunic",
+      "root": "elven",
+      "family": "Elven voices",
+      "onset_map": {
+        "d": "h",
+        "v": "m",
+        "sh": "s",
+        "th": "h"
+      },
+      "open_medial": true,
+      "final_vowels": "ue ia e a",
+      "final_codas": "_",
+      "echo_vowel": true,
+      "echo_onsets": "h l",
+      "short_echo_rate": 0.15,
+      "changes": [
+        [
+          "([aeiou])\\1{2,}",
+          "\\1\\1"
+        ]
+      ]
+    },
+    "language_thalassian": {
+      "label": "Thalassian",
+      "root": "elven",
+      "family": "Elven voices",
+      "onset_map": {
+        "n": "v",
+        "sh": "s",
+        "d": "b"
+      },
+      "open_medial": true,
+      "final_codas": "r s n th"
+    },
+    "language_shalassian": {
+      "label": "Shalassian",
+      "root": "elven",
+      "family": "Elven voices",
+      "onset_map": {
+        "s": "sh",
+        "d": "z",
+        "n": "v"
+      },
+      "open_medial": true,
+      "medial_elision": 0.7,
+      "final_vowels": "ai aei ii ei",
+      "final_codas": "_ _ r n",
+      "changes": [
+        [
+          "shsh",
+          "sh"
+        ]
+      ]
+    },
+    "language_nazja": {
+      "label": "Nazja",
+      "root": "elven",
+      "family": "Elven voices",
+      "onset_map": {
+        "s": "ss",
+        "sh": "ssh",
+        "th": "sz",
+        "d": "z",
+        "v": "zh"
+      },
+      "open_medial": true,
+      "final_codas": "ss sh z s",
+      "tail_rate": 0.2,
+      "tails": [
+        "i",
+        "ia"
+      ],
+      "changes": [
+        [
+          "s{3,}",
+          "ss"
+        ]
+      ]
+    },
+    "language_qiraji": {
+      "label": "Qiraji",
+      "root": "aqir",
+      "family": "Aqir voices",
+      "extra_syllables": [
+        0,
+        1,
+        1
+      ],
+      "onset_map": {
+        "k": "kh",
+        "ch": "q",
+        "t": "th"
+      },
+      "vowel_map": {
+        "i": "a",
+        "e": "u"
+      },
+      "final_codas": "q k sh r",
+      "separator": "'",
+      "separator_rate": 0.45,
+      "compound_span": 2
+    },
+    "language_nerubian": {
+      "label": "Nerubian",
+      "root": "aqir",
+      "family": "Aqir voices",
+      "onset_map": {
+        "k": "tk",
+        "t": "t",
+        "q": "k't",
+        "kh": "kh",
+        "z": "z",
+        "ch": "ch"
+      },
+      "open_medial": true,
+      "final_codas": "k kh sh n",
+      "separator": "'",
+      "separator_rate": 0.25,
+      "compound_span": 2
+    },
+    "language_mantid": {
+      "label": "Mantid",
+      "root": "aqir",
+      "family": "Aqir voices",
+      "keep_syllables": 2,
+      "onset_map": {
+        "q": "ts",
+        "kh": "zz",
+        "z": "z",
+        "ch": "ts"
+      },
+      "vowel_map": {
+        "a": "i",
+        "u": "e"
+      },
+      "coda_map": {
+        "n": "z",
+        "r": "ts",
+        "sh": "z"
+      },
+      "final_codas": "z ts k t",
+      "changes": [
+        [
+          "z{3,}",
+          "zz"
+        ]
+      ]
+    },
+    "language_vrykul": {
+      "label": "Vrykul",
+      "root": "northern",
+      "family": "Northern voices",
+      "final_codas": "r n d k",
+      "tail_rate": 0.15,
+      "tails": [
+        "ar",
+        "un",
+        "ald"
+      ]
+    },
+    "language_drust": {
+      "label": "Drust",
+      "root": "northern",
+      "family": "Northern voices",
+      "onset_map": {
+        "v": "vr",
+        "h": "hr",
+        "sk": "skr"
+      },
+      "vowel_map": {
+        "e": "ae",
+        "ei": "a"
+      },
+      "medial_elision": 0.35,
+      "open_medial": 0.5,
+      "final_codas": "th rn gh n",
+      "separator": "'",
+      "separator_rate": 0.14,
+      "compound_span": 2
+    },
+    "language_apexis": {
+      "label": "Apexis",
+      "root": "avian",
+      "family": "Avian voices",
+      "open_medial": true,
+      "final_vowels": "ii ai ei a",
+      "final_codas": "_ _ r s",
+      "echo_vowel": true,
+      "echo_onsets": "r k",
+      "short_echo_rate": 0.2
+    },
+    "language_ravenspeech": {
+      "label": "Ravenspeech",
+      "root": "avian",
+      "family": "Avian voices",
+      "onset_map": {
+        "k": "kr",
+        "t": "tk",
+        "s": "sk",
+        "z": "rk",
+        "h": "kh",
+        "v": "vr"
+      },
+      "vowel_map": {
+        "ii": "i",
+        "ai": "a",
+        "e": "u"
+      },
+      "final_codas": "rk kh r k",
+      "keep_syllables": 2
+    },
+    "language_orcish": {
+      "label": "Orcish",
+      "onset": "g k gr kr d t r th kh v",
+      "nucleus": "a o u",
+      "coda": "k g r n th",
+      "counts": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "k r g th n"
+    },
+    "language_ogre": {
+      "label": "Ogre",
+      "onset": "b m g d r gr gl br",
+      "nucleus": "o u a oo",
+      "coda": "m g n r",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        2,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "m r n g"
+    },
+    "language_ignan": {
+      "label": "Ignan",
+      "root": "elemental",
+      "family": "Elemental voices",
+      "onset_map": {
+        "g": "k",
+        "d": "t",
+        "m": "f",
+        "r": "kr",
+        "th": "sk"
+      },
+      "vowel_map": {
+        "o": "a",
+        "u": "i",
+        "ae": "e"
+      },
+      "coda_map": {
+        "m": "t",
+        "r": "sh",
+        "n": "k"
+      },
+      "final_codas": "k t sh s",
+      "separator": "-",
+      "separator_rate": 0.45,
+      "tail_rate": 0.22,
+      "tails": [
+        "haa",
+        "shaa",
+        "ii"
+      ],
+      "changes": [
+        [
+          "k{3,}",
+          "kk"
+        ],
+        [
+          "t{3,}",
+          "tt"
+        ]
+      ]
+    },
+    "language_aquan": {
+      "label": "Aquan",
+      "root": "elemental",
+      "family": "Elemental voices",
+      "onset_map": {
+        "k": "w",
+        "g": "gl",
+        "t": "l",
+        "d": "v",
+        "sh": "w",
+        "th": "l"
+      },
+      "vowel_map": {
+        "u": "ua",
+        "o": "ou"
+      },
+      "open_medial": true,
+      "codas": "_",
+      "medial_softening": 0.35,
+      "final_codas": "_ _ m l",
+      "changes": [
+        [
+          "([aeiou])\\1{2,}",
+          "\\1\\1"
+        ]
+      ]
+    },
+    "language_auran": {
+      "label": "Auran",
+      "root": "elemental",
+      "family": "Elemental voices",
+      "onset_map": {
+        "k": "f",
+        "g": "h",
+        "t": "th",
+        "d": "h",
+        "m": "w",
+        "r": "s",
+        "sh": "sh",
+        "th": "y"
+      },
+      "vowel_map": {
+        "a": "ae",
+        "o": "ai",
+        "u": "i"
+      },
+      "open_medial": true,
+      "codas": "_",
+      "final_codas": "_ _ h s",
+      "separator": "'",
+      "separator_rate": 0.3
+    },
+    "language_terran": {
+      "label": "Terran",
+      "root": "elemental",
+      "family": "Elemental voices",
+      "onset_map": {
+        "k": "kr",
+        "g": "gr",
+        "t": "dr",
+        "d": "dg",
+        "m": "mg",
+        "r": "br",
+        "sh": "g",
+        "th": "d"
+      },
+      "vowel_map": {
+        "e": "u",
+        "ae": "o"
+      },
+      "codas": "g d m nd rk",
+      "final_codas": "g nd m rk",
+      "extra_syllables": [
+        0,
+        0,
+        1
+      ],
+      "separator": "-",
+      "separator_rate": 0.5,
+      "compound_span": 2
+    },
+    "language_kalimag": {
+      "label": "Kalimag",
+      "root": "elemental",
+      "family": "Elemental voices",
+      "onset_map": {
+        "d": "t"
+      },
+      "open_medial": true,
+      "final_codas": "m r n sh",
+      "tail_rate": 0.25,
+      "tails": [
+        "om",
+        "ara",
+        "un"
+      ]
+    },
+    "language_sethrak": {
+      "label": "Sethrak",
+      "onset": "s ss sh sz z t k q r",
+      "nucleus": "i e a ii ei",
+      "coda": "s sh t k r",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "ss s sh z",
+      "changes": [
+        [
+          "s{3,}",
+          "ss"
+        ]
+      ]
+    },
+    "language_vulpera": {
+      "label": "Vulpera",
+      "onset": "v f n m r t y vr l",
+      "nucleus": "e i a ai oi",
+      "coda": "n r t f",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ n r f t"
+    },
+    "language_mogu": {
+      "label": "Mogu",
+      "root": "pandaric",
+      "family": "Pandarian voices",
+      "onset_map": {
+        "m": "g",
+        "n": "d",
+        "l": "gr",
+        "r": "br",
+        "sh": "zh",
+        "j": "g"
+      },
+      "vowel_map": {
+        "e": "u",
+        "ao": "o"
+      },
+      "codas": "g d m rk",
+      "final_codas": "g d ng k",
+      "extra_syllables": [
+        0,
+        0,
+        1
+      ],
+      "separator": "-",
+      "separator_rate": 0.2,
+      "compound_span": 2
+    },
+    "language_jinyu": {
+      "label": "Jinyu",
+      "root": "pandaric",
+      "family": "Pandarian voices",
+      "onset_map": {
+        "b": "ny",
+        "d": "l",
+        "r": "y",
+        "k": "w",
+        "j": "j"
+      },
+      "vowel_map": {
+        "a": "ua",
+        "e": "eo",
+        "ao": "ui"
+      },
+      "open_medial": true,
+      "final_codas": "_ n l sh"
+    },
+    "language_pandaren": {
+      "label": "Pandaren",
+      "root": "pandaric",
+      "family": "Pandarian voices",
+      "onset_map": {
+        "k": "b",
+        "j": "l"
+      },
+      "open_medial": true,
+      "final_codas": "_ n m l",
+      "tail_rate": 0.2,
+      "tails": [
+        "ao",
+        "an",
+        "en"
+      ]
+    },
+    "language_eredun": {
+      "label": "Eredun",
+      "root": "argusic",
+      "family": "Otherworldly voices",
+      "onset_map": {
+        "d": "dr",
+        "r": "kr",
+        "l": "gr",
+        "n": "vr"
+      },
+      "vowel_map": {
+        "i": "u",
+        "e": "a"
+      },
+      "open_medial": 0.35,
+      "codas": "k r sh z th",
+      "final_codas": "k sh z th r",
+      "separator": "'",
+      "separator_rate": 0.15,
+      "compound_span": 2
+    },
+    "language_nathrezim": {
+      "label": "Nathrezim",
+      "root": "argusic",
+      "family": "Otherworldly voices",
+      "onset_map": {
+        "k": "s",
+        "d": "v",
+        "dr": "vr",
+        "zh": "zh"
+      },
+      "vowel_map": {
+        "u": "ae",
+        "a": "a",
+        "aa": "ae"
+      },
+      "open_medial": true,
+      "final_codas": "n r z th",
+      "tail_rate": 0.25,
+      "tails": [
+        "ir",
+        "ael",
+        "en"
+      ]
+    },
+    "language_cursed": {
+      "label": "Cursed",
+      "onset": "h kh th s sh r n gr z",
+      "nucleus": "a e i aa u",
+      "coda": "h s r k th",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "tail_rate": 0.18,
+      "tails": [
+        "eth",
+        "ir",
+        "ah"
+      ],
+      "separator": "'",
+      "separator_rate": 0.15,
+      "compound_span": 2
+    },
+    "language_draenei": {
+      "label": "Draenei",
+      "root": "argusic",
+      "family": "Otherworldly voices",
+      "onset_map": {
+        "k": "h",
+        "zh": "d",
+        "dr": "dr"
+      },
+      "vowel_map": {
+        "u": "ua",
+        "e": "ei"
+      },
+      "open_medial": true,
+      "final_codas": "n r m l",
+      "echo_vowel": true,
+      "echo_rate": 0.45,
+      "echo_onsets": "n l",
+      "short_echo_rate": 0.2
+    },
+    "language_zandali": {
+      "label": "Zandali",
+      "onset": "z d r n m b t j zr l",
+      "nucleus": "a i o ai u",
+      "coda": "n m k t r",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ n m r",
+      "tail_rate": 0.15,
+      "tails": [
+        "an",
+        "jin",
+        "ara"
+      ]
+    },
+    "language_taurahe": {
+      "label": "Taur-ahe",
+      "onset": "h m n r t b w hr",
+      "nucleus": "a o u aa uu au",
+      "coda": "m n r h",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ _ m n r",
+      "tail_rate": 0.22,
+      "tails": [
+        "ma",
+        "ra",
+        "na"
+      ]
+    },
+    "language_goblin": {
+      "label": "Goblin",
+      "onset": "bz g k b t z v gr kl kr",
+      "nucleus": "i e a u",
+      "coda": "k t z g n",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "medial_elision": 0.35,
+      "final_codas": "k t z g",
+      "separator": "-",
+      "separator_rate": 0.08,
+      "compound_span": 2
+    },
+    "language_shathyar": {
+      "label": "Shath'yar",
+      "onset": "zy sh vr x n th lth nzh xv zh",
+      "nucleus": "a i u aa ia",
+      "coda": "th sh ng x lth",
+      "counts": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "short_counts": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 36,
+      "join_rate": 0,
+      "final_codas": "_ th x sh ng",
+      "tail_rate": 0.12,
+      "tails": [
+        "ntha",
+        "yx",
+        "sh"
+      ],
+      "separator": "'",
+      "separator_rate": 0.18,
+      "compound_span": 2
+    },
+    "language_draconic": {
+      "label": "Draconic",
+      "onset": "vr dr kr zh th r kh z",
+      "nucleus": "aa au ae o i u",
+      "coda": "r th x s n",
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "open_medial": 0.6,
+      "final_codas": "r th x s",
+      "changes": [
+        [
+          "thth",
+          "th"
+        ],
+        [
+          "zhzh",
+          "zh"
+        ],
+        [
+          "xx",
+          "x"
+        ]
+      ],
+      "tail_rate": 0.15,
+      "tails": [
+        "aar",
+        "ath",
+        "aen"
+      ]
+    },
+    "language_furbolg": {
+      "label": "Furbolg / Ursine",
+      "onset": "h hr br m n gr ml b",
+      "nucleus": "u o aa uu au",
+      "coda": "m n r gh",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "m n r gh _"
+    },
+    "language_gnoll": {
+      "label": "Gnoll",
+      "onset": "gr kr y gh r k gn zh",
+      "nucleus": "a e ai o i",
+      "coda": "k g r h rk",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "rk gh r k",
+      "tail_rate": 0.12,
+      "tails": [
+        "ai",
+        "akh"
+      ]
+    },
+    "language_wolvar": {
+      "label": "Wolvar",
+      "onset": "wr v k gn r m gr kn",
+      "nucleus": "a u e au o",
+      "coda": "nk rr m t r",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "nk rr m t"
+    },
+    "language_pygmy": {
+      "label": "Pygmy",
+      "onset": "t p k n m l s y",
+      "nucleus": "a i u ei ia",
+      "coda": "n l k m",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ n l k",
+      "reduplicate_rate": 0.12
+    },
+    "language_hozen": {
+      "label": "Hozen",
+      "onset": "b p h w k m d y",
+      "nucleus": "o u a ou oo",
+      "coda": "p k m h",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ p k m",
+      "reduplicate_rate": 0.3
+    },
+    "language_nerglish": {
+      "label": "Nerglish",
+      "onset": "mr gl ml shl y l gr m",
+      "nucleus": "uu u i aa oo o",
+      "coda": "r l g m rl",
+      "counts": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ r l m",
+      "tail_rate": 0.16,
+      "tails": [
+        "lu",
+        "ur",
+        "oo"
+      ]
+    },
+    "language_quilboar": {
+      "label": "Quilboar",
+      "onset": "gr sn kh m br th hn sh",
+      "nucleus": "a o e u aa",
+      "coda": "ng rk kh m n",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OVF",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "open_medial": 0.25,
+      "final_codas": "ng rk kh m",
+      "separator": "'",
+      "separator_rate": 0.14,
+      "compound_span": 2
+    },
+    "language_tolvir": {
+      "label": "Tol'vir",
+      "onset": "q t kh s r n h d k",
+      "nucleus": "aa a i ai u",
+      "coda": "t r s n",
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "t r s n",
+      "tail_rate": 0.15,
+      "tails": [
+        "et",
+        "an",
+        "ra"
+      ]
+    },
+    "language_titanic": {
+      "label": "Titanic",
+      "root": "ordered",
+      "family": "Ordered stone voices",
+      "separator": "-",
+      "separator_rate": 0.12,
+      "compound_span": 2
+    },
+    "language_giant": {
+      "label": "Giant",
+      "root": "ordered",
+      "family": "Ordered stone voices",
+      "onset_map": {
+        "t": "d",
+        "k": "g",
+        "v": "hr",
+        "z": "b"
+      },
+      "vowel_map": {
+        "a": "aa",
+        "e": "oo",
+        "o": "oa",
+        "ae": "au",
+        "u": "uu"
+      },
+      "final_codas": "m r d g",
+      "keep_syllables": 2,
+      "tail_rate": 0.2,
+      "tails": [
+        "ar",
+        "om"
+      ]
+    },
+    "language_tortollan": {
+      "label": "Tortollan",
+      "onset": "t d l n k r b m",
+      "nucleus": "o a oi u aa",
+      "coda": "l n r t m",
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "_ l n r",
+      "tail_rate": 0.35,
+      "tails": [
+        "oro",
+        "on",
+        "lor",
+        "ana"
+      ]
+    },
+    "language_drogbar": {
+      "label": "Drogbar",
+      "onset": "dr gr kh v b rz gz vr d g",
+      "nucleus": "a o u e oa",
+      "coda": "zh g r k rz",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "medial_elision": 0.25,
+      "final_codas": "_",
+      "final_vowels": "a o e ua"
+    },
+    "language_tuskarr": {
+      "label": "Tuskarr",
+      "onset": "b k n g fr l dr rl m",
+      "nucleus": "o u i uu aa",
+      "coda": "n r l k nk",
+      "counts": [
+        2,
+        2,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OVF",
+        "OV",
+        "OVF"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "open_medial": 0.35,
+      "final_codas": "n rl nk r"
+    },
+    "language_maraudic": {
+      "label": "Maraudic",
+      "onset": "m kh r z th g rk tr khr d",
+      "nucleus": "a ai o u aa",
+      "coda": "r k t z n",
+      "counts": [
+        2,
+        3,
+        3
+      ],
+      "short_counts": [
+        1,
+        1,
+        2
+      ],
+      "shapes": [
+        "OV",
+        "OVF",
+        "OV"
+      ],
+      "decay": 0.985,
+      "max_word": 30,
+      "join_rate": 0,
+      "final_codas": "r k t n",
+      "tail_rate": 0.2,
+      "tails": [
+        "rak",
+        "ar",
+        "un"
+      ]
+    }
+  }
+}

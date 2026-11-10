@@ -1,0 +1,1066 @@
+{
+  "reference": "Supplied r2 standalone Python CloseEncoder, using reviewed per-language banks. Engine remains independent of the TypeScript adaptation.",
+  "profileVersion": "titan-close-essence-2.4",
+  "cases": [
+    {
+      "language": "language_common",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring waeter to dhe eastern gaete befoire dawn. Do nod cross dhe broken bridge."
+    },
+    {
+      "language": "language_common",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bud I will nod leave you aloine. I remembeur dhe promise you made."
+    },
+    {
+      "language": "language_common",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrodher 𐐀dhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_common",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODHER caen’t brODheR dhUNDEReur bro'dher"
+    },
+    {
+      "language": "language_low_common",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breng watur to de eastern gate befure dawn. Do nod cross de broken bridge."
+    },
+    {
+      "language": "language_low_common",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bud I will nod leave you alune. I remembur de promise you made."
+    },
+    {
+      "language": "language_low_common",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroder 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_low_common",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODER cen’t brODeR dUNDERur bro'der"
+    },
+    {
+      "language": "language_gutterspeak",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breing waterh to zhe easkern gate before dawn. Do noth cross zhe broken bridge."
+    },
+    {
+      "language": "language_gutterspeak",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I will noth leave you alone. I rememberh zhe promizhe you made."
+    },
+    {
+      "language": "language_gutterspeak",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrozher 𐐀zhe ☀️ é 中文 Skraße 123"
+    },
+    {
+      "language": "language_gutterspeak",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROZHER cein’t brOZheR zhUNDERerh bro'zher"
+    },
+    {
+      "language": "language_dwarven",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung wauter to de eastern gaute bhefore dawn. Do nodt cross de broken bridge."
+    },
+    {
+      "language": "language_dwarven",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bhut I will nodt leave you aulone. I rremembur de promise you made."
+    },
+    {
+      "language": "language_dwarven",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroder 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_dwarven",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODER caun’t brODeR dUNDERur bro'der"
+    },
+    {
+      "language": "language_gnomish",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring weiter to te eastern geite befere dawn. Do net cross te broken bridge."
+    },
+    {
+      "language": "language_gnomish",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buk I will net leave you eilone. I kremember te premise you made."
+    },
+    {
+      "language": "language_gnomish",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrether 𐐀te ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_gnomish",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRETHER kan’t brETheR tUNDERer bro'ter"
+    },
+    {
+      "language": "language_darnassian",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Briang waeter to thae easterna gaete vefore dawna. Do nat cross thae brokena bridgae."
+    },
+    {
+      "language": "language_darnassian",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, vut I will nat leavae you aelone. I remember thae promisae you madae."
+    },
+    {
+      "language": "language_darnassian",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrather 𐐀thae ☀️ é 中文 Straßae 123"
+    },
+    {
+      "language": "language_darnassian",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRATHER caen’t brATheR thUNDERer bro'ther"
+    },
+    {
+      "language": "language_high_darnassian",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Briang waeter to the easternela gaete vefore dawnela. Do naet cross the brokenela bridgaela."
+    },
+    {
+      "language": "language_high_darnassian",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, vut I will naet leavaela you aelone. I remember the promisaela you madaela."
+    },
+    {
+      "language": "language_high_darnassian",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbraether 𐐀the ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_high_darnassian",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRAETHER caen’t brAETheR thUNDERer bro'ther"
+    },
+    {
+      "language": "language_elunic",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Briang weater to the easternia geate vefore dawnia. Do noth cross the brokenia bridgeia."
+    },
+    {
+      "language": "language_elunic",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, vut I will noth leaveia you ealone. I rememberia the promiseia you madeia."
+    },
+    {
+      "language": "language_elunic",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrotheria 𐐀the ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_elunic",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROTHERIA cean’t brOTheRIA thUNDEReria bro'theria"
+    },
+    {
+      "language": "language_thalassian",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring vater to thes easterns gaete befare dawns. Do nat cross thes brokens bridges."
+    },
+    {
+      "language": "language_thalassian",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, but I vill nat leaves you aelone. I remember thes promises you mades."
+    },
+    {
+      "language": "language_thalassian",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrather 𐐀thes ☀️ é 中文 Straßes 123"
+    },
+    {
+      "language": "language_thalassian",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRATHER caen’t brATheR thUNDERer bro'ther"
+    },
+    {
+      "language": "language_shalassian",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring weter to the easternai gete vefore dawnai. Do nat cross the brokenai bridgaai."
+    },
+    {
+      "language": "language_shalassian",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, vut I will nat leavaai you elone. I remember the promisaai you madaai."
+    },
+    {
+      "language": "language_shalassian",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrather 𐐀the ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_shalassian",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRATHER cen’t brATheR thUNDERer bro'ther"
+    },
+    {
+      "language": "language_nazja",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Briang vater to tsse eastern gaete beforaesh dawn. Do noss crosss tsse broken bridgaesh."
+    },
+    {
+      "language": "language_nazja",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buss I vill noss leavaesh you aelone. I remember tsse promisaesh you madaesh."
+    },
+    {
+      "language": "language_nazja",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrotsser 𐐀tsse ☀️ é 中文 Straßaesh 123"
+    },
+    {
+      "language": "language_nazja",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROTSSER caen’t brOTsseR tssUNDERer bro'tsser"
+    },
+    {
+      "language": "language_qiraji",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring waater to tkhe eastarn gaate befure dawnk. Do nut cross tkhe brokan bridge."
+    },
+    {
+      "language": "language_qiraji",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bukt I will nut leave you alune. I remembar tkhe promise you made."
+    },
+    {
+      "language": "language_qiraji",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀tkhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_qiraji",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER qan’t brUTheR tkhUNDARer bro'tkher"
+    },
+    {
+      "language": "language_nerubian",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring water tko tkhe easternk gate befure dawnk. Do nut crossk tkhe brokenk bridge."
+    },
+    {
+      "language": "language_nerubian",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, but I will nut leave you alune. I kremember tkhe promise you made."
+    },
+    {
+      "language": "language_nerubian",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀tkhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_nerubian",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER khan’t brUTheR tkhUNDERer bro'tkher"
+    },
+    {
+      "language": "language_mantid",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring witer to tse eastern gite befire dawn. Do nit crosz tse broken bridgi."
+    },
+    {
+      "language": "language_mantid",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buts I will nit leavi you aline. I remember tse promisi you madi."
+    },
+    {
+      "language": "language_mantid",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrither 𐐀tse ☀️ é 中文 Straßi 123"
+    },
+    {
+      "language": "language_mantid",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRITHER cin’t brITheR tsUNDERer bro'tser"
+    },
+    {
+      "language": "language_vrykul",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breing vater to de easternr gaete befure dawnr. Do nut cross de brokenr bridge."
+    },
+    {
+      "language": "language_vrykul",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraidt, bud I vill nut leave you aelone. I remembar de promise you made."
+    },
+    {
+      "language": "language_vrykul",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_vrykul",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER caen’t brUTheR dUNDERar bro'der"
+    },
+    {
+      "language": "language_drust",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung vrater to dhe eastern gaete befure dawn. Do nut cross dhe broken bridge."
+    },
+    {
+      "language": "language_drust",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I vrill nut leave you aelone. I hremembar dhe promise you made."
+    },
+    {
+      "language": "language_drust",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀dhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_drust",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER caen’t brUTheR dhUNDERar bro'dher"
+    },
+    {
+      "language": "language_apexis",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Briing weiter to te easterni geite befaire dawni. Do nait cross te brokeni bridgii."
+    },
+    {
+      "language": "language_apexis",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buti I will nait leavii you eilone. I rremember te promisii you madii."
+    },
+    {
+      "language": "language_apexis",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbraither 𐐀te ☀️ é 中文 Straßii 123"
+    },
+    {
+      "language": "language_apexis",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRAITHER kan’t brAITheR tUNDERer bro'ter"
+    },
+    {
+      "language": "language_ravenspeech",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brang water to khe easternk gatek befure dawnk. Do nut cross khe brokenk bridgek."
+    },
+    {
+      "language": "language_ravenspeech",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buk I will nut leavek you alune. I kremember khe promisek you madek."
+    },
+    {
+      "language": "language_ravenspeech",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀khe ☀️ é 中文 Straßek 123"
+    },
+    {
+      "language": "language_ravenspeech",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER can’k brUTheR khUNDERer bro'kher"
+    },
+    {
+      "language": "language_orcish",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung vater to de eastarn ghate bhefore dawn. Do nut cross de brokan bridge."
+    },
+    {
+      "language": "language_orcish",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bhut I vill nut leave you alune. I rremembar de promise you made."
+    },
+    {
+      "language": "language_orcish",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_orcish",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER can’k brUTheR dUNDARer bro'der"
+    },
+    {
+      "language": "language_ogre",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung woter tto de eastorn gote befoore dawn. Do not cross de brokon bridge."
+    },
+    {
+      "language": "language_ogre",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, but I will not leave you olone. I rememborr de bromise you made."
+    },
+    {
+      "language": "language_ogre",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroder 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_ogre",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODER con’t brODeR dUNDORer bro'der"
+    },
+    {
+      "language": "language_draconic",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brring waater to zhe eastern gaate bhefore dawn. Do naut cross zhe brroken brridge."
+    },
+    {
+      "language": "language_draconic",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bhut I will naut leavaen you aalone. I vrememberr zhe promisaen you madaen."
+    },
+    {
+      "language": "language_draconic",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrauther 𐐀zhe ☀️ é 中文 Straßaen 123"
+    },
+    {
+      "language": "language_draconic",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRROTHER caan’t brrOTheR zhUNDERerr brro'ther"
+    },
+    {
+      "language": "language_furbolg",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung whater to dhe eastern gaate bhefore dawn. Do nuut cross dhe broken bridge."
+    },
+    {
+      "language": "language_furbolg",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I amm afraid, bhut I whill nuut leave you aalone. I hremember dhe promise you made."
+    },
+    {
+      "language": "language_furbolg",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruuther 𐐀dhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_furbolg",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUUTHER caan’t brUUTheR dhUNDERer bro'dher"
+    },
+    {
+      "language": "language_gnoll",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breng wayter to ghe eastern gayte beforah dawn. Do nok cross ghe broken bridgah."
+    },
+    {
+      "language": "language_gnoll",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buk I will nok leavah you aylone. I rrememberh ghe promisah you madah."
+    },
+    {
+      "language": "language_gnoll",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrogher 𐐀ghe ☀️ é 中文 Straßah 123"
+    },
+    {
+      "language": "language_gnoll",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROGHER cayn’t brOGheR ghUNDERerh bro'gher"
+    },
+    {
+      "language": "language_wolvar",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung wauter to dhe easternk gaute befare dawnk. Do gnot cross dhe brokenk bridge."
+    },
+    {
+      "language": "language_wolvar",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraidt, but I will gnot leave you aulone. I wrememberr dhe promise you made."
+    },
+    {
+      "language": "language_wolvar",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrather 𐐀dhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_wolvar",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRATHER caun’t brATheR dhUNDERerr bro'dher"
+    },
+    {
+      "language": "language_pygmy",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring weiter to te easterni geite befure dawni. Do nut cross te brokeni bridgi."
+    },
+    {
+      "language": "language_pygmy",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afrait, but I will nut leavi you eilone. I riemember te promisi you madi."
+    },
+    {
+      "language": "language_pygmy",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀te ☀️ é 中文 Straßi 123"
+    },
+    {
+      "language": "language_pygmy",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER cein’t brUTheR tUNDERer bro'ter"
+    },
+    {
+      "language": "language_hozen",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung wouter to dhe eastorn goute beforo dawn. Do nopt cross dhe brokon bridgo."
+    },
+    {
+      "language": "language_hozen",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bupt I will nopt leavo you oulone. I rremembor dhe promiso you mado."
+    },
+    {
+      "language": "language_hozen",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrodher 𐐀dhe ☀️ é 中文 Straßo 123"
+    },
+    {
+      "language": "language_hozen",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODHER coun’t brODheR dhUNDORer bro'dher"
+    },
+    {
+      "language": "language_nerglish",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brling waater to thle easturn glate blefore dawn. Do noot cross thle brloken brlidge."
+    },
+    {
+      "language": "language_nerglish",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, blut I will noot leave you aalone. I rremembur thle promise you made."
+    },
+    {
+      "language": "language_nerglish",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroother 𐐀thle ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_nerglish",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRLOTHER caan’t brlOTheR thlUNDURer brlo'ther"
+    },
+    {
+      "language": "language_quilboar",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung watar to dhe eastarn gate bhefore dawng. Do nokt cross dhe brokan bridge."
+    },
+    {
+      "language": "language_quilboar",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bhut I will nokt leave you alone. I rremembar dhe promise you made."
+    },
+    {
+      "language": "language_quilboar",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrodher 𐐀dhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_quilboar",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODHER can’kt brODheR dhUNDARer bro'dher"
+    },
+    {
+      "language": "language_tolvir",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Braeng waater to te eastern gaate befure dawn. Do nut cross te broken bridget."
+    },
+    {
+      "language": "language_tolvir",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraidt, but I will nut leavet you aalone. I remembera te promiset you madet."
+    },
+    {
+      "language": "language_tolvir",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀te ☀️ é 中文 Straßet 123"
+    },
+    {
+      "language": "language_tolvir",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER qan’t brUTheR tUNDERera bro'ter"
+    },
+    {
+      "language": "language_titanic",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breing vater to te easteran gate befare dawan. Do nat cross te brokean bridge."
+    },
+    {
+      "language": "language_titanic",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bud I vill nat leave you alane. I rememberr te promise you made."
+    },
+    {
+      "language": "language_titanic",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrather 𐐀te ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_titanic",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRATHER kan’t brATheR tUNDERerr bro'ter"
+    },
+    {
+      "language": "language_giant",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Briung waater tto de eastoarn gaate befoare dawn. Do noat cross de brokoan bridge."
+    },
+    {
+      "language": "language_giant",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, but I will noat leave you aalone. I hrememboar de promise you made."
+    },
+    {
+      "language": "language_giant",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroather 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_giant",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROATHER caan’t brOATheR dUNDOARer bro'der"
+    },
+    {
+      "language": "language_tortollan",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Broing whater to te easteron gaute beforora dawon. Do not cross te brokeon bridgora."
+    },
+    {
+      "language": "language_tortollan",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afrait, bout I whill not leavora you aulone. I remember te promisora you made."
+    },
+    {
+      "language": "language_tortollan",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroter 𐐀te ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_tortollan",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROTER caun’t brOTeR tOUNDERer bro'ter"
+    },
+    {
+      "language": "language_drogbar",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung woter to khe easterna grate beforoa dawna. Do nota croszh khe brokena bridgoa."
+    },
+    {
+      "language": "language_drogbar",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buta I will nota leavoa you olone. I dremember khe promisoa you madoa."
+    },
+    {
+      "language": "language_drogbar",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrokher 𐐀khe ☀️ é 中文 Straßoa 123"
+    },
+    {
+      "language": "language_drogbar",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROKHER con’t brOKheR khUNDERer bro'kher"
+    },
+    {
+      "language": "language_tuskarr",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung woter to dhe easturn gote before dawnn. Do nok cross dhe brokun bridge."
+    },
+    {
+      "language": "language_tuskarr",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I amm afraid, buk I will nok leave you olone. I rremembur dhe promise you made."
+    },
+    {
+      "language": "language_tuskarr",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrodher 𐐀dhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_tuskarr",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODHER con’t brODheR dhUNDURer bro'dher"
+    },
+    {
+      "language": "language_maraudic",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brang wayter to te easterrn gayte befure dawrn. Do nut cross te brokern bridge."
+    },
+    {
+      "language": "language_maraudic",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afrait, but I will nut leave you aylone. I trememberr te promise you made."
+    },
+    {
+      "language": "language_maraudic",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀te ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_maraudic",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER cayn’t brUTheR tUNDERerr bro'ter"
+    },
+    {
+      "language": "language_shathyar",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brying waater to lthe eastern gaate befure dawn. Do nhot cross lthe broken bridge."
+    },
+    {
+      "language": "language_shathyar",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I will nhot leave you aalone. I vrememberth lthe promise you made."
+    },
+    {
+      "language": "language_shathyar",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀lthe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_shathyar",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER caan’t brUTheR lthUNDERerth bro'lther"
+    },
+    {
+      "language": "language_kalimag",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung whater to te eastarn gaete beforara dawun. Do nota crossh te brokan bridgara."
+    },
+    {
+      "language": "language_kalimag",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buta I whill nota leavara you aelone. I rremembar te promisara you made."
+    },
+    {
+      "language": "language_kalimag",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroter 𐐀te ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_kalimag",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROTER caen’t brOTeR tUNDARer bro'ter"
+    },
+    {
+      "language": "language_ignan",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breng water to tthe easternh gateh pefore dawnh. Do nok crossh tthe brokenh bridgeh."
+    },
+    {
+      "language": "language_ignan",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, put I will nok leaveh you aloneh. I kremember tthe promiseh you madeh."
+    },
+    {
+      "language": "language_ignan",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrotther 𐐀tthe ☀️ é 中文 Straßeh 123"
+    },
+    {
+      "language": "language_ignan",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROTTHER can’k brOTtheR tthUNDERer bro'tther"
+    },
+    {
+      "language": "language_terran",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung wauter to de easternd gaute befoore dawnd. Do noot cross de brokend bridge."
+    },
+    {
+      "language": "language_terran",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraidg, budt I will noot leave you aulone. I rremember de bromise you made."
+    },
+    {
+      "language": "language_terran",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroother 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_terran",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROOTHER caun’t brOOTheR dUNDERer bro'der"
+    },
+    {
+      "language": "language_aquan",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung wuater to dhe eastern guate befoure dawn. Do nout cross dhe broken bridgua."
+    },
+    {
+      "language": "language_aquan",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buta I will nout leavua you ualone. I vremember dhe promisua you madua."
+    },
+    {
+      "language": "language_aquan",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrouther 𐐀dhe ☀️ é 中文 Straßua 123"
+    },
+    {
+      "language": "language_aquan",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROUTHER cuan’t brOUTheR dhUNDERer bro'dher"
+    },
+    {
+      "language": "language_auran",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring whater to hhe eastern gaete bhefore dawn. Do nait cross hhe broken bridgeh."
+    },
+    {
+      "language": "language_auran",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraidh, bhut I whill nait leaveh you aelone. I rhemember hhe promiseh you madeh."
+    },
+    {
+      "language": "language_auran",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbraither 𐐀hhe ☀️ é 中文 Straßeh 123"
+    },
+    {
+      "language": "language_auran",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRAITHER caen’t brAITheR hhUNDERer bro'hher"
+    },
+    {
+      "language": "language_sethrak",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring witer to sse eastiirn gite befire dawn. Do nit crosss sse brokiin bridge."
+    },
+    {
+      "language": "language_sethrak",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bus I will nit leave you ilone. I remembiir sse promise you made."
+    },
+    {
+      "language": "language_sethrak",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrither 𐐀sse ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_sethrak",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRITHER cin’t brITheR ssUNDIIRer bro'sser"
+    },
+    {
+      "language": "language_vulpera",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring vater to tfe eastern geite vefore dawn. Do noit crosss tfe broken bridgi."
+    },
+    {
+      "language": "language_vulpera",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, vut I vill noit leavi you eilone. I remember tfe promisi you madi."
+    },
+    {
+      "language": "language_vulpera",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroither 𐐀tfe ☀️ é 中文 Straßi 123"
+    },
+    {
+      "language": "language_vulpera",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROITHER cein’t brOITheR tfUINDERer bro'tfer"
+    },
+    {
+      "language": "language_mogu",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bruung woter to de eastarn gote before dawng. Do nodt cross de brokan bridge."
+    },
+    {
+      "language": "language_mogu",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraidg, budt I will nodt leave you olone. I rremembar de bromise you made."
+    },
+    {
+      "language": "language_mogu",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroder 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_mogu",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRODER con’t brODeR dUNDARer bro'der"
+    },
+    {
+      "language": "language_jinyu",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring wuater to she eastirn guate befeore dawny. Do neot cross she brokin bridge."
+    },
+    {
+      "language": "language_jinyu",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buta I will neot leave you ualone. I rremembir she promise you made."
+    },
+    {
+      "language": "language_jinyu",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbreother 𐐀she ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_jinyu",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bREOTHER cuan’t brEOTheR shUNDIRer bro'sher"
+    },
+    {
+      "language": "language_pandaren",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Brung waoter to de eastern gaote befaore dawn. Do naot cross de broken bridge."
+    },
+    {
+      "language": "language_pandaren",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, budt I will naot leave you aolone. I rememberl de promise you made."
+    },
+    {
+      "language": "language_pandaren",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbraother 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_pandaren",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRAOTHER caon’t brAOTheR dUNDERerl bro'der"
+    },
+    {
+      "language": "language_eredun",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bruung waater to zhe easterng gaate befure dawng. Do nut cross zhe brokeng bridge."
+    },
+    {
+      "language": "language_eredun",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I will nut leave you aalone. I kremember zhe promise you made."
+    },
+    {
+      "language": "language_eredun",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀zhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_eredun",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER caan’t brUTheR zhUNDERer bro'zher"
+    },
+    {
+      "language": "language_nathrezim",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Braeng waeter to zhe easternr gaete befere dawnr. Do net cross zhe brokenr bridgael."
+    },
+    {
+      "language": "language_nathrezim",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I will net leavael you aelone. I vremember zhe promisael you madael."
+    },
+    {
+      "language": "language_nathrezim",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrether 𐐀zhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_nathrezim",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRETHER caen’t brETheR zhUNDERer bro'zher"
+    },
+    {
+      "language": "language_cursed",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring whater to khe easternh gaate befoare dawnh. Do noat cross khe brokenh bridgeth."
+    },
+    {
+      "language": "language_cursed",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I whill noat leaveth you aalone. I rremember khe promiseth you madeth."
+    },
+    {
+      "language": "language_cursed",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbroather 𐐀khe ☀️ é 中文 Straßeth 123"
+    },
+    {
+      "language": "language_cursed",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROATHER caan’t brOATheR khUNDERer bro'kher"
+    },
+    {
+      "language": "language_draenei",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Breing vater to dhe easterna gaate befuare dawna. Do nuat cross dhe brokena bridgeia."
+    },
+    {
+      "language": "language_draenei",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buta I vill nuat leaveia you aalone. I dremember dhe promiseia you madeia."
+    },
+    {
+      "language": "language_draenei",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruather 𐐀dhe ☀️ é 中文 Straßeia 123"
+    },
+    {
+      "language": "language_draenei",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUATHER caan’t brUATheR dhUNDERer bro'dher"
+    },
+    {
+      "language": "language_zandali",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring wayter to de eastarn gayte befaire dawna. Do nait cross de brokan bridge."
+    },
+    {
+      "language": "language_zandali",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buta I will nait leave you aylone. I zremembar de promise you made."
+    },
+    {
+      "language": "language_zandali",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbraither 𐐀de ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_zandali",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRAITHER cayn’t brAITheR dUNDARer bro'der"
+    },
+    {
+      "language": "language_taurahe",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Braung waater to hhe eastuurn gaate before dawna. Do noth cross hhe brokuun bridge."
+    },
+    {
+      "language": "language_taurahe",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, buth I will noth leave you aalone. I hremembuur hhe promise you made."
+    },
+    {
+      "language": "language_taurahe",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbrohher 𐐀hhe ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_taurahe",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bROHHER caan’t brOHheR hhUNDUURer bro'hher"
+    },
+    {
+      "language": "language_goblin",
+      "text": "Bring water to the eastern gate before dawn. Do not cross the broken bridge.",
+      "expected": "Bring weter to te eastirn gete bzefore dawn. Do nut cross te brokin bridge."
+    },
+    {
+      "language": "language_goblin",
+      "text": "I am afraid, but I will not leave you alone. I remember the promise you made.",
+      "expected": "I am afraid, bzut I will nut leave you elone. I kremembir te bromise you made."
+    },
+    {
+      "language": "language_goblin",
+      "text": "İbrother 𐐀the ☀️ é 中文 Straße 123",
+      "expected": "İbruther 𐐀te ☀️ é 中文 Straße 123"
+    },
+    {
+      "language": "language_goblin",
+      "text": "bROTHER can’t brOTheR thUNDERer bro'ther",
+      "expected": "bRUTHER cen’t brUTheR tUNDIRer bro'ter"
+    }
+  ]
+}

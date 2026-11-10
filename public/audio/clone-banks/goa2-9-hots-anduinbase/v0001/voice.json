@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-9-hots-anduinbase",
+  "revision": 1,
+  "name": "Anduin Wrynn — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "69c73eacf1a154ed3f6cb76dd961e42ff0636b1077924e81e18060c72f19ae6b",
+    "transcript_sha256": "a094efb540367537ed168f9f865559945890974dac2ddc4b881dd2301c5791b4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384464,
+      "seconds": 16.019333333333332,
+      "peak": 0.818756,
+      "rms_dbfs": -16.72,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-kisha-tortollan-wow-60b909d16014",
+  "revision": 1,
+  "name": "Kisha Wale — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7a58b8501df527fec431ccf3c9d9299e7ceea0c47732c38d6bf3727c9829d66d",
+    "transcript_sha256": "214b8f5883c571aa9b8cb3c1f96e7eee9c3121fcb4c31d1e1dfef0e92544c618",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 377698,
+      "seconds": 15.737416666666666,
+      "peak": 0.999969,
+      "rms_dbfs": -17.2,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

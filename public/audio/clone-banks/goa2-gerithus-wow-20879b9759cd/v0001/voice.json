@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-gerithus-wow-20879b9759cd",
+  "revision": 1,
+  "name": "Gerithus Green Dragonflight — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "bfe2a4961d186acbc23112a7dfe714462e95d3b0cc035356b0a6f930de748d05",
+    "transcript_sha256": "3c52aa09c1592d9a898c110d3194e090f7248d965f888bcbd1850629a6b46432",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 388967,
+      "seconds": 16.206958333333333,
+      "peak": 1.0,
+      "rms_dbfs": -14.16,
+      "clipped_samples": 33
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

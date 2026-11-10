@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-52058-wc3-korgall",
+  "revision": 1,
+  "name": "Kor'gall Stonemaul — ordinary (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7878272828102298d51e1068f882d2a591d5f3f68bd24c917b40455df0eee6e5",
+    "transcript_sha256": "f402d005d732c689264d2a1dc1dc14e8c24b5d40af03e5098794a6c3f1436537",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 66656,
+      "seconds": 2.7773333333333334,
+      "peak": 0.919434,
+      "rms_dbfs": -18.08,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

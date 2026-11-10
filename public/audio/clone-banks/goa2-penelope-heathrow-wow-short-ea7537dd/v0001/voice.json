@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-penelope-heathrow-wow-short-ea7537dd",
+  "revision": 1,
+  "name": "Penelope Heathrow — WoW indexed Penelope Heathrow short recorded soundset",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fbeff6d9e4870fd1d60e22f32f822259eeeeb8dac17a98734a1098099ffada39",
+    "transcript_sha256": "31af357a2c21397ecb096336cd666aeddff7f11258532fdc0e8e84a547d13321",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 167633,
+      "seconds": 6.984708333333334,
+      "peak": 0.982361,
+      "rms_dbfs": -17.75,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

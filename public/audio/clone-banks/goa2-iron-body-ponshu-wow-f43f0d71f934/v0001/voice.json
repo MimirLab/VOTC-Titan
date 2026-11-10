@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-iron-body-ponshu-wow-f43f0d71f934",
+  "revision": 1,
+  "name": "Ponshu — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ecc57cb693b52f27727841f2f105548cd32de7a27e1b1b74eac9e960528b62c2",
+    "transcript_sha256": "ff9f7b5e7d22c405479583861011c3203718c43b227a8d51d787f91743618cf8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 445068,
+      "seconds": 18.5445,
+      "peak": 0.978851,
+      "rms_dbfs": -14.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

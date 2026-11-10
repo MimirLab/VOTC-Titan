@@ -1,0 +1,41 @@
+name: Source checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: source-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.14'
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Compile TypeScript
+        run: npm run build
+      - name: Check source maintenance routing
+        run: npm test -- --runInBand --runTestsByPath tests/project-maintenance.test.ts
+      - name: Check asset import, native build and launcher-only installation
+        run: python3 -m unittest discover -s tests/deployment -p 'test_*.py'
+
+# Full runtime tests and desktop/game acceptance also require the verified asset
+# bundle and an appropriate local environment; see docs/github-maintenance.md.

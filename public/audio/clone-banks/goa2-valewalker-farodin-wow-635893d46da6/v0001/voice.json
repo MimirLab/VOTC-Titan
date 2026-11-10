@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-valewalker-farodin-wow-635893d46da6",
+  "revision": 1,
+  "name": "Farodin — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4c306e7de248c3cb81090298cb99339b53c393cda98e18706ea1327fb9a620ca",
+    "transcript_sha256": "6759de115f24786d816494385a946c34f2e2efc8bfe69f4079780091dc39b7cf",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 373009,
+      "seconds": 15.542041666666666,
+      "peak": 0.980743,
+      "rms_dbfs": -17.38,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

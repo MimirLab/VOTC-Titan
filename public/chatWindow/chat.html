@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="titan-overlay">
+<head>
+    <script>require("../../dist/shared/titanAppearance.js")</script>
+  <meta charset="utf-8">
+  <title>VOTC Titan Edition - Chat</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="chat.css"/>
+  <link rel="stylesheet" href="user.css"/>
+  <link rel="stylesheet" href="theme.css"/>
+  <style>
+    .target-indicator {
+        font-size: 0.8em;
+        color: #888;
+        margin-left: 10px;
+        font-style: italic;
+    }
+    .action-character-select {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .action-character-select label {
+        margin-bottom: 5px;
+        color: #cca43b;
+    }
+    .action-feedback {
+        padding: 10px;
+        margin: 10px 0;
+        border-left: 3px solid #2ecc71;
+        background-color: rgba(46, 204, 113, 0.1);
+        color: #d0e0d0;
+        font-style: italic;
+        border-radius: 3px;
+    }
+    #character-target-container {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+    #character-target-container label {
+        margin-right: 5px;
+        font-size: 0.9em;
+    }
+    .current-speaker {
+        font-weight: bold;
+        color: #cca43b;
+    }
+    .next-up {
+        font-weight: bold;
+        color: #b8860b;
+    }
+  </style>
+    <link rel="stylesheet" href="../styles/titan.css">
+</head>
+<body>
+  <div class="chat-box">
+  <div class="drag-handle"></div>
+    <div class="chat-header">
+      <div class="search-container" data-tooltip="Search messages">
+        <div class="search-icon">🔍</div>
+        <div class="search-dropdown">
+          <input type="text" class="search-input" data-i18n-placeholder="chat.search_placeholder" placeholder="Search...">
+        </div>
+      </div>
+      <div class="reset-button-wrapper" data-tooltip="Reset window">
+        <button class="reset-button">🔄</button>
+      </div>
+      <div class="config-button-wrapper" id="config-button-wrapper" data-i18n-title="chat.config_tooltip">
+        <button id="config-button" class="config-button">⚙️</button>
+      </div>
+    </div>
+
+    <div class="messages-container">
+      <div class="messages">
+          <!-- Historical conversations will be injected here -->
+      </div>
+    </div>
+    <div class="activity-panel" aria-label="Conversation activity">
+      <div class="queue-status" role="status" aria-live="polite"></div>
+      <div class="activity-loading" role="status" aria-live="polite"></div>
+    </div>
+    <div class="input-container">
+      <textarea class="chat-input" data-i18n-placeholder="chat.input_placeholder" placeholder="Write a message..." rows="4" cols="20"></textarea>
+      <div class="suggestions-container" style="display: none;">
+        <div class="suggestions-header">
+          <span data-i18n="suggestions.header">Recommended Input</span>
+          <button class="suggestions-close">×</button>
+        </div>
+        <div class="suggestions-list">
+        </div>
+      </div>
+      <div class="input-footer">
+        <div class="suggestions-button-wrapper" data-i18n-title="suggestions.tooltip">
+          <button class="suggestions-button" data-i18n="suggestions.button">Suggestions</button>
+        </div>
+        <div class="token-display-wrapper" data-i18n-title="chat.tokenizer_tooltip" style="display: none;">
+          <div class="token-display">
+            <span class="token-count">Tokens: 0</span>
+            <span class="context-limit">/ 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="character-target-wrapper" style="display: none;" data-i18n-title="chat.target_tooltip">
+        <div id="character-target-container">
+            <label for="character-target-select" data-i18n="chat.target_label">Target Character:</label>
+            <div class="custom-select-container" id="character-target-select-container">
+                <div class="custom-select-value" id="character-target-value"></div>
+                <div class="custom-select-options" id="character-target-options" style="display: none;"></div>
+                <input type="hidden" id="character-target-hidden-input" value="auto">
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+      <div class="button-wrapper" id="undo-button-wrapper" data-i18n-title="chat.undo_tooltip">
+        <button class="undo-button" data-i18n="chat.undo_button">UNDO</button>
+      </div>
+      <div class="button-wrapper" id="regenerate-button-wrapper" data-i18n-title="chat.regenerate_tooltip" title="You can only regenerate a response if the AI was the last one to speak.">
+        <button class="regenerate-button" data-i18n="chat.regenerate_button" disabled>REGENERATE</button>
+      </div>
+      <div class="button-wrapper" id="clear-history-button-wrapper" data-i18n-title="chat.clear_history_tooltip" style="display: none;">
+        <button class="clear-history-button" id="clear-history-button" data-i18n="chat.clear_history_button">CLEAR HISTORY</button>
+      </div>
+      <div class="button-wrapper hidden" id="cancel-button-wrapper" data-i18n-title="chat.cancel_response_tooltip">
+        <button class="cancel-button" id="cancel-button" data-i18n="chat.cancel_button">CANCEL</button>
+      </div>
+      <div class="button-wrapper" id="leave-button-wrapper" data-i18n-title="chat.leave_tooltip">
+        <button class="leave-button" data-i18n="chat.leave_button">END CONVERSATION</button>
+      </div>
+    </div>
+    <div id="slash-command-container" class="slash-command-container" style="display: none;"></div>
+  </div>
+
+  <script>require("../../dist/shared/LocalizationManager.js")</script>
+  <script>
+    const { LocalizationManager } = require("../../dist/shared/LocalizationManager.js");
+    window.LocalizationManager = LocalizationManager;
+  </script>
+  <script>require("../../dist/chatWindow/chatRenderer.js")</script>
+</body>
+</html>

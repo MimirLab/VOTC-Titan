@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-senegos-wow-7ddf74667f71",
+  "revision": 1,
+  "name": "Senegos Azurewing — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "67e74f73bed8e8c2d7c8d9c61d604dabb4e30800b30b3de583b4865e378157f0",
+    "transcript_sha256": "59663e094c2f939c16dd92367f25cbe1ee23103c942e2fc1215966eca6b57581",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 362515,
+      "seconds": 15.104791666666667,
+      "peak": 0.999664,
+      "rms_dbfs": -15.26,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

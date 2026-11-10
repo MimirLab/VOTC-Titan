@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-razak-ironsides-wow-62163017e72c",
+  "revision": 1,
+  "name": "Razak Ironsides — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "849f0d259eca4be17afbcea9c69513c3397c65450a8e6c6e6b2402bbd14b3c6f",
+    "transcript_sha256": "c170a8d5198b93d9531a9e5b2d793d0710d5b8e9319af13fade74c5fb5cb6990",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376310,
+      "seconds": 15.679583333333333,
+      "peak": 0.791504,
+      "rms_dbfs": -19.39,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

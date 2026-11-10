@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400502-wow-fd7da2c2b899",
+  "revision": 1,
+  "name": "Thorim — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f8323faa892e9fed61e98214e1f94d128ac2c72ca9ed8841010fb5d8f693e0f7",
+    "transcript_sha256": "d13a38bb1ae46bc8101174bf098f2ae32990d4c3b06f82ae2a27aff67c41a8bd",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 366605,
+      "seconds": 15.275208333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.63,
+      "clipped_samples": 17
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

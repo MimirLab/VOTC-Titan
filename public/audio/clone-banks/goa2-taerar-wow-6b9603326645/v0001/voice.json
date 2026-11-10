@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-taerar-wow-6b9603326645",
+  "revision": 1,
+  "name": "Taerar — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8f3fea8ad7ef6dbe98895abe2539e61965318375c9872b4023b7b937605c3e86",
+    "transcript_sha256": "05acb6e5272eb130da2bc33311059baeb5b569bf86d015c23c75c94294ef11f6",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 193437,
+      "seconds": 8.059875,
+      "peak": 1.0,
+      "rms_dbfs": -14.27,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

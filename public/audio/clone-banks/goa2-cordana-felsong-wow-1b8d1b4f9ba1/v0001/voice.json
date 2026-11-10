@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-cordana-felsong-wow-1b8d1b4f9ba1",
+  "revision": 1,
+  "name": "Cordana Felsong — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4f07155db0eb880fc6b2f2b280692556c841ce42630ba1010b8da07dc33d6bc5",
+    "transcript_sha256": "bd165585ffb5ad624b305c4d4d96e5c22aa4a28cf9edd68b16abcbec6079122c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393969,
+      "seconds": 16.415375,
+      "peak": 0.772125,
+      "rms_dbfs": -20.42,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

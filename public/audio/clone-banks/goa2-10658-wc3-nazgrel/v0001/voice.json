@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10658-wc3-nazgrel",
+  "revision": 1,
+  "name": "Nazgrel Kash'ar — ordinary (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1f8ce9a818a45f80277f7577da5001bf425a01a4fdaa6e77f415b403882d2993",
+    "transcript_sha256": "d69f8a9a55a844fcba3df9a283b26ae2b1a5b4d4b6e223f40426f201668ec13f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 105069,
+      "seconds": 4.377875,
+      "peak": 0.819733,
+      "rms_dbfs": -21.82,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

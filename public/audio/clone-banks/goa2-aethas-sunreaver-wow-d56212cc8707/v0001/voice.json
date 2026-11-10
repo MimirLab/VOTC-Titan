@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-aethas-sunreaver-wow-d56212cc8707",
+  "revision": 1,
+  "name": "Aethas Sunreaver — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ff135c9964c2cf65e979e799a4fba72fadaf3e42717b853ecb96cd1aa6d5d3ac",
+    "transcript_sha256": "7017334551e8a30a03792811e2d1aca257e62ecb213751584c6783b818fe6eb4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 381094,
+      "seconds": 15.878916666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.57,
+      "clipped_samples": 18
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

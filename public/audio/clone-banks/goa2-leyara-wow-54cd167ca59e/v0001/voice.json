@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-leyara-wow-54cd167ca59e",
+  "revision": 1,
+  "name": "Leyara — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "253ec315c4a61ecbe624fbec308546de6f5088913b8330194ea2663d21bfe74a",
+    "transcript_sha256": "6442d0eec12dea8c0dd97fb608f77eff85b0c70cf5af13df36a03324d73aadb7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 347292,
+      "seconds": 14.4705,
+      "peak": 0.900299,
+      "rms_dbfs": -16.62,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

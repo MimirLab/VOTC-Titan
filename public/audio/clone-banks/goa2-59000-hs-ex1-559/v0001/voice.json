@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-59000-hs-ex1-559",
+  "revision": 1,
+  "name": "Antonidas — Archmage Antonidas (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f6999a243144dd290ee1ee7b0cce4212458b6e90228de65c6c473bb501758533",
+    "transcript_sha256": "a15ed25a3d1d1e00eb77beb797bc71ccbf1b45673b924c955af80861b7f82dd9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 46058,
+      "seconds": 1.9190833333333333,
+      "peak": 0.882843,
+      "rms_dbfs": -16.83,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

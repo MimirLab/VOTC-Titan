@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-thalrenus-rivertree-wow-ffbf0be81439",
+  "revision": 1,
+  "name": "Thalrenus Rivertree — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "11aa59e8cdcf7d494c63337fae79cd58e28681e203419dddb7550c82f9c982f8",
+    "transcript_sha256": "3e10ca04068af4f8fafb6e71dbe3974607d73f634729c6d6f9a7cd550b291695",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 380882,
+      "seconds": 15.870083333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.55,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

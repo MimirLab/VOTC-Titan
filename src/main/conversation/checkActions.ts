@@ -1,0 +1,340 @@
+import { scenePacket, actionForScene, runActionWithScenePolicy } from '../scenes/sceneRuntime';
+import { composeGoaContext, finishGoaContext } from '../goa/goaRuntime';
+import { Conversation } from "./Conversation";
+import { recipientMessages, promptPerceptionMessages } from '../language';
+import { characterKnowledgeInstruction } from '../language/conversationView';
+import { characterPromptDescription } from './characterPromptDescription';
+import { Config } from "../../shared/Config";
+import { Character } from "../../shared/gameData/Character";
+import { convertMessagesToString, getEffectivePrompts } from "./promptBuilder";
+import path from 'path';
+import { Message, Action, ActionResponse, PendingAction } from "../ts/conversation_interfaces";
+import { parseVariables } from "../parseVariables";
+import { formatActionNotice } from './actionNotice';
+import { generateNarrative } from "./generateNarrative";
+import { ActionEffectWriter } from "./ActionEffectWriter.js";
+
+export async function checkActions(conv: Conversation, sourceId: number, targetId: number): Promise<ActionResponse[]>{
+    const active = () => conv.isOpen !== false;
+    if (!active()) return [];
+    const requestSignal = conv.abortController?.signal;
+    const sourceRevision = conv.getEncounterRevision?.();
+    console.log(`Starting action check for source: ${sourceId}, target: ${targetId}`);
+    const character = conv.gameData.getCharacterById(sourceId) || conv.gameData.getPlayer();
+    conv.chatWindow.window.webContents.send('status-update', 'chat.status_checking_actions', { characterName: character.shortName });
+
+    let availableActions: Action[] = [];
+
+    for(let action of conv.actions){
+        try{
+            // The check function now receives the initial context of who is talking to whom.
+            if(action.check(conv.gameData, sourceId, targetId)){
+                availableActions.push(actionForScene(action, conv.gameData))
+            }
+        }catch(e){
+            let errMsg =`Action error: failure in check function. action: ${action.signature}; details: `+e;
+            console.error(errMsg)
+            conv.chatWindow.window.webContents.send('error-message', errMsg);
+        }
+    }
+    console.log(`Available actions for current context: ${availableActions.map(a => a.signature).join(', ')}`);
+
+    if (availableActions.length === 0) {
+        console.log('No actions available for current context.');
+        return [];
+    }
+
+    let triggeredActions: ActionResponse[] = [];
+
+    let response;
+    const prompt = buildActionChatPrompt(conv, availableActions, character);
+    if(conv.actionsApiConnection.isChat()){
+        const result = await conv.actionsApiConnection.complete(prompt, false, {}, undefined, requestSignal);
+        response = typeof result === 'string' ? result : (result?.content ?? '');
+    } else {
+        let textPrompt = convertChatToTextPrompt(prompt, conv.config );
+        const result = await conv.actionsApiConnection.complete(textPrompt, false, {stop: [conv.config.inputSequence, conv.config.outputSequence]}, undefined, requestSignal);
+        response = typeof result === 'string' ? result : (result?.content ?? '');
+    }
+    if (!active() || requestSignal?.aborted ||
+        (sourceRevision !== undefined && sourceRevision !== conv.getEncounterRevision?.())) return [];
+    response = response.replace(/(\r\n|\n|\r)/gm, "");
+
+    if(!response.match(/<rationale>(.*?)<\/?rationale>/) || !response.match(/<actions>(.*?)<\/?actions>/)){
+        console.warn("Action warning: rationale or action couldn't be extracted from LLM response. Response: "+ response);
+        return [];
+    }
+
+    const rationale = response.match(/<rationale>(.*?)<\/rationale>/)![1];
+    const actionsString = response.match(/<actions>(.*?)<\/actions>/)![1];
+    console.log(`Extracted rationale: ${rationale}`);
+    console.log(`Extracted actions string: ${actionsString}`);
+
+    if(actionsString.trim().toLowerCase().startsWith("noop")){
+        console.log('LLM returned "noop()", no actions triggered.');
+        return [];
+    }
+
+    const actions = actionsString.split(/\s*,\s*(?=[a-zA-Z_][a-zA-Z0-9_]*\()/).filter(a => !a.trim().toLowerCase().startsWith('noop'));
+
+    for(const actionInResponse of actions){
+        // Skip manual approval for noop actions that might have slipped through
+        if (actionInResponse.trim().toLowerCase().startsWith('noop')) {
+            continue;
+        }
+        const foundActionName = actionInResponse.match(/([a-zA-Z_{1}][a-zA-Z0-9_]+)(?=\()/g);
+        if(!foundActionName){
+            console.warn(`Action warning: Could not extract action name from "${actionInResponse}". Skipping.`);
+            continue;
+        }
+
+        const matchedAction = availableActions.find(a => a.signature.toLowerCase() == foundActionName[0].toLowerCase());
+        if(!matchedAction){
+            console.warn(`Action warning: The returned action "${foundActionName[0]}" from LLM matched none of the listed available actions. Skipping.`);
+            continue;
+        }
+
+        const argsString = /\(([^)]+)\)/.exec(actionInResponse);
+        const allArgs = argsString ? argsString[1].split(",").map(arg => arg.trim()) : [];
+
+        // NEW: Expect source and target IDs from the LLM
+        if (allArgs.length < 2) {
+            console.warn(`Action warning: Action "${actionInResponse}" did not include sourceId and targetId. Skipping.`);
+            continue;
+        }
+
+        const newSourceId = parseInt(allArgs[0], 10);
+        const newTargetId = parseInt(allArgs[1], 10);
+        const actionArgs = allArgs.slice(2); // The rest are the actual action arguments
+
+        if (isNaN(newSourceId) || isNaN(newTargetId)) {
+            console.warn(`Action warning: Invalid sourceId or targetId in "${actionInResponse}". Skipping.`);
+            continue;
+        }
+
+        if (actionArgs.length > matchedAction.args.length) {
+            console.warn(`Action warning: The matched action "${matchedAction.signature}" received too many arguments (${actionArgs.length}) from the LLM response, expected no more than ${matchedAction.args.length}. Skipping.`);
+            continue;
+        }
+
+        // Argument type validation (can be expanded)
+        let isValidAction = true;
+        for(let i = 0; i < actionArgs.length; i++){
+            if(matchedAction.args[i].type === "number" && isNaN(Number(actionArgs[i]))){
+                console.warn(`Action warning: Argument "${actionArgs[i]}" for action "${matchedAction.signature}" was not a valid number. Skipping.`);
+                isValidAction = false;
+                break;
+            }
+        }
+        if(!isValidAction) continue;
+
+      // Duplicate action check for the current turn. Key is based on signature, source, and target, ignoring args
+      // to prevent LLM hallucinations on args from causing duplicate triggers.
+      const actionKey = `${matchedAction.signature.toLowerCase()}:${newSourceId}:${newTargetId}`;
+      if (conv.currentTurnTriggeredActions.has(actionKey)) {
+        console.warn(`Action warning: Duplicate action "${actionKey}" detected in the same turn. Skipping.`);
+        continue;
+      }
+      // If not a duplicate, add it to the set before processing.
+      conv.currentTurnTriggeredActions.add(actionKey);
+      console.log(`[checkActions] Added action to duplicate check set: ${actionKey}`);
+      // NEW: Perform pre-check if available
+      if (matchedAction.preCheck) {
+        const preCheckResult = matchedAction.preCheck(conv.gameData, actionArgs, newSourceId, newTargetId);
+        if (!preCheckResult.success) {
+                console.warn(`Action pre-check failed for "${matchedAction.signature}": ${preCheckResult.message}`);
+                if (preCheckResult.message) {
+                    conv.chatWindow.window.webContents.send('error-message', `Action '${matchedAction.signature}' cannot be executed: ${preCheckResult.message}`);
+                }
+                continue; // Skip to the next action
+            }
+        }
+
+        // NEW: Manual Action Approval Logic
+        if (conv.config.manualActionApproval) {
+            // Skip approval for noop actions
+            if (matchedAction.signature.toLowerCase().startsWith('noop')) {
+                console.log('Skipping approval for noop action.');
+                continue;
+            }
+            const lastMessage = conv.messages[conv.messages.length - 1];
+            if (!lastMessage || !lastMessage.id) {
+                console.error("Cannot request action approval, last message has no ID.");
+                continue;
+            }
+
+            const pendingAction: PendingAction = {
+                action: matchedAction,
+                args: actionArgs,
+                sourceId: newSourceId,
+                targetId: newTargetId
+            };
+
+            if (!conv.pendingActions.has(lastMessage.id)) {
+                conv.pendingActions.set(lastMessage.id, []);
+            }
+            conv.pendingActions.get(lastMessage.id)!.push(pendingAction);
+
+            const approvalResponse: ActionResponse = {
+                actionName: matchedAction.signature,
+                chatMessage: formatActionNotice(matchedAction, actionArgs, conv.gameData, newSourceId, newTargetId, conv.config.language),
+                chatMessageClass: matchedAction.chatMessageClass
+            };
+
+            conv.chatWindow.window.webContents.send('action-approval-request', lastMessage.id, [approvalResponse]);
+            console.log(`Sent action "${matchedAction.signature}" for manual approval.`);
+
+        } else { // Execute directly if manual approval is off
+            // Capture names before effects can remove a participant from the conversation.
+            const chatMessage = matchedAction.chatMessageClass != null ?
+                formatActionNotice(matchedAction, actionArgs, conv.gameData, newSourceId, newTargetId, conv.config.language) : '';
+            console.log(`Executing action: ${matchedAction.signature} with source: ${newSourceId}, target: ${newTargetId}, args: [${actionArgs.join(', ')}]`);
+            try {
+                let effectBody = "";
+                // Use the LLM-provided IDs
+                runActionWithScenePolicy(matchedAction, conv.gameData, (text: string) => { effectBody += text; }, actionArgs, newSourceId, newTargetId);
+                ActionEffectWriter.appendEffect(
+                    conv.runFileManager,
+                    conv.gameData,
+                    newSourceId,
+                    newTargetId,
+                    effectBody
+                );
+
+                // Hardcoded effect for leaveConversation
+                if (matchedAction.signature === 'leaveConversation' || matchedAction.signature === 'killCharacter') {
+                    if (newTargetId === conv.gameData.playerID) {
+                        console.log(`Player is leaving or was killed. Ending session. Action: ${matchedAction.signature}`);
+                        conv.chatWindow.window.webContents.send('chat-hide');
+                        conv.chatWindow.hide();
+                        if (conv && conv.isOpen) {
+                            conv.saveHistoryAndTriggerSummarization();
+                        }
+                    } else {
+                        conv.removeCharacter(newTargetId);
+                    }
+                }
+
+                // Regenerate scene description if location changes
+                if (matchedAction.signature === 'changeLocation' && !conv.gameData.sceneSnapshot) {
+                    conv.generateSceneDescription();
+                }
+            } catch(e) {
+                let errMsg =`Action error: failure in run function for action: ${matchedAction.signature}; details: `+e;
+                console.error(errMsg)
+                conv.chatWindow.window.webContents.send('error-message', errMsg);
+            }
+
+            if(matchedAction.chatMessageClass != null){
+                triggeredActions.push({
+                    actionName: matchedAction.signature,
+                    chatMessage,
+                    chatMessageClass: matchedAction.chatMessageClass
+                })
+            }
+            console.log(`Action "${matchedAction.signature}" successfully triggered.`);
+        }
+    }
+
+    if (triggeredActions.length > 0) {
+        conv.runFileManager.append(`
+          root = {trigger_event = mcc_event_v2.9003}
+            `
+        );
+    }
+
+    console.log(`Final triggered actions: ${triggeredActions.map(a => a.actionName).join(', ')}`);
+    return triggeredActions;
+}
+
+function buildActionChatPrompt(conv: Conversation, actions: Action[], actor: Character): Message[]{
+    let output: Message[] = [];
+
+    const descriptionScriptFileName = conv.config.selectedDescScript;
+    const descriptionPath = path.join(conv.votcDataPath, 'scripts', 'prompts', 'description', descriptionScriptFileName);
+    let description = "";
+    try{
+        description = characterPromptDescription(conv.gameData, actor, conv.config, conv.votcDataPath, conv.translations);
+    }catch(err){
+        console.error(`Description script error for '${descriptionScriptFileName}': ${err}`);
+        conv.chatWindow.window.webContents.send('error-message', `Error in description script '${descriptionScriptFileName}'.`);
+    }
+
+    const goaContext = composeGoaContext(description, actor, conv.config, conv.gameData, 'action');
+    description = goaContext.description + "\n\n" + scenePacket(conv.gameData);
+
+    let characterList = "Characters in conversation:";
+    for (const char of conv.gameData.characters.values()) {
+        characterList += `\n- ${char.fullName} (ID: ${char.id})`;
+    }
+
+    let listOfActions = `List of actions:`;
+    for(const action of actions){
+        let argNames: string[] = [];
+        action.args.forEach( arg => { argNames.push(arg.name)})
+        // The LLM will now provide source and target, so we don't include them in the signature shown to it.
+        // Show the full signature including sourceId/targetId so the LLM knows the
+        // exact argument order. Omitting them caused the LLM to guess the order and
+        // emit malformed actions (e.g. addTrait(wrathful, 49643, ...)).
+        let signature = action.signature+'(sourceId, targetId'+(argNames.length > 0 ? ', '+argNames.join(', ') : '')+')';
+        let argString = action.args.length > 0 ? `Takes ${action.args.length} arguments: ` : "Takes no arguments.";
+
+        for(const arg of action.args){
+            let argDesc = arg.desc;
+            if (typeof argDesc === 'object') {
+                argDesc = argDesc[conv.config.language] || argDesc['en'] || Object.values(argDesc)[0];
+            }
+            argString += `${arg.name} (${arg.type}): ${argDesc}. `;
+
+            if ((arg as any).options && Array.isArray((arg as any).options)) {
+                const optionValues = (arg as any).options.map((opt: any) => typeof opt === 'object' ? opt.value : opt).join(', ');
+                argString += `Possible values: [${optionValues}]. `;
+            }
+        }
+
+        let description = action.description;
+        if (typeof description === 'object') {
+            description = description[conv.config.language] || description['en'] || Object.values(description)[0];
+        }
+        listOfActions += `\n- ${signature}: ${parseVariables(description, conv.gameData)} ${parseVariables(argString, conv.gameData)}`;
+    }
+
+    listOfActions += `\n- noop(): Execute when none of the previous actions are a good fit for the given replies.`
+    listOfActions += `\nExplain why and which actions you would trigger (rationale), then write the most appropriate actions (actions). For each action, you MUST identify the source and the target by their ID from the character list. If you think multiple actions should be triggered, then separate them with commas (,) inside the <actions> tags.`
+    listOfActions += `\nResponse format: <rationale>Reasoning.</rationale><actions>actionName1(sourceId, targetId, arg1, arg2), actionName2(sourceId, targetId)</actions>`
+    listOfActions += `\nCRITICAL: The first two arguments of every action MUST be the source character ID and the target character ID, in that exact order. The action's own arguments (if any) come AFTER the source and target IDs. Never place an action's arguments before the IDs. Only use actions whose argument count matches the signature shown above.`
+
+    const prompts = getEffectivePrompts(conv.config, conv.votcDataPath, conv.gameData);
+
+    output.push({
+        role: "system",
+        content: prompts.actionPrompt
+    })
+
+    output.push({
+        role: "user",
+        content: `Based on the following dialogue, choose the most relevant actions.
+${characterList}
+"Prior dialogue:\n"+ ${convertMessagesToString(promptPerceptionMessages(recipientMessages(conv, actor.id), actor.id).slice(-8, -2), "", "")}
+${description}
+"Given these replies:\n${convertMessagesToString(promptPerceptionMessages(recipientMessages(conv, actor.id), actor.id).slice(-2), "", "")}
+${listOfActions}`
+    })
+
+    if (conv.hasLanguageMessages?.()) output[output.length - 1].content += '\n\n' + characterKnowledgeInstruction(actor.fullName);
+    output[output.length - 1].content = finishGoaContext(output[output.length - 1].content, goaContext);
+    return output;
+}
+
+export function convertChatToTextPrompt(messages: Message[], config: Config): string{
+    let output: string = "";
+    for(let msg of messages){
+        if(msg.role === "user"){
+            output+=config.inputSequence+"\n";
+        }
+        output += msg.content+"\n";
+    }
+
+    output+=config.outputSequence+"\n";
+    return output;
+}

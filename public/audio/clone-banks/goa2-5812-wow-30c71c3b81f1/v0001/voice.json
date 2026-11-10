@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-5812-wow-30c71c3b81f1",
+  "revision": 1,
+  "name": "Vanessa VanCleef — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "333984a406672c72b64587db192a256b3cfd29981bb48e9eacbf64de9fea2cd8",
+    "transcript_sha256": "7230207a01cf2f1c50990fed688984fd6e01163108209f75fd13494c2ade5763",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 379249,
+      "seconds": 15.802041666666666,
+      "peak": 0.991577,
+      "rms_dbfs": -17.55,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-volkaal-wow-c7c91fce9360",
+  "revision": 1,
+  "name": "Vol'kaal — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d17353b8a7dd0aeeceaa7ab02bb892806b351422b83b77fcb4f127b6674c7d5a",
+    "transcript_sha256": "e82bf26be7bf583b695660c39fcb41464c7a41753f84911e7ebe12ec5cfc5ae1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 403472,
+      "seconds": 16.811333333333334,
+      "peak": 1.0,
+      "rms_dbfs": -14.56,
+      "clipped_samples": 11
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

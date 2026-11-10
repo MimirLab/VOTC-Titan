@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-blaumeux-wow-selected-59a570d055",
+  "revision": 1,
+  "name": "Blaumeux — Dame Blaumeux; WoW Naxxramas undead recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c2b128d2915ab2f51a07fdb1917f8a88768f3574fb4a2b52772ae57c6bb35f72",
+    "transcript_sha256": "62e2a25bae362c92d981df54138de8fc6a4d0032ef12cf2def420008a752cdea",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 397893,
+      "seconds": 16.578875,
+      "peak": 1.0,
+      "rms_dbfs": -15.44,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

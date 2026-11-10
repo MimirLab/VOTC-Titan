@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-majo-tortollan-wow-eae23b186292",
+  "revision": 1,
+  "name": "Majo Enny — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d514d316ad0b93427b0343a29b44a4209e9f24454b7a7035a61c501d9364f3ec",
+    "transcript_sha256": "89d9c769d49ee76e55d95e9f032382ee3601cfaeb339c6dc12fec2b35c998cf2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 411290,
+      "seconds": 17.137083333333333,
+      "peak": 0.981262,
+      "rms_dbfs": -18.34,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

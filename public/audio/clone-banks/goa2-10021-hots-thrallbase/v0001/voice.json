@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10021-hots-thrallbase",
+  "revision": 1,
+  "name": "Thrall — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6a0b691f14c6fbfcceb648e71150b58a6d2452e73461e5a914ea28fe40429c15",
+    "transcript_sha256": "a4f01cac90b3f9530fcfbe24c04344808e4b7179d7d4d8ac7fdc583ed37a5c16",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 435850,
+      "seconds": 18.160416666666666,
+      "peak": 0.945465,
+      "rms_dbfs": -15.1,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

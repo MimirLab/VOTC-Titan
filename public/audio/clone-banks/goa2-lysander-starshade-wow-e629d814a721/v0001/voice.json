@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lysander-starshade-wow-e629d814a721",
+  "revision": 1,
+  "name": "Lysander Starshade — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "15fd5e4910b0e0a1f01f9819ee2ee7e8162a8b7ff9f23f42904c43343d130973",
+    "transcript_sha256": "7aa323be3d457719c16e8d1e57b4d1cb9e71a92d952946f709750178c6bbff62",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 395901,
+      "seconds": 16.495875,
+      "peak": 0.992676,
+      "rms_dbfs": -16.63,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

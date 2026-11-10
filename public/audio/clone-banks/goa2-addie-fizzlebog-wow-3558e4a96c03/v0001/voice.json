@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-addie-fizzlebog-wow-3558e4a96c03",
+  "revision": 1,
+  "name": "Addie Fizzlebog — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d1b89504c866b9a0e123b002d34e5bc0889875a9589b83d11e28007ba5ba6d9f",
+    "transcript_sha256": "5603699a7f9f63c827b48bd3596ed0b86bb6708beef211a35158f556fe6ee64a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 398475,
+      "seconds": 16.603125,
+      "peak": 0.973999,
+      "rms_dbfs": -19.8,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

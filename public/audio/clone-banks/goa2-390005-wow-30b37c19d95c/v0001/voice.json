@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-390005-wow-30b37c19d95c",
+  "revision": 1,
+  "name": "Vorrik Ssthak — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6a58317eaaedac1ca812cb0cdfce8a4b0e76d69f33861df06e30f66dec5ba033",
+    "transcript_sha256": "dd8c057fff89d9d23e9e0511d4947e22104183d14c866b1e836d1c146344b0c8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 348809,
+      "seconds": 14.533708333333333,
+      "peak": 0.974609,
+      "rms_dbfs": -16.8,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

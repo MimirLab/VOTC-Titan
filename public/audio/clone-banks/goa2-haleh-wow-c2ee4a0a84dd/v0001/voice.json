@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-haleh-wow-c2ee4a0a84dd",
+  "revision": 1,
+  "name": "Haleh — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "dc7c9ca4f183101318477d4555e9286e155351a3c0810f9fae6811b083d8f26d",
+    "transcript_sha256": "0478e51e88e11519ec87379ef13115344fbb411581ca2a16ebdf239adab0386b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393639,
+      "seconds": 16.401625,
+      "peak": 0.814697,
+      "rms_dbfs": -16.52,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-38002-wow-7b7ed7ce09fd",
+  "revision": 1,
+  "name": "Galen Trollbane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4470fbd390ca108243e78f6858f3d4e45cf8be883f1516e3446177ce286d9798",
+    "transcript_sha256": "5632e116e56310bd76e3d9110ff51c5bb10275992c096655bbcc85e3ed5e261a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 418266,
+      "seconds": 17.42775,
+      "peak": 1.0,
+      "rms_dbfs": -16.8,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

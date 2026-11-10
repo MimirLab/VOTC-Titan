@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-griftah-hs-trl-096",
+  "revision": 1,
+  "name": "Griftah — Griftah (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4f5ea4c708f0e8c57062efd25f251da6ed6c631967b1536e7e304abb7acf9160",
+    "transcript_sha256": "a34607baa47cb8c9fe9aa491a0b37acf51b3ef4bc53ecc495c88b38c71ca0d09",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 78137,
+      "seconds": 3.255708333333333,
+      "peak": 0.956696,
+      "rms_dbfs": -16.81,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

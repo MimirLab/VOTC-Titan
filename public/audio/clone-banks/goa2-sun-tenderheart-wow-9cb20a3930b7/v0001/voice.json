@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-sun-tenderheart-wow-9cb20a3930b7",
+  "revision": 1,
+  "name": "Sun Tenderheart — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c5e9119da266448e2c25d3b7d4c793a485bd34a8b2ea4f64719767ecbe5b65ac",
+    "transcript_sha256": "a4f5147abc756c2f790696ded805cd961e76f13df82d26388737efb7370be929",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 223400,
+      "seconds": 9.308333333333334,
+      "peak": 0.999847,
+      "rms_dbfs": -17.19,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340100-wow-selected-9e0436443b",
+  "revision": 1,
+  "name": "Shandris Feathermoon — Shandris Feathermoon; WoW 8.1 recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3e12bfad9fa80abe0b933a9552da5a9b865ca5f4dc2f04e82d0e241d064962d1",
+    "transcript_sha256": "bf6ab7a162bfabf874e151e6c454ed0d05c761b87f70907df3ff27d8aa64eddc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 418151,
+      "seconds": 17.422958333333334,
+      "peak": 0.981323,
+      "rms_dbfs": -18.62,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

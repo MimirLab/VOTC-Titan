@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-5000-hots-medivhbase",
+  "revision": 1,
+  "name": "Medivh — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f153e6d4bfa01a2d860fdf8550df510ef2266cb8b3cd5db4b13058ca5354362f",
+    "transcript_sha256": "c27bb29fac5b637ec5f09b44e715c9fa075bbea9492792fca3b451d58e8f490c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 372482,
+      "seconds": 15.520083333333334,
+      "peak": 0.797455,
+      "rms_dbfs": -16.14,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

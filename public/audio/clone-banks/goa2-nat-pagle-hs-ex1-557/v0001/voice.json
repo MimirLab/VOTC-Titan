@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-nat-pagle-hs-ex1-557",
+  "revision": 1,
+  "name": "Nat Pagle — Nat Pagle (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0818556d33bda244eb85a7b43fcaf3c4c6608730afa0cf6ec50207e10564f736",
+    "transcript_sha256": "0a0683eb7703c311bc233b17c829a3f80d124b37374ccbef49f1d234e2bf976e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 55388,
+      "seconds": 2.3078333333333334,
+      "peak": 0.98465,
+      "rms_dbfs": -16.44,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-scrollsage-nola-wow-517a435721cb",
+  "revision": 1,
+  "name": "Nola Kruppu — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "213b013ad1099e9ab70ceb469c5135e44c11c2a6e42006c8f762707937a0404c",
+    "transcript_sha256": "37853bce5d4125ab3435b6a2dd85db26ba9e5019a049565cb7d0b20c151fb972",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 432607,
+      "seconds": 18.025291666666668,
+      "peak": 1.0,
+      "rms_dbfs": -18.4,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

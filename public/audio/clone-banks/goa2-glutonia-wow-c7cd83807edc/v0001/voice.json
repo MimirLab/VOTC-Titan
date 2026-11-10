@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-glutonia-wow-c7cd83807edc",
+  "revision": 1,
+  "name": "Glutonia — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0a41e4ce2855b965237bca3373e4a22a6e3c40be4d76702f65a4398716283ef0",
+    "transcript_sha256": "3182d9c497c9c4fa6129873bdd8a3410decf9099783ae55098442a14a946d0b1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 390610,
+      "seconds": 16.27541666666667,
+      "peak": 0.910095,
+      "rms_dbfs": -18.46,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

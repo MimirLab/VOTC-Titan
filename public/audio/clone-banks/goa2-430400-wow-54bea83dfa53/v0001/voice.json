@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-430400-wow-54bea83dfa53",
+  "revision": 1,
+  "name": "Balnazzar — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a77d9b98973274dc074ee491054a489f5d73e8eb977544a9c2fe7544e7972274",
+    "transcript_sha256": "def7f09a0775312050082f6a9a9f82ce7b8596cc82802af211419677e3cbc652",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 413445,
+      "seconds": 17.226875,
+      "peak": 1.0,
+      "rms_dbfs": -16.01,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

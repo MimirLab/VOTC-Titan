@@ -1,0 +1,496 @@
+{
+  "version": "titan-essence-0.2",
+  "reference": "Pinned final FAR 0.2 Python engine; literal independently generated expectations.",
+  "cases": [
+    {
+      "seed": "titan-demo",
+      "language": "language_apexis",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Katara tisasri vairri krai kikari zezakairre viikrairkii.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_aquan",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Lamawaem ruamua roum glemae luauawa vougle waglou.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_auran",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Thaewaeshae siwi sai hewae thiyi'faes haihe shaehai.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_common",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Trolnalben gaenpen ras teinsted rospa malrein meitdae.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_cursed",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Heskhis haarthaagrath nith zi granes shekhaa suszeshik.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_darnassian",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Thena neshia saeshael lia shinaethi silael siasali.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_draconic",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Kruthauxkhaur zhovrur vrith draathzos zhaakraes krokrosvroth vrudraakros.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_draenei",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Vanuarualna vidaadeirli dualir danein leidaahaalnei haadravaan hilamni.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_drogbar",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Grogva rzuzhdua drua gro vrogvrua vregvra rzoakba.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_drust",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Skrothath hraskrun vraegh raerdoth skrathaeth vrakudogh kaskrugh.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_dwarven",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Dutram dankul bralbruk umbrukdun unbrar bronkonrek rakkon.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_elunic",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Henuele nesiahe saesa lia sinaeheli silehi siasaluelia.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_eredun",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Vavrurkrush vurdraaz'zhaz drugruk dravrash grazhaakkaath kaadravaath kuthgrath.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_furbolg",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Mommlaa munaun gruugh nuumnaar nuubraa hraummlograur graagrohruur.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_giant",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Dootraag daangoodar hraalhroom uumhroor oonhraarar hroangoag raukgoam.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_gnoll",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Kaiggrohgnagh ghikghirk zhek kik kokkrogh grerkark ghagnorkkak.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_gnomish",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Glipi-kuit krepuiken tilkrin tikat neglenit spespatik pazglegluin.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_goblin",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Kizbzug kukttig bzat krak bukrek gratbak bugbaz.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_gutterspeak",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Vrolnelven geinpesh ren tuinskesh rospev melruiv muitzeish.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_high_darnassian",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Thenale neshiane saeshae lia shinaethili silaeri siasalinia.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_hozen",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Mouyok dookhoom bom dak hudoukyoop pohmouba koupdoom.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_ignan",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Tak-fakshet kri-fit-ii krash kekfek tishskik-kash tashkes shat-kak.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_jinyu",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Yuyuijeosh noluil lush yu wuishon nuwoyol meolonua.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_kalimag",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Tamashaen rumur ronom gemaemun tuthukar togeshara shagor.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_low_common",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Trolnat genper rat tinstek rospan malrik mitden.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_mantid",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Zettit tsetkek keket tsitsit keztsits tsetset tsikkez.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_maraudic",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Traangarkorar tratrothok gair mukhar daimoztrun khuzzaar khrogondor.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_mogu",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Brurkbromgug dodgrod gruk bruk kozhog dukobrogok gugrodak.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_nathrezim",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Vanaeraen vivaezhen vaeliz vanez lezhaesaeth saevravaen silath.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_nazja",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Szenas nesshiass ssaesshaes liass sshinaeszish ssilaeshia ssiassaliss.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_nerglish",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Lul grom grum muushlool luur mromrooluum mrurlgloshlool.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_nerubian",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Zetichun chetkekh tkutkun chichin tkuk'takh k'techesh k'titkukhish.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_ogre",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Rogmum mabroog dagoor roglog gramrur glooglog gloglom.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_orcish",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Gruk takkrarog thogvug groth grothrugruk ruth krokron.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_pandaren",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Ruraole nolaonen lu rum baosholan nuboronao melonamao.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_pygmy",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Yeinmeipuk yialtun pil sakkun luyak niamil sipein.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_qiraji",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Zutthaqukhur qutkhushqaq khukhuk qaqaq khushqak'khar ququk qakkhush'khatkhuq.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_quilboar",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Khengrem hnaamthaark grom braang thehnark khushung sharkgrabraark.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_ravenspeech",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Krartkark tkiskir vrikh krik krikrakh rkurrkar vrikruk.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_sethrak",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Qishzeisqeiz rekqiqaz szeshkiss kiss sziitshas ketiiss keisziss.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_shalassian",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Thevein veshain shaeshain leir shivthai shilei shiashalii.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_shathyar",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Zyathshang shushlthuth thax shix xvang thang xvuth.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_taurahe",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Nuunumra hraurtura nuu baa bota nahhaana maannaunuumma.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_terran",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Drandmgarkgodurk brumgund brog grudmgog drumdugkrag dgondgrund gandgrond.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_thalassian",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Thevas vesiath saesaes lias sivaethith silaes siasalis.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_titanic",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Detram-run dankel valvek umvek envardan vonkonmun raekkon.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_tolvir",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Qaiqat taannururet dait kas qaakhaidaan raantin kaqaakar.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_tortollan",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Toimnaatdoi dotalaa baanon bor takoitoin toinmobaal doimutmaal.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_tuskarr",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Maalur naankfronk draarlink bun druunkkink gidrin draabuur.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_vrykul",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Skodtheir harskud vaenald raerdok skeithaed veirkuddodar keirskur.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_vulpera",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Velit noimalair ren tat vranvroimef rafler vafoivair.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_wolvar",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Gravonk wreknarr rank gronkgnam maurmamrarr wregraurr wrerrvat.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_zandali",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Durdor mirai ni tar lumdum tonan romun.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_orcish",
+      "text": "The watcher is thinking about three books.",
+      "speech": "Groth donkukdoth vog dogkhok grorkhok vakanrun khag.",
+      "quoted": "The watcher is thinking about three books."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_orcish",
+      "text": "Thrall’s brother will bring 42 silver coins.",
+      "speech": "Grakthur tuthuthdoth rak gruk khun khurog rakkhok.",
+      "quoted": "Thrall’s brother will bring 42 silver coins."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_orcish",
+      "text": "İstanbul, Straße, Σίσυφος, ᎠᎡ and é; 𐐀𐐨 — ☀️.",
+      "speech": "Kathgungak, Rokkrath, Khaththug, GUG vak kar; Thok — ☀️.",
+      "quoted": "İstanbul, Straße, Σίσυφος, ᎠᎡ and é; 𐐀𐐨 — ☀️."
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_orcish",
+      "text": "He gestures. “We come in peace.”\n\nShe waits. \"I will stay.\"",
+      "speech": "Tor thagorath. “Vur vongrak groth thag.”\n\nThog dugvur. \"Krok rak thor.\"",
+      "quoted": "He gestures. “Vur vongrak groth thag.”\n\nShe waits. \"Krok rak thor.\""
+    },
+    {
+      "seed": "titan-demo",
+      "language": "language_orcish",
+      "text": "THREE WATCHERS, twenty-one. Don’t follow me.",
+      "speech": "VAKANRUN GRAGRAG, thordunvath-khutar. Grothoth grothruk gug.",
+      "quoted": "THREE WATCHERS, twenty-one. Don’t follow me."
+    },
+    {
+      "seed": "a-second-world",
+      "language": "language_orcish",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Tuk dur groth don tudurrath darthath rokdukgrog.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "a-second-world",
+      "language": "language_orcish",
+      "text": "The watcher is thinking about three books.",
+      "speech": "Don krak ruth gugag krathor ruvor khurdunkoth.",
+      "quoted": "The watcher is thinking about three books."
+    },
+    {
+      "seed": "a-second-world",
+      "language": "language_orcish",
+      "text": "Thrall’s brother will bring 42 silver coins.",
+      "speech": "Rukhar ruthron rungrun tuk kathrar grorvaggug var.",
+      "quoted": "Thrall’s brother will bring 42 silver coins."
+    },
+    {
+      "seed": "a-second-world",
+      "language": "language_orcish",
+      "text": "İstanbul, Straße, Σίσυφος, ᎠᎡ and é; 𐐀𐐨 — ☀️.",
+      "speech": "Kagroththur, Durkrorvoth, Kror, GAG krok groggror; Khug — ☀️.",
+      "quoted": "İstanbul, Straße, Σίσυφος, ᎠᎡ and é; 𐐀𐐨 — ☀️."
+    },
+    {
+      "seed": "a-second-world",
+      "language": "language_orcish",
+      "text": "He gestures. “We come in peace.”\n\nShe waits. \"I will stay.\"",
+      "speech": "Kurgrak kruk. “Garkron kuk khok togok.”\n\nRar kathothgruth. \"Krur rungrun dakhon.\"",
+      "quoted": "He gestures. “Garkron kuk khok togok.”\n\nShe waits. \"Krur rungrun dakhon.\""
+    },
+    {
+      "seed": "a-second-world",
+      "language": "language_orcish",
+      "text": "THREE WATCHERS, twenty-one. Don’t follow me.",
+      "speech": "RUVOR KHON, kugruth-guk. Khadar grothkhak duthgur.",
+      "quoted": "THREE WATCHERS, twenty-one. Don’t follow me."
+    },
+    {
+      "seed": "world-with-a-different-seed",
+      "language": "language_orcish",
+      "text": "Bring water to the gate before dawn.",
+      "speech": "Gakroth grokruk gontuk gardur dathkurar kruth kuktok.",
+      "quoted": "Bring water to the gate before dawn."
+    },
+    {
+      "seed": "world-with-a-different-seed",
+      "language": "language_orcish",
+      "text": "The watcher is thinking about three books.",
+      "speech": "Gardur vathrurton grath grovag dath dogdan dathvun.",
+      "quoted": "The watcher is thinking about three books."
+    },
+    {
+      "seed": "world-with-a-different-seed",
+      "language": "language_orcish",
+      "text": "Thrall’s brother will bring 42 silver coins.",
+      "speech": "Dungruggon grokhanthur goggrag gakroth dok kruthgon dorrur.",
+      "quoted": "Thrall’s brother will bring 42 silver coins."
+    },
+    {
+      "seed": "world-with-a-different-seed",
+      "language": "language_orcish",
+      "text": "İstanbul, Straße, Σίσυφος, ᎠᎡ and é; 𐐀𐐨 — ☀️.",
+      "speech": "Run, Tugun, Gokton, GRAN krukdok khug; Khar — ☀️.",
+      "quoted": "İstanbul, Straße, Σίσυφος, ᎠᎡ and é; 𐐀𐐨 — ☀️."
+    },
+    {
+      "seed": "world-with-a-different-seed",
+      "language": "language_orcish",
+      "text": "He gestures. “We come in peace.”\n\nShe waits. \"I will stay.\"",
+      "speech": "Gon ruthvunguth. “Krar dagruth thok dathkruk.”\n\nVungrur var. \"Khug goggrag dongrok.\"",
+      "quoted": "He gestures. “Krar dagruth thok dathkruk.”\n\nShe waits. \"Khug goggrag dongrok.\""
+    },
+    {
+      "seed": "world-with-a-different-seed",
+      "language": "language_orcish",
+      "text": "THREE WATCHERS, twenty-one. Don’t follow me.",
+      "speech": "DOGDAN VURKHON, khokkug-krar. Khuntan groth krogkhuk.",
+      "quoted": "THREE WATCHERS, twenty-one. Don’t follow me."
+    }
+  ]
+}

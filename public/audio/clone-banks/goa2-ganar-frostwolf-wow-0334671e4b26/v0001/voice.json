@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ganar-frostwolf-wow-0334671e4b26",
+  "revision": 1,
+  "name": "Ga'nar Frostwolf — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0f5145ad19ee7b3eb1db6ab340aa050255d7d65e4463380b80e74ba4cd9ac341",
+    "transcript_sha256": "738a6c958b36594bb89f4e1dd0bc117ea18893826611d12bd0c6f37c82f7db66",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374249,
+      "seconds": 15.593708333333334,
+      "peak": 1.0,
+      "rms_dbfs": -13.21,
+      "clipped_samples": 45
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

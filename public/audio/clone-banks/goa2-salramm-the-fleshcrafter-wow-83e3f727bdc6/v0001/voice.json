@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-salramm-the-fleshcrafter-wow-83e3f727bdc6",
+  "revision": 1,
+  "name": "Salramm — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d506328db5b27ecff301a422adb56046fd81978cef2c0d6e2071d7eacc13a56e",
+    "transcript_sha256": "20d64f22b3bfa76776fccef5a3c024242869f552dd4cf56443345a304259cdce",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 180628,
+      "seconds": 7.526166666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -21.91,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-64102-wow-09139873302a",
+  "revision": 1,
+  "name": "Trade Prince Gallywix — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f47d2e415c4342f85fbfccbafd8d742838729609a8e043c5ae47afacae14700c",
+    "transcript_sha256": "697cf2b4aa41822f4a39800085c4a049c9f4487e521818f83ff98d548d754ff4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 391154,
+      "seconds": 16.298083333333334,
+      "peak": 0.951843,
+      "rms_dbfs": -17.72,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

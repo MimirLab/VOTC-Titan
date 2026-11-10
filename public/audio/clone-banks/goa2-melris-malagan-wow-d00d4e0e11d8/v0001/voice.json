@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-melris-malagan-wow-d00d4e0e11d8",
+  "revision": 1,
+  "name": "Melris Malagan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "412ebffe16bc0578c04b34689d49f8baeac12493b05c53ded6b7ab6c7d2bf8f7",
+    "transcript_sha256": "bc4b079e623b99e447e7927a33c93e8edb0e00f5996bd94e1031255882551b64",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 392820,
+      "seconds": 16.3675,
+      "peak": 1.0,
+      "rms_dbfs": -15.47,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

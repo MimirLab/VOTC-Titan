@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60011-wow-567fb5198bf4",
+  "revision": 1,
+  "name": "Jandice Barov — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4e2a32fef9dc46434059998ed83fc04e7961c51b31fa3ee6ce7af1789583fffd",
+    "transcript_sha256": "9c1aeef8dd9def5dd6910084a996c3f6d98cb1da83c9c385a9e84c0358460b8a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 222126,
+      "seconds": 9.25525,
+      "peak": 0.928497,
+      "rms_dbfs": -16.46,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

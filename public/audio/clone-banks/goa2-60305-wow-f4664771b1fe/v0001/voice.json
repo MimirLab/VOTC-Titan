@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60305-wow-f4664771b1fe",
+  "revision": 1,
+  "name": "Archbishop Benedictus — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8075ede633a174ef01011f64de912cadd868cd0b247069b09cca5aa58dedf59b",
+    "transcript_sha256": "d55e7f147d154195d0dd79aa4a092efbc420d30cc5d71353b0c624464988d8a3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 78262,
+      "seconds": 3.2609166666666667,
+      "peak": 0.99469,
+      "rms_dbfs": -17.06,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

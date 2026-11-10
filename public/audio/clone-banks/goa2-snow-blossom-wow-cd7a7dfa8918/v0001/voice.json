@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-snow-blossom-wow-cd7a7dfa8918",
+  "revision": 1,
+  "name": "Snow Blossom — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f67a091be4221f3c7fea4a929755e5d7d732217c5ef2b5beae41904e16c732e4",
+    "transcript_sha256": "093acc0becfd3d96c0939291be0fb3b497f13ae825c1e33febc1e8a7fd2d5695",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 183070,
+      "seconds": 7.627916666666667,
+      "peak": 0.718475,
+      "rms_dbfs": -16.71,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

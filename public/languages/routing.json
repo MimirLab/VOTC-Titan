@@ -1,0 +1,3088 @@
+{
+  "routing_version": "titan-current-familiarity-r4",
+  "families": {
+    "language_common": "common",
+    "language_low_common": "common",
+    "language_gutterspeak": "common",
+    "language_darnassian": "elven",
+    "language_high_darnassian": "elven",
+    "language_elunic": "elven",
+    "language_thalassian": "elven",
+    "language_shalassian": "elven",
+    "language_nazja": "elven",
+    "language_qiraji": "aqir",
+    "language_nerubian": "aqir",
+    "language_mantid": "aqir",
+    "language_vrykul": "vrykul",
+    "language_drust": "vrykul",
+    "language_apexis": "arakkoa",
+    "language_ravenspeech": "arakkoa",
+    "language_kalimag": "elemental",
+    "language_ignan": "elemental",
+    "language_aquan": "elemental",
+    "language_auran": "elemental",
+    "language_terran": "elemental",
+    "language_eredun": "argussian",
+    "language_draenei": "argussian",
+    "language_cursed": "cursed",
+    "language_draconic": "draconic",
+    "language_drogbar": "drogbar",
+    "language_dwarven": "dwarven",
+    "language_furbolg": "furbolg",
+    "language_giant": "giant",
+    "language_gnoll": "gnoll",
+    "language_gnomish": "gnomish",
+    "language_goblin": "goblin",
+    "language_hozen": "hozen",
+    "language_jinyu": "jinyu",
+    "language_maraudic": "maraudic",
+    "language_mogu": "mogu",
+    "language_nathrezim": "nathrezim",
+    "language_nerglish": "nerglish",
+    "language_ogre": "ogre",
+    "language_orcish": "orcish",
+    "language_pandaren": "pandaren",
+    "language_pygmy": "pygmy",
+    "language_quilboar": "quilboar",
+    "language_sethrak": "sethrak",
+    "language_shathyar": "shathyar",
+    "language_taurahe": "taurahe",
+    "language_titanic": "titanic",
+    "language_tolvir": "tolvir",
+    "language_tortollan": "tortollan",
+    "language_tuskarr": "tuskarr",
+    "language_vulpera": "vulpera",
+    "language_wolvar": "wolvar",
+    "language_zandali": "zandali"
+  },
+  "culture_parent_match": true,
+  "native_language_by_culture": {
+    "alteraci": "language_common",
+    "amani": "language_zandali",
+    "ankoan": "language_mogu",
+    "annihilan": "language_eredun",
+    "arakkoa": "language_ravenspeech",
+    "arathi": "language_common",
+    "arathorian": "language_common",
+    "atalai": "language_low_common",
+    "azerothian": "language_common",
+    "baradin": "language_common",
+    "black_dragon": "language_draconic",
+    "blackleaf": "language_zandali",
+    "blackrock": "language_orcish",
+    "blackwater": "language_goblin",
+    "bleeding_hollow": "language_orcish",
+    "blood_elf": "language_thalassian",
+    "blood_troll": "language_zandali",
+    "bloodscalp": "language_zandali",
+    "blue_dragon": "language_draconic",
+    "bonechewer": "language_orcish",
+    "broken": "language_draenei",
+    "bronze_dragon": "language_draconic",
+    "bronzebeard": "language_dwarven",
+    "burning_blade": "language_orcish",
+    "centaur": "language_maraudic",
+    "dalaranian": "language_common",
+    "dark_iron": "language_dwarven",
+    "dark_troll": "language_zandali",
+    "darkspear": "language_zandali",
+    "draenei": "language_draenei",
+    "dragonmaw": "language_orcish",
+    "drakkari": "language_zandali",
+    "drogbar": "language_drogbar",
+    "drust": "language_drust",
+    "dryad": "language_darnassian",
+    "durotaric": "language_orcish",
+    "eredar": "language_eredun",
+    "eredruin": "language_eredun",
+    "faldorei": "language_nerubian",
+    "farraki": "language_zandali",
+    "firetree": "language_zandali",
+    "fisher_pandaren": "language_mogu",
+    "flowerpicker": "language_orcish",
+    "forest_hozen": "language_hozen",
+    "forest_pandaren": "language_mogu",
+    "forsaken": "language_gutterspeak",
+    "frost_vrykul": "language_vrykul",
+    "frostborn": "language_dwarven",
+    "frostmane": "language_zandali",
+    "frostnymph": "language_darnassian",
+    "frostwolf": "language_orcish",
+    "frozen_giant": "language_giant",
+    "furbolg": "language_furbolg",
+    "gilblin": "language_goblin",
+    "gilnean": "language_common",
+    "gnoll": "language_gnoll",
+    "gnome": "language_gnomish",
+    "goblin": "language_goblin",
+    "gorgrondic": "language_orcish",
+    "gorloc": "language_nerglish",
+    "green_dragon": "language_draconic",
+    "grummle": "language_mogu",
+    "gurubashi": "language_zandali",
+    "harpy": "language_darnassian",
+    "high_elf": "language_thalassian",
+    "highborne": "language_darnassian",
+    "highmountain": "language_taurahe",
+    "hillsbrad": "language_common",
+    "hyldnir": "language_vrykul",
+    "icetusk": "language_zandali",
+    "ignan": "language_ignan",
+    "illidari": "language_darnassian",
+    "imp": "language_eredun",
+    "jellyneck": "language_zandali",
+    "jinyu": "language_mogu",
+    "jungle_hozen": "language_hozen",
+    "kobold": "language_low_common",
+    "kvaldir": "language_vrykul",
+    "laughing_skull": "language_orcish",
+    "leper_gnome": "language_gnomish",
+    "lightforged_draenei": "language_draenei",
+    "lordaeronian": "language_common",
+    "lost_one": "language_draenei",
+    "lucardir": "language_vrykul",
+    "maghar": "language_orcish",
+    "magnataur": "language_low_common",
+    "mainland_pandaren": "language_mogu",
+    "makrura": "language_nerglish",
+    "mantid": "language_mantid",
+    "mechagnome": "language_titanic",
+    "mechagonian": "language_gnomish",
+    "mogu": "language_mogu",
+    "moknathal": "language_orcish",
+    "mossflayer": "language_zandali",
+    "mountain_hozen": "language_hozen",
+    "mountain_pandaren": "language_mogu",
+    "murloc": "language_nerglish",
+    "naga": "language_nazja",
+    "nathrezim": "language_nathrezim",
+    "nerubian": "language_nerubian",
+    "night_elf": "language_darnassian",
+    "nightborne": "language_shalassian",
+    "northern": "language_common",
+    "northsea": "language_common",
+    "nraqi": "language_shathyar",
+    "observer": "language_eredun",
+    "ogre": "language_ogre",
+    "old_dwarven": "language_dwarven",
+    "old_pandaren": "language_mogu",
+    "pale_orcish": "language_orcish",
+    "ping": "language_common",
+    "pirate_culture": "language_common",
+    "protector": "language_darnassian",
+    "pygmy": "language_pygmy",
+    "qiraji": "language_qiraji",
+    "quilboar": "language_quilboar",
+    "red_dragon": "language_draconic",
+    "revantusk": "language_zandali",
+    "satyr": "language_darnassian",
+    "saurok": "language_mogu",
+    "sayaadi": "language_eredun",
+    "scourge": "language_cursed",
+    "sethrak": "language_sethrak",
+    "shadowglen": "language_zandali",
+    "shadowmoon": "language_orcish",
+    "shadowpine": "language_zandali",
+    "shattered_hand": "language_orcish",
+    "shatterspear": "language_zandali",
+    "shivarra": "language_eredun",
+    "skrog": "language_giant",
+    "skullsplitter": "language_zandali",
+    "smolderthorn": "language_zandali",
+    "snobold": "language_low_common",
+    "spiritual_pandaren": "language_mogu",
+    "storm_giant": "language_giant",
+    "stormheimir": "language_vrykul",
+    "stormreaver": "language_orcish",
+    "taunka": "language_taurahe",
+    "tauren": "language_taurahe",
+    "theramore": "language_common",
+    "thunderlord": "language_orcish",
+    "tirassian": "language_common",
+    "titanforged": "language_titanic",
+    "tolvir": "language_tolvir",
+    "tortollan": "language_tortollan",
+    "treeblight": "language_zandali",
+    "trogg": "language_low_common",
+    "tuskarr": "language_tuskarr",
+    "twilights_hammer": "language_orcish",
+    "vilebranch": "language_zandali",
+    "void_elf": "language_thalassian",
+    "voidwalker": "language_eredun",
+    "vrykul": "language_vrykul",
+    "vulpera": "language_vulpera",
+    "wandering_pandaren": "language_mogu",
+    "warsong": "language_orcish",
+    "wastewander": "language_common",
+    "wc_dummy": "language_draconic",
+    "wildhammer": "language_dwarven",
+    "winterax": "language_zandali",
+    "winterfang": "language_zandali",
+    "witherbark": "language_zandali",
+    "witherbranch": "language_zandali",
+    "wolvar": "language_wolvar",
+    "yaungol": "language_taurahe",
+    "zandalari": "language_zandali",
+    "zemlani": "language_zandali"
+  },
+  "static_culture_parent_ids": {
+    "alteraci": [
+      "arathi"
+    ],
+    "amani": [
+      "zandalari"
+    ],
+    "arathorian": [
+      "arathi"
+    ],
+    "atalai": [
+      "gurubashi"
+    ],
+    "azerothian": [
+      "arathi"
+    ],
+    "baradin": [
+      "arathorian"
+    ],
+    "blackleaf": [
+      "amani"
+    ],
+    "blackrock": [
+      "gorgrondic"
+    ],
+    "bleeding_hollow": [
+      "gorgrondic"
+    ],
+    "blood_elf": [
+      "high_elf"
+    ],
+    "blood_troll": [
+      "zandalari"
+    ],
+    "bloodscalp": [
+      "gurubashi"
+    ],
+    "bonechewer": [
+      "bleeding_hollow"
+    ],
+    "broken": [
+      "draenei"
+    ],
+    "burning_blade": [
+      "gorgrondic"
+    ],
+    "dalaranian": [
+      "arathi"
+    ],
+    "darkspear": [
+      "gurubashi"
+    ],
+    "dragonmaw": [
+      "gorgrondic"
+    ],
+    "drakkari": [
+      "zandalari"
+    ],
+    "durotaric": [
+      "frostwolf"
+    ],
+    "farraki": [
+      "gurubashi"
+    ],
+    "firetree": [
+      "amani"
+    ],
+    "fisher_pandaren": [
+      "old_pandaren"
+    ],
+    "flowerpicker": [
+      "gorgrondic"
+    ],
+    "forest_pandaren": [
+      "old_pandaren"
+    ],
+    "forsaken": [
+      "scourge",
+      "lordaeronian"
+    ],
+    "frostmane": [
+      "drakkari"
+    ],
+    "frostwolf": [
+      "gorgrondic"
+    ],
+    "gilnean": [
+      "arathi"
+    ],
+    "gurubashi": [
+      "zandalari"
+    ],
+    "high_elf": [
+      "highborne"
+    ],
+    "hillsbrad": [
+      "arathi"
+    ],
+    "icetusk": [
+      "drakkari"
+    ],
+    "illidari": [
+      "night_elf"
+    ],
+    "jellyneck": [
+      "gurubashi"
+    ],
+    "laughing_skull": [
+      "gorgrondic"
+    ],
+    "leper_gnome": [
+      "gnome"
+    ],
+    "lightforged_draenei": [
+      "draenei"
+    ],
+    "lordaeronian": [
+      "arathi"
+    ],
+    "lost_one": [
+      "draenei"
+    ],
+    "lucardir": [
+      "stormheimir"
+    ],
+    "maghar": [
+      "warsong"
+    ],
+    "mainland_pandaren": [
+      "old_pandaren"
+    ],
+    "mechagonian": [
+      "gnome"
+    ],
+    "moknathal": [
+      "gorgrondic",
+      "ogre"
+    ],
+    "mossflayer": [
+      "amani"
+    ],
+    "mountain_pandaren": [
+      "old_pandaren"
+    ],
+    "murloc": [
+      "gorloc"
+    ],
+    "nightborne": [
+      "highborne"
+    ],
+    "northsea": [
+      "tirassian"
+    ],
+    "pale_orcish": [
+      "gorgrondic"
+    ],
+    "revantusk": [
+      "amani"
+    ],
+    "shadowglen": [
+      "amani"
+    ],
+    "shadowmoon": [
+      "gorgrondic"
+    ],
+    "shadowpine": [
+      "amani"
+    ],
+    "shattered_hand": [
+      "gorgrondic"
+    ],
+    "shatterspear": [
+      "dark_troll",
+      "gurubashi"
+    ],
+    "skullsplitter": [
+      "gurubashi"
+    ],
+    "smolderthorn": [
+      "amani"
+    ],
+    "spiritual_pandaren": [
+      "old_pandaren"
+    ],
+    "stormreaver": [
+      "shadowmoon"
+    ],
+    "theramore": [
+      "tirassian",
+      "lordaeronian"
+    ],
+    "thunderlord": [
+      "gorgrondic"
+    ],
+    "tirassian": [
+      "gilnean"
+    ],
+    "treeblight": [
+      "amani"
+    ],
+    "twilights_hammer": [
+      "pale_orcish"
+    ],
+    "vilebranch": [
+      "amani"
+    ],
+    "void_elf": [
+      "high_elf",
+      "blood_elf"
+    ],
+    "wandering_pandaren": [
+      "old_pandaren"
+    ],
+    "warsong": [
+      "gorgrondic"
+    ],
+    "wastewander": [
+      "pirate_culture"
+    ],
+    "winterax": [
+      "drakkari"
+    ],
+    "winterfang": [
+      "drakkari"
+    ],
+    "witherbark": [
+      "amani"
+    ],
+    "witherbranch": [
+      "gurubashi"
+    ],
+    "zemlani": [
+      "zandalari"
+    ]
+  },
+  "culture_rules": [
+    {
+      "id": "eastern_kingdoms_common_contacts",
+      "culture_roots": [
+        "arathi",
+        "bronzebeard",
+        "wildhammer",
+        "gnome"
+      ],
+      "exclude_cultures": [
+        "mechagonian",
+        "mechagnome"
+      ],
+      "targets": [
+        "language_common",
+        "language_dwarven",
+        "language_gnomish"
+      ],
+      "match_parents": true,
+      "reason": "Broad authored contact among the human kingdoms and established dwarf/gnome societies through commerce, diplomacy, and military cooperation. Native Common is already CLEAR wherever actually shared. These partial-comprehension links are gameplay extrapolations.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "draenor_orc_ogre_contacts",
+      "culture_roots": [
+        "gorgrondic",
+        "ogre",
+        "moknathal"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_orcish",
+        "language_ogre"
+      ],
+      "match_parents": true,
+      "reason": "Long neighboring, imperial, military and hybrid-community contact on Draenor supplies partial Orcish/Ogre familiarity. This models culture-wide background and uses no current faction or personal history. Roots remain distinct in the FAR generator.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "durotar_community_contacts",
+      "culture_roots": [
+        "durotaric",
+        "darkspear",
+        "tauren"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_orcish",
+        "language_zandali",
+        "language_taurahe"
+      ],
+      "match_parents": true,
+      "reason": "Established Durotaric, Darkspear and ordinary Tauren community identities supply reciprocal partial familiarity. Culture identity is the chosen coarse proxy, without an era gate or current Horde membership check. Highmountain and Taunka are not included by shared bovine heritage.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "forest_troll_orc_contacts",
+      "culture_roots": [
+        "amani"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_orcish"
+      ],
+      "match_parents": true,
+      "reason": "Broad Amani-derived forest-troll cultural memory of Orcish military and neighboring contact supplies partial Orcish familiarity. This is a deliberate culture-level extrapolation; it does not extend to every Zandali-speaking culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "goblin_merchant_contacts",
+      "culture_roots": [
+        "goblin",
+        "blackwater"
+      ],
+      "exclude_cultures": [
+        "gilblin"
+      ],
+      "targets": [
+        "language_common",
+        "language_orcish",
+        "language_zandali"
+      ],
+      "match_parents": true,
+      "reason": "Goblin and Blackwater maritime/merchant communities encounter human, orc and troll markets. Partial familiarity is authored into the cultural background; Gilblin are kept separate. No tradition, wealth, faction, location or job tracking is required.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "legion_eredun_familiarity",
+      "culture_roots": [
+        "nathrezim",
+        "satyr"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_eredun"
+      ],
+      "match_parents": true,
+      "reason": "Nathrezim and Satyr cultural environments support partial familiarity with the broader Legion tongue when explicit learned Eredun is absent. Their own native tongues and FAR sounds remain distinct. This supplies no reciprocal Nathrezim familiarity to every Eredun speaker.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "human_maritime_goblin_contacts",
+      "culture_roots": [
+        "tirassian",
+        "theramore",
+        "baradin",
+        "hillsbrad"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_goblin"
+      ],
+      "match_parents": true,
+      "reason": "C07: Authored human maritime Goblin familiarity. The named roots do not select the entire Arathi community.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "mixed_port_goblin_zandali_contacts",
+      "culture_roots": [
+        "pirate_culture",
+        "northsea"
+      ],
+      "exclude_cultures": [
+        "wastewander"
+      ],
+      "targets": [
+        "language_goblin",
+        "language_zandali"
+      ],
+      "match_parents": true,
+      "reason": "C08: Southsea and Northsea mixed-port familiarity. Orcish remains a separate review choice.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "vulpera_voldun_caravan_contacts",
+      "culture_roots": [
+        "vulpera"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_zandali",
+        "language_sethrak"
+      ],
+      "match_parents": true,
+      "reason": "C09: Vol’dun and Zandalar caravan contacts; familiarity is direct and directional.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "tortollan_traveler_contacts",
+      "culture_roots": [
+        "tortollan"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_common",
+        "language_zandali"
+      ],
+      "match_parents": true,
+      "reason": "C09: Tortollan institutional travelers and scholars encounter human and Zandalari communities.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "tuskarr_coastal_common_contacts",
+      "culture_roots": [
+        "tuskarr"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_common"
+      ],
+      "match_parents": true,
+      "reason": "C09: Scoped Tuskarr coastal Common familiarity, without a universal maritime language pool.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "high_elf_line_contacts",
+      "culture_roots": [
+        "high_elf"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_common",
+        "language_dwarven"
+      ],
+      "match_parents": true,
+      "reason": "C10: High Elf and actual descendants; Highborne and Nightborne are not selected by their older ancestry.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "dalaranian_thalassian_contacts",
+      "culture_roots": [
+        "dalaranian"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_thalassian"
+      ],
+      "match_parents": true,
+      "reason": "C11: Authored scholarly Thalassian contacts.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "wildhammer_thalassian_contacts",
+      "culture_roots": [
+        "wildhammer"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_thalassian"
+      ],
+      "match_parents": true,
+      "reason": "C11: Authored allied Thalassian contacts.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "dark_iron_contacts",
+      "culture_roots": [
+        "dark_iron"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_common",
+        "language_ignan"
+      ],
+      "match_parents": true,
+      "reason": "C12: Dark Iron Common and Fire-branch familiarity; no Elemental-family propagation.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "illidari_eredun_contacts",
+      "culture_roots": [
+        "illidari"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_eredun"
+      ],
+      "match_parents": true,
+      "reason": "C13: Illidari institutional contact independent of faith.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "twilights_hammer_shathyar_contacts",
+      "culture_roots": [
+        "twilights_hammer"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_shathyar"
+      ],
+      "match_parents": true,
+      "reason": "C13: Twilight’s Hammer cultural familiarity persists across conversion.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "forsaken_cursed_contacts",
+      "culture_roots": [
+        "forsaken"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_cursed"
+      ],
+      "match_parents": true,
+      "reason": "C14: Authored formative Scourge familiarity without fluency or reconstructed individual lives.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "highmountain_drogbar_contacts",
+      "culture_roots": [
+        "highmountain"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_drogbar"
+      ],
+      "match_parents": true,
+      "reason": "C15: Highmountain exchange; not every Taur-ahe speaker.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "drogbar_taurahe_contacts",
+      "culture_roots": [
+        "drogbar"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_taurahe"
+      ],
+      "match_parents": true,
+      "reason": "C15: Direct Drogbar familiarity with Taur-ahe.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "mogu_zandali_contacts",
+      "culture_roots": [
+        "mogu"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_zandali"
+      ],
+      "match_parents": false,
+      "reason": "C16: Exact Mogu historical institutional contact, not every Mogu speaker.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "zandalari_mogu_contacts",
+      "culture_roots": [
+        "zandalari"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_mogu"
+      ],
+      "match_parents": false,
+      "reason": "C16: Exact Zandalari historical institutional contact, not all descendant troll cultures.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "sethrak_zandali_contacts",
+      "culture_roots": [
+        "sethrak"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_zandali"
+      ],
+      "match_parents": true,
+      "reason": "C17: Scoped Sethrak regional relationship; no reciprocal implication.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "furbolg_darnassian_contacts",
+      "culture_roots": [
+        "furbolg"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_darnassian"
+      ],
+      "match_parents": true,
+      "reason": "C18: Broad Furbolg forest relationship; unavailable dialect distinctions are not inferred.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "night_elf_furbolg_contacts",
+      "culture_roots": [
+        "night_elf"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_furbolg"
+      ],
+      "match_parents": true,
+      "reason": "C18: Authored Night Elf forest contacts.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "hozen_mogu_contacts",
+      "culture_roots": [
+        "forest_hozen",
+        "jungle_hozen",
+        "mountain_hozen"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_mogu"
+      ],
+      "match_parents": true,
+      "reason": "C19: Selected Pandaria Hozen contacts.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "pandaria_hozen_contacts",
+      "culture_roots": [
+        "grummle",
+        "jinyu",
+        "mainland_pandaren",
+        "mountain_pandaren",
+        "forest_pandaren",
+        "fisher_pandaren",
+        "spiritual_pandaren"
+      ],
+      "exclude_cultures": [
+        "ankoan",
+        "wandering_pandaren"
+      ],
+      "targets": [
+        "language_hozen"
+      ],
+      "match_parents": true,
+      "reason": "C19: Selected Pandaria communities, not every Mogu speaker.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "kobold_goblin_contacts",
+      "culture_roots": [
+        "kobold"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_goblin"
+      ],
+      "match_parents": true,
+      "reason": "C20: Kobold resource and patron exchange; no invented Kobold language.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "gnoll_low_common_contacts",
+      "culture_roots": [
+        "gnoll"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_low_common"
+      ],
+      "match_parents": true,
+      "reason": "C20: Authored Low Common familiarity retaining native Gnoll and no Common-family anchor.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "faldorei_shalassian_contacts",
+      "culture_roots": [
+        "faldorei"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_shalassian"
+      ],
+      "match_parents": false,
+      "reason": "C21: Exact transformed Suramar community; native Nerubian stays authoritative.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "green_dragon_darnassian_contacts",
+      "culture_roots": [
+        "green_dragon"
+      ],
+      "exclude_cultures": [],
+      "targets": [
+        "language_darnassian"
+      ],
+      "match_parents": false,
+      "reason": "C22: Exact one-way Green Dragon cultural relationship; no generic Night Elf Draconic grant.",
+      "grounding": "authored_gameplay_inference"
+    }
+  ],
+  "provenance": {
+    "repository": "Warcraft-GoA-Development-Team/Warcraft-Guardians-of-Azeroth-2",
+    "commit": "8ab0cc9c75a227d935402d313be28995ff511a81",
+    "files": [
+      {
+        "path": "common/culture/cultures/wc_aerian.txt",
+        "blob_sha": "5f282702bb03ef11d7184d19c80927b47f919764"
+      },
+      {
+        "path": "common/culture/cultures/wc_agamagganic.txt",
+        "blob_sha": "26c216ac40c3dab6c1c6ffbc4873dffd1fc8dcf6"
+      },
+      {
+        "path": "common/culture/cultures/wc_amphibian.txt",
+        "blob_sha": "8d62669de330d15846348805ed488d98466ea59d"
+      },
+      {
+        "path": "common/culture/cultures/wc_apexis.txt",
+        "blob_sha": "85288c25e43b95f2b7dc3e8463aafc8874dd79ef"
+      },
+      {
+        "path": "common/culture/cultures/wc_aqir.txt",
+        "blob_sha": "05b57597d1de2b4dad8172fb3124b240677ec7a7"
+      },
+      {
+        "path": "common/culture/cultures/wc_arathi.txt",
+        "blob_sha": "72d64119bc9df350a01c5b11a3895c275f1ae81e"
+      },
+      {
+        "path": "common/culture/cultures/wc_argussian.txt",
+        "blob_sha": "46e7fa3bd976e036acb9045f7742306d15a7ac2b"
+      },
+      {
+        "path": "common/culture/cultures/wc_avianic.txt",
+        "blob_sha": "f0869a291f1c222029063ee433cca55e9aef8b4b"
+      },
+      {
+        "path": "common/culture/cultures/wc_azsharic.txt",
+        "blob_sha": "b0daf18cd75003859093611b3852bb66aab8d3f1"
+      },
+      {
+        "path": "common/culture/cultures/wc_cenaric.txt",
+        "blob_sha": "a93df53a548b74bd0a164f2ccea6770f9ca7870c"
+      },
+      {
+        "path": "common/culture/cultures/wc_chelonian.txt",
+        "blob_sha": "1529a27cba55edf3252716ccda07e221a37893bd"
+      },
+      {
+        "path": "common/culture/cultures/wc_crustacean.txt",
+        "blob_sha": "fc536755b84da71f0cff5625e5b0bd5bfc05ad9a"
+      },
+      {
+        "path": "common/culture/cultures/wc_darnassian.txt",
+        "blob_sha": "a61caa3c6b720fe7facca943c3604837c2e15b35"
+      },
+      {
+        "path": "common/culture/cultures/wc_demonic.txt",
+        "blob_sha": "cb412124a6cfd1635753cefcdb94f07ab64fef1c"
+      },
+      {
+        "path": "common/culture/cultures/wc_draconic.txt",
+        "blob_sha": "6a506f9e1704f7e5943415394cc7b4a3921542e1"
+      },
+      {
+        "path": "common/culture/cultures/wc_dummy.txt",
+        "blob_sha": "d0175feb871466a18cae1de9a68316542828b77d"
+      },
+      {
+        "path": "common/culture/cultures/wc_dwarven.txt",
+        "blob_sha": "8a17a5843000a8a45de0d38a02ba2f2194bfaeb6"
+      },
+      {
+        "path": "common/culture/cultures/wc_gilnean.txt",
+        "blob_sha": "e208ae4781e2668100ccecbb76fd103c4f34833b"
+      },
+      {
+        "path": "common/culture/cultures/wc_gnomish.txt",
+        "blob_sha": "4ecb1915e1742d0f9deb5f23027585e7f25080db"
+      },
+      {
+        "path": "common/culture/cultures/wc_goblin.txt",
+        "blob_sha": "66d5f076033e29c6a205514ad63163e00a2132c6"
+      },
+      {
+        "path": "common/culture/cultures/wc_gorian.txt",
+        "blob_sha": "ce5373969a0b937372b83474b507395f35a74efb"
+      },
+      {
+        "path": "common/culture/cultures/wc_grummle.txt",
+        "blob_sha": "be6b73b01cbaa00230fd91d58bde980f30ab9ad0"
+      },
+      {
+        "path": "common/culture/cultures/wc_highborne.txt",
+        "blob_sha": "68816fd0892f834dc44d9916e8b9a4e7fc546a19"
+      },
+      {
+        "path": "common/culture/cultures/wc_hozen.txt",
+        "blob_sha": "d0a6c1b25b86f26d06ad6b1c5d3f92a2fb65afc4"
+      },
+      {
+        "path": "common/culture/cultures/wc_hyenaic.txt",
+        "blob_sha": "a3953e44248a8c429b13fc5ca66c1e63d51d3c18"
+      },
+      {
+        "path": "common/culture/cultures/wc_jalgaric.txt",
+        "blob_sha": "7339f72a6a828a542ab6560914c86943e1d79185"
+      },
+      {
+        "path": "common/culture/cultures/wc_jinyu.txt",
+        "blob_sha": "b09ef6374c78ea39c177161a224302e8d01d702e"
+      },
+      {
+        "path": "common/culture/cultures/wc_lupine.txt",
+        "blob_sha": "d14f922a400f69220463c1a1736493b51356e89d"
+      },
+      {
+        "path": "common/culture/cultures/wc_mogu.txt",
+        "blob_sha": "a6710953f985df3fb22fc93bf208e8ab20d92822"
+      },
+      {
+        "path": "common/culture/cultures/wc_murine.txt",
+        "blob_sha": "f7825b1375fb7178509c45b7ce1ef1960fa82ea5"
+      },
+      {
+        "path": "common/culture/cultures/wc_northern.txt",
+        "blob_sha": "0fbb3cbbf282bb728b79b518742410180b84d9da"
+      },
+      {
+        "path": "common/culture/cultures/wc_odobenus.txt",
+        "blob_sha": "aeb7a88a475478b3706808b97759f7b38ecb35b6"
+      },
+      {
+        "path": "common/culture/cultures/wc_orcish.txt",
+        "blob_sha": "fa4d50092e275b88402ffc0bdd49f3188cde216e"
+      },
+      {
+        "path": "common/culture/cultures/wc_pandaren.txt",
+        "blob_sha": "f857155795a455c7889827da3a9a3e0ac51dde81"
+      },
+      {
+        "path": "common/culture/cultures/wc_pygmy.txt",
+        "blob_sha": "9274d4ad67b116730d14549990d1c1b5942c07e4"
+      },
+      {
+        "path": "common/culture/cultures/wc_pyromantic.txt",
+        "blob_sha": "692f9a5fe412515cc18e4d039c3447b0ad9b91db"
+      },
+      {
+        "path": "common/culture/cultures/wc_sauroken.txt",
+        "blob_sha": "9344d98115e6300a66e075aa0d8647a9783482fa"
+      },
+      {
+        "path": "common/culture/cultures/wc_sethralic.txt",
+        "blob_sha": "4cd104d1b5a6e8dea67020bb3373548ded552d8e"
+      },
+      {
+        "path": "common/culture/cultures/wc_shathyar.txt",
+        "blob_sha": "d59f25722c46245302f59e41ed0c46fdf6c031f3"
+      },
+      {
+        "path": "common/culture/cultures/wc_southern.txt",
+        "blob_sha": "fe6c980795e19990f36d6d2f69d6253629e08260"
+      },
+      {
+        "path": "common/culture/cultures/wc_taunka.txt",
+        "blob_sha": "6e5d40afe8ea789eb7e5c918d248a0f5df616bce"
+      },
+      {
+        "path": "common/culture/cultures/wc_tauren.txt",
+        "blob_sha": "35fb1a71838e63c5f9e12bbc9e02200d2b2c92b7"
+      },
+      {
+        "path": "common/culture/cultures/wc_thalassian.txt",
+        "blob_sha": "3b3677cfd4c49f3a32ec4331a14a3b581431e04c"
+      },
+      {
+        "path": "common/culture/cultures/wc_tharian.txt",
+        "blob_sha": "0a689114df887531a602d24e6f11fc565d7fcf7a"
+      },
+      {
+        "path": "common/culture/cultures/wc_uldamanic.txt",
+        "blob_sha": "b09a8cc4f9b06f03c463cf908d45c7c43d951747"
+      },
+      {
+        "path": "common/culture/cultures/wc_ulduaric.txt",
+        "blob_sha": "51d2579cfbc28237f10e2ba66e721f17928112f8"
+      },
+      {
+        "path": "common/culture/cultures/wc_uldumic.txt",
+        "blob_sha": "c53f06ecb6ca85bb629a06e72077d6359b505269"
+      },
+      {
+        "path": "common/culture/cultures/wc_undead.txt",
+        "blob_sha": "15f39402b4421f4812f85903cbeeb283dc055e7c"
+      },
+      {
+        "path": "common/culture/cultures/wc_void.txt",
+        "blob_sha": "deacd167218debb3862cd94e7b82f3dd520a6dd9"
+      },
+      {
+        "path": "common/culture/cultures/wc_vrykulic.txt",
+        "blob_sha": "c4a7fbe578afd7854d877fa709c8502489b54273"
+      },
+      {
+        "path": "common/culture/cultures/wc_vulpine.txt",
+        "blob_sha": "f407050b76ae3ceedefcd8521cf6328a4c359711"
+      },
+      {
+        "path": "common/culture/cultures/wc_xavic.txt",
+        "blob_sha": "aedb4179a684961543e4da77802ce7e0b01ca4bc"
+      },
+      {
+        "path": "common/culture/cultures/wc_yaungolic.txt",
+        "blob_sha": "168bab2509ec67b6aa88b02a5c809220d2fc7ee5"
+      },
+      {
+        "path": "common/culture/cultures/wc_zaetaric.txt",
+        "blob_sha": "8331463b0634322ac14252125cfdcbd2770a224a"
+      },
+      {
+        "path": "common/culture/cultures/wc_zulian.txt",
+        "blob_sha": "c9d0feb64918e55059b7a2619b9aff73540e952f"
+      }
+    ]
+  },
+  "design_notes": {
+    "facts": "Pinned native culture and parent data is a static fallback; actual current game data wins.",
+    "families": "Authored baseline of seven shared comprehension families; other known IDs are singleton families.",
+    "contact": "Authored direct culture-group familiarity; not native game learned knowledge.",
+    "ancestors": "Host supplies current culture ancestry using native game facts; static parent table assists fixed-culture lookup.",
+    "exclusions": "An excluded culture or its descendant suppresses the particular contact rule.",
+    "no_tracking": "No individual histories, acquisition records, timers, political/marital state or location records.",
+    "pandaria": "Current Pandaren/Jinyu/Mogu culture assignments are language_mogu and therefore clear to other actual Mogu speakers. The historical Old Pandaren and Old Jinyu language IDs receive no new cultural links from imperial ancestry alone.",
+    "contact_revision": "Full accepted C/R/CF/TT/TD/CT/SP decisions. These are authored partial comprehension, not language learning, fluency, family anchors, or an exposure-history database."
+  },
+  "practice_rules": [
+    {
+      "id": "R01",
+      "category": "faith_ritual",
+      "targets": [
+        "language_elunic"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "kaldorei_religion"
+        ]
+      },
+      "reason": "R01: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R02",
+      "category": "faith_ritual",
+      "targets": [
+        "language_shathyar"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "twilights_hammer_cult",
+          "cthunism",
+          "yoggsaronism",
+          "nzothism",
+          "yshaarjism",
+          "ghuunism",
+          "azshara_worship",
+          "xavist"
+        ]
+      },
+      "reason": "R02: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R03",
+      "category": "faith_ritual",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "burning_legion_religion",
+          "orcish_fel",
+          "vindicatory",
+          "black_harvest"
+        ]
+      },
+      "reason": "R03: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R04",
+      "category": "faith_ritual",
+      "targets": [
+        "language_cursed"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "death_god",
+          "ebon"
+        ]
+      },
+      "reason": "R04: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R05",
+      "category": "faith_ritual",
+      "targets": [
+        "language_ignan"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "ragnarism",
+          "ordonism"
+        ]
+      },
+      "reason": "R05: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R06",
+      "category": "faith_ritual",
+      "targets": [
+        "language_aquan"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "neptulism"
+        ]
+      },
+      "reason": "R06: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R07",
+      "category": "faith_ritual",
+      "targets": [
+        "language_auran"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "al_akirism"
+        ]
+      },
+      "reason": "R07: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R08",
+      "category": "faith_ritual",
+      "targets": [
+        "language_terran"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "therazanism",
+          "theradrasism"
+        ]
+      },
+      "reason": "R08: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R09",
+      "category": "faith_ritual",
+      "targets": [
+        "language_titanic"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "mystery_of_the_makers",
+          "suntouched"
+        ]
+      },
+      "reason": "R09: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R10",
+      "category": "faith_ritual",
+      "targets": [
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "zandism",
+          "gurubism",
+          "drakkism",
+          "amism",
+          "farrism",
+          "rushism",
+          "cult_of_hakkar"
+        ]
+      },
+      "reason": "R10: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R11",
+      "category": "faith_ritual",
+      "targets": [
+        "language_common"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "holy_light",
+          "scarletism",
+          "argent"
+        ]
+      },
+      "reason": "R11: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R12",
+      "category": "faith_ritual",
+      "targets": [
+        "language_draenei"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "velenism",
+          "lightbound"
+        ]
+      },
+      "reason": "R12: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R13",
+      "category": "faith_ritual",
+      "targets": [
+        "language_sethrak"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "cult_of_sethraliss"
+        ]
+      },
+      "reason": "R13: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R14",
+      "category": "faith_ritual",
+      "targets": [
+        "language_vulpera"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "cult_of_ariwo"
+        ]
+      },
+      "reason": "R14: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "R15",
+      "category": "faith_ritual",
+      "targets": [
+        "language_tortollan"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "cult_of_torga"
+        ]
+      },
+      "reason": "R15: Explicit current ritual or institutional practice; not learned language knowledge.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF01",
+      "category": "faith_community",
+      "targets": [
+        "language_low_common"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "cult_of_the_candle"
+        ]
+      },
+      "reason": "CF01: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF02",
+      "category": "faith_community",
+      "targets": [
+        "language_dwarven"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "wildhammer_shamanism",
+          "khazic"
+        ]
+      },
+      "reason": "CF02: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF03",
+      "category": "faith_community",
+      "targets": [
+        "language_taurahe"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "earth_mother_worship",
+          "taunka_religion"
+        ]
+      },
+      "reason": "CF03: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF04",
+      "category": "faith_community",
+      "targets": [
+        "language_tuskarr"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "tuskarr_religion"
+        ]
+      },
+      "reason": "CF04: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF05",
+      "category": "faith_community",
+      "targets": [
+        "language_drogbar"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "drogbar_religion"
+        ]
+      },
+      "reason": "CF05: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF06",
+      "category": "faith_community",
+      "targets": [
+        "language_nerubian"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "spider_philosophy",
+          "moonweaver_religion"
+        ]
+      },
+      "reason": "CF06: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF07",
+      "category": "faith_community",
+      "targets": [
+        "language_hozen"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "monkey_king_worship"
+        ]
+      },
+      "reason": "CF07: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF08",
+      "category": "faith_community",
+      "targets": [
+        "language_ravenspeech"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "anzuism",
+          "setheism",
+          "rukhmarism"
+        ]
+      },
+      "reason": "CF08: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF09",
+      "category": "faith_community",
+      "targets": [
+        "language_mogu"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "august_celestials",
+          "waterspeaker",
+          "saurok_religion",
+          "thunder_king"
+        ]
+      },
+      "reason": "CF09: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF10",
+      "category": "faith_community",
+      "targets": [
+        "language_thalassian"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "cult_of_sunwell"
+        ]
+      },
+      "reason": "CF10: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF11",
+      "category": "faith_community",
+      "targets": [
+        "language_shalassian"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "cult_of_nightwell"
+        ]
+      },
+      "reason": "CF11: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF12",
+      "category": "faith_community",
+      "targets": [
+        "language_darnassian",
+        "language_high_darnassian"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "arcane_religion"
+        ]
+      },
+      "reason": "CF12: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF13",
+      "category": "faith_community",
+      "targets": [
+        "language_furbolg"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "ursine"
+        ]
+      },
+      "reason": "CF13: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF14",
+      "category": "faith_community",
+      "targets": [
+        "language_quilboar"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "agamaggan_worship"
+        ]
+      },
+      "reason": "CF14: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF15",
+      "category": "faith_community",
+      "targets": [
+        "language_ogre"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "gorgog_worship"
+        ]
+      },
+      "reason": "CF15: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF16",
+      "category": "faith_community",
+      "targets": [
+        "language_gnomish"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "glowbound"
+        ]
+      },
+      "reason": "CF16: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF17",
+      "category": "faith_community",
+      "targets": [
+        "language_tolvir"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "suntouched"
+        ]
+      },
+      "reason": "CF17: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF18",
+      "category": "faith_community",
+      "targets": [
+        "language_vrykul"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "odyn",
+          "helya"
+        ]
+      },
+      "reason": "CF18: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF19",
+      "category": "faith_community",
+      "targets": [
+        "language_drust"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "throsic"
+        ]
+      },
+      "reason": "CF19: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF20",
+      "category": "faith_community",
+      "targets": [
+        "language_nazja"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "azshara_worship"
+        ]
+      },
+      "reason": "CF20: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF21",
+      "category": "faith_community",
+      "targets": [
+        "language_sethrak"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "faithless"
+        ]
+      },
+      "reason": "CF21: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF22",
+      "category": "faith_community",
+      "targets": [
+        "language_nerglish"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "gorloc_oracle"
+        ]
+      },
+      "reason": "CF22: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CF23",
+      "category": "faith_community",
+      "targets": [
+        "language_common"
+      ],
+      "predicate": {
+        "kind": "faith",
+        "ids": [
+          "kirin_torian"
+        ]
+      },
+      "reason": "CF23: Explicit current practicing community language; independent of the convert’s culture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT01",
+      "category": "tradition",
+      "targets": [
+        "language_cursed"
+      ],
+      "predicate": {
+        "kind": "tradition",
+        "ids": [
+          "tradition_liberated_undead"
+        ]
+      },
+      "reason": "TT01: Current liberated-undead institution.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT02",
+      "category": "tradition",
+      "targets": [
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "tradition",
+        "ids": [
+          "tradition_zandalari_cities"
+        ]
+      },
+      "reason": "TT02: Current Zandalari civic institution.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT03",
+      "category": "tradition",
+      "targets": [
+        "language_mogu"
+      ],
+      "predicate": {
+        "kind": "tradition",
+        "ids": [
+          "tradition_sinophilic"
+        ]
+      },
+      "reason": "TT03: Actual adapted Pandaria tradition; no manufactured DLC feature.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT04_vulpera",
+      "category": "tradition",
+      "targets": [
+        "language_zandali",
+        "language_sethrak"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "tradition",
+            "ids": [
+              "tradition_caravaneers"
+            ]
+          },
+          {
+            "kind": "culture",
+            "ids": [
+              "vulpera"
+            ],
+            "inherit": true,
+            "exclude": []
+          }
+        ]
+      },
+      "reason": "TT04_vulpera: Tradition plus the authored current community bank; no universal occupational vocabulary.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT04_pandaria",
+      "category": "tradition",
+      "targets": [
+        "language_hozen"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "tradition",
+            "ids": [
+              "tradition_caravaneers"
+            ]
+          },
+          {
+            "kind": "culture",
+            "ids": [
+              "grummle",
+              "jinyu",
+              "mainland_pandaren",
+              "mountain_pandaren",
+              "forest_pandaren",
+              "fisher_pandaren",
+              "spiritual_pandaren"
+            ],
+            "inherit": true,
+            "exclude": [
+              "ankoan",
+              "wandering_pandaren"
+            ]
+          }
+        ]
+      },
+      "reason": "TT04_pandaria: Tradition plus the authored current community bank; no universal occupational vocabulary.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT05_human",
+      "category": "tradition",
+      "targets": [
+        "language_goblin"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "tradition",
+            "ids": [
+              "tradition_maritime_mercantilism"
+            ]
+          },
+          {
+            "kind": "culture",
+            "ids": [
+              "baradin",
+              "hillsbrad",
+              "tirassian",
+              "theramore"
+            ],
+            "inherit": true,
+            "exclude": []
+          }
+        ]
+      },
+      "reason": "TT05_human: Tradition plus the authored current community bank; no universal occupational vocabulary.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT05_goblin",
+      "category": "tradition",
+      "targets": [
+        "language_common",
+        "language_orcish",
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "tradition",
+            "ids": [
+              "tradition_maritime_mercantilism"
+            ]
+          },
+          {
+            "kind": "culture",
+            "ids": [
+              "goblin",
+              "blackwater"
+            ],
+            "inherit": true,
+            "exclude": [
+              "gilblin"
+            ]
+          }
+        ]
+      },
+      "reason": "TT05_goblin: Tradition plus the authored current community bank; no universal occupational vocabulary.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT06_southsea",
+      "category": "tradition",
+      "targets": [
+        "language_goblin",
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "tradition",
+            "ids": [
+              "tradition_practiced_pirates"
+            ]
+          },
+          {
+            "kind": "culture",
+            "ids": [
+              "pirate_culture",
+              "northsea"
+            ],
+            "inherit": true,
+            "exclude": [
+              "wastewander"
+            ]
+          }
+        ]
+      },
+      "reason": "TT06_southsea: Tradition plus the authored current community bank; no universal occupational vocabulary.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TT06_blackwater",
+      "category": "tradition",
+      "targets": [
+        "language_common",
+        "language_orcish",
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "tradition",
+            "ids": [
+              "tradition_practiced_pirates"
+            ]
+          },
+          {
+            "kind": "culture",
+            "ids": [
+              "blackwater"
+            ],
+            "inherit": true,
+            "exclude": [
+              "gilblin"
+            ]
+          }
+        ]
+      },
+      "reason": "TT06_blackwater: Tradition plus the authored current community bank; no universal occupational vocabulary.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD01",
+      "category": "doctrine",
+      "targets": [
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "doctrine",
+        "ids": [
+          "special_doctrine_is_troll_faith"
+        ]
+      },
+      "reason": "TD01: Current Heritage of Zul institutional marker.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD02",
+      "category": "doctrine",
+      "targets": [
+        "language_elunic"
+      ],
+      "predicate": {
+        "kind": "doctrine",
+        "ids": [
+          "special_doctrine_elunic_gender_stratification"
+        ]
+      },
+      "reason": "TD02: Current explicitly Elunic institutional marker.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_aquan",
+      "category": "doctrine",
+      "targets": [
+        "language_aquan"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "neptulism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_auran",
+      "category": "doctrine",
+      "targets": [
+        "language_auran"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "al_akirism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_common",
+      "category": "doctrine",
+      "targets": [
+        "language_common"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "argent",
+          "holy_light",
+          "kirin_torian",
+          "scarletism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_cursed",
+      "category": "doctrine",
+      "targets": [
+        "language_cursed"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "death_god",
+          "ebon"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_darnassian",
+      "category": "doctrine",
+      "targets": [
+        "language_darnassian"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "arcane_religion"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_draenei",
+      "category": "doctrine",
+      "targets": [
+        "language_draenei"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "lightbound",
+          "velenism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_drogbar",
+      "category": "doctrine",
+      "targets": [
+        "language_drogbar"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "drogbar_religion"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_drust",
+      "category": "doctrine",
+      "targets": [
+        "language_drust"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "throsic"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_dwarven",
+      "category": "doctrine",
+      "targets": [
+        "language_dwarven"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "khazic",
+          "wildhammer_shamanism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_elunic",
+      "category": "doctrine",
+      "targets": [
+        "language_elunic"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "kaldorei_religion"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_eredun",
+      "category": "doctrine",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "black_harvest",
+          "burning_legion_religion",
+          "orcish_fel",
+          "vindicatory"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_furbolg",
+      "category": "doctrine",
+      "targets": [
+        "language_furbolg"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "ursine"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_gnomish",
+      "category": "doctrine",
+      "targets": [
+        "language_gnomish"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "glowbound"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_high_darnassian",
+      "category": "doctrine",
+      "targets": [
+        "language_high_darnassian"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "arcane_religion"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_hozen",
+      "category": "doctrine",
+      "targets": [
+        "language_hozen"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "monkey_king_worship"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_ignan",
+      "category": "doctrine",
+      "targets": [
+        "language_ignan"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "ordonism",
+          "ragnarism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_low_common",
+      "category": "doctrine",
+      "targets": [
+        "language_low_common"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "cult_of_the_candle"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_mogu",
+      "category": "doctrine",
+      "targets": [
+        "language_mogu"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "august_celestials",
+          "saurok_religion",
+          "thunder_king",
+          "waterspeaker"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_nazja",
+      "category": "doctrine",
+      "targets": [
+        "language_nazja"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "azshara_worship"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_nerglish",
+      "category": "doctrine",
+      "targets": [
+        "language_nerglish"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "gorloc_oracle"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_nerubian",
+      "category": "doctrine",
+      "targets": [
+        "language_nerubian"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "moonweaver_religion",
+          "spider_philosophy"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_ogre",
+      "category": "doctrine",
+      "targets": [
+        "language_ogre"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "gorgog_worship"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_quilboar",
+      "category": "doctrine",
+      "targets": [
+        "language_quilboar"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "agamaggan_worship"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_ravenspeech",
+      "category": "doctrine",
+      "targets": [
+        "language_ravenspeech"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "anzuism",
+          "rukhmarism",
+          "setheism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_sethrak",
+      "category": "doctrine",
+      "targets": [
+        "language_sethrak"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "cult_of_sethraliss",
+          "faithless"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_shalassian",
+      "category": "doctrine",
+      "targets": [
+        "language_shalassian"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "cult_of_nightwell"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_shathyar",
+      "category": "doctrine",
+      "targets": [
+        "language_shathyar"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "azshara_worship",
+          "cthunism",
+          "ghuunism",
+          "nzothism",
+          "twilights_hammer_cult",
+          "xavist",
+          "yoggsaronism",
+          "yshaarjism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_taurahe",
+      "category": "doctrine",
+      "targets": [
+        "language_taurahe"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "earth_mother_worship",
+          "taunka_religion"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_terran",
+      "category": "doctrine",
+      "targets": [
+        "language_terran"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "theradrasism",
+          "therazanism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_thalassian",
+      "category": "doctrine",
+      "targets": [
+        "language_thalassian"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "cult_of_sunwell"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_titanic",
+      "category": "doctrine",
+      "targets": [
+        "language_titanic"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "mystery_of_the_makers",
+          "suntouched"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_tolvir",
+      "category": "doctrine",
+      "targets": [
+        "language_tolvir"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "suntouched"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_tortollan",
+      "category": "doctrine",
+      "targets": [
+        "language_tortollan"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "cult_of_torga"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_tuskarr",
+      "category": "doctrine",
+      "targets": [
+        "language_tuskarr"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "tuskarr_religion"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_vrykul",
+      "category": "doctrine",
+      "targets": [
+        "language_vrykul"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "helya",
+          "odyn"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_vulpera",
+      "category": "doctrine",
+      "targets": [
+        "language_vulpera"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "cult_of_ariwo"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD03_zandali",
+      "category": "doctrine",
+      "targets": [
+        "language_zandali"
+      ],
+      "predicate": {
+        "kind": "rite_institution",
+        "faithIds": [
+          "amism",
+          "cult_of_hakkar",
+          "drakkism",
+          "farrism",
+          "gurubism",
+          "rushism",
+          "zandism"
+        ]
+      },
+      "reason": "TD03: One current shared institution’s explicitly accepted practice-language bank; no head-person knowledge or recursive Rite lookup.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD04",
+      "category": "doctrine",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "doctrine",
+            "ids": [
+              "tenet_disorder_syncretism"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_disorder_magic_approved"
+            ]
+          }
+        ]
+      },
+      "reason": "TD04: Fel syncretism together with current Idolised Disorder instruction.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD05_fire",
+      "category": "doctrine",
+      "targets": [
+        "language_ignan"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "doctrine",
+            "ids": [
+              "tenet_elemental_syncretism"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_fire_spirit_magic_approved"
+            ]
+          }
+        ]
+      },
+      "reason": "TD05: Elemental syncretism plus this current Idolised Spirit branch.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD05_water",
+      "category": "doctrine",
+      "targets": [
+        "language_aquan"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "doctrine",
+            "ids": [
+              "tenet_elemental_syncretism"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_water_spirit_magic_approved"
+            ]
+          }
+        ]
+      },
+      "reason": "TD05: Elemental syncretism plus this current Idolised Spirit branch.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD05_air",
+      "category": "doctrine",
+      "targets": [
+        "language_auran"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "doctrine",
+            "ids": [
+              "tenet_elemental_syncretism"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_air_spirit_magic_approved"
+            ]
+          }
+        ]
+      },
+      "reason": "TD05: Elemental syncretism plus this current Idolised Spirit branch.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD05_earth",
+      "category": "doctrine",
+      "targets": [
+        "language_terran"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "doctrine",
+            "ids": [
+              "tenet_elemental_syncretism"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_earth_spirit_magic_approved"
+            ]
+          }
+        ]
+      },
+      "reason": "TD05: Elemental syncretism plus this current Idolised Spirit branch.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "TD06",
+      "category": "doctrine",
+      "targets": [
+        "language_kalimag"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "doctrine",
+            "ids": [
+              "tenet_elemental_syncretism"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_fire_spirit_magic_approved"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_water_spirit_magic_approved"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_air_spirit_magic_approved"
+            ]
+          },
+          {
+            "kind": "doctrine",
+            "ids": [
+              "doctrine_elemental_earth_spirit_magic_approved"
+            ]
+          }
+        ]
+      },
+      "reason": "TD06: Explicit four-branch Spirit union; no family propagation.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT01",
+      "category": "training",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "trained_school",
+        "school": "disorder"
+      },
+      "reason": "CT01: Actual current ranked or assigned-perk Disorder practice, including hidden training.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT02",
+      "category": "training",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "trait",
+        "ids": [
+          "demon_hunter",
+          "fallen_demon_hunter"
+        ]
+      },
+      "reason": "CT02: Current Demon Hunter or acting Fallen Demon Hunter institutional practice.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT03",
+      "category": "training",
+      "targets": [
+        "language_shathyar"
+      ],
+      "predicate": {
+        "kind": "trained_school",
+        "school": "shadow"
+      },
+      "reason": "CT03: Actual current ranked or assigned-perk Shadow practice.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT04",
+      "category": "training",
+      "targets": [
+        "language_ignan"
+      ],
+      "predicate": {
+        "kind": "trained_school",
+        "school": "elemental_fire"
+      },
+      "reason": "Branch training in any current neutral, Spirit or Decay subtype; aptitude alone does not qualify.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT05",
+      "category": "training",
+      "targets": [
+        "language_aquan"
+      ],
+      "predicate": {
+        "kind": "trained_school",
+        "school": "elemental_water"
+      },
+      "reason": "Branch training in any current neutral, Spirit or Decay subtype; aptitude alone does not qualify.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT06",
+      "category": "training",
+      "targets": [
+        "language_auran"
+      ],
+      "predicate": {
+        "kind": "trained_school",
+        "school": "elemental_air"
+      },
+      "reason": "Branch training in any current neutral, Spirit or Decay subtype; aptitude alone does not qualify.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT07",
+      "category": "training",
+      "targets": [
+        "language_terran"
+      ],
+      "predicate": {
+        "kind": "trained_school",
+        "school": "elemental_earth"
+      },
+      "reason": "Branch training in any current neutral, Spirit or Decay subtype; aptitude alone does not qualify.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT08",
+      "category": "training",
+      "targets": [
+        "language_kalimag"
+      ],
+      "predicate": {
+        "kind": "any",
+        "conditions": [
+          {
+            "kind": "spirit_school",
+            "school": "elemental_fire"
+          },
+          {
+            "kind": "spirit_school",
+            "school": "elemental_water"
+          },
+          {
+            "kind": "spirit_school",
+            "school": "elemental_air"
+          },
+          {
+            "kind": "spirit_school",
+            "school": "elemental_earth"
+          }
+        ]
+      },
+      "reason": "CT08: Actual Spirit branch rank or assigned training with current native Spirit disposition.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT09",
+      "category": "training",
+      "targets": [
+        "language_kalimag"
+      ],
+      "predicate": {
+        "kind": "all",
+        "conditions": [
+          {
+            "kind": "trained_school",
+            "school": "elemental_fire"
+          },
+          {
+            "kind": "trained_school",
+            "school": "elemental_water"
+          },
+          {
+            "kind": "trained_school",
+            "school": "elemental_air"
+          },
+          {
+            "kind": "trained_school",
+            "school": "elemental_earth"
+          }
+        ]
+      },
+      "reason": "CT09: Simultaneous training in all four branches in any subtype mixture.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT10",
+      "category": "institution",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "trait",
+        "ids": [
+          "legion_commander",
+          "archimonde",
+          "kiljaeden"
+        ]
+      },
+      "reason": "CT10: Current confirmed Legion command role; no generic demon-body grant.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT11",
+      "category": "institution",
+      "targets": [
+        "language_cursed"
+      ],
+      "predicate": {
+        "kind": "trait",
+        "ids": [
+          "lich_king",
+          "champion_of_the_scourge"
+        ]
+      },
+      "reason": "CT11: Current Scourge command or herald role.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT12",
+      "category": "institution",
+      "targets": [
+        "language_cursed"
+      ],
+      "predicate": {
+        "kind": "trait",
+        "ids": [
+          "creature_lich"
+        ]
+      },
+      "reason": "CT12: Authored advanced Lich institutional role, not all death magic or undead.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "CT13",
+      "category": "institution",
+      "targets": [
+        "language_darnassian"
+      ],
+      "predicate": {
+        "kind": "trait",
+        "ids": [
+          "creature_green_dragon"
+        ]
+      },
+      "reason": "CT13: Actual Green Dragon identity, not fractional ancestry or a reverse Draconic grant.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "SP01",
+      "category": "spell",
+      "targets": [
+        "language_eredun"
+      ],
+      "predicate": {
+        "kind": "known_spell",
+        "spell": "summon_demon"
+      },
+      "reason": "SP01: Actual currently known spell, independent of class visibility, mana, active summons or acquisition history.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "SP02",
+      "category": "spell",
+      "targets": [
+        "language_shathyar"
+      ],
+      "predicate": {
+        "kind": "known_spell",
+        "spell": "summon_void_leader"
+      },
+      "reason": "SP02: Actual currently known spell, independent of class visibility, mana, active summons or acquisition history.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "SP03",
+      "category": "spell",
+      "targets": [
+        "language_shathyar"
+      ],
+      "predicate": {
+        "kind": "known_spell",
+        "spell": "whispers"
+      },
+      "reason": "SP03: Actual currently known spell, independent of class visibility, mana, active summons or acquisition history.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "SP04",
+      "category": "spell",
+      "targets": [
+        "language_ignan",
+        "language_kalimag"
+      ],
+      "predicate": {
+        "kind": "known_spell",
+        "spell": "summon_fire_elemental"
+      },
+      "reason": "SP04: Actual currently known spell, independent of class visibility, mana, active summons or acquisition history.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "SP05",
+      "category": "spell",
+      "targets": [
+        "language_aquan",
+        "language_kalimag"
+      ],
+      "predicate": {
+        "kind": "known_spell",
+        "spell": "summon_water_elemental"
+      },
+      "reason": "SP05: Actual currently known spell, independent of class visibility, mana, active summons or acquisition history.",
+      "grounding": "authored_gameplay_inference"
+    },
+    {
+      "id": "SP06",
+      "category": "spell",
+      "targets": [
+        "language_terran",
+        "language_kalimag"
+      ],
+      "predicate": {
+        "kind": "known_spell",
+        "spell": "summon_earth_elemental"
+      },
+      "reason": "SP06: Actual currently known spell, independent of class visibility, mana, active summons or acquisition history.",
+      "grounding": "authored_gameplay_inference"
+    }
+  ],
+  "decision_source": {
+    "document_sha256": "977ae1d6c69316c040b694d1ec01d9df8391239eea6c7c85e854f54e06b49b47",
+    "culture_inheritance": "Descendants by user default; exact C16/C21/C22 selectors remain exact.",
+    "rite_bank": "Accepted ritual and community institution-language union, using one current head-faith lookup.",
+    "unresolved_choices_implemented": false
+  }
+}

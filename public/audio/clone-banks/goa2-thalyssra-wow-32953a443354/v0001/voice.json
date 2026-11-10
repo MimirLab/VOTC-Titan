@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-thalyssra-wow-32953a443354",
+  "revision": 1,
+  "name": "Thalyssra — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "55f9536931ce1e9bca8d4af28e55bbb2fbea0b5bdf7a360d3be02a341a7bdf7e",
+    "transcript_sha256": "a9a70d3b0c71aab901da35fe81b2dbbae0bfc29b9791e56e35c57e542a8eb128",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 407630,
+      "seconds": 16.984583333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -17.21,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

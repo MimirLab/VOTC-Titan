@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42076-hots-sylvanasbase",
+  "revision": 1,
+  "name": "Sylvanas Windrunner — Banshee Queen (HotS)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d1785e46b3622c04082ac936d7432079d88488ac4e6afb9100b20b314e4bfc8f",
+    "transcript_sha256": "3f87bf9143da3ddba9f06760154d34faf3939fd327b72b315273d72fee3a0512",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 364627,
+      "seconds": 15.192791666666666,
+      "peak": 0.823639,
+      "rms_dbfs": -16.22,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

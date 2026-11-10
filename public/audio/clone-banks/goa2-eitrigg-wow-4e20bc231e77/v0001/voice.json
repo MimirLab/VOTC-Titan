@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-eitrigg-wow-4e20bc231e77",
+  "revision": 1,
+  "name": "Eitrigg — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "dc6cfce59d43536eb6cb280d5aa6e1f18ba500e45e0652278c351f558f634fb3",
+    "transcript_sha256": "6f529a2699271d5abe6208c90b640025e4220417d962a5f1bf401b5b770b6aa0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 340612,
+      "seconds": 14.192166666666667,
+      "peak": 1.0,
+      "rms_dbfs": -14.37,
+      "clipped_samples": 13
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

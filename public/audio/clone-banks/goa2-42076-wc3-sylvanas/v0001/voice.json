@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42076-wc3-sylvanas",
+  "revision": 1,
+  "name": "Sylvanas Windrunner — living ranger general (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8e535261f7f239aed37aabba49c7c5ae2c85218a9c8ee9dd6e3a160fccf17e0b",
+    "transcript_sha256": "45e4d431785326c47d158683e729af6606d2bb26da101eec1c339e8bad61b321",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 46009,
+      "seconds": 1.9170416666666668,
+      "peak": 0.521759,
+      "rms_dbfs": -25.41,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

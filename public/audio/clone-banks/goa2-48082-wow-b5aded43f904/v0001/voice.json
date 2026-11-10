@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48082-wow-b5aded43f904",
+  "revision": 1,
+  "name": "Derek Proudmoore — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "624fb51f45215fd7c1b64b12e622a07895b3852da0fead6ac607ad988fe2246d",
+    "transcript_sha256": "b171b08a5ce72220432e9d61055528b56d7965eaa712b877912cb5f32dfdffc8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 339837,
+      "seconds": 14.159875,
+      "peak": 1.0,
+      "rms_dbfs": -21.08,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

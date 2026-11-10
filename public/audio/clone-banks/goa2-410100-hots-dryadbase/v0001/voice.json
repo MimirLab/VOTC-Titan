@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-410100-hots-dryadbase",
+  "revision": 1,
+  "name": "Lunara — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "900d02bf014591aaf92cd0441da947679a84dd885021e26c6debbebed7944e97",
+    "transcript_sha256": "2f56a4c74ed35ff2c975b09a924978053a93c98751835888d422092783e88ecf",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393291,
+      "seconds": 16.387125,
+      "peak": 0.833435,
+      "rms_dbfs": -16.31,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

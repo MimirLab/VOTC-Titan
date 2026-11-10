@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-579-wow-09fb169d18b8",
+  "revision": 1,
+  "name": "Kanrethad Ebonlocke — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a03c69e0f834651186e61e8bb07d97f0bc34a9d95e71cbd3323f62602f8cbc8a",
+    "transcript_sha256": "6097b7c68cb05c7f5a845b25dd2acf96252dd4a5666eccba3852e18a05642690",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 352270,
+      "seconds": 14.677916666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.42,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

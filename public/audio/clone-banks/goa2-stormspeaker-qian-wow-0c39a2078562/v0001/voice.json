@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-stormspeaker-qian-wow-0c39a2078562",
+  "revision": 1,
+  "name": "Qian Rajani — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b510650617ac1fedc7cb87dd3e7d394b3e589d47973ff8846046227dd8392c6f",
+    "transcript_sha256": "c8dc96396baa9a45121957ea2b98a6f1ef300d7b5e7a84859f2e8362fc240c6d",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384627,
+      "seconds": 16.026125,
+      "peak": 0.993195,
+      "rms_dbfs": -14.83,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

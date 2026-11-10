@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-582-wow-e43017acaed2",
+  "revision": 1,
+  "name": "Althea Ebonlocke — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c32a8e76cc6fc10f7322d0eba1eb8a6426138ec26958f3aa07584c5b47aeb27a",
+    "transcript_sha256": "bef14929ba276ebcf90cefd6738790a474b9f523e88f1b22a1e3a87588dc22c5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 344478,
+      "seconds": 14.35325,
+      "peak": 0.989136,
+      "rms_dbfs": -17.59,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

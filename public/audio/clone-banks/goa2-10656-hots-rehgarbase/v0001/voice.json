@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10656-hots-rehgarbase",
+  "revision": 1,
+  "name": "Rehgar Earthfury — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "21481e868cf8a7bfd6f3063082ec0687f51b7bf0478fdd6d39b816f55c7cd4a5",
+    "transcript_sha256": "d2544ec78b1afff18060e1205f81b624fb3770d132c8b52d3cfe0c4cb631a476",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378840,
+      "seconds": 15.785,
+      "peak": 0.903442,
+      "rms_dbfs": -12.68,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62400-hots-alexstraszabase",
+  "revision": 1,
+  "name": "Alexstrasza — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "79bbeb89ff76b1fe949d42d2cf40f5e7efd9ab093a15ad90757dd0e7f33418d3",
+    "transcript_sha256": "64d10123f9b97cb3d09dee73f00ee64986b787bfe4ff00cd26d682e60a9b9d42",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 427462,
+      "seconds": 17.810916666666667,
+      "peak": 0.812988,
+      "rms_dbfs": -16.33,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-90100-wow-0c997260d459",
+  "revision": 1,
+  "name": "Harlan Sweete — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7d1c4a436badfd1a2e47f0167ae2b8bb3f402838ab1c9c3ed5cff2b2e57f0b38",
+    "transcript_sha256": "222b8075b623e200f28608c53b798be93a36eb1b015655e384496b342b2858de",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 401003,
+      "seconds": 16.708458333333333,
+      "peak": 1.0,
+      "rms_dbfs": -17.6,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

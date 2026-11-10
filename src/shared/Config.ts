@@ -1,0 +1,170 @@
+import fs from 'fs';
+import { ck3RuntimePath } from './runtimePaths';
+import { Parameters, Connection} from './apiConnection';
+import path from 'path';
+import {app} from 'electron';
+import { AudioSettings, normalizeAudio } from './audio';
+
+export interface ApiConnectionConfig{
+    connection: Connection;
+    parameters: Parameters;
+}
+
+export class Config{
+    lorebookEnabled: boolean = true;
+    audio: AudioSettings = normalizeAudio();
+    userFolderPath!: string;
+    cultureRoleplayEnabled: boolean = true;
+    faithRoleplayEnabled: boolean = true;
+    goaLoreEnabled: boolean = true;
+    languageRoutingEnabled: boolean = true;
+    cultureGameInstallPath: string = '';
+    language: 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'de' | 'ja' | 'ko' | 'pl' | 'pt' = 'en';
+    activePromptPreset!: string;
+
+    stream!: boolean;
+    maxTokens!: number;
+    maxMemoryTokens!: number;
+    percentOfContextToSummarize!: number;
+
+    selectedDescScript!: string;
+    selectedExMsgScript!: string;
+    selectedBookmarkScript!: string;
+
+    inputSequence!: string;
+    outputSequence!: string;
+
+    textGenerationApiConnectionConfig!: ApiConnectionConfig;
+    summarizationApiConnectionConfig!: ApiConnectionConfig;
+    actionsApiConnectionConfig!: ApiConnectionConfig;
+    embeddingApiConnectionConfig!: ApiConnectionConfig;
+
+    summarizationUseTextGenApi!: boolean;
+    actionsUseTextGenApi!: boolean;
+
+    actionsEnableAll!: boolean;
+    manualActionApproval!: boolean;
+    manualLetterActionApproval!: boolean;
+    narrativeEnable!: boolean;
+    disabledActions!: string[];
+
+    minimumMessagesBeforeAction!: number;
+    actionProbability!: number;
+    maxConsecutiveActions!: number;
+
+    cleanMessages!: boolean;
+    debugMode!: boolean;
+    aiStartConversationChance!: number;
+    diaryGenerationChance!: number;
+    shuffleCharacterOrder!: boolean;
+    dynamicCharacterSelection!: boolean;
+    aiToAiChatChance!: number;
+    nonTargetedCharacterResponseChance!: number;
+    questionPlayerActionsChance!: number;
+    validateCharacterIdentity!: boolean;
+    showSuggestionsButton!: boolean;
+    generateSceneDescription!: boolean;
+    autoGenerateSuggestions!: boolean;
+    autoSendSuggestion!: boolean;
+    showPreviousConversations!: boolean;
+    disableHistoricalConversations!: boolean;
+    maxHistoricalConversations!: number;
+    maxConversationsInHistoryWindow!: number;
+    maxSummaries!: number;
+    showTokenizerDisplay!: boolean;
+    checkForUpdatesOnStartup!: boolean;
+    earlyAccessUpdates!: boolean;
+    lastAnnouncementVersion!: string;
+
+    summariesInsertDepth!: number;
+    memoriesInsertDepth!: number;
+    descInsertDepth!: number;
+
+    disabledMegamodNotifications!: string[];
+
+    enableSuffixPrompt!: boolean;
+    selectedSelfTalkExMsgScript!: string;
+
+    // Memory Compaction Settings
+    enableMemoryCompaction!: boolean;
+    compactionPhase1Threshold!: number;
+    compactionPhase2Threshold!: number;
+    compactionTokenBudget!: { phase1: number, phase2: number };
+    compactionCooldownMinutes!: number;
+    compactionPriorityElements!: string[];
+    compactionEntityExtractionMode!: "llm" | "regex" | "hybrid";
+    compactionRelationshipsDirectional!: boolean;
+    compactionApiConnectionConfig!: ApiConnectionConfig;
+
+    constructor(configPath: string){
+        const obj = JSON.parse(fs.readFileSync(configPath).toString());
+        Object.assign(this, obj);
+        this.audio = normalizeAudio(obj.audio);
+        this.languageRoutingEnabled = obj.languageRoutingEnabled !== false;
+        this.userFolderPath = ck3RuntimePath(this.userFolderPath || '');
+        this.cultureGameInstallPath = ck3RuntimePath(this.cultureGameInstallPath || '');
+
+        // Ensure embedding API config exists (used by the Memories tab)
+        if (!this.embeddingApiConnectionConfig) {
+            this.embeddingApiConnectionConfig = {
+                connection: {
+                    type: 'openai',
+                    baseUrl: 'https://api.openai.com/v1',
+                    key: '',
+                    model: 'text-embedding-3-small',
+                    forceInstruct: false,
+                    overwriteContext: false,
+                    customContext: 8192,
+                    embeddingDimension: 1536,
+                    useCustomEmbeddingDimension: false,
+                },
+                parameters: {}
+            };
+        }
+    }
+
+    export(){
+        this.userFolderPath = ck3RuntimePath(this.userFolderPath || '');
+        this.cultureGameInstallPath = ck3RuntimePath(this.cultureGameInstallPath || '');
+        // 在保存配置前，确保apiKeys字段被正确保留
+        const configData = JSON.parse(JSON.stringify(this));
+
+        // 检查每个API连接配置中是否有apiKeys字段，如果有则保留
+        const configTypes = ['textGenerationApiConnectionConfig', 'summarizationApiConnectionConfig', 'actionsApiConnectionConfig', 'embeddingApiConnectionConfig',  'compactionApiConnectionConfig'];
+        configTypes.forEach(configType => {
+            if (configData[configType] && configData[configType].connection &&
+                configData[configType].connection.apiKeys) {
+                // 确保apiKeys字段被包含在导出的配置中
+                console.log(`Preserving apiKeys for ${configType}`);
+            }
+        });
+
+        fs.writeFileSync(path.join(app.getPath('userData'), 'votc_data', 'configs', 'config.json'), JSON.stringify(configData, null, '\t'));
+    }
+
+    toSafeConfig(): Config {
+        //pass by value
+        let output: Config = JSON.parse(JSON.stringify(this));
+        if (output.audio?.apiKey) output.audio.apiKey = '<hidden>';
+
+        // Hide sensitive information
+        const configTypes = ['textGenerationApiConnectionConfig', 'summarizationApiConnectionConfig', 'actionsApiConnectionConfig', 'compactionApiConnectionConfig'];
+
+        configTypes.forEach(configType => {
+            const config = output[configType as keyof Config] as ApiConnectionConfig | undefined;
+            if (config && config.connection) {
+                if (config.connection.key) config.connection.key = "<hidden>";
+                if (config.connection.baseUrl) config.connection.baseUrl = "<hidden>";
+                if (config.connection.apiKeys) {
+                    const apiKeys = config.connection.apiKeys;
+                    Object.keys(apiKeys).forEach(apiType => {
+                        if (apiKeys[apiType].key) apiKeys[apiType].key = "<hidden>";
+                        if (apiKeys[apiType].baseUrl) apiKeys[apiType].baseUrl = "<hidden>";
+                    });
+                }
+            }
+        });
+
+        return output;
+    }
+}

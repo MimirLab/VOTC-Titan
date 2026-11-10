@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-500273-wow-01583687a8e3",
+  "revision": 1,
+  "name": "Yalia Sagewhisper — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a1713465db52863d0b008ccb5546e4ceff551880e1109a96537a78d3cc37dbce",
+    "transcript_sha256": "53780ed0bdfe095a5c7cb4b0e26a6c3c1455c0c829e299c1b40bf57d0d2098c7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 176915,
+      "seconds": 7.371458333333333,
+      "peak": 0.964966,
+      "rms_dbfs": -13.36,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

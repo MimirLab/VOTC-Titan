@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42075-wow-72cb09c47a94",
+  "revision": 1,
+  "name": "Lor'themar Theron — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "88cc673cc1c56356543cb06a71875fb337cbff143711ba54f352b3653b5ef405",
+    "transcript_sha256": "5f27957d3acf31fd4fb7923bc9843bc2a2fb753a6a35ad8de3d9158479f2c86b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 427651,
+      "seconds": 17.818791666666666,
+      "peak": 1.0,
+      "rms_dbfs": -16.47,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

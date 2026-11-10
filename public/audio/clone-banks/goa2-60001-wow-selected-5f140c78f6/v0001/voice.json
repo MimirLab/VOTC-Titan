@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60001-wow-selected-5f140c78f6",
+  "revision": 1,
+  "name": "Terenas Menethil — Terenas Menethil II; WoW 11.1.7 recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "931934ed1f734591d25cbe9138ff008e60292110aa77cb3a06c66f60ecfefa2a",
+    "transcript_sha256": "5471fb0158ff4d26367e01618d72cd3e9a826c3636f806b5df0b4bd0ab031b4c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 403191,
+      "seconds": 16.799625,
+      "peak": 1.0,
+      "rms_dbfs": -15.32,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

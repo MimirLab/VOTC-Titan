@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-archmage-vargoth-wow-7c35801fc15d",
+  "revision": 1,
+  "name": "Vargoth — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f393865ac3a14ad71b17f8e429a7aeb1b703d446f5513093282ebc065a6cbfad",
+    "transcript_sha256": "d4721320823942339184b71ad99176a2c3ab5c882600fcc720fdd7d0393db678",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 386348,
+      "seconds": 16.097833333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.66,
+      "clipped_samples": 15
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

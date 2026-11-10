@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-210049-wow-9e5cc223f25c",
+  "revision": 1,
+  "name": "Magatha Grimtotem — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7e8214aa58e6a422481658f56c95323fc9bfd4f55e18a42cbfa44e068e646e42",
+    "transcript_sha256": "b81c47977c05b78a0c71af4d03907246669e321a581ed13ee7b255ad97b84b4b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 383027,
+      "seconds": 15.959458333333334,
+      "peak": 1.0,
+      "rms_dbfs": -15.57,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

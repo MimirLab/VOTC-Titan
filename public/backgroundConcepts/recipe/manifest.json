@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "source": "out/steering-gnomish-company-authoring-20261012",
+  "richConditionals": 363,
+  "essentialReadings": 619,
+  "compositions": 29,
+  "sourceReceiptFilesVerified": 197,
+  "relationshipSource": "out/steering-education-scope-model-20261012/builds/education/public/backgroundConcepts/relationships.json",
+  "files": {
+    "relationships.json": "a50d774a3e01631713bcc0338864709079fe41be22bbae9f5a3a1c9765c6d128",
+    "essential.json": "87a9205cd81f05f1be128854783778dedd99a84031971f6f761258f0382a18dc",
+    "compositions.json": "ebaf94466a4687124ecbd88cb4050f9d934e860f579940615228c437b8d176ca",
+    "authored.json": "8ab139a6a2d624eb71ce46896a05293ed7356bdd1720a72ed10bf6b28f56ae30"
+  },
+  "status": "Reviewed source/model coverage correction; native receipt required separately.",
+  "baseEntries": 270,
+  "additionalSource": "out/steering-eastern-conclave-authoring-20261012"
+}

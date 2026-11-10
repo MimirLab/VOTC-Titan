@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-nikki-the-fixer-wow-9860776a19d2",
+  "revision": 1,
+  "name": "Nikki — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8efb7a5f8fef739ee05408c13ca254588aba6ab6816f87c45320cb18b17a6b1f",
+    "transcript_sha256": "d8c8dc778222838174917b756f043a887cdd89f4b608315bef96b8a4bed1dc49",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 340467,
+      "seconds": 14.186125,
+      "peak": 0.999298,
+      "rms_dbfs": -15.97,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

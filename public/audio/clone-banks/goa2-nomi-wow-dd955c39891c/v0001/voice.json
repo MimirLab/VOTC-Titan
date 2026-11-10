@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-nomi-wow-dd955c39891c",
+  "revision": 1,
+  "name": "Nomi — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9f5b976010e13eb6e8090c80b64af175a1a40ba0d9fb6f7cf6a867691658376b",
+    "transcript_sha256": "cbbb3b4a25750376ab5a0e75993a83d6af986bc780a7969d9bb5d2e4ce82721e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 379790,
+      "seconds": 15.824583333333333,
+      "peak": 1.0,
+      "rms_dbfs": -16.73,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

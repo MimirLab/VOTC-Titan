@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-26021-wow-c86fa4a609f2",
+  "revision": 1,
+  "name": "Mackay Firebeard — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "309b0ac72c846b81f6fece46e5ff65225301344247b2040e1b87fac90ba5773c",
+    "transcript_sha256": "d250450e314d9f7c14efcf5281d5dc620ac7f7f3659db9a592052c3c4737c29b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 98172,
+      "seconds": 4.0905,
+      "peak": 0.683929,
+      "rms_dbfs": -18.16,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

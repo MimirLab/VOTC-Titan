@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-garrosh-hots-garroshbase",
+  "revision": 1,
+  "name": "Garrosh Hellscream — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "599c01b1038629cd70d2a8b29308825eb868c3aa2d8a68b465fa92aa52d341ca",
+    "transcript_sha256": "f292339ab7902ebc70a7e674653765ebc628f5d4373eff1aa2bea364a63326e3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 419039,
+      "seconds": 17.459958333333333,
+      "peak": 0.67276,
+      "rms_dbfs": -16.53,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

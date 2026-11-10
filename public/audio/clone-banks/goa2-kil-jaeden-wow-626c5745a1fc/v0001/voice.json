@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-kil-jaeden-wow-626c5745a1fc",
+  "revision": 1,
+  "name": "Kil'jaeden — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "915f1ab65368be239970685170bd53b7b794e7dfc2aee55e4a1a7d9a285ff6d2",
+    "transcript_sha256": "0af93a8a70e0e76832043c64161747a559adbbc852aa11e389ce5816f5c07b4d",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 396472,
+      "seconds": 16.519666666666666,
+      "peak": 1.0,
+      "rms_dbfs": -12.04,
+      "clipped_samples": 73
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

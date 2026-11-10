@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48080-wow-9bea59989761",
+  "revision": 1,
+  "name": "Daelin Proudmoore — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "930a9b76cd6369ce79c1ca682bd6f47615034eae71a77e1b210b104d2ee5df5c",
+    "transcript_sha256": "076319ff4d28af3cb338333e30b754167f396a9e78ab552f170d339ad0017248",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 399558,
+      "seconds": 16.64825,
+      "peak": 0.999969,
+      "rms_dbfs": -16.72,
+      "clipped_samples": 15
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

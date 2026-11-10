@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-keristrasza-wow-95ad60126dd7",
+  "revision": 1,
+  "name": "Keristrasza — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "aecacd969ebfac49552c9973bcceef1c5ebe580a1f1effdb2ef27e84f5f4b439",
+    "transcript_sha256": "4091164ffbc12bd3ef233579b3b957a0239c0fb9422d38582e961859d2d5a8e8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374509,
+      "seconds": 15.604541666666666,
+      "peak": 0.916229,
+      "rms_dbfs": -20.0,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

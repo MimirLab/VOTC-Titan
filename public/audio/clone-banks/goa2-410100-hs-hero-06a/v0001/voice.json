@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-410100-hs-hero-06a",
+  "revision": 1,
+  "name": "Lunara — Lunara (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "901aa0b1fb0d245c90af927b2750daa75ade7cbac40dcaf1320bad5b83c7f1ec",
+    "transcript_sha256": "71496f167667defe68a77abe667fc0850619cdd995d69a592a591071b37c9075",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 266033,
+      "seconds": 11.084708333333333,
+      "peak": 0.92926,
+      "rms_dbfs": -16.82,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

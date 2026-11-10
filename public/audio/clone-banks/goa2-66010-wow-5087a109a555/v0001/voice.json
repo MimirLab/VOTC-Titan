@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-66010-wow-5087a109a555",
+  "revision": 1,
+  "name": "Yazma dynn_Han — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a676d13e7ce673571ff9b640a4a7a496c80d3651a929c10120c94b02e06fe135",
+    "transcript_sha256": "c35028909257fdb99eac183008f7ee8c98d716c43e7ec4a078204c959f50d7cc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 406577,
+      "seconds": 16.940708333333333,
+      "peak": 0.918365,
+      "rms_dbfs": -16.84,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

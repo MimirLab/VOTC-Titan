@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-orathiss-wow-a8a69c7e0193",
+  "revision": 1,
+  "name": "Orathiss Locus — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9ce89e96d05c3df88676848d66367e8e00dff7b74f74ca85be89ad0c4b8d7d3c",
+    "transcript_sha256": "564f23cfb43787cc1126a4fbee7d2b027c3f4bc05ee1c246d613dfc6ccc2832e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 362714,
+      "seconds": 15.113083333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.11,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

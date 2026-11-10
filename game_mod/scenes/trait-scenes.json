@@ -1,0 +1,366 @@
+{
+  "schema": 1,
+  "baseline": {
+    "file": "trait-baseline.json",
+    "sha256": "71e1fcf3702ebd4014f1761799240e4cf57a7e0e9124c78a425952e4d81c1341",
+    "scenes": 866
+  },
+  "sourceFiles": [
+    {
+      "file": "docs/warcraft-scenes/trait-pass-guidance/GOA2-Trait-Conditioned-Scenes-Pass-17.txt",
+      "sha256": "5fadbe1760fed307d480158fd07ee3fb45dce533fd1e166001fe950c675911e7",
+      "bytes": 216816
+    }
+  ],
+  "nativeSources": {
+    "common/scripted_effects/wc_magic_elemental_water_effects.txt": "e2c236f3657fffa1daa9f04df2f9d1fb2ced2122f06ce158acd4ca5c98ef7aa4",
+    "common/modifiers/wc_magic_modifiers.txt": "42587c7157cc3dd3d1b1e77d9f566dc79a6f1adf42fb07edfe9128a97d8bdb18",
+    "localization/english/modifiers/wc_modifiers_mana_l_english.yml": "3a8c0254bb4fed15857d370cc7ad92ad3876971cc5dddf708a4804518972fc49"
+  },
+  "worldStates": [
+    {
+      "id": "trait_ice_structure",
+      "kind": "provinceModifier",
+      "keys": [
+        "wc_ice_structure_spirit_province_modifier",
+        "wc_ice_structure_decay_province_modifier"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "titan_trait_ice_structure_recess",
+      "label": "Conjured ice fortification: Sheltered receiving recess",
+      "sourceProposal": "p17__classes__ice_structure_receiving_margin",
+      "assetStem": "city_trait_ice_structure_recess_v1",
+      "priority": 34,
+      "conditions": {
+        "worldStates": [
+          "trait_ice_structure"
+        ],
+        "terrains": [
+          "plains",
+          "farmlands",
+          "hills",
+          "mountains",
+          "desert",
+          "desert_mountains",
+          "oasis",
+          "jungle",
+          "forest",
+          "taiga",
+          "wetlands",
+          "steppe",
+          "floodplains",
+          "drylands",
+          "terraced_hills"
+        ]
+      },
+      "environment": "environment_bp3_mountain_winter",
+      "regionalEnvironment": false,
+      "facts": "Towering blue-white ice ribs enclose a sheltered recess at the foot of the conjured fortification. Angular translucent walls divide the light into deep blue planes around a broad level stone-and-earth receiving floor. A portable timber meeting board, folded ochre mats and low benches give the enormous temporary structure an ordinary scale. A small side brazier casts warm reflections onto the ice. The bent return passage disappears behind an ice buttress; the immediate view stays inside the structure.",
+      "socialContext": "This sheltered margin suits receiving visitors, discussing a journey or weighing temporary refuge against longer obligations. The board and mats are ordinary carried furnishings; they appoint nobody as keeper or caster. The encounter supplies any known creator, magical method, duration, allegiance or terms of use. The ice itself establishes no vow, command over its maker, regional winter or snowfall outside.",
+      "art": "View inside a small sheltered lower recess beneath a colossal temporary Warcraft conjured-ice fortification. Immense thick angular translucent ice buttresses climb into a high ribbed blue-white vault above one broad level ground and stone receiving apron. Deep saturated blue cores, pale turquoise edges and scattered warm amber reflections give enormous frozen architecture mythic weight. One rough portable timber consultation board, folded ochre travel mats and two modest low benches occupy a lateral margin. A side brazier lamp is small, with no thaw, flames spreading or molten channels. A short bent ice-walled return passage hides the exterior completely. Broad lower-center visitor floor stays clear and traversable. This is an improvised modest refuge beneath overwhelming magical structure, not a palace, throne, Frozen Throne prison, body trapped in ice, a snowfield or an ongoing spell cast.",
+      "research": [
+        {
+          "url": "https://github.com/Warcraft-GoA-Development-Team/Warcraft-Guardians-of-Azeroth-2",
+          "role": "Installed native spell effect and modifier localization, independently inspected and fingerprinted below; generic lower alcove/furnishings are authored inference."
+        }
+      ],
+      "bindingEvidence": {
+        "scope": "Current meeting province must have either exact native Ice Structure province modifier. No character proficiency, season, retained character buff or remembered cast can substitute."
+      },
+      "purpose": "This sheltered margin suits receiving visitors, discussing a journey or weighing temporary refuge against longer obligations. The board and mats are ordinary carried furnishings; they appoint nobody as keeper or caster. The encounter supplies any known creator, magical method, duration, allegiance or terms of use. The ice itself establishes no vow, command over its maker, regional winter or snowfall outside."
+    },
+    {
+      "id": "titan_trait_orc_burrow_stores",
+      "label": "Orc Burrow: Food stores and spear stations",
+      "sourceProposal": "p17__peon_burrow_provisioning_battle_stations",
+      "assetStem": "city_trait_orc_burrow_stores_v1",
+      "priority": 31,
+      "conditions": {
+        "styles": [
+          "orcish"
+        ],
+        "settled": true,
+        "worldStates": [
+          "oddity_castle_here"
+        ],
+        "excludedWorldStates": [
+          "canon_teldrassil_burned_here"
+        ]
+      },
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "regionalEnvironment": false,
+      "facts": "A squat Orcish burrow gathers covered ration tubs, closed sacks and hauling harnesses beneath massive timber ribs, packed-earth walls and a tightly stretched hide roof. Dark iron braces and heavy tusked supports frame a broad floor-level entrance whose angled screen hides the outside country. Short timber steps reach an empty raised firing shelf with narrow spear openings through the outer wall; bundled throwing-spears remain secured in racks beside it. A rough inspection plank faces the clear lower receiving patch.",
+      "socialContext": "In Orcish settlement craft, a burrow joins food storage with shelter from which workers can defend their home. Its practical fittings make supplies, repairs, labor and readiness natural subjects for a visit. Current people and relationships decide who handles stores or represents workers. No crew, food abundance, commanded drill, attack, compulsory laziness, appointed rank or heroic outcome is supplied. Guests keep their own culture and body; a Peon Leader has only the standing established by the encounter.",
+      "art": "Cramped but sturdy interior of an iconic Warcraft Orc Burrow: squat low hide-roofed bunker with HUGE tusked timber ribs, rough packed-earth walls, stout dark iron banding, rusty-red hide roof lining and oversized projecting wood braces. Covered dark ration tubs and closed patched sacks line the lowest wall under dusty hauling harnesses, blunt work tools and hand-repaired bindings. Along one upper wall, a short stout timber stair reaches a raised low defense shelf with narrow spear slots and securely tied bundles of throwing spears. Those stations are completely empty. One rough inspection plank and low supply bench stand off to the right of a broad clear lower-center packed-earth arrival floor. A generously wide floor-level entrance is screened at an angle with heavy ochre hide, hiding all external biome and sky. Warm dim oil-lamp light catches rubbed wood and patchwork. Strong exaggerated Warcraft Orc silhouette; this is the menial work/food/bunker interior, not a grand chief throne, tavern, feast hall, pig farm or a battleground.",
+      "research": [
+        {
+          "url": "https://classic.battle.net/war3/orc/buildings/orcburrow.shtml",
+          "role": "Primary Blizzard reference: food supply and peon spear defense. Interior is original authored extrapolation, not a native GoA building or observed crew."
+        }
+      ],
+      "bindingEvidence": {
+        "scope": "Current local heritage_orcish architectural style plus actual castle holding. Typical authored store-and-defense corner within that fortified settlement, using the same convention as ordinary portable inns; no named Orc Burrow registry or crew is claimed."
+      },
+      "purpose": "In Orcish settlement craft, a burrow joins food storage with shelter from which workers can defend their home. Its practical fittings make supplies, repairs, labor and readiness natural subjects for a visit. Current people and relationships decide who handles stores or represents workers. No crew, food abundance, commanded drill, attack, compulsory laziness, appointed rank or heroic outcome is supplied. Guests keep their own culture and body; a Peon Leader has only the standing established by the encounter."
+    }
+  ],
+  "decisions": [
+    {
+      "proposal": "p17__classes__spectral_threshold_inspection",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Private spectral perception and an actual disguised demon need viewer-specific facts and current form. Painting a visitor into scenery would duplicate or contradict live portraits; no inspection/disclosure adapter exists."
+    },
+    {
+      "proposal": "p17__classes__metamorphosis_supervision",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Metamorphosis is character/controller lore already resolved. Do not paint a second fixed hunter body or force a supervision activity from the active trait."
+    },
+    {
+      "proposal": "p17__classes__conjured_retinue_board",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A school or duration-limited food benefit cannot establish fresh portions, exact recipients, residual cast glow or current service. Existing travel/meal venues remain usable; no new food-stock/session exporter is warranted for this pair."
+    },
+    {
+      "proposal": "p17__classes__polymorph_observer_consultation",
+      "decision": "held",
+      "scenes": [],
+      "reason": "An observer-owned discussion requires explicit incapacitated-speaker routing and actual animal appearance. A fixed sheep painting could contradict the speaking character; defer as a separate conversation capability."
+    },
+    {
+      "proposal": "p17__classes__ice_block_observer_vigil",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Personal Ice Block is distinct from a province Ice Structure. No new ability to reroute dialogue away from an immobilized subject or determine its exact footprint is introduced."
+    },
+    {
+      "proposal": "p17__classes__water_spirit_parley",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Military summons/modifiers do not register a speaking water-elemental participant, willingness or shared perception. A real elemental character already receives its own lore; do not spawn another actor in scenery."
+    },
+    {
+      "proposal": "p17__classes__earth_decay_binding",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A trained Decay caster does not establish an embodied bound worker, effective control, actual assignment or coercive apparatus. Current participant and operation evidence must precede this setting."
+    },
+    {
+      "proposal": "p17__classes__ice_structure_receiving_margin",
+      "decision": "adapted",
+      "scenes": [
+        "titan_trait_ice_structure_recess"
+      ],
+      "reason": "Adopt the actual province Ice Structure effect as the stronger material gate. Author a sheltered lower recess; omit named staff, current caster, external climate, a maintained-room registry and arbitrary class thresholds. Both native methods share this physical use."
+    },
+    {
+      "proposal": "p17__black_dragon__volcanic_molt",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Lava molting is imported GoA/RPG physiology, not an exported current act or timer. No live body/form, usable lava footprint or chosen molt record supports painting this dragon into a venue."
+    },
+    {
+      "proposal": "p17__makrura__cast_shell_slide",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A discarded shell, retained fluid and safe sliding route are actual props/operations missing from capture. Makrura identity cannot produce them; avoid a duplicate shore workshop stripped of its intended joke."
+    },
+    {
+      "proposal": "p17__observer__magic_tasting_exchange",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Observer appetite belongs to existing trait lore. A stock magic sample, willing transaction and safe handling are not exported; no fixed alien customer or consumable is created from identity."
+    },
+    {
+      "proposal": "p17__nightfallen__ancient_mana_ration",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Current Nightborne dependency belongs to body lore; a secured ration case and compatible ancient mana stock are not captured. Do not promise sustenance from a room or assume treatment/ownership."
+    },
+    {
+      "proposal": "p17__irradiated__sanitron_receiving_lane",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The canonical Sanitron processing route belongs to a later evacuation and needs an operating compatible facility. Exact Gnomeregan province alone does not establish it; retain the distinct idea for an independently observed future service."
+    },
+    {
+      "proposal": "p17__earthmother_blessing__five_totem_vision",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The native blessing event is a private temporary vision, not physical travel or a persistent trait venue. Event-phase and observer separation would require a separate integration; ordinary Earth Mother lodges already provide material practice."
+    },
+    {
+      "proposal": "p17__earthmother_curse__returned_path_vision",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The native return-to-faith vision needs its current event phase and sole dreamer. Curse presence does not create the forest or all five spirits; no event hooks or forced forgiveness are added."
+    },
+    {
+      "proposal": "p17__peon_burrow_provisioning_battle_stations",
+      "decision": "adapted",
+      "scenes": [
+        "titan_trait_orc_burrow_stores"
+      ],
+      "reason": "Adapt the iconic supply/defense interior as an ordinary Orcish fortified-settlement venue. Remove the mandatory Peon Hero, assigned crew, active drill, current ration accounting and unsupported subvenue registry. Local culture creates the typical facility; personality/standing comes from the actual encounter."
+    },
+    {
+      "proposal": "p17gate__classes__trained_glaive_practice",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The packet drill-yard ID is uninstalled. Current Kaldorei weapon craft is culturally grounded and not Illidari instruction; a visitor class must not create that institution."
+    },
+    {
+      "proposal": "p17gate__classes__guarded_hibernation_rest",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The named inner sleep-gallery profiles are uninstalled; ordinary waiting/rest settings do not provide awake-observer routing or Dream access. Hold the specific hibernation feature."
+    },
+    {
+      "proposal": "p17gate__classes__trained_arcane_watch_consultation",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The proposed island watch chamber is uninstalled. The existing Dalaranian commissions/study contexts neither observe Scry operation nor give a visitor institutional admission."
+    },
+    {
+      "proposal": "p17gate__classes__actual_shadow_restraint_instruction",
+      "decision": "covered",
+      "scenes": [
+        "titan_community_void_disciplined_study"
+      ],
+      "reason": "The existing Shadow study already supplies inert teaching materials where local Voidfarer devotion establishes it. Ordinary visitors stay eligible; class presence neither duplicates it nor widens its physical gate."
+    },
+    {
+      "proposal": "p17gate__classes__actual_warlock_pact_consultation",
+      "decision": "covered",
+      "scenes": [
+        "titan_community_warlock_exchange_threshold"
+      ],
+      "reason": "Existing Warlock exchange threshold already serves ordinary consultation at its local practice. Do not substitute the packet power chamber or infer a coven from a traveling Warlock."
+    },
+    {
+      "proposal": "p17gate__classes__magical_injury_ordinary_care",
+      "decision": "covered",
+      "scenes": [
+        "titan_community_light_hospice"
+      ],
+      "reason": "Existing Light hospice already permits guests and ordinary care without a personality/faith-membership requirement. Injuries remain individual lore; no new cure or weather inference."
+    },
+    {
+      "proposal": "p17gate__classes__necromantic_workshop_consultation",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The named corpse workshop is held in Pass 13 rather than installed. Existing apothecary receiving space is different; specialist identity does not establish bodies, the operator or service rights."
+    },
+    {
+      "proposal": "p17gate__dragon__visage_day_roles",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Visage Day and its phase-specific profiles are uninstalled. Dragon identity does not establish a currently convened ceremony, readiness, invitation or transformation."
+    },
+    {
+      "proposal": "p17gate__dragon__true_body_receiving",
+      "decision": "covered",
+      "scenes": [
+        "titan_city_wyrmrest_temple_the_temple_s_lower_receiving_court"
+      ],
+      "reason": "Existing Wyrmrest lower reception already accommodates immense dragons and smaller guests without visitor race/culture tests. Keep its actual material-site gate and personal body lore."
+    },
+    {
+      "proposal": "p17gate__wretched_faldorei__arcandor_visit",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The mature Arcan’dor terrace is not in the installed catalogue. Native visit resolution does not supply a current captured fruiting terrace or persistent pre-visit state; preserve that distinct future work."
+    },
+    {
+      "proposal": "p17gate__banshee__windrunner_memento_custody",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The packet Windrunner Vault is uninstalled. Banshee form, spectral communication and actual appointed object custody need individual evidence; do not create a steward or blanket incorporeality rule."
+    },
+    {
+      "proposal": "p17gate__abomination__body_maintenance",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Maldraxxi stitch-house and Plagueworks service are uninstalled. Deathknell maintenance is an ordinary Forsaken room without observed fleshcraft stock/operator; no trait route turns it into a construct factory."
+    },
+    {
+      "proposal": "p17gate__vampire__crimson_allocation",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The proposed Crimson Hall active household is uninstalled. Vampire hunger does not establish kinship, actual feeding stock or a right to it."
+    },
+    {
+      "proposal": "p17gate__ancient__rooted_guest_circle",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The packet living Ancient guest circle is uninstalled. A Dryad court is a crafted plant bower, not a new sentient-tree participant or proof of rooting; personal body state remains separate."
+    },
+    {
+      "proposal": "p17gate__amphibious_undead__submerged_access",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Fully submerged club/colonnade profiles are uninstalled. Breathing alone cannot prove depth, pressure, mobility, speech, admission or companions’ safety. Do not widen dry thresholds into underwater venues."
+    },
+    {
+      "proposal": "p17gate__harpy__winged_roost_profile",
+      "decision": "covered",
+      "scenes": [
+        "titan_avianic_court"
+      ],
+      "reason": "The installed Harpy heritage court has a broad ground reception route and depicts no residents. Ordinary guests already retain their bodies; no wing gate or forced nest occupancy is needed."
+    },
+    {
+      "proposal": "p17gate__kvaldir__helheim_household_access",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Helheim profiles and actual plane-entry adapters are uninstalled. A Kvaldir visitor cannot grant soul-plane access or generate mist elsewhere."
+    },
+    {
+      "proposal": "p17gate__skeletal_dragon__frostwing_service",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Frostwing maintenance profile is uninstalled. Dragon plus Undead does not prove a skeletal body, service berth, operators or current material stock."
+    },
+    {
+      "proposal": "p17gate__fang__present_operator",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The installed Wailing view is the exterior skull/oasis, not the packet occupied inner teaching ledge. A traveling Fang druid cannot prove cave occupation or current Nightmare state."
+    },
+    {
+      "proposal": "p17gate__scarlet_mark__recognized_threshold",
+      "decision": "covered",
+      "scenes": [
+        "titan_community_scarlet_inner_chapel",
+        "titan_oddity_scarlet_atonement_chamber"
+      ],
+      "reason": "Existing Scarlet rooms already support actual believers/captive access under their own gates. A Scarlet Mark alone neither supplies custody nor establishes public recognition or universal jurisdiction."
+    },
+    {
+      "proposal": "p17gate__ice_prison__bound_encounter",
+      "decision": "held",
+      "scenes": [],
+      "reason": "No sealed soul-prison conversation adapter exists. Lich King title plus prison trait cannot grant visitors telepathy, Helm identity or movement to another scene."
+    },
+    {
+      "proposal": "p17gate__aspects__present_conclave",
+      "decision": "covered",
+      "scenes": [
+        "titan_city_wyrmrest_temple_the_temple_s_lower_receiving_court"
+      ],
+      "reason": "The installed Wyrmrest reception remains open under its actual site gate. Aspect lore already belongs to participants; no Aspect presence requirement is added and no council is spawned."
+    },
+    {
+      "proposal": "p17gate__peon_leader_zuldare_allotment",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Zul’Dare active allotment profile is uninstalled. The new generic burrow provides ordinary labor/supply business without pretending those named clan/crew/allocation conditions are captured."
+    }
+  ],
+  "policy": "Traits remain character context. This chapter adds no private perception, event phase, actor selection, spell execution, resource stock, personality lock or visitor-created institution. Covered is unchanged useful physical coverage, not implementation of the packet adapter."
+}

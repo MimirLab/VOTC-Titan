@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-arkonarin-starshade-wow-2a08eb07fccd",
+  "revision": 1,
+  "name": "Arko'narin Starshade — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d5328d87fadef78452f0f36a09a22f90a094e86bae0ab6041d1d833b7bbc2a7f",
+    "transcript_sha256": "2a16c5f722abb9364a572c459d95451e93b330e5707b45b448ca38fc9ddbf51e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 387228,
+      "seconds": 16.1345,
+      "peak": 0.999969,
+      "rms_dbfs": -15.68,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

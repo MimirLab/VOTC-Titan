@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-59110-wow-934728a1093b",
+  "revision": 1,
+  "name": "Modera — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c2093f4443dc53fcf7f70f293d1aa9365b5bb31b8dd41a16574494b4b6f0cef1",
+    "transcript_sha256": "b3abe0b1fc3146fe76a964fc413995ac4afa809ccb457dac8a37ebf0c1b6a32b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 383232,
+      "seconds": 15.968,
+      "peak": 0.995148,
+      "rms_dbfs": -17.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

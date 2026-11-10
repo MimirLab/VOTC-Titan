@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340009-hots-illidan",
+  "revision": 1,
+  "name": "Illidan Stormrage — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f965cee84862f271c16a3f7a68d7634ed5b58ab6fc248023fcfc6dbbc2339d73",
+    "transcript_sha256": "16ec0cf5ef0a914acdadd6cc1af906dba70c3c6ec566a0574a73d389f4a9f9c3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 369803,
+      "seconds": 15.408458333333334,
+      "peak": 0.793427,
+      "rms_dbfs": -16.7,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

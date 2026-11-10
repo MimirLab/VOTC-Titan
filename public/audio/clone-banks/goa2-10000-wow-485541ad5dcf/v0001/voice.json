@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10000-wow-485541ad5dcf",
+  "revision": 1,
+  "name": "Blackhand — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4baf842b466b1d20c821e0ac7852122f47413ba7660534dcadb448b4ab8a17a1",
+    "transcript_sha256": "1098590866a4274272aa78d96ee7f3295ddbb14f164751165aa6ce8c16d2df2b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 295268,
+      "seconds": 12.302833333333334,
+      "peak": 1.0,
+      "rms_dbfs": -14.6,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

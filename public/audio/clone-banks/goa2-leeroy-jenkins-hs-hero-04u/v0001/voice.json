@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-leeroy-jenkins-hs-hero-04u",
+  "revision": 1,
+  "name": "Leeroy Jenkins — Leeroy Jenkins (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1e3b2f493b2d5ecfd5408573ea89c7d5641c02355369b4f4576ec0d70406f339",
+    "transcript_sha256": "b1d50f3d7e883571c337737a8bb42ace524247f7f69ff3cad748e24c09a56e71",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 260347,
+      "seconds": 10.847791666666666,
+      "peak": 0.957214,
+      "rms_dbfs": -15.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

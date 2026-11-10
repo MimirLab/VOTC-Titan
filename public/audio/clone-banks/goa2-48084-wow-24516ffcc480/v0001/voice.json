@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48084-wow-24516ffcc480",
+  "revision": 1,
+  "name": "Tandred Proudmoore — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0bd76e0f60237501a1e517591297e33f85756e7365afdcae72575e4454e33134",
+    "transcript_sha256": "d1b4afc733b21468a487de1d16e1768c1777e05cf057e094c1afeea95ea48be0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 400961,
+      "seconds": 16.706708333333335,
+      "peak": 0.999969,
+      "rms_dbfs": -16.78,
+      "clipped_samples": 10
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400500-wow-3300e8b7be34",
+  "revision": 1,
+  "name": "Odyn — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "475eb2109b0494e03398bf0d3be9bc51ffd5c3fda7889cd764325eb68d20838c",
+    "transcript_sha256": "b4076d18b445c67998fa45f552c08fa5b73e56bac9f2f9bb2f58f2dfb460d7bb",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 386724,
+      "seconds": 16.1135,
+      "peak": 0.977203,
+      "rms_dbfs": -15.03,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-jakrazet-wow-6be8a5be53fe",
+  "revision": 1,
+  "name": "Jakra'zet — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ee887156a72350f1ff2b96d18331154b3846021916530ef55c5d5f4001f13bbc",
+    "transcript_sha256": "1a390a8d8dca9aca478ff75c3e758cc83738de0bf46c122a4063296b26c9aaa8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374424,
+      "seconds": 15.601,
+      "peak": 0.98468,
+      "rms_dbfs": -17.18,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340003-hots-tyrande",
+  "revision": 1,
+  "name": "Tyrande Whisperwind — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d9b1e6976eaa7a05c5871d68a98bfc9ac2ea61e6d92da55ed6768295ff553964",
+    "transcript_sha256": "31095847ff5f351edc7401ac6c1ca1025e9eca9a106ddb8b63b7bd073d1f8d71",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 391192,
+      "seconds": 16.299666666666667,
+      "peak": 0.800323,
+      "rms_dbfs": -15.61,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-prince-farondis-wow-79bebebcfec1",
+  "revision": 1,
+  "name": "Farondis Narkhana — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "13a7cf02f818a08d7f0d9a596e294bbc85230a68be49938fd44e5ed642554b1d",
+    "transcript_sha256": "139a0adc7907b20c6ff100543ddc93e5b34df4397071c634e8378528cc5edb68",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 387682,
+      "seconds": 16.153416666666665,
+      "peak": 1.0,
+      "rms_dbfs": -16.63,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

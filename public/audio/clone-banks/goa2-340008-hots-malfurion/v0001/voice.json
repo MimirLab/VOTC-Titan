@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340008-hots-malfurion",
+  "revision": 1,
+  "name": "Malfurion Stormrage — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d812692a7c2c29538beba086c1c7d435d0338c531744d74a1f0954971ef9e25c",
+    "transcript_sha256": "08bfb52ba165cf44dd1f07731d81ee79f95b91cccd4dc7ee0655ccf448fa4de7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 390118,
+      "seconds": 16.254916666666666,
+      "peak": 0.811279,
+      "rms_dbfs": -16.87,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

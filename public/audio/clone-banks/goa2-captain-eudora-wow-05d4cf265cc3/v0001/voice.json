@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-captain-eudora-wow-05d4cf265cc3",
+  "revision": 1,
+  "name": "Eudora — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "91808d0ed1691d051cfbcfa97d387b37cbdff86fb5fd901ac954dc0daedea579",
+    "transcript_sha256": "ef5fc8b8189f64d25bab10d171a9fcbd21a7e6af96ee805187944f17b3d80c48",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365002,
+      "seconds": 15.208416666666666,
+      "peak": 0.965698,
+      "rms_dbfs": -18.16,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

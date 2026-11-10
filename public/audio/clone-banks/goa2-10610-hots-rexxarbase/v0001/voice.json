@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10610-hots-rexxarbase",
+  "revision": 1,
+  "name": "Rexxar — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a31b1034f23ae33dc6235e3f36f77b2f59bd5a977faa26158b461ab6e1a08248",
+    "transcript_sha256": "dc2bc0c38fb15c6e25f9c79a239ce3f280fe0bdd6e95238a09a4f8948f45f9d5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 382851,
+      "seconds": 15.952125,
+      "peak": 0.818726,
+      "rms_dbfs": -15.84,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

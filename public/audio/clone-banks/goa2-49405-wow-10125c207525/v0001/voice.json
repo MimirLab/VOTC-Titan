@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-49405-wow-10125c207525",
+  "revision": 1,
+  "name": "Rosaline Madison — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "07e6ed74da052a486c6ac5e0528981441b05a832763a87f34ff556de0b4da972",
+    "transcript_sha256": "f017aa9c05e89336de9afcbf171dc98b1d747098dcb9ff2d76f6794b7d6da314",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 373389,
+      "seconds": 15.557875,
+      "peak": 0.999969,
+      "rms_dbfs": -17.44,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

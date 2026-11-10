@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-thomas-thomson-hots-horsemanvo-headlesshorseman",
+  "revision": 1,
+  "name": "Sir Thomas Thomson — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "de567490bb8229c95758a5ac8f76b0a0022a89fcc6fffc288e2f88d507c9768c",
+    "transcript_sha256": "1cf052bcac163cd060456077a847220ec23e86a21f130207b341421517ca2840",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 394764,
+      "seconds": 16.4485,
+      "peak": 0.956818,
+      "rms_dbfs": -17.76,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-16632-wow-ffe6e6f2ab34",
+  "revision": 1,
+  "name": "Telzo Sparkspanner — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "5fbeee09a84d60d6689a46ba7df4e21544203252cd45f195f71fa78c9245aa17",
+    "transcript_sha256": "14eb404cfe66faf0fdc444d09372e8525a21a5b1a02ea31f82024807ae6e8e4b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 401387,
+      "seconds": 16.724458333333335,
+      "peak": 0.961151,
+      "rms_dbfs": -17.73,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

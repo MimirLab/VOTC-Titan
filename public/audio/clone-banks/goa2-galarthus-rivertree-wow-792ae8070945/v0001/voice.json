@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-galarthus-rivertree-wow-792ae8070945",
+  "revision": 1,
+  "name": "Galar'thus Rivertree — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "5c05f44cc8d162932f5c0bdd471ac668f3305df038eb65a487173dafc6784c87",
+    "transcript_sha256": "6ceff1373169bdb85f4f0c675b5eab0b6327414b0424dd2dbb5bdd000e61de84",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 418840,
+      "seconds": 17.451666666666668,
+      "peak": 1.0,
+      "rms_dbfs": -19.22,
+      "clipped_samples": 11
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

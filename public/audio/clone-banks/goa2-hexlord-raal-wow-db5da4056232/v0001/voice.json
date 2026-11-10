@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-hexlord-raal-wow-db5da4056232",
+  "revision": 1,
+  "name": "Raal — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "395174cab5c698adcd343a383a3770249848d01368597ebcf9d2b4fd2e2b365d",
+    "transcript_sha256": "22872ef94be452a2efb86b3179f8d92814696c17f0fbcc44037f04859d7bff67",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 379416,
+      "seconds": 15.809,
+      "peak": 1.0,
+      "rms_dbfs": -16.61,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

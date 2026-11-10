@@ -1,0 +1,2471 @@
+{
+  "schema": 1,
+  "baseline": {
+    "file": "oddity-baseline.json",
+    "sha256": "dd29f8739e63902b07068b02ac273beb49d2611301681fed9f89cc2aa6d15491",
+    "scenes": 824
+  },
+  "sourceFiles": [
+    {
+      "pass": 12,
+      "file": "docs/warcraft-scenes/oddity-pass-guidance/GOA2-World-Oddities-Scenes-Pass-12.txt",
+      "sha256": "b717ba339de647c0920b4b27d0869d2b36ee735c2bdd244066f1b4c19288604d",
+      "bytes": 234134
+    },
+    {
+      "pass": 13,
+      "file": "docs/warcraft-scenes/oddity-pass-guidance/GOA2-Hidden-Places-Scenes-Pass-13.txt",
+      "sha256": "f9c0873eb82a7554698c110af7f4933a9a554c6c9c77c6a602b6ddb2bbf7d143",
+      "bytes": 246779
+    }
+  ],
+  "nativeSources": {
+    "history/provinces/00_k_greatwood.txt": "90a7ff4e4b0e2865adf711ba5f71f8a760634e74e932a263b854874e4203b046",
+    "history/provinces/00_k_mulgore.txt": "af79be1571502f248fdf4c843b1d2744986bb65304005463c796f6593d5478e9",
+    "history/provinces/00_k_sholazar_basin.txt": "3fb8761df2259f975310b36bab1acb2966570002075a4c9e5428fe69078da3ac",
+    "history/provinces/00_k_darkshore.txt": "0783de8e2eb1025fb825b626fa320a3ea0bfb78a26be362bacfa4f795e07ca5e",
+    "history/provinces/00_k_shadowforge.txt": "735a0c23ddef6356da30bd4ca22c3236102e510f4b0c3a49363971af0572d455",
+    "history/provinces/00_k_nifflevar.txt": "9479960e4f1f1436192bdbcc8fb1dca38b8a54de580b94ad209cc40de008dac6",
+    "history/provinces/00_k_raynewood.txt": "765a4c8e91d99ac41a486df99270bf4a72109f5cf578a9125c6e2286c1ed3289",
+    "history/provinces/00_k_morlosaran.txt": "5b9a32fb3f249372a4e20bf4ce7fb6d60c61c519368d74f52d7f6f2edbdede52",
+    "history/provinces/00_k_desolace.txt": "6c2605a1eb7c8174c77b9204ef0a1131cb5aba610f8d5afef8664c99d9b6a7c5",
+    "history/provinces/00_k_ashenvale.txt": "bf055d6c3b54792f311aa32a9ffad5d64d96f19264ab760e1bebfdd33e9418f2",
+    "history/provinces/00_k_razorfen.txt": "193253b48e74a470765fe24874f0f09c78b9e6315ef81fa37bf926ac5cd2b793",
+    "history/provinces/00_k_durotar.txt": "523019613ad7c5775460762ef6c8c0ad823d2ff00cb26f92c057fefa717f9f31",
+    "history/provinces/00_k_thalanaar.txt": "f4ebf06a460326685e1cd0b7989ef4bf3cd1ca52c2599b7bf90ec57f880a01a1",
+    "history/provinces/00_k_ironforge.txt": "4c48f7510558f197f2d27f6a738e82c2c99a9b851be2d64bb4e5a2cee9ff7dbb",
+    "history/provinces/00_k_starfall.txt": "cb4a6fb2b33a28995fec256b927532a2e8e680a9ae1bf6bf52241379c331e8ad",
+    "history/provinces/00_k_azuremyst.txt": "2108a9115f6573db97c04b58769b72507ffc220d7cde0a913f9dfc674e3f0c49",
+    "history/provinces/00_k_zulfarrak.txt": "1a658c1e8a0712af702df15ec18b70ef5e967fd609cb9fba5f78086b1f8ce2fe",
+    "history/provinces/00_k_lordaeron.txt": "a0b6458360f3a1a8c250ec1d2b06a5f48e90b6bf6fe4997e87a575af4d9f13cd",
+    "history/provinces/00_k_tol_barad.txt": "6f839bfdf5ad736d525929147c2465e29f9a9aaffa507ed8ff684b8a2512a5b6",
+    "history/provinces/00_k_kul_tiras.txt": "4364339d70f3675a44f11b28755313ac4c00243be9087a96d0fc28bc4b856d0a",
+    "history/provinces/00_k_stormwind.txt": "4f752ef8d5ed89e3aad13d808d3f918fd500afa8b89ee6c15f4b83025637a84b",
+    "history/provinces/00_k_kalidar.txt": "a6b500029d0fa9fc3be283ef777acd069fd6143dae33aa4ca03b7f1df0e44ace",
+    "history/provinces/00_k_utgarde.txt": "137050db50228b645f222191de32f0ec633015599802a57df5a4eb1848a046ca",
+    "history/provinces/00_k_thor_modan.txt": "0b98bd23929b6d3d59dc0e08863ad798e1fb0e88d7a1b2090e6c55e3fbb3b494",
+    "history/provinces/00_k_mogushan.txt": "2c02c5069e0f8efdaf8e19743f2ea19321fa96bb6b87592239203af69e6f8704",
+    "history/provinces/00_k_dead_morass.txt": "68c897edac0dd132709469696b628925d35ef2cc3ef3d817cfffc244a67aee49",
+    "history/provinces/00_k_wetlands.txt": "b78399a7da193eac069cb2a1bec64e5cd6216fb0b3d75696efe173ddc0656b4d",
+    "common/buildings/wc_special_mines.txt": "9ce886391d8671abdc66a91ebc09e786de2a492b9adbbbd478270841a4034217",
+    "common/buildings/wc_special_easternkingdoms_buildings.txt": "2d0a7e54646a53a8fe53b78e0f9ca8b328e009a72157692b8db4b0537f143b3a",
+    "localization/english/wc_buildings_l_english.yml": "dc25106ca23d66eac5a2cd4f8bb8449d6c7ec4d095b220b62019ceaa4ef5784d",
+    "localization/english/wc_custom_titles_l_english.yml": "9b57aa0f54105f851bd10cee5eda31aa02e6389fa4bb0cfa03ac47672fe87359"
+  },
+  "worldStates": [
+    {
+      "id": "oddity_castle_here",
+      "kind": "provinceHolding",
+      "keys": [
+        "castle_holding"
+      ]
+    },
+    {
+      "id": "oddity_windshear_mine",
+      "kind": "buildingAtSite",
+      "keys": [
+        "windshear_mine_01"
+      ],
+      "provinceId": 1783
+    },
+    {
+      "id": "oddity_mulgore_mine",
+      "kind": "buildingAtSite",
+      "keys": [
+        "venture_co_mine_01"
+      ],
+      "provinceId": 1769
+    },
+    {
+      "id": "oddity_swindlegrin_mine",
+      "kind": "buildingAtSite",
+      "keys": [
+        "swindlegrins_dig_01"
+      ],
+      "provinceId": 898
+    },
+    {
+      "id": "oddity_baradin_prison",
+      "kind": "buildingAtSite",
+      "keys": [
+        "baradin_hold_02"
+      ],
+      "provinceId": 2210
+    },
+    {
+      "id": "oddity_scarlet_monastery",
+      "kind": "buildingAtSite",
+      "keys": [
+        "scarlet_monastery_02"
+      ],
+      "provinceId": 3011
+    },
+    {
+      "id": "oddity_trogg_lineage",
+      "kind": "provinceCultureLineage",
+      "keys": [
+        "trogg"
+      ]
+    }
+  ],
+  "citySites": [],
+  "episodes": [],
+  "scenes": [
+    {
+      "id": "titan_oddity_cragpool_waterwheel",
+      "label": "Cragpool Lake: Above the great waterwheel",
+      "assetStem": "city_oddity_cragpool_waterwheel_v1",
+      "sourceProposal": "pass12__the_waterwheel_above_the_forest",
+      "conditions": {
+        "provinceIds": [
+          1786
+        ],
+        "settled": true,
+        "worldStates": [
+          "community_goblin_lineage"
+        ]
+      },
+      "environment": "environment_event_forest_pine",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A timber receiving platform hangs above Cragpool Lake beside an immense waterwheel and axle housing. The wheel, brass gears and broad drive belts stand idle. Tiered scaffolding descends toward green water. A padded office chair, locked cashbox and clamped forest map occupy a crooked little booth. Pine-covered Stonetalon ridges remain visible beyond the high railing.",
+      "socialContext": "The unlikely height and contrast between extravagant office fittings and patched scaffolding suit bargaining, technical pride or a dispute about land and labor. Present ownership, running machinery, a logging concession and company membership come from the encounter, not the furniture.",
+      "purpose": "The unlikely height and contrast between extravagant office fittings and patched scaffolding suit bargaining, technical pride or a dispute about land and labor. Present ownership, running machinery, a logging concession and company membership come from the encounter, not the furniture.",
+      "art": "View from a high timber platform over Cragpool Lake in Warcraft Stonetalon. An enormous vertical timber waterwheel descends past several rickety scaffold decks into green lake water at the left edge. Thick axle housing, huge brass cogs and broad stationary leather belts frame a crooked supervisor booth at right. A comically luxurious red padded chair, stout locked cashbox and blank clamped map contrast with patched planks. A broad clear arrival landing occupies the lower center, protected by a high railing. Immense pine-covered mountain ridges enclose the green lake in hazy afternoon light; no clear-cut expanse or moving-machine smoke.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Cragpool_Lake",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1786,
+        "barony": "b_cragpool",
+        "county": "c_cragpool",
+        "kingdom": "k_greatwood",
+        "source": "history/provinces/00_k_greatwood.txt",
+        "sourceSha256": "90a7ff4e4b0e2865adf711ba5f71f8a760634e74e932a263b854874e4203b046",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_windshear_shredder",
+      "label": "Windshear: The oversize demonstration yard",
+      "assetStem": "city_oddity_windshear_shredder_v1",
+      "sourceProposal": "pass12__the_super_reapers_sales_yard",
+      "conditions": {
+        "provinceIds": [
+          1783
+        ],
+        "settled": true,
+        "worldStates": [
+          "oddity_windshear_mine",
+          "community_goblin_lineage"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A parked goblin logging shredder towers over a small demonstration dais in a Windshear workshop yard. Huge cutting blades, articulated claws and a high operator seat rise from a squat riveted chassis. Pine sections, a clamped drawing board and a locked blueprint chest lie beneath a patched awning; forested red-brown ridges enclose the working apron.",
+      "socialContext": "This authored engineering yard takes inspiration from the Super Reaper design. It supports inspection, competitive boasting or arguments over workmanship; the machine is not identified as the unique Super Reaper 6000 and no current test, stolen design or active Venture operator is established.",
+      "purpose": "This authored engineering yard takes inspiration from the Super Reaper design. It supports inspection, competitive boasting or arguments over workmanship; the machine is not identified as the unique Super Reaper 6000 and no current test, stolen design or active Venture operator is established.",
+      "art": "An outsized classic Warcraft goblin logging shredder, parked inert in a Windshear engineering yard: a squat riveted green-and-brass armored torso, thick jointed mechanical cutting arms ending in circular saw and claw hardware, an absurdly high open operator seat, broad feet and curved copper pipes. Beside it a stump-sized demonstration dais looks tiny. Massive cut pine sections sit at the sides, with a locked blueprint chest and clamped blank drawing board under a patchwork awning. A broad clean gravel apron in the lower middle. Red-brown slopes and monumental surviving pines behind, smoky amber late daylight without actual smoke. Emphasize Warcraft hand-built outrageous scale; no modern vehicle.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Super_Reaper_6000",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1783,
+        "barony": "b_windshear",
+        "county": "c_windshear",
+        "kingdom": "k_greatwood",
+        "source": "history/provinces/00_k_greatwood.txt",
+        "sourceSha256": "90a7ff4e4b0e2865adf711ba5f71f8a760634e74e932a263b854874e4203b046",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_mulgore_mine_store",
+      "label": "Mulgore mine: Provisions and the pay window",
+      "assetStem": "city_oddity_mulgore_mine_store_v1",
+      "sourceProposal": "pass12__the_mine_store_that_keeps_the_account",
+      "conditions": {
+        "provinceIds": [
+          1769
+        ],
+        "worldStates": [
+          "oddity_mulgore_mine"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A provision shelter stands beside the installed Mulgore mine. Locked food shelves and tool bins flank a raised pay window and a large closed ledger. Mismatched benches face a disproportionately polished desk beneath a corrugated awning. Through its open side, broad green-gold pasture and red mesa slopes meet the mine workings.",
+      "socialContext": "Hiring, supplies and the cost of extraction can enter conversation here. The arrangement puts accounts and bodily needs close together; it establishes neither wage deductions nor an exploitative employer, a company allegiance or anyone’s employment.",
+      "purpose": "Hiring, supplies and the cost of extraction can enter conversation here. The arrangement puts accounts and bodily needs close together; it establishes neither wage deductions nor an exploitative employer, a company allegiance or anyone’s employment.",
+      "art": "A goblin-designed mine-side provision shelter in Warcraft Mulgore, patched corrugated roof over chunky green-painted tool bins, locked provision cupboards and a comically tall pay window. Enormous closed red ledger on a polished dark desk behind the counter; mixed-size rough benches and patched coats on hooks to the sides. Wide clear speaking floor at center. The open right side reveals broad luminous green-gold pasture, enormous red mesas and a small raw rocky mine cut. Brass, dusty green enamel and warm wood contrast with fresh pasture; ordinary afternoon light. No readable contract or fixed faction sign.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Venture_Co._Mine",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1769,
+        "barony": "b_hot_springs",
+        "county": "c_hot_springs",
+        "kingdom": "k_mulgore",
+        "source": "history/provinces/00_k_mulgore.txt",
+        "sourceSha256": "af79be1571502f248fdf4c843b1d2744986bb65304005463c796f6593d5478e9",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_swindlegrin_blasting_yard",
+      "label": "Swindlegrin’s Dig: Bars beside the blasting stock",
+      "assetStem": "city_oddity_swindlegrin_blasting_yard_v1",
+      "sourceProposal": "pass12__the_prison_beside_the_blasting_stock",
+      "conditions": {
+        "provinceIds": [
+          898
+        ],
+        "worldStates": [
+          "oddity_swindlegrin_mine"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A receiving apron at the installed Swindlegrin’s Dig faces towering yellow crystal seams. An empty iron-barred holding corner sits beside covered carts and closed reinforced blasting crates. Crooked derricks and tiered plank platforms crowd the ripped warm stone; Sholazar’s lush jungle presses around the mine edges.",
+      "socialContext": "The inherited arrangement lends tension to a dispute over samples, access or industrial recklessness. No captive, named engineer, coercive operator, lit fuse or impending explosion is supplied; existing imprisonment and intentions belong to the actual characters.",
+      "purpose": "The inherited arrangement lends tension to a dispute over samples, access or industrial recklessness. No captive, named engineer, coercive operator, lit fuse or impending explosion is supplied; existing imprisonment and intentions belong to the actual characters.",
+      "art": "An empty iron-barred holding corner beside covered industrial carts and closed reinforced blasting-stock crates in Swindlegrin’s Dig, Warcraft Sholazar. Towering translucent amber-yellow crystal seams dominate a ripped warm ochre cliff. Crooked green goblin derricks and patched plank platforms climb the sides, edged by enormous saturated jungle leaves and distant canopy. The heavy bars and closed stock are close enough to suggest careless industrial planning, with a wide clear receiving apron at lower center. Warm humid light through canopy, rich amber and emerald. No exposed explosives, flame, live fuse, prisoners, emblem or active machinery.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Swindlegrin%27s_Dig",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 898,
+        "barony": "b_gorlro",
+        "county": "c_gorlro",
+        "kingdom": "k_sholazar_basin",
+        "source": "history/provinces/00_k_sholazar_basin.txt",
+        "sourceSha256": "3fb8761df2259f975310b36bab1acb2966570002075a4c9e5428fe69078da3ac",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_remtravel_stone_faces",
+      "label": "Remtravel’s Excavation: Faces in the stone",
+      "assetStem": "city_oddity_remtravel_stone_faces_v1",
+      "sourceProposal": "pass12__the_stone_faces_beneath_remtravels_trenches",
+      "conditions": {
+        "provinceIds": [
+          5697
+        ],
+        "settled": true
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "At Remtravel’s ancient excavation, immense angular carved stone faces and squared fragments frame a raised inspection ledge. Sand and moss gather around the fallen masonry. A field canopy shelters brushes, specimen trays and a blank rubbing cloth; Darkshore’s dense, cool woodland stands beyond the broken stonework.",
+      "socialContext": "The contrast between modest field tools and enormous unexplained workmanship suits discovery, scholarly disagreement or a private pause. The ancient fragments remain inert; no prospector, awakened golem, unique fossil, current excavation owner or flooding outcome is supplied.",
+      "purpose": "The contrast between modest field tools and enormous unexplained workmanship suits discovery, scholarly disagreement or a private pause. The ancient fragments remain inert; no prospector, awakened golem, unique fossil, current excavation owner or flooding outcome is supplied.",
+      "art": "A sheltered raised archaeological ledge among ancient ruins at Remtravel’s Excavation in Warcraft Darkshore. Huge angular weathered stone faces and a fallen articulated geometric stone hand loom beside pale squared fragments, partly caught in moss and windblown sand. A small stout canvas field canopy at right shelters brushes, a few padded trays and blank rubbing cloth. Clear pale stone landing in lower middle, no excavated trench floor or exterior water-state claim. Massive blue-green dark woodland trees behind the masonry, cool maritime haze, pale shafts of daylight, muted amber travel lantern. The mysterious ancient carvings are inert, not complete living golems.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Remtravel%27s_Excavation",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 5697,
+        "barony": "b_remtravel",
+        "county": "c_remtravel",
+        "kingdom": "k_darkshore",
+        "source": "history/provinces/00_k_darkshore.txt",
+        "sourceSha256": "0783de8e2eb1025fb825b626fa320a3ea0bfb78a26be362bacfa4f795e07ca5e",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_dustwind_field_table",
+      "label": "Dustwind Dig: The disputed little find",
+      "assetStem": "city_oddity_dustwind_field_table_v1",
+      "sourceProposal": "pass12__dustwinds_argument_over_the_finds",
+      "conditions": {
+        "provinceIds": [
+          128
+        ],
+        "settledOrCamp": true,
+        "styles": [
+          "dwarven"
+        ]
+      },
+      "environment": "environment_event_bp1_hills",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A dwarf-built field canopy shelters a sturdy specimen table in Dustwind’s red Badlands hills. Broken pottery, a stone rubbing and a carefully displayed rough implement occupy padded trays; measuring tools and an inspection lamp give the least imposing object the most attention. Crates and a squat supply wagon frame the shaded speaking space.",
+      "socialContext": "Field scholarship can turn a supposedly worthless object into the focus of a disagreement. No particular ancient inscription is already deciphered, no finder is present, and a modest artifact does not confer special power or settle anyone’s theory.",
+      "purpose": "Field scholarship can turn a supposedly worthless object into the focus of a disagreement. No particular ancient inscription is already deciphered, no finder is present, and a modest artifact does not confer special power or settle anyone’s theory.",
+      "art": "A stout Warcraft dwarf archaeological field canopy in Dustwind’s hot red Badlands. Sun-bleached ochre canvas, squared timber specimen table, chunky riveted supply wagon and rough crates frame the sides. On separate padded trays: a broken ceramic cup, pottery fragments, blank stone rubbing and a surprisingly fine but small rough-hewn hand tool under the closest inspection lamp and measuring frame. The visual joke is the humble object receiving absurdly careful attention. Wide shaded clear center floor, immense orange ridges and a partial ancient stepped ruin beyond. Blunt dwarven field equipment, matte red dust and warm sun; no royal museum, excavators or readable diagrams.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Dustwind_Dig_%28quest%29",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 128,
+        "barony": "b_dustwind",
+        "county": "c_dustwind",
+        "kingdom": "k_shadowforge",
+        "source": "history/provinces/00_k_shadowforge.txt",
+        "sourceSha256": "735a0c23ddef6356da30bd4ca22c3236102e510f4b0c3a49363971af0572d455",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_ivald_giant_hand",
+      "label": "Ivald’s Ruin: The buried giant’s hand",
+      "assetStem": "city_oddity_ivald_giant_hand_v1",
+      "sourceProposal": "pass12__the_giant_hand_at_ivalds_ruin",
+      "conditions": {
+        "provinceIds": [
+          710
+        ]
+      },
+      "environment": "environment_event_forest_pine",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A colossal stone hand rises out of Ivald’s rocky soil, its angular fingers gripping an ancient unlit torch. Most of the statue remains buried. Geometric carving, weathering and moss cover the exposed wrist; squared fragments lie beside a firm strip of broken paving. Howling Fjord’s russet conifers emphasize the enormous scale.",
+      "socialContext": "The buried monument invites awe, questions about its makers or disagreement over excavation. It is an inert ancient work; current iron-dwarf occupation, a complete buried body, divine speech and a functioning Titan mechanism are not established.",
+      "purpose": "The buried monument invites awe, questions about its makers or disagreement over excavation. It is an inert ancient work; current iron-dwarf occupation, a complete buried body, divine speech and a functioning Titan mechanism are not established.",
+      "art": "Ivald’s Ruin in Warcraft Howling Fjord: a colossal ancient stone HAND emerging upright from ochre rocky earth, its precise angular fingers visibly gripping a massive unlit torch bowl. Show only the immense hand and part of the buried wrist, not a whole statue or body. Bold Titan geometric bands remain beneath moss and erosion. Red-brown conifer crowns look small beside it, cold blue northern sky and distant fjord slopes. Broken square paving gives a broad clear foreground landing, with huge carved fragments at the sides. Monumental mythic scale, matte ancient gray stone, rust forest and cool haze. No floating symbols, lit beacon, humanoid silhouette or active guardian.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Ivald%27s_Ruin",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 710,
+        "barony": "b_ivald",
+        "county": "c_ivald",
+        "kingdom": "k_nifflevar",
+        "source": "history/provinces/00_k_nifflevar.txt",
+        "sourceSha256": "9479960e4f1f1436192bdbcc8fb1dca38b8a54de580b94ad209cc40de008dac6",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_satyrnaar_marble_tents",
+      "label": "Satyrnaar: Tents between the old marble walls",
+      "assetStem": "city_oddity_satyrnaar_marble_tents_v1",
+      "sourceProposal": "pass12__satyrnaars_tents_between_marble_walls",
+      "conditions": {
+        "provinceIds": [
+          1839
+        ],
+        "settledOrCamp": true,
+        "styles": [
+          "xavic"
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Coarse black-red tents and hooked fittings occupy a receiving patch between Satyrnaar’s curved elven walls. Old crescent carving survives above new horned braces, jagged wood and covered stores. Giant Ashenvale roots and a deep blue-green canopy enclose the court; a rough table stands clear of the inner tent doors.",
+      "socialContext": "The meeting patch makes appropriation of an older civilization tangible. It offers room for bargaining, rivalry or an unwelcome visit without supplying a ritual, an active demon, a required allegiance or permission to enter the screened inner tents.",
+      "purpose": "The meeting patch makes appropriation of an older civilization tangible. It offers room for bargaining, rivalry or an unwelcome visit without supplying a ritual, an active demon, a required allegiance or permission to enter the screened inner tents.",
+      "art": "Satyrnaar in Warcraft Ashenvale: striking contrast between elegant pale ancient curved night-elven marble walls, weathered crescent friezes and coarse black-crimson satyr tents pitched between them. Crooked horned wood braces, hooked iron fittings and jagged fel-warped timber at the edges; covered stores and rough receiving table to one side. Immense twisted woodland roots cross ancient paving, colossal blue-green leaves turn the canopy into ancient twilight, muted violet distance and warm lantern accents. Wide clear outer reception patch at lower center; tent entrances screened. No green portal, ritual, inhabitants or active magic.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Satyrnaar",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1839,
+        "barony": "b_satyrnaar",
+        "county": "c_satyrnaar",
+        "kingdom": "k_raynewood",
+        "source": "history/provinces/00_k_raynewood.txt",
+        "sourceSha256": "765a4c8e91d99ac41a486df99270bf4a72109f5cf578a9125c6e2286c1ed3289",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_jadefire_crooked_yard",
+      "label": "Jadefire Run: The crooked assembly yard",
+      "assetStem": "city_oddity_jadefire_crooked_yard_v1",
+      "sourceProposal": "pass12__jadefire_runs_crooked_assembly_yard",
+      "conditions": {
+        "provinceIds": [
+          1909
+        ],
+        "settledOrCamp": true,
+        "styles": [
+          "xavic"
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A rough assembly yard at Jadefire Run arranges hooked spars, bound timber and jagged fittings around a low work platform. Horned braces interrupt the remnants of elegant elven stonework. Dense Felwood trees and twisted roots close the outer paths; covered vessels and a clamped work surface occupy the side awning.",
+      "socialContext": "Craft, bargaining and rivalry can unfold amid an unsettling adaptation of familiar woodland materials. No forced ritual, poisonous air, manifested demon, active corruption outbreak or completed campaign cleansing is supplied by the scene.",
+      "purpose": "Craft, bargaining and rivalry can unfold amid an unsettling adaptation of familiar woodland materials. No forced ritual, poisonous air, manifested demon, active corruption outbreak or completed campaign cleansing is supplied by the scene.",
+      "art": "A Warcraft satyr assembly yard at Jadefire Run, Felwood, under dark dense immense forest trunks. Crooked hooked spars and bound twisted timber lean against coarse horned braces over an old pale elven masonry foundation. Jagged iron fittings, covered clay vessels and a low rough work platform at the sides. Bold angular demonic craft silhouettes without a portal or summoned creature. Deep moss green, bruise-violet bark shade and restrained oily amber lantern light; atmospheric cool forest depth, no luminous toxic fog or burned wilderness. Broad clear trampled reception ground at lower center.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Jadefire_Run",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1909,
+        "barony": "b_jadefire",
+        "county": "c_jadefire_run",
+        "kingdom": "k_morlosaran",
+        "source": "history/provinces/00_k_morlosaran.txt",
+        "sourceSha256": "5b9a32fb3f249372a4e20bf4ce7fb6d60c61c519368d74f52d7f6f2edbdede52",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_sargeron_broken_moon",
+      "label": "Sargeron: The broken moon precinct",
+      "assetStem": "city_oddity_sargeron_broken_moon_v1",
+      "sourceProposal": "pass12__blades_beneath_sargerons_broken_moon",
+      "conditions": {
+        "provinceIds": [
+          1693
+        ]
+      },
+      "environment": "environment_event_bp1_hills",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Sun-bleached elven steps and curved ruined walls rise out of Sargeron’s gray Desolace dust. A broken crescent and an empty carved recess retain the precinct’s former Elune imagery. Weathered paving gives a sheltered speaking margin beneath the surviving columns; sparse plants cling to the shaded cracks.",
+      "socialContext": "An older sacred design remains legible regardless of who now holds the land. The precinct can frame remembrance, appropriation or a dispute over its use without assigning anyone Elune worship, Sargeras worship, a weapon collection or a named relic.",
+      "purpose": "An older sacred design remains legible regardless of who now holds the land. The precinct can frame remembrance, appropriation or a dispute over its use without assigning anyone Elune worship, Sargeras worship, a weapon collection or a named relic.",
+      "art": "Sargeron’s ancient ruined Elune precinct in Warcraft Desolace. Elegant pale curving walls, sweeping elven steps, tall broken columns and a shattered crescent ornament survive amid gray-brown arid dust and bleached rocky hills. A conspicuously empty carved sacred recess at right; dark sparse plants only in shaded masonry cracks. Large expressive curved Warcraft stone silhouettes, sun-bleached ivory against charcoal and muted ochre, cool shade under the last arch. Broad clear weathered paved speaking margin at lower center. No tent occupant, faction banner, stocked weapon rack, intact relic, portal or god.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Sargeron",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1693,
+        "barony": "b_sargeron",
+        "county": "c_sargeron",
+        "kingdom": "k_desolace",
+        "source": "history/provinces/00_k_desolace.txt",
+        "sourceSha256": "6c2605a1eb7c8174c77b9204ef0a1131cb5aba610f8d5afef8664c99d9b6a7c5",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_bathran_herb_ground",
+      "label": "Bathran’s Haunt: Hair among the fallen columns",
+      "assetStem": "city_oddity_bathran_herb_ground_v1",
+      "sourceProposal": "pass12__bathrans_hair_among_the_fallen_columns",
+      "conditions": {
+        "provinceIds": [
+          1852
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "The herb ground at Bathran’s Haunt lies among fallen pale columns and broken Ashenvale paving. Small maple-like leaves crowd sheltered patches beneath broad roots. A dry stone sorting ledge sits beside the plants; cool woodland light and violet shade distinguish the intimate ruin from the forest beyond.",
+      "socialContext": "Bathran’s Hair is locally valued for remedies involving ailments of the spirit. Gathering, remembrance or disagreement over use can arise without making a character an herbalist, supplying a sick child, identifying a corpse or establishing a Forsaken laboratory.",
+      "purpose": "Bathran’s Hair is locally valued for remedies involving ailments of the spirit. Gathering, remembrance or disagreement over use can arise without making a character an herbalist, supplying a sick child, identifying a corpse or establishing a Forsaken laboratory.",
+      "art": "A small living medicinal herb patch among the ancient ruined columns of Bathran’s Haunt, Warcraft Ashenvale. Reachable maple-like green leaves grow between mossy pale curved paving stones and immense woodland roots. Fallen elegant elven marble columns frame a dry broad sorting ledge and clear foreground resting space. Deep blue-green gigantic canopy, cool lavender twilight shade, delicate silver daylight on the humble leaves, ferns and luminous atmospheric depth. Intimate consequential plants amid ancient beauty, not a colossal world tree. No corpse, undead chemist, laboratory, plague mist or compulsory gathering equipment.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Bathran%27s_Hair_%28Classic%29",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1852,
+        "barony": "b_bathran",
+        "county": "c_bathran",
+        "kingdom": "k_ashenvale",
+        "source": "history/provinces/00_k_ashenvale.txt",
+        "sourceSha256": "bf055d6c3b54792f311aa32a9ffad5d64d96f19264ab760e1bebfdd33e9418f2",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_agamagor_bramble_threshold",
+      "label": "Agama’gor: The barred bramble threshold",
+      "assetStem": "city_oddity_agamagor_bramble_threshold_v1",
+      "sourceProposal": "pass12__agama_gor_s_watched_hostage_threshold",
+      "conditions": {
+        "provinceIds": [
+          1735
+        ],
+        "settledOrCamp": true,
+        "worldStates": [
+          "community_quilboar_lineage"
+        ]
+      },
+      "environment": "environment_event_steppe",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A rough receiving recess at Agama’gor lies inside immense living thorn walls. Bone-lashed stakes and an empty timber-barred enclosure face a scraped-earth parley patch. Thick roots turn through red soil; hides, broad shields and a stout low bench fit the thorn-warren craft around the screened inner path.",
+      "socialContext": "The outer patch permits bargaining, territorial argument or discussion of actual custody. Its empty bars neither create a hostage nor make outsiders prisoners; no Dogran, guard, compulsory sacrifice or freely open inner dwelling is supplied.",
+      "purpose": "The outer patch permits bargaining, territorial argument or discussion of actual custody. Its empty bars neither create a hostage nor make outsiders prisoners; no Dogran, guard, compulsory sacrifice or freely open inner dwelling is supplied.",
+      "art": "A Warcraft quilboar thorn-warren parley threshold at Agama’gor in the Barrens. Immense living interwoven bramblethorn trunks and dagger-length thorns form the actual enclosing walls and roof, not a timber lodge. Rough bone-lashed stakes border an EMPTY stout wooden-barred recess at left. Red scraped soil and massive thorn roots, dull hide awnings and thick shields to the sides, a low heavy bench. Dry golden Barrens light through the living thorns, ochre earth, deep burgundy bark, pale bone. Broad clear outer parley ground at lower center; the inner twisting root path is screened. No prisoners, ritual, deity statue, living guard or invented fortress.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Agama%27gor",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1735,
+        "barony": "b_agamagor",
+        "county": "c_agamagor",
+        "kingdom": "k_razorfen",
+        "source": "history/provinces/00_k_razorfen.txt",
+        "sourceSha256": "193253b48e74a470765fe24874f0f09c78b9e6315ef81fa37bf926ac5cd2b793",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_razormane_thorn_watch",
+      "label": "Razormane Grounds: The canyon’s thorn watch",
+      "assetStem": "city_oddity_razormane_thorn_watch_v1",
+      "sourceProposal": "pass12__the_razormane_canyon_watch",
+      "conditions": {
+        "provinceIds": [
+          1708
+        ],
+        "settledOrCamp": true,
+        "worldStates": [
+          "community_quilboar_lineage"
+        ]
+      },
+      "environment": "environment_event_bp1_hills",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A red-rock lookout at Razormane Grounds stands beneath brambles that climb high along the canyon wall. Bone-lashed rails and thick hide shade border a ledge overlooking the dry approach. Stripped animal bones, coarse packs and a raised sighting shelf occupy the side of the clear speaking patch.",
+      "socialContext": "The viewpoint offers a practical territorial perspective: routes, approaching travelers and access to land may matter here. It does not establish scouts on duty, raiding, a feud, a named commander or hostility toward the visiting characters.",
+      "purpose": "The viewpoint offers a practical territorial perspective: routes, approaching travelers and access to land may matter here. It does not establish scouts on duty, raiding, a feud, a named commander or hostility toward the visiting characters.",
+      "art": "A Warcraft quilboar lookout at Razormane Grounds in Durotar, a broad red sandstone ledge overlooking a sharply winding dry canyon. Immense living bramblethorn growth climbs high over the red mountain wall, thick thorn roots making a natural roof and boundary. Rough bone-lashed rail, patched heavy hide shade, stripped animal bones and squat packs to the sides, simple raised sighting shelf. Open lower-center speaking ledge, strong vertical red cliffs and ochre path below, warm dry daylight and cool burgundy thorn shade. No built watchtower, active patrol, raid or occupants.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Razormane_tribe",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1708,
+        "barony": "b_razormane",
+        "county": "c_razormane",
+        "kingdom": "k_durotar",
+        "source": "history/provinces/00_k_durotar.txt",
+        "sourceSha256": "523019613ad7c5775460762ef6c8c0ad823d2ff00cb26f92c057fefa717f9f31",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_woodpaw_map_common",
+      "label": "Woodpaw Hills: The crate that serves as a map table",
+      "assetStem": "city_oddity_woodpaw_map_common_v1",
+      "sourceProposal": "pass12__woodpaw_s_battle_map_common",
+      "conditions": {
+        "provinceIds": [
+          1652
+        ],
+        "settledOrCamp": true,
+        "styles": [
+          "jalgaric"
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A bone-braced hide common stands among Feralas’s enormous leaves and exposed roots. An unlettered hide map lies over a scavenged crate, weighted with stones and movable rough markers. Battered shields, patched packs and wagon pieces crowd the awnings; a steep wooded path leaves the clear trampled meeting patch.",
+      "socialContext": "Scavenged material and detailed knowledge of the surrounding ground can meet around this improvised table. The map has no fixed troop orders; choosing the scene neither establishes a war nor makes the speakers raiders or military specialists.",
+      "purpose": "Scavenged material and detailed knowledge of the surrounding ground can meet around this improvised table. The map has no fixed troop orders; choosing the scene neither establishes a war nor makes the speakers raiders or military specialists.",
+      "art": "Woodpaw gnoll camp common in Warcraft Feralas: colossal emerald broad leaves, wet mossy roots and monumental dark trunks around bone-braced greasy hide lean-tos. A battered scavenged wooden crate at right serves as map table, holding an unlettered rough hide map weighted by stones and movable short pegs. Damp shields, patched packs and stripped wagon pieces at the side edges. Broad clear trampled-earth foreground for conversation; steep forest path behind. Saturated mythic jungle green, brown hide and pale bone, cool canopy haze and small amber lantern. No army, arrows prescribing troop movement, gnolls or living wildlife.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Woodpaw_clan",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1652,
+        "barony": "b_woodpaw",
+        "county": "c_woodpaw",
+        "kingdom": "k_thalanaar",
+        "source": "history/provinces/00_k_thalanaar.txt",
+        "sourceSha256": "f4ebf06a460326685e1cd0b7989ef4bf3cd1ca52c2599b7bf90ec57f880a01a1",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_stonesplinter_burrow",
+      "label": "Stonesplinter Valley: The split-rock burrow",
+      "assetStem": "city_oddity_stonesplinter_burrow_v1",
+      "sourceProposal": "pass12__stonesplinter_s_split_rock_burrow",
+      "conditions": {
+        "provinceIds": [
+          157
+        ],
+        "settledOrCamp": true,
+        "worldStates": [
+          "oddity_trogg_lineage"
+        ]
+      },
+      "environment": "environment_event_mountains",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A split boulder divides Stonesplinter’s cave mouth into a scraped receiving hollow and a darker inward passage. Heavy stone seats, mineral chunks and thick-handled tools occupy the side walls. Primitive hide screens break the view into the burrow; gray Loch Modan mountain rock catches daylight at the entrance.",
+      "socialContext": "The materially purposeful trogg-built threshold allows an exchange over food, tools or use of the valley. It is separate from Silver Stream’s mine; slavery, an attack on dwarves and the identities of current chiefs are not supplied.",
+      "purpose": "The materially purposeful trogg-built threshold allows an exchange over food, tools or use of the valley. It is separate from Silver Stream’s mine; slavery, an attack on dwarves and the identities of current chiefs are not supplied.",
+      "art": "A trogg-built cave threshold at Stonesplinter Valley in Warcraft Loch Modan. A huge split gray boulder and low irregular mountain overhang divide the entrance into a scraped broad receiving hollow and a dark screened inward bend. Massive rough stone seats, color-sorted mineral chunks, battered salvaged metal and thick-handled crude-but-purposeful tools lie at the edges. Coarse hide screens and a tiny banked hearth, gray daylight from the mountain valley and muted amber warmth. Clear wide stone floor at lower center. Forceful material craft, no polished dwarf hall, slaves, chief, active mining or underground railroad.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Stonesplinter_Valley",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 157,
+        "barony": "b_stonesplinter_valley",
+        "county": "c_stonesplinter_valley",
+        "kingdom": "k_ironforge",
+        "source": "history/provinces/00_k_ironforge.txt",
+        "sourceSha256": "4c48f7510558f197f2d27f6a738e82c2c99a9b851be2d64bb4e5a2cee9ff7dbb",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_winterfall_brew_shelter",
+      "label": "Winterfall: The runner’s sheltered delivery corner",
+      "assetStem": "city_oddity_winterfall_brew_shelter_v1",
+      "sourceProposal": "pass12__winterfall_s_firewater_runner_shelter",
+      "conditions": {
+        "provinceIds": [
+          1956
+        ],
+        "settledOrCamp": true,
+        "worldStates": [
+          "community_lineage_furbolg_honey_herbs"
+        ]
+      },
+      "environment": "environment_bp3_mountain_winter",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A stout furbolg-built delivery recess shelters sealed brew vessels, wooden cups and heavy carrying harnesses beneath a low hide-lined roof. Snow-covered firs and dark mountain stone surround the Winterfall corner. Warm lamp light catches bead cords beside the stores; the snowy forestward path remains visible beyond the clear receiving floor.",
+      "socialContext": "Brew shipments, prized supplies and the cost of dependence can be discussed here. The containers’ actual contents and purity remain untested; the venue does not impose addiction, corruption, intoxication or a present trade agreement with Deadwood.",
+      "purpose": "Brew shipments, prized supplies and the cost of dependence can be discussed here. The containers’ actual contents and purity remain untested; the venue does not impose addiction, corruption, intoxication or a present trade agreement with Deadwood.",
+      "art": "A Warcraft furbolg-built Winterfall delivery shelter in intensely snowy Winterspring. Stout rough log structure under heavy dark hides, bead cords and massive carrying harnesses at the sides. Sealed squat brew vessels in sturdy crates, wooden cups and low broad loading surface. Warm amber interior light contrasts with intensely blue snow, huge white-laden fir branches and dark mountain stone outside. Broad clear receiving floor under the roof, a snowy forest path beyond. Recognizable bulky bearfolk craftsmanship, no green fumes, visible magic brew, occupants or fresh tracks assigning a current delivery.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Winterfall_Runners",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1956,
+        "barony": "b_winterfall",
+        "county": "c_winterfall",
+        "kingdom": "k_starfall",
+        "source": "history/provinces/00_k_starfall.txt",
+        "sourceSha256": "cb4a6fb2b33a28995fec256b927532a2e8e680a9ae1bf6bf52241379c331e8ad",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_bristlelimb_cage_patch",
+      "label": "Bristlelimb Village: The empty cage enclosure",
+      "assetStem": "city_oddity_bristlelimb_cage_patch_v1",
+      "sourceProposal": "pass12__bristlelimb_s_cage_court",
+      "conditions": {
+        "provinceIds": [
+          1978
+        ],
+        "settledOrCamp": true,
+        "worldStates": [
+          "community_lineage_furbolg_honey_herbs"
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A furbolg-built speaking patch at Bristlelimb Village faces empty heavy timber cages among broad Azuremyst roots. Rope lashings, carved clan posts and hide shade frame the enclosure; a rough low bench sits outside the barred doors. Cool blue woodland depth and amber lamplight reach the open receiving ground.",
+      "socialContext": "The inherited enclosure can give weight to a real dispute about custody or an ordinary boundary negotiation. It establishes no Stillpine captive, current captor, forced release, war or hostility; the party’s actual relationships determine what the bars mean today.",
+      "purpose": "The inherited enclosure can give weight to a real dispute about custody or an ordinary boundary negotiation. It establishes no Stillpine captive, current captor, forced release, war or hostility; the party’s actual relationships determine what the bars mean today.",
+      "art": "A Warcraft Azuremyst furbolg village enclosure, bold heavy timber cages completely EMPTY at one side under huge blue-violet forest roots. Thick rope lashings, coarse hide shade, bearfolk carved clan posts and a broad rough bench outside the closed barred doors. Blue-green giant conifers and soft cool island haze behind, warm amber lamp at a side post, muted violet wildflowers. Wide clear outer receiving ground at lower center. No draenei crash wreckage, prisoners, guards, faction banner or magical cage field.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Bristlelimb_Village",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1978,
+        "barony": "b_bristlelimb",
+        "county": "c_bristlelimb",
+        "kingdom": "k_azuremyst",
+        "source": "history/provinces/00_k_azuremyst.txt",
+        "sourceSha256": "2108a9115f6573db97c04b58769b72507ffc220d7cde0a913f9dfc674e3f0c49",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_dunemaul_chitin_cookyard",
+      "label": "Dunemaul: Chitin beneath the cookyard shade",
+      "assetStem": "city_oddity_dunemaul_chitin_cookyard_v1",
+      "sourceProposal": "pass12__dunemaul_s_silithid_cookyard",
+      "conditions": {
+        "provinceIds": [
+          1600
+        ],
+        "settledOrCamp": true,
+        "styles": [
+          "gorian"
+        ]
+      },
+      "environment": "environment_event_bp1_desert",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "An ogre-scale cookyard sits beneath ragged shade beside Dunemaul’s sandstone cave. Oversized pots, thick chopping blocks and deep bowls stand among cracked amber insect shells and stripped chitin joints. Weighty utensils and coarse hide baskets flank a massive clear bench; bright Tanaris sand lies beyond the shade.",
+      "socialContext": "The Dunemaul’s documented use of silithid parts inspires this practical food-work setting. Sharing a meal, inspecting supplies or arguing over a catch is possible; no feast, fresh hunt, poison, involuntary eating or character appetite is imposed.",
+      "purpose": "The Dunemaul’s documented use of silithid parts inspires this practical food-work setting. Sharing a meal, inspecting supplies or arguing over a catch is possible; no feast, fresh hunt, poison, involuntary eating or character appetite is imposed.",
+      "art": "An ogre-scale Warcraft Dunemaul cookyard in Tanaris under ragged heavy hide shade beside an orange sandstone cave. Enormous soot-dark pots, thick chopping blocks and huge rough wooden bowls frame a broad empty bench and clear conversation ground. Cracked amber-gold SILITHID insect carapace pieces and stripped armored joint sections, recognizably fantastical ribbed chitin rather than mammal bones, arranged as food-work materials at the side. Heavy utensils, coarse baskets and scorched stone. Bright desert sand outside, rich ochre and smoky gold in shade. Resourceful nomadic ogre craft, not imperial palace décor. No ogres, living insects, cooking action or forced banquet.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Dunemaul_clan",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1600,
+        "barony": "b_dunemaul",
+        "county": "c_dunemaul",
+        "kingdom": "k_zulfarrak",
+        "source": "history/provinces/00_k_zulfarrak.txt",
+        "sourceSha256": "1a658c1e8a0712af702df15ec18b70ef5e967fd609cb9fba5f78086b1f8ce2fe",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_agamand_ancestral_crypt",
+      "label": "Agamand: The ancestral burial bays",
+      "assetStem": "city_oddity_agamand_ancestral_crypt_v1",
+      "sourceProposal": "pass13__the_weapons_kept_with_the_family_dead",
+      "conditions": {
+        "provinceIds": [
+          307
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Thick-walled burial bays descend beneath the Agamand locality through rounded human arches. Memorial slabs and weathered family devices line the soot-dark vaults. Empty heirloom racks and iron-cornered coffers stand beside a low examination slab; weak daylight reaches the upper stair while lamps catch the old funerary dust.",
+      "socialContext": "Inherited wealth, memory and custody can matter in this prosperous family’s burial architecture. No particular heirloom is guaranteed inside a coffer, and neither the family’s destruction nor Captain Dargol’s raised ancestors is supplied by selecting the crypt.",
+      "purpose": "Inherited wealth, memory and custody can matter in this prosperous family’s burial architecture. No particular heirloom is guaranteed inside a coffer, and neither the family’s destruction nor Captain Dargol’s raised ancestors is supplied by selecting the crypt.",
+      "art": "The ancestral Agamand family crypt in Warcraft Tirisfal: several thick-walled northern human burial bays reached by short descending stairs, rounded gray stone arches and soot-dark vaults. Memorial lids with worn nonreadable family devices, EMPTY heirloom weapon racks and closed iron-cornered coffers at side walls. Low examination slab off center, broad clear dry lower foreground. Weak cool woodland daylight on the upper stair, limited amber lamps deeper inside, dusty muted gray and old wax. Accumulated generations of prosperous mill-owning family architecture, not a royal necropolis. No recognizable weapons, named remains, living figures, spirits or Scourge flags.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Agamand_Family_Crypt",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 307,
+        "barony": "b_agamand",
+        "county": "c_agamand",
+        "kingdom": "k_lordaeron",
+        "source": "history/provinces/00_k_lordaeron.txt",
+        "sourceSha256": "a0b6458360f3a1a8c250ec1d2b06a5f48e90b6bf6fe4997e87a575af4d9f13cd",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_deathknell_stitching_room",
+      "label": "Deathknell: The twine and embalming room",
+      "assetStem": "city_oddity_deathknell_stitching_room_v1",
+      "sourceProposal": "pass13__the_twine_and_embalming_room_above_deathknell",
+      "conditions": {
+        "provinceIds": [
+          308
+        ],
+        "settled": true,
+        "worldStates": [
+          "community_lineage_forsaken_second_life"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A compact working crypt at Deathknell places a long empty stone bier beside shelves of sealed embalming vessels, bundled stitching twine and stout needles. Folded cloth and a small closed register occupy the receiving end. Amber lamps warm the tools against cool gray burial masonry; the stair climbs toward the wooded cemetery.",
+      "socialContext": "Ordinary maintenance of an undead body gives this room its macabre practicality and understated humor. A speaker may ask for supplies or discuss care without being newly raised, injured, undergoing a procedure or assigned the undertaker’s profession.",
+      "purpose": "Ordinary maintenance of an undead body gives this room its macabre practicality and understated humor. A speaker may ask for supplies or discuss care without being newly raised, injured, undergoing a procedure or assigned the undertaker’s profession.",
+      "art": "A compact Warcraft Forsaken body-maintenance room in the Shadow Grave at Deathknell. Heavy pale stone crypt arches, a long EMPTY stone work bier at one side, shelves of sealed chunky embalming-fluid jars, bundled thick corpse-stitching twine and tidy stout needle trays. Folded clean work coverings, small closed register and narrow stool near the receiving end. Stair climbs uphill toward a faint strip of Tirisfal cemetery daylight. Amber lamps on tools against cool blue-gray burial stone, understated macabre professionalism. Broad clear standing floor beside the table. No bodies, surgical act, blood, newly raised undead or explicit writing.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/The_Shadow_Grave",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 308,
+        "barony": "b_deathknell",
+        "county": "c_deathknell",
+        "kingdom": "k_lordaeron",
+        "source": "history/provinces/00_k_lordaeron.txt",
+        "sourceSha256": "a0b6458360f3a1a8c250ec1d2b06a5f48e90b6bf6fe4997e87a575af4d9f13cd",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_baradin_ration_gallery",
+      "label": "Baradin Hold: The ration gallery below the locks",
+      "assetStem": "city_oddity_baradin_ration_gallery_v1",
+      "sourceProposal": "pass13__the_old_rations_behind_the_warden_s_doors",
+      "conditions": {
+        "provinceIds": [
+          2210
+        ],
+        "worldStates": [
+          "oddity_baradin_prison"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A damp underground provision gallery inside the converted Baradin prison leads past heavy iron-bound doors. Closed ration crates occupy recessed bays beside a barred issuing counter. Empty key hooks and a narrow drainage channel run along the wall; the receiving end offers space to speak without entering the deeper cell passages.",
+      "socialContext": "Passage, provisions and practical control of the doors can enter conversation. Current guards, inmates, revolt, stale food, demonic escape and authority over particular keys remain encounter facts; arriving here neither imprisons nor authorizes the visitors.",
+      "purpose": "Passage, provisions and practical control of the doors can enter conversation. Current guards, inmates, revolt, stale food, demonic escape and authority over particular keys remain encounter facts; arriving here neither imprisons nor authorizes the visitors.",
+      "art": "An underground prison ration gallery beneath Warcraft Baradin Hold, heavy damp gray stone blocks under a low soot-dark vault. Closed old ration crates in recessed bays, stout barred issuing counter to left, successive immense iron-bound locked doors and EMPTY key-hook board on wall. Narrow drainage groove along edge, salt-dark humidity on masonry. Broad clear dry receiving area at lower center, deep controlled passages disappear beyond. Cold maritime gray with restrained amber lamp pools. No guards, prisoners, demons, bloody revolt, broken wards or readable tallies.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Baradin_Hold",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 2210,
+        "barony": "b_baradin",
+        "county": "c_tol_barad",
+        "kingdom": "k_tol_barad",
+        "source": "history/provinces/00_k_tol_barad.txt",
+        "sourceSha256": "6f839bfdf5ad736d525929147c2465e29f9a9aaffa507ed8ff684b8a2512a5b6",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_forgotten_hill_mausoleum",
+      "label": "Forgotten Hill: Graves above the sea",
+      "assetStem": "city_oddity_forgotten_hill_mausoleum_v1",
+      "sourceProposal": "pass13__the_sea_facing_mausoleum_amid_forgotten_hill",
+      "conditions": {
+        "provinceIds": [
+          2211
+        ]
+      },
+      "environment": "environment_bp3_coast",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A heavy northern-human mausoleum overlooks grave rows on Tol Barad Peninsula’s Forgotten Hill. Its open columned front shelters a narrow terrace above wind-shaped trees, old enclosing walls and uneven burial paths. Salt darkens the pale blocks; the cold sea remains visible beyond the crowded markers.",
+      "socialContext": "The island’s accumulated losses can frame remembrance or a private discussion beneath the roof. The cemetery is on the peninsula rather than inside Farson Hold; present caretakers, undead occupation, named graves and funeral proceedings are not established.",
+      "purpose": "The island’s accumulated losses can frame remembrance or a private discussion beneath the roof. The cemetery is on the peninsula rather than inside Farson Hold; present caretakers, undead occupation, named graves and funeral proceedings are not established.",
+      "art": "Forgotten Hill’s great sea-facing cemetery on Warcraft Tol Barad Peninsula. Repeated uneven grave rows, low enclosing stone walls and older steps descend across a low coastal rise toward a cold steel-blue sea. Foreground beneath an open columned heavy pale-gray human mausoleum, square funerary mass with modest weathered statuary, echoing northern human memorial architecture without Uther’s unique statue. Wind-shaped trees, salt-dark stone, muted sea grass and violet maritime cloud light. Broad clear roofed terrace at lower center. Great accumulation of burials, no undead, funeral crowd, named inscriptions or Farson castle.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Forgotten_Hill",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 2211,
+        "barony": "b_farson",
+        "county": "c_tol_barad_peninsula",
+        "kingdom": "k_tol_barad",
+        "source": "history/provinces/00_k_tol_barad.txt",
+        "sourceSha256": "6f839bfdf5ad736d525929147c2465e29f9a9aaffa507ed8ff684b8a2512a5b6",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_barrowknoll_gravebloom",
+      "label": "Barrowknoll: Gravebloom at the caretaker’s porch",
+      "assetStem": "city_oddity_barrowknoll_gravebloom_v1",
+      "sourceProposal": "pass13__the_gravebloom_tools_beside_the_caretaker_s_door",
+      "conditions": {
+        "provinceIds": [
+          6029
+        ],
+        "settled": true
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A dark-timber caretaker’s porch faces the Barrowknoll Cemetery gate. Delicate gravebloom, drying bundles, a mortar and a closed mixing urn occupy a sheltered bench beside a burial register and muddy tending tools. Drustvar’s russet woodland crowds the steep slate roof and old grave walls.",
+      "socialContext": "Local salve-making tradition uses gravebloom to aid communion with the dead. Flowers and equipment provide a possible request or practical errand; no salve has been administered, no ghost is currently visible, and the scene grants neither spiritual sight nor an automatic haunting.",
+      "purpose": "Local salve-making tradition uses gravebloom to aid communion with the dead. Flowers and equipment provide a possible request or practical errand; no salve has been administered, no ghost is currently visible, and the scene grants neither spiritual sight nor an automatic haunting.",
+      "art": "A small steep-roofed dark timber caretaker cottage porch outside Barrowknoll Cemetery in Warcraft Drustvar. Warped heavy beams and slate roof, old cemetery gate and a few pale grave markers beyond the wall. At right a herb-work bench holds delicate small gravebloom flowers, drying bundles, mortar, CLOSED mixing urn, closed burial register and muddy garden tools. Russet immense woodland, cool misty violet shade, warm amber household light at a window. Wide clear porch receiving floor at lower center. Quiet uncanny practical craft, no ghosts, spectral pets, glowing salve, coven, villagers or legible grave names.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Barrowknoll_Cemetery",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 6029,
+        "barony": "b_barrowknol",
+        "county": "c_fallhaven",
+        "kingdom": "k_kul_tiras",
+        "source": "history/provinces/00_k_kul_tiras.txt",
+        "sourceSha256": "4364339d70f3675a44f11b28755313ac4c00243be9087a96d0fc28bc4b856d0a",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_lonely_tower_watchroom",
+      "label": "Lonely Tower: Above Eastvale’s greatoaks",
+      "assetStem": "city_oddity_lonely_tower_watchroom_v1",
+      "sourceProposal": "pass13__the_single_light_above_eastvale_s_trees",
+      "conditions": {
+        "provinceIds": [
+          15
+        ],
+        "worldStates": [
+          "oddity_castle_here"
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A compact watchroom high in the native Lonely Tower sits beneath heavy oak rafters. Deep shuttered windows look over Elwynn’s enormous green crowns toward one distant road opening. Covered messenger cases hang beside a plain table; a kettle, sturdy stools and a hooded signal lamp fit around the central support.",
+      "socialContext": "The secluded watch-household scale supports a quiet exchange about routes, messages or waiting. No signal is being sent, particular watcher is present, or unique secret mission is assumed.",
+      "purpose": "The secluded watch-household scale supports a quiet exchange about routes, messages or waiting. No signal is being sent, particular watcher is present, or unique secret mission is assumed.",
+      "art": "An upper watchroom in Warcraft Elwynn’s native Lonely Tower near Eastvale. Compact pale-stone human fortified room under massive oak rafters and a steep blue-gray roof. Deep shuttered windows at the sides overlook nearly continuous gigantic greatoak crowns and a tiny distant road opening, not a city skyline. Covered messenger cases, plain table, covered kettle and two stout stools beside central timber support; hooded inactive signal lamp at a high window. Warm amber interior, luminous living green canopy beyond, broad clear room floor at lower center. No royal throne, banner, messenger, activated signal or prescribed danger.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Elwynn_Forest",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 15,
+        "barony": "b_lonely_tower",
+        "county": "c_lonely_tower",
+        "kingdom": "k_stormwind",
+        "source": "history/provinces/00_k_stormwind.txt",
+        "sourceSha256": "4f752ef8d5ed89e3aad13d808d3f918fd500afa8b89ee6c15f4b83025637a84b",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_banethil_rooted_junction",
+      "label": "Ban’ethil: The chest at the rooted crossroads",
+      "assetStem": "city_oddity_banethil_rooted_junction_v1",
+      "sourceProposal": "pass13__the_sacred_chest_at_the_sleeping_crossroads",
+      "conditions": {
+        "provinceIds": [
+          5914
+        ],
+        "worldStates": [
+          "canon_teldrassil_mature"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Ban’ethil’s pale curved passages divide around a closed chest recess beneath enormous brown roots. A low table holds linen pads and an empty shallow inspection tray. Violet screens interrupt the adjoining resting passages; amber lamplight marks the junction against cool green depths.",
+      "socialContext": "Care of a barrow’s stores and the return of sleeping druids can be discussed here. The chest contents are unknown: it does not guarantee any Relic of Wakening, trapped druid, permission to handle sacred objects or an already active hibernation ritual.",
+      "purpose": "Care of a barrow’s stores and the return of sleeping druids can be discussed here. The chest contents are unknown: it does not guarantee any Relic of Wakening, trapped druid, permission to handle sacred objects or an already active hibernation ritual.",
+      "art": "A rooted night-elven barrow passage junction inside Ban’ethil in Warcraft Teldrassil. Immense natural brown tree roots pass through pale curved stone ribs; two descending corridors divide around a single heavy CLOSED sacred chest recess at right. Low gracefully curved table, folded linen pads and EMPTY shallow inspection tray nearby. Blue-violet leaf-carved screens conceal resting passages. Amber lamps on the chest fittings contrast with deep cool green forest-earth depths, ferns and subtle violet atmosphere. Broad clear lower-middle landing. No sleeping people, feathers representing named relics, glowing objects, guardian or universal dream portal.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Ban%27ethil_Barrow_Den",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 5914,
+        "barony": "b_banethil",
+        "county": "c_banethil",
+        "kingdom": "k_kalidar",
+        "source": "history/provinces/00_k_kalidar.txt",
+        "sourceSha256": "a6b500029d0fa9fc3be283ef777acd069fd6143dae33aa4ca03b7f1df0e44ace",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_dordanil_resting_cells",
+      "label": "Dor’Danil: The quiet inner resting cells",
+      "assetStem": "city_oddity_dordanil_resting_cells_v1",
+      "sourceProposal": "pass13__the_dream_cells_that_will_not_fall_silent",
+      "conditions": {
+        "provinceIds": [
+          1842
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Curved stone ribs shelter enclosed resting recesses under Dor’Danil’s vast roots. Folded mats, empty care bowls and leaf-carved violet screens retain the barrow’s gentle arrangement. A dry side landing overlooks the first cells; a lamp warms the near stone while the deeper passage bends out of sight.",
+      "socialContext": "The intimate resting architecture gives room for care, guarded conversation or reflection on what happened here. Poisoning, murdered druids, manifested spirits and Forsaken occupation are not established; actual history and present characters may change the meaning of the quiet cells.",
+      "purpose": "The intimate resting architecture gives room for care, guarded conversation or reflection on what happened here. Poisoning, murdered druids, manifested spirits and Forsaken occupation are not established; actual history and present characters may change the meaning of the quiet cells.",
+      "art": "The quiet inner sleeping-cell architecture of Dor’Danil Barrow Den in Warcraft Ashenvale. Enormous woodland roots form low arches through pale curved stone ribs. EMPTY sheltered resting recesses, neatly folded dark blue mats, empty simple care bowls and violet leaf-carved screens. A dry clear side landing at lower center, the deeper path bends away behind a screen. Gentle amber lamp against rich cool green earth, moss, pale stone and blue-violet night-elven textiles. Intimate ancient druidic care architecture, no sleeping people, translucent ghosts, torn massacre scene, poison laboratory or forced haunting.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Dor%27danil_Barrow_Den",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1842,
+        "barony": "b_dordanil",
+        "county": "c_dordanil",
+        "kingdom": "k_raynewood",
+        "source": "history/provinces/00_k_raynewood.txt",
+        "sourceSha256": "765a4c8e91d99ac41a486df99270bf4a72109f5cf578a9125c6e2286c1ed3289",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_cliffspring_mushroom_shelf",
+      "label": "Cliffspring Falls: Mushrooms behind the water",
+      "assetStem": "city_oddity_cliffspring_mushroom_shelf_v1",
+      "sourceProposal": "pass13__scaber_stalks_behind_the_falling_water",
+      "conditions": {
+        "provinceIds": [
+          1890
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Cliffspring’s waterfall veils the mouth of a rough source cave. A raised shelf stands above the narrow water groove, with damp soil supporting slender scaber stalks and broad death caps. Cold spray catches the caps beneath the dripping roof; the sheltered standing ledge remains clear beside the darker inner bend.",
+      "socialContext": "The concealed medicinal resource can prompt cautious gathering or a private conversation muffled by falling water. No mushroom is automatically safe to consume, and neither clean water, pollution, naga occupation nor a cure is established.",
+      "purpose": "The concealed medicinal resource can prompt cautious gathering or a private conversation muffled by falling water. No mushroom is automatically safe to consume, and neither clean water, pollution, naga occupation nor a cure is established.",
+      "art": "Inside the natural source cave behind Cliffspring Falls in Warcraft Darkshore. A huge silver waterfall veils the mouth at left, cold spray and soft blue-green daylight. Narrow shallow water groove beneath a raised DRY stone shelf, dark damp soil patches bearing distinctive slender scaber-stalk mushrooms and broader death-cap caps with tiny water beads. Rough dripping roof, shaded natural inner bend at right. Wide clear sheltered standing ledge at lower center, rich damp stone textures, cool maritime blue and muted moss green, small hooded travel lamp. No naga, glowing poison, gathering character, purification ritual or promised drinkable water.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Cliffspring_Falls",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1890,
+        "barony": "b_cliffspring",
+        "county": "c_cliffspring",
+        "kingdom": "k_darkshore",
+        "source": "history/provinces/00_k_darkshore.txt",
+        "sourceSha256": "0783de8e2eb1025fb825b626fa320a3ea0bfb78a26be362bacfa4f795e07ca5e",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_melthandris_hidden_shrine",
+      "label": "Howling Vale: The shrine beyond the narrow cave",
+      "assetStem": "city_oddity_melthandris_hidden_shrine_v2",
+      "sourceProposal": "pass13__the_shrine_beyond_the_narrow_cave",
+      "conditions": {
+        "provinceIds": [
+          1833
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A narrow cave opens into the secluded Shrine of Mel’Thandris. Weathered night-elven memorial stone and worn Darnassian carving face a small empty reading table. Ferns interrupt the old paving, and giant roots screen the pocket from the wider Ashenvale woodland; the entrance remains the single visible approach.",
+      "socialContext": "Retained Elune imagery gives the hidden memorial its history without making visitors worshippers. Remembrance, a record or a guarded exchange may matter here; no Tome, Scythe of Elune, priestess, apparition or active worgen pack is supplied.",
+      "purpose": "Retained Elune imagery gives the hidden memorial its history without making visitors worshippers. Remembrance, a record or a guarded exchange may matter here; no Tome, Scythe of Elune, priestess, apparition or active worgen pack is supplied.",
+      "art": "The deeply concealed Shrine of Mel’Thandris beyond a NARROW CAVE in Warcraft Ashenvale. Camera is inside a modest enclosed rock pocket: rough LOW mountain-stone ceiling, giant roots crossing that ceiling and all side walls, a small weathered night-elven memorial recess against the BACK ROCK WALL. Restrained pale curved memorial stone and worn NONREADABLE Darnassian carving; small EMPTY wooden reading table at side, sparse ferns over old paving. A SINGLE SMALL crooked cave mouth at far right admits a sliver of cool blue-green forest light, otherwise rock and root enclosure throughout. Broad clear pocket floor at lower center, modest scale, a restrained amber travel lamp. No expansive exterior, valley vista, distant bridge, open sky, colossal temple, priestess, worgen, magic scythe, book relic or glowing deity.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Shrine_of_Mel%27Thandris",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1833,
+        "barony": "b_howling_vale",
+        "county": "c_howling_vale",
+        "kingdom": "k_raynewood",
+        "source": "history/provinces/00_k_raynewood.txt",
+        "sourceSha256": "765a4c8e91d99ac41a486df99270bf4a72109f5cf578a9125c6e2286c1ed3289",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_mathystra_lost_stair",
+      "label": "Mathystra: The stair beneath the old gateway",
+      "assetStem": "city_oddity_mathystra_lost_stair_v1",
+      "sourceProposal": "pass13__the_stair_beneath_mathystra_that_never_found_its_story",
+      "conditions": {
+        "provinceIds": [
+          1889
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A shallow buried vestibule descends through Mathystra’s retained curved gateway. Pale steps, heavy ancient walls and a fallen crescent relief frame the first landing; sand, moss and salt-white stone partly bury one side. A blocked lower arch leaves the deeper extent uncertain.",
+      "socialContext": "This small authored extension of Mathystra’s surviving gateway offers exploration or a concealed exchange. It preserves the old entrance design without relocating Blackfathom Deeps, inventing a completed dungeon, supplying a secret treasure or guaranteeing passage through the blocked arch.",
+      "purpose": "This small authored extension of Mathystra’s surviving gateway offers exploration or a concealed exchange. It preserves the old entrance design without relocating Blackfathom Deeps, inventing a completed dungeon, supplying a secret treasure or guaranteeing passage through the blocked arch.",
+      "art": "A shallow ancient night-elven vestibule just below the retained gateway at Warcraft Mathystra, Darkshore. Sweeping curved pale steps and heavy gracefully arched walls descend to a broad clear first landing. Windblown sand and fallen coping bury one side; green moss, white salt lines and broken pottery along edges, a fallen crescent relief. A LOWER ARCH visibly blocked by old stone, no portal or clear onward route. Cool maritime daylight from entrance behind viewer, restrained amber travel lantern, quiet blue-green shade. Intimate lost basement, not an expansive duplicate Blackfathom dungeon. No occupants, glowing reward, unlocked treasure or statues moving.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Ruins_of_Mathystra",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1889,
+        "barony": "b_mathystra",
+        "county": "c_mathystra",
+        "kingdom": "k_darkshore",
+        "source": "history/provinces/00_k_darkshore.txt",
+        "sourceSha256": "0783de8e2eb1025fb825b626fa320a3ea0bfb78a26be362bacfa4f795e07ca5e",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_ordilaran_heartswood",
+      "label": "Ordil’aran: Heartswood behind the fallen wall",
+      "assetStem": "city_oddity_ordilaran_heartswood_v1",
+      "sourceProposal": "pass13__the_heartswood_behind_the_fallen_wall",
+      "conditions": {
+        "provinceIds": [
+          1850
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "The modest living Heartswood grows behind a fallen pale wall in Ordil’aran’s abandoned stonework. Reachable roots meet leaf-carved coping, fern-covered fragments and a broad dry sitting stone. Ashenvale’s blue-green canopy filters silver light onto the intimate root margin.",
+      "socialContext": "For characters with established relevant knowledge, the old story links this tree to two lovers who fell together in the War of the Ancients. A piece of Heartswood also serves as a reagent in a warlock’s summoning circle. The living tree is quiet: its sap emits no summoning scent, no spirits are visible, and merely standing here attracts no demon. Knowledge, harvesting and any ritual remain choices grounded in the actual characters.",
+      "purpose": "For characters with established relevant knowledge, the old story links this tree to two lovers who fell together in the War of the Ancients. A piece of Heartswood also serves as a reagent in a warlock’s summoning circle. The living tree is quiet: its sap emits no summoning scent, no spirits are visible, and merely standing here attracts no demon. Knowledge, harvesting and any ritual remain choices grounded in the actual characters.",
+      "art": "A small consequential living Heartswood tree at the ruins of Ordil’aran, Warcraft Ashenvale. A modest brown trunk with blue-green leaves and reachable roots grows behind a fallen gracefully curved pale wall, leaf-pattern coping and fern-covered ancient fragments. A broad dry sitting stone and clear close foreground at its roots. Huge surrounding trees create ancient deep lavender and teal twilight, delicate silver filtered light touching this humble surviving tree. Quiet romance and myth among ruined masonry. NOT a world tree, fel shrine or enormous sacred monument. No lovers, succubus, heart-shaped carving, cut branch, portal or visible corpse.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Heartswood",
+          "role": "researched physical setting and retained meaning"
+        },
+        {
+          "url": "https://www.wowhead.com/classic/quest=1738/heartswood",
+          "role": "released quest text: fallen lovers and harvested Heartswood"
+        },
+        {
+          "url": "https://www.wowhead.com/classic/item=6913/heartswood-core",
+          "role": "released reagent use requires a summoning circle; no passive sap beacon"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1850,
+        "barony": "b_ordilaran",
+        "county": "c_ordilaran",
+        "kingdom": "k_ashenvale",
+        "source": "history/provinces/00_k_ashenvale.txt",
+        "sourceSha256": "bf055d6c3b54792f311aa32a9ffad5d64d96f19264ab760e1bebfdd33e9418f2",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_stardust_silver_shrubs",
+      "label": "Stardust: Silver dust inside the old holy walls",
+      "assetStem": "city_oddity_stardust_silver_shrubs_v1",
+      "sourceProposal": "pass13__the_untainted_dust_inside_the_sickly_ruin",
+      "conditions": {
+        "provinceIds": [
+          1823
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A sheltered corner of the island Ruins of Stardust holds healthy shrubs carrying fine silver dust. Pale curved holy walls, worn crescent ornament and roots enclose the plants. Capped containers, a soft brush and folded gathering cloth rest on a flat side stone; the broad near landing leaves the lake outside the view.",
+      "socialContext": "The shrubs’ local medicinal reputation gives gathering or a request for help a reason to matter. Their survival does not prove the surrounding land cleansed, grant anyone a cure, reveal a patient or assign herbal knowledge to the speakers.",
+      "purpose": "The shrubs’ local medicinal reputation gives gathering or a request for help a reason to matter. Their survival does not prove the surrounding land cleansed, grant anyone a cure, reveal a patient or assign herbal knowledge to the speakers.",
+      "art": "An intimate healthy Stardust shrub pocket inside the ancient island Ruins of Stardust in Warcraft Ashenvale. Living blue-green leaves carry tiny fine SILVER DUST sparkles, a subtle material magical shimmer rather than glowing orbs. Pale curved holy masonry, worn crescent relief and great roots frame the sheltered space. Flat stone at side holds capped clay containers, soft brush and folded collecting cloth. Broad clear dry near landing. Cool ancient twilight greens and violet, silver on plants and a small warm lamp. Close wall enclosure excludes the lake and wider wilderness, so no clean-versus-polluted water state is pictured. No diseased beast, person, divine apparition or healing event.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Ruins_of_Stardust",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1823,
+        "barony": "b_stardust",
+        "county": "c_stardust",
+        "kingdom": "k_ashenvale",
+        "source": "history/provinces/00_k_ashenvale.txt",
+        "sourceSha256": "bf055d6c3b54792f311aa32a9ffad5d64d96f19264ab760e1bebfdd33e9418f2",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_shadowbreak_purple_caps",
+      "label": "Shadowbreak Ravine: Beneath the giant purple caps",
+      "assetStem": "city_oddity_shadowbreak_purple_caps_v1",
+      "sourceProposal": "pass13__the_purple_hollow_beneath_the_giant_caps",
+      "conditions": {
+        "provinceIds": [
+          1690
+        ]
+      },
+      "environment": "environment_event_mountains",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Enormous purple-toned mushroom caps make sheltered rooms inside Shadowbreak’s gray-brown mountain ravine. Thick stalks enclose a clear gathering floor and a rough side shelf with closed jars and bound writings. The winding stone approach disappears beneath the caps; small amber lamps meet deep violet shade.",
+      "socialContext": "This unusually fungal refuge differs sharply from the dry land around it. It can shelter a guarded exchange or curious investigation without requiring a Burning Blade operator, active summoning, felsteed production or an explanation that the fungi were transported from Outland.",
+      "purpose": "This unusually fungal refuge differs sharply from the dry land around it. It can shelter a guarded exchange or curious investigation without requiring a Burning Blade operator, active summoning, felsteed production or an explanation that the fungi were transported from Outland.",
+      "art": "Shadowbreak Ravine in Warcraft Desolace: a spectacular hidden purple fungal pocket enclosed by dry gray-brown mountain walls. ENORMOUS deep violet and mauve mushroom caps with thick pale-purple stalks form natural sheltered rooms over a broad clear gathering floor. Bold peculiar early-Warcraft mushroom-tree silhouettes, not green crystal trees. Rough occult-looking shelf at right with CLOSED jars, bound CLOSED writings and brass dishes. Winding entrance screened by rock and caps, cool violet fungal shade against restrained amber lamps. Matte tactile stalks, mythic scale, no summoned demon, active rune, portal, priest or living mushroom creature.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Shadowbreak_Ravine",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1690,
+        "barony": "b_shadowbreak",
+        "county": "c_shadowbreak",
+        "kingdom": "k_desolace",
+        "source": "history/provinces/00_k_desolace.txt",
+        "sourceSha256": "6c2605a1eb7c8174c77b9204ef0a1131cb5aba610f8d5afef8664c99d9b6a7c5",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_nazzivian_glyph_monument",
+      "label": "Nazzivian: The boast cut into the monument",
+      "assetStem": "city_oddity_nazzivian_glyph_monument_v1",
+      "sourceProposal": "pass13__the_satyrs_boast_written_in_stone",
+      "conditions": {
+        "provinceIds": [
+          1985
+        ],
+        "worldStates": [
+          "canon_exodar_crash_aftermath"
+        ]
+      },
+      "environment": "environment_event_forest",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Nazzivian’s grotesque Nazzivus Monument rises above an outer copying ledge. Horned stone ornament and weathered glyph panels interrupt older elegant masonry; charcoal and weighted blank sheets rest beside the relief. Bloodmyst’s dark conifers and crimson ground frame the speaking space.",
+      "socialContext": "The recorded glyph sequence depicts willing Highborne submission and satyr transformation. Its meaning requires reading or discussion rather than immediate knowledge; the monument conveys no endorsement by the speakers, actual transformation, present Legion operator or access to an inner cult rite.",
+      "purpose": "The recorded glyph sequence depicts willing Highborne submission and satyr transformation. Its meaning requires reading or discussion rather than immediate knowledge; the monument conveys no endorsement by the speakers, actual transformation, present Legion operator or access to an inner cult rite.",
+      "art": "The grotesque Nazzivus Monument at Nazzivian in Warcraft Bloodmyst. A massive weathered stone inscription face with NONREADABLE carved pictographic panels, elegant old elven stone interrupted by cruel horned ornament and angular demonic silhouettes. Small plain copying ledge at right with charcoal sticks and weighted BLANK sheets. Broad clear outer standing ledge in lower center. Dark island conifers, crimson Bloodmyst soil, muted red crystals only deep background, restrained amber lantern catches relief against cool dusk shade. No transformed people, actual ritual, portal, deity, active satyr or readable lettering.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Know_Thine_Enemy",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1985,
+        "barony": "b_nazzivian",
+        "county": "c_mystwood",
+        "kingdom": "k_azuremyst",
+        "source": "history/provinces/00_k_azuremyst.txt",
+        "sourceSha256": "2108a9115f6573db97c04b58769b72507ffc220d7cde0a913f9dfc674e3f0c49",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_utgarde_spiral_landing",
+      "label": "Utgarde Catacombs: Where the spiral divides",
+      "assetStem": "city_oddity_utgarde_spiral_landing_v1",
+      "sourceProposal": "pass13__the_hall_beneath_the_worg_pit",
+      "conditions": {
+        "provinceIds": [
+          696
+        ],
+        "worldStates": [
+          "city_fabric_utgarde"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A long spiral approach opens into an immense vrykul-built catacomb hallway near Utgarde. Huge squared blocks, carved lintels and old iron torch brackets frame two branching wings. A high rail and a heavy waiting bench stand on the broad landing; cold light remains on the upper stair while lamps pick out the lower masonry.",
+      "socialContext": "The scale and hidden approach give a pause before choosing a passage weight. These are the related western catacombs rather than another keep longhall; no gladiatorial trial, undead labor force, prisoner, onward tunnel project or named opponent is established.",
+      "purpose": "The scale and hidden approach give a pause before choosing a passage weight. These are the related western catacombs rather than another keep longhall; no gladiatorial trial, undead labor force, prisoner, onward tunnel project or named opponent is established.",
+      "art": "An unexpectedly immense vrykul catacomb hallway at the foot of a long spiraling approach beside Warcraft Utgarde. Huge square northern stone blocks, colossal dark vaulted ceiling, heavy warrior-carved lintels and old iron torch brackets. Two wings visibly branch from the broad clear central landing, one deeper stair fading into darkness. A massive simple waiting bench and high iron rail along side, thin cold daylight on upper spiral turn and amber torches lower down. Mythic giant architecture, restrained gray and weathered iron, no longhall tables or occupied throne. No warriors, prisoner cage, gladiators, active undead diggers or magical judgment.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Utgarde_Catacombs",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 696,
+        "barony": "b_utgarde",
+        "county": "c_utgarde",
+        "kingdom": "k_utgarde",
+        "source": "history/provinces/00_k_utgarde.txt",
+        "sourceSha256": "137050db50228b645f222191de32f0ec633015599802a57df5a4eb1848a046ca",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_drakiljin_canopic_gallery",
+      "label": "Drakil’jin: Jars for kings and commoners",
+      "assetStem": "city_oddity_drakiljin_canopic_gallery_v1",
+      "sourceProposal": "pass13__the_jars_of_the_kings_and_commoners",
+      "conditions": {
+        "provinceIds": [
+          745
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "An underground Drakkari burial gallery at Drakil’jin repeats modest sealed niches toward a larger raised tomb bay. Canopic vessels sit beside the burials; stepped borders, animal-mask reliefs and old skull ornament run across massive angular stone. A preparation ledge stands beneath worn tablets near the moss-darkened upper stair.",
+      "socialContext": "The contrast between ordinary and royal burial offers memory, rank or careful inquiry a place in conversation. The vessels’ contents remain closed; ancestor spirits, a resurrected king, a disturbed body and an operating burial rite are not supplied.",
+      "purpose": "The contrast between ordinary and royal burial offers memory, rank or careful inquiry a place in conversation. The vessels’ contents remain closed; ancestor spirits, a resurrected king, a disturbed body and an operating burial rite are not supplied.",
+      "art": "A deep Drakil’jin Drakkari burial gallery in Warcraft Grizzly Hills. Massive angular stepped stone architecture, animal-mask reliefs, old skull ornament, subdued turquoise and aged gold details. Repeated modest CLOSED burial niches with sealed canopic vessels nearby lead toward one larger raised sealed royal tomb bay at rear. Plain side preparation ledge and worn NONREADABLE tablets, moss-dark stair above contrasts with dry aged stone below. Limited amber task lamps, cool shadowed depth, broad clear floor at lower center. No bodies exposed, troll ancestors manifested, resurrected king, live ritual or Egyptian human motifs.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Drakil%27jin_Ruins",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 745,
+        "barony": "b_drakiljin",
+        "county": "c_drakiljin",
+        "kingdom": "k_thor_modan",
+        "source": "history/provinces/00_k_thor_modan.txt",
+        "sourceSha256": "0b98bd23929b6d3d59dc0e08863ad798e1fb0e88d7a1b2090e6c55e3fbb3b494",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_guolai_royal_crypt",
+      "label": "Guo-Lai: The burial hall of forgotten kings",
+      "assetStem": "city_oddity_guolai_royal_crypt_v1",
+      "sourceProposal": "pass13__the_burial_hall_of_the_forgotten_kings",
+      "conditions": {
+        "provinceIds": [
+          383
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Guo-Lai’s upper royal crypt encloses sealed tomb bays under stout imperial piers and monumental square doorframes. Faded gold and deep jade relief survive on heavy gray stone. Dormant terracotta warrior figures and crouching quilen statues border the hall; a broad side ledge stands outside the central burial path.",
+      "socialContext": "Personal royal burial gives this chamber a different scale from a general imperial hall. Visitors may compare legacy or investigate the old defenses; no Sha manifestation, guardian awakening, cleansing event or named king’s identity is supplied.",
+      "purpose": "Personal royal burial gives this chamber a different scale from a general imperial hall. Visitors may compare legacy or investigate the old defenses; no Sha manifestation, guardian awakening, cleansing event or named king’s identity is supplied.",
+      "art": "The upper Crypt of Forgotten Kings inside Warcraft Guo-Lai Halls, monumental mogu imperial funerary architecture. Stout enormous square piers, massive rectangular doorframes, several CLOSED royal stone tomb bays, faded gold borders and deep jade-green carved reliefs. Clearly INERT terracotta armored warrior statues and crouching stone quilen statues guard the sides as ancient artworks, not people. Broad clear side receiving ledge at lower center, heavy gray stone, restrained amber task lamps against large cool depths. Distinct personal royal burial setting, no Sha clouds, glowing eyes, awakened guardians, open coffin or active rite.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Crypt_of_Forgotten_Kings",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 383,
+        "barony": "b_laohu",
+        "county": "c_guo_lai",
+        "kingdom": "k_mogushan",
+        "source": "history/provinces/00_k_mogushan.txt",
+        "sourceSha256": "2c02c5069e0f8efdaf8e19743f2ea19321fa96bb6b87592239203af69e6f8704",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_stormwind_clocktower_door",
+      "label": "Stormwind: The clocktower across the canal",
+      "assetStem": "city_oddity_stormwind_clocktower_door_v1",
+      "sourceProposal": "pass13__the_clocktowers_guarded_receiving_door",
+      "conditions": {
+        "provinceIds": [
+          1
+        ],
+        "worldStates": [
+          "city_fabric_stormwind"
+        ]
+      },
+      "environment": "environment_frontend_mediterranean_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Stormwind’s isolated clocktower building rises directly from blue canal water opposite the Stockade area. Pale fortress blocks, crenellations and a large high clock frame its closed portcullis. A short approach and waiting rail face the locked entrance; bright city roofs remain close beyond the water.",
+      "socialContext": "The accessible outer approach offers a discussion about the closed door or the city around it. The unused interior remains closed; no spectral inmate, secret organization, public prison privilege or non-canonical claim about the building’s contents is supplied.",
+      "purpose": "The accessible outer approach offers a discussion about the closed door or the city around it. The unused interior remains closed; no spectral inmate, secret organization, public prison privilege or non-canonical claim about the building’s contents is supplied.",
+      "art": "The outer approach to Warcraft Stormwind’s isolated canal clocktower, opposite the Stockade. Heavy pale fortress masonry rises straight from brilliant blue canal water, large round clock high over a CLOSED heavy portcullis, crenellations and squat defensive turrets. Blue city roofs and warm stone buildings close beyond the water. Short narrow approach widens to a clear lower-center waiting landing, heavy chain rail and closed doorway; no open path inside. Amber torch under entrance arch, bright reflected blue canal daylight. Strong familiar Warcraft human city shapes. No guards, inmates, spectral wards, readable sign or private interior.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/The_Vault",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 1,
+        "barony": "b_stormwind",
+        "county": "c_stormwind",
+        "kingdom": "k_stormwind",
+        "source": "history/provinces/00_k_stormwind.txt",
+        "sourceSha256": "4f752ef8d5ed89e3aad13d808d3f918fd500afa8b89ee6c15f4b83025637a84b",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_forgotten_crypt_well",
+      "label": "Forgotten Crypt: The well below the graves",
+      "assetStem": "city_oddity_forgotten_crypt_well_v1",
+      "sourceProposal": "pass13__the_well_that_drops_below_the_graves",
+      "conditions": {
+        "provinceIds": [
+          46
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Beneath Morgan’s Plot, a narrow vaulted chamber opens around the abrupt Well of the Forgotten. Thick gray blocks and uneven joints border the shaft; Pauper’s Walk descends beyond it through cramped burial recesses. A rope lies beside the dry ledge, where limited lamp light fails to reveal the full drop.",
+      "socialContext": "The cemetery crypt gives descent, caution or a whispered exchange a physical focus. Its entrance is separate from the tower-base catacombs; no puzzle reward, later ritual altar, unseen speaker or knowledge of the shaft’s end is supplied.",
+      "purpose": "The cemetery crypt gives descent, caution or a whispered exchange a physical focus. Its entrance is separate from the tower-base catacombs; no puzzle reward, later ritual altar, unseen speaker or knowledge of the shaft’s end is supplied.",
+      "art": "The Well of the Forgotten beneath Morgan’s Plot beside Warcraft Karazhan, austere gray human cemetery crypt. Huge uneven stone blocks, narrow overhead burial vault and an abrupt DARK VERTICAL SHAFT in the floor, protected clear DRY ledge at lower center. Coiled rope by shaft edge, tiny amber traveler lamp cannot reveal the full drop. Beyond, start of Pauper’s Walk: cramped descending corridor with repeated closed burial recesses and soot-dark corners. Bleak monumental masonry, blue-gray shadows, quiet gothic dread. No magical altar, puzzle reward, spirit, tower library or invented inverse Karazhan.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Forgotten_Crypt",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 46,
+        "barony": "b_karazhan",
+        "county": "c_karazhan",
+        "kingdom": "k_dead_morass",
+        "source": "history/provinces/00_k_dead_morass.txt",
+        "sourceSha256": "68c897edac0dd132709469696b628925d35ef2cc3ef3d817cfffc244a67aee49",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_forgotten_crypt_bone_pit",
+      "label": "Forgotten Crypt: Beneath the bone chute",
+      "assetStem": "city_oddity_forgotten_crypt_bone_pit_v1",
+      "sourceProposal": "pass13__the_chamber_beneath_the_bone_chute",
+      "conditions": {
+        "provinceIds": [
+          46
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A high disposal shaft opens above a pale mound of old bones in the Pit of Criminals. Heavy gray crypt walls and dark burial doorways surround the heap. A narrow dry stone apron runs along its edge; lamplight catches only the nearer skulls and long bones beneath the distant opening.",
+      "socialContext": "The difference between burial and disposal gives this place its horror. The remains have no established personal identity, moral guilt or present killer, and the mound is not an active undead army or a command to disturb the dead.",
+      "purpose": "The difference between burial and disposal gives this place its horror. The remains have no established personal identity, moral guilt or present killer, and the mound is not an active undead army or a command to disturb the dead.",
+      "art": "The Pit of Criminals in Warcraft’s Forgotten Crypt, a broad dim gray masonry chamber beneath a HIGH VERTICAL disposal shaft. The small shaft opening clearly visible far above a substantial irregular mound of OLD DRY human bones, skulls and long bones at one side. No fresh flesh or gore. Heavy utilitarian stone walls, dark closed burial doorways, narrow clear dry stone apron at lower center where lamp light catches only the edge of the heap. Cold blue-gray vault with restrained amber travel lantern, great oppressive vertical scale. No crowned skeleton, throne, necromantic glow, moving bones, living person or named victim.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Forgotten_Crypt",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 46,
+        "barony": "b_karazhan",
+        "county": "c_karazhan",
+        "kingdom": "k_dead_morass",
+        "source": "history/provinces/00_k_dead_morass.txt",
+        "sourceSha256": "68c897edac0dd132709469696b628925d35ef2cc3ef3d817cfffc244a67aee49",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_forgotten_crypt_drowned_chains",
+      "label": "Forgotten Crypt: The faces below the water",
+      "assetStem": "city_oddity_forgotten_crypt_drowned_chains_v1",
+      "sourceProposal": "pass13__the_faces_below_the_water",
+      "conditions": {
+        "provinceIds": [
+          46
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "Dark water fills the tall chamber called the Upside-down Sinners. Beneath its distorted surface, old human dead hang head-down from ropes and heavy chains. Mineral-stained arches and rusted fittings rise into the darkness; a dry stone threshold gives space to stand above the waterline.",
+      "socialContext": "The suspended remains provide unsettling evidence without a resolved explanation. The room’s inherited name establishes neither the dead’s guilt nor a killer’s identity; no fresh death, active drowning, supernatural host or obligation to enter the water follows.",
+      "purpose": "The suspended remains provide unsettling evidence without a resolved explanation. The room’s inherited name establishes neither the dead’s guilt nor a killer’s identity; no fresh death, active drowning, supernatural host or obligation to enter the water follows.",
+      "art": "The flooded Upside-down Sinners chamber in Warcraft’s Forgotten Crypt. View from a broad DRY low stone threshold across dark blue-green water into tall mineral-stained gray arches and rusted chain fittings. Beneath the water surface, a few distant PALE NONLIVING HUMAN CORPSE SILHOUETTES hang head DOWN from old ropes secured to heavy chains, partially hidden by distortion and reflection. Restrained iconic gothic horror, no graphic wounds, nudity, blood or fresh violence. Cold reflected light from a small visitor lamp reveals only nearest still submerged forms; far vault remains black. Clear dry lower-middle standing ledge. No living figures, drowning action, ghosts or named villain.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Forgotten_Crypt",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 46,
+        "barony": "b_karazhan",
+        "county": "c_karazhan",
+        "kingdom": "k_dead_morass",
+        "source": "history/provinces/00_k_dead_morass.txt",
+        "sourceSha256": "68c897edac0dd132709469696b628925d35ef2cc3ef3d817cfffc244a67aee49",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_mosshide_raised_common",
+      "label": "Mosshide Fen: The common above the marsh",
+      "assetStem": "city_oddity_mosshide_raised_common_v1",
+      "sourceProposal": "pass12__mosshide_fen_s_dry_causeway_common",
+      "conditions": {
+        "provinceIds": [
+          200
+        ],
+        "settledOrCamp": true,
+        "styles": [
+          "jalgaric"
+        ]
+      },
+      "environment": "environment_event_bp1_wetlands",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "A gnoll-built common in Mosshide Fen rests on a modest raised timber-and-stone causeway. Mossy hide awnings, rough flint tools and scavenged containers frame a clear speaking patch above the ordinary wet ground. Reeds, broad marsh trees and dark shallow channels enclose the approach.",
+      "socialContext": "This practical adaptation to the fen supports a local exchange about resources, travel or habitation. It supplies no dam failure, active flood, ecological crime, cannibalism or hostile chief; its raised floor is ordinary wetland craft rather than evidence of a named disaster.",
+      "purpose": "This practical adaptation to the fen supports a local exchange about resources, travel or habitation. It supplies no dam failure, active flood, ecological crime, cannibalism or hostile chief; its raised floor is ordinary wetland craft rather than evidence of a named disaster.",
+      "art": "A Warcraft Mosshide gnoll camp common in the eastern Wetlands, a modest raised timber-and-stone causeway above ordinary reed-filled marsh ground. Mossy greasy hide awnings, bone-lashed frames, rough flint tools, battered scavenged containers and a broad clear shared speaking platform at lower center. Huge marsh trees with broad roots, dark shallow water channels, muted green reeds and cool misty distance. Practical patchwork craft, moss green, dull brown and pale bone, tiny amber lamp under side awning. No fresh inundation, wrecked dam, destroyed camp, active rain, raiders or occupants.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Mosshide_Fen",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 200,
+        "barony": "b_mosshide_fen",
+        "county": "c_mosshide_fen",
+        "kingdom": "k_wetlands",
+        "source": "history/provinces/00_k_wetlands.txt",
+        "sourceSha256": "b78399a7da193eac069cb2a1bec64e5cd6216fb0b3d75696efe173ddc0656b4d",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    },
+    {
+      "id": "titan_oddity_scarlet_atonement_chamber",
+      "label": "Scarlet Monastery: The Chamber of Atonement",
+      "assetStem": "city_oddity_scarlet_atonement_chamber_v1",
+      "sourceProposal": "pass13__the_chamber_of_atonement_before_the_graves",
+      "conditions": {
+        "provinceIds": [
+          3011
+        ],
+        "worldStates": [
+          "oddity_scarlet_monastery",
+          "community_faith_scarletism",
+          "community_faith_access"
+        ]
+      },
+      "environment": "environment_frontend_west_main",
+      "priority": 35,
+      "regionalEnvironment": false,
+      "facts": "The Graveyard wing’s outer Chamber of Atonement places an empty restraining table and wall manacles beneath pale vaulted monastery stone. Orderly iron implements and a statements desk occupy one side. Red-white devotional cloth hangs above the apparatus; the far arch admits burial-ground daylight from the Forlorn Cloister.",
+      "socialContext": "Scarlet interrogation gives the room its coercive history. Actual custody, beliefs and personalities determine the encounter; the empty equipment supplies no torturer, victim, confession, punishment or consent, and religious membership never makes a prisoner willing.",
+      "purpose": "Scarlet interrogation gives the room its coercive history. Actual custody, beliefs and personalities determine the encounter; the empty equipment supplies no torturer, victim, confession, punishment or consent, and religious membership never makes a prisoner willing.",
+      "art": "The severe Chamber of Atonement, outer room of Warcraft Scarlet Monastery’s Graveyard wing. Pale vaulted Gothic northern-human stone, tiled floor and a far arch toward a gray burial cloister. Heavy EMPTY restraining work table positioned to right, old wall manacles and neatly ordered unheated iron implements beside it. Small statements desk with CLOSED ledger at left, red-white Scarlet devotional cloth and disciplined relief carving above the equipment. Controlled amber lamplight, cool graveyard daylight through arch, broad clear lower-middle reception floor. The disturbing coexistence of devotion and coercion, without fresh violence. No victim, interrogator, hot tool, blood, confession text or active torture.",
+      "research": [
+        {
+          "url": "https://warcraft.wiki.gg/wiki/Chamber_of_Atonement",
+          "role": "researched physical setting and retained meaning"
+        }
+      ],
+      "bindingEvidence": {
+        "province": 3011,
+        "barony": "b_maplechill",
+        "county": "c_maplechill",
+        "kingdom": "k_lordaeron",
+        "source": "history/provinces/00_k_lordaeron.txt",
+        "sourceSha256": "a0b6458360f3a1a8c250ec1d2b06a5f48e90b6bf6fe4997e87a575af4d9f13cd",
+        "scope": "Authored meeting corner inside the literal native locality; furnishings are scene authoring, not a new CK3 room or an observed named occupant."
+      }
+    }
+  ],
+  "decisions": [
+    {
+      "proposal": "pass12__the_waterwheel_above_the_forest",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_cragpool_waterwheel"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__light_cargo_heavy_insurance",
+      "decision": "combined",
+      "scenes": [
+        "titan_oddity_cragpool_waterwheel"
+      ],
+      "reason": "Combine overlapping physical features in one readable venue; do not manufacture another scene from an unobserved operator or quest state."
+    },
+    {
+      "proposal": "pass12__the_super_reapers_sales_yard",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_windshear_shredder"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_samophlange_nobody_explains",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Keep the samophlange idea; the west-of-Sludge-Fen facility has no confirmed containing leaf and its installed secret console is not captured. Do not create it from the fen name."
+    },
+    {
+      "proposal": "pass12__the_foremans_locked_mixture_room",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The actual north-fen tower and a current cache of Zanzil’s altered mixture are unresolved; neither a goblin character nor a generic mine establishes that dangerous stock."
+    },
+    {
+      "proposal": "pass12__where_the_blue_water_used_to_be",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Industrial pollution of the water is the defining fact. Neither ordinary wetland terrain nor a generic corruption modifier establishes this oil-extraction history or current water quality."
+    },
+    {
+      "proposal": "pass12__the_mine_store_that_keeps_the_account",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_mulgore_mine_store"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_jungle_divided_on_paper",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Lake Nazferiti’s camp/platform has no confirmed physical leaf; a generic Stranglethorn or goblin venue would lose the proposal’s particular geographic meaning."
+    },
+    {
+      "proposal": "pass12__the_shredders_waiting_for_a_new_war",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Blue Sky’s facility location and refurbishing operation remain unconfirmed. The older proposed Bluedome association is not promoted to fact."
+    },
+    {
+      "proposal": "pass12__the_mill_with_three_owners_paint",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Retain the river-island sawmill concept, but the three-owner commandeering story has no observed local operator sequence. The present collection already supplies working regional receptions; do not invent a military takeover to distinguish another logging yard."
+    },
+    {
+      "proposal": "pass12__the_prison_beside_the_blasting_stock",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_swindlegrin_blasting_yard"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_wreck_priced_by_the_fragment",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Geezle’s actual camp leaf is unresolved; canonical Exodar aftermath alone does not establish this local stolen navigation stock or active salvage gang."
+    },
+    {
+      "proposal": "pass12__the_bar_below_the_argument",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Speedbarge needs the flooded basin and a present floating venue. Neither is captured by a generic wet terrain or a goblin/gnome visitor."
+    },
+    {
+      "proposal": "pass12__the_stone_faces_beneath_remtravels_trenches",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_remtravel_stone_faces"
+      ],
+      "reason": "Use the ancient carved fragments and an authored elevated inspection corner; leave flooded-versus-drained trenches and quest actors unclaimed."
+    },
+    {
+      "proposal": "pass12__the_water_over_the_old_trenches",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Remtravel’s flooding and later drainage are separate campaign outcomes. The elevated stone-face venue avoids claiming either; no automatic flooded variant is added."
+    },
+    {
+      "proposal": "pass12__the_pickaxes_against_mulgores_hillside",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The western Mulgore excavation must be mapped independently. Southern Barrens Bael’dun is a homonym, not a valid substitute."
+    },
+    {
+      "proposal": "pass12__the_drum_above_the_broken_dig",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A wrecked western-Mulgore dig, disturbed earth spirits and the shamanic response are not observed. Keep the earlier-dig idea without forcing that quest result."
+    },
+    {
+      "proposal": "pass12__dustwinds_argument_over_the_finds",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_dustwind_field_table"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_feathers_in_dun_mandarrs_broken_camp",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The destroyed Dun Mandarr expedition camp and its current wildkin occupation are unobserved. Snowy geography alone does not establish the expulsion or nest materials."
+    },
+    {
+      "proposal": "pass12__gunstans_shade_beside_the_old_glyphs",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Gunstan’s specific camp has no confirmed containing physical leaf. Southmoon and the Uldum gate are contextual landmarks, not the camp."
+    },
+    {
+      "proposal": "pass12__the_giant_hand_at_ivalds_ruin",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_ivald_giant_hand"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_outposts_ridiculous_serious_machine",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The southeastern Fjord expedition post and a completed single-occupant construct are unobserved. Ivald’s monumental archaeology supplies a distinct local discovery without manufacturing a workshop quest reward."
+    },
+    {
+      "proposal": "pass12__prospectors_point_and_the_borrowed_war_golem",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Prospector’s Point is not the Dun Argol factory. Its actual camp leaf and acquired research golem remain unresolved."
+    },
+    {
+      "proposal": "pass12__rustmauls_cut_into_the_swarm",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Rustmaul’s abandoned dig and exposed live hive depend on a specific attack/occupation history and local dry-state observation. Do not infer those from the name."
+    },
+    {
+      "proposal": "pass12__the_ice_cream_empire_above_the_drowned_dig",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The flooded dig, actual coolant tugboat and functioning refrigeration business need independent world observations. A gnome visitor or a date cannot establish all three."
+    },
+    {
+      "proposal": "pass12__the_fangs_coiled_teaching_ledge",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Fang’s active teaching cult and Nightmare-altered ecology are not established by the existing Wailing Caverns building. Preserve the public skull-entrance venue without manufacturing cult occupation."
+    },
+    {
+      "proposal": "pass12__strange_hides_in_the_skulls_eye",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A specific deviate-hide stock and maintained eye-socket craft business are not observed; a second Wailing Caverns reception would add little without those distinctions."
+    },
+    {
+      "proposal": "pass12__new_shoots_above_the_cleansed_spring",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A completed cleansing and current restoration work are not observed. Loss of a corruption modifier is not proof of restoration."
+    },
+    {
+      "proposal": "pass12__satyrnaars_tents_between_marble_walls",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_satyrnaar_marble_tents"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__night_runs_shelter_behind_broken_pillars",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Night Run’s similar tent-and-pillar reception is retained for future variety; Satyrnaar provides the clearer distinct art treatment. This is curation, not a claim that the two sites are the same."
+    },
+    {
+      "proposal": "pass12__xavians_defiled_temple_forecourt",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The satyr temple forecourt substantially repeats the selected appropriated-ruin reception. Preserve its separate Xavian identity in the inventory rather than relocating it to Satyrnaar."
+    },
+    {
+      "proposal": "pass12__jadefire_runs_crooked_assembly_yard",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_jadefire_crooked_yard"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_healers_beneath_jadefires_old_arches",
+      "decision": "held",
+      "scenes": [],
+      "reason": "An actual healer-front disguise and observer knowledge are not captured. Honest healers or changed local culture must not be exposed as demons by scenery."
+    },
+    {
+      "proposal": "pass12__constellass_well_of_wrong_green_light",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A specifically corrupted moonwell and its transformative operation are not captured. County-wide corruption cannot establish this exact device or create new satyrs."
+    },
+    {
+      "proposal": "pass12__blades_beneath_sargerons_broken_moon",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_sargeron_broken_moon"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__bathrans_hair_among_the_fallen_columns",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_bathran_herb_ground"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__bathrans_makeshift_apothecary_court",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The current exploitative Forsaken laboratory and orc oversight are unobserved. Bathran’s actual herb ground provides the distinct setting without assuming an occupation or motive."
+    },
+    {
+      "proposal": "pass12__ghost_mushrooms_beneath_the_ape_cavern",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Fungal Rock’s northeastern crater-wall cavern lacks a confirmed physical leaf. Retain the biologically rich idea without scattering a named cave through Un’Goro."
+    },
+    {
+      "proposal": "pass12__brambleblade_s_back_ravine_hut",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Brambleblade’s county adjacency is useful evidence but does not resolve the hut/entrance polygon. The administrative Barrens/Mulgore discrepancy needs a raster-level decision."
+    },
+    {
+      "proposal": "pass12__agama_gor_s_watched_hostage_threshold",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_agamagor_bramble_threshold"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__bramblescar_s_roadward_boundary",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A thorn-boundary scene would largely repeat the selected Razormane lookout and Agama’gor parley patch. Retain Bramblescar as its own locality for a more distinctive future view."
+    },
+    {
+      "proposal": "pass12__thorn_hill_s_disputed_caravan_stores",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The supposedly stolen caravan supplies require actual local raiding stock. Ordinary storage or a quilboar culture would not establish theft, so no fixed accusation is injected."
+    },
+    {
+      "proposal": "pass12__the_razormane_canyon_watch",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_razormane_thorn_watch"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__woodpaw_s_battle_map_common",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_woodpaw_map_common"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__mosshide_fen_s_dry_causeway_common",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_mosshide_raised_common"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__the_flooded_mosshide_camp",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Active Mosshide flood damage depends on a real dam-failure/local inundation state. The raised common depicts ordinary marsh adaptation without claiming that disaster."
+    },
+    {
+      "proposal": "pass12__stonesplinter_s_split_rock_burrow",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_stonesplinter_burrow"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__winterfall_s_firewater_runner_shelter",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_winterfall_brew_shelter"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__deadwood_s_tainted_clan_common",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A tainted Deadwood clan common adds little distinct architecture beyond existing furbolg venues unless actual local corruption and current occupation are established; it must not borrow the northern Felpaw cauldron."
+    },
+    {
+      "proposal": "pass12__bristlelimb_s_cage_court",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_bristlelimb_cage_patch"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__dunemaul_s_silithid_cookyard",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_dunemaul_chitin_cookyard"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass12__dunemaul_s_recruitment_loading_ground",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The coerced recruiter operation is a specific history, not a property of ogre culture. Preserve the ordinary chitin cookyard without inventing forced transport."
+    },
+    {
+      "proposal": "pass12__the_doctor_s_house_above_the_internment_camp",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Weavil’s mind-control research cannot be inferred from Alcaz geography or gnomish identity. The generic house would lose the proposal’s defining controller premise."
+    },
+    {
+      "proposal": "pass12__palms_above_the_mechanical_perimeter",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Alcaz’s later automated defense perimeter is not observed, and choosing a room must not produce live mines or sentry attacks."
+    },
+    {
+      "proposal": "pass12__fuel_above_the_geyser_fields",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The actual Geyser Fields oil platform has no confirmed leaf; the duchy is too broad to serve as its exact site. Do not invent a fuel station merely from gnomish culture."
+    },
+    {
+      "proposal": "pass12__the_pumping_station_s_mechanical_cure",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A Gearmaster-style mechanical takeover and forced-conversion program need actual authoritative world/controller observations. This cannot follow from ordinary machinery or Mechagnome visitors."
+    },
+    {
+      "proposal": "pass12__a_camp_inside_the_reflected_ice",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Transitus Shield’s actual outpost and active reflective ward are unresolved. A Coldarra visit alone neither founds the outpost nor protects visitors from dragons."
+    },
+    {
+      "proposal": "pass12__the_crystal_s_voice_in_the_mountainside",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Shards of Myzrael must be separately mapped and their binding/release state observed before a voice speaks. The Circle of Outer Binding is not their location."
+    },
+    {
+      "proposal": "pass12__the_fire_altar_inside_dreadmist",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Dreadmist’s cursed peak is known, but an active Demon Seed, current altar stock and a present rite are not observed. Avoid manufacturing the plot object; a later physical outer-den treatment remains possible."
+    },
+    {
+      "proposal": "pass12__the_almighty_s_very_small_clearing",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Niby’s particular clearing has no confirmed leaf, and his famous comic summoning outcome should not repeat on every visit. Keep the personality-driven joke for a suitable future local episode."
+    },
+    {
+      "proposal": "pass12__the_wind_stones_degrees_of_audience",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The wind-stone cluster must be mapped independently of Twilight’s Shrine; actual equipment/rank and a completed summoning are not established by a cult faith alone."
+    },
+    {
+      "proposal": "pass12__the_cult_s_letters_under_staghelm_point",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A desk of encrypted cult texts would be useful only with a supported current textual stock or clearer authored receiving function. Avoid giving every visitor secret deciphering knowledge merely through geography."
+    },
+    {
+      "proposal": "pass12__the_hidden_desk_beyond_southwind",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Ortell’s actual hidden cave leaf and current residence are unresolved, with later relocation/burial separate. Do not substitute an arbitrary Southwind cave."
+    },
+    {
+      "proposal": "pass12__exotic_arts_behind_the_enclave_s_closed_doors",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The enclave’s current society, restrictive access and forbidden apparatus are not observed. Opening the seminar from its native name would invent membership and expose a private practice."
+    },
+    {
+      "proposal": "pass13__the_weapons_kept_with_the_family_dead",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_agamand_ancestral_crypt"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_dead_household_made_into_a_garrison",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Raised Agamand ancestors, their controlling captain and a garrison state are not captured. The retained family burial bays do not force the family’s later destruction."
+    },
+    {
+      "proposal": "pass13__the_forgotten_arches_of_faol_s_rest",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Faol’s Rest is a separate memorial southwest of the monastery; Maplechill gives search context but not a confirmed exact leaf. Do not place it inside the monastery by name association."
+    },
+    {
+      "proposal": "pass13__the_twine_and_embalming_room_above_deathknell",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_deathknell_stitching_room"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_chamber_of_atonement_before_the_graves",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_scarlet_atonement_chamber"
+      ],
+      "reason": "Use the installed Scarlet monastery stage and current local Scarlet faith; reuse verified-source member-or-prisoner-of-present-local-adherent admission instead of requiring every captive to share the faith. Empty apparatus does not force an interrogation."
+    },
+    {
+      "proposal": "pass13__the_old_rations_behind_the_warden_s_doors",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_baradin_ration_gallery"
+      ],
+      "reason": "Require currently installed Baradin Hold stage 02, whose actual GoA description identifies prison conversion; retain a general supply reception without named inmate or breakout states."
+    },
+    {
+      "proposal": "pass13__the_shackles_that_refill_d_block",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Regenerating demons from cursed shackles and a broken-containment event are not observed. Prison stage 02 supports a ration gallery without establishing escaped inmates."
+    },
+    {
+      "proposal": "pass13__the_prison_corridor_that_still_holds_its_ghosts",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Cursed Depths’ visible ghost imprisonment is unobserved. Another bare cell corridor would repeat the selected prison reception without the proposal’s distinctive haunting."
+    },
+    {
+      "proposal": "pass13__the_sea_facing_mausoleum_amid_forgotten_hill",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_forgotten_hill_mausoleum"
+      ],
+      "reason": "Adopt the documented southwestern peninsula cemetery at its sole physical province, Farson; explicitly distinguish cemetery geography from Farson Hold’s interior."
+    },
+    {
+      "proposal": "pass13__the_gravebloom_tools_beside_the_caretaker_s_door",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_barrowknoll_gravebloom"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_memorial_with_an_empty_resting_place",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Marshal Valentine’s dated death, lost remains and opened empty tomb are specific campaign facts. A generic cemetery does not establish any of them."
+    },
+    {
+      "proposal": "pass13__the_single_light_above_eastvale_s_trees",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_lonely_tower_watchroom"
+      ],
+      "reason": "An explicitly authored watch-household interpretation of GoA’s literal Lonely Tower and current castle holding; no claim that this room is a named WoW canonical interior."
+    },
+    {
+      "proposal": "pass13__the_sacred_chest_at_the_sleeping_crossroads",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_banethil_rooted_junction"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_dream_cells_that_will_not_fall_silent",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_dordanil_resting_cells"
+      ],
+      "reason": "The haunting requires an unobserved poisoning/ghost state; adapt to the retained barrow cells, allowing actual campaign history to steer their meaning."
+    },
+    {
+      "proposal": "pass13__scaber_stalks_behind_the_falling_water",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_cliffspring_mushroom_shelf"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_clear_spring_behind_the_falls",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Water purity and completed restoration are not observed. The mushroom shelf keeps the cave’s physical interest without guaranteeing potable water."
+    },
+    {
+      "proposal": "pass13__the_shrine_beyond_the_narrow_cave",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_melthandris_hidden_shrine"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_pack_floor_around_the_old_tomb",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The shrine’s current worgen-pack occupation and den use are not captured. A visiting worgen does not install a pack inside the memorial."
+    },
+    {
+      "proposal": "pass13__the_stair_beneath_mathystra_that_never_found_its_story",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_mathystra_lost_stair"
+      ],
+      "reason": "Creative shallow extension based on the surviving old gateway model; its former beta use is art provenance, never current Blackfathom geography or a completed canonical dungeon."
+    },
+    {
+      "proposal": "pass13__the_owlkin_totems_in_the_snowbound_bowl",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Hidden Grove has county context but its crater/totem hollow needs an exact leaf binding. Do not choose a province merely from a similar local name."
+    },
+    {
+      "proposal": "pass13__the_gem_above_the_wakened_altar",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The reactivated Owl Wing altar, five-torch sequence, suspended gem and visible priestess spirits require an actual ritual state. Local Elune worship alone cannot complete it."
+    },
+    {
+      "proposal": "pass13__the_heartswood_behind_the_fallen_wall",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_ordilaran_heartswood"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_untainted_dust_inside_the_sickly_ruin",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_stardust_silver_shrubs"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_little_demons_behind_the_proving_ground",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The exact Valley of Trials cave and a maintained live demon-breeding operation are unresolved. Do not spawn demons from a local faith or character trait."
+    },
+    {
+      "proposal": "pass13__the_searing_collars_inside_skull_rock",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Skull Rock’s exact coastal cave association and cult-collar stock are unresolved. Bladefist is only search context."
+    },
+    {
+      "proposal": "pass13__the_fire_rune_beneath_the_thunder_lizard_cliffs",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Thunder Ridge’s original dry gorge must be independently mapped; Thunderwish is not an alias. Current fire-rune use is also unobserved."
+    },
+    {
+      "proposal": "pass13__the_scrabbling_pool_inside_fel_rock",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Fel Rock has only Dolanaar context, not a confirmed cave leaf. Current lair occupation is unobserved; canonical Teldrassil timing alone does not establish the cave’s operators."
+    },
+    {
+      "proposal": "pass13__the_red_pillars_of_fire_scar",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A red-pillared corrupted shrine would repeat nearby ruined-precinct treatments unless its present Shadow Council use is established. Retain its separate Fire Scar identity and potential for a more distinct future view."
+    },
+    {
+      "proposal": "pass13__the_crater_that_still_holds_its_heat",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Felfire Hill’s exact impact site and persistent local heat need independent binding/state. Generic fel corruption or Night Canyon’s name cannot prove that historical infernal strike."
+    },
+    {
+      "proposal": "pass13__the_supply_shelf_below_the_snowline",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Darkwhisper’s old Winterspring-side ravine spans several native leaves. The particular supply shelf and postwar demonic occupation are unresolved."
+    },
+    {
+      "proposal": "pass13__the_little_shop_in_the_demon_gorge",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Vi’el’s original merchant cave must be mapped separately from his later Frostwhisper move. The named imp and exotic inventory are not automatically present."
+    },
+    {
+      "proposal": "pass13__the_gate_for_the_road_never_opened",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The unused gate requires a precise old Darkwhisper cave anchor before adoption. A native portal or a known reachable destination is not established."
+    },
+    {
+      "proposal": "pass13__the_purple_hollow_beneath_the_giant_caps",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_shadowbreak_purple_caps"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_stolen_goods_above_the_autumn_coast",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Legash store would mainly repeat the selected satyr receptions and would need actual theft to support the proposed goods story. Keep the autumn-coast locality for a future distinct view."
+    },
+    {
+      "proposal": "pass13__the_crimson_shards_in_the_satyr_store",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Canonical Exodar aftermath does not establish Axxarien’s particular stored crystal arsenal or current satyr operation. The Nazzivus monument provides a separate attested physical setting without claiming that stock."
+    },
+    {
+      "proposal": "pass13__the_satyrs_boast_written_in_stone",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_nazzivian_glyph_monument"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_exile_s_teaching_altar",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Daio’s exact altar, current teaching presence and advanced containment equipment are unobserved. A Tainted Scar visit must not supply a named instructor."
+    },
+    {
+      "proposal": "pass13__the_hall_beneath_the_worg_pit",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_utgarde_spiral_landing"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_ring_of_judgment_below_the_graves",
+      "decision": "held",
+      "scenes": [],
+      "reason": "An operating challenge/captive arena is unobserved. The spiral landing preserves the distinct catacomb architecture without imposing a gladiatorial trial."
+    },
+    {
+      "proposal": "pass13__the_passage_behind_the_embalming_room",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Wintergarde Mausoleum is not the town-square Wintergarde Crypt. The actual concealed Scourge-dug connection cannot be established by that unrelated native building."
+    },
+    {
+      "proposal": "pass13__the_mausoleums_stolen_embalming_floor",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The mausoleum’s current necromantic workshop and acquired corpses are unobserved; neither death corruption nor an embalming-room label proves the takeover."
+    },
+    {
+      "proposal": "pass13__the_jars_of_the_kings_and_commoners",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_drakiljin_canopic_gallery"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_gongs_above_the_sleeping_ancestors",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The surface gongs would provide another ancestor-reception angle at the same site. Keep one distinct burial-gallery scene; striking a gong must not automatically summon spirits."
+    },
+    {
+      "proposal": "pass13__the_ice_watchers_cavern",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Frigid Tomb’s Foot Steppes cave lacks a confirmed exact leaf, and the current Norgannon’s Core/ice-revenant state is not observed."
+    },
+    {
+      "proposal": "pass13__the_twin_lakes_beneath_the_citadel",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Naz’anak’s paired underground lakes have no resolved leaf/subsite. Do not infer its identity from the whole Icecrown Citadel province or speculate that it is Arthas’s route."
+    },
+    {
+      "proposal": "pass13__the_weavers_altar_in_the_forgotten_depths",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The exact Naz’anak altar remains unresolved, and an active shadow-tailoring station cannot be established by a visiting tailor or caster."
+    },
+    {
+      "proposal": "pass13__the_burial_hall_of_the_forgotten_kings",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_guolai_royal_crypt"
+      ],
+      "reason": "Bind to literal b_laohu, localized Gui-lai Halls, province 383; preserve the actual royal burial setting without scenario-specific Sha or a cleansed healing pool."
+    },
+    {
+      "proposal": "pass13__the_cleansed_pool_among_the_royal_dead",
+      "decision": "held",
+      "scenes": [],
+      "reason": "A cleansed Pool of Life is a scenario result. The royal crypt does not establish healing water, and missing Sha/corruption never proves cleansing."
+    },
+    {
+      "proposal": "pass13__the_boat_beneath_the_mountain",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The Ancient Passage must be mapped separately from Hatescale Burrow. The latter is a different cave, while the literal Rookery elsewhere is in Highmountain; neither is accepted as a shortcut."
+    },
+    {
+      "proposal": "pass13__the_brood_recess_off_the_river_tunnel",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The actual river-tunnel offshoot and a current saurok breeding community are unresolved. A local heritage alone cannot provide eggs or guardians at a different cave."
+    },
+    {
+      "proposal": "pass13__the_watch_before_the_high_bridge",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Frosthoof Watch’s county covers summit and climbing leaves; its small tower/trail segment requires a specific binding rather than a county-wide unlock."
+    },
+    {
+      "proposal": "pass13__the_envoy_stone_beneath_the_dragon_wings",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The unused Azshara Crater map has no accepted CK3 footprint. Crystalsong’s b_forlorn is a homonym; do not silently make an unused battleground a current Azshara site."
+    },
+    {
+      "proposal": "pass13__the_petition_floor_of_the_shelved_temple",
+      "decision": "held",
+      "scenes": [],
+      "reason": "This shares the unresolved unused-crater geometry. A shelved temple cannot be made current by a fictitious site-registry flag."
+    },
+    {
+      "proposal": "pass13__hide_tents_inside_the_crater_palisade",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The unused-crater map and actual current mixed camp are both unresolved. Visitor culture must not install a tauren/orc settlement there."
+    },
+    {
+      "proposal": "pass13__the_clocktowers_guarded_receiving_door",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_stormwind_clocktower_door"
+      ],
+      "reason": "Use the released exterior and accessible outer approach; do not import the RPG-only name/monster-prison claim or open the unused interior."
+    },
+    {
+      "proposal": "pass13__the_four_pillar_inspection_block",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The released clocktower exterior is retained, but opening its unused interior would invent a maintained prison extension and access. Keep the closed outer approach."
+    },
+    {
+      "proposal": "pass13__the_empty_hut_above_the_red_rocks",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The unnamed northeastern Mulgore hut/cave needs a raster-level physical binding. Redrock and Kitlope are contextual candidates, not interchangeable coordinates."
+    },
+    {
+      "proposal": "pass13__the_recovery_fee_at_the_stolen_hide_hut",
+      "decision": "held",
+      "scenes": [],
+      "reason": "This shares the unresolved hut binding and adds an unobserved theft/resale gang. No automatic accusation or recovery fee is introduced."
+    },
+    {
+      "proposal": "pass13__the_company_yard_that_fell_silent",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The unused western Stonetalon coastal pocket has no confirmed CK3 footprint. Windshear and an invented west-coast title are not substitutes."
+    },
+    {
+      "proposal": "pass13__the_lone_hut_beside_the_old_elven_stones",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The troll hut depends on the same unresolved western coastal pocket; preserve the idea rather than moving it into another elven ruin."
+    },
+    {
+      "proposal": "pass13__the_hovels_beneath_the_world_trees_rim",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The eastern water-level Teldrassil hovels need a precise shore binding below the canopy. Canonical tree timing is necessary but does not resolve the pocket’s physical leaf."
+    },
+    {
+      "proposal": "pass13__the_snow_packed_billet_in_the_unnamed_valley",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The unnamed valley west of Gnomeregan needs an actual map binding. Hiding Tower/Hiding Valley is a tempting name, not accepted geographic evidence."
+    },
+    {
+      "proposal": "pass13__oil_tallies_at_stratholmes_missing_quay",
+      "decision": "held",
+      "scenes": [],
+      "reason": "Stratholme’s Warcraft II port history is real, but its current CK3 city anchor does not supply a waterside footprint or a retained harbor. Keep the maritime idea without fabricating docks."
+    },
+    {
+      "proposal": "pass13__the_well_that_drops_below_the_graves",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_forgotten_crypt_well"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_chamber_beneath_the_bone_chute",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_forgotten_crypt_bone_pit"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_faces_below_the_water",
+      "decision": "adapted",
+      "scenes": [
+        "titan_oddity_forgotten_crypt_drowned_chains"
+      ],
+      "reason": "Retain the distinct local physical setting; replace uncaptured operators, quest outcomes and mandatory activity with optional conversation possibilities."
+    },
+    {
+      "proposal": "pass13__the_riders_hoard_below_the_tower",
+      "decision": "held",
+      "scenes": [],
+      "reason": "The tower-base catacombs are distinct from Morgan’s Plot. Their current Dark Rider occupation, named stolen relics and hidden controller knowledge are unobserved; the cemetery crypts do not replace or establish them."
+    }
+  ]
+}

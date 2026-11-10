@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-shinfel-blightsworn-wow-034e4df046fe",
+  "revision": 1,
+  "name": "Shinfel Blightsworn — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "673febf66013beefc6d07da498e2363ad641903a53fb142fc3c4d2f643469364",
+    "transcript_sha256": "72fdc83dbda2a097153a83deb4d22dc38960eb014844eadd3253231577131727",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378462,
+      "seconds": 15.76925,
+      "peak": 1.0,
+      "rms_dbfs": -16.48,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

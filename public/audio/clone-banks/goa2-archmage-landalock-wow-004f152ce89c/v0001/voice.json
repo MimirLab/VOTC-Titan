@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-archmage-landalock-wow-004f152ce89c",
+  "revision": 1,
+  "name": "Lan'dalock — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ca3ea79a8f40c2bdfe84b81843f2d1b15152c5c31777d972e17cf58ce42e8497",
+    "transcript_sha256": "fd4fd4ee82cf22afcf87d04fe08a0e852da799a63955362431d74b7cf8572afb",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 261788,
+      "seconds": 10.907833333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.99,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

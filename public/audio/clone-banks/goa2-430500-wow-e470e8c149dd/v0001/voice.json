@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-430500-wow-e470e8c149dd",
+  "revision": 1,
+  "name": "Detheroc — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c504d775520ebdcb6f822e2a9db4ab98f943b1c27cc1e2ad75194258b10aca36",
+    "transcript_sha256": "13e1e0d0b90e2d90d3eebe34c5238ad053ebb95aee2d9e8b135c4034b63b98ee",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384509,
+      "seconds": 16.021208333333334,
+      "peak": 1.0,
+      "rms_dbfs": -13.4,
+      "clipped_samples": 22
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

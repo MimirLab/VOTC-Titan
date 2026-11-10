@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-1602-wow-95b041fd1de3",
+  "revision": 1,
+  "name": "Mathias Shaw — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9bc2ff793b7f197818588f5581eac30eb23bef9b2558b378c8d34ccb5abd6ce9",
+    "transcript_sha256": "e5886f5d99975cbcb798730aa4db7486a059021968f371f104cf807c3ecc58a0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 373454,
+      "seconds": 15.560583333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.04,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

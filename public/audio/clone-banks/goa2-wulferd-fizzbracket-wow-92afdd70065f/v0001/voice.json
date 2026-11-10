@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-wulferd-fizzbracket-wow-92afdd70065f",
+  "revision": 1,
+  "name": "Wulferd Fizzbracket — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8e23b271eb9911f93f9f4e4723740bc4635912d54a1108d16e8b8353f362b63a",
+    "transcript_sha256": "05f30c107e83abb0eb0dc3092653266b2449e3ac1e6c751dbe0cd835d11568aa",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 370696,
+      "seconds": 15.445666666666666,
+      "peak": 0.979828,
+      "rms_dbfs": -18.56,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

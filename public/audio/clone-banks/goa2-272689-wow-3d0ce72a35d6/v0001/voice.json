@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-272689-wow-3d0ce72a35d6",
+  "revision": 1,
+  "name": "Amet Tothir — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "66a8e72e8debf900089400d416688b62c30292b2eed416fd459524294c75ae2b",
+    "transcript_sha256": "2caebb8a173bfa388f438d4d19ed9c87a4bdc3e590bdbcfd4522f2edc67d05c9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 417922,
+      "seconds": 17.413416666666667,
+      "peak": 1.0,
+      "rms_dbfs": -15.6,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

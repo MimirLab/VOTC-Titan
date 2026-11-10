@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-king-deepbeard-wow-f1d8674ca7e9",
+  "revision": 1,
+  "name": "Deepbeard Cove — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "eb0f92e62841b9076406adab8aa802d6ebbdd7de0e0cf5c7902f20824897f8ce",
+    "transcript_sha256": "260a266b559ee270b085135075716ed249ca3ca143ed087fcc88dde144b1c751",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 383883,
+      "seconds": 15.995125,
+      "peak": 0.993225,
+      "rms_dbfs": -16.22,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

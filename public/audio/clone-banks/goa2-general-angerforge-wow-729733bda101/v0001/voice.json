@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-general-angerforge-wow-729733bda101",
+  "revision": 1,
+  "name": "Galmar Angerforge — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "905162e294215385a910974c0f2b2678beec03ff13c6b759e64b32c1f7aa2d97",
+    "transcript_sha256": "2a41c635de6073e5971783351cc06afe9ce57ea8a83640282fcaf0904c436054",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 370774,
+      "seconds": 15.448916666666667,
+      "peak": 0.888,
+      "rms_dbfs": -17.31,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-mogrin-wc3-mogrin",
+  "revision": 1,
+  "name": "Mogrin — ordinary (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4c98e064401394c7b47f1460d837fdb797c84a74f96975190c81d4fb4915988b",
+    "transcript_sha256": "b04889488c7d89e21ccc6f04bddcba5c6a459d4836248c643f0256f95c4af895",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 72990,
+      "seconds": 3.04125,
+      "peak": 0.648041,
+      "rms_dbfs": -22.14,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

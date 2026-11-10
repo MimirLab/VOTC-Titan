@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-1620-wow-19688a0c8f29",
+  "revision": 1,
+  "name": "Natalie Seline — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "925798768766c7994468d3ce87651200782937d4e36f1c055a0bc68a77353d0b",
+    "transcript_sha256": "47c20f6e8bcc51bf5a13c30044edc5fe19460b5ed499c02947390d5a7ddf6484",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 380877,
+      "seconds": 15.869875,
+      "peak": 1.0,
+      "rms_dbfs": -17.44,
+      "clipped_samples": 14
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

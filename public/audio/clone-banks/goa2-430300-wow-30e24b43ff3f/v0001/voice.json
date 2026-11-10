@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-430300-wow-30e24b43ff3f",
+  "revision": 1,
+  "name": "Anetheron Xigrakiun — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "24ab7dd758237ba75e000f1ab0624ca28caca78594df92ffb0c06ea5d5680606",
+    "transcript_sha256": "8626fb77091bbfabebb46b3b6416fb396b8e466703ae420f411451c0fe34ae8e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 91873,
+      "seconds": 3.8280416666666666,
+      "peak": 0.956573,
+      "rms_dbfs": -17.44,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

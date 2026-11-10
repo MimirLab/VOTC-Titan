@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-17028-wow-09db504fb338",
+  "revision": 1,
+  "name": "Brann Bronzebeard — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b1896f18619af153a0975ff95555a10f6255e6d69691f74563fc462ccb0a297a",
+    "transcript_sha256": "969c415930720a85f28b31e0096017789578332af48023f37ef8fc656f6b2e60",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 217318,
+      "seconds": 9.054916666666667,
+      "peak": 0.922913,
+      "rms_dbfs": -17.93,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

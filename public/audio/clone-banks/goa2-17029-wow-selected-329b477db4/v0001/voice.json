@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-17029-wow-selected-329b477db4",
+  "revision": 1,
+  "name": "Moira Bronzebeard — Moira Thaurissan; WoW 7.0.3",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a602986516cbfaf1a666e50bf6ecae696521d7002c83510a4c3352422d0f2b6b",
+    "transcript_sha256": "1e5486ecc2cfd879b741fc5f771338ee615db7edb9b3c8ea56344476fc18a0e2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 265617,
+      "seconds": 11.067375,
+      "peak": 0.827179,
+      "rms_dbfs": -17.16,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

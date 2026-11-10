@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-archimonde-wow-d21efd4eff21",
+  "revision": 1,
+  "name": "Archimonde — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "61f173a6d6a76f0bf204d2f7e54a3e8eff35bb487896776a44173ae8b4512410",
+    "transcript_sha256": "ee4eddbff737a8cb7fae6bd0abc094d30c0ad81def742300abe04ec1cbf5a804",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 382048,
+      "seconds": 15.918666666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.62,
+      "clipped_samples": 29
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

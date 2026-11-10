@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60022-hs-nx2-034",
+  "revision": 1,
+  "name": "Baron Rivendare — Rivendare, Warrider (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "91f9250b78679bd3510aa8c313c42c157e64d01938b2ad549786c79aeba029df",
+    "transcript_sha256": "6577dc4ea7bedd6c01df37f52a1ea7e8c2f7b4bd9aa065ce60fbabeac4d58888",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 96612,
+      "seconds": 4.0255,
+      "peak": 0.943085,
+      "rms_dbfs": -17.29,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46005-wow-0d379e546e42",
+  "revision": 1,
+  "name": "Darius Crowley — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b531ca7399e212b9b0300c985a4de9b8b3c4b7f768f584f0ff4ce019c55bd29c",
+    "transcript_sha256": "3da5420127188ceb6db920fdc0ac7b6f51b31ab00e5e58780cff66d445ddbef9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 371050,
+      "seconds": 15.460416666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.43,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60610-wow-81bdf963b197",
+  "revision": 1,
+  "name": "Marwyn — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "077e0673533e23e6ffb99669fe1a4ff4e74ef754714a071b317c4ddc0e746de9",
+    "transcript_sha256": "947a6ce3bd00258c89d03157a1399343567cbeda872d62a1f033d31b37c8b6d0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 247886,
+      "seconds": 10.328583333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -17.38,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-malganis-hots-malganisbase",
+  "revision": 1,
+  "name": "Mal'Ganis — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "21555711241fad0552d19d40433223422837b54f918b2b103b42c051a2451729",
+    "transcript_sha256": "75ec2ed0da4b44c3b43471eeab79a2185de4f159b87b7bd4d3b8f52dbad989c2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 372208,
+      "seconds": 15.508666666666667,
+      "peak": 0.82901,
+      "rms_dbfs": -16.5,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

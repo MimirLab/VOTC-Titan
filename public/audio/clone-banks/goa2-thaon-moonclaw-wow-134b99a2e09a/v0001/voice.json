@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-thaon-moonclaw-wow-134b99a2e09a",
+  "revision": 1,
+  "name": "Thaon Moonclaw — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fae3f56d4d00389d4ecededc117b97723bb16411fb5b177e7372903b14a0aeae",
+    "transcript_sha256": "373d60042e1a8f3c23ecc4df45b56fed94cb01b44e7ff02a7fdddbbe3c1be19c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 382151,
+      "seconds": 15.922958333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.14,
+      "clipped_samples": 16
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

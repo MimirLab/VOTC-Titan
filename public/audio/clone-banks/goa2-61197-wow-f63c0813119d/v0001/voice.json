@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-61197-wow-f63c0813119d",
+  "revision": 1,
+  "name": "Thassarian — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6f2a25dfe5ed5f75935b2bdcd94950055f9b2a899fbfdbf160dbeb144c1808bd",
+    "transcript_sha256": "98be452832b3841c686ef998ac642a6e596e3af94a4bcffd720d9393e5b3f7cc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 387565,
+      "seconds": 16.148541666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -17.01,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

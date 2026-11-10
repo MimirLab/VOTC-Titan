@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-hadal-darkfathom-wow-bc309779cedb",
+  "revision": 1,
+  "name": "Hadal Darkfathom — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "e98af79b282e74c974b185867422983290db71c307c9683ff3d051034a0578cf",
+    "transcript_sha256": "a463099deeb802440a07309b37ba5b3753f0b7e54cfd1418b1ba859a22f3ffde",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 173799,
+      "seconds": 7.241625,
+      "peak": 1.0,
+      "rms_dbfs": -15.38,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

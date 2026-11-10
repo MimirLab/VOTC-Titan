@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48168-wow-d706aa016267",
+  "revision": 1,
+  "name": "Meredith — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f5d8604129b553eab221d7932749c72fafaab8ac30b93cb9fee7e47c62d1f3ed",
+    "transcript_sha256": "af405d41651fb7a4ad1c26812e3fb15a2f672f1f461466f1de7256da8e93787c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 367044,
+      "seconds": 15.2935,
+      "peak": 0.999969,
+      "rms_dbfs": -16.75,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

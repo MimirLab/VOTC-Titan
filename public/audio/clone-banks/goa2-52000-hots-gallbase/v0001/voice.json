@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-52000-hots-gallbase",
+  "revision": 1,
+  "name": "Cho'gall — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "02512315a3ffadaf427c61ab088f3ec60161ff81b207a859bc1cae2b14fa11c2",
+    "transcript_sha256": "a6310fe9ea1cf38337f66c435187e9d0c539efdba37f6202b7a89ebfbd8af312",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 146876,
+      "seconds": 6.119833333333333,
+      "peak": 0.728912,
+      "rms_dbfs": -15.01,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

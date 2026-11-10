@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-16626-wow-9ac8cdc2a3c2",
+  "revision": 1,
+  "name": "Tread Sparknozzle — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "14eb8255cffe36b07ee2c67212e895e1549aeba861fab29f215aec785e5f0750",
+    "transcript_sha256": "1c17b33249a58e12bf4870c607ecdfd0148460a7f975ed60153e91f50ed72af8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 379157,
+      "seconds": 15.798208333333333,
+      "peak": 0.949554,
+      "rms_dbfs": -17.72,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-durak-wow-4c4f216d5dac",
+  "revision": 1,
+  "name": "Durak — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b2e79bdb6de5c6aedb19582bb9f7f8ff77534cdd33ba8faff0371bcabf48b855",
+    "transcript_sha256": "bf42d025257aba280082b0a84604eb66036cc00cfc846887267bc617e1cf5950",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384130,
+      "seconds": 16.005416666666665,
+      "peak": 0.999969,
+      "rms_dbfs": -16.68,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

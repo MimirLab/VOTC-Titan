@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-tacha-wow-5ae3455cd127",
+  "revision": 1,
+  "name": "Tacha — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "103ce3184cda1e4622578b82a3337744708e9ddd0ac5fb2ace10512b8c67f648",
+    "transcript_sha256": "01e7e4ae2605e0f153e25f1170175c4883e393a0f778cf3ed6e4b097c07fb136",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 371032,
+      "seconds": 15.459666666666667,
+      "peak": 0.760773,
+      "rms_dbfs": -17.95,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-grayson-shadowbreaker-wow-e6e7f24af2b3",
+  "revision": 1,
+  "name": "Grayson Shadowbreaker — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ece7aced91c1e5ffd98a7350ac9e6defbfd74d896b5fcdae363b848c303cda16",
+    "transcript_sha256": "dcc37043d4a4e24ab94ccc56a24990410d0589a32786b924c53794eca034587f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 404356,
+      "seconds": 16.848166666666668,
+      "peak": 1.0,
+      "rms_dbfs": -17.63,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46001-hots-greymanebase",
+  "revision": 1,
+  "name": "Genn Greymane — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fbe6806e2baeb6f32417a60d04453f676ed1d18b76b0792c5be6a438de95c018",
+    "transcript_sha256": "51b77f5d4a26dfb6e9a3120771aad2fd59403e686cfa81f1b6a04061f891cd07",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 458120,
+      "seconds": 19.088333333333335,
+      "peak": 0.816986,
+      "rms_dbfs": -17.12,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

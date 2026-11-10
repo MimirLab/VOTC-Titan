@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-gurgthock-wow-92b9651d863e",
+  "revision": 1,
+  "name": "Gurgthock — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "795cf64745a26035e7f03505041b7396f6149838804e40ec8ca774ba31ed0836",
+    "transcript_sha256": "de1b4ef243d4529dfdadc1ab7deaa9d2332635d8e7fe76ce611b0d9962d4aa8f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 344790,
+      "seconds": 14.36625,
+      "peak": 0.827698,
+      "rms_dbfs": -19.2,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

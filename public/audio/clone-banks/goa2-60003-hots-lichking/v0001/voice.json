@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60003-hots-lichking",
+  "revision": 1,
+  "name": "Arthas Menethil — Lich King (HotS)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "bd851abe35e7332a22c0d1deb770b9162e0e8eb12fb39c824f093345fb63faa1",
+    "transcript_sha256": "93cdfda88b1c5c54e2cc156d30026f633a8bf4c5be86637a4f9371c3065e2b5b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 407475,
+      "seconds": 16.978125,
+      "peak": 0.798737,
+      "rms_dbfs": -15.77,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

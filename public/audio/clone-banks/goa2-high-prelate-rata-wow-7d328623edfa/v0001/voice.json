@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-high-prelate-rata-wow-7d328623edfa",
+  "revision": 1,
+  "name": "Rata — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8b9a0dd69f6fad901b22191a58a3ca45bd17bdd1c9aba932d33b77197b622707",
+    "transcript_sha256": "f3509704dbcd611e36b7d7687e2ea2f50869bb064c77c644552f1bd57fd7740c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 428606,
+      "seconds": 17.858583333333332,
+      "peak": 0.971954,
+      "rms_dbfs": -17.06,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

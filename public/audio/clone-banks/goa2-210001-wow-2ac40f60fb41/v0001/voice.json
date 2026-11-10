@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-210001-wow-2ac40f60fb41",
+  "revision": 1,
+  "name": "Baine Bloodhoof — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ab6fdc8e2741eb3df1611d7f182470a92af5c260570701bd7f0b0055e5aeba0f",
+    "transcript_sha256": "380ceda65ac75a16b76474afaff6e12ba1186baa550777ae67a2b15fc5fa8173",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 385699,
+      "seconds": 16.07079166666667,
+      "peak": 0.999969,
+      "rms_dbfs": -15.79,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

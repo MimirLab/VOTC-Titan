@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10566-wow-3147dc6a9c33",
+  "revision": 1,
+  "name": "Broxigar Saurfang — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ef991045b0b76c5547c14b7154df3ac820257509c4a71a5d4cf0920ad989c8ca",
+    "transcript_sha256": "653062269d1b4d24b78be888b4959b54bb53ef511597cf29a2848400812e5602",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 371160,
+      "seconds": 15.465,
+      "peak": 1.0,
+      "rms_dbfs": -13.63,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

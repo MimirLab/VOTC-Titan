@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400504-wow-6fcbf1e26add",
+  "revision": 1,
+  "name": "Freya — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7db73dbfbfd2f102ba328c00b311d71233f9717c2cf1ed58b23cd636aa6619ae",
+    "transcript_sha256": "ddc4ece138f5465930059cbbfee05f59ef51ea47e8e9becb9358ac26684d35a8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 77891,
+      "seconds": 3.245458333333333,
+      "peak": 0.938629,
+      "rms_dbfs": -20.77,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

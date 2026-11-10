@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-zeliek-wow-c2157ff8e1b6",
+  "revision": 1,
+  "name": "Zeliek — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "664791a82af35b12eeed7a815e60bea1381f1ebb4f80a37b68a70fe14f51ab09",
+    "transcript_sha256": "40d38567c0418a84eaf3587daac0a8057c6502ac4ce6f21db9c99f9ccadef67c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 418773,
+      "seconds": 17.448875,
+      "peak": 1.0,
+      "rms_dbfs": -18.48,
+      "clipped_samples": 35
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

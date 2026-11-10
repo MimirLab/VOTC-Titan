@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42086-wow-774d0236c9f8",
+  "revision": 1,
+  "name": "Alleria Windrunner — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "aee877d48710b9370eb62eface0fe08160f5ffb7a14165b3ae0bc614f5a1f25a",
+    "transcript_sha256": "d904b0fad1695754d32ac4209b47572cf38829d5822b73ef4f855a34f571e3f8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 387818,
+      "seconds": 16.159083333333335,
+      "peak": 0.931702,
+      "rms_dbfs": -17.33,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

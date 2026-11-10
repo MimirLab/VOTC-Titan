@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-410002-wow-5ffbbcd0a073",
+  "revision": 1,
+  "name": "Cenarius — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4478fdd0f5c9ffb15311c528e4c143e3ce207642e2e7b48ecd9d73c670cb7197",
+    "transcript_sha256": "4a8ae7fe2eee0eb2a07e0c4e50c09ac2e3a9e0a8852dd0188e3c3782baa97131",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 341364,
+      "seconds": 14.2235,
+      "peak": 1.0,
+      "rms_dbfs": -15.12,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60650-wow-5d6a234d1860",
+  "revision": 1,
+  "name": "Maxwell Tyrosus — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "92ab7ffd6f491f059f54dba459a20c25975089d59fbefebf53d6cceab1c49b41",
+    "transcript_sha256": "71b16cf335efc2adea31e908bb5d988229def2dd6e7c110fd010e6fc504e8726",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 381199,
+      "seconds": 15.883291666666667,
+      "peak": 0.983673,
+      "rms_dbfs": -16.7,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

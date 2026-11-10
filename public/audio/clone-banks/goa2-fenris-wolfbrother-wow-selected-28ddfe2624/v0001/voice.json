@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-fenris-wolfbrother-wow-selected-28ddfe2624",
+  "revision": 1,
+  "name": "Fenris Frostwolf — Fenris Wolfbrother; WoW alternate Draenor recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "826a39ed5b359828fdb8355df7e2319e8dc8029ee46d34a3b7ed226d5faaa4d3",
+    "transcript_sha256": "653c34b123ff204f2c0227ddc64b9b017ec8dfa65228b2f9bcd35effcff47369",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374478,
+      "seconds": 15.60325,
+      "peak": 0.997833,
+      "rms_dbfs": -13.7,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

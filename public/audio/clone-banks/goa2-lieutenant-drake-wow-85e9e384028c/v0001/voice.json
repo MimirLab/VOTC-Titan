@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lieutenant-drake-wow-85e9e384028c",
+  "revision": 1,
+  "name": "Drake — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4c2594cc52044076111e6fa16fe82c9d198dc2571543e22c68731db2c27402b7",
+    "transcript_sha256": "df7a5371233ba899048f822a1b3043696c6e9800b1d3c2c2bd229ddfe36cbd5f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 119167,
+      "seconds": 4.965291666666666,
+      "peak": 0.952332,
+      "rms_dbfs": -18.5,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

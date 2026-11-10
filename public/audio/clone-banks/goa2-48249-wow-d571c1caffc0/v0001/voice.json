@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48249-wow-d571c1caffc0",
+  "revision": 1,
+  "name": "Colm Stormsong — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "432592b9962a0f98c5d0ada6f31736f9442b58a8d4eafd08c1219ef1a546633b",
+    "transcript_sha256": "0bd27e32bfb568f059fdd10d72ae65d423e64dedfb422bde8c3d6b56442f12e0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 380092,
+      "seconds": 15.837166666666667,
+      "peak": 1.0,
+      "rms_dbfs": -12.07,
+      "clipped_samples": 157
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

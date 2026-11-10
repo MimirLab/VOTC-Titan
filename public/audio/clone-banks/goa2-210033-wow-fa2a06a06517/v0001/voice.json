@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-210033-wow-fa2a06a06517",
+  "revision": 1,
+  "name": "Hamuul Runetotem — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3bce8ef76c6250d3f8a8711ecde9d40ea78dc6c32e34bb43ed6e0af7c3018c78",
+    "transcript_sha256": "b63d8ed3b76e17637d05483f0e3e6f81412599a0bc75b8590ce40c14272e8062",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 382476,
+      "seconds": 15.9365,
+      "peak": 0.871613,
+      "rms_dbfs": -18.21,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

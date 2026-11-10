@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-revil-kost-wow-f281556b3763",
+  "revision": 1,
+  "name": "Revil Kost — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "5d5b87a4d848716cad6c0063ddda9b5977825a756b9c909b06cb2bd33bb313e2",
+    "transcript_sha256": "76fa3205010be42b9952045f84203aa1239f9778545766c3732be5891f7aba4e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378521,
+      "seconds": 15.771708333333333,
+      "peak": 1.0,
+      "rms_dbfs": -16.82,
+      "clipped_samples": 35
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

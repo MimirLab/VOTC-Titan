@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ebyssian-wow-b55d3da5e0cf",
+  "revision": 1,
+  "name": "Ebyssian Black Dragonflight — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "5b6b99c6e2b8f7374dab0f2da230ca58a260415070ef26cf880c1e625bc0a2f1",
+    "transcript_sha256": "8d4d7477e81b1c21a938b213542949df38d0827ee38030479e708aa97339098e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 375685,
+      "seconds": 15.653541666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -16.52,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62600-wow-7254ff533b22",
+  "revision": 1,
+  "name": "Malygos — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "caf63fcbe7305d1ef2c36b68401160a08de0440155578048e94593653f09bf77",
+    "transcript_sha256": "2b79724958383b1ba420bd0b4c475ef86f946cf6e163a728dc27d1250394ee08",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 408557,
+      "seconds": 17.023208333333333,
+      "peak": 1.0,
+      "rms_dbfs": -14.23,
+      "clipped_samples": 9
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lorewalker-cho-wow-e8b4c08715e5",
+  "revision": 1,
+  "name": "Cho — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7ee5efdcde9739e84d54b228ad0c206bc6ca081632116b23f3523497246b2120",
+    "transcript_sha256": "8abcb0900c6fee9c6ffca8aa13472427eb2f2fcafc5a694cdda2619dee238a92",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 442250,
+      "seconds": 18.427083333333332,
+      "peak": 0.827209,
+      "rms_dbfs": -15.78,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

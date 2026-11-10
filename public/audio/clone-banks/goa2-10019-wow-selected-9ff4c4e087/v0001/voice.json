@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10019-wow-selected-9ff4c4e087",
+  "revision": 1,
+  "name": "Durotan Frostwolf — Durotan; WoW Draenor recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6bc4c26da908fa64d3954b4dddd6c9330431b1cc1eafd28db06bfcc9df01b322",
+    "transcript_sha256": "0e09da76e77c307637312220ea78f25a8eb3a94d1708d6199f5efc14726dbc15",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 373255,
+      "seconds": 15.552291666666667,
+      "peak": 1.0,
+      "rms_dbfs": -15.49,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

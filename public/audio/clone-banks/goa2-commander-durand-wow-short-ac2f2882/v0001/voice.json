@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-commander-durand-wow-short-ac2f2882",
+  "revision": 1,
+  "name": "Durand — WoW indexed Commander Durand short recorded soundset",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8957aff1ed4e8d5d7f609a7a847e0af6ffb02c24f3f154a8fd1b5822c99a2df7",
+    "transcript_sha256": "fc470db9adb2d96142e2d28cc64c1efbd563f1de19ca93a0ab6e2513180b302e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 140364,
+      "seconds": 5.8485,
+      "peak": 1.0,
+      "rms_dbfs": -15.88,
+      "clipped_samples": 9
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

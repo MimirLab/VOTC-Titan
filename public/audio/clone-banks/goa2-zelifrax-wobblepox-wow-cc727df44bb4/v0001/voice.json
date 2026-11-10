@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-zelifrax-wobblepox-wow-cc727df44bb4",
+  "revision": 1,
+  "name": "Zelifrax Wobblepox — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f4bae44bc31160744bd945889026a9355508736ae7eb67cc11a3922168053dc0",
+    "transcript_sha256": "7b4da58c75a2a27894a7046afbdea3821f735cf301929c93de044229a6d4d271",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 386758,
+      "seconds": 16.114916666666666,
+      "peak": 0.894012,
+      "rms_dbfs": -18.04,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46006-wow-b346f39a9cb0",
+  "revision": 1,
+  "name": "Lorna Crowley — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4c8687dcb5b35ded88f96253db6974ec1770b83f2e4b0b7dd0d980e90fb0c335",
+    "transcript_sha256": "cb1eced2107439e6c29f2d9774b34ab891f481ee5ab3d02b6ac6ae649c67435e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 362428,
+      "seconds": 15.101166666666666,
+      "peak": 0.999969,
+      "rms_dbfs": -17.89,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

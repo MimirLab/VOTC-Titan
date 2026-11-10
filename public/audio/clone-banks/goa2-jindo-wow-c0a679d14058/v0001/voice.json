@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-jindo-wow-c0a679d14058",
+  "revision": 1,
+  "name": "Jin'do — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2aacbb4453645782424c598d238fa51ddda9e8ed62f82f28f3f489790c160f9d",
+    "transcript_sha256": "95a363ef76383800cd25419f240428e49bfe6d30c5f254c14b3a44bed7292350",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 191548,
+      "seconds": 7.981166666666667,
+      "peak": 0.65506,
+      "rms_dbfs": -19.31,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

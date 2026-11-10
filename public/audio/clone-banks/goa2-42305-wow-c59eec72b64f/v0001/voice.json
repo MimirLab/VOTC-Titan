@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42305-wow-c59eec72b64f",
+  "revision": 1,
+  "name": "Lady Liadrin — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ad7113764e23411f85600e64b8f0ced03e12e0d6600ac982886b2fe41e921e08",
+    "transcript_sha256": "d7390605689fafc79deb09ed227b859d8d1a50f81536dccbf854d03b48007be2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 395317,
+      "seconds": 16.471541666666667,
+      "peak": 0.956238,
+      "rms_dbfs": -17.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

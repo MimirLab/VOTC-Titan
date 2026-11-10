@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48169-wow-cf6243c4dfa0",
+  "revision": 1,
+  "name": "Lucille Waycrest — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "292d36a58887264c25b7da149f4e2ad5da558d63991dfdbbb84233c062eae8b1",
+    "transcript_sha256": "99554a2db0a778f1aed324072a0b1ea6a8a51a80d567d8630ffcf5f4e026b480",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 429830,
+      "seconds": 17.909583333333334,
+      "peak": 0.964874,
+      "rms_dbfs": -18.15,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

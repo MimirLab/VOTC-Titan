@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60578-wow-2111569309ea",
+  "revision": 1,
+  "name": "Aegwynn — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "bcd9708c63e2c5cdf3b0c2404c7011b94f8f2ef3df59a3024ab60714197cabbe",
+    "transcript_sha256": "6bbc8a9ff38b5f8f933afb07cbe8d09b4ee8107ee7dd8f0a53f2b75230bd294f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 353212,
+      "seconds": 14.717166666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -16.65,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

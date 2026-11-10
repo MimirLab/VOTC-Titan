@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60687-wow-4412710fdd59",
+  "revision": 1,
+  "name": "Taelia Fordragon — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6521f19c78cd98ba20d44d33577c60b6c02748ffdafa8ca7e6cb512138050657",
+    "transcript_sha256": "190f95d70d1998702d1a4b124615a27b33da0991cc47fe6e780d75a10ee75f5d",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 394532,
+      "seconds": 16.438833333333335,
+      "peak": 0.999969,
+      "rms_dbfs": -16.56,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

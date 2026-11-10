@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-anarys-lunastre-wow-3f917173fafc",
+  "revision": 1,
+  "name": "Anarys Lunastre — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0c7ca056d79ce42b20df2a63f380c14c304ddfad6f3ba4bc7a7d069d8a33860b",
+    "transcript_sha256": "1e0b35436ccb0beb913ef282e13958fed0702efa58c92f0c3312b9778d1767cf",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 359063,
+      "seconds": 14.960958333333334,
+      "peak": 1.0,
+      "rms_dbfs": -14.04,
+      "clipped_samples": 46
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

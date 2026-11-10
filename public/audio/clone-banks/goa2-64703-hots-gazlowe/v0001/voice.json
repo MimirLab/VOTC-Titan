@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-64703-hots-gazlowe",
+  "revision": 1,
+  "name": "Gazlowe — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a0d3aff983d345663452471e1cf8182800b769fa2818b011ae2c00d17add327b",
+    "transcript_sha256": "94189f5940a955c1e3043efa798bffaef44cc707759b7edf632b558a07c7bc28",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378890,
+      "seconds": 15.787083333333333,
+      "peak": 0.868469,
+      "rms_dbfs": -18.22,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

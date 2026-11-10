@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10005-wow-selected-dd2eed0a71",
+  "revision": 1,
+  "name": "Kilrogg Deadeye — Kilrogg; WoW 6.2 Hellfire Citadel recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "87c317d3e0b0b8c5360524af1f608908866baa00dc737d43588e616f46c8312e",
+    "transcript_sha256": "34317dee8d488a6e7032881fc279ab6acdd6ec01455671c185b279c434eda7a1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 362296,
+      "seconds": 15.095666666666666,
+      "peak": 0.907898,
+      "rms_dbfs": -15.48,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

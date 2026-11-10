@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42100-wow-4f24a48b23bb",
+  "revision": 1,
+  "name": "Arator Windrunner — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1a59166ee5d62c4757b81fd9af4e5c05f5ed3b3d5bfbcd04fcd6bb07e8365c69",
+    "transcript_sha256": "6084d56e014e64243045cdc90c4c1f1beb0221deccb9efcb66e773103e079768",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 402203,
+      "seconds": 16.758458333333333,
+      "peak": 1.0,
+      "rms_dbfs": -16.35,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

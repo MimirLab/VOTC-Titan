@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-stellagosa-wow-a12b5a00ae95",
+  "revision": 1,
+  "name": "Stellagosa Azurewing — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4e1d673de841ba6c8f6e569479d979ad9b7a272a46fd18ca456ba9d68f7cad46",
+    "transcript_sha256": "25adcc8c93b0eb4ba77cef35afa521c8d1a372d0995ed699104b5ab36de3adbf",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 389517,
+      "seconds": 16.229875,
+      "peak": 0.652222,
+      "rms_dbfs": -21.72,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

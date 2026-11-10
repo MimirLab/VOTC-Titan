@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-aggralan-wow-bbde37378b72",
+  "revision": 1,
+  "name": "Aggralan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ab20d9903967bb62fe120fdbfe33e98a0d038ea096498a33cd41f1319e3bf8c6",
+    "transcript_sha256": "059dbc91f413d2ef5092647a896e7f915e4fde85121a5ad5fecdc71e87f88ed0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 433122,
+      "seconds": 18.04675,
+      "peak": 0.924866,
+      "rms_dbfs": -19.76,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

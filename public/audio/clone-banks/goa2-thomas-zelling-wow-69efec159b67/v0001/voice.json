@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-thomas-zelling-wow-69efec159b67",
+  "revision": 1,
+  "name": "Thomas Zelling — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3eaf4ff5b3bb190f5f9623a3636a0994ea5c5c2dca21adff4b72f552c65959be",
+    "transcript_sha256": "47f105956377c0ce1d4b0078b1268d4db73fae6f762d257b89a215ca6224e102",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365985,
+      "seconds": 15.249375,
+      "peak": 1.0,
+      "rms_dbfs": -17.34,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lady-hatecoil-wow-9d4b834da78e",
+  "revision": 1,
+  "name": "Vejsha Hatecoil — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c0045c6b248e5875ca6ea1d6bb2bd7485fef08fc4c8ef9af7838f5920df46dbf",
+    "transcript_sha256": "683909b6e5bc933cdd87d786a186310fac8c7198091eeaae11e0d50f081dad3f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393354,
+      "seconds": 16.38975,
+      "peak": 1.0,
+      "rms_dbfs": -18.47,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

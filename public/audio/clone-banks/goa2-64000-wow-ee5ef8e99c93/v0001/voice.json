@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-64000-wow-ee5ef8e99c93",
+  "revision": 1,
+  "name": "Jazikrax Revilgaz — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "08cd005b0814275bf9d83c0ed1a8d365a34699133a644ccd66f360758741e93b",
+    "transcript_sha256": "aa057f2e6e02173c8380ba731e61cb19adf6efda0b72d4b9cd8ab6787d6e639b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 413684,
+      "seconds": 17.236833333333333,
+      "peak": 0.731934,
+      "rms_dbfs": -20.08,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-maiden-of-grief-wow-df0fe89d118d",
+  "revision": 1,
+  "name": "Theodora Eonarai — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "14f7ea894207f30f01a534758c8a0f5594e05fc7871a1118607a392ff26c89b2",
+    "transcript_sha256": "fba4f93408b1986f2c9f9387de6a4c99235d598b33a677f61679de4bc10be8f9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 97394,
+      "seconds": 4.058083333333333,
+      "peak": 0.771454,
+      "rms_dbfs": -20.86,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

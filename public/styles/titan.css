@@ -1,0 +1,86 @@
+/* Shared by documents and config components' shadow roots. */
+:root, :host {
+    --titan-bg: #111510;
+    --titan-panel: #1b201a;
+    --titan-raised: #252c23;
+    --titan-input: #0e120e;
+    --titan-text: #eee8d8;
+    --titan-muted: #b7bbaa;
+    --titan-gold: #dfbc69;
+    --titan-border: #70633f;
+    --titan-green: #a8dc71;
+    --titan-warning: #f1bd60;
+    --titan-error: #ee8881;
+    color-scheme: dark;
+}
+html { background: var(--titan-bg); color: var(--titan-text); cursor: auto; }
+body { color: var(--titan-text); background-color: var(--titan-bg); }
+h1, h2, h3, h4, strong { color: var(--titan-gold); }
+a { color: var(--titan-gold); }
+a:hover { color: var(--titan-green); }
+input, textarea, select, button { font: inherit; }
+input:not([type=checkbox]):not([type=range]), textarea, select {
+    color: var(--titan-text); background: var(--titan-input);
+    border-color: var(--titan-border); border-radius: 4px;
+}
+button, .btn-primary, .btn-secondary {
+    color: var(--titan-text); background: var(--titan-raised);
+    border: 1px solid var(--titan-border); border-radius: 4px; cursor: pointer;
+}
+button:hover:not(:disabled), .btn-primary:hover, .btn-secondary:hover {
+    background: #303a2b; border-color: var(--titan-gold); color: var(--titan-gold);
+}
+:is(button, input, textarea, select, a):focus-visible {
+    outline: 2px solid var(--titan-green); outline-offset: 2px;
+}
+input[type=checkbox], input[type=range] { accent-color: var(--titan-green); }
+button:disabled { opacity: .5; cursor: default; }
+::selection { color: var(--titan-bg); background: var(--titan-green); }
+::-webkit-scrollbar-track { background: var(--titan-bg); }
+::-webkit-scrollbar-thumb { background: var(--titan-border); border-radius: 4px; }
+.navbar .app-brand {
+    display: flex; gap: 10px; align-items: center; padding: 6px 14px;
+    font-size: 14px; color: var(--titan-gold); background: var(--titan-bg);
+}
+.app-brand img { width: 32px; height: 32px; object-fit: contain; }
+.navbar ul { background: var(--titan-bg); border-color: var(--titan-border); }
+.navbar li a { color: var(--titan-muted); background: var(--titan-panel); }
+.navbar li a:hover, .navbar li a.active {
+    color: var(--titan-green); background: var(--titan-raised);
+}
+.social-links-li { display: none; }
+.theme-titan .logo { width: min(100%, 640px); height: auto; object-fit: contain; }
+.theme-titan .header { background: var(--titan-bg); }
+.theme-titan .nav-tab.active { color: var(--titan-green); border-color: var(--titan-green); }
+.theme-titan .info-item, .theme-titan .link-card { background: var(--titan-panel); }
+.theme-titan .warning, .theme-titan .warning-box { color: var(--titan-warning); border-color: var(--titan-warning); }
+.theme-titan .error, .theme-titan .error-message { color: var(--titan-error); }
+.theme-titan .success, .theme-titan .success-message { color: var(--titan-green); }
+
+/* The outer overlay stays transparent. Only its panel is painted. */
+html.titan-overlay, .titan-overlay body { background: transparent; }
+.theme-titan .chat-box {
+    background: var(--titan-panel); border-color: var(--titan-border);
+    box-shadow: 0 8px 32px #0009; cursor: auto;
+}
+.theme-titan .chat-input { background: var(--titan-input); color: var(--titan-text); }
+.theme-titan .chat-input:focus { border-color: var(--titan-green); box-shadow: none; }
+.theme-titan .messages-container { background: var(--titan-input); border-color: var(--titan-border); }
+.theme-titan .button-container { gap: 8px; flex-wrap: wrap; }
+.theme-titan :is(.undo-button, .regenerate-button, .leave-button, .cancel-button, .suggestions-button) {
+    background: var(--titan-raised); color: var(--titan-text); border: 1px solid var(--titan-border);
+    border-radius: 4px; background-image: none; cursor: pointer;
+}
+.theme-titan .suggestions-container { background: var(--titan-panel); border-color: var(--titan-gold); }
+.theme-titan .suggestion-item { background: var(--titan-raised); color: var(--titan-text); border-color: var(--titan-border); }
+.theme-titan .suggestion-item:hover { color: var(--titan-green); border-color: var(--titan-green); }
+.theme-titan.auto-send-suggestions .suggestions-container { border-color: var(--titan-green); }
+.theme-titan .custom-select-value, .theme-titan .custom-select-options { background: var(--titan-input); color: var(--titan-text); }
+.theme-titan :is(.message .sender, .current-speaker, .token-count) { color: var(--titan-gold); }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.navbar li { min-width: 0; }
+.navbar li a { padding: 12px 14px; }
+.navbar li.active a { color: var(--titan-green); border-bottom: 2px solid var(--titan-green); }
+.theme-titan .header { padding: 1rem; }

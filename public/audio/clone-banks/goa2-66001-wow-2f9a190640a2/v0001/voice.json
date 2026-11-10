@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-66001-wow-2f9a190640a2",
+  "revision": 1,
+  "name": "Talanji Khan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2874d3c512f99a90ba73cf02680c55f9d623b1144888eaa00558322871072bc9",
+    "transcript_sha256": "9fa9c607505b83c7a60981bf25b2c152290198349c499578cfdb4a601afc204a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 402860,
+      "seconds": 16.785833333333333,
+      "peak": 1.0,
+      "rms_dbfs": -16.3,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

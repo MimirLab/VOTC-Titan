@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-orik-trueheart-wow-39386b4e72d1",
+  "revision": 1,
+  "name": "Orik Trueheart — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7e10f9749e1d3aad2290be97e769c5c02970d5092795769db492ba7c08fb526c",
+    "transcript_sha256": "82df10fbdebe6c2cc7ff44ddefa89bb814327c1c6e4a899f68e73c0cc24ca7b7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 389196,
+      "seconds": 16.2165,
+      "peak": 0.90506,
+      "rms_dbfs": -17.3,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

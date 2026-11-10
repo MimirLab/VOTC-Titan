@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-mayla-highmountain-wow-f63e716f2d4d",
+  "revision": 1,
+  "name": "Mayla Highmountain — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4487a6fe3178d0d2538e72b8abc5d2433d10128d2ead6fedae4eadaea1c8c383",
+    "transcript_sha256": "17a7a90ccbe72aa3e6db18e6490ee43773ba9ce31e05949268cb9bfd1a1eea4f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 400250,
+      "seconds": 16.677083333333332,
+      "peak": 0.977814,
+      "rms_dbfs": -16.39,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

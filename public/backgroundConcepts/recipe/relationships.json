@@ -1,0 +1,1225 @@
+{
+  "version": 1,
+  "accounts": [
+    {
+      "accountHash": "67ff79d29179e2e5d13079f90c121d82eded335ae01af1e4afde053b647ae840",
+      "rootHash": "89636496bba4181e2e42caaebebfe9e44d6c98381c5c5c094010d89c862025b9",
+      "worship": {
+        "HighGodName": "Agamaggan",
+        "CreatorName": "Elune"
+      },
+      "text": "Agamaggan, the Great Boar and an Ancient Guardian, is revered for mighty strength. The tradition's shamans and geomancers seek his help in battle and ritual; ordinary followers can honor that patron without being those specialists.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "8fe16a847d158f37e1c0f4f4d1ed0f93b781f0ab85d941c05bdf739bfa94eb01",
+      "rootHash": "658bd7ca7db804f45908d205017f5303ce43dd45f98c2b87ab8a52a8ff58a865",
+      "worship": {
+        "HighGodName": "Al'Akir",
+        "CreatorName": "Al'Akir"
+      },
+      "text": "Al'Akir, Windlord of skies and storms, is revered as a cunning strategist whose winds can protect or destroy. Devotion admires subtlety and supreme aerial dominion; the broader tradition invokes Windlords and seeks their release from elemental imprisonment.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "e21b0789220821e8bba8d13fbb82d5a79f39c5079a7ef16d772168bcf812877a",
+      "rootHash": "f50fdf0ecf3d610840bf674934edb0656ff55095e50c822cfb5e55c29020e233",
+      "worship": {
+        "HighGodName": "Shadow",
+        "CreatorName": "Shadow"
+      },
+      "text": "This outlook questions whether cosmic forces deserve divinity at all. Alchemy makes those forces tools to understand and bend toward chosen ends, including weapons, rather than sacred authorities whose wishes must be obeyed.",
+      "vocabulary": "secular"
+    },
+    {
+      "accountHash": "3d108bdbf9bb063de3f22ea047be8e407ffb2ead596b78f7840d78459f1679c4",
+      "rootHash": "72783420c722664eb4323a62991bb64e2bf55af1efff87f90bb32400a0dac50c",
+      "worship": {
+        "HighGodName": "Eonar",
+        "CreatorName": "Eonar"
+      },
+      "text": "The Red Dragonflight is revered for its entrusted guardianship of life, natural order and justice. Its Queen Mother embodies that mission; protecting the vulnerable and cherishing life give devotion its ordinary meaning, while Eonar appears in the tradition's divine vocabulary.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "f388f6d3a3b1caa832260d406ff5a1617b9cc84675b286857337aeab3da4e000",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Akil'zon",
+        "CreatorName": "Akil'zon"
+      },
+      "text": "This loa tradition especially reveres hunting patrons. Hunting animals or people carries sacred significance, and consuming a defeated opponent is described as more honorable than eating small game. Akil'zon appears as its leading named power among several loa.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "3f4a3b35552b4a78d8c285422747879e4bdd715fe0226107b0380343f30c6807",
+      "rootHash": "748f4e925b5e5bcde433278c9b32078427b7cfb0bb76e7b660e3799dc413bd27",
+      "worship": {
+        "HighGodName": "Anzu",
+        "CreatorName": "Rukhmar"
+      },
+      "text": "Anzu, Raven God, is revered through shade, twilight, solitude and contemplation. The tradition remembers his enmity with Sethe and a flightless curse; Rukhmar is separately recognized in its creator vocabulary.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "96f7876fb2eea7cb00f69bbb48ee13e037f1343f6ea16bd24d3669937e9c6f57",
+      "rootHash": "b37ea0db984249ebdcd6c97df84693f5e701d279fdef85ae1ff532850405a011",
+      "worship": {
+        "HighGodName": "Magic",
+        "CreatorName": "Magic"
+      },
+      "text": "Arcane study is a path toward understanding the Order shaped by the Titans and, in this philosophy, toward divinity. Magic is treated as the sacred object of inquiry, rather than a named person automatically entitled to command its students.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "6c8c2b09c7948d7a08074684d2ba2d5bdd2072a1be24c132b1df641cdf9c17ae",
+      "rootHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "the Light"
+      },
+      "text": "The Light, a sacred guiding power, is this tradition's central focus; Tyr is a remembered exemplar of sacrifice, not its high god. Personal interpretation rejects heresy as a basis for condemnation, values life free from suffering and seeks protection against evil. These teachings supply no story of who created Azeroth.",
+      "vocabulary": "force",
+      "teachingContext": [
+        "affirmed_holy_light_teaching"
+      ],
+      "vocabularyRoles": [
+        {
+          "key": "WaterGodName",
+          "value": "Tyr",
+          "label": "Keeper made by the Titans, remembered for protecting others through sacrifice"
+        }
+      ]
+    },
+    {
+      "accountHash": "da6b94fd10cc61a8bc72587d10bcec596e0e62d14f03440bff2dcdac2e41fa78",
+      "rootHash": "09ea91473aeff9a7dd5ff89bc9b5609c7dddc7fc6217b10ddcb4117378f37677",
+      "worship": {
+        "HighGodName": "Arkkoroc",
+        "CreatorName": "arkkoroc_good_god_golganneth"
+      },
+      "text": "This tradition reveres a sea demigod believed to protect followers and test their faith through tempests and tides. Current captured vocabulary identifies the patron, while reverence joins hope of protection to the danger of the sea.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "2d38359ce0a271e75b55399e5801aaee3daa29188f0fee196f34ebf84146956d",
+      "rootHash": "9f25217877b4bfa3f85a2bd2fd2826b07393fe4d08f6726a21468de8ecb0f600",
+      "worship": {
+        "HighGodName": "Shaohao",
+        "CreatorName": "Shaohao"
+      },
+      "text": "Chi-Ji, Niuzao, Xuen and Yu'lon, the four August Celestials, are revered as teachers of meditation, mastery of negative emotion and spiritual connection with the world. Their temples train monks; ordinary followers may respect the teaching without having monastic training.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "c701951b850ec023c26de5e2ae274f829e3257f9428e766d4b8524a26a7b4e5a",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "N'Zoth",
+        "CreatorName": "N'Zoth"
+      },
+      "text": "Azshara is venerated as a magnificent queen whose pride and appetite for power led to catastrophe and a bargain with N'Zoth. Devotion joins sacred queenship to the deep patron's power, rather than treating the queen and the Old God as interchangeable beings.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "7ac5b5ad2fb89beceb61b17c11a2da2ca12cbfc97ca8a36984870d423af193d1",
+      "rootHash": "7bf4f70f934a88ecac3a7c4ba9b64ade7a07644951cb2135c09150877d04f178",
+      "worship": {
+        "HighGodName": "the Disorder",
+        "CreatorName": "the Disorder"
+      },
+      "text": "This tradition seeks potent knowledge of demons and fel through collaboration and shared discoveries while refusing to become their slaves. Peer standing is severe: betrayal or perceived weakness threatens exclusion, even as disciplined mastery resists being consumed by the power pursued.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "21f24cabde0437c16cc890716e537e325daf412173759b97a6ecedcb4ecb12b8",
+      "rootHash": "54234eeb0de912c8a0a5ae311dba7c3f1aa4703b15c9e476122d9198261df96d",
+      "worship": {
+        "HighGodName": "Sargeras",
+        "CreatorName": "Sargeras"
+      },
+      "text": "Sargeras, the Dark Titan, commands a demonic crusade whose creed seeks the extinguishing of life. Its inherited doctrine gives cosmic destruction a sacred purpose and prizes cruelty and deception in service to that end.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "f80c20869f6ea31b5f619d9c573a22972ec3dfd0f0e224ce39307997ada7ea38",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "C'Thun",
+        "CreatorName": "C'Thun"
+      },
+      "text": "C'Thun, an Old God called the God of Madness, is revered through terrifying brutality, chaos and the destruction associated with his qiraji children. The account favors direct overwhelming horror rather than N'Zoth's more subtle manipulation.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "e73d4cb9b4fb960138c06359bb7f4aa0845aa714e70226329168a0ae4c9e8b9b",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Ariwo",
+        "CreatorName": "Ariwo"
+      },
+      "text": "Ariwo, the fox loa, is remembered for teaching followers to survive through solidarity and kindness toward one another. His disappearance belongs to the inherited story; devotion continues through honoring those covenants rather than requiring a present divine voice.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death within the observed sacred vocabulary"
+        }
+      ]
+    },
+    {
+      "accountHash": "3af4565b821d1dc9092d7a47738ae00f1bd77f8de420e94c58fea0ec50dea5d8",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Hakkar",
+        "CreatorName": "Hakkar"
+      },
+      "text": "Hakkar the Soulflayer offers terrifying power in exchange for sacrificed souls. This blood loa's bargain is condemned by other loa traditions, so devotion can join reverence, costly obligation, fear and defiance of outsiders' judgment.",
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_hakkar_teaching"
+      ]
+    },
+    {
+      "accountHash": "ae9a9afc11bae78c57fa17bb504bebef97310814e0e56363c764bb0798000dca",
+      "rootHash": "b37ea0db984249ebdcd6c97df84693f5e701d279fdef85ae1ff532850405a011",
+      "worship": {
+        "HighGodName": "Magic",
+        "CreatorName": "Magic"
+      },
+      "text": "The Nightwell is revered as an arcane source of sustenance and change. The inherited tradition preserves and develops an isolated pre-Sundering legacy, tying magical continuity to communal memory and the pleasures of a cultivated life.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "cb8a128b55fd9d420ceddf3dfec9d553ae12f66d80fc335c8a6d48f283365be7",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Sethraliss",
+        "CreatorName": "Sethraliss"
+      },
+      "text": "Sethraliss, the serpent loa, is revered as a protective maternal patron. The tradition remembers her sacrifice for Vol'dun and hopes for her rebirth, making care, restraint and renewed life meaningful forms of devotion.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death within the observed sacred vocabulary"
+        }
+      ]
+    },
+    {
+      "accountHash": "5597aec58c8b8f76d17af76595e3fb329f2a9c21b597ad61d740aebdc56fc289",
+      "rootHash": "b37ea0db984249ebdcd6c97df84693f5e701d279fdef85ae1ff532850405a011",
+      "worship": {
+        "HighGodName": "Magic",
+        "CreatorName": "Magic"
+      },
+      "text": "This largely secular outlook regards the Sun as a source of arcane power. In desperate moments adherents may address it as a living deity; that possibility does not make every ordinary expression of gratitude a literal divine conversation.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "0f89c7679a87ef71c18e4d4d2321f393e47bc98d740a781315943b6593e5bebd",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "The candle is revered as wise, life-preserving light against underground darkness, with the possibility of deeper protection left mysterious. Practical survival and sacred regard meet in keeping that fragile light safe.",
+      "vocabulary": "account",
+      "teachingContext": [
+        "affirmed_wise_candle_teaching"
+      ]
+    },
+    {
+      "accountHash": "20780cddf9c81606d696dc6556b2c886b71a8135b8a0d5715187e3fc2b0211a6",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Torga",
+        "CreatorName": "Torga"
+      },
+      "text": "Torga, the turtle loa, is revered as wise and benevolent. Pilgrimage to hear his stories gives patient learning and remembered counsel a sacred center, alongside the community's current obligations.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death within the observed sacred vocabulary"
+        }
+      ]
+    },
+    {
+      "accountHash": "edd9e01af1286378371bbecae3e10d2afb89a7388b3c95568062a70a1f3921c1",
+      "rootHash": "513b115a7ab18aa92c6ff337f8091d087e9f50d65521a9f4717dfa9b63c723d8",
+      "worship": {
+        "HighGodName": "Fortuna",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Confidence rests in one's own abilities and tangible, spendable wealth: profit, influence and measurable advantage over insubstantial spiritual promises. Gold is usable power, not a deity. These secular roots profess no divine creator; separately adopted religious teachings remain current teachings, without supplying an unnamed creator or fortune sovereign.",
+      "vocabulary": "secular",
+      "teachingContext": [
+        "affirmed_tangible_profit_confidence_teaching"
+      ]
+    },
+    {
+      "accountHash": "2cb497da86cfe69e74f791ea7d48f360d05d4614c0b3f2d3a89d1547c96ca836",
+      "rootHash": "3c7e2cf162773944987920bd32f9d69beded54e0e25949ef1f5a6cb85475c93e",
+      "worship": {
+        "HighGodName": "Death",
+        "CreatorName": "Death"
+      },
+      "text": "This death cult serves the Lich King and associates his power with the Shadowlands. Rune work belongs to the tradition's mystical armaments; service to the necromantic ruler, rather than an ordinary metaphor for mortality, gives its inherited devotion direction.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "09c7929fb01a3ba1fb66ac5942ca98c106c505977ffb2159eff41a4042af89de",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Mam'toth",
+        "CreatorName": "Rezan"
+      },
+      "text": "This loa tradition regards surviving harsh conditions through a strong body and keen mind as sacred striving. Mam'toth is its leading supplied patron; other named loa share the pantheon, with Rezan separately present in creator vocabulary.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death within the observed sacred vocabulary"
+        }
+      ]
+    },
+    {
+      "accountHash": "50b147e1865a6c4ba03d2045ed02b3595ef2c5322796f152f3875cf5d1f4a6cc",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Naraxas, matriarch of Highmountain's great worms, is revered with the creatures under her care. Feeding worms eagle eggs and sacrifices supports a bond of provision and hoped-for martial strength, rather than abstract worship of anonymous ancestors alone.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "8bfdec1196c8e0a28b83bb27e6cdc0791bebf3c9a111920d01547fcaa7ab94c7",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Earth Mother",
+        "CreatorName": "the Earth Mother"
+      },
+      "text": "The Earth Mother represents sacred earth and living nature. Devotion joins gratitude and responsibility toward that living order with distinct relationships to ancestors and nature spirits; shamanic and druidic paths interpret and tend those relationships.",
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_earth_mother_teaching"
+      ]
+    },
+    {
+      "accountHash": "ee6b4f946deec2ca401dab606179a55a153ba05411a83bb495c991167666bc0f",
+      "rootHash": "655e50c8be7be6ca8830da2eb71b98930c4fdee08b3d1fac001c20841826072b",
+      "worship": {
+        "HighGodName": "Death",
+        "CreatorName": "Death"
+      },
+      "text": "This tradition grew among former Scourge who regained freedom and turned against the Lich King. The Ebon Blade gives that new outlook a protective purpose: confronting death's powers while defending the world rather than returning to the ruler's control.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "7e39f8ec2f699c524abb08fec8211a5f31a5afd046d887829844b463a30a542f",
+      "rootHash": "f50fdf0ecf3d610840bf674934edb0656ff55095e50c822cfb5e55c29020e233",
+      "worship": {
+        "HighGodName": "Shadow",
+        "CreatorName": "Shadow"
+      },
+      "text": "This outlook seeks an answer to the grief of undeath in arcane attempts to recover life essence. Hope for restoration and the risks of dangerous magical experimentation shape its inherited aspiration more directly than worship of a personal Shadow deity.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "338dd4aa680bbb37fb1be9b9a66aaba386e8439c5ce1ce451c7168003c9469d8",
+      "rootHash": "986840b369719012863302b4483b4b0f70bfc3eee883a99af250cfa20e563553",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "This tradition turns against Sethraliss and seeks freedom or power from former loa. Its inherited model forcibly uses the serpent patron's divine essence for its own ends: rejection and appropriation, rather than grateful service or reciprocal blessing.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "a7d40db364f54d24c0e142172bc48fbf391eee76ba9bfbcbc26b723f1b52f138",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Ueetay no Mueh'zala",
+        "CreatorName": "Rezan"
+      },
+      "text": "This loa tradition reveres Mueh'zala through a severe relationship with death and blood rites that other trolls view as dangerously near Hakkar's practices. Pride in an inherited patron can coexist with dread and disagreement over what that patron or his priests deserve.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "5ddc1bbfaead760a691f7fc32dd6c1c5673e6895fd512891ba6e60cb2226629f",
+      "rootHash": "f50fdf0ecf3d610840bf674934edb0656ff55095e50c822cfb5e55c29020e233",
+      "worship": {
+        "HighGodName": "Shadow",
+        "CreatorName": "Shadow"
+      },
+      "text": "The Forgotten Shadow regards dark energy as necessary alongside the Light, pursuing balance while warning against corruption. Its specialists seek to use shadow without losing themselves in it; devotion is not surrender to the Old Gods.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "c1f90b5f40183b7adf64e0324e39e8726490741d947511856cb18dc49f2f90c8",
+      "rootHash": "f50fdf0ecf3d610840bf674934edb0656ff55095e50c822cfb5e55c29020e233",
+      "worship": {
+        "HighGodName": "Shadow",
+        "CreatorName": "Shadow"
+      },
+      "text": "Forgotten Shadow teaching gives this tradition its public spiritual inheritance, while practical authority centers on a powerful, charismatic cult leader. Loyalty, interpretation and the use of religious influence can depend on that leader's actual purposes, for better or worse.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "11029fba0dfdaba7dbe9a5efe90c74b9ba10624d892fd22504260c2248d8267a",
+      "rootHash": "09ea91473aeff9a7dd5ff89bc9b5609c7dddc7fc6217b10ddcb4117378f37677",
+      "worship": {
+        "HighGodName": "The One in the Deeps",
+        "CreatorName": "The Deepmother"
+      },
+      "text": "Sea powers and the mighty creatures within the waters receive reverence through attempts to commune with them. The local pantheon can change as creatures appear, die or depart; even a formidable shark or swift fish may become a living sacred symbol.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "49a62ce63efb463854027593a138ec23e3726c58c6beee6a6d37e88531fa1584",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "G'huun",
+        "CreatorName": "G'huun"
+      },
+      "text": "G'huun, a titan-created horror revered as the Blood God of rot, is treated by devotees as the source of a terrible kinship through corruption, blood and decay. The inherited account scorns technology and esteems a return to primitive life.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "ac0526fee224a75113a3bd63f3838f84e566ebacee28ec484242dad6bf58bfe9",
+      "rootHash": "99519bc36f8afc4bb9d5ebd9ff1e7658ef18a605b692d479956c8784457c2b77",
+      "worship": {
+        "HighGodName": "the Glow",
+        "CreatorName": "the Glow"
+      },
+      "text": "Gas and radiation are revered as forces of transformation and enlightenment. The inherited account grew from Gnomeregan's catastrophe, giving the Glow a sacred significance beyond ordinary injury or contamination.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "6bd60b38a9f1ebbac4ee8c8beb09bc5c4c7a229624aab2b9ad3a4defe2f8d7fd",
+      "rootHash": "84ae3ce37d831c19f2f87187f9361e65814e59f7af973f62a7c8c011c0434c86",
+      "worship": {
+        "HighGodName": "Gorgog",
+        "CreatorName": "Grond"
+      },
+      "text": "Gorgog the Gronnslayer broke the gronn's bodies and ate their marrow to demonstrate that the gronn were not gods. His imperial legacy esteems arcane mastery; Grond supplies a separate creator term at the meeting of titan and elemental inheritance.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "cec89be3c091f60e26cb850d4a77bc3332d0b5f32648ac5d0c9472b072192397",
+      "rootHash": "09ea91473aeff9a7dd5ff89bc9b5609c7dddc7fc6217b10ddcb4117378f37677",
+      "worship": {
+        "HighGodName": "Aman'Thul",
+        "CreatorName": "Khaz'goroth"
+      },
+      "text": "This tradition understands itself as guardian of surviving titan technology, valuing protective custody even when the artifacts are poorly understood. The supplied Pantheon, Aman'Thul and Khaz'goroth give that custodianship a wider sacred vocabulary.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "9318c9baf4a008d68b6aec80ee35d2c7faf826352e3aebd6690102d5b200ed2e",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Bwonsamdi",
+        "CreatorName": "Rezan"
+      },
+      "text": "Bwonsamdi, loa of death, holds a central place among several revered loa. Care for the dead and ritual dealings with their bodies make death a continuing relationship within the community, rather than a simple opposition between living and dead.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death, distinct from the departed kin"
+        }
+      ]
+    },
+    {
+      "accountHash": "c0db015fa5824f1c2a97794b42540d3d7ad727c28c4b1605489abf6594fbc25f",
+      "rootHash": "655e50c8be7be6ca8830da2eb71b98930c4fdee08b3d1fac001c20841826072b",
+      "worship": {
+        "HighGodName": "Death",
+        "CreatorName": "Death"
+      },
+      "text": "Helya rules Helheim in the tradition's account, gathering the dead into her service in opposition to Odyn's halls and warriors. Devotion can carry the dread, allegiance and resentment of a rival claim over the fate of souls.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "0d48c652d2d4c9450882aa330ea209c3301f2155b95ec51bbb1cefc71bca03f9",
+      "rootHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "the Light"
+      },
+      "text": "The Church traces its spiritual authority through St. Mereldar's visions and an inherited priestly tradition. The sacred Light guides piety, kindness, justice and help for the vulnerable; remembered sacrifice gives those ideals a lived moral example.",
+      "vocabulary": "force",
+      "teachingContext": [
+        "affirmed_holy_light_teaching"
+      ],
+      "vocabularyRoles": [
+        {
+          "key": "WarGodName",
+          "value": "Tyr",
+          "label": "Keeper made by the Titans, remembered for protecting others through sacrifice"
+        }
+      ]
+    },
+    {
+      "accountHash": "428523f4f150f90b516b1b625d505cc58282d1d53bca97f35164dee9b295a0bb",
+      "rootHash": "89636496bba4181e2e42caaebebfe9e44d6c98381c5c5c094010d89c862025b9",
+      "worship": {
+        "HighGodName": "Elune",
+        "CreatorName": "Elune"
+      },
+      "text": "Elune, moon goddess, leads a pantheon including the Ancient Guardians. The inherited tradition gives priestesses considerable social authority and druids a distinct kinship with the Guardians; protecting nature and honoring ancestral sacrifices carry sacred significance.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "7ba675f861f2f217bde98c3ab51ef8034ce6ed0ff28e21753289487e6c6f09fe",
+      "rootHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "Khaz"
+      },
+      "text": "The Light's teachings are blended with independent reverence for Khaz, the Father figure of dwarven tradition. This inheritance retains a distinct sacred identity rather than merely submitting to the Church's interpretation of the Light.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "WarGodName",
+          "value": "Tyr",
+          "label": "Keeper made by the Titans, remembered for protecting others through sacrifice"
+        }
+      ]
+    },
+    {
+      "accountHash": "cf749c8d6e03cd0b69711b5f7158ab9ae90dfb2c202b6b0b54e93b378caccceb",
+      "rootHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "the Light"
+      },
+      "text": "This tradition combines respect and wonder for arcane learning with varied devotion: some revere magic itself, while others honor the Light through an arcane interpretation. Inquiry and religious attachment coexist without one mandatory object of worship for every adherent.",
+      "vocabulary": "force",
+      "vocabularyRoles": [
+        {
+          "key": "WarGodName",
+          "value": "Tyr",
+          "label": "Keeper made by the Titans, remembered for protecting others through sacrifice"
+        }
+      ]
+    },
+    {
+      "accountHash": "8096b5fae3c1798c4bafd4a4301f8287da8739e432303e9dc6995dd7b8fe445e",
+      "rootHash": "4673be8f17e9eb2bb9de3b3cc65b13a7f4f2f76b9071106fc1878d8c6c8728e6",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "K'ure"
+      },
+      "text": "The Light is pursued as the universal path to peace and justice under naaru teachings. The inherited doctrine seeks conversion even by force, treating resistance as an obstacle to sacred unity; its righteousness can therefore carry coercive demands.",
+      "vocabulary": "force",
+      "vocabularyRoles": [
+        {
+          "key": "CreatorName",
+          "value": "K'ure",
+          "label": "Naaru teacher in the tradition's divine vocabulary"
+        }
+      ]
+    },
+    {
+      "accountHash": "75d55dcf5a925a139c2ba767ca116df76567b02ff6b16058af95b2b1e4cfc76c",
+      "rootHash": "655e50c8be7be6ca8830da2eb71b98930c4fdee08b3d1fac001c20841826072b",
+      "worship": {
+        "HighGodName": "Death",
+        "CreatorName": "Death"
+      },
+      "text": "This death tradition draws on Maldraxxus and its necromantic arts. Creating animated abominations from many dead bodies is a distinctive specialist practice, giving death the meaning of material to shape and martial power to cultivate.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "f341bf336667ac06907adf4f00e76a0eb677a1147ce5d79f82f5a1159bd5a24e",
+      "rootHash": "72783420c722664eb4323a62991bb64e2bf55af1efff87f90bb32400a0dac50c",
+      "worship": {
+        "HighGodName": "Norgannon",
+        "CreatorName": "Norgannon"
+      },
+      "text": "The Blue Dragonflight is revered as guardian of arcane energies and knowledge. Its entrusted mission gives responsible magical understanding a sacred purpose; Norgannon belongs to the divine inheritance, while the dragons' Nexus connection is their own.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "e1d3b56fe1178814fba270ea8a4038f7ce355d9c54a510ab13ac48236eb2529e",
+      "rootHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "worship": {
+        "HighGodName": "the Supreme Being",
+        "CreatorName": "the Great Architect of the Universe"
+      },
+      "text": "This tradition rejects priestly moral monopoly and sacred kingship while honoring a Supreme Being described as the Great Architect. Freedom, equality and fraternity give that reverence a social meaning independent of submission to the Church.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "bf336cc88ab5de79accd3c689c970e3ffe8d82f7335d094b51189d5851c5e577",
+      "rootHash": "06e27e476061b2cd025a2edcbcdfa0f02477222b44d12c4b6e20779a9ab1ad00",
+      "worship": {
+        "HighGodName": "Monkey King",
+        "CreatorName": "Monkey King"
+      },
+      "text": "The Monkey King is the named patron of a playful, pleasure-seeking tradition expressed through irreverent hozen sayings. Its account draws a distinction between one's own people and outsiders in talk of taking shinies and drink.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "3ab07288306068c9e67506f6cff62cdcebba2f1ee2d7b15b2355faab237c6d9b",
+      "rootHash": "5e2f944ab2a15b064cf7df31793f68704c529a6bf48bb1253aa7639f6660a453",
+      "worship": {
+        "HighGodName": "Arachelune",
+        "CreatorName": "the All-seeing"
+      },
+      "text": "Arachelune is revered as a spider-goddess interpretation of Elune. Her inherited cult demands absolute fealty and obedience, giving devotion an exacting personal authority rather than an abstract commitment to civic order alone.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "2ae3d6f7a3416cb89233c3ae9cd8d707700014bcb3b03117909cfcc4180e957f",
+      "rootHash": "e7e2008dee408faa38e0d663230e5a91238de27270a715ca55cc3b70ef3af17f",
+      "worship": {
+        "HighGodName": "Aman'Thul",
+        "CreatorName": "Khaz'goroth"
+      },
+      "text": "The Titanic Pantheon, led by Aman'Thul, is revered through guardianship of Azeroth's world soul and the Makers' works. The inherited tradition claims a special duty to defend titan complexes while awaiting the Titans' return.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "4ad74863a8a19783059fc72d12aa6b82b08cbde07876210886484a32a4cd0c89",
+      "rootHash": "72783420c722664eb4323a62991bb64e2bf55af1efff87f90bb32400a0dac50c",
+      "worship": {
+        "HighGodName": "Khaz'goroth",
+        "CreatorName": "Khaz'goroth"
+      },
+      "text": "The Black Dragonflight's entrusted earthward mission is revered as protection of Azeroth and preservation of balance. The account recognizes corruption as a shadow on that duty while holding uncorrupted guardians as a possibility of redemption; Khaz'goroth belongs to its divine inheritance.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "e115fc6c667974524f464e6a732c9b9f71aac35002afab5e449aa06bb0fe0424",
+      "rootHash": "2ae6d85173d9e56fa1433c58bfb8bbd762c75cf654256aeeeef94fa6dea369af",
+      "worship": {
+        "HighGodName": "Neptulon",
+        "CreatorName": "Neptulon"
+      },
+      "text": "Neptulon, Tidehunter and Lord of Waters, is revered as both guardian of marine life and a formidable judge. His possible benevolence coexists with catastrophic wrath at defiance, making devotion a relationship of respect, favor and caution rather than simple gentleness.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "c074282108f12ae480724d1bed21924a48abaf072c052212b7985bed50d591ee",
+      "rootHash": "72783420c722664eb4323a62991bb64e2bf55af1efff87f90bb32400a0dac50c",
+      "worship": {
+        "HighGodName": "Aman'Thul",
+        "CreatorName": "Aman'Thul"
+      },
+      "text": "The Bronze Dragonflight is revered for safeguarding chronological and causal integrity through its entrusted mission. Mortal followers, unable to fully understand its workings, often interpret them as fate and predestination; Aman'Thul belongs to the divine inheritance.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "326b32982c7952248cd75e61eec626fba39ef53a9623c07c3ec94acbee6a89a4",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "N'Zoth",
+        "CreatorName": "N'Zoth"
+      },
+      "text": "N'Zoth, God of the Deep, is revered through cunning, manipulation and corrupting whispers. His inherited cult values deception and change as ways a constrained power can influence the world without overwhelming force.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "4723aaa4b2491d97535dffbf97c29bda74a655ef04e3b917a72ebef31298b34d",
+      "rootHash": "e7e2008dee408faa38e0d663230e5a91238de27270a715ca55cc3b70ef3af17f",
+      "worship": {
+        "HighGodName": "Odyn",
+        "CreatorName": "Khaz'goroth"
+      },
+      "text": "Odyn is revered through the valor of the Valarjar and the hope that worthy warriors' spirits will be chosen for the Halls of Valor. The inherited account ties strength and enduring martial service to a sacred claim of protecting Azeroth.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "f802610e7c64df0341956a0f61f53b7507a09a1462e6d13a22ac64d96fe76192",
+      "rootHash": "c23e96aabc578489944b17f9707fac1ab3cd1c236301f9bee078c9e1f573d788",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "This older nature tradition recognizes a divine spark in plants and animals through local lesser spirits. Its inherited experience was apart from the great Wild Gods; everyday reverence can rest in familiar living relationships rather than a named universal pantheon.",
+      "vocabulary": "ancestral"
+    },
+    {
+      "accountHash": "5bda8ff774ce02662f9a2550c4d2a68a6f2a33ac493297a1ed28f703d5c419f7",
+      "rootHash": "54234eeb0de912c8a0a5ae311dba7c3f1aa4703b15c9e476122d9198261df96d",
+      "worship": {
+        "HighGodName": "Sargeras",
+        "CreatorName": "Sargeras"
+      },
+      "text": "This inherited outlook seeks power through fel, including demonic contracts or blood bargains, without requiring service to the Burning Legion. The hunger for greater power and control threatens the soul and the bonds of one's own people.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "e7f2b3df2937937a770199372095e93994ada4665248533e7d00a0d3d09297d3",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Ancestors remain significant powers in the lives of the living. This tradition seeks their counsel and help through practices such as dreams and visions, within a broader reverence for spirits and natural forces.",
+      "vocabulary": "ancestral"
+    },
+    {
+      "accountHash": "f8015cff56f759af2b5ef5a6b55815c976ab5ecde66113e44227ea7d719f3b13",
+      "rootHash": "f92d7999f93b33bc6c274debd58791531b1e422329fc99b0194706dbe4ef8bdc",
+      "worship": {
+        "HighGodName": "Ordos",
+        "CreatorName": "Ragnaros"
+      },
+      "text": "Ordos is revered through his painful ascent into fire divinity after the Firelords' promise. The tradition's fire keepers emulate that ordeal and seek to ease his agony through prayers and enchantments, joining aspiration with terrible cost.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "53be429b61d1acf7ea8bbcf8534da5d6ca86b28b02ec8b9362c846dfeb05e4dc",
+      "rootHash": "2ae6d85173d9e56fa1433c58bfb8bbd762c75cf654256aeeeef94fa6dea369af",
+      "worship": {
+        "HighGodName": "the Great Sea",
+        "CreatorName": "the Great Sea"
+      },
+      "text": "The Great Sea and the powers within it receive reverence from a tradition associated with unchained seafaring, freedom and wealth. Its inherited account includes sea raiding, but sacred regard for the sea is broader than a compulsory profession of piracy.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "9c1cac95991e4cb12e4ed30d237b43bdd48dad6eed189fb290e3f1046ecac757",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Locally known spirits and lesser elementals are approached as patrons through guarded traditions, wards and ritual, seeking a workable balance with the natural world. Outsiders' limited knowledge does not make these relationships meaningless or interchangeable.",
+      "vocabulary": "ancestral"
+    },
+    {
+      "accountHash": "a67a06860f7fdd1889a93631c80e15042a23113ec9832a318f8c21c0af973d36",
+      "rootHash": "f92d7999f93b33bc6c274debd58791531b1e422329fc99b0194706dbe4ef8bdc",
+      "worship": {
+        "HighGodName": "Ragnaros",
+        "CreatorName": "Lord Rhyolith"
+      },
+      "text": "Ragnaros, Firelord, is revered and feared as a merciless master whose flame is believed to purify. The inherited tradition approaches him through a sacred intercessor and seeks favor through submission, making divine power both an aspiration and a threat.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "f36b381d237426a8418c8c759c3f427ae228dcef0c233d2a2bf8a25a7337b308",
+      "rootHash": "513b115a7ab18aa92c6ff337f8091d087e9f50d65521a9f4717dfa9b63c723d8",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "This secular outlook trusts inquiry, diligence and intelligence as routes to technological progress. Forward-looking invention matters more than inherited non-scientific accounts; confidence is placed in what can be understood and improved rather than a demanded divine authority.",
+      "vocabulary": "secular",
+      "teachingContext": [
+        "affirmed_empirical_inquiry_teaching"
+      ]
+    },
+    {
+      "accountHash": "d6b897a8a72346955defd9b644257692973dcf7444bf02672d305d476b3e79cf",
+      "rootHash": "748f4e925b5e5bcde433278c9b32078427b7cfb0bb76e7b660e3799dc413bd27",
+      "worship": {
+        "HighGodName": "Rukhmar",
+        "CreatorName": "Rukhmar"
+      },
+      "text": "Rukhmar, Sun Goddess, is revered as a mother figure in the tradition's origin story. Anzu is a distinct counterpart associated with cunning, and devotion carries a hope of rejoining the mother in the skies after death.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "1aafc5c069b8609447e78af2d0072f3af6aaa38ca8185528252bedcd4c7f7aa6",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Elune",
+        "CreatorName": "Elune"
+      },
+      "text": "Moon reverence joins this loa tradition to worship of Elune, alongside a broader pantheon of spirits. Its inherited account sees a kinship with night-elven devotion while keeping its own loa practices and communal identity.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death within the observed sacred vocabulary"
+        }
+      ]
+    },
+    {
+      "accountHash": "d0d7fc54230c4d445b566d17f4455f7ba6a03450485fa9680652716ebec6cf4d",
+      "rootHash": "f59a612f8ea639bf846331b7b524f9cd0029c5dab13b2537fe4cffba934cfada",
+      "worship": {
+        "HighGodName": "Noor",
+        "CreatorName": "Noor"
+      },
+      "text": "Noor, the Light understood as one indivisible sacred presence, is held to create each moment while leaving people free to choose good or evil. Devotion interprets those choices through what this theology says the Light commands and forbids.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "ca04c500e4d63473ad892bb987fa2a27db3518e9c6b7e83d3b8a5e04f20efedc",
+      "rootHash": "a10a8c46fc3e0c8914301f06ebbab661f7d59d5f15dd6dd8d11f814037f5e084",
+      "worship": {
+        "HighGodName": "Kros",
+        "CreatorName": "Kros"
+      },
+      "text": "Kros, an invisible devilsaur in the sky, is revered in an origin story of peoples and jungles. Living devilsaurs are honored as his offspring and lesser deities; growing stronger and continuing the struggle give devotion its ordinary direction.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "fc81bf891387f2c876a9064abd8f5b656197f938ff94e3f986a560dd0934fe58",
+      "rootHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "the Light"
+      },
+      "text": "This militant Light tradition interprets unholy beings as punishment for humanity's impiety. Its inherited doctrine demands the purging of unbelievers and perceived corruption through cleansing flame, turning fear and righteousness toward exclusion.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "WarGodName",
+          "value": "Tyr",
+          "label": "Keeper made by the Titans, remembered for protecting others through sacrifice"
+        }
+      ]
+    },
+    {
+      "accountHash": "d1f67160c4b72b97def2ae3a0217a26a1b9a8d9226dc01668ff90deb92d119cb",
+      "rootHash": "748f4e925b5e5bcde433278c9b32078427b7cfb0bb76e7b660e3799dc413bd27",
+      "worship": {
+        "HighGodName": "Sethe",
+        "CreatorName": "Sethe"
+      },
+      "text": "Sethe, the Dead God, is revered through a curse interpreted as a gift of his divinity. His conflict with Anzu and Rukhmar gives the inherited tradition a defiant relationship to other avian worship, valuing what outsiders condemn.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "c48143b45475a0349886788807af9ae71468b0ffd2f1d588df8f2ae2098c5de1",
+      "rootHash": "5e2f944ab2a15b064cf7df31793f68704c529a6bf48bb1253aa7639f6660a453",
+      "worship": {
+        "HighGodName": "the All-seeing",
+        "CreatorName": "the All-seeing"
+      },
+      "text": "This civic philosophy values society and its laws above the individual, calling for emotional renunciation and willingness to sacrifice oneself for the common good. Obligation rests primarily in collective order rather than a clearly explained personal deity.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "1f9d927b96c7d5d50aa71353af2c9761d91f77a2465d125ac75a866f42c894d5",
+      "rootHash": "c23e96aabc578489944b17f9707fac1ab3cd1c236301f9bee078c9e1f573d788",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "This older nature tradition has a close sacred relationship with Bear Gods, especially Ursoc as a hunting patron. Reverence for living nature and ancestors gives inherited community and the hunt a spiritual depth.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "2f0592e57662a0137ac03849ab802bd451b1e81646533dc4e040e1ffb6eeccfe",
+      "rootHash": "e7e2008dee408faa38e0d663230e5a91238de27270a715ca55cc3b70ef3af17f",
+      "worship": {
+        "HighGodName": "Aman'Thul",
+        "CreatorName": "Khaz'goroth"
+      },
+      "text": "The Titanic Pantheon and its works are revered through exacting guardianship. The inherited tradition uses solar power as a martial ideal and treats beings outside the titan legacy as tainted, making protection of sacred order dangerously exclusive.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "18a1b49ff814f4c81b3db3ec6005ecc874998a3f5bee6f3cad209ce20a5ef24e",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Ancestors are honored as departed kin whose guidance is sought. The inherited elemental practice instead compels land and elements to submit to the practitioner's will: a harsh struggle of perseverance, not willing partnership. Honoring ancestors and subjugating elements are different relationships; neither gives an ordinary follower magical command.",
+      "vocabulary": "ancestral",
+      "teachingContext": [
+        "affirmed_elemental_subjugation_teaching"
+      ]
+    },
+    {
+      "accountHash": "efd94eb90821ae09c7c1110d70f67bb753a0129c0210298b767a47f27c448243",
+      "rootHash": "de53fe76ad77fb47f8f954ffac576486ec59817e21deee633d15d1be7f3b298a",
+      "worship": {
+        "HighGodName": "Theradras",
+        "CreatorName": "Theradras"
+      },
+      "text": "Theradras, an earth elemental and mother figure in the inherited centaur story, is revered through a troubled bond of ancestry, rage and ambition. The account remembers dark bargains and rivalry with Therazane rather than peaceful maternal care alone.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "3a49d89b89b99775d32de0da1f108547a31f9945f27c6797d5881785a05902a9",
+      "rootHash": "de53fe76ad77fb47f8f954ffac576486ec59817e21deee633d15d1be7f3b298a",
+      "worship": {
+        "HighGodName": "Therazane",
+        "CreatorName": "Therazane"
+      },
+      "text": "Therazane, the Stonemother, is revered as a protective maternal earth power. The inherited account prizes preservation, stability and patience, depicting her care for her children and rejection of needless conflict as an example to followers.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "c3c27d7894692cda8a59652b301c9d156d561995bd19f98303fe73998ecb49fa",
+      "rootHash": "655e50c8be7be6ca8830da2eb71b98930c4fdee08b3d1fac001c20841826072b",
+      "worship": {
+        "HighGodName": "Death",
+        "CreatorName": "Death"
+      },
+      "text": "This tradition treats Thros and its death magic as a source of power, especially through binding dead souls into durable constructs. Witch covens carry its influence among the living; extreme specialist devotion may promise a horrific transformation.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "c45d0d26989c47e14fc33430bec6c93fbca4c322d49a0ffe7c2492f7cf512f4d",
+      "rootHash": "e7e2008dee408faa38e0d663230e5a91238de27270a715ca55cc3b70ef3af17f",
+      "worship": {
+        "HighGodName": "Lei Shen",
+        "CreatorName": "Ra-den"
+      },
+      "text": "Lei Shen, the Thunder King, is revered for taking mighty powers and forging an imperial claim to the Makers' legacy. His tradition regards demonstrated worth and strength as grounds to rule and carry on the titanic work.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "a10f6e57fe93a67ea2ff3eea4a2a95f3bddd58b391c4bd3d2fd049d38542b73a",
+      "rootHash": "2ae6d85173d9e56fa1433c58bfb8bbd762c75cf654256aeeeef94fa6dea369af",
+      "worship": {
+        "HighGodName": "The Tidemother",
+        "CreatorName": "The Tidemother"
+      },
+      "text": "The Tidemother receives reverence from people who depend on sea and favorable winds. Ordinary devotion seeks guidance and safe passage; tidesages cultivate a deeper practice of listening to the waters that most followers do not share.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "6bd36ddec7f84e6bbe16b4a7736b1e5cca3a16504ed400efffba3f6297a00888",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Salamanders are revered as masters of a harsh underground environment and examples of strength and survival. Tales connect them to dragons, while followers aspire to learn mastery of the land from these formidable living beings.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "2c5535ca4e16aedd8c5bceb7803ff645f69c31a7fd84c870d8d3ffa3b01ede2b",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "Oacha'noa",
+        "CreatorName": "Oacha'noa"
+      },
+      "text": "Four distinct deities or spirits are worshipped: Tayutka, Karkut, Issliruk and Oacha'noa. Departed kin are a separate relationship: a shaman guides a particular elder into a carved stone head, its home and body, continuing family bonds after death. This custom establishes no present statue or ceremony.",
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_stone_elder_teaching",
+        "affirmed_coastal_guardian_pantheon_teaching"
+      ],
+      "vocabularyRoles": [
+        {
+          "key": "WarGodName",
+          "value": "Issliruk",
+          "label": "Patron of war and courage",
+          "teachingContext": [
+            "affirmed_issliruk_courage_patron_role"
+          ]
+        },
+        {
+          "key": "DeathDeityName",
+          "value": "Karkut",
+          "label": "Divine guide of fallen spirits, distinct from stone elders"
+        },
+        {
+          "key": "WaterGodName",
+          "value": "Oacha'noa",
+          "label": "Sea goddess inhabiting the depths, distinct from the sea itself"
+        }
+      ]
+    },
+    {
+      "accountHash": "b81f8331fbb6ec647bc46fa313e4d111ccecfc160b0f70707f3638ed707f338a",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "The Old Gods",
+        "CreatorName": "The Old Gods"
+      },
+      "text": "The Old Gods receive apocalyptic devotion aimed at hastening the Hour of Twilight and the collapse of the world. The inherited cult joins nihilism with the hope some followers hold of ruling beside their masters after destruction.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "72e9651ad266664241f12a68301980ac7713c977d705aeab67bbcf1521eb8f6f",
+      "rootHash": "89636496bba4181e2e42caaebebfe9e44d6c98381c5c5c094010d89c862025b9",
+      "worship": {
+        "HighGodName": "Ursoc",
+        "CreatorName": "Elune"
+      },
+      "text": "Ursol and Ursoc, twin Ancient Guardians, receive distinct but related reverence: Ursol's path tends natural balance and spiritual relationship, while Ursoc's evokes the wild's hunting and martial ferocity. Devotion need not choose only gentleness or bloodshed.",
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_twin_bears_teaching"
+      ]
+    },
+    {
+      "accountHash": "2b0a5fa712df8baebcb18de23bad4c79f02251b29e754cdaabb1ad65e49a23c0",
+      "rootHash": "4673be8f17e9eb2bb9de3b3cc65b13a7f4f2f76b9071106fc1878d8c6c8728e6",
+      "worship": {
+        "HighGodName": "the Light",
+        "CreatorName": "K'ure"
+      },
+      "text": "The Light is approached through the naaru's teachings, especially K'ure as revealed to Velen. Faith, Courage and Heart guide protection of life and the souls of the dead from demons and the Void, within an inherited story of exile and rescue.",
+      "vocabulary": "force",
+      "vocabularyRoles": [
+        {
+          "key": "CreatorName",
+          "value": "K'ure",
+          "label": "Naaru teacher whose revelation informs the tradition"
+        }
+      ]
+    },
+    {
+      "accountHash": "cae340af9131ad84a73765891ed0beeb615e60d8604e1f066072fb6739a0db12",
+      "rootHash": "7bf4f70f934a88ecac3a7c4ba9b64ade7a07644951cb2135c09150877d04f178",
+      "worship": {
+        "HighGodName": "the Disorder",
+        "CreatorName": "the Disorder"
+      },
+      "text": "Fel is treated as a dangerous tool against evil rather than an object whose destructive ends must be obeyed. This outlook accepts costly, sometimes cruel methods for a purpose greater than personal gain, while recognizing rejection by wider society.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "69d2103e74c9e768a935c7a63187d7c995b8e6ed9d3b87cb2addaca2194a8f76",
+      "rootHash": "244fbcd28037911c8ac950b18aebee60ccf366b0c05f8b8ee2eff85043c26ae5",
+      "worship": {
+        "HighGodName": "Void",
+        "CreatorName": "Void"
+      },
+      "text": "The Void is studied and used as a dangerous power with possible benefits beyond the Old Gods' purposes. This tradition seeks useful mastery while acknowledging corrupting whispers as a risk, rather than treating those gods as necessary patrons.",
+      "vocabulary": "force"
+    },
+    {
+      "accountHash": "5d8832f2b0cf0262d18b159a1b0339d924ce6f16657ad709c5898bd5c9914cad",
+      "rootHash": "2ae6d85173d9e56fa1433c58bfb8bbd762c75cf654256aeeeef94fa6dea369af",
+      "worship": {
+        "HighGodName": "Neptulon",
+        "CreatorName": "Neptulon"
+      },
+      "text": "River waters are approached as a means of communion with the land. The tradition's wisest waterspeakers listen for news and possibilities carried by the water; ordinary reverence can honor that wisdom without sharing its specialist perceptions.",
+      "vocabulary": "account"
+    },
+    {
+      "accountHash": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78",
+      "rootHash": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78",
+      "worship": {
+        "HighGodName": "Aman'Thul",
+        "CreatorName": "Eonar"
+      },
+      "text": "",
+      "vocabulary": "hold"
+    },
+    {
+      "accountHash": "743aa3850eaa6a16fb00c8920945e2b4ca42c715badbf0b4e0e4c52c3e55735a",
+      "rootHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "worship": {
+        "HighGodName": "the Ancestors",
+        "CreatorName": "the Ancestors"
+      },
+      "text": "Ancestors are believed to watch over the living, with burial and continuing reverence sustaining that relationship. Family ties among living kin matter alongside the dead, giving spiritual obligation a household and communal meaning.",
+      "vocabulary": "ancestral"
+    },
+    {
+      "accountHash": "aded4700bf1a60df14434ab1029903ba1499c3cc1137d65fd0d1c3a57cb1cda5",
+      "rootHash": "89636496bba4181e2e42caaebebfe9e44d6c98381c5c5c094010d89c862025b9",
+      "worship": {
+        "HighGodName": "Goldrinn",
+        "CreatorName": "Elune"
+      },
+      "text": "Goldrinn, the Great Wolf, is revered as an example of the beastly wild within. The inherited cult seeks to awaken that nature in others, valuing an untamed strength rather than merely admiring a distant animal patron.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "6d32417d8829ade92fdfd6308bd917ea01e4486177863025c84b87a9a9a5d13e",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "N'Zoth",
+        "CreatorName": "N'Zoth"
+      },
+      "text": "Xavius is remembered as a once-refined sorcerer transformed into a satyr and devoted to corrupting the Emerald Dream under N'Zoth. This inheritance gives sacred nature a profaned form, rather than uncomplicated care for a healthy forest.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "9845de15ce4217da97bc6cef695e6d67aa7e5c0dca200531abcf479467d87582",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "Yogg-Saron",
+        "CreatorName": "Yogg-Saron"
+      },
+      "text": "Yogg-Saron, called a god of death and fate, is revered through horrors and the Curse of Flesh. What outsiders call corruption becomes in this inherited devotion a sacred gift of transformation and an expression of the patron's power.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "7d683474bfe9a42ddd99905b66ccbe5c5d9c8a3190294d64b98e8097170ac486",
+      "rootHash": "72783420c722664eb4323a62991bb64e2bf55af1efff87f90bb32400a0dac50c",
+      "worship": {
+        "HighGodName": "Eonar",
+        "CreatorName": "Eonar"
+      },
+      "text": "The Green Dragonflight is revered as guardian of living balance through its entrusted mission. The Emerald Dream gives the dragons' work a sacred realm; Eonar belongs to the divine inheritance, while chosen followers may be reached through dreams.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "ded60d86a6ba6ab5a3aa23a965d160e83de28f3076748b74ffeae7f9ed79a80d",
+      "rootHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "worship": {
+        "HighGodName": "Y'Shaarj",
+        "CreatorName": "Y'Shaarj"
+      },
+      "text": "Y'Shaarj, the Beast of Seven Heads, is revered through a remembered terrible power whose death left the Sha as echoes of destructive emotion. Devotion draws upon this lingering dark inheritance rather than proving the patron is presently alive.",
+      "vocabulary": "named"
+    },
+    {
+      "accountHash": "c933fae67c0a3c2fada80c8e3c494a59a91a6090b683f56646d8c1cce5de413f",
+      "rootHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "worship": {
+        "HighGodName": "Rezan",
+        "CreatorName": "Rezan"
+      },
+      "text": "This loa tradition reveres Rezan within an ancient, adaptable pantheon and gives respect to other loa as a way to maintain ties among their devotees. Reverence permits many sacred relationships rather than one exclusive patron for every member.",
+      "vocabulary": "named",
+      "vocabularyRoles": [
+        {
+          "key": "DeathDeityName",
+          "value": "Bwonsamdi",
+          "label": "Loa of death within the observed sacred vocabulary"
+        }
+      ]
+    }
+  ],
+  "roots": [
+    {
+      "accountHash": "06e27e476061b2cd025a2edcbcdfa0f02477222b44d12c4b6e20779a9ab1ad00",
+      "text": "This inherited tradition combines shamanic practices with pleasure and a simple life."
+    },
+    {
+      "accountHash": "986840b369719012863302b4483b4b0f70bfc3eee883a99af250cfa20e563553",
+      "text": "These roots describe rejection of former loa and a community seeking freedom or power from them."
+    },
+    {
+      "accountHash": "2ae6d85173d9e56fa1433c58bfb8bbd762c75cf654256aeeeef94fa6dea369af",
+      "text": "These roots honor water powers as rightful lords of the seas, seeking their favor and release from elemental imprisonment."
+    },
+    {
+      "accountHash": "b37ea0db984249ebdcd6c97df84693f5e701d279fdef85ae1ff532850405a011",
+      "text": "These roots treat arcane magic as a manifestation of sacred order, often approached through philosophy rather than personal gods."
+    },
+    {
+      "accountHash": "658bd7ca7db804f45908d205017f5303ce43dd45f98c2b87ab8a52a8ff58a865",
+      "text": "These roots revere Windlords, seek their guidance, and aspire to restore their dominion beyond imprisonment in Skywall."
+    },
+    {
+      "accountHash": "748f4e925b5e5bcde433278c9b32078427b7cfb0bb76e7b660e3799dc413bd27",
+      "text": "These roots recognize the avian powers Rukhmar, Anzu and Sethe, with Terokk also revered as a great king."
+    },
+    {
+      "accountHash": "c23e96aabc578489944b17f9707fac1ab3cd1c236301f9bee078c9e1f573d788",
+      "text": "These older nature roots honor local lesser spirits through relationships formed apart from the great Wild Gods."
+    },
+    {
+      "accountHash": "3c7e2cf162773944987920bd32f9d69beded54e0e25949ef1f5a6cb85475c93e",
+      "text": "These roots claim that life lacks meaning and wholeness lies in death."
+    },
+    {
+      "accountHash": "54234eeb0de912c8a0a5ae311dba7c3f1aa4703b15c9e476122d9198261df96d",
+      "text": "These roots seek cosmic destruction, holding the universe beyond saving."
+    },
+    {
+      "accountHash": "72783420c722664eb4323a62991bb64e2bf55af1efff87f90bb32400a0dac50c",
+      "text": "These roots place dragons' entrusted guardianship in a sacred succession from Titans and Keepers. Mortal devotion to their mission is distinct from the dragons' own charge."
+    },
+    {
+      "accountHash": "89636496bba4181e2e42caaebebfe9e44d6c98381c5c5c094010d89c862025b9",
+      "text": "These roots honor living nature through many spirits and gods of forests, waters and wild places."
+    },
+    {
+      "accountHash": "7bf4f70f934a88ecac3a7c4ba9b64ade7a07644951cb2135c09150877d04f178",
+      "text": "These roots attach sacred significance to chaotic fel power."
+    },
+    {
+      "accountHash": "84ae3ce37d831c19f2f87187f9361e65814e59f7af973f62a7c8c011c0434c86",
+      "text": "These roots join elemental inheritance from Grond with the titan Aggramar's legacy."
+    },
+    {
+      "accountHash": "f92d7999f93b33bc6c274debd58791531b1e422329fc99b0194706dbe4ef8bdc",
+      "text": "These roots revere Firelords through purification, destruction and hopes of release from elemental imprisonment."
+    },
+    {
+      "accountHash": "a10a8c46fc3e0c8914301f06ebbab661f7d59d5f15dd6dd8d11f814037f5e084",
+      "text": "These roots connect spirit reverence with warfare, strength and continual striving."
+    },
+    {
+      "accountHash": "bf3cd8e82a9decdc46cc87ba97edd4a2daab5f1f1d6acf3a7941a9c464ddb44e",
+      "text": "Loa are revered beings such as Wild Gods or spirits, encountered and approached through many distinct sacred relationships."
+    },
+    {
+      "accountHash": "09ea91473aeff9a7dd5ff89bc9b5609c7dddc7fc6217b10ddcb4117378f37677",
+      "text": "These roots honor waves and the spirits within them through locally varied practices whose intent matters greatly."
+    },
+    {
+      "accountHash": "4673be8f17e9eb2bb9de3b3cc65b13a7f4f2f76b9071106fc1878d8c6c8728e6",
+      "text": "These roots approach the sacred Light through naaru teachers and the values of Faith, Courage and Heart."
+    },
+    {
+      "accountHash": "655e50c8be7be6ca8830da2eb71b98930c4fdee08b3d1fac001c20841826072b",
+      "text": "These roots concern Death and necromantic contact with the Other Side."
+    },
+    {
+      "accountHash": "5e2f944ab2a15b064cf7df31793f68704c529a6bf48bb1253aa7639f6660a453",
+      "text": "These roots emphasize society, law and collective obligation."
+    },
+    {
+      "accountHash": "f59a612f8ea639bf846331b7b524f9cd0029c5dab13b2537fe4cffba934cfada",
+      "text": "These roots understand the Light as one sacred presence expressed in the stars, approached through prophetic teaching, temperance, justice and service."
+    },
+    {
+      "accountHash": "9f25217877b4bfa3f85a2bd2fd2826b07393fe4d08f6726a21468de8ecb0f600",
+      "text": "These roots cultivate Chi through meditation, self-control, spiritual growth and overcoming destructive emotions."
+    },
+    {
+      "accountHash": "99519bc36f8afc4bb9d5ebd9ff1e7658ef18a605b692d479956c8784457c2b77",
+      "text": "These roots regard radiation and toxic gases as sacred forces of transformation."
+    },
+    {
+      "accountHash": "513b115a7ab18aa92c6ff337f8091d087e9f50d65521a9f4717dfa9b63c723d8",
+      "text": "These roots place confidence in worldly understanding rather than worship of gods."
+    },
+    {
+      "accountHash": "f50fdf0ecf3d610840bf674934edb0656ff55095e50c822cfb5e55c29020e233",
+      "text": "These roots seek a place for Shadow alongside Light amid calamity, through differing hopes of balance, restoration or resistance."
+    },
+    {
+      "accountHash": "b4eee9bb073e7c5328bf9507ea0fcd63e225f50cde599c334813b9d2646a03c0",
+      "text": "These roots relate to natural forces, ancestors, spirits and elementals as sacred powers."
+    },
+    {
+      "accountHash": "7da2cde25850355f8e233c89bdf90df087a760eee1ab745507df97ce3b74355b",
+      "text": "These roots serve the Old Gods and the Void's consuming hunger."
+    },
+    {
+      "accountHash": "de53fe76ad77fb47f8f954ffac576486ec59817e21deee633d15d1be7f3b298a",
+      "text": "These roots honor earth powers, ranging from protective stability to destructive force."
+    },
+    {
+      "accountHash": "e7e2008dee408faa38e0d663230e5a91238de27270a715ca55cc3b70ef3af17f",
+      "text": "These roots revere the Titanic Pantheon, the shaping of Azeroth and its world soul's hoped-for awakening."
+    },
+    {
+      "accountHash": "ec0be0cc7d50f56dc46272fc5dfb89bd639d3882a338f3e9de348dd9d8d75d9b",
+      "text": "These roots honor the Light through justice and compassion. Tyr's remembered sacrifice is an example of protecting others, distinct from the Light itself."
+    },
+    {
+      "accountHash": "244fbcd28037911c8ac950b18aebee60ccf366b0c05f8b8ee2eff85043c26ae5",
+      "text": "These roots seek controlled use and understanding of the Void while resisting its corrupting dangers."
+    },
+    {
+      "accountHash": "54a0e8c17ebb21a11f8a25b8042786ef7efe52441e6cc87e92c67e0c4c0c6e78",
+      "text": "",
+      "hold": true
+    }
+  ]
+}

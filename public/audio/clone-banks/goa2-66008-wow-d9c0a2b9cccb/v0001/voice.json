@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-66008-wow-d9c0a2b9cccb",
+  "revision": 1,
+  "name": "Zul — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1fe9843bd80b6cc77a56de305d79299aaf961ad5108bfc2d556623ae8628e94d",
+    "transcript_sha256": "df8869b120c5079437c17ab8e2ccf3d1dc56d255724e7dd25bf95c010a18449b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 400130,
+      "seconds": 16.672083333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -17.76,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

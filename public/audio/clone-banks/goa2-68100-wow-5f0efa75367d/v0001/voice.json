@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-68100-wow-5f0efa75367d",
+  "revision": 1,
+  "name": "Rokhan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f4c78959576a8b61aa08708ce85ed26f2d37449ea776b78273be8ab62e51e726",
+    "transcript_sha256": "ab6c9c3cfcc53b08d20db1f8cf03516ee1eafbdf645dab22ba3259e5fbb1b05f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 344465,
+      "seconds": 14.352708333333334,
+      "peak": 0.937256,
+      "rms_dbfs": -17.76,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

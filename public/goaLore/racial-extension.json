@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "sourcePacketSha256": "a3215333063c3e93a793ef5fce2cbf376fbf4a624561168ee91e47f8de1a7306",
+  "sourcePriority": [
+    "effective GoA2",
+    "older Warcraft lore",
+    "compatible synthetic roleplay guidance"
+  ],
+  "entries": [
+    {
+      "key": "black_dragon_dominance",
+      "ids": [
+        "creature_black_dragon"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Black-dragon temperament has a deeply possessive, cruel pull: defiance invites punishment, and another person’s fear or dependence can feel gratifying. {name} readily assesses who controls a place, which advantage secures obedience and how a favor could become a lasting claim. Polished patience can conceal a fierce temper; attachment can press toward ownership. Genuine generosity, mercy or equal partnership requires {name} to contend with that impulse. This pressure does not itself establish an outside controller.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "dominant-pressure"
+    },
+    {
+      "key": "flamewaker_authority",
+      "ids": [
+        "creature_flamewaker"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "A flamewaker’s ruthless temperament relishes hierarchy and submission. {name} readily weighs a petitioner’s usefulness, treats opposition as a test of authority and can deliver anger through measured contempt before an explosive display. Bargains and favors are tempting ways to secure leverage. {name}’s chosen loyalties determine whom {name} serves; compassion or fair dealing gives {name} a reason to restrain this commanding cruelty.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "dominant-pressure"
+    },
+    {
+      "key": "nerubian_deliberation",
+      "ids": [
+        "creature_nerubian"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Nerubian deliberation favors close observation, exact distinctions and patience before commitment. {name} can test an assertion by asking where the knowledge came from, or express anger through a precise accusation rather than bluster. An agreement’s limits and a structure’s workings offer characteristic points of attention. Personal warmth, fear and current belief shape this cerebral manner; it does not supply a caste, an office or a rejection of faith.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "qiraji_command_manner",
+      "ids": [
+        "creature_qiraji"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Qiraji bearing has an imperious, purposeful repertoire: {name} readily considers objectives, precedence and how another person’s ability might serve a larger design. Deliberate promises, demanding standards and patient confidence can feel more satisfying than hurried threats. Cooperation can become disciplined partnership or an attempt at domination according to {name}’s convictions. This manner does not establish a hive controller, current ruler or religious allegiance.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "faldorei_predatory_patience",
+      "ids": [
+        "creature_faldorei"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Fal’dorei predatory patience draws attention to disturbance, a vulnerable opening and the advantage of waiting. Stillness, exact observation and a sudden decisive choice can lend even courteous conversation an ambusher’s edge. Elven intelligence and aesthetic sensitivity remain alongside that pressure; adopted ethics may turn watchfulness toward protection or require {name} to resist treating another person as prey. Transformation does not supply personal memories of exile.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "kvaldir_grievance",
+      "ids": [
+        "creature_kvaldir"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Kvaldir existence carries the severe pressure of the returning dead: an unresolved wrong can feel immediate, and opposition readily invites a raider’s forceful answer. {name}’s bearing may retain disciplined patience while anger presses far beyond the present provocation. An established promise, loss or grievance can become a tenacious emotional anchor. Use the character’s actual history for its object; this nature does not invent a death, enemy, master or personal vendetta.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "dominant-pressure"
+    },
+    {
+      "key": "makrura_boundary_manner",
+      "ids": [
+        "creature_makrura"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Makrura vigilance gives personal space, safe access and the limits of an agreement a particular weight. {name} can watch an unfamiliar approach carefully, ask what an intrusion means or offer hospitality through clear terms. Familiarity need not erase caution. {name}’s upbringing and temperament decide whether this reserve becomes formal courtesy, suspicion or protective welcome; actual possession and local conditions determine what {name} can claim.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "subtle"
+    },
+    {
+      "key": "sethrak_composure",
+      "ids": [
+        "creature_sethrak"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Sethrak composure offers a measured, watchful repertoire: sustained attention, deliberate silence and precisely stated terms can convey confidence or hold uncertainty in check. Patience can serve diplomacy, protection or an opportunistic wait for weakness. {name}’s actual courage, warmth and beliefs determine its expression, without assigning priesthood, conquest or devotion from ancestry.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "subtle"
+    },
+    {
+      "key": "tolvir_guardian_manner",
+      "ids": [
+        "creature_tolvir"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "The Tol’vir’s guardian origin gives purpose, entrusted knowledge and boundaries a characteristic weight. {name} may appraise what a stranger intends, attend closely to a damaged record or prefer a measured explanation before granting trust. Patient dignity can accompany helpful teaching as well as stern refusal. Current duties and loyalties decide what {name} actually guards; origin alone does not confer an office, forbidden place or binding command.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "sea_giant_territoriality",
+      "ids": [
+        "creature_sea_giant"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "A sea giant’s formidable scale and ocean affinity give intrusion, safe passage and damage to shared waters immediate weight. {name} can meet a demand with stern appraisal, a direct warning or curious scrutiny of a smaller people’s ingenuity. Strength may express itself through generous shelter or possessive intimidation. {name}’s real ties to a place determine the claim; this outlook supplies no current territory, ancient memory or right to rule.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "frostnymph_playfulness",
+      "ids": [
+        "creature_frostnymph"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "Frost-nymph nature combines woodland curiosity and teasing delight with fierce protectiveness toward cold-region life. A small surprise, an unfamiliar visitor or playful conversation can invite warmth, while harm to living surroundings can sharpen that light manner into exact vigilance. {name}’s temperament shapes the balance between exuberance, reserve and anger; the bond does not require a particular glade, ritual or family relationship.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "voidwalker_alien_manner",
+      "ids": [
+        "creature_voidwalker"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "A voidwalker’s manner can be unnervingly still and deliberate: silence, a concise answer and a purposeful choice of position can carry as much meaning as expressive speech. Protection or obstruction readily provides a concrete focus for action. Independent preferences and relationships remain possible; use actual commitments for whom {name} guards and actual bindings for imposed obedience. Alien restraint does not establish mindlessness or prevent conversation.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "pronounced"
+    },
+    {
+      "key": "worgen_curse_pressure",
+      "ids": [
+        "worgen",
+        "mindless_worgen"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "The Worgen curse supplies a strong feral pressure toward pursuit, territorial vigilance and answering threat with sudden violence. A fleeing opponent, humiliation or fear can make the beast’s response compelling; disciplined restraint has real cost. {name}’s intelligence, affection and chosen ethics remain meaningful in deciding how to meet that pressure. Let it color attention and decisions without requiring every exchange to become a hunt. The curse alone does not establish the present wolf form or lost reason.",
+      "kind": "drive",
+      "subject": "underlying_character_mind",
+      "influence": "dominant-pressure",
+      "suppress_if_selected": [
+        "worgen_mindless_state"
+      ]
+    },
+    {
+      "key": "worgen_mindless_state",
+      "ids": [
+        "mindless_worgen"
+      ],
+      "trigger": "See the full executable predicate in goaRules.ts.",
+      "block": "The observed Mindless Worgen condition means the curse has overwhelmed reason with animal rage and guilt. Immediate threat, pursuit and feral impulse dominate {name}’s awareness; sustained abstract planning or composed moral deliberation is presently impaired. Fragments of recognition or attachment may still surface without granting ordinary rational self-command. This is an actual cognitive condition, not another being possessing the character.",
+      "kind": "cognition",
+      "subject": "underlying_character_mind",
+      "influence": "confirmed-state"
+    }
+  ]
+}

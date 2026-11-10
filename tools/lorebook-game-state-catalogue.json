@@ -1,0 +1,796 @@
+{
+  "format": "titan_lore_game_state_v1",
+  "mod_version": "0.6.5",
+  "supplement_sha256": "dfbbd2bb9be04b9e4f4aed624e457a4897f3bb2937606889d3911f6c578352f8",
+  "source_pins": {
+    "common/traits/wc_class_traits.txt": "ce202fc455d526bea090b67cd1aa2610f85d4cade1f74579671adeeec9c3e77a",
+    "events/story_cycles/wc_story_cycle_scourge_invasion_events.txt": "6a560ac8c5207312166c0c608b61c63c684b4a17a17cafa79b5cc73ac5ea61c0",
+    "events/wc_events/wc_draenor_events.txt": "e83a8b5a31a1264954345aa115fc2a1eafb435546f1921043ba170852b1ed44a",
+    "common/decisions/wc_uldum_decisions.txt": "b5d81fe795ee346f59f3d5ff86b73ec1baf375bf947cecbebc3679a2bc03ca33",
+    "common/decisions/wc_major_zul_decisions.txt": "3fdd5ce3d552080fb76ee80d9125c6df50a275293b457e1b7cae5baac16168aa",
+    "events/decisions_events/wc_arathor_restoration_events.txt": "fb6a5d8f668803957828b56579a8b5103a8d31882da3a8c9a8500bf2fbad2382",
+    "common/scripted_effects/wc_horde_invasion_effects.txt": "5f51e01e2f4a9dae13cc949fcfd42878d959f682a59bf3eb473146246d9a82a8",
+    "events/story_cycles/wc_story_cycle_horde_invasion_events.txt": "641de6c50739bd21d26f79aa98fa99d2f91b5a6fb3c2da15b94a0d42f2a25b6f",
+    "common/decisions/wc_cen_kal_decisions.txt": "f145662cae32fe9e1745e7d44a1810a35d9a11a67118d38d1e6583937c035691",
+    "common/decisions/wc_major_pandaria_decisions.txt": "e8031de77f6db7449badbc01b966f0ba9ffe623b1c7eb688df33340dabb4a912",
+    "common/decisions/wc_scourge_quelthalas_decisions.txt": "78744973585924111fda18bc72d161a61e15badf15a74bcaba7a3f6f682ee995",
+    "events/wc_events/wc_eternitys_end_events.txt": "a9f99a974152d30deab218f711dd4470bf6061e683c5ccff4dad4e5e0e8bb255",
+    "events/wc_events/wc_forsaken_events.txt": "37538890d999d81cc932d27d843507a2a7f8f6ba60ed30412066ae9f1db35665",
+    "common/decisions/wc_trogg_gnomeregan_decisions.txt": "57718cc37747ce943732473f790f9b94fea9eeb669fb24b1e3b611752ab75daf",
+    "events/wc_events/wc_invasion_of_kalimdor_events.txt": "d240754b0dad08e162bd07f817ffe825c6475e169bf4fadde14bdbb894b3a973",
+    "common/decisions/wc_suramar_decisions.txt": "fcea4e994bf82baaceadae6bae9d8b10a75cc79024ba420a1cda843c05358efd",
+    "events/decisions_events/wc_nordrassilsdestruction_events.txt": "72e05243d3d51a2e476e265d07d30c8a83c0adcaae3dd365fadf707a71127ce3",
+    "events/wc_events/wc_order_of_the_silver_hand_events.txt": "a9c061704ccd6f90f377e496ac734f7880af90d142c3ccf98f4bb9d693a01117",
+    "events/decisions_events/wc_major_pandaria_events.txt": "811fe7f0fa9906279897f866e215e7dc63112ad3fc1127accd7b6faf610fef3c",
+    "events/decisions_events/wc_restorationofnordrassil_events.txt": "cd2db38856e152a5841713d530fb2a573ed2db408a36ef79f79bcc84cbae10ca",
+    "common/decisions/wc_major_goria_decisions.txt": "f18dceb4ab9f4264d5fa11ce519d49d66f6495c2c87dbe03af8565b5364ef6e4",
+    "events/wc_events/wc_scarlet_events.txt": "920a80f801131dcfc1b88809f21f7b59acb60f642c529cda1aaca0e357636686",
+    "events/wc_events/wc_scourge_quelthalas_events.txt": "40a6c0d5f9e42cf6d4c359511962f5f6af47fb9692bb6cbe3a7645d1a6786638",
+    "events/wc_events/wc_theramore_events.txt": "616fe24fe8d66bf1cfa9086f56cbb5b3acd2d9c9587d52f253fae249bd5821ee",
+    "events/activities/arthas_expedition_activity/wc_arthas_expedition_events.txt": "a8f8e0e54e0e2235b7679bebffef87fcb0f0a2e3495f47c9cdd6a0f64b0c8a2f",
+    "common/scripted_effects/wc_arthas_expedition_effects.txt": "4d2c443a8836ecb921fadb642764236b13676bd482e8a169bb916290b1165eb5",
+    "events/story_cycles/wc_story_cycle_balnazzar_events.txt": "8682653ca2d27137bb276227c6e4f13b1511f2b91e4bc453f3de9f85a423717d",
+    "events/wc_events/wc_greymane_wall_events.txt": "ef5d75ad39c93ccdeca329af7813dcf8a5e5d65e15fce3d8f21c404c1657bc89",
+    "events/wc_events/wc_suramar_events.txt": "5d6127f6ffb2502a351542c5b7dcee01f6e5a8c57471fe209010a6c32c3304d2",
+    "events/decisions_events/wc_major_zul_events.txt": "3321734fc8a870c7919d0f3c38858886de22f013579563f95f9359798510077b",
+    "common/scripted_effects/00_single_combat_effects.txt": "bec537f167339b6f3b91a73950578f6ee8543e18422f871b9d4fb91d45ce7e00",
+    "common/scripted_effects/00_secret_effects.txt": "d65fac8fd8bc034aa4f2f1749dd3c47b77805b9c45e2c323f17a5ce9196f1a87",
+    "common/scripted_triggers/00_religious_triggers.txt": "79a2d95a1d363ef6bfbd3edad7c9822c8e9d76bce0234aa1c8f9242c6f2b984a",
+    "common/script_values/00_legitimacy_values.txt": "df10254aed7c8f5162656c340b5a88d5fb9120102bd3ade49d5a1024bae438fd",
+    "common/scripted_triggers/00_secret_type_triggers.txt": "2942cea57b8ed33fc50505613c77cd961e92e86d42ccc31f9a19117bace64cee",
+    "common/scripted_effects/00_personal_details_effects.txt": "d41b3f59a8279b70e07b0db2c38c4d90c0db0971c21372158aa897936d57f2cd",
+    "common/scripted_triggers/wc_cultural_triggers.txt": "4847f01eb3cb7dc884524086aa887c9931aff57c790bc5b810f4d7a3a00e5163",
+    "common/scripted_effects/wc_zul_effects.txt": "d2655831d1565edd522a5093a45126db1949181c59401c57ef1b229febcb5cda",
+    "common/scripted_effects/00_nickname_effects.txt": "1ffb4e1a2d15ed4382f083a3acc88c3f4b3e14e138cf7994ccb8faab9ceba5d0",
+    "common/scripted_triggers/wc_zul_triggers.txt": "abeb05b91fa28bdd96feffa54dbe4aba589524d908baf09d0cf388104151e035",
+    "common/scripted_triggers/wc_suramar_triggers.txt": "7b1f50b1f0fe14d1ad60061352d28df9c06372668d2dc47397097ec2e782eb7d",
+    "common/scripted_triggers/wc_region_triggers.txt": "8f90dc3ab4c0fec9b7dd84b1c4d475c07fc3dd308a53960a9c7ed53d2f8ca588",
+    "common/scripted_triggers/00_available_for_events_triggers.txt": "3fcdebdb5e33666c96bdcc3309015bd276ca5da7d94432ef5574df0a564a16b4",
+    "common/scripted_effects/wc_suramar_effects.txt": "84f8a36586ba755182a1e9b4f1e1cecc0162c2b1f255a40bc1740ba5acbd6607",
+    "common/scripted_triggers/wc_health_triggers.txt": "d6216df90a16f49d9f5c4a32a8a6700cebe7e7a4ce70c12da0c8bbc28c25765f",
+    "common/scripted_triggers/04_ep2_tour_triggers.txt": "2b5ab17a67b382f6eaf80f93ed513e5d1c5b76f9bd56354d2ea8ba126fb947a6",
+    "common/script_values/01_dynamic_values.txt": "69a2026bbfbede8b75859cc36778df752457b6e29aa7fe2f3f73633e258cbcc5",
+    "common/scripted_effects/wc_historical_artifacts_creation_effect.txt": "b2f1c6cc53bf24137178a7106f0b3047f890daa597b974f86f046ab0669993f2",
+    "common/scripted_triggers/00_court_position_triggers.txt": "72ae82a8494b16924c2bb298d500134e28420e81979c35ba0ec2b19aa8908d20",
+    "common/scripted_effects/00_court_position_effects.txt": "bf7477d57c6452d7250dca45158ad2d3656cb1f162960a2f7ef906a90216cfff",
+    "common/scripted_effects/01_exp1_historical_artifacts_creation_effect.txt": "5bd9d4a2a3371a79c292ae8016bac7b63feb9e25400a8872037a7bf98b53e1f6",
+    "common/scripted_triggers/wc_historical_character_triggers.txt": "1521ee6566ca3804b2f46231f45b9b9b0474b9f0878730ea0670a18a724cc33a",
+    "common/scripted_effects/00_prison_effects.txt": "7cb09198f395aec21ffc9db11b651094c231884ccfea76e1cdfbbf0270ab295f",
+    "common/scripted_effects/00_interaction_effects.txt": "3b43d059b3dadef3d4d526ce3baacc92c67452d96359e4e4d9e059d32348ec30",
+    "common/scripted_effects/wc_resource_effects.txt": "20c96f616ac4a12c16a023feddd7f95993cf4b68f655462b022fa4638663490c",
+    "common/script_values/wc_magic_values.txt": "7fe823c0a25c37ecc9c800c31a5fc84f193785ffb466a9a71f8d522d43e5b4bd",
+    "common/scripted_effects/wc_magic_effects.txt": "92ddae5c984d48dfa5e916a7e75834338668951af38750390a61469e1720ba71",
+    "common/scripted_triggers/wc_vanilla_triggers.txt": "53189a5efa90602f2520c6f8f222eed897f5b89c1f8457745fb8c4e872d61c86",
+    "common/scripted_triggers/wc_magic_spells_triggers.txt": "7ffae63e65854238ec640c4aede968778af02639c0859c71119b76c49c36cb44",
+    "common/scripted_effects/wc_magic_life_effects.txt": "3d36acb39832178756c09708d3ce5577477a428610f0dbe0dbc9e96b119b7b65",
+    "common/scripted_triggers/00_scripted_triggers.txt": "1e09b5ff625627974a37e9acf703b20f80de0ce29644ae3a33426311c960916e",
+    "common/scripted_effects/wc_law_effects.txt": "7b5fc236258174c558f40e1047c051b5ad9ffde2cc41e9f80ce9eeb867b6e596",
+    "common/script_values/wc_law_values.txt": "1c0aa8db7828768caedb57692c93eeaaf9cc02000f693e24b30ff1d6d558d895",
+    "common/scripted_triggers/wc_law_triggers.txt": "e11a90c631ad483c38bc54a1b35a5d3e7494c859baf7967cf1c6580f8fcef963",
+    "common/script_values/wc_governments_values.txt": "240be51f9307ae23162820a2c4d099f279b0f918047f0cf1dba0d55766a3c55b",
+    "common/scripted_triggers/wc_ai_triggers.txt": "986994b83595aebe9fb1f17fc155f0295def79279d5425195fde1011c093a951",
+    "common/scripted_effects/00_education_effects.txt": "650c17a82917574d0455fffda01f7c2df4fb85c00f065ca3b3e691bef2365e42",
+    "common/scripted_triggers/10_tgp_triggers.txt": "7e39fc45c81034f0eaf00be08304f5fe5ecb44d4795bb699cf00a1e0d432225d",
+    "common/scripted_effects/wc_vanilla_effects.txt": "d23cf94168b2330430f59488a7a39f01681885e38c0433c8a91ae5b8f240b498",
+    "common/scripted_triggers/wc_being_triggers.txt": "67fbe4272b9d7ac2bed4317e4b61384a086d68b731439e0d01cbb1968fbefbc9",
+    "common/scripted_effects/wc_being_effects.txt": "c5a042a75712b132b82df8fbe7f63554e93a661816876f02d85e070ec1627e6c",
+    "common/scripted_effects/wc_magic_light_effects.txt": "5a5c54843b732b4f1a949789d8810e7ca989f5b2b2d68f4ea8cbb90dfefbfe53",
+    "common/script_values/wc_magic_spell_values.txt": "77dc2df3852e24907972a79431986887de7ea4d7a032798c0f3ef44caa7fddaf",
+    "common/scripted_effects/20_health_effects.txt": "5bd8fbb6616ce52dda29f825be781a3bb317de8e9e19c1a1e81312e5f6942f05",
+    "common/scripted_effects/00_romance_effects.txt": "237c4bd351a90df9760232649567bfbb217a2ddf6277862a7365ca29447acbc4",
+    "common/scripted_triggers/00_romance_and_seduction_triggers.txt": "b2400721cfa1978d040101f3551bdc638525ec5ca251af1b672cd25a7382c726",
+    "common/scripted_triggers/20_health_triggers.txt": "bf46e4b546ce8772ee96b65faa08df5b5fe161f986cda15d4cf7a3b4f710e670",
+    "common/scripted_effects/wc_magic_shadow_effects.txt": "0bde053e6710f1556aba1475ade61ae32ccf2d241a3495db48d00b1dc1d455c1",
+    "common/scripted_effects/wc_magic_disorder_effects.txt": "ae73f432f10eeee00e6e19b5c285ed9e38e39776d942095ba221f1c2cdc08094",
+    "common/scripted_effects/wc_lifestyle_traits_effects.txt": "b92d236c27d901c43ceb33bec7732f090f01e9c4b4a18187b4b0b4a7ccef3812",
+    "common/scripted_triggers/00_building_requirement_triggers.txt": "e7cf1c6330cd5c1f3a05d95f79643177424702536ab16d07d761443d18ebe0fe",
+    "common/scripted_triggers/wc_religious_triggers.txt": "6bdf81b0cf955aae2c8034b354b7c572825421c0fde765ae8e0a0866654f912c",
+    "common/script_values/02_religion_values.txt": "3b1c05d541739b6a4a60beec50676c090e63bbda97a6ec67e51d219f0c8fdad1",
+    "common/scripted_effects/00_religious_interaction_effects.txt": "7a5ce0b6aca8121293a8397a7ff8e3e90b28b40a3f121742a2b406ce71db3022",
+    "common/scripted_effects/wc_race_effects.txt": "ba8236d4303b4b8286b88827540c01c41933c9f941b5d83dec8d7cf5a12141c9",
+    "common/scripted_effects/00_ep1_artifact_creation_effects.txt": "aaac0f58e5fccd5b9afcafa6eccc4a66a2a06964611dc7e3102bdb7dd92cc090",
+    "common/scripted_effects/00_ep1_artifact_effects.txt": "e0bfff13d256cdbe32ccdb177ea9ed6839cd0fc6825418a9a06fef2a93b9c6bb",
+    "common/scripted_effects/00_regional_scripted_effects.txt": "aa080e7425354489ca27ab602680b95cf37db4824d03e97abd3ab8d7d7e9224e",
+    "common/scripted_effects/00_animal_effects.txt": "3649a9d745ff6759a3faa080731ecde97d66d4032bc1b7842188f79c3b0033f6",
+    "common/scripted_effects/wc_health_effects.txt": "ab9a0639a372681f3b742c11ba96fa0c7a32b76b61694de17c11207b2df7d1ed",
+    "common/scripted_effects/wc_balnazzar_effects.txt": "c6d7ec53ac385aec44b1142f11f18953ab5b4213b3b7ed468a9ea1f8d4e1dd8f",
+    "common/scripted_effects/00_war_effects.txt": "66181b4dce637a5b15e5e3475bba0da8ded179394b6c659229cf71a2cef9314a",
+    "common/scripted_effects/wc_genocide_effects.txt": "c9581a28070a9e19f0b40e125f2e539f38a79a87aecc2f7aa2332e5939d06b84",
+    "common/scripted_effects/00_pregnancy_effects.txt": "f391df6cc91d7ede9b57384acf9ef698a468814538deb52c854a23003f0cefe5",
+    "common/scripted_effects/00_scheme_scripted_effects.txt": "035b8a96a99ba0c4ce84a83d72f0ae127c00a50727baa7585e3e03bda68213b6",
+    "common/scripted_effects/00_murder_effects.txt": "873233f49e1845edafef0c1b496013a95bf66923702b75efb0099a0ec8ce360f",
+    "common/script_values/wc_lifestyle_values.txt": "c78cbd8677ce2a6d6996155a544b23ed8c0f10bf6764e816accf661c528ba0e6",
+    "common/scripted_triggers/00_relation_triggers.txt": "455979a1b2bec6c1dca52d98ebcdf257dd7ee72f74f869b9c46f25ab8f4d4e09",
+    "common/scripted_effects/03_bp1_scripted_effects.txt": "a7c5534c3148227d81c9823cf0c3ac940b273edc0d100d312ce3539744660557",
+    "common/scripted_triggers/03_bp1_scripted_triggers.txt": "c803b0ebca55a5808f7d08d06bd3d054c62e03c2b911492f43cf1fce3a30817b",
+    "common/scripted_effects/wc_scourge_invasion_effects.txt": "b27ec2621e5e88cc96a27f17dbabf7f7da3f60743348efc16e9827b8402fe443",
+    "common/scripted_triggers/wc_scourge_invasion_triggers.txt": "cc637af7e92c14fab39f9942ec71b8b5eb6e6ba140e6cc6d8badd6ae50d9b317",
+    "common/script_values/00_scheme_values.txt": "95aaf8b4435f54d947b90a9f25c99176dc1bd6ef98a0cbe471053c715ed82983",
+    "common/scripted_triggers/wc_lifestyles_triggers.txt": "e1adcd494bf1abb8da040f06e78912c049332b6a7eb54a6c160348969b5321f6",
+    "common/scripted_effects/wc_war_effects.txt": "db9b715333eb156c30945e9d451918086b1e8eb16c799d6e000c4ca47e4ae506",
+    "common/scripted_triggers/wc_pol_faction_triggers.txt": "88b78d117607434f18104c04a443e033b19dc1f57b26b0b976d5d6a066e02705",
+    "common/scripted_effects/wc_pol_faction_effects.txt": "129c861c4b420d05db3e899e7b3103cfc371275717201a790aeabdc3497426c3",
+    "common/script_values/wc_war_values.txt": "0edcfa2f203f4ced486722b8345c0b70f6c50f43d768e55d64186ebcefab0a75",
+    "common/scripted_triggers/wc_war_triggers.txt": "d0f68c0eb1aba7ab13cbfe360bf53683116a5e9088a1a466b606013789970afe",
+    "common/scripted_triggers/wc_artifact_triggers.txt": "5df1dacb21e2ff34503e694a69e680116e5d9509703d8e47869996efafc626ce",
+    "common/scripted_effects/wc_artifact_effects.txt": "a00dfdd437e0bbdc43001288f66f1fe3425939c1ff7f8e1d0ac72d6cc25d13ec",
+    "common/script_values/wc_age_values.txt": "7a5b791b0e87933eca3ba5de00a1b5fd3a9c500ae166b7a7fee68594bfb54561",
+    "common/scripted_triggers/wc_race_triggers.txt": "38043a69cff6bcd9b66b7c752fe7bfcd811c2c7cd927ca62143c6d16a3f0b40f",
+    "common/scripted_triggers/wc_government_triggers.txt": "3a6012b706671b604261b3f25138c257f3ce0b7d7baa6af74359fd058ff146d3",
+    "common/scripted_triggers/wc_arthas_expedition_triggers.txt": "e7ff56113552c076dd5095692289d3f2cf98154528352ac98874530fedf9fb83",
+    "common/scripted_effects/wc_stress_effects.txt": "cd2377d4773f780da79c799d79b669d440ad7ee0c50e39ba89d10cab3c3dad43",
+    "common/scripted_effects/wc_relation_effects.txt": "a2cbe4ea273851a39b87b65d696e89bdf4b1561063b9c5e2b61ae4375cac5ce6",
+    "common/scripted_triggers/wc_notification_triggers.txt": "2bc638f883624e074f358c5ec0046b6da6814efd4432ac71525f8e72db26bff3",
+    "common/scripted_effects/wc_title_effects.txt": "bd299ac206c260a5fa343ef856d866c904623e86659884fe782a096094513bbb",
+    "common/scripted_effects/wc_theramore_effects.txt": "4d58dd53937ad5d7f6c79136a58ef2b46b68fb75ff9d13c9dec1e1a957fd0307",
+    "common/scripted_effects/wc_other_effects.txt": "076a746b8e465a66a1fcf78c2383dcb3378fb2961c834b7c13e2574e8ff75ea6",
+    "common/scripted_effects/wc_draenor_effects.txt": "a4f932c798395384641d26a8f9415431a4a9697089e31d109ec94dc0ad51c407",
+    "common/scripted_effects/00_activity_effects.txt": "d4d5ecf2ff84ae89b08ffa17bb0671a27226c803728bd3804f0901cce03f5b57",
+    "common/script_values/wc_combat_values.txt": "fbdcca1d95ff028cb8a79aea62bedb798be0094e6ff44454b07f1aec6295e168",
+    "common/scripted_triggers/wc_combat_triggers.txt": "f033ecbdfe8825a3004c34cb29961470836b8e924c413fe8a5a1040012e2961f",
+    "common/scripted_triggers/00_activity_triggers.txt": "68e390641ef1cb53c16bb00897743a9a9b9792db712616cb308ed2e33b63a300",
+    "common/script_values/wc_arthas_expedition_values.txt": "858fcf7c54990b7428eaa075fefcb4eb22578d9c2380d911950f337e852c821b",
+    "common/script_values/wc_dynamic_values.txt": "c1783003d8d4d16fb2f7935b941861700f269363b5c5dd31a6dd6264df451961",
+    "common/scripted_effects/wc_plague_effects.txt": "2d0623a3db7123f1d27661d09836ef95dff5111875cf3c693e8c8699bc743b33",
+    "common/script_values/wc_plague_values.txt": "16a9275e748d112a9daaf54e40ec46a4b2d69bc5bc22b7b32610f6a9d89e967d",
+    "common/scripted_triggers/wc_plague_triggers.txt": "ca85a3ca7a3448ad6dcb1d6ffb9a0934655085786507b471de802498b90bc733",
+    "common/scripted_triggers/00_marriage_triggers.txt": "a27abf68f2f7fab43485826ce5cc6c6a36820b6d41e8255f6eb61d79e679fa5c",
+    "common/scripted_effects/wc_theramore_mechanic_effects.txt": "72c26dab912fca47226c7ec28c810f9c76d17d70b280d5851c712eb414d82c2e",
+    "common/scripted_triggers/wc_age_triggers.txt": "269c9bd4c2c1657f054a21f197c8a5500abd122e6591ac0e73ba911ca13f7b38",
+    "common/scripted_effects/wc_history_effects.txt": "965b830f81fbc451e6200c20bde160bdf4d19cf0ab64992b402ed0b8f51a2d52",
+    "common/scripted_effects/wc_scourge_quelthalas_invasion_effects.txt": "c0c0f6756f948ecc870f7eae448cb6ca4bbb4489b05052babdf963a45256ccd2",
+    "common/scripted_effects/wc_goria_effects.txt": "51d318bde9c059caffcc24863f77212e93a877099f2200810896a0dec56ef75e",
+    "common/scripted_effects/wc_pandaria_effects.txt": "654334791bbe43620a9421bb4c5d63a39de654245a1168539926578a359f88cd",
+    "common/scripted_effects/wc_first_contact_effects.txt": "67d5b413599d489cebba96ba07271853f19d789294e5d256408c8982b7d99d0a",
+    "common/scripted_triggers/mpo_scripted_triggers.txt": "d7688b99befa3143da830e9914b6c53af8cba7fd95cb672f2982b01100c6efb9",
+    "common/script_values/tgp_values.txt": "826d3815263d33d7a8d808cc531460c4d6e72b397ecd799da0a300618209edbc",
+    "common/scripted_effects/wc_forsaken_effects.txt": "61a78c34c74a30337db52eb1c44781c0d45472a40ea0b8597ed41ec21e187981",
+    "common/scripted_effects/00_bastard_effects.txt": "754d9825cbbc6d505a265b6962dd2656c8bd6f5f166d47910496c20033648eee",
+    "common/scripted_triggers/wc_scourge_quelthalas_triggers.txt": "dd6aed3aabb29db7c28942d2558cb446796a1f3edfa106cdc6bc93b88150d4f2",
+    "common/scripted_triggers/wc_horde_invasion_triggers.txt": "048b15df67754b82b21b8dd6c91657b441698b0dcc10cc11c4a17cc987820674",
+    "common/scripted_triggers/wc_title_triggers.txt": "53fdb9aaf198615b8766ad5ff7f4b6fba0ff3ef6030a1f388212e83eb8ce6f70",
+    "common/scripted_effects/06_dlc_ce1_legitimacy_effects.txt": "cb284f8ad74e951d05f993787fe19a0f931f9b1b3bcc7ae2aa3464c3b3c28779",
+    "common/scripted_effects/07_dlc_ep3_scripted_effects.txt": "20d1ef4352658a55bddaea152fae5660875a97fdf8c2a39df9692fc1c6eb2a41",
+    "common/scripted_triggers/wc_crisis_triggers.txt": "c71e252ee0bc47a8785bf9f12f90867a27263b9d658221a7c11af656dc68aefc",
+    "common/scripted_triggers/00_councillor_triggers.txt": "f007ff7c9878db74909cc37599f32b8e13ea9e3310ffe0bb340707244ff3d570",
+    "common/scripted_effects/tgp_mandala_scripted_effects.txt": "4f8b4f3baf2890e8ecf46cf04c09589f8b7278a194cc1b23b04250df0778b178",
+    "common/scripted_effects/wc_crisis_effects.txt": "ae30480afcab2e1d41f0a85647ab9d210fd9c33b4e8ea65e933ebf39ea6baef4",
+    "common/scripted_triggers/wc_draenor_triggers.txt": "4a5656b78a4b9c5ac3d9088fe8c0564214dcfbd06f586f90b466998a3a8f2a64",
+    "common/scripted_triggers/wc_year_triggers.txt": "52a7b56b97c504f202b24afff82c68956957606ed2eb9790fb04b3bb6d7ddfd0",
+    "common/scripted_effects/wc_decisions_effects.txt": "ac2ccd76b97cbbff3d1cbc2ad36f7a8ee269af36bd78545e99040096244273e8",
+    "common/scripted_effects/wc_fp1_effects.txt": "eac20d12ac735d595efc7d5691253ea239df0ac15c73fee0cf4ae06a636e693a",
+    "common/script_values/01_dlc_fp1_script_values.txt": "812a7f9a38537114801b0392c338b02c78988053d915c4d8bd64a5370be1e017",
+    "common/scripted_triggers/wc_fp1_triggers.txt": "b939e5d95a46d6175b01f9a2d09f57bf09c0a2d0589ee3d745ed6fcee337d2f1",
+    "common/scripted_effects/00_courtier_guest_management_effects.txt": "89adb1f64ac55b8b1875bb5054248a1d6a06cd2b150321d171b03a0504f58273",
+    "common/scripted_triggers/00_courtier_guest_management_triggers.txt": "1acc617e91bc0207dbf6740daf6e4ded9e8e7bb765ab18b578503df7489cf7d5",
+    "descriptor.mod": "b41216548f13cf97da22499581cbc336dfb52450ee0e8e6beaadcb7de6f45bda",
+    "common/on_action/game_start.txt": "0d69f8725654ffd87c80439ba5873c917897c61e2fa4a6f6acd4a4b6f9bb3b87",
+    "common/story_cycles/wc_story_cycle_horde_invasion.txt": "3acd2f1beb07f6761964876f0b309aeb2e40c24a77c022a62154477c72678c70",
+    "common/on_action/wc_isolation_on_actions.txt": "b578a6cbba47f044c1688362f4a057b1a7a622e48fc5054f5ad927a94740b4ea",
+    "events/wc_events/wc_isolation_events.txt": "a213dcd8b3bb477f80e9fb573e9d1b14903e7237bd14f79deda73748cb4f540d",
+    "common/on_action/wc_uldum_on_actions.txt": "44ea3f99b52fd595d227a1d0d6a1636da2bf091c64d07633453540a4da1deac7",
+    "common/on_action/wc_suramar_on_actions.txt": "12cb4660d76d12d2210bef51bae4c68f9fb7201a47c10d9a5f5fdd3bdde5ffac",
+    "common/on_action/wc_theramore_task_on_actions.txt": "aba05bea3424b9d964b7d5550ce22ef4bcbfb1b68039d9c061654052919c0796",
+    "common/scripted_effects/wc_burning_legion_effects.txt": "fa80d8f3d3b36a9a60d8c67640f0d26fe908a117789fac8c7cc13c3963ecb155",
+    "events/wc_events/wc_illidans_beginnings_events.txt": "3e955f9f73dd4c5886ae93355b0664a314c58b1d9b67e06b3d43ef82bbeb1e6e"
+  },
+  "rules": [
+    {
+      "id": "horde_invasion_started",
+      "predicate": {
+        "kind": "global_value",
+        "name": "horde_invasions_started",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "horde_invasions_started"
+      }
+    },
+    {
+      "id": "horde_story_ended",
+      "predicate": {
+        "kind": "global_value",
+        "name": "horde_story_has_ended",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "horde_story_has_ended"
+      }
+    },
+    {
+      "id": "theramore_departure_started",
+      "predicate": {
+        "kind": "global_value",
+        "name": "theramore_started",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "theramore_started"
+      }
+    },
+    {
+      "id": "theramore_founded",
+      "predicate": {
+        "kind": "global_value",
+        "name": "founded_theramore",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "founded_theramore"
+      }
+    },
+    {
+      "id": "theramore_kingdom_created",
+      "predicate": {
+        "kind": "global_value",
+        "name": "theramore_kingdom_created",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "theramore_kingdom_created"
+      }
+    },
+    {
+      "id": "pandaria_open",
+      "predicate": {
+        "kind": "global_value",
+        "name": "mists_of_pandaria_parted_variable",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "mists_of_pandaria_parted_variable"
+      }
+    },
+    {
+      "id": "suramar_open",
+      "predicate": {
+        "kind": "global_value",
+        "name": "suramar_barrier_lowered_variable",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "suramar_barrier_lowered_variable"
+      }
+    },
+    {
+      "id": "uldum_open",
+      "predicate": {
+        "kind": "global_value",
+        "name": "uldum_has_opened_variable",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "uldum_has_opened_variable"
+      }
+    },
+    {
+      "id": "origination_active",
+      "predicate": {
+        "kind": "global_value",
+        "name": "origination_protocol",
+        "value": "yes"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "available": {
+        "kind": "global_exists",
+        "name": "origination_protocol"
+      }
+    },
+    {
+      "id": "burning_legion_story_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "burning_legion_story_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "burning_legion_invasion_of_kaldorei_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "burning_legion_invasion_of_kaldorei_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "lich_king_story_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "lich_king_story_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "eternitysend_story_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "eternitysend_story_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "illidan_stormrage_story_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "illidan_stormrage_story_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "orcish_migration_story_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "orcish_migration_story_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "theramore_survivors_story_started",
+      "predicate": {
+        "kind": "global_list",
+        "name": "warcraft_invaders_story",
+        "value": "theramore_survivors_story_started"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "nordrassil_was_sacrificed_to_kill_archimonde",
+      "predicate": {
+        "kind": "global_list",
+        "name": "elven_lifespan",
+        "value": "nordrassil_was_sacrificed_to_kill_archimonde"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "nordrassil_was_destroyed_by_a_demon",
+      "predicate": {
+        "kind": "global_list",
+        "name": "elven_lifespan",
+        "value": "nordrassil_was_destroyed_by_a_demon"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative."
+    },
+    {
+      "id": "refugee_course_northrend",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_1",
+        "value": "northrend"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_1",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_1"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.002:0",
+        "title": "The Fleet Turns North",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_48e9799c996eb3204029df9a"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_4a49c89704526d50e1591bf4": "Northrend",
+          "expanded:place:4": "Northrend"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.002:0": "c748eb6f12a8d4fd53906256a0933a6538d24aa06e8e8bb2cb7d4fa34e433f5b",
+          "goa:branch:theramore_events.002:0:consequences": "7342b34a6dc75795432d8b042aad1fb340f36520cfd8542f859ca18dcbab0488"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.002:0": "The Fleet Turns North",
+          "goa:branch:theramore_events.002:0:consequences": "The Fleet Turns North — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "b191580111a75c607949ebc028edbb411b7da5567df546e8c08b270cac486c24",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.002",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "refugee_course_pandaria",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_1",
+        "value": "pandaria"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_1",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_1"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.002:2",
+        "title": "The Fleet Turns South",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_76bac47f9b67ea3b02113676"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_bd27d0b0b02fd1335458c418": "Zandalar",
+          "expanded:place:3.4": "Zandalar"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.002:2": "bf455599bc17200020e841af00b6dfde879e63fc2caabd53f350feb3d7a17c88",
+          "goa:branch:theramore_events.002:2:consequences": "df125071fee665cfb8b44cf6acfc16e3ab87c5a276e69d6227d5e7c723fdebfc"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.002:2": "The Fleet Turns South",
+          "goa:branch:theramore_events.002:2:consequences": "The Fleet Turns South — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "b191580111a75c607949ebc028edbb411b7da5567df546e8c08b270cac486c24",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.002",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "refugee_landing_n_east",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_2",
+        "value": "n_east"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_2",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_2"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.003:0",
+        "title": "A Refuge at Kamagua",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_48e9799c996eb3204029df9a",
+          "entry_f1f70ab9d1170f78c08580fe"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_4a49c89704526d50e1591bf4": "Northrend",
+          "expanded:place:4": "Northrend",
+          "editorial-node_0abc8ef6b923c39bc280b90e": "The Kalu’ak"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.003:0": "198ec0db758fd319aaaf7912536647abbea63dbf7874fb950c2a33cc83ba9d4d",
+          "goa:branch:theramore_events.003:0:consequences": "44bdbdc56d8d0bf82bebf5f837e51f7d177f0b460ca237092fbce94076c0cbf7"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.003:0": "A Refuge at Kamagua",
+          "goa:branch:theramore_events.003:0:consequences": "A Refuge at Kamagua — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "a531106b021a64f556948b0719b343592aeb23a11aa982c62aef69d0f94bac19",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.003",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "refugee_landing_n_west",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_2",
+        "value": "n_west"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_2",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_2"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.003:1",
+        "title": "A Refuge at Echnus",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_48e9799c996eb3204029df9a"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_4a49c89704526d50e1591bf4": "Northrend",
+          "expanded:place:4": "Northrend"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.003:1": "bdc253d2f35e37cf887ec30dee2fb89c5c4d7f26d69f70cfa6bba8755ba79e8b",
+          "goa:branch:theramore_events.003:1:consequences": "aa1be8b569872ae3a714d42af7b18b61cd2f1931333d69c47455471a0e4c65a3"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.003:1": "A Refuge at Echnus",
+          "goa:branch:theramore_events.003:1:consequences": "A Refuge at Echnus — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "a531106b021a64f556948b0719b343592aeb23a11aa982c62aef69d0f94bac19",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.003",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "refugee_landing_k_north",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_2",
+        "value": "k_north"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_2",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_2"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.003:2",
+        "title": "A Refuge at Mystwood",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_22672d515bdab7470a8cde22",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_9777aadff2c52c2985dd96a3"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_554e7fb1560d922c6abd7188": "Kalimdor",
+          "expanded:place:2": "Kalimdor",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_b9b488d2b5ada03855fd06e1": "Night Elf",
+          "expanded:people:007": "Night Elf"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.003:2": "132586bd994e3548a03bf130d615ae8ec80243c390678b2f68927056d802eebc",
+          "goa:branch:theramore_events.003:2:consequences": "226820ded529b76d7f57c1257fb393045de238a6b24cedfc568c6cdf8463e59a"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.003:2": "A Refuge at Mystwood",
+          "goa:branch:theramore_events.003:2:consequences": "A Refuge at Mystwood — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "a531106b021a64f556948b0719b343592aeb23a11aa982c62aef69d0f94bac19",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.003",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "refugee_landing_k_durotar",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_2",
+        "value": "k_durotar"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_2",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_2"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.003:3",
+        "title": "A Refuge Beside Durotar",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_390d75084afc25cf71d23268",
+          "entry_af13d91b34a4a74c3827a455"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_99a164296582888ea0916512": "Durotar",
+          "expanded:place:2.2.5": "Durotar",
+          "editorial-node_c0450fcad8fbd0c1d9073d7f": "The Horde"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.003:3": "2f434a88bde90bb1ccdadff90f56d7d0d9d15477bdcbd8ab4ac93c270017bfb5",
+          "goa:branch:theramore_events.003:3:consequences": "42014027751c8fa5ef06e928db3d70cd70078b497fb53d32adbb2bb468c34f9f"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.003:3": "A Refuge Beside Durotar",
+          "goa:branch:theramore_events.003:3:consequences": "A Refuge Beside Durotar — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "a531106b021a64f556948b0719b343592aeb23a11aa982c62aef69d0f94bac19",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.003",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "refugee_landing_p_zand",
+      "predicate": {
+        "kind": "actor_value",
+        "name": "my_destination_2",
+        "value": "p_zand"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "exclusive_group": "my_destination_2",
+      "available": {
+        "kind": "actor_exists",
+        "name": "my_destination_2"
+      },
+      "account": {
+        "branch_id": "goa:branch:theramore_events.003:5",
+        "title": "A Refuge on Zandalar",
+        "entry_ids": [
+          "entry_1331f85cba65b1e57ca82e6e",
+          "entry_37f6d8d1315db1cae588631e",
+          "entry_76bac47f9b67ea3b02113676",
+          "entry_8a4d2ba1c14114892652f6dd"
+        ],
+        "subject_headings": {
+          "editorial-node_c2f5e94845f952b9e0d19cab": "Jaina Proudmoore",
+          "editorial-node_8a217cb265e58c8fad829db5": "Theramore Isle",
+          "editorial-node_bd27d0b0b02fd1335458c418": "Zandalar",
+          "expanded:place:3.4": "Zandalar",
+          "editorial-node_23a2eba1300376da5b1a4e23": "Zandalari Trolls",
+          "expanded:people:020": "Zandalari Trolls"
+        },
+        "node_sha256": {
+          "goa:branch:theramore_events.003:5": "91dc3ffd346bd10aa53fcc93478562fab4a5944ee27e52ff23244847ed093124",
+          "goa:branch:theramore_events.003:5:consequences": "cafff765331d4a21db108674252a529fc6e9855bc6d2ec8efdcb516ab4b3ed41"
+        },
+        "node_headings": {
+          "goa:branch:theramore_events.003:5": "A Refuge on Zandalar",
+          "goa:branch:theramore_events.003:5:consequences": "A Refuge on Zandalar — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "a531106b021a64f556948b0719b343592aeb23a11aa982c62aef69d0f94bac19",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_theramore_events.txt",
+        "definition": "theramore_events.003",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "portal_refusal_trace",
+      "predicate": {
+        "kind": "actor_flag",
+        "name": "refused_destroy_dark_portal_flag"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "account": {
+        "branch_id": "goa:branch:WCDRA.3:1",
+        "title": "The Dark Portal Is Left Open",
+        "entry_ids": [
+          "entry_332e03e35cdde33010f1dd53",
+          "entry_57518c74f42e313954faed76",
+          "entry_6fb5e72977a309dd30c9327b"
+        ],
+        "subject_headings": {
+          "editorial-node_dd990f81c7ab284591711534": "Azeroth",
+          "editorial-node_b94bf6a945e82cb0fad9ca22": "Draenor",
+          "editorial-node_a3b46fce90b2f6554a8ef89a": "The Dark Portal"
+        },
+        "node_sha256": {
+          "goa:branch:WCDRA.3:1": "cf4317df8a1fd0b3a6ebd746828d505aff4d4dc48e723586b95bcca0f3d8afaf",
+          "goa:branch:WCDRA.3:1:consequences": "ba6ee26f10db9ab6946eceb6373116645e1081aeaa81eb60bd11533c1300f802"
+        },
+        "node_headings": {
+          "goa:branch:WCDRA.3:1": "The Dark Portal Is Left Open",
+          "goa:branch:WCDRA.3:1:consequences": "The Dark Portal Is Left Open — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "36f0adf6111e2e72d3d9fc159dc06a9f283790452a82a8e6f10df1a3cd924078",
+        "account_kind": "coded_choice",
+        "path": "events/wc_events/wc_draenor_events.txt",
+        "definition": "WCDRA.3",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    },
+    {
+      "id": "arakkoa_skull_trace",
+      "predicate": {
+        "kind": "actor_flag",
+        "name": "arrakoa_skull"
+      },
+      "subjects": [],
+      "semantics": "Current-save observation only; absence is not a historical negative.",
+      "account": {
+        "branch_id": "goa:branch:WCDRA.1015:2",
+        "title": "Grizzik Is Executed",
+        "entry_ids": [
+          "entry_0cae934e11b0a82d5b816d14",
+          "entry_57518c74f42e313954faed76",
+          "entry_8c8db814ce096d72635c0c42"
+        ],
+        "subject_headings": {
+          "editorial-node_c2979d4984b63689c6d5efc8": "Beyond the Dark Portal",
+          "editorial-node_b94bf6a945e82cb0fad9ca22": "Draenor",
+          "editorial-node_e8104fc8bf07d2fdb2693a7a": "Beyond the Dark Portal"
+        },
+        "node_sha256": {
+          "goa:branch:WCDRA.1015:2": "0e5b804be304de591c97831155f798d8be07df886cd79f222568fc26ca4c8834",
+          "goa:branch:WCDRA.1015:2:consequences": "171604212deaf4f17238b8d382c1b0ec06fa9a79d8b6b99ff7e629f102316cb4"
+        },
+        "node_headings": {
+          "goa:branch:WCDRA.1015:2": "Grizzik Is Executed",
+          "goa:branch:WCDRA.1015:2:consequences": "Grizzik Is Executed — The Roads Beyond"
+        },
+        "accepted_definition_sha256": "4492fb4445fbc1e2d61814fe37667e73d99f959d2fdf8ef0be22988d73cfff4f",
+        "account_kind": "conditional_actor_choice",
+        "path": "events/wc_events/wc_draenor_events.txt",
+        "definition": "WCDRA.1015",
+        "awareness": "same_actor_persistent_trace",
+        "occurred_at_known": false
+      }
+    }
+  ],
+  "policy": {
+    "trigger": "RP encounter or reply through the existing CE command bridge only",
+    "game_files_written": false,
+    "new_on_actions": false,
+    "new_event_hooks": false,
+    "world_state_grants_character_knowledge": false,
+    "unsupported_past_choices": "unknown; never infer from a missing flag or the calendar"
+  },
+  "digest": "858ec57d3c305fdb4063eff23f312fb5f5ca89af2e9b04a50307c9682e0abefb"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-16700-wow-b8d85c357ebd",
+  "revision": 1,
+  "name": "Tinboan Mechagon — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "25c5883b3c986d2f3c45fb48240134aa4100e3521246598dcc4c555207adce36",
+    "transcript_sha256": "88a95a118c0bfad8da3d84a4cae8682bb1c2d4bb08e419b95a366a863c2b25d2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 145222,
+      "seconds": 6.050916666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.75,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

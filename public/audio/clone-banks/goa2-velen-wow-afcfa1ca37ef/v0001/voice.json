@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-velen-wow-afcfa1ca37ef",
+  "revision": 1,
+  "name": "Velen — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "93d0131d1b25f4ca8ee4f476ea60b92f51cbc7ab15608ffaf5c67090683aa679",
+    "transcript_sha256": "a11adec2d89e40275d8e0f11abf11c771ce9cb4e1ea651fe2d782e6d2acfcf64",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376954,
+      "seconds": 15.706416666666666,
+      "peak": 0.937164,
+      "rms_dbfs": -18.48,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

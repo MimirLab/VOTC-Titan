@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-taoshi-wow-9144b1859267",
+  "revision": 1,
+  "name": "Taoshi — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "550f3f60deb12e94a45e672de929a7c1ba9f9de780cdc28c86d5f1691ace1ced",
+    "transcript_sha256": "ec77e1b1c1d6eef525e9a75ddbbb9ce304f0c237afc8407c109efdbbbdf04138",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 417781,
+      "seconds": 17.407541666666667,
+      "peak": 0.859772,
+      "rms_dbfs": -17.89,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

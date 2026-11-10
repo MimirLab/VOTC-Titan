@@ -1,0 +1,9 @@
+{
+  "package_version": "11.10.0",
+  "electron_abi": "130",
+  "platform": "linux-x64",
+  "url": "https://github.com/WiseLibs/better-sqlite3/releases/download/v11.10.0/better-sqlite3-v11.10.0-electron-v130-linux-x64.tar.gz",
+  "archive_sha256": "c167ada36b9f363b165b4825629d4b4f6533269f4d530789f8ffb9126fc5706f",
+  "member": "build/Release/better_sqlite3.node",
+  "module_sha256": "b68a92fd408c86cd66e39c3daf37f191fa25786b0e058b61fb4aca5355fb5507"
+}

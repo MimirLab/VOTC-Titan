@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60248-wow-selected-1851c5cb6e",
+  "revision": 1,
+  "name": "Meryl Winterstorm — Meryl Felstorm; WoW Legion undead recorded portrayal",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d3c5201eff86be2ded9dadc6de71455674b657974fe9311951fb217b06e0f88e",
+    "transcript_sha256": "c8d17b12f23906bdcd083bf9d4b3146ab04770351cfd44c013e084f1a8c0088a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 413309,
+      "seconds": 17.221208333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.67,
+      "clipped_samples": 12
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

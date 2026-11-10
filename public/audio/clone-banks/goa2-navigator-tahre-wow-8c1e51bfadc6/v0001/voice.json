@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-navigator-tahre-wow-8c1e51bfadc6",
+  "revision": 1,
+  "name": "Tah're — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6305aea0f1418017872f8d557f054f66c3ccab6973be1fd8630882c34dc96281",
+    "transcript_sha256": "7bdf219d36e6a11a4bc63a56212d6aecf68512f41fe67b170e2f2ae642608336",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 377558,
+      "seconds": 15.731583333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.89,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

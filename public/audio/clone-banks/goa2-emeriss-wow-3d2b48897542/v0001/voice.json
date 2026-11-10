@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-emeriss-wow-3d2b48897542",
+  "revision": 1,
+  "name": "Emeriss — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "259ba4227f07a0923e0c3c8457aeb5b5f59d69d187b49de475e9cd5baa6ea5cf",
+    "transcript_sha256": "4d74b0cca681ea37af404d77c74f01a3e1e05a0f21c92fdcef432a7aac55ef77",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 178503,
+      "seconds": 7.437625,
+      "peak": 1.0,
+      "rms_dbfs": -15.46,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

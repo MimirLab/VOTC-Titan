@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-aelthalyste-wow-0ba8ade74525",
+  "revision": 1,
+  "name": "Aelthalyste — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6e0a453b3cf0198a9e79e31d50a69641c74365129b950f1997f3062478294102",
+    "transcript_sha256": "5b6e9eb4f99fdb026422d3350aabc89aa27d14fd7853197484005ff5af46decc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374741,
+      "seconds": 15.614208333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.93,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

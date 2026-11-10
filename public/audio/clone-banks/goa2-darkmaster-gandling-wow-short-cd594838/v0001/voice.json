@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-darkmaster-gandling-wow-short-cd594838",
+  "revision": 1,
+  "name": "Genobaud Gandling — WoW indexed Darkmaster Gandling short recorded soundset",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7001f8ec7609969374ca02fad352b0017a76618e601b4598f4d070ba0ae448bc",
+    "transcript_sha256": "f62a868db344da185cabcf0053fad2a979752689de8e53c7750c32114f09ee34",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 60100,
+      "seconds": 2.504166666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.26,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

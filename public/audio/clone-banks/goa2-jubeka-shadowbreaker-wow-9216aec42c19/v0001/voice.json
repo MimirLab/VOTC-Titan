@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-jubeka-shadowbreaker-wow-9216aec42c19",
+  "revision": 1,
+  "name": "Jubeka Shadowbreaker — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "e38416eb6ccd3f52559b9615885f7b1521fbc74b8f59bd38a4f3d6ca2592edbf",
+    "transcript_sha256": "0d5bb3f3f5238b007b69d7e7e714770ccdfae793ff5fb7c767afcd413065ddef",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 215932,
+      "seconds": 8.997166666666667,
+      "peak": 0.993683,
+      "rms_dbfs": -18.02,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

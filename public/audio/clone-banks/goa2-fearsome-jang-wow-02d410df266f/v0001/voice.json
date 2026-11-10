@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-fearsome-jang-wow-02d410df266f",
+  "revision": 1,
+  "name": "Jang — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6765e16141f8162d7548c68ad16007953517ab16be3d23af07d51279760bbc98",
+    "transcript_sha256": "7e4f65cf3633f1f2c2cf2aaa411c3bb6eaf9ab5fc2af231a831017ad1ab93eae",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 396044,
+      "seconds": 16.501833333333334,
+      "peak": 0.990051,
+      "rms_dbfs": -14.45,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

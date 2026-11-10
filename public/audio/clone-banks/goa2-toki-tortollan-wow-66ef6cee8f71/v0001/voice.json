@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-toki-tortollan-wow-66ef6cee8f71",
+  "revision": 1,
+  "name": "Toki Jelbo — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "83dccd39f397e40200dd43ee6d3d4025704d13adca3dd69b701f2a02815f5867",
+    "transcript_sha256": "6c46dab877d341ed7379339eb4f87236b2e728995b0200c73c5b7f845446c047",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 399603,
+      "seconds": 16.650125,
+      "peak": 0.993073,
+      "rms_dbfs": -15.34,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

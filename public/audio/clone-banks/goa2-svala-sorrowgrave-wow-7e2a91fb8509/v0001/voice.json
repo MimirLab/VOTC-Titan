@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-svala-sorrowgrave-wow-7e2a91fb8509",
+  "revision": 1,
+  "name": "Svala Sorrowgrave — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "36e02e651dab5552fa22e1ec7baed43af7125a7bb99a594951812b01288ed4c4",
+    "transcript_sha256": "68b162076a4c14b127923284366eb7bc9f73d70d39e8f3bfc07aab4df7c3ce05",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 358987,
+      "seconds": 14.957791666666667,
+      "peak": 0.976471,
+      "rms_dbfs": -18.17,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

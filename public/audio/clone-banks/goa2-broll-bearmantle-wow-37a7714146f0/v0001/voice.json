@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-broll-bearmantle-wow-37a7714146f0",
+  "revision": 1,
+  "name": "Broll Bearmantle — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8b4a9c47fd797e2e7ace3c22b66098d5dd334410ed1aac78656b5a0bb616354c",
+    "transcript_sha256": "a1714dbfc2718e66fe7dae4294490bb497c5e17dbbcb18980d251aea53835435",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 397910,
+      "seconds": 16.579583333333332,
+      "peak": 1.0,
+      "rms_dbfs": -15.75,
+      "clipped_samples": 32
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-korvas-bloodthorn-wow-fe27bc390e9a",
+  "revision": 1,
+  "name": "Kor'vas Bloodthorn — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0eb508fbfb402308173af6becc633cb1fb36f1101b0dac4c43acd75b1371aff2",
+    "transcript_sha256": "ae3042c1b7383f47598165ed262f18eafa45553083022aba45b8134c10731308",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 409477,
+      "seconds": 17.061541666666667,
+      "peak": 0.970154,
+      "rms_dbfs": -16.82,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

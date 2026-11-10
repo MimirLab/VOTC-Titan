@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-zabra-hexx-wow-58c16f4ad68a",
+  "revision": 1,
+  "name": "Zabra Hexx — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f9f98833110fc6f72beac53384365c8e4ec2a182bb98d739768894e3bc13352d",
+    "transcript_sha256": "e78e3620307ea906c1f0206bac7e5ea32fc8a0fffb75f0bc442a8c3f964f550a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 397914,
+      "seconds": 16.57975,
+      "peak": 1.0,
+      "rms_dbfs": -17.21,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

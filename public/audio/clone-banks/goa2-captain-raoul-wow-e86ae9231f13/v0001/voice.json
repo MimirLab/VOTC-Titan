@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-captain-raoul-wow-e86ae9231f13",
+  "revision": 1,
+  "name": "Raoul — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4590df4dfdf39d7745d6b95a5396c2df48ca0089b7f2b1a30688d916d4420e9a",
+    "transcript_sha256": "4256fc17be89d2465dc7c271fc01b16b31b97b3715cab6b3b5a77012716d0535",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 359916,
+      "seconds": 14.9965,
+      "peak": 1.0,
+      "rms_dbfs": -18.06,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

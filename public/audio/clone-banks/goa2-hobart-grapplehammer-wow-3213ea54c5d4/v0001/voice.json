@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-hobart-grapplehammer-wow-3213ea54c5d4",
+  "revision": 1,
+  "name": "Hobart Grapplehammer — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b950c4a1a40f20e65674450f11df5092b31e754b7ffb6017ab953aab4f0d4903",
+    "transcript_sha256": "85913377e4b9f1fa4c00bb2e9a462d42582b56a8cfcf38c8ea15e21433be08b4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 400967,
+      "seconds": 16.706958333333333,
+      "peak": 1.0,
+      "rms_dbfs": -18.44,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

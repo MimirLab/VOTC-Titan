@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-patrol-captain-gerdo-wow-8d262288e7e0",
+  "revision": 1,
+  "name": "Gerdo — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f9062b7b4e4a579aeac9e99d483c89d4ec3f1036c3581b4b6cadf74d5ddc2692",
+    "transcript_sha256": "5f7fb4e4b052c0884ac29dbc0ad20c70b0928d5401ab8e6b29b7822907eaaf03",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 57612,
+      "seconds": 2.4005,
+      "peak": 0.999969,
+      "rms_dbfs": -17.92,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

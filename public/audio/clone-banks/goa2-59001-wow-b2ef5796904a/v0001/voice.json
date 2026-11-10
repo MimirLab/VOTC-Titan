@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-59001-wow-b2ef5796904a",
+  "revision": 1,
+  "name": "Khadgar — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ac87fc63dfe23329095714d9c0b617aa2b1c2152399c6ba40635842dd27071a5",
+    "transcript_sha256": "46f3bf7e0f30d76cf236b41e456bbfcab1eb50df32c9bb5e2ba8cd71b7c5bd46",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 406439,
+      "seconds": 16.934958333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.76,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

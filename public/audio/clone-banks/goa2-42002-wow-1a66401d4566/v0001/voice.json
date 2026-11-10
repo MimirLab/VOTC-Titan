@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42002-wow-1a66401d4566",
+  "revision": 1,
+  "name": "Anasterian Sunstrider — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "24c0dff8f7f9f8b150bd491ef10adf3b870aaf8fc8174cfea185aa38ea541bac",
+    "transcript_sha256": "eb0919b15b322b192e0271253ede9bf7afde613b9701a6b40c27781bd56f2289",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 302315,
+      "seconds": 12.596458333333333,
+      "peak": 0.975677,
+      "rms_dbfs": -18.59,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

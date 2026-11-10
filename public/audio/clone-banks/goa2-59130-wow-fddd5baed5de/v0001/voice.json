@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-59130-wow-fddd5baed5de",
+  "revision": 1,
+  "name": "Rhonin — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "54b8f62f04a4b6193e1aec3174d416caa64ce22478faa31ba84ce31dbd48acb2",
+    "transcript_sha256": "22d4f0535de8c4bf2a1c24ec5f288fe708fe2e320632602b946eedefdf7a34cb",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384470,
+      "seconds": 16.019583333333333,
+      "peak": 1.0,
+      "rms_dbfs": -17.1,
+      "clipped_samples": 15
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

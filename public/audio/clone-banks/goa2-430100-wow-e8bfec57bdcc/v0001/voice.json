@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-430100-wow-e8bfec57bdcc",
+  "revision": 1,
+  "name": "Varimathras — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "71b56537887f66cf7b588985c5e12ef6b1c8a2dfafe2385c852b8fafbd73280b",
+    "transcript_sha256": "a062568112282c974a75a0579a33f84dacd93c3af8c75b01486902d63ba4d97a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376230,
+      "seconds": 15.67625,
+      "peak": 1.0,
+      "rms_dbfs": -15.32,
+      "clipped_samples": 50
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

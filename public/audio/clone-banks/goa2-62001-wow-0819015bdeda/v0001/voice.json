@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62001-wow-0819015bdeda",
+  "revision": 1,
+  "name": "Ysera — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c34994f44b400cc289cb80b4c69172f42eaa7c3e2a3018ded4655a217d0fd1aa",
+    "transcript_sha256": "b7aa325261626cb84f0317a1606bc8067f3297feb1fb63df58a9b979d7b6a691",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376353,
+      "seconds": 15.681375,
+      "peak": 1.0,
+      "rms_dbfs": -15.55,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

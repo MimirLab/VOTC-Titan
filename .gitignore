@@ -1,0 +1,45 @@
+node_modules/
+dist/
+out/
+coverage/
+*.log
+.env
+.env.*
+!.env.example
+*.local.json
+.DS_Store
+
+__pycache__/
+
+# Runtime records do not belong in the authored default template.
+/default_userdata/conversation_history/
+/default_userdata/conversation_summaries/*
+!/default_userdata/conversation_summaries/.gitkeep
+/default_userdata/logs/*
+!/default_userdata/logs/.gitkeep
+
+# Independent local clone-asset Git repository; never add it as an accidental gitlink.
+/character-voices/
+
+# Verified reproducible local runtime, imported by tools/import-lorebook.py.
+/public/lorebook/bundle/
+
+# Runtime assets are shipped as verified release assets, outside normal Git history.
+/public/scene-art/
+/public/audio/**/*.wav
+/public/audio/**/*.mp3
+/default_userdata/audio/
+
+# Inherited commercial fonts are retained privately; public UI uses OFL fonts.
+/public/assets/GitanLatin-Regular.otf
+/public/assets/Paradox_King_Script.otf
+/public/assets/ZiKuXingQiuFeiYangTi-2.ttf
+
+# Keep authored scene data; the retired game fork and copied game art stay local.
+/game_mod/*
+!/game_mod/scenes/
+/game_mod/scenes/*
+!/game_mod/scenes/*.json
+
+# Declared synthetic stock-CE response used by the launcher regression suite.
+!/tests/scenes/fixtures/stock-ce-scene-response.log

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60003-wc3-arthas2",
+  "revision": 1,
+  "name": "Arthas Menethil — death knight (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a2269c2cc8e6913ace659054715b57ed534dffc036184ca1e5d252add3e8d919",
+    "transcript_sha256": "ba6f2d68c75e02449f8bf54bd7ee625e311d7789fd7376520ec51d4679ee9fcc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 275690,
+      "seconds": 11.487083333333333,
+      "peak": 0.768433,
+      "rms_dbfs": -22.28,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

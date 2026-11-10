@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "policy": "Preserve the exact recorded portrayal. Adult age performance requires a verified source baseline and current mortal qualification; unknown source age is preserved. Existing childhood/youthful directions remain the separately authorized maturation exception.",
+  "reviewedReferences": [
+    {
+      "key": "goa2-10021-hots-thrallbase/v0001",
+      "manifestSha256": "f2892cc35d02ff7bed7be88f84e5848f6e1b50270b13668dac83ac3587390fa0",
+      "referenceAge": "adult",
+      "basis": "Player-established HotS base Thrall performance; explicit request for this reference to gain older/undead delivery when its current body changes. No invented recording date or exact source age."
+    }
+  ],
+  "unknownPolicy": "All other current recordings retain their source performance for adult senescence until an explicit source-edition age baseline is established. This protects already-old voices without guessing from current character age.",
+  "noVoiceBankManifestChanges": true
+}

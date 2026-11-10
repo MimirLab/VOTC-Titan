@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62205-wow-8e422516ccc2",
+  "revision": 1,
+  "name": "Sabellian — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b47272e5868388999dfde2e361a7f6d296f746a54a608e55074e7fa21a031e59",
+    "transcript_sha256": "14563b27c3a8bc3e673e560bc520a0a5834e830f589c5c6529f8a7c96cc041d9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 385944,
+      "seconds": 16.081,
+      "peak": 1.0,
+      "rms_dbfs": -15.14,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

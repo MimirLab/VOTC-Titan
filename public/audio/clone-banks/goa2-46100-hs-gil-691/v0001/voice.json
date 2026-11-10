@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46100-hs-gil-691",
+  "revision": 1,
+  "name": "Archmage Arugal — Archmage Arugal (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "dcb830a1cde7f4f3a6b53ab1a00ed01ada564b485cf8826bb1b7bedbafd43ee0",
+    "transcript_sha256": "05fe2ac988b43f4480a4272776504001b614306a9f4f430a774f58ee88e2afc7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 64052,
+      "seconds": 2.668833333333333,
+      "peak": 0.948334,
+      "rms_dbfs": -16.3,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

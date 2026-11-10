@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-taylor-wow-0779cf89d4c6",
+  "revision": 1,
+  "name": "Taylor — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "98042cd8ba2ff42d8e83a1ff2f862c1d560abd31140a7ab71fc8039c383353fa",
+    "transcript_sha256": "5b1fa3e660615f8719ddb65782dcb3e3a6611d93e4309c1d818fd8f6ff57c67b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 124212,
+      "seconds": 5.1755,
+      "peak": 1.0,
+      "rms_dbfs": -18.68,
+      "clipped_samples": 16
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

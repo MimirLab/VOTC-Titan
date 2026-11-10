@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-zolani-wow-2fbf677461c5",
+  "revision": 1,
+  "name": "Zolani — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b704781419d4e6008e4e219880698dd96afa3afea332e118caa181688f601ef6",
+    "transcript_sha256": "9854ec7ff7808a44b4a3031c57b8d83873b76452c1729751fb37a9849687208b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 219359,
+      "seconds": 9.139958333333333,
+      "peak": 0.929413,
+      "rms_dbfs": -17.4,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

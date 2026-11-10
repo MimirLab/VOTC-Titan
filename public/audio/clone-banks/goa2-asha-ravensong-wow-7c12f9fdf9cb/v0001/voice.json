@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-asha-ravensong-wow-7c12f9fdf9cb",
+  "revision": 1,
+  "name": "Asha Ravensong — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d733c8c1e5a770ac689386293fe50a3e1bd54960050fc971710f7394cadac701",
+    "transcript_sha256": "1d7da9325d022b20e78268879ceeadf1b925faa5d0f91179d2f412969dfa2670",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 120026,
+      "seconds": 5.001083333333334,
+      "peak": 0.709503,
+      "rms_dbfs": -19.02,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-kelsey-steelspark-wow-9d8c201fbb1c",
+  "revision": 1,
+  "name": "Kelsey Steelspark — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "743460bdb9184f37663ce9f84a3d5fe3e80376c6d78a06c627eadcec6b4f7dc5",
+    "transcript_sha256": "86441eb181bc97f6e9b16e72b0be177df300c7e5717e303100f986fbb524fbcc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 380831,
+      "seconds": 15.867958333333334,
+      "peak": 0.964478,
+      "rms_dbfs": -18.99,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-tenwu-of-the-red-smoke-hs-dmf-071",
+  "revision": 1,
+  "name": "Tenwu Red Smoke — Tenwu of the Red Smoke (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d2f118ab9f5639cd540c2e4534fe0af0c629cec87aa60487a14858341a91a3ef",
+    "transcript_sha256": "c8558c70b34aff4bbb54994e9de31ee660648b53e95051af14433060dbd487c7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 83101,
+      "seconds": 3.4625416666666666,
+      "peak": 0.826538,
+      "rms_dbfs": -16.34,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-sergeant-bainbridge-wow-c409b6415a67",
+  "revision": 1,
+  "name": "Bainbridge — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b1e9e42761d48126bdb34beccdec4b6d44b2d8ebd2fb7eecb0000c8a529b9a40",
+    "transcript_sha256": "81621b354a68574ac2983d0b665620e4956ab0325cb8b79c7c4fe3c413be575b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 373970,
+      "seconds": 15.582083333333333,
+      "peak": 0.990692,
+      "rms_dbfs": -17.19,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

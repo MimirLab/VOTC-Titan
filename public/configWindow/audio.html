@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>require("../../dist/shared/titanAppearance.js")</script>
+    <meta charset="UTF-8" />
+    <title data-i18n="app.title">VOTC Titan Edition</title>
+    <link rel="stylesheet" href="config.css" />
+    <link rel="stylesheet" href="../chatWindow/theme.css" />
+
+      <link rel="stylesheet" href="../styles/titan.css">
+    <link rel="stylesheet" href="audio.css">
+</head>
+  <body>
+
+
+    <div class="navbar">
+      <div class="app-brand"><img src="../assets/titan-icon.png" alt=""><span data-i18n="app.title">VOTC Titan Edition</span></div>
+      <ul>
+        <li ><a href="connection.html" data-i18n="nav.connection" data-i18n-title="nav.connection_tooltip">Connection</a></li>
+        <li><a href="actions.html" data-i18n="nav.actions" data-i18n-title="nav.actions_tooltip">Actions</a></li>
+        <li><a href="summarization.html" data-i18n="nav.summarization" data-i18n-title="nav.summarization_tooltip">Summarization</a></li>
+        <li class="active"><a href="audio.html">Audio</a></li>
+        <li><a href="memories.html" data-i18n="nav.memories" data-i18n-title="nav.memories_tooltip">Knowledge</a></li>
+        <li><a href="prompts.html" data-i18n="nav.prompts" data-i18n-title="nav.prompts_tooltip">Prompts</a></li>
+        <li><a href="letters.html" data-i18n="nav.letters" data-i18n-title="nav.letters_tooltip">Letters</a></li>
+        <li><a href="diaries.html" data-i18n="nav.diaries" data-i18n-title="nav.diaries_tooltip">Diaries</a></li>
+        <li><a href="settings.html" data-i18n="nav.settings" data-i18n-title="nav.settings_tooltip">Settings</a></li>
+        <li><a href="system.html" data-i18n="nav.system" data-i18n-title="nav.system_tooltip">System</a></li>
+        <li class="help-menu"><a href="#" id="open-readme" data-i18n="nav.help" data-i18n-title="nav.help_tooltip">Help</a></li>
+        <language-selector></language-selector>
+        <li class="close-menu"><a href="#" id="close-config-window" data-i18n-title="nav.close_tooltip">×</a></li>
+      </ul>
+    </div>
+
+
+
+    <main class="container audio-page" id="container" style="display:block">
+      <form id="audio-settings">
+        <header class="audio-header">
+          <div><h2>Audio</h2><p>Character voices, a consistent narrator, and your own voice library.</p></div>
+          <div class="audio-actions"><label class="audio-toggle"><input type="checkbox" name="enabled"> Enable audio</label><button class="audio-primary" type="submit" data-audio-action>Save audio settings</button></div>
+        </header>
+        <div class="audio-statusbar"><p id="audio-status" role="status" aria-live="polite">Loading audio settings…</p><span id="audio-settings-dirty" hidden>Unsaved settings</span></div>
+        <section class="audio-card audio-playback" aria-label="Playback settings">
+          <div class="audio-checks"><label><input type="checkbox" name="narrator"> Read narration</label><label><input type="checkbox" name="thoughts"> Whisper internal thoughts</label><label><input type="checkbox" name="playerSpeech"> Read my speech</label></div>
+          <label class="audio-volume">Volume <input name="volume" type="range" min="0" max="1" step="0.05"><output id="audio-volume-value">80%</output></label>
+        </section>
+        <nav class="audio-tabs" role="tablist" aria-label="Audio sections">
+          <button type="button" role="tab" id="audio-tab-setup" aria-controls="audio-panel-setup" aria-selected="true" tabindex="0">Engine &amp; downloads</button>
+          <button type="button" role="tab" id="audio-tab-narrator" aria-controls="audio-panel-narrator" aria-selected="false" tabindex="-1">Narrator</button>
+          <button type="button" role="tab" id="audio-tab-characters" aria-controls="audio-panel-characters" aria-selected="false" tabindex="-1">Characters</button>
+        </nav>
+        <div class="audio-workspace">
+          <div class="audio-main">
+            <section class="audio-card" id="audio-panel-narrator" role="tabpanel" aria-labelledby="audio-tab-narrator" hidden>
+              <div class="audio-section-heading"><h3>Narrator</h3><span id="audio-narrator-count" class="audio-badge"></span><button id="audio-delete-narrator" class="audio-danger" type="button" data-audio-action>Delete narrator</button></div>
+              <p class="audio-help">Try a description and preview it. Save only the voices you want to keep.</p>
+              <p id="audio-active-narrator" class="audio-current"></p>
+              <div id="audio-narrator-controls">
+                <label class="audio-field">Saved narrator<select id="audio-narrator-voice"></select></label>
+                <div class="audio-actions audio-library-actions"><button id="audio-new-narrator" type="button" data-audio-action>New narrator</button><button id="audio-use-narrator" type="button" data-audio-action>Use this narrator</button></div>
+                <div id="audio-narrator-delete-confirm" class="audio-confirm" role="alert" hidden><p id="audio-narrator-delete-message"></p><div class="audio-actions"><button id="audio-confirm-delete-narrator" type="button" class="audio-danger" data-audio-action>Delete narrator and recording</button><button id="audio-cancel-delete-narrator" type="button">Cancel</button></div></div>
+                <div class="audio-name-row"><label class="audio-field">Voice name<input id="audio-narrator-name" maxlength="100" value="Narrator"></label><button id="audio-rename-narrator" type="button" data-audio-action>Rename</button></div>
+                <label class="audio-field">Voice description<textarea id="audio-narrator-description" rows="4" maxlength="2400" placeholder="Describe the voice, accent, texture and cadence you want."></textarea></label>
+                <p id="audio-narrator-draft-status" class="audio-help" aria-live="polite"></p>
+              </div>
+              <div class="audio-actions audio-editor-actions"><button id="audio-preview-narrator" type="button" class="audio-primary" data-audio-action>Preview voice</button><button id="audio-save-narrator" type="button" data-audio-action>Save narrator</button></div>
+              <p id="audio-side-narrator" class="audio-help" hidden>Your optional speech connection uses its provider voice. Choose Breeze in Engine &amp; downloads to design and save narrators.</p>
+            </section>
+            <section class="audio-card" id="audio-panel-characters" role="tabpanel" aria-labelledby="audio-tab-characters" hidden>
+              <div class="audio-section-heading"><h3>Character voices</h3><button id="audio-refresh" type="button" data-audio-action>Refresh characters</button></div>
+              <p class="audio-help">Covered GoA2 characters use their recorded voice automatically. Other characters receive a saved generated voice. Whispered thoughts keep the same speaker.</p>
+              <p id="audio-no-characters" class="audio-empty" hidden>Open an encounter to choose a character. Your saved character voices are listed below.</p>
+              <label class="audio-field">Character<select id="audio-character"></select></label>
+              <section id="audio-clone-controls">
+                <label class="audio-field">Clone bank<select id="audio-clone-bank"><option value="">Normal casting</option></select></label>
+                <div class="audio-actions"><button id="audio-import-clone-bank" type="button" data-audio-action>Import clone bank</button><button id="audio-bind-clone-bank" type="button" data-audio-action>Apply to character</button></div>
+                <p id="audio-clone-status" class="audio-help" aria-live="polite"></p>
+                <p class="audio-help">419 GoA2 reference banks are included. Automatic checks the current speaker’s game identity and uses its recorded default, selecting living, undead and transformed variants from verified current game traits. Choose a specific bank to override the automatic version, or Normal casting to opt out for this character. Clones retain tone and whispered thoughts; automatic Race, Sex, culture and age directions are bypassed.</p>
+              </section>
+              <div class="audio-actions"><button id="audio-preview-character" type="button" class="audio-primary" data-audio-action>Preview saved voice</button></div>
+              <details class="audio-details"><summary>Race, Sex &amp; Culture</summary>
+                <p class="audio-help">Race shapes physical resonance; culture shapes accent and cadence. A character can have any combination of the two.</p>
+                <div class="audio-fields"><label class="audio-field">Race<select id="audio-anatomy"></select></label><label class="audio-field">Sex<select id="audio-presentation"><option value="">Observed sex</option><option value="male">Male</option><option value="female">Female</option></select></label><label class="audio-field">Culture accent<select id="audio-culture"></select></label></div>
+                <p class="audio-help">Observed game facts are used by default. Choose Save casting and redesign to apply changes; Preview plays the saved voice. These choices change the voice only.</p>
+                <div class="audio-actions"><button id="audio-save-casting" type="button" data-audio-action>Save casting and redesign</button><button id="audio-redesign" type="button" data-audio-action>Redesign with connected text model</button></div>
+              </details>
+              <h4>Saved character voices</h4><label class="audio-field">Find a saved voice<input id="audio-voice-search" type="search" placeholder="Search by name"></label>
+              <div id="audio-voices"></div>
+            </section>
+            <section class="audio-card" id="audio-panel-setup" role="tabpanel" aria-labelledby="audio-tab-setup">
+              <h3>Speech engine</h3>
+              <label class="audio-field">Engine<select name="provider"><option value="breeze">Breeze · character voices</option><option value="openai-speech">Optional compatible speech connection</option><option value="elevenlabs">Optional ElevenLabs connection</option></select></label>
+              <div id="breeze-connection">
+                <label class="audio-field">Hosting<select name="hosting"><option value="managed">Host locally in Titan</option><option value="external">Connect to a Breeze server</option></select></label>
+                <div id="audio-managed-settings"><label class="audio-field">Local model<select name="managedModel"><option value="hoppou-q8">Vulkan Q8</option><option value="hoppou-f16">Vulkan F16 reference</option><option value="cuda-hybrid">CUDA selective ConvRot hybrid</option><option value="cuda-bf16">CUDA BF16 reference</option></select></label><p class="audio-help">Local speech runs on your GPU. Titan can fall back to an already installed Q8 package when needed.</p></div>
+              </div>
+              <div id="audio-endpoint-settings"><label class="audio-field">Server endpoint<input name="endpoint" type="url"></label><label class="audio-field">API key, if required<input name="apiKey" type="password" autocomplete="off"></label></div>
+              <div id="side-connection"><p class="audio-help">Optional connections use your chosen provider voice. Breeze designs persistent character voices.</p><p id="audio-side-thoughts" class="audio-help" hidden>Internal thoughts remain in text because this connection cannot whisper them.</p><div class="audio-fields"><label class="audio-field">Model<input name="model"></label><label class="audio-field">Provider voice ID<input name="sideVoiceId"></label></div></div>
+              <div class="audio-actions"><button id="audio-test" type="button" class="audio-primary" data-audio-action>Start / test Breeze</button><button id="audio-unload" type="button">Unload local model</button></div>
+              <details class="audio-details"><summary>Advanced engine settings</summary><div class="audio-fields"><label class="audio-field">Voice guidance<input name="cfgScale" type="number" min="1" max="8" step="0.5"></label><label class="audio-field">Unload after idle minutes<input name="idleMinutes" type="number" min="1" max="60"></label></div><p class="audio-help">Titan waits briefly for memory and unloads its own model during sustained critical pressure. CPU fallback is disabled.</p></details>
+              <section id="audio-downloads"><h4>Local model downloads</h4><p id="audio-hardware" class="audio-help"></p><p class="audio-help">Download only the packages you choose. Installed models can be verified or resumed.</p><div id="audio-models"></div><button id="audio-cancel-download" type="button">Cancel download</button><details class="audio-details"><summary>Package details &amp; licences</summary><p class="audio-help">Vulkan packages include the runtime. CUDA packages include an isolated Python environment and additional dependencies; the selective hybrid keeps the depth decoder in BF16. CUDA listening and performance checks on compatible NVIDIA hardware remain pending. Weight size alone does not measure quality or memory use.</p><p><a target="_blank" rel="noreferrer" href="https://huggingface.co/BreezeBlue/Breeze-TTS-2">Breeze model and licence</a> · <a target="_blank" rel="noreferrer" href="https://github.com/HoppouAI/Breeze-TTS-2.cpp">Vulkan runtime and source</a></p><p class="audio-help">Runtime: Apache-2.0. Weights: original Breeze research/noncommercial licence.</p></details></section>
+            </section>
+          </div>
+          <aside class="audio-card audio-preview" aria-label="Voice preview">
+            <h3>Listen</h3><label class="audio-field">Words to speak<textarea id="audio-preview-text" rows="5" maxlength="1200"></textarea></label>
+            <p class="audio-help">Change these words to test a voice. The description guides its sound and is never read aloud.</p>
+            <audio id="audio-preview-player" controls preload="none"></audio><button id="audio-stop" type="button">Stop playback</button>
+            <p class="audio-help">Previews use your volume setting. Voices are boosted for clearer playback over the game.</p>
+            <details class="audio-details"><summary>Optional preview performance</summary><label class="audio-field">Faith performance<select id="audio-faith-preview"><option value="">No faith performance</option></select></label><p class="audio-help">Applies to this preview only.</p></details>
+          </aside>
+        </div>
+      </form>
+    </main>
+<script>require("../../dist/configWindow/audioRenderer.js")</script>
+<script>require("../../dist/configWindow/connectionRenderer.js")</script>
+</body></html>

@@ -1,0 +1,301 @@
+{
+  "version": 1,
+  "source": "Inspected actual GoA2 0.6.5 effective heritage and culture definitions; familiarity with inherited or wholesale-adopted common customs, never ancestry/faith/powers/history.",
+  "catalogDigest": "b9af7237e45a6772904a179b9523e1cf260122e7c8602e1e21d15b1d5ff6196c",
+  "membershipsSha256": "18daa8e54fbf3f28104d5f1206ead5981d2c077eb7c65a8b35281297764c3771",
+  "allowedCategories": [
+    "enduring_custom",
+    "belief_account",
+    "linguistic_convention"
+  ],
+  "bindings": [
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_arathi",
+        "category": "heritage",
+        "name": "Arathi",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[],\"modifierEvidence\":[],\"parameterDescriptions\":{},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:001",
+      "observedCultureDefinitions": [
+        {
+          "culture": "arathi",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "lordaeronian",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "arathorian",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "alteraci",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "dalaranian",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "baradin",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "hillsbrad",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "azerothian",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        },
+        {
+          "culture": "ping",
+          "heritage": "heritage_arathi",
+          "file": "common/culture/cultures/wc_arathi.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_gilnean",
+        "category": "heritage",
+        "name": "Gilnean",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[],\"modifierEvidence\":[],\"parameterDescriptions\":{},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:001",
+      "observedCultureDefinitions": [
+        {
+          "culture": "gilnean",
+          "heritage": "heritage_gilnean",
+          "file": "common/culture/cultures/wc_gilnean.txt"
+        },
+        {
+          "culture": "tirassian",
+          "heritage": "heritage_gilnean",
+          "file": "common/culture/cultures/wc_gilnean.txt"
+        },
+        {
+          "culture": "theramore",
+          "heritage": "heritage_gilnean",
+          "file": "common/culture/cultures/wc_gilnean.txt"
+        },
+        {
+          "culture": "northsea",
+          "heritage": "heritage_gilnean",
+          "file": "common/culture/cultures/wc_gilnean.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_darnassian",
+        "category": "heritage",
+        "name": "Darnassian",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[{\"key\":\"parameters\",\"operator\":\"=\",\"value\":[{\"key\":\"elder_culture\",\"operator\":\"=\",\"value\":\"yes\"}]}],\"modifierEvidence\":[],\"parameterDescriptions\":{\"elder_culture\":\"From the wisdom of an wc elder race, this culture gets up to 20%reduced impact of harmful events.\"},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:007",
+      "observedCultureDefinitions": [
+        {
+          "culture": "night_elf",
+          "heritage": "heritage_darnassian",
+          "file": "common/culture/cultures/wc_darnassian.txt"
+        },
+        {
+          "culture": "illidari",
+          "heritage": "heritage_darnassian",
+          "file": "common/culture/cultures/wc_darnassian.txt"
+        },
+        {
+          "culture": "protector",
+          "heritage": "heritage_darnassian",
+          "file": "common/culture/cultures/wc_darnassian.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_gnomish",
+        "category": "heritage",
+        "name": "Gnomish",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[],\"modifierEvidence\":[],\"parameterDescriptions\":{},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:008",
+      "observedCultureDefinitions": [
+        {
+          "culture": "gnome",
+          "heritage": "heritage_gnomish",
+          "file": "common/culture/cultures/wc_gnomish.txt"
+        },
+        {
+          "culture": "mechagonian",
+          "heritage": "heritage_gnomish",
+          "file": "common/culture/cultures/wc_gnomish.txt"
+        },
+        {
+          "culture": "leper_gnome",
+          "heritage": "heritage_gnomish",
+          "file": "common/culture/cultures/wc_gnomish.txt"
+        },
+        {
+          "culture": "mechagnome",
+          "heritage": "heritage_gnomish",
+          "file": "common/culture/cultures/wc_ulduaric.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_goblin",
+        "category": "heritage",
+        "name": "Goblin",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[],\"modifierEvidence\":[],\"parameterDescriptions\":{},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:010",
+      "observedCultureDefinitions": [
+        {
+          "culture": "goblin",
+          "heritage": "heritage_goblin",
+          "file": "common/culture/cultures/wc_goblin.txt"
+        },
+        {
+          "culture": "blackwater",
+          "heritage": "heritage_goblin",
+          "file": "common/culture/cultures/wc_goblin.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_pandaren",
+        "category": "heritage",
+        "name": "Pandaren",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[],\"modifierEvidence\":[],\"parameterDescriptions\":{},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:028",
+      "observedCultureDefinitions": [
+        {
+          "culture": "old_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        },
+        {
+          "culture": "mountain_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        },
+        {
+          "culture": "spiritual_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        },
+        {
+          "culture": "mainland_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        },
+        {
+          "culture": "forest_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        },
+        {
+          "culture": "fisher_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        },
+        {
+          "culture": "wandering_pandaren",
+          "heritage": "heritage_pandaren",
+          "file": "common/culture/cultures/wc_pandaren.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_odobenus",
+        "category": "heritage",
+        "name": "Kalu'ak",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[],\"modifierEvidence\":[],\"parameterDescriptions\":{},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:029",
+      "observedCultureDefinitions": [
+        {
+          "culture": "tuskarr",
+          "heritage": "heritage_odobenus",
+          "file": "common/culture/cultures/wc_odobenus.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_azsharic",
+        "category": "heritage",
+        "name": "Azshari",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[{\"key\":\"parameters\",\"operator\":\"=\",\"value\":[{\"key\":\"can_travel_along_rivers\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"culture_can_raid_at_sea_even_if_feudal\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"elder_culture\",\"operator\":\"=\",\"value\":\"yes\"}]},{\"key\":\"character_modifier\",\"operator\":\"=\",\"value\":[{\"key\":\"embarkation_cost_mult\",\"operator\":\"=\",\"value\":\"-1\"},{\"key\":\"no_water_crossing_penalty\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"movement_speed\",\"operator\":\"=\",\"value\":\"-0.15\"},{\"key\":\"supply_duration\",\"operator\":\"=\",\"value\":\"-0.25\"},{\"key\":\"naval_movement_speed_mult\",\"operator\":\"=\",\"value\":\"0.5\"}]}],\"modifierEvidence\":[{\"conditions\":[],\"effects\":[{\"key\":\"embarkation_cost_mult\",\"label\":\"embarkation Cost\",\"operator\":\"=\",\"value\":\"-1\"},{\"key\":\"no_water_crossing_penalty\",\"label\":\"command modifier iCrosses Rivers & Straits without advantage penalties\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"movement_speed\",\"label\":\"army Movement Speed\",\"operator\":\"=\",\"value\":\"-0.15\"},{\"key\":\"supply_duration\",\"label\":\"command modifier isupply Duration\",\"operator\":\"=\",\"value\":\"-0.25\"},{\"key\":\"naval_movement_speed_mult\",\"label\":\"Naval Speed\",\"operator\":\"=\",\"value\":\"0.5\"}],\"scope\":\"character_modifier\"}],\"parameterDescriptions\":{\"can_travel_along_rivers\":\"Unlocks the ability to sail in Major Rivers\",\"culture_can_raid_at_sea_even_if_feudal\":\"duchy-title tier and lower rulers may raid over seas, regardless of government\",\"elder_culture\":\"From the wisdom of an wc elder race, this culture gets up to 20%reduced impact of harmful events.\"},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:030",
+      "observedCultureDefinitions": [
+        {
+          "culture": "naga",
+          "heritage": "heritage_azsharic",
+          "file": "common/culture/cultures/wc_azsharic.txt"
+        }
+      ]
+    },
+    {
+      "heritageFact": {
+        "kind": "pillar",
+        "key": "heritage_chelonian",
+        "category": "heritage",
+        "name": "Chelonian",
+        "description": "Each heritage defines a common origin for related cultures' customs and mannerisms, either as something they descend from or have wholesale adopted.",
+        "rules": "{\"conditionalDescriptions\":{},\"constants\":{},\"definitions\":[{\"key\":\"parameters\",\"operator\":\"=\",\"value\":[{\"key\":\"can_travel_along_rivers\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"culture_can_raid_at_sea_even_if_feudal\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"aloof_wardens\",\"operator\":\"=\",\"value\":\"yes\"}]},{\"key\":\"character_modifier\",\"operator\":\"=\",\"value\":[{\"key\":\"embarkation_cost_mult\",\"operator\":\"=\",\"value\":\"-1\"},{\"key\":\"no_water_crossing_penalty\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"movement_speed\",\"operator\":\"=\",\"value\":\"-0.15\"},{\"key\":\"supply_duration\",\"operator\":\"=\",\"value\":\"-0.25\"},{\"key\":\"naval_movement_speed_mult\",\"operator\":\"=\",\"value\":\"0.5\"}]}],\"modifierEvidence\":[{\"conditions\":[],\"effects\":[{\"key\":\"embarkation_cost_mult\",\"label\":\"embarkation Cost\",\"operator\":\"=\",\"value\":\"-1\"},{\"key\":\"no_water_crossing_penalty\",\"label\":\"command modifier iCrosses Rivers & Straits without advantage penalties\",\"operator\":\"=\",\"value\":\"yes\"},{\"key\":\"movement_speed\",\"label\":\"army Movement Speed\",\"operator\":\"=\",\"value\":\"-0.15\"},{\"key\":\"supply_duration\",\"label\":\"command modifier isupply Duration\",\"operator\":\"=\",\"value\":\"-0.25\"},{\"key\":\"naval_movement_speed_mult\",\"label\":\"Naval Speed\",\"operator\":\"=\",\"value\":\"0.5\"}],\"scope\":\"character_modifier\"}],\"parameterDescriptions\":{\"aloof_wardens\":\"Because it limits its interaction with \\\"lesser beings\\\", this culture has 25%reduced development impact from epidemics.\",\"can_travel_along_rivers\":\"Unlocks the ability to sail in Major Rivers\",\"culture_can_raid_at_sea_even_if_feudal\":\"duchy-title tier and lower rulers may raid over seas, regardless of government\"},\"referencedMeanings\":{}}"
+      },
+      "subjectId": "expanded:people:193",
+      "observedCultureDefinitions": [
+        {
+          "culture": "tortollan",
+          "heritage": "heritage_chelonian",
+          "file": "common/culture/cultures/wc_chelonian.txt"
+        }
+      ]
+    }
+  ],
+  "notInferred": [
+    "biology",
+    "personal convictions",
+    "powers",
+    "training",
+    "regional residence knowledge",
+    "past events",
+    "selected branches",
+    "northern/southern/tharian names",
+    "ambiguous dwarf/highborne subgroups"
+  ]
+}

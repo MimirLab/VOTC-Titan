@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-22002-wow-1f126927a8f2",
+  "revision": 1,
+  "name": "Kurdran Wildhammer — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9a8246eec3a10122dfd9a85cb9a6ba3aa0d7f6483542648ac82465b08cc975f5",
+    "transcript_sha256": "b56bc98f260b71d45577281c12ec40e3e311eef9527caebf8ad374e5705bbbcc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 402236,
+      "seconds": 16.759833333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -17.57,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

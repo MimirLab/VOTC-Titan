@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-5811-hs-hero-03m",
+  "revision": 1,
+  "name": "Edwin VanCleef — Edwin VanCleef (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "78240809a220b94feb6d19db58fec9a1a30eef22ec9268d291cb94b85eb55ae3",
+    "transcript_sha256": "f4076a1640f7309523317253d8865f2f0a98d6e4c83138fe7ae721ab54f881d9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 354979,
+      "seconds": 14.790791666666667,
+      "peak": 0.944275,
+      "rms_dbfs": -16.17,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

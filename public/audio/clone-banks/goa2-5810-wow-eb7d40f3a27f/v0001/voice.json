@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-5810-wow-eb7d40f3a27f",
+  "revision": 1,
+  "name": "Gryan Stoutmantle — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "03c19de06b63bf51740fb242bd5171c8ee7805c00df871037cdb962b268e5a1c",
+    "transcript_sha256": "4f89551a6c4d005f6253decc2dfae9dd48bd3dded3b6e590478bed13ae25890c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374315,
+      "seconds": 15.596458333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.13,
+      "clipped_samples": 19
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

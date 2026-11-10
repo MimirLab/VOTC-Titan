@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-archmage-xylem-wow-d6725aa537e2",
+  "revision": 1,
+  "name": "Xylem — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d95481084d53d4b81e4d6bbd07dff8cf7aeb25f67f13688aeaabfaadc990201e",
+    "transcript_sha256": "54889f403a6368eafd687d99baa68d09885423ffccb8518fd3444202861c905e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 385179,
+      "seconds": 16.049125,
+      "peak": 0.995514,
+      "rms_dbfs": -17.2,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

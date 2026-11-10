@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-mannoroth-wow-f71a0d889482",
+  "revision": 1,
+  "name": "Mannoroth — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7b9fbf422bcf686e2532d94701146b05d8233951b364a0c1744be473a1c4a9d9",
+    "transcript_sha256": "d5fba00b01291b145bbd7a1f10f92346cc621c7ccb1f9c87ddc6190ffb60484d",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 142260,
+      "seconds": 5.9275,
+      "peak": 0.98645,
+      "rms_dbfs": -17.92,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

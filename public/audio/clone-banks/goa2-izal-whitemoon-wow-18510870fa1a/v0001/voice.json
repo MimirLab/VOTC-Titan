@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-izal-whitemoon-wow-18510870fa1a",
+  "revision": 1,
+  "name": "Izal Whitemoon — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "e57560d013958adc1a79d86c26aa5ac6b28c69e3bbc1cb8d0eafb8d2c4c0908b",
+    "transcript_sha256": "7d473fda3aa41000e78819377e1551793cc460f5ec7462a526cb0b72801d63a9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 223485,
+      "seconds": 9.311875,
+      "peak": 1.0,
+      "rms_dbfs": -15.97,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

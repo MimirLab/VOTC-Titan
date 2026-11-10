@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60572-hots-whitemanebase",
+  "revision": 1,
+  "name": "Sally Whitemane — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "646aabe6001e86de63b03626009d7c70eabf20a0ed245e999f10ab2684e6f9e6",
+    "transcript_sha256": "09413c28da88f9e359b78b99ceb0cda4939ffab58393f2ebdba256dc53e6f744",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 351468,
+      "seconds": 14.6445,
+      "peak": 0.828735,
+      "rms_dbfs": -16.65,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

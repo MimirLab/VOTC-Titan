@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-22001-hots-falstad",
+  "revision": 1,
+  "name": "Falstad Wildhammer — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "14df5bef669df5d7c409f3f4c0ec9f6cb91897accf575ecc70edb8efd8d1afe9",
+    "transcript_sha256": "6ba2a3b484714cc9ae329d80276bc1bf6c897ca9dc8ade46b2723162b04f9249",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 426244,
+      "seconds": 17.760166666666667,
+      "peak": 0.806366,
+      "rms_dbfs": -17.5,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

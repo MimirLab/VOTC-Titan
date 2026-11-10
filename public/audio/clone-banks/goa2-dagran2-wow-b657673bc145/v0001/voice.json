@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-dagran2-wow-b657673bc145",
+  "revision": 1,
+  "name": "Dagran Thaurissan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f6281b8489c31b952997aca2c6617f5a501488cad4cdcaeb8ca28f5d81883c4e",
+    "transcript_sha256": "60cbb087ae047516ca7c2e50558f77f1b79763076954414d850eda4794e7feb5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 198379,
+      "seconds": 8.265791666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -17.27,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-flynn-fairwind-wow-73f8004411f4",
+  "revision": 1,
+  "name": "Flynn Fairwind — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6a9e3dd4b78bf23ec9c4a3fb807269f597241193a5ef5975d05f9c01dacec322",
+    "transcript_sha256": "9eac5b5371d16f1f1d57613d8b9bbf9b9eb315888ca3b7e6c71a82775d93ae66",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 380803,
+      "seconds": 15.866791666666666,
+      "peak": 0.999969,
+      "rms_dbfs": -16.96,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

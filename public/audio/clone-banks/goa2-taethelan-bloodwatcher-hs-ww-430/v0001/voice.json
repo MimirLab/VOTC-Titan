@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-taethelan-bloodwatcher-hs-ww-430",
+  "revision": 1,
+  "name": "Tae'thelan Bloodwatcher — Tae'thelan Bloodwatcher (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c03a662bec255c1116f13166376a3c113b33ce28e470d1e2f91916396ffd4265",
+    "transcript_sha256": "e5fbbd082cefc67c4026a47f5d2a72fcf8dd9d284b1baeb2c77eb0c5df33d00a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 77566,
+      "seconds": 3.2319166666666668,
+      "peak": 0.987946,
+      "rms_dbfs": -14.45,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

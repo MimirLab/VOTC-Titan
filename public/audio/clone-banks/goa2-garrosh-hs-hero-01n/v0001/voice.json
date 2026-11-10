@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-garrosh-hs-hero-01n",
+  "revision": 1,
+  "name": "Garrosh Hellscream — Pirate King Garrosh (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4133c5d917415b05862ae849478c2cf65feb5b963726e5bf94366f62edf6552b",
+    "transcript_sha256": "5d3efdddefc669775d130d7a0a9ba09013ce69c7861edf2fc7bb3214fe9a45d8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 301079,
+      "seconds": 12.544958333333334,
+      "peak": 0.93573,
+      "rms_dbfs": -16.11,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-500182-hots-chenbase",
+  "revision": 1,
+  "name": "Chen Stormstout — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a7011e3efe706395295c489d4b36c3a8eff4611a22255806336b56478f367441",
+    "transcript_sha256": "f2dc43ec8dc101a22bc2ba2fc2dc5a1ec03b2f7a67052dec3a38738e0eade499",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 430145,
+      "seconds": 17.922708333333333,
+      "peak": 0.795654,
+      "rms_dbfs": -15.83,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

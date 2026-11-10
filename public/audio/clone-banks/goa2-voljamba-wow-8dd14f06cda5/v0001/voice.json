@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-voljamba-wow-8dd14f06cda5",
+  "revision": 1,
+  "name": "Vol'jamba Jambani — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2557d93fd10b606c2e04947000db3de72770e5fc20d29526343933854f168598",
+    "transcript_sha256": "5e03422f9dfecdfa8fb2ace5471f328fdd9023679aa142ffd7e0f186f9ee32ec",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 405126,
+      "seconds": 16.88025,
+      "peak": 0.983734,
+      "rms_dbfs": -16.42,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

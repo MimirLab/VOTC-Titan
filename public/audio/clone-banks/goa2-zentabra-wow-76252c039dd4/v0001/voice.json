@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-zentabra-wow-76252c039dd4",
+  "revision": 1,
+  "name": "Zen'tabra — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "5213b4a6f5e7472426f95edf75e10d02c98a1c3826041fd35196a01b38ec0151",
+    "transcript_sha256": "ab023946b20787b1595c49ad36a9fe015d74a4f82a31a5bcc99470d782bb2849",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376781,
+      "seconds": 15.699208333333333,
+      "peak": 0.985077,
+      "rms_dbfs": -17.84,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

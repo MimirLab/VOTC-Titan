@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-59120-wow-34ad26e33c89",
+  "revision": 1,
+  "name": "Ansirem Runeweaver — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ab5426b44f4a6cd713c8683464a17de7dac1fe06fcf338c3007b1a8b0de90fe7",
+    "transcript_sha256": "19c00fc7f983a0056673120c506c630a7b865366563c99e9ebf45f84d31279ca",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 332250,
+      "seconds": 13.84375,
+      "peak": 1.0,
+      "rms_dbfs": -16.92,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

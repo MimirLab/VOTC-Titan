@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-340018-wow-cc708fae1d75",
+  "revision": 1,
+  "name": "Fandral Staghelm — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ce37ad8889e986dccfe5eba9d698309bf8f26ad163e7d0af8e8ed528c421ff72",
+    "transcript_sha256": "226308c55c9ddad2a2135622d77966b08ddd0d35ec46c73b3447ae72ed68e97e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 398130,
+      "seconds": 16.58875,
+      "peak": 0.529907,
+      "rms_dbfs": -18.05,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

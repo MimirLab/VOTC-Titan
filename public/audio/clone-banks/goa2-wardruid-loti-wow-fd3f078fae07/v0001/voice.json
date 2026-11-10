@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-wardruid-loti-wow-fd3f078fae07",
+  "revision": 1,
+  "name": "Loti — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "74b3d04deb8e19fbc97853d19156494d61a7fd2b5793f3cf266a282989e737b4",
+    "transcript_sha256": "7fe3136cc71ffe8d172e6ef61f8eb558819e26ad41744c15f8daec47b5230ae6",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 344255,
+      "seconds": 14.343958333333333,
+      "peak": 0.990479,
+      "rms_dbfs": -16.98,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

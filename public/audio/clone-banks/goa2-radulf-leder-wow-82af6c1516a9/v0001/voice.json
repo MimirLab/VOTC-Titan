@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-radulf-leder-wow-82af6c1516a9",
+  "revision": 1,
+  "name": "Radulf Leder — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d56ed3b8a5d49673d43c22edbac821cd4fa20685e42953e4d556d6110e803fef",
+    "transcript_sha256": "8c23ff877b0f4a6da154e119146170ccec435f1920c5312cd7ec75adecd8138d",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 420998,
+      "seconds": 17.54158333333333,
+      "peak": 1.0,
+      "rms_dbfs": -16.69,
+      "clipped_samples": 9
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

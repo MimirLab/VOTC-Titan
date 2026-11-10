@@ -1,0 +1,1090 @@
+{
+  "schema": 1,
+  "guide": "docs/warcraft-scenes/GOA2-Court-Visual-Guide.txt",
+  "direction": "Flexible user-supplied art guidance; unnamed authored courts, not asserted campaign landmarks.",
+  "courts": [
+    {
+      "id": "titan_azsharic_court",
+      "heritage": "heritage_azsharic",
+      "style": "azsharic",
+      "label": "Naga imperial audience hall",
+      "assetStem": "azsharic_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A magnificent enclosed Warcraft Naga imperial court: Highborne palace elegance transformed into flowing serpentine and marine geometry. Tall vaulted pale violet masonry, flared finlike columns and curling galleries, intricate gold borders, turquoise enamel and pearl inlay. At the rear a broad elevated coiling dais, with a crowned sea-serpent carved back rather than a human chair. Gentle broad ramps, dry polished audience floor, contained blue-green pools along the sides, cultivated coral ornament within water basins, jeweled vessels and rich violet hangings. Watery reflected light glimmers across warm gold and cool stone. Opulent, sophisticated and imperious. No open ocean, submerged audience floor, fish swimming in the air, named queen, political banner, active shrine or ritual.",
+      "facts": "An enclosed Naga audience hall of vaulted violet stone, fin-shaped columns and curling galleries edged in gold, turquoise enamel and pearl. A broad coiling dais sits beyond a broad dry polished approach. Contained side pools reflect blue-green light across cultivated coral ornament, jeweled vessels and violet hangings.",
+      "purpose": "A formal audience space with broad circulation for serpentine bodies and dry approaches for visitors. Its marine craftsmanship does not imply that the province or the room is underwater.",
+      "research": [
+        "user guide: Azshari naga",
+        "https://news.blizzard.com/en-us/article/23034748/preview-nazjatar-visitors-guide"
+      ],
+      "guidanceProfile": "azsharic",
+      "socialContext": "An approach through marine splendour makes differences of rank and access tangible. There is room to announce a visitor, present tribute or correspondence, and address the presiding station without entering its privileged space. Military reports, maritime claims and lavish hospitality fit this imperial household. Its side galleries offer a less exposed setting for negotiation than the broad audience floor. Permission to approach a jeweled object or use a particular resting place can carry social meaning; how anyone responds to that distinction belongs to the participants."
+    },
+    {
+      "id": "titan_goblin_court",
+      "heritage": "heritage_goblin",
+      "style": "goblin",
+      "label": "Goblin cartel audience headquarters",
+      "assetStem": "goblin_court_v2",
+      "environment": "environment_frontend_west_main",
+      "art": "A gloriously over-the-top Warcraft Goblin trade prince's executive court: an industrial fortress, crooked commercial showroom and ostentatious counting house crowded around a fantastically elaborate small throne bolted into an enormous riveted gold-plated vault assembly. Oversized copper pressure pipes, ridiculous banks of gauges, tall smoke-stained ducts, asymmetric crane arms, mechanical safes, sample crates and comically overengineered comforts frame the room. Luxurious red upholstery and vulgar gold scrollwork compete with green alchemical glass, hazard-yellow iron fittings, improvised repairs and blue electrical lamps. The clear audience apron lets contracts, offers and prototypes be presented beneath conspicuous hoarded wealth. Side counting tables, locked stores and screens remain legible functional spaces. Goblin extravagance and industrial audacity, not a neat Victorian bank or polished generic steampunk cathedral. No readable signage, logos, explosives detonating, occupied robots or exterior city view.",
+      "facts": "A Goblin executive court builds an extravagant little red-and-gold seat into a colossal gilded vault assembly crowned by a grinning carved Goblin face. Huge pressure pipes, gauges, cranes and mechanical safes compete with coin heaps, sample crates and green alchemical glass. Counting tables, locked stores and hazard-striped fittings frame the clear audience floor beneath blue and amber lamps.",
+      "purpose": "A commercial audience and negotiation space with Goblin-sized controls and a broad visitor floor. Its possessions provide opportunities for interaction without dictating a character's motives.",
+      "research": [
+        "user guide: Goblin courts",
+        "https://news.blizzard.com/en-us/article/24173073/carve-out-a-rewarding-career-in-undermine-cartels"
+      ],
+      "guidanceProfile": "court_goblin",
+      "socialContext": "Court business and commercial spectacle share the same extravagant headquarters. An offer, contract, sample or improbably useful invention can become the centre of an audience, with counting surfaces and conspicuous acquisitions close at hand. Who gets attention, access to a safe, or a place at the executive station can be as consequential as the terms being discussed. Machinery and competing displays give the space an energetic, occasionally inconvenient texture; side counting bays allow more discreet bargaining. The surroundings invite negotiation and showmanship without making every occupant greedy or reckless.",
+      "archivedAssets": [
+        {
+          "assetStem": "goblin_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_northern_court",
+      "heritage": "heritage_northern",
+      "style": "northern",
+      "label": "Solsticean carved timber court",
+      "assetStem": "northern_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A tall human timber court with carved beast-ended beams, stout grey-stone footings and layered woven hangings. A deeply carved high seat stands above broad benches and a council table. Ancestral shields, drinking horns, document chests and substantial iron lamps line the side bays; amber hearthlight reveals vigorous woodwork and warm wool. Human Solsticean craftsmanship, not a Viking parody; handsome northern household grandeur. Enclosed hall, no exterior snow or assumed climate.",
+      "facts": "A tall human timber court with carved beast-ended beams, stout grey-stone footings and layered woven hangings. A deeply carved high seat stands above broad benches and a council table. Ancestral shields, drinking horns, document chests and substantial iron lamps line the side bays; amber hearthlight reveals vigorous woodwork and warm wool.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: northern family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_human_northern",
+      "socialContext": "A substantial household hall joins lordly business to shared hospitality. Benches and council tables give arrivals places to wait, examine a letter or lay out a claim; the high seat distinguishes formal address from conversation at the tables. Ancestral arms lend weight to questions of service, ownership and remembered obligations. Voices can carry across the open room, while the furnished side bays offer a more discreet exchange. A petition may become a communal matter when witnesses are present, or remain a quiet meeting within the same hall."
+    },
+    {
+      "id": "titan_arathi_court",
+      "heritage": "heritage_arathi",
+      "style": "human",
+      "label": "Arathorian royal audience hall",
+      "assetStem": "arathi_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A martial human royal hall of pale dressed stone, thick arches and deep window embrasures. A high-backed oak seat beneath a blue-and-gold carved canopy faces patterned paving. Lion reliefs, ancestral arms, layered tapestries, charter cabinets and a map table give the fortress court an inhabited dignity; daylight and candles warm the masonry. Classic Warcraft heroic human kingdom architecture, strong masonry and substantial royal furniture. Heraldic carving is inherited ornament, with no current faction banner or named monarch.",
+      "facts": "A martial human royal hall of pale dressed stone, thick arches and deep window embrasures. A high-backed oak seat beneath a blue-and-gold carved canopy faces patterned paving. Lion reliefs, ancestral arms, layered tapestries, charter cabinets and a map table give the fortress court an inhabited dignity; daylight and candles warm the masonry.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: arathi family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_human",
+      "socialContext": "This is a noble household conducting the practical business of rule. The clear approach supports introductions and the presentation of letters, claims or gifts before the high seat. Arms, charter storage and the map table make lineage, defended territory and recorded obligations tangible subjects for discussion. Service furnishings allow hospitality without automatically convening a feast. The broad central floor lends a formal address visibility; side tables and deep stone bays support quieter counsel. Admission, seating and permission to handle an heirloom offer small but meaningful points of etiquette."
+    },
+    {
+      "id": "titan_gilnean_court",
+      "heritage": "heritage_gilnean",
+      "style": "gilnean",
+      "label": "Gilnean aristocratic audience manor",
+      "assetStem": "gilnean_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A dark aristocratic human manor court with tall leaded windows, paneled timber, wrought-iron galleries and a substantial marble hearth. A richly upholstered authority seat sits beneath carved oak framing. Heavy plum drapery, silver lamps, hunting trophies, archival cabinets and elegant service tables lend depth to the guarded chamber. Warcraft Gilnean dark Victorian-gothic manor architecture translated into CK3 painting; aristocratic polish and intimate layers, no modern electrical appliances, no implied curse or werewolf occupants.",
+      "facts": "A dark aristocratic human manor court with tall leaded windows, paneled timber, wrought-iron galleries and a substantial marble hearth. A richly upholstered authority seat sits beneath carved oak framing. Heavy plum drapery, silver lamps, hunting trophies, archival cabinets and elegant service tables lend depth to the guarded chamber.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: gilnean family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_human_gilnean",
+      "socialContext": "Household hospitality and official access overlap in this carefully furnished manor. An introduction, a seat near the hearth or an invitation farther into the room can mark different degrees of familiarity. Hunting possessions and archival cabinets connect family standing to practical estate business: letters, inherited property, service and obligations. The great room can receive a formal petition, while curtains and recessed furnishings allow a less exposed conversation. Its elegance gives courtesy and reputation a setting in which to matter without requiring an aloof or suspicious host."
+    },
+    {
+      "id": "titan_southern_court",
+      "heritage": "heritage_southern",
+      "style": "southern",
+      "label": "Southern trading audience pavilion",
+      "assetStem": "southern_court",
+      "environment": "environment_ep3_living_tent_interior",
+      "art": "A handsome human trading court beneath ribbed timber and layered woven canopies. Carved travel chests, cargo samples, route maps, brass instruments and a guarded counting table surround a richly cushioned captain-chief's seat. Ropework, dyed awnings, patterned rugs and warm lanterns turn portable possessions into an established audience household. Distinct Warcraft southern human mercantile and itinerant building grammar. Sheltered interior; no ship voyage, exterior desert, sea view or ruler identity asserted.",
+      "facts": "A handsome human trading court beneath ribbed timber and layered woven canopies. Carved travel chests, cargo samples, route maps, brass instruments and a guarded counting table surround a richly cushioned captain-chief's seat. Ropework, dyed awnings, patterned rugs and warm lanterns turn portable possessions into an established audience household.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: southern family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_human_wastewander",
+      "socialContext": "Portable wealth has been arranged into a substantial audience household. Travel chests, route materials and goods make supplies, passage, cargo claims and promised service natural business here. A visitor can present credentials or an object at the counting table before approaching the cushioned presiding station. Shared tables suit hospitality and negotiation; layered fabrics offer degrees of privacy without the separation of stone corridors. The organisation suggests a household accustomed to moving valuable possessions, but neither the building nor the encounter requires a journey or a particular faction.",
+      "allowsCamp": true
+    },
+    {
+      "id": "titan_orcish_court",
+      "heritage": "heritage_orcish",
+      "style": "orcish",
+      "label": "Orcish clan command great hall",
+      "assetStem": "orcish_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "An immense Orcish clan hall of thick timber posts, heavy cross-braces, iron bands and stretched hide. Tusks and horn-shaped brackets crown the entrance to a broad hide-covered command seat. Clan-pattern textiles, trophy arms, drums, substantial vessels and a war table fill side bays; firelight glances across smoke-dark wood, bone and charcoal iron. Warcraft Orc Great Hall and Grommash Hold vocabulary, exaggerated muscular construction and meticulous leatherwork. Broad clearances, memorable trophy architecture, no mandatory faction insignia or active shamanic ceremony.",
+      "facts": "An immense Orcish clan hall of thick timber posts, heavy cross-braces, iron bands and stretched hide. Tusks and horn-shaped brackets crown the entrance to a broad hide-covered command seat. Clan-pattern textiles, trophy arms, drums, substantial vessels and a war table fill side bays; firelight glances across smoke-dark wood, bone and charcoal iron.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: orcish family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_orcish",
+      "socialContext": "Clan government shares the great hall with counsel, hospitality and the handling of martial equipment. A visitor's purpose can be announced from the open approach; a weapon, trophy or remembered service may give a claim a tangible history. Heavy tables support agreements and practical planning beneath the chief's station. Speech across the main floor is exposed to anyone actually present, while hide-screened bays allow more private discussion. Approaching a treasured object or entering the household's inner space can require permission. This setting supports honour, disagreement and reconciliation in the characters' own terms."
+    },
+    {
+      "id": "titan_gorian_court",
+      "heritage": "heritage_gorian",
+      "style": "gorian",
+      "label": "Gorian ogre imperial audience court",
+      "assetStem": "gorian_court",
+      "environment": "environment_frontend_west_main",
+      "art": "An Ogre court of colossal dressed-stone arches, immense terraces and heavy geometric carving. A vast throne platform with a broad resting seat rises behind low wide stairs. Giant bronze vessels, elaborate red textiles, enormous weapon rests and stacked tribute chests show an imperial household built for immense bodies, with smaller visitor routes beside its commanding approach. Gorian Ogre empire grandeur, not a primitive empty cave. Giant scale legible through huge vessels and small attendant work surfaces; no named empire, ruler, spellcasting or forced kneeling.",
+      "facts": "An Ogre court of colossal dressed-stone arches, immense terraces and heavy geometric carving. A vast throne platform with a broad resting seat rises behind low wide stairs. Giant bronze vessels, elaborate red textiles, enormous weapon rests and stacked tribute chests show an imperial household built for immense bodies, with smaller visitor routes beside its commanding approach.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: gorian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "ogre_court",
+      "socialContext": "Imperial household business is conducted at an overwhelming physical scale. The broad approach makes the distance to the presiding platform conspicuous, while smaller visitor positions allow an envoy to be heard without climbing onto the ruler's resting place. Tribute vessels and substantial stores lend weight to supplies, service, ownership and negotiated rank. The chamber can accommodate witnessed petitions or council business; its side stations allow more direct exchanges over an object or a document. Immense fittings express institutional wealth rather than establishing any occupant's intelligence, appetite or number of heads."
+    },
+    {
+      "id": "titan_vrykulic_court",
+      "heritage": "heritage_vrykulic",
+      "style": "vrykulic",
+      "label": "Vrykul ancestral high-seat hall",
+      "assetStem": "vrykulic_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A giant-scale Vrykul court carries immense timber rafters over monumental grey-stone piers. Deep runic borders, beast-ended beams and heavy iron doors frame a shield-backed high seat. Enormous benches, drinking horns, carved memorial panels, woven cloth and well-maintained weapons give heroic ancestral weight to the amber-lit hall. Warcraft Utgarde and Stormheim scale and craft. Strong angular runes as unreadable decoration; no snow, drowned-cursed state, named deity or generic human-sized furnishing.",
+      "facts": "A giant-scale Vrykul court carries immense timber rafters over monumental grey-stone piers. Deep runic borders, beast-ended beams and heavy iron doors frame a shield-backed high seat. Enormous benches, drinking horns, carved memorial panels, woven cloth and well-maintained weapons give heroic ancestral weight to the amber-lit hall.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: vrykulic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "vrykul_court",
+      "socialContext": "The great hall accommodates formal rule, martial counsel and household hospitality at giant scale. Shields and memorial work make lineage, service and remembered deeds readily available subjects when someone invokes them. Broad tables allow goods or evidence to be presented before a more ceremonial approach to the high seat. Recognition, arbitration or an oath can have public weight if witnesses are present; side bays provide a less conspicuous setting for counsel. Seating and access distinguish degrees of standing, while the particular ruler and guests decide what those distinctions mean."
+    },
+    {
+      "id": "titan_mogu_court",
+      "heritage": "heritage_mogu",
+      "style": "mogu",
+      "label": "Mogu imperial authority palace",
+      "assetStem": "mogu_court_v2",
+      "environment": "environment_tgp_relaxing_room_asia",
+      "art": "An overwhelming Warcraft Mogu imperial audience court, monumentally stylized rather than a generic historical palace. Colossal square jade-and-gold piers carry enormous stern Mogu face reliefs and curling cloud-scroll crowns; gigantic carved quilen guardians stand as stone sculpture beside the approach. Huge bronze vessels, lacquer-red architectural bands, gold-edged terraces and ordered stone figures amplify the scale. The ruler's immense sculpted stone seat is backed by a massive dynastic relief wall, with formal lower platforms and long sightlines exposing the distance between petitioner and authority. Use broad geometric masonry, rich ochre gold, dark jade, vermilion and forceful warm brazier accents in cool spacious stone. Sculptures are inert architectural carvings, not living guardians. Preserve a clear lower middle approach. No enslaved people, asserted current conquest, soul magic being performed, active ritual, readable inscriptions or outside landscape.",
+      "facts": "Colossal Mogu face reliefs and immense jade-dark square piers dominate an imperial audience court. Giant carved lion-like quilen, red lacquer bands and curling gold borders surround the long ceremonial approach. A monumental dynastic relief wall backs the raised stone station; bronze vessels and inert ranked stone figures give the enormous terraces forceful ochre, jade and vermilion richness.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: mogu family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "mogu",
+      "socialContext": "The long approach and elevated station make imperial precedence physically legible. A petitioner has room to present a claim, report, valuable object or request for recognition before entering more privileged space. Monumental reliefs and carefully displayed vessels give questions of lineage, resources and service a conspicuous material setting. The central floor exposes a formal exchange to witnesses when present; the massive side bays permit closer consultation. Sculptural guardians lend authority to the architecture. Their presence does not establish living guards, current conquest or compulsory deference by the characters.",
+      "archivedAssets": [
+        {
+          "assetStem": "mogu_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_grummle_court",
+      "heritage": "heritage_grummle",
+      "style": "grummle",
+      "label": "Grummle caravan council lodge",
+      "assetStem": "grummle_court",
+      "environment": "environment_tgp_relaxing_room_asia",
+      "art": "A warm Grummle trading court has stout timber framing, low stone foundations and layered patterned awnings. A richly cushioned little council seat is surrounded by route records, scales, counting boards and protected goods. Luckydos, charms, fragrant bundles, panniers, yak bells and extraordinary keepsakes fill orderly side stores; broad cargo passages contrast with small furnishings. Warcraft Grummle caravan society, dense cheerful good-fortune possessions and practical supply craft. No living yaks, crowd, required superstition or current pilgrimage.",
+      "facts": "A warm Grummle trading court has stout timber framing, low stone foundations and layered patterned awnings. A richly cushioned little council seat is surrounded by route records, scales, counting boards and protected goods. Luckydos, charms, fragrant bundles, panniers, yak bells and extraordinary keepsakes fill orderly side stores; broad cargo passages contrast with small furnishings.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: grummle family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "grummle",
+      "socialContext": "A caravan network's useful wealth surrounds its place of counsel. Cargo passages and small working surfaces allow an audience to become an appraisal, an examination of route records or a discussion of provisions. Luckydos and cherished oddments can carry personal history as well as exchange value. Claims over goods, safe passage, deliveries and mutual obligations suit the institution's ordinary business. Shared counters make an agreement visible when others are present; sheltered stores offer quieter terms. Hospitality and practical knowledge of what can be carried or supplied give conversation material to work with."
+    },
+    {
+      "id": "titan_sauroken_court",
+      "heritage": "heritage_sauroken",
+      "style": "sauroken",
+      "label": "Saurok warband stronghold court",
+      "assetStem": "sauroken_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Saurok audience stronghold fits rugged rock and seized imperial masonry with thick lashed timber, hide screens and stout barricades. A broad backless command seat rests on a raised stone ledge. Spear racks, shields, captured carved vessels, secured stores and trophies line the sides; smoky orange light reveals worn grey stone, dark wood and bold cloth. Warcraft lizard-warband power occupying a defensible functioning hall. Tail clearance and open floor, no actual prisoners or prescribed aggression by the current ruler.",
+      "facts": "A Saurok audience stronghold fits rugged rock and seized imperial masonry with thick lashed timber, hide screens and stout barricades. A broad backless command seat rests on a raised stone ledge. Spear racks, shields, captured carved vessels, secured stores and trophies line the sides; smoky orange light reveals worn grey stone, dark wood and bold cloth.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: sauroken family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "saurok",
+      "socialContext": "A defensible warband household gives acquired possessions a place in government. The clear approach distinguishes someone admitted to speak from someone entering protected stores. Weapons and captured craftsmanship can serve as evidence in claims over service, territory, supplies or standing. The backless station and broad passages make the audience usable for tailed bodies without dictating a posture. Open assembly space lends a dispute visibility; hide partitions and side stores permit more guarded negotiation. Martial surroundings provide opportunities for caution or confidence without forcing aggression."
+    },
+    {
+      "id": "titan_pandaren_court",
+      "heritage": "heritage_pandaren",
+      "style": "pandaren",
+      "label": "Pandaren cultivated audience pavilion",
+      "assetStem": "pandaren_court",
+      "environment": "environment_tgp_relaxing_room_asia",
+      "art": "A refined Pandaren court combines polished red-brown timber, elaborate bracket beams, cream plaster and rounded lattice doorways. Jade-green borders and cloud-pattern carving enrich a broad crafted audience seat. Scroll cabinets, maintained weapons, glazed ceramics, tea tables, generous cushions and lantern-lit side alcoves provide learned hospitality around a clear formal floor. Warcraft Pandaren curved architectural grammar, exceptionally worked inhabited timber pavilion. No Chinese real-world lettering, active feast, obligatory drinking, named emperor or modern paper signs.",
+      "facts": "A refined Pandaren court combines polished red-brown timber, elaborate bracket beams, cream plaster and rounded lattice doorways. Jade-green borders and cloud-pattern carving enrich a broad crafted audience seat. Scroll cabinets, maintained weapons, glazed ceramics, tea tables, generous cushions and lantern-lit side alcoves provide learned hospitality around a clear formal floor.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: pandaren family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "pandaren",
+      "socialContext": "Tea furnishings, scholarly possessions and maintained arms bring hospitality, learning and practical government into the same room. A visitor can settle at a side table, present a letter or object, then approach the formal station when the meeting calls for it. Petitions, mediation, instruction and discussion of service fit this cultivated household. Public address has a clear central space, while screens and furnished alcoves support private counsel. Excellent workmanship gives gifts and courteous gestures material significance; it does not require the participants to be patient, convivial or ceremonious."
+    },
+    {
+      "id": "titan_jinyu_court",
+      "heritage": "heritage_jinyu",
+      "style": "jinyu",
+      "label": "Jinyu water-forged audience hall",
+      "assetStem": "jinyu_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Jinyu court is worked in smoothly sculpted grey stone, layered finlike portals and carved current bands. Teal inlay and restrained gilding edge an enduring authority platform. Carefully bounded pools and consultation basins reflect blue-green light; orderly records, crafted arms and ceremonial vessels sit beneath generous clearances for tall finned heads. Water-forged Warcraft Jinyu civic architecture, angular articulated door crowns and calm precise stone craft. Dry visitor approaches and managed pools; no inferred sea, active water-reading or character belief.",
+      "facts": "A Jinyu court is worked in smoothly sculpted grey stone, layered finlike portals and carved current bands. Teal inlay and restrained gilding edge an enduring authority platform. Carefully bounded pools and consultation basins reflect blue-green light; orderly records, crafted arms and ceremonial vessels sit beneath generous clearances for tall finned heads.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: jinyu family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "jinyu_shared",
+      "socialContext": "Wet native gathering areas and stable visitor approaches make mixed-body reception practical. A designated speaking position distinguishes a formal introduction from movement through the court's working space. Maintained arms, records and aquatic craftsmanship give claims over waters, passage, provisions and communal obligations tangible subjects. Consultation basins and side stations allow an object or proposal to be examined more closely than on the open audience floor. The setting accommodates counsel and negotiation without establishing a ritual, prophetic reading or a particular relationship to the sea outside this room."
+    },
+    {
+      "id": "titan_hozen_court",
+      "heritage": "heritage_hozen",
+      "style": "hozen",
+      "label": "Hozen chief's elevated audience lodge",
+      "assetStem": "hozen_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Hozen chiefly hall is built from irregular heavy poles, coarse woven walls and thick rope lashings. Strong crossbeams connect perches, side platforms and hanging storage around a high trophy-framed command seat. Drums, bright cloth, captured valuables, food vessels and bundled arms enliven the rough timber; a clear lower approach serves visitors who do not climb. Warcraft Hozen communal dominance in exuberant structural improvisation. Preserve credible joinery and usable nonclimbing access; no monkeys or living occupants embedded.",
+      "facts": "A Hozen chiefly hall is built from irregular heavy poles, coarse woven walls and thick rope lashings. Strong crossbeams connect perches, side platforms and hanging storage around a high trophy-framed command seat. Drums, bright cloth, captured valuables, food vessels and bundled arms enliven the rough timber; a clear lower approach serves visitors who do not climb.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: hozen family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "hozen",
+      "socialContext": "Status has a conspicuous perch among prized possessions. Climbing routes and upper platforms make movement unusually visible, while the lower approach allows guests to speak without climbing. A useful gift, recovered object or claim of service can focus an audience; food stores and bundled equipment connect chiefly business to practical communal needs. Drums and trophy displays suit recognition or competitive presentation when participants choose it. Side shelters offer some discretion, although the open vertical layout can carry voices and expose attention. It need not turn every conversation into boasting or a challenge."
+    },
+    {
+      "id": "titan_zulian_court",
+      "heritage": "heritage_zulian",
+      "style": "zulian",
+      "label": "Troll ancestral imperial audience hall",
+      "assetStem": "zulian_court_v2",
+      "environment": "environment_frontend_west_main",
+      "art": "An iconic Warcraft Troll royal audience court grown from an ancient stone city tradition: monumental stepped terraces, tremendous carved tusked troll and animal faces, great serpent-curled pillars and boldly painted patterned borders. A long-limbed chiefly station stands against a huge ancestral relief panel, surrounded by drums, immense bronze vessels, vivid woven textiles, heirloom weapons and richly displayed precious stones. Colossal tusk shapes, deep turquoise stone accents, gold, ochre, crimson and violet give powerful fantasy identity and mature imperial workmanship. Carved side recesses and broad low terraces provide reception and discussion space for different bodies. Make the architecture clearly Troll, not generic human Greco-Roman masonry or a Norse hall. Decorative ancestral and animal faces are inert carvings; no named loa, current religious rite, mandatory priesthood, occupants, jungle biome or asserted Zandalari faction. Keep the lower central gathering floor open for portraits.",
+      "facts": "A monumental Troll court frames stepped terraces with tremendous tusked ancestral faces, serpent-curled pillars and boldly patterned stone. Turquoise, ochre gold, crimson and violet enrich the chiefly station and its immense relief wall. Heirloom arms, bronze vessels, vivid textiles and protected chests occupy deep carved recesses beside a broad open gathering approach.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: zulian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_troll_stonekingdom",
+      "socialContext": "Ancestral stonework gives chiefly business the weight of a long-lived settlement. Arrivals can establish their purpose before bringing letters, claims or valued objects toward the presiding station. Drums, masks and heirlooms offer a material vocabulary for lineage, service and the history of a gift. The broad terraces accommodate formal address and witnesses when present; deep side recesses allow quieter bargaining or reconciliation. Household resources and protected possessions remain close to government. The carving does not determine the court's current faith or require a priestly ceremony.",
+      "archivedAssets": [
+        {
+          "assetStem": "zulian_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_gilblin_court",
+      "heritage": "heritage_gilblin",
+      "style": "gilblin",
+      "label": "Gilblin treasure-chief audience hall",
+      "assetStem": "gilblin_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Gilblin court arranges shell-framed stone, weathered ship timber and coral-encrusted salvage into a rich treasure household. A great shell seat overlooks a broad dry ledge. Anchors, unfamiliar machine parts, polished stones, nets, bottles and prized vessels fill guarded niches; pearl surfaces and blue-green reflections contrast with rusty iron and warm lamps. Marine Warcraft Gilblin acquisitiveness, distinct from Goblin industry. Sheltered dry amphibious court with managed water basins, no entire room underwater or open ocean asserted.",
+      "facts": "A Gilblin court arranges shell-framed stone, weathered ship timber and coral-encrusted salvage into a rich treasure household. A great shell seat overlooks a broad dry ledge. Anchors, unfamiliar machine parts, polished stones, nets, bottles and prized vessels fill guarded niches; pearl surfaces and blue-green reflections contrast with rusty iron and warm lamps.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: gilblin family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_gilblin",
+      "socialContext": "The household's most remarkable finds surround its chiefly station. A visitor can bring a gift, identify an unfamiliar object or negotiate over a recovered possession before approaching protected collections. Low working ledges allow an audience to become an examination of provenance, usefulness or exchange value. Larger guests have a dry, broad approach among the settlement's marine materials. The open floor makes dealings visible to anyone present, while sheltered salvage niches allow more discreet terms. A treasured machine part or shell can matter for reasons beyond its price."
+    },
+    {
+      "id": "titan_dwarven_court",
+      "heritage": "heritage_dwarven",
+      "style": "dwarven",
+      "label": "Dwarven masterwork royal audience hall",
+      "assetStem": "dwarven_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A monumental Dwarven court of enormous squared granite blocks and deep arches rises above stout low furnishings. Bronze borders, angular runic bands and carved bearded stone faces frame a finely fitted clan throne. Masterwork arms, ancestral record chests, gemstones and ceremonial vessels line side recesses beneath warm hanging lamps and iron braziers. Warcraft Ironforge mountain-king craftsmanship, immense architectural height but dwarf-sized chairs and low substantial tables. No Nordic timber-only lodge, external mountain assumption or named ruler.",
+      "facts": "A monumental Dwarven court of enormous squared granite blocks and deep arches rises above stout low furnishings. Bronze borders, angular runic bands and carved bearded stone faces frame a finely fitted clan throne. Masterwork arms, ancestral record chests, gemstones and ceremonial vessels line side recesses beneath warm hanging lamps and iron braziers.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: dwarven family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_dwarven",
+      "socialContext": "A petition enters a setting of clan memory and conspicuous workmanship. The formal approach leads past masterwork arms and record chests toward a monumental seat built around smaller practical furnishings. Letters, family claims, rights of ownership and questions of service can acquire weight through an heirloom or a carefully examined piece of craft. Broad central space permits public recognition when witnesses are present; deep stone bays support quieter counsel. Permission to handle a masterwork or consult a protected record can provide a natural point of negotiation."
+    },
+    {
+      "id": "titan_gnomish_court",
+      "heritage": "heritage_gnomish",
+      "style": "gnomish",
+      "label": "Gnomish tinkers' civic audience court",
+      "assetStem": "gnomish_court_v2",
+      "environment": "environment_frontend_west_main",
+      "art": "A spectacular Warcraft Gnomeregan-inspired civic court that feels like an inventor's city operating at impossible architectural scale. Enormous curved riveted chambers, concentric gears, wildly overbuilt electrical coils, bulbous mechanical housings and clever glass instruments embrace a small adjustable governing seat and a broad demonstration floor. Interlocking catwalks connect side workstations; compact handles, steps and visitor-scale benches contrast with giant mechanisms. Small optical devices, drawing boards, prototype displays and painstaking instrument cabinets show inventive prestige. Cheerful brass and copper, red-and-blue painted metal, vivid blue electrical light and warm amber lamps, all with worn handcrafted tactile surfaces. Machines form inventive rounded silhouettes, not ordinary Gothic columns wearing gears. Grandeur through ingenious civic engineering and eccentric visual intelligence. Clear lower central portrait space, no people, active robots, disaster, radiation contamination, readable diagrams or exterior named city.",
+      "facts": "A Gnomish civic court surrounds a small adjustable seat with colossal rounded red-and-blue mechanical housings, concentric gears and towering blue electrical coils. Brass catwalks connect upper stations; compact controls, prototype tables and precise glass instruments contrast with the enormous engineered structure. A broad circular demonstration floor glints beneath amber lamps and cool contained electrical light.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: gnomish family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "court_gnomish",
+      "socialContext": "Civic business can begin with a design, prototype, technical claim or ordinary letter brought for consideration. Small controls and work surfaces make the immense machinery usable rather than merely ornamental. The demonstration floor permits an explanation to become visible; side workstations offer closer examination and more selective consultation. Ownership, credit, access to an instrument and responsibility for a device's costs are natural subjects. Mechanisms and displays give the room lively practical interruptions without requiring an accident, brilliant discovery or any particular temperament from its occupants.",
+      "archivedAssets": [
+        {
+          "assetStem": "gnomish_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_darnassian_court",
+      "heritage": "heritage_darnassian",
+      "style": "kaldorei",
+      "label": "Kaldorei moon-silver sovereignty court",
+      "assetStem": "darnassian_court_v2",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "An unmistakably Warcraft Kaldorei royal audience bower: enormous ancient living trunks and sweeping sculpted timber arches intertwine with moon-silver stone terraces, violet layered draperies and sharply upcurving leaf-shaped roof beams. Broad crescent-shaped root-and-stone audience platforms are framed by colossal carved owl and sentinel-like architectural motifs, silver glaive displays, softly luminous flowers and exquisitely managed shallow water. A tall layered gallery of organic woodwork and hanging leaf-shaped lanterns shelters the audience. Ancient twilight richness inside the enclosure: indigo-violet shade, silver-blue illumination, emerald foliage and a few warm amber lights. Keep the immense living trees physically present as integrated architecture rather than ordinary exterior forest scenery. Mythic age and distinctive graceful elven silhouettes; not a pale Gothic cathedral, generic medieval hall, Highborne stone palace or Ardenweald. No active Elune ritual, moonwell assertion, named city, occupants or outside regional landscape.",
+      "facts": "Immense living trunks and sweeping timber arches form a Kaldorei audience bower around moon-silver stone terraces. Monumental carved owls frame an elegant leaf-shaped station beneath layered violet banners. Glaive displays, shallow managed water, flowers and organic galleries combine mythic blue-violet shade with silver and amber lamps; a clear patterned approach leads to the audience platform.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: darnassian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "darnassian",
+      "socialContext": "Ancient workmanship and maintained arms join stewardship to civic and military counsel. The audience terrace can receive a visitor, a territorial petition or an account of service, with side furnishings available for considered exchange. Living architecture makes respectful movement and the handling of cultivated surroundings practical matters of hospitality. The open approach gives a formal address visibility; sheltered bough galleries allow more private reconciliation or planning. Enduring possessions can connect present business to long memory. This court's craft does not establish a religious observance, a moonwell or the state of the surrounding forest.",
+      "archivedAssets": [
+        {
+          "assetStem": "darnassian_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_highborne_court",
+      "heritage": "heritage_highborne",
+      "style": "highborne",
+      "label": "Highborne arcane aristocratic court",
+      "assetStem": "highborne_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Highborne court of lavender-grey stone has curved galleries, sweeping stairs and elaborate bronze-bordered colonnades. Deep indigo and wine-purple fabrics enrich a gracefully flared audience seat. Mounted arcane crystals, suspended lamps, astrolabes, scholarly cabinets, exquisite goblets and ornamental plants give the cultivated palace precise magical comfort. Warcraft Suramar Roman-inspired elven sophistication in an unnamed portable architectural tradition. No Nightwell, Guldan, Legion occupation, named ruler or required current faith.",
+      "facts": "A Highborne court of lavender-grey stone has curved galleries, sweeping stairs and elaborate bronze-bordered colonnades. Deep indigo and wine-purple fabrics enrich a gracefully flared audience seat. Mounted arcane crystals, suspended lamps, astrolabes, scholarly cabinets, exquisite goblets and ornamental plants give the cultivated palace precise magical comfort.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: highborne family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "highborne",
+      "socialContext": "Admission to a prestigious place of learning can be as meaningful as proximity to the audience seat. A letter, finely made gift, scholarly dispute or request to examine an instrument gives reception a concrete purpose. Arcane fixtures and cultivated luxuries make antiquity, patronage and expertise visible aspects of institutional standing. The formal floor supports witnessed petitions; side tables and curved galleries permit quieter conversation. Hospitality can be generous or competitive according to the participants. The instruments do not grant their users new powers or establish an active magical experiment."
+    },
+    {
+      "id": "titan_thalassian_court",
+      "heritage": "heritage_thalassian",
+      "style": "thalassian",
+      "label": "Thalassian sun-gold audience palace",
+      "assetStem": "thalassian_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A Thalassian court uses warm ivory stone, slender flame-shaped arches and tapering columns edged in fine flowing gold. Leaf and phoenix-wing tracery frame a curving upholstered audience seat. Deep blue-violet drapery, jewel-like crystals, floating lamps, scholarly instruments and fine vessels bring luminous elegance to the clear patterned floor. Warcraft Quel'Thalas elven royal craft. General inherited sun and phoenix ornament with blue-violet fabric, not a forced Blood Elf or High Elf allegiance, active Sunwell or religious rite.",
+      "facts": "A Thalassian court uses warm ivory stone, slender flame-shaped arches and tapering columns edged in fine flowing gold. Leaf and phoenix-wing tracery frame a curving upholstered audience seat. Deep blue-violet drapery, jewel-like crystals, floating lamps, scholarly instruments and fine vessels bring luminous elegance to the clear patterned floor.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: thalassian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "thalassian",
+      "socialContext": "Polished hospitality and practical administration share the palace. A visitor's introduction, gift or request can move from a furnished side station to formal address before the audience seat. Inherited craft and scholarly instruments give reputation, service and cultivated expertise tangible objects around which to converse. Clear central sightlines expose a public exchange when witnesses are present; draped galleries offer more intimate counsel. Courtesy and admission to protected possessions have social weight without requiring pride, extravagance or a particular elf faction from the host."
+    },
+    {
+      "id": "titan_xavic_court",
+      "heritage": "heritage_xavic",
+      "style": "xavic",
+      "label": "Satyr appropriated elven audience den",
+      "assetStem": "xavic_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Satyr court claims carved elven paving and sweeping arches with gnarled thornwork, rough lashings and coarse hides. A horn-framed command seat combines weathered stone, dark wood and appropriated cushions. Tarnished vessels, captured arms, violet cloth and prized gem housings occupy guarded recesses; restrained emerald lamps disturb the otherwise amber-lit shadows. Warcraft Satyr corrupt-elven luxury as an inhabited social den, not random skull cave. Broad hooved-body approaches, ornamental menace; no victims, active profanation, religious affiliation or compulsory behaviour.",
+      "facts": "A Satyr court claims carved elven paving and sweeping arches with gnarled thornwork, rough lashings and coarse hides. A horn-framed command seat combines weathered stone, dark wood and appropriated cushions. Tarnished vessels, captured arms, violet cloth and prized gem housings occupy guarded recesses; restrained emerald lamps disturb the otherwise amber-lit shadows.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: xavic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "xavic",
+      "socialContext": "Appropriated splendour has become a seat for bargaining over possessions, access and useful service. A visitor's offer or claim can be presented on the open floor beneath conspicuous trophies; guarded recesses provide places to examine valuables more closely. Coarse screens and borrowed cushions let hospitality range from public display to a secluded exchange. The juxtaposition of coveted luxuries and fortified shelter makes ownership and admission natural points of tension. The surroundings provide opportunity for intimidation, indulgence or restraint, while motive and conduct remain the characters' own."
+    },
+    {
+      "id": "titan_argussian_court",
+      "heritage": "heritage_argussian",
+      "style": "argussian",
+      "label": "Draenic crystalline audience sanctuary",
+      "assetStem": "argussian_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Draenic court of pale blue-grey masonry rises through sweeping arches and sculpted geometric supports. Faceted violet crystals in fitted housings illuminate precise channels and a broad crystal-backed audience seat. Patterned carpets, archival objects, graceful heavy furnishings and navigational instruments create serene ancient technological richness with generous horn, tail and hoof clearance. Warcraft Draenei Karabor/Shattrath-derived workmanship in an unnamed civic court. Stable crystalline technology, no living naaru, actual Light worship, spaceship exterior, named prophet or current exile assumption.",
+      "facts": "A Draenic court of pale blue-grey masonry rises through sweeping arches and sculpted geometric supports. Faceted violet crystals in fitted housings illuminate precise channels and a broad crystal-backed audience seat. Patterned carpets, archival objects, graceful heavy furnishings and navigational instruments create serene ancient technological richness with generous horn, tail and hoof clearance.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: argussian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "argussian",
+      "socialContext": "Luminous workmanship gives government the continuity of an ancient learned household. Broad reception space accommodates tall hooved bodies and visitors around records, instruments and carefully preserved possessions. A petition may concern service, resources, a masterwork or the sharing of knowledge. The formal station allows witnessed counsel; side furnishings support examination and private discussion at a more personal distance. Scholarly and practical work can coexist with ceremony. Crystal fixtures establish the room's craft, without identifying its active faith, a spaceship or a healing rite."
+    },
+    {
+      "id": "titan_apexis_court",
+      "heritage": "heritage_apexis",
+      "style": "apexis",
+      "label": "Arakkoa feather-carved audience court",
+      "assetStem": "apexis_court",
+      "environment": "environment_frontend_west_main",
+      "art": "An Arakkoa court joins carved amber stone with intricate dark timber platforms, curved crosspieces and layered feather-pattern textiles. An elevated bird-crested audience platform faces a wide walkable approach. Reclaimed bronze lamps, mounted crystals, ancestral avian carvings, scroll bundles and precious devices display inherited learning beneath high wing-cleared vaults. Warcraft Apexis avian craftsmanship adaptable to high and outcast populations. No compulsory flight, specific wing trait, solar worship, tree-canopy outside or actual active old device.",
+      "facts": "An Arakkoa court joins carved amber stone with intricate dark timber platforms, curved crosspieces and layered feather-pattern textiles. An elevated bird-crested audience platform faces a wide walkable approach. Reclaimed bronze lamps, mounted crystals, ancestral avian carvings, scroll bundles and precious devices display inherited learning beneath high wing-cleared vaults.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: apexis family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "arakkoa_shared",
+      "socialContext": "The custody of inherited learning and exceptional craft surrounds the presiding platform. A visitor can present credentials, an object or a claim of service along the walkable approach; higher galleries give the room a distinct vertical geography. Records and treasured devices make instruction, repairs, resource decisions and access to collections natural business. The assembly floor allows witnessed testimony, while side screens and separated platforms offer more selective consultation. Clear upper volume accommodates avian movement where an actual body supports it; the court itself establishes neither flight nor a high/outcast bodily branch."
+    },
+    {
+      "id": "titan_cenaric_court",
+      "heritage": "heritage_cenaric",
+      "style": "cenaric",
+      "label": "Cenari living-root audience bower",
+      "assetStem": "cenaric_court_v2",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "An extraordinary Warcraft Dryad/Cenari court inside a cultivated living bower, ancient woodland craft made magnificent. Immense twisting living boughs form graceful sweeping vaults above softly luminous flowers, huge curled fern forms, branching silver-green leaves, moss-softened elven stone and clear managed spring channels. The presiding place is a very broad low moss-and-root resting terrace for deer lower bodies, approached over the same gently graded ground; no human chair, steep steps or stair flight. Braided plant-fibre screens, seed vessels, polished wooden bowls and precious carved staff rests inhabit sheltered side roots. A spacious natural meeting apron stays open in front. Mythic lavender, moon-silver, emerald and luminous turquoise balanced by tactile bark and earth; rich mature canopy encloses this bower without showing a named outside forest. Ancient Azeroth living craft, not Ardenweald or an afterlife. Beauty with immense organic scale.",
+      "facts": "A cultivated living bower vaults immense twisting trunks and woven branches over a broad moss-and-root resting terrace. A gently graded root approach crosses the clear meeting apron between managed spring channels. Giant curled ferns, lavender flowers, carved wooden faces, luminous leaf lamps, seed vessels and braided screens give the enclosed space ancient silver-green richness.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: cenaric family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "cenaric",
+      "socialContext": "A cultivated living bower serves as a place of welcome, stewardship and deliberation. Broad gentle paths let four-legged occupants and other visitors approach the resting terrace without a human chair's constraints. Seed vessels, herbs and carefully tended channels give protection, resources and the use of shared ground tangible subjects. Open meeting space can accommodate witnesses; branching roots and woven screens offer quieter counsel nearby. Hospitality can be playful, solemn or reserved according to the participants. The bower's furnishings do not establish a healing ceremony or command anyone's allegiance.",
+      "archivedAssets": [
+        {
+          "assetStem": "cenaric_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_zaetaric_court",
+      "heritage": "heritage_zaetaric",
+      "style": "zaetaric",
+      "label": "Centaur khan's canopied assembly camp",
+      "assetStem": "zaetaric_court_v2",
+      "environment": "environment_ep3_living_tent_interior",
+      "art": "An imposing Warcraft Centaur khan's audience compound, an extraordinary clan command camp instead of a humanoid throne room. Sweeping layered hides and enormous painted woven canopies hang from tusk-capped portable poles over a wide ground-level assembly apron. A colossal horn-and-hide back screen and clan-pattern standards mark a broad cushioned earthen resting mound sized for an entire horse lower body, reached at ground level by a very gentle continuous slope. No chair, armchair, stair flight or raised stair dais. Decorated harnesses, enormous bows and spears, carts, great provision chests and showy captured treasures sit around the edges. Deep reds, indigo woven bands, ivory tusks, dusty gold, powerful shelter silhouettes. Generous turning room and clear hoof-friendly routes are unmistakable. Hide windbreaks close the background so this camp does not declare a particular outside biome. Grand, fiercely martial, mobile material culture.",
+      "facts": "Immense layered hide canopies shelter a Centaur audience compound with a broad earth-floored gathering apron. A sprawling low resting mound of cushions, hides and woven cloth is backed by colossal tusks and clan-pattern standards. Decorated harnesses, oversized bows, spears, provision chests and carts line the margins; gently graded ground provides generous hoof-friendly turning room.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: zaetaric family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "centaur_court",
+      "socialContext": "The leadership compound receives clan business on ground suited to horse-sized lower bodies. The khan's broad resting station and standards distinguish formal address from gathering at the shelter's edge. Provisions, harnesses and martial possessions make movement, resource distribution, service and disputes concrete matters for an audience. Public agreements have room for witnesses, while layered hide screens permit more private terms. Access to stores or the handling of a valued trophy can become meaningful. Portable fittings do not establish that the camp is travelling or that a confrontation is underway.",
+      "archivedAssets": [
+        {
+          "assetStem": "zaetaric_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ],
+      "allowsCamp": true
+    },
+    {
+      "id": "titan_tharian_court",
+      "heritage": "heritage_tharian",
+      "style": "tharian",
+      "label": "Magnataur monumental warlord stronghold",
+      "assetStem": "tharian_court_v2",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A bombastic Warcraft Magnataur warlord's fortified audience stronghold built around mammoth-bodied scale. An immense vaulted cavern is reinforced by gigantic rough timber braces, spiked monumental gates and vast dark hide screens. The ruler's position is a sprawling fur-covered earthen resting mound at floor level, big enough for an entire mammoth lower body, backed by enormous curved tusks and a forest of hunting trophies. A broad gently sloping approach and colossal turning space connect it to the clear gathering floor; no human chair, narrow throne, vertical steps or stair dais. Great bronze eating vessels, vast preserved-provision containers, captured caravan goods and giant weapons show commanding wealth and appetite. Tiny work ledges and tool niches along the sides provide a second scale without depicting any inhabitants. Monstrous regality: pale ivory, charcoal wood, deep red hide and fierce localized amber firelight. No outside snow or asserted climate.",
+      "facts": "A Magnataur stronghold combines colossal timber braces, vast hide screens and spiked gates beneath a reinforced rock vault. A sprawling fur-covered resting mound rises by a gentle slope behind the clear gathering floor. Enormous tusks, skull trophies, giant bronze vessels, guarded provisions and captured chests dwarf the smaller side work ledges in fierce amber firelight.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: tharian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "magnataur_court",
+      "socialContext": "A commanding resting mound presides over a household of immense bodily scale. Wide ground routes allow mammoth-bodied occupants to turn and approach; much smaller work ledges make a visitor's size and speaking position conspicuous. Trophies, provisions and captured goods lend substance to claims over supplies, spoils, service and passage. The gathering floor supports witnessed decisions, while hide partitions shelter restricted counsel. Food vessels and defended stores connect regality to the practical burdens of sustaining enormous bodies. The layout establishes neither captive servants nor anyone's current hunger or hostility.",
+      "archivedAssets": [
+        {
+          "assetStem": "tharian_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_ulduaric_court",
+      "heritage": "heritage_ulduaric",
+      "style": "ulduaric",
+      "label": "Titanforged geometric supervisory court",
+      "assetStem": "ulduaric_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A monumental Titanforged hall orders immense blue-grey masonry, bronze lintels and deeply cut geometric borders into exact symmetry. A vast fitted supervisory platform faces a clear visitor approach. Celestial diagrams, world-model instruments, circular mechanisms, archival panels and controlled luminous channels make ancient engineered stewardship tangible beneath high doors and vaults. Warcraft Ulduar Watcher-scale precision, functional cosmic order, not indiscriminate machinery. No named Keeper, actual intact Ulduar location or compulsory creator worship.",
+      "facts": "A monumental Titanforged hall orders immense blue-grey masonry, bronze lintels and deeply cut geometric borders into exact symmetry. A vast fitted supervisory platform faces a clear visitor approach. Celestial diagrams, world-model instruments, circular mechanisms, archival panels and controlled luminous channels make ancient engineered stewardship tangible beneath high doors and vaults.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: ulduaric family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "ulduaric_shared",
+      "socialContext": "Monumental scale and precisely ordered instruments give counsel the weight of inherited engineering. A visitor has a usable approach to an immense supervisory station, with side positions for examining a record, mechanism or masterwork. Custody of knowledge, resource decisions, repairs and recognition of service suit this institution's ordinary work. The open central route makes admission and ceremonial distance visible; secondary platforms allow closer discussion. Ancient apparatus lends authority to material craft without establishing an active world-control function, a divine mandate or a particular giant culture."
+    },
+    {
+      "id": "titan_uldumic_court",
+      "heritage": "heritage_uldumic",
+      "style": "uldumic",
+      "label": "Tol'vir guardian royal audience hall",
+      "assetStem": "uldumic_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A Tol'vir court of squared buff sandstone, sharply framed gateways and pyramidal crowns carries turquoise inlay and fitted gold-bronze borders. Colossal feline guardian carvings flank a long reclining royal platform. Inscribed tablets, formal vessels, precise reliefs and cream shade cloth line broad shallow ramps and generous quadrupedal turning space. Warcraft Ramkahen Titan-derived guardian civilization. Entire body-supported platform, not humanoid chair; enclosed hall with managed basins, no external desert or specific dynasty.",
+      "facts": "A Tol'vir court of squared buff sandstone, sharply framed gateways and pyramidal crowns carries turquoise inlay and fitted gold-bronze borders. Colossal feline guardian carvings flank a long reclining royal platform. Inscribed tablets, formal vessels, precise reliefs and cream shade cloth line broad shallow ramps and generous quadrupedal turning space.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: uldumic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "tolvir",
+      "socialContext": "Reception takes place along a broad approach designed for full quadrupedal bodies and smaller visitors. Inscribed tablets, precise workmanship and protected vessels give administration and custodianship tangible form. A claim of service, access to a record, a resource request or an offered object can become the centre of formal address at the reclining station. Deep stone bays support counsel away from the ceremonial route. Maintained order gives protocol material weight without establishing a particular monarchy, religious rite or active Titan mechanism."
+    },
+    {
+      "id": "titan_uldamanic_court",
+      "heritage": "heritage_uldamanic",
+      "style": "uldamanic",
+      "label": "Trogg occupied-vault audience hold",
+      "assetStem": "uldamanic_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Trogg court fortifies a broad rock vault with thick timber braces, rubble barriers, hides and scavenged iron. Seized ancient geometric stone panels survive behind a massive low authority ledge. Clubs, guarded goods, rough vessels, clan marks and food stores give purposeful order to the enclosure; concentrated hearthlight warms soot-dark stone and worn timber. Warcraft Trogg hard-earned fortified authority, clear occupied monumental structure plus deliberate newer clan additions. No living trogg, obligatory rage, active Titan machinery or generic empty cavern.",
+      "facts": "A Trogg court fortifies a broad rock vault with thick timber braces, rubble barriers, hides and scavenged iron. Seized ancient geometric stone panels survive behind a massive low authority ledge. Clubs, guarded goods, rough vessels, clan marks and food stores give purposeful order to the enclosure; concentrated hearthlight warms soot-dark stone and worn timber.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: uldamanic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "excludedCultures": [
+        "drogbar"
+      ],
+      "guidanceProfile": "uldamanic_shared",
+      "socialContext": "The settlement's most protected gathering space joins chiefly authority to stores, tools and defended passages. A visitor can establish a claim of service or a right to goods before approaching the ruling ledge. Occupied ancient masonry gives inherited or acquired possessions a visible history, while practical equipment connects audience business to extraction, provisioning and repair. The broad assembly floor allows disputes to be heard when witnesses are present; branching bays and hide partitions provide more guarded counsel. Possession and safe passage offer immediate subjects without requiring aggression."
+    },
+    {
+      "id": "titan_yaungolic_court",
+      "heritage": "heritage_yaungolic",
+      "style": "yaungolic",
+      "label": "Yaungol oil-lit command pavilion",
+      "assetStem": "yaungolic_court",
+      "environment": "environment_ep3_living_tent_interior",
+      "art": "A Yaungol audience pavilion combines robust bent timber ribs, taut hides, thick ropes and reinforced entrances. A commanding horn-framed platform faces a broad martial gathering floor. Rich family-pattern banners, fuel vessels, wick-bearing ironwork, rugged pump fittings, captured arms and guarded provisions make the mobile building feel formidable under restless amber firelight. Warcraft Yaungol yurt-and-oil technology and yak-bodied strength. No exterior steppe assumed, active duel, named warlord, actual oil leak or mandatory hostile visitor policy.",
+      "facts": "A Yaungol audience pavilion combines robust bent timber ribs, taut hides, thick ropes and reinforced entrances. A commanding horn-framed platform faces a broad martial gathering floor. Rich family-pattern banners, fuel vessels, wick-bearing ironwork, rugged pump fittings, captured arms and guarded provisions make the mobile building feel formidable under restless amber firelight.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: yaungolic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "yaungol_court",
+      "socialContext": "A mobile command household conducts business under substantial banners and shelter. Wide entrances and an open assembly floor suit great horned bodies and the handling of equipment. Fuel fittings, provisions and displayed arms make resource decisions, service, routes and martial responsibilities tangible. Formal address can distinguish a witnessed claim from discussion at a sheltered side station; screens allow private planning. The finest portable possessions mark the presiding place. These surroundings support confident ceremony or cautious negotiation without requiring a challenge, departure or current war.",
+      "allowsCamp": true
+    },
+    {
+      "id": "titan_tauren_court",
+      "heritage": "heritage_tauren",
+      "style": "tauren",
+      "label": "Tauren communal sovereignty lodge",
+      "assetStem": "tauren_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A generous Tauren court rests on monumental peeled timber posts, stitched hide panels and beautifully braided lashings. Carved animal-faced columns and geometric weaving surround a distinguished chief's platform with substantial benches for counsel. Drums, decorated staffs, fine leatherwork, provisions and immense vessels line the side bays beneath amber hearth and hanging-lamp light. Warcraft Thunder Bluff/Thunder Totem craftsmanship and bovine-bodied generous clearances. Totem carving as clan memory, no active religion or mandatory agreement, no specific mountain exterior.",
+      "facts": "A generous Tauren court rests on monumental peeled timber posts, stitched hide panels and beautifully braided lashings. Carved animal-faced columns and geometric weaving surround a distinguished chief's platform with substantial benches for counsel. Drums, decorated staffs, fine leatherwork, provisions and immense vessels line the side bays beneath amber hearth and hanging-lamp light.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: tauren family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "tauren_court",
+      "socialContext": "The foremost gathering lodge joins formal counsel to hospitality and communal provision. Broad approaches and substantial benches accommodate horns, hooves and great shoulders around the chief's station. Drums, staffs and fine leatherwork can give a claim of service or remembered obligation a tangible reference. Mediation, supplies, relations between households and preparations for a hunt fit ordinary court business. An exchange on the open floor can gain witnesses when present; hide-screened bays permit confidential counsel. Communal workmanship leaves room for very different personal beliefs and dispositions."
+    },
+    {
+      "id": "titan_taunka_court",
+      "heritage": "heritage_taunka",
+      "style": "taunka",
+      "label": "Taunka tusk-framed chieftain court",
+      "assetStem": "taunka_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Taunka court shelters thick timber ribs behind layered hides, fur coverings and stout interior screens. Monumental mammoth tusks and carved bisonlike clan forms frame the broad chief's station. Preserved provisions, robust hunting gear, repair tools and enormous household vessels show continually maintained communal wealth; creamy ivory gleams against smoke-dark wood and warm hearthlight. Warcraft Icemist-derived severe bovine survival craft. Heavy materials without snow or ice magically appearing in a warm province; no active elemental binding or forced harsh ruler.",
+      "facts": "A Taunka court shelters thick timber ribs behind layered hides, fur coverings and stout interior screens. Monumental mammoth tusks and carved bisonlike clan forms frame the broad chief's station. Preserved provisions, robust hunting gear, repair tools and enormous household vessels show continually maintained communal wealth; creamy ivory gleams against smoke-dark wood and warm hearthlight.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: taunka family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "taunka_court",
+      "socialContext": "A substantial clan refuge gives leadership practical responsibilities in addition to ceremony. Protected entries and broad furnishings allow hunting equipment, repaired tools or a request for provisions to be brought into an audience. The tusk-framed station lends communal memory a commanding place among useful stores. Public petitions share the lodge with hospitality and deliberation, while heavy screens offer discretion without leaving household life behind. The room's dense coverings express a tradition of shelter; they do not determine the outside climate or require every participant to be stern or stoic."
+    },
+    {
+      "id": "titan_sethralic_court",
+      "heritage": "heritage_sethralic",
+      "style": "sethralic",
+      "label": "Sethrak sculpted serpent audience court",
+      "assetStem": "sethralic_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A Sethrak court shapes weighty red-mauve masonry into cobra-hood piers, scale-pattern bands and curling parapets. Copper-gold edges and turquoise fittings frame a hood-backed authority seat with generous tail clearance. Serpent-headed lamp bowls, inscribed stone, valuable textiles, guarded chests and ceremonial vessels enrich its broad clear approaches. Warcraft Sethrak architectural serpent craft, distinct from marine Naga luxury. Bipedal audience seating with large hoods and long tails, no actual Sethraliss altar, captive occupants or exterior desert.",
+      "facts": "A Sethrak court shapes weighty red-mauve masonry into cobra-hood piers, scale-pattern bands and curling parapets. Copper-gold edges and turquoise fittings frame a hood-backed authority seat with generous tail clearance. Serpent-headed lamp bowls, inscribed stone, valuable textiles, guarded chests and ceremonial vessels enrich its broad clear approaches.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: sethralic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "sethrak",
+      "socialContext": "A broad ceremonial approach distinguishes admission from entry into the presiding station's protected space. Clearances for hoods and tails make an offered seat or crowded threshold a practical matter of hospitality. Inscriptions, stores and valuable craft give lineage, service, provisions and territorial obligations concrete subjects. The long central view permits a witnessed declaration; side recesses provide less exposed terms. Permission to handle an object or proceed farther can carry weight. Serpentine ornament does not establish the active faith, compulsory submission or a particular ruler's political programme."
+    },
+    {
+      "id": "titan_vulpine_court",
+      "heritage": "heritage_vulpine",
+      "style": "vulpine",
+      "label": "Vulpera caravan-chief audience pavilion",
+      "assetStem": "vulpine_court",
+      "environment": "environment_ep3_living_tent_interior",
+      "art": "A richly appointed Vulpera court expands wagon ribs into layered canvas roofs, curtained partitions and handsome timber galleries. Patterned rugs, low cushioned seats, travel chests, ceramic water jars and unusual tools gather beneath an embroidered chief's canopy. Clever visible repairs, knotted cords, feathers and small gold fittings warm the cream, green and dark-red fabric. Warcraft Vulpera ingenuity made prosperous, compact native furniture with comfortable larger visitor margins. No compulsory desert view, poverty, named caravan, real-world lettering or automatic thievery.",
+      "facts": "A richly appointed Vulpera court expands wagon ribs into layered canvas roofs, curtained partitions and handsome timber galleries. Patterned rugs, low cushioned seats, travel chests, ceramic water jars and unusual tools gather beneath an embroidered chief's canopy. Clever visible repairs, knotted cords, feathers and small gold fittings warm the cream, green and dark-red fabric.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: vulpine family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "vulpera",
+      "socialContext": "Caravan hospitality gives reception a practical language of introductions, useful gifts, shared provision and knowledge of routes. Small furnishings and a well-appointed canopy form a portable centre of authority, with wider margins for larger guests. Cargo claims, escort arrangements, repairs, water allocation and promised service fit the household's business. Open gathering space makes an agreement visible when others are present; curtains allow more private discussion beside protected chests. A mended tool or carefully packed keepsake can matter as much as showy wealth. The court need not be moving.",
+      "allowsCamp": true
+    },
+    {
+      "id": "titan_hyenaic_court",
+      "heritage": "heritage_hyenaic",
+      "style": "hyenaic",
+      "label": "Gnoll chief's defended trophy court",
+      "assetStem": "hyenaic_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Gnoll trophy court is strongly framed by crooked logs, steep stitched hides, bone-capped braces and recovered planks. A broad possession-heavy chief's seat sits among horn trophies, captured shields and carefully guarded valuables. Rough metal vessels, skin racks, practical stores and repaired clan fittings show prolonged occupation under smoky amber lamps. Warcraft Gnoll savage miniature monarchy with skilled binding and purposeful defenses. No corpses, current victims, decay infection, exterior bramble forest or compulsory ruler cruelty.",
+      "facts": "A Gnoll trophy court is strongly framed by crooked logs, steep stitched hides, bone-capped braces and recovered planks. A broad possession-heavy chief's seat sits among horn trophies, captured shields and carefully guarded valuables. Rough metal vessels, skin racks, practical stores and repaired clan fittings show prolonged occupation under smoky amber lamps.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: hyenaic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "gnoll",
+      "socialContext": "Entry into the chief's trophy household gives negotiated access a clear boundary. A recognised introduction, useful service or claim to a recovered possession can open an audience amid defended stores. Arms, hides and prized goods give territory, provisions and the division of spoils concrete subjects. The open floor permits witnessed claims; rough partitions and deeper bays offer discretion, with uneven sightlines that can make proximity matter. Practical repair and provisioning share the space with display. These opportunities do not require threats, predation or a quarrel from the participants."
+    },
+    {
+      "id": "titan_lupine_court",
+      "heritage": "heritage_lupine",
+      "style": "lupine",
+      "label": "Wolvar hunter-chief assembly lodge",
+      "assetStem": "lupine_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A tightly built Wolvar court combines closely fitted poles, reinforced hide walls and tough bindings. Low substantial furnishings surround a trophy-backed chief's station. Rhino-horn craft, valued hunting spears, hides, carved predatory faces and robust provision chests display communal wealth; red paint and pale horn catch warm firelight against dark timber. Warcraft Frenzyheart/Rageclaw wolverine-clan construction, dense robust inhabited lodge. No snow or jungle outside, mandatory challenge, named chief or actual construct head as living entity.",
+      "facts": "A tightly built Wolvar court combines closely fitted poles, reinforced hide walls and tough bindings. Low substantial furnishings surround a trophy-backed chief's station. Rhino-horn craft, valued hunting spears, hides, carved predatory faces and robust provision chests display communal wealth; red paint and pale horn catch warm firelight against dark timber.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: lupine family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "wolvar_court",
+      "socialContext": "A compact but substantial chiefly shelter puts useful stores and hunting accomplishments close to government. Low sturdy furnishings allow gifts, equipment or evidence of service to be examined before a more formal address. Trophy-backed standing gives claims over provisions, territory and household obligations material weight. The gathering floor can make recognition or a grievance visible to witnesses; screened bays permit private exchange. Preserved hides, horn craft and maintained weapons provide tangible histories to discuss. The court's martial household does not prescribe the speaker's courage, suspicion or aggression."
+    },
+    {
+      "id": "titan_odobenus_court",
+      "heritage": "heritage_odobenus",
+      "style": "odobenus",
+      "label": "Tuskarr elder's maritime great house",
+      "assetStem": "odobenus_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Tuskarr audience house arches tremendous carved sea-creature bone over protected timber and thick coverings. The elder's distinguished broad seat joins welcoming low benches. Nets, boat fittings, fine weavings, route-marker carvings, large serving vessels and provision racks surround a clear gathering floor; amber oil lamps warm creamy bone, weathered wood and bright textile accents. Warcraft Tuskarr family and seamanship expressed as mature civic craft. No whale occupant, compulsory fishing scene, sea visible outside or snowy-weather assertion.",
+      "facts": "A Tuskarr audience house arches tremendous carved sea-creature bone over protected timber and thick coverings. The elder's distinguished broad seat joins welcoming low benches. Nets, boat fittings, fine weavings, route-marker carvings, large serving vessels and provision racks surround a clear gathering floor; amber oil lamps warm creamy bone, weathered wood and bright textile accents.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: odobenus family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "tuskarr_court",
+      "socialContext": "The great house brings hospitality, communal provision and counsel into one useful setting. Protected entry gives arrivals a place to establish their business before approaching the elder's station. Nets, boat fittings and serving vessels connect an audience to fishing rights, resources, exchanges and remembered obligations. Low broad benches accommodate tusks and stout bodies beside other visitors. Public agreements can have witnesses when present; sheltered side bays permit more private discussion. Storytelling and shared food are possible uses of the room, rather than events already taking place."
+    },
+    {
+      "id": "titan_chelonian_court",
+      "heritage": "heritage_chelonian",
+      "style": "chelonian",
+      "label": "Tortollan keeper's collected audience house",
+      "assetStem": "chelonian_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A Tortollan court joins chunky pale timber, carapace-patterned vaults and broad sheltered galleries. Blue-turquoise painted jars and patterned cloth enrich an open-backed authority seat with ample shell clearance. Carefully grouped maps, scroll tubes, wrapped relics, polished curiosities and protective cabinets reveal a richly accumulated keeper's household beneath amber lamps. Warcraft Tortollan Seeker memory and collecting craft, not a random beach hut or Hearthstone-specific named city. The distinctive broad shell-backed body determines clearance; no unreadable labels required.",
+      "facts": "A Tortollan court joins chunky pale timber, carapace-patterned vaults and broad sheltered galleries. Blue-turquoise painted jars and patterned cloth enrich an open-backed authority seat with ample shell clearance. Carefully grouped maps, scroll tubes, wrapped relics, polished curiosities and protective cabinets reveal a richly accumulated keeper's household beneath amber lamps.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: chelonian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "tortollan",
+      "socialContext": "Collections and records make this a court of accumulated relationships and knowledge. Broad turning space and open-backed furnishings let large shells fit comfortably around places for examining a map, manuscript or valued object. Ownership, access to knowledge, trade and obligations remembered across years give an audience tangible business. Cataloguing and correspondence share the household with formal deliberation. Public testimony can draw on precedent; sheltered galleries offer quieter terms. Admission to a treasured collection may matter more than proximity to the seat, without making every participant patient or scholarly."
+    },
+    {
+      "id": "titan_agamagganic_court",
+      "heritage": "heritage_agamagganic",
+      "style": "agamagganic",
+      "label": "Quilboar living-bramble audience kraul",
+      "assetStem": "agamagganic_court_v2",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Quilboar leadership clearing deep INSIDE a gigantic living bramblethorn patch in the Warcraft Razorfen tradition. The entire surrounding structure is a wild labyrinth of colossal twisting thorn-covered vines, each several people thick: muscular knotted roots coil out of the ground, sweep irregularly across the ceiling, overlap and interweave in many directions, with hooked ivory thorns and thorn-covered side growth. The walls are dense tangled organic bramble, NOT straight timber posts, a constructed log hall, ordinary trees, thorn decorations on a building or a conventional palace. Glimpses of fresh thorn shoots and sparse living foliage appear within the older dark red-brown growth. A rough little hide-canopied leadership platform and modest boar-crest seat nestle in a rear hollow among the huge roots, with handmade plank footways, rope lashings, leather screens, drums, jars, bramble pods and stores inserted into the thicket. Winding earthen passages emerge between the giant vines. Diffuse overhead light seeps through the tangled canopy and small protected side fire bowls cast amber pools across bark and dusty earth. The bramble patch itself dwarfs all furniture; wild irregular growing forms dominate the upper image and sides. Keep a natural clear earthen meeting apron in the lower foreground for CK3 portraits. No characters, crowd, active spell, explicit ceremony, named ruler, temple facade, regular pillars, windows, symmetrical timber beams or generic rectangular hall.",
+      "facts": "Colossal living thorn-covered vines interweave into the enclosure and canopy of a Quilboar kraul. Knotted red-brown roots, hooked ivory thorns and newer shoots surround winding earthen passages. A modest hide-canopied authority platform sits in a protected hollow, with plank footways, rope lashings, leather screens, drums, jars and stored bramble pods fitted between the immense growth. Diffuse light and protected fire bowls illuminate the cleared meeting apron.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: agamagganic family; inherited motifs and authored unnamed court extrapolation",
+        "user correction: the bramble patch is the settlement itself, not decorative spiky timber",
+        "https://warcraft.wiki.gg/wiki/Quilboar",
+        "https://ptgmedia.pearsoncmg.com/imprint_downloads/brady/wow/razorfens/kraul_lr.pdf"
+      ],
+      "rejectedAssetStem": "agamagganic_court",
+      "guidanceProfile": "quilboar",
+      "socialContext": "Reception begins with negotiated entry through the colony's defended thorn passages. The chiefly hollow is part of the immense living bramble itself, with small fittings for counsel and communal provision. Kinship, service, inheritance, protected ground and shared stores can give an audience concrete business. A claim can be witnessed on the cleared apron when others are present; curling roots and hide screens make privacy irregular and close at hand. Bramble pods and ancestral possessions can matter beyond exchange value. Their presence does not establish an active rite or the character's current faith."
+    },
+    {
+      "id": "titan_jalgaric_court",
+      "heritage": "heritage_jalgaric",
+      "style": "jalgaric",
+      "label": "Furbolg ancestral carved-log court",
+      "assetStem": "jalgaric_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Furbolg ancestral court uses curved bark-like walls, huge fitted logs and broad stone-supported timber platforms. Deliberate pictogram bands and deeply carved clan totems frame a dignified resting dais. Heavy drums, woven mats, carved food vessels, herb bundles and treasured records show patient communal craft in amber light against warm wood and muted green cloth. Warcraft Timbermaw/Stillpine bear-clan craftsmanship, meaningful carved communication rather than random ritual props. Maintained enclosed log hall, no exterior forest requirement, living bear, forced anger or active corruption.",
+      "facts": "A Furbolg ancestral court uses curved bark-like walls, huge fitted logs and broad stone-supported timber platforms. Deliberate pictogram bands and deeply carved clan totems frame a dignified resting dais. Heavy drums, woven mats, carved food vessels, herb bundles and treasured records show patient communal craft in amber light against warm wood and muted green cloth.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: jalgaric family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "furbolg_court",
+      "socialContext": "The distinguished resting station remains connected to an inhabited gathering lodge. Clan carving and pictograms give deeds and shared memory a material form that can accompany a petition, mediation or introduction. Broad space serves powerful bodies beside useful stores and craft possessions. Territory, provisions, exchange and the preservation of knowledge fit ordinary communal business. The open floor permits recognition to be witnessed when others are present; timber bays and screens provide quieter counsel. A carved object can have significance without implying current ancestor worship or dictating a gentle temperament."
+    },
+    {
+      "id": "titan_pygmy_court",
+      "heritage": "heritage_pygmy",
+      "style": "pygmy",
+      "label": "Pygmy shell-crowned royal compound",
+      "assetStem": "pygmy_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A compact Pygmy court enlarges ribbed timber and immense empty shell canopies into a richly defended compound. A forceful small throne of carved wood, bone and shell stands beneath the finest marked carapace. Feather bunches, masks, polished stones, woven goods, drums and jars line guarded alcoves; vivid paint and amber lamps enliven segmented roof panels. Warcraft Oomlot shell-monarchy miniature grandeur, deliberately small native furniture and broad visitor apron. Shells are construction material, no living tortoise, actual island/desert assumption or sacrifice.",
+      "facts": "A compact Pygmy court enlarges ribbed timber and immense empty shell canopies into a richly defended compound. A forceful small throne of carved wood, bone and shell stands beneath the finest marked carapace. Feather bunches, masks, polished stones, woven goods, drums and jars line guarded alcoves; vivid paint and amber lamps enliven segmented roof panels.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: pygmy family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "pygmy",
+      "socialContext": "The finest shell shelter and its prized possessions mark the compound's presiding place. Compact entrances and native furnishings contrast with the broader visitor approach, making accommodation and permission tangible aspects of reception. A gift, service, territorial claim or disputed possession can be presented before the household's station. Stores and craftwork connect formal business to daily provision. The open apron offers room for witnessed promises when others are present; linked shelters afford more selective conversation. The household's emphatic display of standing leaves individual motives and conduct open."
+    },
+    {
+      "id": "titan_avianic_court",
+      "heritage": "heritage_avianic",
+      "style": "avianic",
+      "label": "Harpy matriarch's monumental audience roost",
+      "assetStem": "avianic_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Harpy court binds monumental woven branchwork, reinforced nest bowls and claw-grippable ledges to tall stone supports. A commanding padded roost overlooks lower perches and a stable guest approach. Feather ornament, antlers, jewelry, colored glass and captured valuables fill carefully woven storage; warm hanging lamps reveal dense craft and generous wing clearance. Warcraft predatory Harpy matriarchal great-roost construction, not a human chair in a nest. Enclosed rock-and-branch court, no live birds, forced ruler sex, cliff outside or active violence.",
+      "facts": "A Harpy court binds monumental woven branchwork, reinforced nest bowls and claw-grippable ledges to tall stone supports. A commanding padded roost overlooks lower perches and a stable guest approach. Feather ornament, antlers, jewelry, colored glass and captured valuables fill carefully woven storage; warm hanging lamps reveal dense craft and generous wing clearance.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: avianic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "harpy",
+      "socialContext": "The highest distinguished roost gives rank a conspicuous place in the settlement's vertical life. Landing routes and perches serve bodies able to use them; a continuous lower approach permits ground-bound guests to address the court. Trophies and protected valuables lend substance to claims over territory, stores, routes or useful service. Exchanges can be visible from neighbouring ledges when occupied, while woven screens and nest recesses offer privacy. Access to a sheltered resting place or a prized object can become meaningful. The architecture does not grant flight or require territorial hostility."
+    },
+    {
+      "id": "titan_amphibian_court",
+      "heritage": "heritage_amphibian",
+      "style": "amphibian",
+      "label": "Murloc shell-crested gathering shelter",
+      "assetStem": "amphibian_court_v2",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Warcraft Murloc chiefly gathering compound, exuberantly recognizable from its small rounded reed huts and outrageous shell-and-fish craftsmanship. A great but low reed canopy crowned by an oversized shell crest shelters the chief's broad crouching platform, built on one level with the communal boardwalk apron. Several open-sided low huts cluster asymmetrically around it; hanging fishing nets, fish traps, woven baskets, fantastically large shells, bright salvaged baubles and rough carved fish motifs create communal wealth rather than a human palace. Small native doorways contrast with a broad walkable visitor route. Reed windbreaks and overlapping shelter roofs frame the background without establishing an outside biome. Shallow bounded water tubs and little contained pools are settlement fittings, not an open shore. Rich teal, coral-red accents, ochre reed and weathered timber, warm lanterns. No giant royal longhouse, elevated human throne, grand staircase or symmetrical cathedral.",
+      "facts": "A Murloc gathering compound clusters low rounded reed shelters around a great shell-crested canopy. Fish-patterned textiles, coral-red ornament, huge shells, nets, baskets and salvaged valuables surround a low cushioned native station. Broad boardwalks, small bounded pools and dry visitor approaches connect the shelters beneath warm lanterns and interwoven reed screens.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: amphibian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "amphibian",
+      "socialContext": "A visitor's business is established at the edge of the communal gathering compound before approaching its shell-crested station. Small crouching places, boardwalks and water fittings make reception practical for native bodies and dry-footed guests. Fishing, repairs, recovered goods, provisions and access to waters supply ordinary subjects for counsel. An unusual shell or salvaged object can serve as gift or evidence. The open apron gives agreements witnesses when others are present; reed screens and clustered shelters allow quieter exchanges. The setting requires neither a crowd nor a particular outside shore.",
+      "archivedAssets": [
+        {
+          "assetStem": "amphibian_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ],
+      "allowsCamp": true
+    },
+    {
+      "id": "titan_crustacean_court",
+      "heritage": "heritage_crustacean",
+      "style": "crustacean",
+      "label": "Makrura armored tidal audience hall",
+      "assetStem": "crustacean_court_v2",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Makrura court overlaps heavy worked stone and immense shell vaults like segmented armor. Claw-shaped supports flank a shallow wide body-rest platform with ample leg and tail room. Low stone trays, shell bowls, marine trophies, powerful staves and secured salvage fill recessed stores; bounded basins and cool crystal lamps reveal pearl, mineral green and slate surfaces. Warcraft intelligent crustacean monarchy, robust and deliberate, not natural empty reef. Dry amphibious audience floor and managed side water, no whole-room flood or actual ocean outside.",
+      "facts": "A Makrura court overlaps heavy worked stone and immense shell vaults like segmented armor. Claw-shaped supports flank a shallow wide body-rest platform with ample leg and tail room. Low stone trays, shell bowls, marine trophies, powerful staves and secured salvage fill recessed stores; bounded basins and cool crystal lamps reveal pearl, mineral green and slate surfaces.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: crustacean family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "rejectedAssetStem": "crustacean_court",
+      "guidanceProfile": "makrura",
+      "socialContext": "Protected platforms and valuable marine possessions give this communal stronghold its organisation of rank and access. Broad surfaces accommodate shells, claws and multiple limbs, while visitor positions make the handling of an offered object practical. Kinship, provisions, passage, recovered property and the allocation of waters can bring a petition into the audience. The main approach permits witnessed deliberation; recessed stores offer more private terms. A heavy container or unusual staff provides a tangible point of exchange. Its presence does not establish a tidecalling office or a spell being performed."
+    },
+    {
+      "id": "titan_murine_court",
+      "heritage": "heritage_murine",
+      "style": "murine",
+      "label": "Kobold candle-crowned mining court",
+      "assetStem": "murine_court",
+      "environment": "environment_event_fp1_throneroom_tribal",
+      "art": "A Kobold court braces excavated stone with patched plank galleries and salvaged iron. A compact hoard-backed authority seat is crowned by the brightest protected candles. Ore bins, carts, tools, sorted gems and guarded shinies fill side niches; elaborate wax-dripped chandeliers and warm lamp clusters illuminate broad visitor space amid low native work ledges. Warcraft Kobold possessive candle-warren material culture. Rich lighting and ingenious mining systems, no mandatory poverty, cave-in, active mine excavation or snobold snow claim.",
+      "facts": "A Kobold court braces excavated stone with patched plank galleries and salvaged iron. A compact hoard-backed authority seat is crowned by the brightest protected candles. Ore bins, carts, tools, sorted gems and guarded shinies fill side niches; elaborate wax-dripped chandeliers and warm lamp clusters illuminate broad visitor space amid low native work ledges.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: murine family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "murine",
+      "socialContext": "The brightest protected gathering space sits among the community's useful tools and hoarded resources. A visitor can present provisions, a trade offer or a claim over recovered goods before approaching the candle-marked seat. Low native work ledges and a wider assembly floor make differences of body size practical. Passage, labour, shelter and ownership suit ordinary business. Side niches permit a less exposed conversation beside guarded stores. Permission to handle a treasured shiny or disturb valued illumination can carry particular weight, without requiring every occupant to be suspicious or avaricious."
+    },
+    {
+      "id": "titan_draconic_court",
+      "heritage": "heritage_draconic",
+      "style": "draconic",
+      "label": "Draconic ancestral sovereignty court",
+      "assetStem": "draconic_court_v2",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A breathtaking Warcraft Draconic audience sanctum built for actual immense dragon bodies, with a broad low resting platform as large as a house instead of a humanoid chair. Soaring curved stone ribs and enormous carved dragon-wing buttresses vault above jewel-edged terraces and immense open wing clearances. The authority platform is framed by monumental draconic carvings, ancient masterwork vessels, hoard repositories and scholarly relic housings; refined small consultation furnishings and continuous gentle ramps make the visitor scale legible. Layered stone, gold-bronze borders and restrained ruby, sapphire, emerald, amethyst and amber accents give a rich ancient shared flight heritage without claiming any one flight. Wide internal portals and luminous suspended crystals make the room fantastical and sovereign; no ordinary Gothic throne room, steep stair-only access, human seat, dragon occupants or named future city. No exterior mountain biome, temporal event, active dream portal or flight-specific historical claim.",
+      "facts": "An immense Draconic sanctum vaults curved stone ribs and carved dragon-wing buttresses above a house-sized resting platform. Broad side ramps and smaller consultation furnishings make different bodily scales legible. Jewel-edged terraces, dragon-head carvings, hoard repositories and ancient vessels gleam beneath suspended crystals, with generous wing clearance and diffuse light through towering internal portals.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: draconic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "draconic",
+      "socialContext": "An ancient seat of government makes scale itself part of reception. Immense resting space and wing clearances coexist with smaller visitor stations, so a petition can move between ceremonial distance and close examination of an object or record. Preserved masterworks and accumulated possessions lend resource claims, service and custodianship historical weight. The open approach offers room for public witness; refined side furnishings support private consultation. These are accommodations for actual bodies, not an instruction to assume a dragon form. The shared court establishes no flight, timeline event or compulsory draconic attitude.",
+      "archivedAssets": [
+        {
+          "assetStem": "draconic_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_shathyar_court",
+      "heritage": "heritage_shathyar",
+      "style": "shathyar",
+      "label": "N'raqi watched imperial audience court",
+      "assetStem": "shathyar_court_v2",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "An uncanny, bombastic Warcraft N'raqi imperial court where immense slate-black obelisks and geometric stepped masonry have been visibly invaded by serpentine organic seams and great carved eye forms. Towering tentacle-shaped buttresses curl into the architectural crown; deep violet and sickly mineral-green channels pick out aged gold relief bands and huge ranked repositories. The immense authority platform faces a broad bare audience apron, with oversized tentacled-body clearances and smaller visitor routes around it. Make the strange anatomy of the architecture immediately recognizable and unsettling, not a generic Gothic church with purple lamps. Worked monumental stone, tendril-shaped integrated ornament and uncanny eye motifs remain legible in matte oil painting. No actual creatures, living observer revealed, captive characters, active mind control, mandatory worship, secret omniscience, named Old God or world destruction.",
+      "facts": "A N'raqi imperial court raises colossal slate-black obelisks and geometric platforms among enormous tentacle-shaped architectural buttresses. Carved eyes, deep violet banners and aged gold bands recur across ranked repositories and the massive presiding station. Mineral-green and violet channels illuminate broad body clearances and smaller visitor routes, making the deliberately ordered chamber uncannily eye-like.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: shathyar family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "nraqi",
+      "socialContext": "A deliberate order of platforms and repositories gives the uncanny chamber the structure of an imperial audience. Broad approaches allow immense bodies and smaller guests to occupy distinct speaking positions. Objects, records, resources and terms of service can be presented on the exposed central floor; recessed bays permit more selective consultation. Eye-like ornament and tendril forms make sightlines feel unusually charged without establishing an actual observer or knowledge of private thoughts. The setting's unsettling craft can inform perception while motives, beliefs and voluntary conduct remain personal.",
+      "archivedAssets": [
+        {
+          "assetStem": "shathyar_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_aqir_court",
+      "heritage": "heritage_aqir",
+      "style": "aqir",
+      "label": "Qiraji carapace imperial audience court",
+      "assetStem": "aqir_court",
+      "environment": "environment_frontend_west_main",
+      "art": "An insectoid imperial court combines immense warm-stone pylons, broad axial platforms and deep carved bands with iridescent chitin fittings. Winglike screens, segmented ornament and gold-turquoise borders frame a broad adaptable authority dais. Precious vessels, guarded repositories and brood-shaped side passages lend severe organized richness beneath restrained violet and amber lamps. Warcraft Qiraji ceremonial empire and carapace craft, no actual Ahn'Qiraj landmark, active Old God cult, creatures in brood passages, current caste behaviour or ritual.",
+      "facts": "An insectoid imperial court combines immense warm-stone pylons, broad axial platforms and deep carved bands with iridescent chitin fittings. Winglike screens, segmented ornament and gold-turquoise borders frame a broad adaptable authority dais. Precious vessels, guarded repositories and brood-shaped side passages lend severe organized richness beneath restrained violet and amber lamps.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: aqir family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "excludedCultures": [
+        "nerubian",
+        "mantid"
+      ],
+      "guidanceProfile": "aqir",
+      "socialContext": "An insectoid seat of rule organises varied body scales around a broad authority platform. Reception distinguishes a visitor's speaking position from protected stores and higher circulation. Reports, crafted objects, resources and obligations of service give ceremonial business tangible subjects. The central approach accommodates witnessed claims when others are present; side platforms permit closer counsel. Chitin-shaped fittings and monumental workmanship lend institutional rank a distinctive material form. The court's construction establishes neither an active brood, hive mind, allegiance to an Old God nor the participants' individual ambitions."
+    },
+    {
+      "id": "titan_undead_court",
+      "heritage": "heritage_undead",
+      "style": "undead",
+      "label": "Undead necropolis command audience hall",
+      "assetStem": "undead_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "An Undead command court orders immense riblike supports, dark angular masonry and bone-edged metal into a severe audience chamber. A broad raised dais sits above a clear reinforced assembly floor. Runic blue-violet lamps, secured soul-container-shaped vessels, guarded archives and heavy weapon rests reveal disciplined necromilitary craftsmanship without domestic clutter. Warcraft Scourge necropolis architecture as a locally crafted command court. No active enslavement, actual Lich King, named necropolis, outside Icecrown frost, corpses or forced current allegiance.",
+      "facts": "An Undead command court orders immense riblike supports, dark angular masonry and bone-edged metal into a severe audience chamber. A broad raised dais sits above a clear reinforced assembly floor. Runic blue-violet lamps, secured soul-container-shaped vessels, guarded archives and heavy weapon rests reveal disciplined necromilitary craftsmanship without domestic clutter.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: undead family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "excludedCultures": [
+        "forsaken"
+      ],
+      "guidanceProfile": "undead",
+      "socialContext": "The command chamber arranges reception around a severe formal station and protected practical possessions. Broad routes accommodate altered bodies and living visitors; records, arms and secured containers lend service, supplies and contested ownership tangible subjects. Public reports or petitions have an exposed approach, while secondary bays permit restricted counsel. Necromilitary workmanship gives the room an austere inherited identity without establishing who controls its occupants. It does not require mindless obedience, active soul imprisonment, a particular undead faction or hostility toward the living."
+    },
+    {
+      "id": "titan_pyromantic_court",
+      "heritage": "heritage_pyromantic",
+      "style": "pyromantic",
+      "label": "Ignan fireproof sovereign audience keep",
+      "assetStem": "pyromantic_court",
+      "environment": "environment_frontend_west_main",
+      "art": "An Ignan court shapes worked basalt, blade-like dark metal and copper fittings into broad continuous ramps and a coiling authority platform. Flame-patterned carving, monumental doors, fitted weapon rests and ranked braziers give furnace warmth an ordered structure. Protected visitor ledges border contained luminous heat channels beneath immense black-stone vaults. Warcraft Flamewaker elemental civilization. Contained engineered heat infrastructure, fireproof geometry and serpentine bodily accommodation; no ocean of open lava under visitors, active eruption, Firelands location or mandatory Firelord worship.",
+      "facts": "An Ignan court shapes worked basalt, blade-like dark metal and copper fittings into broad continuous ramps and a coiling authority platform. Flame-patterned carving, monumental doors, fitted weapon rests and ranked braziers give furnace warmth an ordered structure. Protected visitor ledges border contained luminous heat channels beneath immense black-stone vaults.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: pyromantic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "ignan",
+      "socialContext": "Court business takes place around great native resting space and protected approaches for more heat-vulnerable visitors. Weapons, fittings and ranked stations give resource decisions, service, reports and negotiated access material weight. The broad audience route allows formal presentation; sheltered ledges support a less exposed consultation. Contained heat channels affect where an actual body can comfortably stand, without requiring pain or a new immunity. Worked volcanic splendour establishes elemental craftsmanship, not a current worship service, forced allegiance or a spell newly available to a character."
+    },
+    {
+      "id": "titan_aquatic_court",
+      "heritage": "heritage_aquatic",
+      "style": "aquatic",
+      "label": "Aquatic elemental mineral audience court",
+      "assetStem": "aquatic_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A water-elemental court surrounds a great contained authority basin with fluidly carved mineral columns, pearl-inlaid stone terraces and broad guest ledges. Sculpted current patterns, silver fixtures and protected repositories accompany controlled channels and blue-turquoise light reflected through water. The stable dry approach contrasts with the deep luminous native gathering pools. Reserved Warcraft water-elemental heritage court. Magical hydraulic building tradition, no actual Abyssal Maw location, ocean geography, named elemental lord or watery occupants. Generate art for future heritage-bearing populations only.",
+      "facts": "A water-elemental court surrounds a great contained authority basin with fluidly carved mineral columns, pearl-inlaid stone terraces and broad guest ledges. Sculpted current patterns, silver fixtures and protected repositories accompany controlled channels and blue-turquoise light reflected through water. The stable dry approach contrasts with the deep luminous native gathering pools.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: aquatic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "aquatic_reserve",
+      "socialContext": "A contained audience basin and stable dry ledges give fluid bodies and physical guests practical meeting positions. An offered object or petition can be presented without requiring anyone to enter the native pool. Currents and separated platforms lend approach, distance and access a distinct rhythm; sheltered alcoves support quieter exchange. Resource claims, custody and negotiated passage fit an institution of this kind. The basin is part of the selected room, not evidence that the province is underwater, and its presence grants visitors no elemental form or powers."
+    },
+    {
+      "id": "titan_geomantic_court",
+      "heritage": "heritage_geomantic",
+      "style": "geomantic",
+      "label": "Geomantic monolithic sovereignty court",
+      "assetStem": "geomantic_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "An earth-elemental court deliberately shapes enormous faceted stone into monumental pillars, broad terraces and a massive mineral authority platform. Amethyst clusters and blue-white crystal lamps trace rare seams through charcoal and brown surfaces. Precisely cut repositories, polished stone vessels and secure smaller guest paths make geological mass into an ordered place of rule. Reserved Warcraft earth-elemental heritage court, magnificent crafted geology. No named Therazane, actual Deepholm location, earthquake, summoned occupants or campaign event assumed.",
+      "facts": "An earth-elemental court deliberately shapes enormous faceted stone into monumental pillars, broad terraces and a massive mineral authority platform. Amethyst clusters and blue-white crystal lamps trace rare seams through charcoal and brown surfaces. Precisely cut repositories, polished stone vessels and secure smaller guest paths make geological mass into an ordered place of rule.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: geomantic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "geomantic_reserve",
+      "socialContext": "Mineral mass gives authority an enduring physical setting. Broad formations accommodate great stone bodies, while smaller guest paths allow objects or requests to be brought within speaking distance. Rare seams, worked vessels and protected repositories lend stewardship, resources and ownership tangible subjects. The open approach permits witnessed deliberation; separated terraces and recesses provide less exposed counsel. Monumental craftsmanship can give admission ceremonial weight. It does not establish that every participant can shape earth, read the stones or share a single elemental disposition."
+    },
+    {
+      "id": "titan_aerian_court",
+      "heritage": "heritage_aerian",
+      "style": "aerian",
+      "label": "Aerian suspended sovereign audience court",
+      "assetStem": "aerian_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "An air-elemental court balances pale stone arches, gold borders and slender columns around high open internal volumes. Stable connected guest platforms lead toward a broad ring-framed hovering authority locus. Blue-white luminous fittings, suspended sculptural panels and finely shaped flowing ornament give serene aristocratic clarity to airy magical engineering. Reserved Warcraft air-elemental heritage architecture inspired by Skywall. A stabilized enclosed magical interior, no actual high-altitude geographic change, visible clouds outside, named ruler, flying living creature or current thunderstorm.",
+      "facts": "An air-elemental court balances pale stone arches, gold borders and slender columns around high open internal volumes. Stable connected guest platforms lead toward a broad ring-framed hovering authority locus. Blue-white luminous fittings, suspended sculptural panels and finely shaped flowing ornament give serene aristocratic clarity to airy magical engineering.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: aerian family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "aerian_reserve",
+      "socialContext": "The airy gathering volume surrounds secure connected positions for grounded guests. A formal approach can lead toward the hovering authority locus without asking a physical visitor to float. Stable fittings allow an object or record to be examined, while sheltered galleries offer more private exchange than the open central volume. Distance, vantage and access give petitions or terms of service a tangible spatial setting. Atmospheric construction supplies wonder without granting flight, weather control or compulsory serenity to the characters."
+    },
+    {
+      "id": "titan_demonic_court",
+      "heritage": "heritage_demonic",
+      "style": "demonic",
+      "label": "Demonic imperial command audience citadel",
+      "assetStem": "demonic_court_v2",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A spectacular Warcraft demonic sovereign's command court: titanic black iron blade-pylons, colossal armored gates and brutal alien bronze architecture converge on an immense adaptable command platform. Contained emerald fel-like conduits burn visibly through deep grooves in the masonry; huge inset rune-shaped ornament, massive weapon mounts, protected arcane instrument housings and expensive crimson-violet textiles make immense power and hard-won luxury tangible. Broad ramps, extravagant clearances and smaller visitor stations accommodate diverse bodies beneath soaring jagged volumes. This should read unmistakably as Warcraft demonic monumental engineering, not an ordinary dark fantasy palace with timid green accents. Rich burning green versus soot-black, bronze and deep red in restrained painterly handling. No active invasion or summoning, demonic occupants, named ruler, Sargeras emblem, mandatory allegiance, readable runes, actual prisoners or exterior planetary scene.",
+      "facts": "A Demonic command court aligns colossal blade-like iron pylons, armored gates and alien bronze fittings around an immense adaptable platform. Bright contained emerald conduits trace deep grooves through black masonry. Monumental weapon mounts, protected instruments and crimson-violet textiles flank broad ramps and smaller visitor stations beneath vast jagged volumes.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: demonic family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "demonic",
+      "socialContext": "Alien grandeur makes differences of access and institutional power conspicuous. A visitor can present tribute, an offer of service, disputed terms or a useful object before the commanding platform. Protected instruments and valuable possessions give bargaining over obligation, resources, patronage and exemption tangible stakes. The open floor suits witnessed acknowledgements when others are present; screened side stations permit more private terms. Such arrangements can be accepted, contested or exploited according to the participants. The architecture creates no binding oath, controller replacement, invasion or compulsory allegiance on its own.",
+      "archivedAssets": [
+        {
+          "assetStem": "demonic_court",
+          "reason": "Replaced after image/prose review: clearer bodily layout and stronger iconic Warcraft art direction."
+        }
+      ]
+    },
+    {
+      "id": "titan_void_court",
+      "heritage": "heritage_void",
+      "style": "void",
+      "label": "Voidwalker suspended shadow audience court",
+      "assetStem": "void_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Voidwalker court aligns dark suspended slabs and violet-blue geometric frames around immense quiet internal intervals. A ring-framed authority locus floats beyond stable grounded visitor platforms. Sparse sealed relics and luminous shadow reservoirs occupy carefully spaced recesses; cold rim-light reveals polished dark surfaces against contained drifting vapor. Warcraft cosmic Voidwalker architectural identity, abstract negative space distinct from N'raqi flesh empire or green Legion foundry. No actual ruler body, nightmare event, whole world in void, active mental invasion or impossible guest route.",
+      "facts": "A Voidwalker court aligns dark suspended slabs and violet-blue geometric frames around immense quiet internal intervals. A ring-framed authority locus floats beyond stable grounded visitor platforms. Sparse sealed relics and luminous shadow reservoirs occupy carefully spaced recesses; cold rim-light reveals polished dark surfaces against contained drifting vapor.",
+      "purpose": "An audience and deliberation space. These surroundings provide opportunities for interaction; they do not prescribe the current ruler's personality, faith, allegiance or conduct.",
+      "research": [
+        "user guide: void family; inherited motifs and authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "voidwalker",
+      "socialContext": "Sparse possessions and immense intervals give reception an unusual sense of distance. Stable guest positions allow material visitors to address the suspended station or present an object without stepping into an unsupported void. Separated recesses permit a more selective exchange than the exposed central approach. Access to a protected relic or reservoir can give a petition a concrete purpose within the sparse grandeur. The chamber's shadowy construction establishes no private knowledge, possession, psychic compulsion or new ability to ignore gravity."
+    },
+    {
+      "id": "titan_forsaken_court",
+      "heritage": "heritage_undead",
+      "style": "undead",
+      "cultures": [
+        "forsaken"
+      ],
+      "label": "Forsaken gothic civic audience court",
+      "assetStem": "forsaken_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A maintained Forsaken civic court joins worn royal masonry and pointed gothic vaults to severe carved timber and wrought iron. A thorn-framed high seat overlooks orderly ledgers, secured cabinets, brass-fitted alchemical glass and rich purple-black drapery. Funeral sculpture, cold violet lamps and contained green reagent light give the inherited chamber an eerie sovereign elegance. Warcraft Forsaken craft transforms a reclaimed Lordaeron civic hall, visibly independent and inhabited rather than a regimented Scourge necropolis. No named ruler, frozen exterior, corpses, infected visitors, active experiment, spectral attendants or forced evil personality.",
+      "facts": "A maintained Forsaken civic court joins worn royal masonry and pointed gothic vaults to severe carved timber and wrought iron. A thorn-framed high seat overlooks orderly ledgers, secured cabinets, brass-fitted alchemical glass and rich purple-black drapery. Funeral sculpture, cold violet lamps and contained green reagent light give the inherited chamber an eerie sovereign elegance.",
+      "purpose": "An audience and deliberation space built in the observed local tradition. Its furnishings support interaction without prescribing personality, faith or allegiance.",
+      "research": [
+        "user guide: forsaken variant; authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "forsaken",
+      "socialContext": "Maintained records, apothecary fittings and inherited royal space make this an undead civic household with ordinary business. A visitor can bring a property claim, recovered possession, report of service or request for recognition toward the formal station. Old craft and altered practical use give memory and belonging material subjects, without requiring nostalgia or bitterness. The main approach supports witnessed testimony when others are present; protected cabinets and side bays allow more private terms. Reagents remain possessions rather than an active plague, and altered bodies retain their actual personal control."
+    },
+    {
+      "id": "titan_drogbar_court",
+      "heritage": "heritage_uldamanic",
+      "style": "uldamanic",
+      "cultures": [
+        "drogbar"
+      ],
+      "label": "Drogbar carved cavern assembly hold",
+      "assetStem": "drogbar_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A substantial Drogbar assembly cavern uses broad stone ledges, coarse fitted rock, deep mineral seams and stout hide-and-timber shelter. A massive worked stone authority seat is framed by clan carving, gem-set trophies, oversized weapons and heavy vessels. Warm amber lamps catch green crystal fittings; practical ore stores and broad visitor approaches give the cave the structure of an enduring settlement. Warcraft Highmountain Drogbar underground stonecraft and muscular earthen civilization, distinct from Trogg squatting in a ruined Titan vault. No named cavern, living fungus monsters, volcanic eruption, mountain exterior or mandatory violence.",
+      "facts": "A substantial Drogbar assembly cavern uses broad stone ledges, coarse fitted rock, deep mineral seams and stout hide-and-timber shelter. A massive worked stone authority seat is framed by clan carving, gem-set trophies, oversized weapons and heavy vessels. Warm amber lamps catch green crystal fittings; practical ore stores and broad visitor approaches give the cave the structure of an enduring settlement.",
+      "purpose": "An audience and deliberation space built in the observed local tradition. Its furnishings support interaction without prescribing personality, faith or allegiance.",
+      "research": [
+        "user guide: drogbar variant; authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "drogbar",
+      "socialContext": "The carved authority station presides over a working mountain settlement's resources and defended routes. A useful tool, mineral sample, claim of service or right of passage can be brought along the broad reception floor. Gem-set trophies and worked stone give accomplishment and possession tangible form. The assembly space permits public disputes or recognition when witnesses are present; side stores and sheltered ledges allow more guarded counsel. Existing craft makes the court's pride in its settlement legible without requiring a geomantic spell or a proud disposition from every character."
+    },
+    {
+      "id": "titan_nerubian_court",
+      "heritage": "heritage_aqir",
+      "style": "aqir",
+      "cultures": [
+        "nerubian"
+      ],
+      "label": "Nerubian silken imperial audience court",
+      "assetStem": "nerubian_court",
+      "environment": "environment_frontend_mediterranean_main",
+      "art": "A Nerubian imperial chamber combines faceted dark masonry, tapered angular piers and fine gold-and-gem inlay with tensioned silk screens. Suspended woven galleries and climbing routes connect to a broad many-legged resting dais. Mathematical reliefs, protected archives, specimen cabinets and precisely arranged instruments glimmer in cool blue, violet and dark teal light. Sophisticated Warcraft Nerubian arachnid city-building and elite silkcraft, Azjol-Nerub and City of Threads visual ancestry. Audience platform and gentle continuous approaches for broad spider bodies, no generic human chair. No active Old God worship, named queen, present city, occupied cocoons, live spiders or bone necropolis.",
+      "facts": "A Nerubian imperial chamber combines faceted dark masonry, tapered angular piers and fine gold-and-gem inlay with tensioned silk screens. Suspended woven galleries and climbing routes connect to a broad many-legged resting dais. Mathematical reliefs, protected archives, specimen cabinets and precisely arranged instruments glimmer in cool blue, violet and dark teal light.",
+      "purpose": "An audience and deliberation space built in the observed local tradition. Its furnishings support interaction without prescribing personality, faith or allegiance.",
+      "research": [
+        "user guide: nerubian variant; authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "nerubian",
+      "socialContext": "Ordered silk and masonry give an ancient civic court a distinctly vertical geography. Ground routes accommodate many-legged bodies and smaller guests, while upper circulation can make access and vantage socially meaningful. Archives, instruments and specimen cabinets support petitions over resources, craft, knowledge and urban obligations. An object can be examined at a side station before a more public address to the presiding platform. Silk screens permit graduated privacy rather than automatic secrecy. The court's elaborate craft establishes neither undead control, current Void corruption nor a compulsory collective mind."
+    },
+    {
+      "id": "titan_mantid_court",
+      "heritage": "heritage_aqir",
+      "style": "aqir",
+      "cultures": [
+        "mantid"
+      ],
+      "label": "Mantid amber-engineered imperial court",
+      "assetStem": "mantid_court",
+      "environment": "environment_frontend_west_main",
+      "art": "A Mantid imperial chamber joins immense cultivated trunk arches to sculpted translucent amber, elongated chitin-like ribs and dark resin framing. Honey-gold light shines through sealed repositories and carefully routed resin channels around a broad authority platform. Sonic instruments, amber reliefs, formal stores and high open flight clearances give the chamber precise insectoid grandeur. Advanced Warcraft Mantid amber engineering and kypari living-tree construction, distinct from Qiraji sandstone and Nerubian silk. No named empress, corruption, possessed ruler, imprisoned creatures, living champions in amber, current ceremony or outdoor biome inferred.",
+      "facts": "A Mantid imperial chamber joins immense cultivated trunk arches to sculpted translucent amber, elongated chitin-like ribs and dark resin framing. Honey-gold light shines through sealed repositories and carefully routed resin channels around a broad authority platform. Sonic instruments, amber reliefs, formal stores and high open flight clearances give the chamber precise insectoid grandeur.",
+      "purpose": "An audience and deliberation space built in the observed local tradition. Its furnishings support interaction without prescribing personality, faith or allegiance.",
+      "research": [
+        "user guide: mantid variant; authored unnamed court extrapolation"
+      ],
+      "guidanceProfile": "mantid",
+      "socialContext": "Advanced amber craftsmanship joins reception to the custody of preserved objects and institutional knowledge. Broad routes and open upper volume accommodate the actual bodies present around a distinguished authority platform. Reports, resource petitions or a demonstration of workmanship can give an audience practical purpose; instruments and resin fittings supply objects for closer exchange. Side platforms permit consultation apart from the open assembly floor. Amber repositories are features of the room, not proof of occupied sleepers, current brood production, Sha corruption or a shared compulsory will."
+    }
+  ],
+  "contextGuidance": "docs/warcraft-scenes/GOA2-Court-Scene-Contexts.txt"
+}

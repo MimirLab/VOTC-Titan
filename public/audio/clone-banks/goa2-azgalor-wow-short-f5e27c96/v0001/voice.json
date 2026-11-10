@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-azgalor-wow-short-f5e27c96",
+  "revision": 1,
+  "name": "Azgalor — WoW indexed Azgalor short recorded soundset",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f398eeb3bfabf52bd8e96b39150b08e632b35e44c0e23b5eed36e173e11ef0a3",
+    "transcript_sha256": "1d08e80cc907107ec2e0bd43c201a7550129ef51c5f83ff27f73c7b19ac47301",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 140729,
+      "seconds": 5.863708333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -17.05,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

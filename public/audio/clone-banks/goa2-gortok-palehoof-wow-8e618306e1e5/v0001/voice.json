@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-gortok-palehoof-wow-8e618306e1e5",
+  "revision": 1,
+  "name": "Gortok Palehoof — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "562a6fe5cde560b95671b56e3c88105949e82d69e01e6ddcba112f786b3da55f",
+    "transcript_sha256": "030b9340d874f8491a6b1120b019dcd677ecfc0b1dd5e823467b903e33d386dc",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 122138,
+      "seconds": 5.089083333333333,
+      "peak": 0.967163,
+      "rms_dbfs": -15.48,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

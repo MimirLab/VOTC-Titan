@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-varedis-felsoul-wow-9b3b32a334d9",
+  "revision": 1,
+  "name": "Varedis Felsoul — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f3d0a3d34b7a3462a9edb5c5bcff4a88922d417c3c3096ad59994678dd088595",
+    "transcript_sha256": "489c6fd86bbdef314b19b4cd1634391b089fd12bacb9623ad95c8210137d4d95",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365393,
+      "seconds": 15.224708333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.74,
+      "clipped_samples": 8
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

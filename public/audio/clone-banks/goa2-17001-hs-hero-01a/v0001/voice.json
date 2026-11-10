@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-17001-hs-hero-01a",
+  "revision": 1,
+  "name": "Magni Bronzebeard — Magni Bronzebeard (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1cc07040471cd510a1e0472b729c87bfe25b598bf2dfdc70e29295f881b162ab",
+    "transcript_sha256": "d8012dd9dda4442d7387e41129d3d4e5c5d39f386f76e8ba31ba69661fc777a8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 232259,
+      "seconds": 9.677458333333334,
+      "peak": 1.0,
+      "rms_dbfs": -18.25,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

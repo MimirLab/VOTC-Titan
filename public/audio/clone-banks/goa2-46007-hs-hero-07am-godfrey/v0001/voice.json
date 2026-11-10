@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46007-hs-hero-07am-godfrey",
+  "revision": 1,
+  "name": "Lord Godfrey — Lord Godfrey (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8757249018d70077dfd8769585e0fcf181fbe3cd07b04005db841b59b22091d4",
+    "transcript_sha256": "434982de890b23227d6309b398ca95e65e81452b399ff7aa64bb572dacb56693",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 383216,
+      "seconds": 15.967333333333332,
+      "peak": 1.0,
+      "rms_dbfs": -18.21,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

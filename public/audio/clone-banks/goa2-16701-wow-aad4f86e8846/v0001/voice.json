@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-16701-wow-aad4f86e8846",
+  "revision": 1,
+  "name": "Erazmin Mechagon — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "807b3736f1543d4b941b3fb25951c454676afbd3a3a51a51657064ddc117e468",
+    "transcript_sha256": "7b6bd5807e4744208054a2a7f5f4c0c2c181851271df877ffc76a04bddd02c5c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 396398,
+      "seconds": 16.516583333333333,
+      "peak": 0.845917,
+      "rms_dbfs": -17.45,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

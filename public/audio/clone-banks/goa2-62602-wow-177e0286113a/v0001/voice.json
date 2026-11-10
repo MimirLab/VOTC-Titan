@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62602-wow-177e0286113a",
+  "revision": 1,
+  "name": "Arygos Blue Dragonflight — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "7f21274aa42a73026c4a6899d545f8ef1f6c378358312cccc553e3afc3d30d71",
+    "transcript_sha256": "5ef478800dcc02825d5903597b9ebc8fe68edbd4a9cfc37452b8ed63254a61a3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 374411,
+      "seconds": 15.600458333333334,
+      "peak": 0.916351,
+      "rms_dbfs": -16.15,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

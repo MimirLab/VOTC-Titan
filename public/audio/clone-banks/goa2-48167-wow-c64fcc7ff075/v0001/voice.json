@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48167-wow-c64fcc7ff075",
+  "revision": 1,
+  "name": "Arthur Waycrest — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "72cca0e056e80e49b473b719047a9733adaf94d1607c5899fa5353bb260daca7",
+    "transcript_sha256": "c5d5b4eba476627036205ec5a38148a677883d7676bd10823bc5ae3210ab48c3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365953,
+      "seconds": 15.248041666666667,
+      "peak": 1.0,
+      "rms_dbfs": -17.52,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-helcular-wow-748432179ae2",
+  "revision": 1,
+  "name": "Helcular — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ffc6e2b7123f7d3e11fc5e97f759f4c0086d1429fd8307a5ed733ab4cafe9bb8",
+    "transcript_sha256": "555f2052b15761ce1db9d9b91546c434687a3acaa1cb9a62e538dbe7cafba8e3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 355821,
+      "seconds": 14.825875,
+      "peak": 0.999969,
+      "rms_dbfs": -18.33,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

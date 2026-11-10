@@ -1,0 +1,98 @@
+[
+  {
+    "owner": "0000",
+    "language": "language_common",
+    "word": "Water",
+    "key": "[\"votc-mask-learning-v2\",\"0\",\"language_common\",\"water\"]",
+    "sha256": "bbfee941f46ab84635c9f6a85178a47e7ecc43f4a6798c990e51f503d2558fc9",
+    "percent": 73.43583854380995
+  },
+  {
+    "owner": "00042",
+    "language": "language_orcish",
+    "word": "WATER",
+    "key": "[\"votc-mask-learning-v2\",\"42\",\"language_orcish\",\"water\"]",
+    "sha256": "551628b92c1ea280dc822a44d0f99fff36b12276b8bed9c0ebdd907f5bcab3a8",
+    "percent": 33.23693706188351
+  },
+  {
+    "owner": "42",
+    "language": "language_orcish",
+    "word": "water",
+    "key": "[\"votc-mask-learning-v2\",\"42\",\"language_orcish\",\"water\"]",
+    "sha256": "551628b92c1ea280dc822a44d0f99fff36b12276b8bed9c0ebdd907f5bcab3a8",
+    "percent": 33.23693706188351
+  },
+  {
+    "owner": "9007199254740993",
+    "language": "language_eredun",
+    "word": "Straße",
+    "key": "[\"votc-mask-learning-v2\",\"9007199254740993\",\"language_eredun\",\"straße\"]",
+    "sha256": "30270db7ce4183178a1103d8d6b5f88fce51136e42cd910d045400430e13fc51",
+    "percent": 18.809591024182737
+  },
+  {
+    "owner": "123",
+    "language": "language_darnassian",
+    "word": "ＡＢＣ",
+    "key": "[\"votc-mask-learning-v2\",\"123\",\"language_darnassian\",\"abc\"]",
+    "sha256": "7272795827411ab99c1e153f7811273966bc05cf2f5c2d4b67dcab3e53643af6",
+    "percent": 44.705923460423946
+  },
+  {
+    "owner": "123",
+    "language": "language_darnassian",
+    "word": "abc",
+    "key": "[\"votc-mask-learning-v2\",\"123\",\"language_darnassian\",\"abc\"]",
+    "sha256": "7272795827411ab99c1e153f7811273966bc05cf2f5c2d4b67dcab3e53643af6",
+    "percent": 44.705923460423946
+  },
+  {
+    "owner": "11",
+    "language": "language_common",
+    "word": "don’t",
+    "key": "[\"votc-mask-learning-v2\",\"11\",\"language_common\",\"don't\"]",
+    "sha256": "4c0b1cca4ffedc88da1352508ff4925719439a172270812b12a2b2ddde59020e",
+    "percent": 29.704456264153123
+  },
+  {
+    "owner": "11",
+    "language": "language_common",
+    "word": "don‘t",
+    "key": "[\"votc-mask-learning-v2\",\"11\",\"language_common\",\"don't\"]",
+    "sha256": "4c0b1cca4ffedc88da1352508ff4925719439a172270812b12a2b2ddde59020e",
+    "percent": 29.704456264153123
+  },
+  {
+    "owner": "11",
+    "language": "language_common",
+    "word": "don't",
+    "key": "[\"votc-mask-learning-v2\",\"11\",\"language_common\",\"don't\"]",
+    "sha256": "4c0b1cca4ffedc88da1352508ff4925719439a172270812b12a2b2ddde59020e",
+    "percent": 29.704456264153123
+  },
+  {
+    "owner": "2",
+    "language": "language_common",
+    "word": "é",
+    "key": "[\"votc-mask-learning-v2\",\"2\",\"language_common\",\"é\"]",
+    "sha256": "061f1a5eae4b2ae88f7f60a6e56255c2e18dfce4b9eecbfdddfe556a6d8661ad",
+    "percent": 2.3912094067782164
+  },
+  {
+    "owner": "2",
+    "language": "language_common",
+    "word": "é",
+    "key": "[\"votc-mask-learning-v2\",\"2\",\"language_common\",\"é\"]",
+    "sha256": "061f1a5eae4b2ae88f7f60a6e56255c2e18dfce4b9eecbfdddfe556a6d8661ad",
+    "percent": 2.3912094067782164
+  },
+  {
+    "owner": "9",
+    "language": "language_nerubian",
+    "word": "Österreich",
+    "key": "[\"votc-mask-learning-v2\",\"9\",\"language_nerubian\",\"österreich\"]",
+    "sha256": "496ebf1a01f874d3e91fc35c58eacca37fecc5f26f66e2a95266f1f74a4bee14",
+    "percent": 28.684610733762383
+  }
+]

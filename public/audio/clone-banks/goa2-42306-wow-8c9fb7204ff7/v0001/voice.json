@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42306-wow-8c9fb7204ff7",
+  "revision": 1,
+  "name": "Grand Magister Rommath — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b65e1f5403e1eb3d3ad5889d05f24a1f0cf3a205d8671d0b0c9dc45cacbdedf4",
+    "transcript_sha256": "a0970a01f55dd5805d27564fa61e94664f7ab54025e29314d5f06ba824c54f20",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 269095,
+      "seconds": 11.212291666666667,
+      "peak": 0.970795,
+      "rms_dbfs": -18.27,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

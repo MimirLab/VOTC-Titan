@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-kayn-sunfury-wow-5a331465d883",
+  "revision": 1,
+  "name": "Kayn Sunfury — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "bd929b89c3218a7ca83722031ab1d444d8e994afb9015bf4778cc30f1f8c530f",
+    "transcript_sha256": "cd282bf84c619050dee448f5af10d4eaecbac6e627eb27ea89989d50b128bbc9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365230,
+      "seconds": 15.217916666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.64,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

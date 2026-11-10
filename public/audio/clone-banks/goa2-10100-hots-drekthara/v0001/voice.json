@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10100-hots-drekthara",
+  "revision": 1,
+  "name": "Drek'Thar — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "76336b91ae68fdfd14af5d999c5e4c08e28f5b956428458db9f01f5169123b2f",
+    "transcript_sha256": "a06848ea20f981297f27083b49db541f604c360ea3fdd5905ebe7a8b2a3a6042",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 372146,
+      "seconds": 15.506083333333333,
+      "peak": 0.692139,
+      "rms_dbfs": -17.09,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-millificent-manastorm-wow-384e55746001",
+  "revision": 1,
+  "name": "Millificent — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "195924cea338c03fa25192d2c3192c15c248f438101543b4899bac4ba0abe9a7",
+    "transcript_sha256": "d74d39b0cc0f9a6dd05eaeec55db334086beb789dbfb8edcf85b721d815f8224",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 402631,
+      "seconds": 16.776291666666665,
+      "peak": 0.904053,
+      "rms_dbfs": -18.23,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

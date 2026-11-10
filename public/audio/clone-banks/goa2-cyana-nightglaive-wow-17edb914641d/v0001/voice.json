@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-cyana-nightglaive-wow-17edb914641d",
+  "revision": 1,
+  "name": "Cyana Nightglaive — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2f99b8895f44afb5bff4a5232e9317db1445f20dbc4abd4070b1e98dad444393",
+    "transcript_sha256": "ac85b720cb00d7c8fb800c7227afc023f33797d8c76d61fba5d99cdae2c6f524",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 375185,
+      "seconds": 15.632708333333333,
+      "peak": 1.0,
+      "rms_dbfs": -16.69,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

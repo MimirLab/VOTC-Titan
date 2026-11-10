@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-aspix-wow-b83a7c4dc7dd",
+  "revision": 1,
+  "name": "Aspix — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "eff6ce30216138f0ece81c1e94fa94c8d87b4ed57966185e966904b908108f14",
+    "transcript_sha256": "4ad12dc1f0c2c9aa6a4589db8320438c30bb1ab27a09d1b5ff9003bb40364f4b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 369329,
+      "seconds": 15.388708333333334,
+      "peak": 1.0,
+      "rms_dbfs": -15.78,
+      "clipped_samples": 11
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

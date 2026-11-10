@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-samuro-blademaster-hots-samurobase",
+  "revision": 1,
+  "name": "Samuro — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "bc0b854f5f9c7c284124d11babbbccb1446a922af42b49fe525ce8f5daea9a35",
+    "transcript_sha256": "2796f04c81688ff7c5bc17f61dd521f37451a59d35078cdd6ef35ffc2fece2a0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 352676,
+      "seconds": 14.694833333333333,
+      "peak": 0.841858,
+      "rms_dbfs": -17.13,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

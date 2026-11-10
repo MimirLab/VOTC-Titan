@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-5806-wow-28cd34590188",
+  "revision": 1,
+  "name": "Moroes dynn_Stewart — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "86755e7a29266efe664ccbd671e6d90efe643747830c743154a6885cd9275970",
+    "transcript_sha256": "f67e4af8cc817b41e9ad3a73e324c321b15f255c4fc18778410d5599afd61b93",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 409878,
+      "seconds": 17.07825,
+      "peak": 1.0,
+      "rms_dbfs": -17.62,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

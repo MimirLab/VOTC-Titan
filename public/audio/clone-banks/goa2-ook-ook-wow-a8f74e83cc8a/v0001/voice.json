@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ook-ook-wow-a8f74e83cc8a",
+  "revision": 1,
+  "name": "Ook-Ook — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f6a552dba83b00a2184be6ac8f4457a10d4415d9832429ff70a6e5be91814160",
+    "transcript_sha256": "68efb45890ee642137d16d0f7686a418e397badb3bdf0a75bd496009541b34c1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 82563,
+      "seconds": 3.440125,
+      "peak": 0.999969,
+      "rms_dbfs": -16.21,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

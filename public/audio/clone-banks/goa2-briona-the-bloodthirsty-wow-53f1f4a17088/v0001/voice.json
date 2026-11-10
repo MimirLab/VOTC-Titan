@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-briona-the-bloodthirsty-wow-53f1f4a17088",
+  "revision": 1,
+  "name": "Briona — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0162f71b6fdec1fc1b62dec02df2f47d5300d7c49e594cf0a0c294633e239dce",
+    "transcript_sha256": "bc4e4173769124e3b99a87ef44249448c0d7ffc4af2cac9579faac9852e5a40f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384430,
+      "seconds": 16.017916666666668,
+      "peak": 0.945526,
+      "rms_dbfs": -18.12,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,388 @@
+---
+title: README
+type: note
+permalink: votc/readme
+---
+
+# Voices of the Court 2.0 - Community Edition (VOTC-CE)
+
+An AI-powered companion for Crusader Kings III that helps you keep track of characters, plots, and storylines. Voices of the Court 2.0 - Community Edition integrates Large Language Models into the game, letting you hold natural conversations with characters and dynamically influence the game state.
+
+Documentation: https://docs.voicesofthecourt.app
+
+[Steam page](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139)
+
+Join our Discord:
+
+[![Discord Server](https://discord.com/api/guilds/1066522056243564585/widget.png?style=banner2)](https://discord.gg/UQpE4mJSqZ)
+
+# Trailer video 
+[![link to](https://img.youtube.com/vi/E2GmlNsK-J8/0.jpg)](https://www.youtube.com/watch?v=E2GmlNsK-J8)
+
+# Gameplay video by DaFloove
+[![link to](https://img.youtube.com/vi/3lhHkXPmis0/0.jpg)](https://www.youtube.com/watch?v=3lhHkXPmis0)
+
+### 🌟 Features
+
+### 🎮 Configuration Interface
+- **🤖 Multiple AI Models**: Support for OpenAI GPT models, Anthropic Claude, DeepSeek, Player2, NovelAI, and local models
+- **🧠 Character Memory**: Persistent memory system that tracks character relationships and history
+- **📚 Context Management**: Adjustable context window and conversation history settings
+- **🎯 Custom Prompts**: Personalized system prompts for different character types
+- **🔄 Restore Defaults**: One-click restore to default prompts and settings
+
+### 💬 Chat Interface
+- **⚡ Real-time Conversations**: Natural dialogue with CK3 characters
+- **👤 Character Profiles**: Detailed information about each character
+- **🔖 Bookmark System**: Save and organize important conversations
+- **📤 Export Functionality**: Export conversations to text files
+
+### 📋 Summary Manager
+- **🤖 Automatic Summaries**: AI-generated summaries of important events
+- **🔖 Bookmark Integration**: Convert bookmarks to summaries
+- **🔍 Search Functionality**: Find specific conversations and summaries
+- **📤 Export Options**: Save summaries in various formats
+
+### 🧠 Memory Compaction
+- **🔄 Two-Phase Compaction**: Phase 1 summarizes recent messages; Phase 2 consolidates into a long-term knowledge graph
+- **📊 Context Preservation**: Preserves key narrative elements (secrets, rivalries, alliances, major events) with >95% accuracy
+- **⚡ Performance Monitoring**: Compaction completes in <200ms with <5% serialization overhead
+- **🔐 Encrypted Storage**: Compacted memory files are encrypted at rest using AES-256
+- **🌐 Cross-Language**: Works identically across EN, ZH, RU, FR, ES locales
+
+## Configuration Interface Details
+
+The application provides six main configuration pages, each responsible for different functional settings:
+
+### 1. Connection Page
+
+The Connection page is used to configure the connection to the language model API and game path settings.
+
+- **API Connection Configuration**:
+  - Select text generation API provider (e.g., OpenAI, Kobold, etc.)
+  - Configure API key, endpoint URL, and model name
+
+- **DeepSeek API Configuration**:
+  - **Model Name**: Specify the DeepSeek model to use (e.g., `deepseek-chat`). This field allows you to configure the exact model for your DeepSeek API connection.
+  - **API Key**: Enter your DeepSeek API key.
+  - **Endpoint URL**: The base URL for the DeepSeek API (default: `https://api.deepseek.com`).
+
+- **API Connection Test**:
+  - The connection test now treats empty 2xx responses from the API as successful, logging "API returned an empty response" instead of failing. This ensures compatibility with APIs that may return an empty body for successful health checks.
+
+- **CK3 User Folder Path**:
+  - Set the CK3 folder path where user data is stored
+  - Default path: `User Documents/Paradox Interactive/Crusader Kings III`
+  - You can browse and select the correct path via the "Select Folder" button
+
+### 2. Actions Page
+
+The Actions page is used to configure detectable actions in the game and corresponding AI responses.
+
+- **Enable Actions**:
+  - Master switch to control whether action detection is enabled
+  - Enable AI Narrative: Generate AI narrative descriptions after an action is triggered
+
+- **API Configuration**:
+  - Choose to use the same API settings as the Connection page
+  - Or configure a separate API for action features
+
+- **Parameter Settings**:
+  - Temperature: Controls AI response creativity (default 0.2, lower values make responses more deterministic)
+  - Frequency Penalty: Reduces generation of repetitive content
+  - Presence Penalty: Encourages talking about new topics
+  - Top P: Controls diversity of vocabulary selection
+
+- **Action Selection**:
+  - Select the types of actions you want the mod to detect from the list
+  - Each action has a description and creator information
+  - Refresh the action list via the "Reload Files" button
+  - Access custom action scripts via the "Open Folder" button
+
+### 3. Summarization Page
+
+The Summarization page is used to configure API settings for the conversation summary feature.
+
+- **API Configuration**:
+  - Choose to use the same API settings as the Connection page
+  - Or configure a separate API for summarization features
+
+- **Parameter Settings**:
+  - Temperature: Controls summary creativity (default 0.2)
+  - Frequency Penalty: Reduces repetitive content in summaries
+  - Presence Penalty: Encourages inclusion of new information
+  - Top P: Controls diversity of vocabulary selection
+
+The summarization feature is used to compress long conversations into short summaries, helping keep conversation context within token limits and generating summaries after conversations for future reference.
+
+### 4. Prompts Page
+
+The Prompts page is used to configure various prompts and scripts for interacting with the AI.
+
+- **Main Prompts**:
+  - Main Prompt: Basic instructions controlling how the AI responds
+  - Self-talk Prompt: Generation rules for character internal monologues
+  - Summarize Prompt: Instructions for generating conversation summaries
+  - Self-talk Summarize Prompt: Summary rules for character internal monologues
+  - Memory Prompt: How characters remember and reference past events
+  - Suffix Prompt: The last system message inserted before the API request, used to guide the model in formatting responses
+  - Narrative Prompt: Rules for generating AI narrative descriptions after an action is triggered
+
+- **Script Selection**:
+  - Character Description Script: Script for dynamically generating character descriptions
+  - Example Message Script: Script for generating example conversation messages
+  - Playbook: Specific playbook files for import, containing worldviews and character settings
+
+Each script has standard and custom versions, selectable via dropdown menus, and accessible via the "Open Folder" button.
+
+### 5. Settings Page
+
+The Settings page contains various behavior and generation parameter configurations for the application.
+
+- **Basic Settings**:
+  - Max New Tokens: Limits the maximum length of a single AI response
+  - Max Memory Tokens: Limits the maximum length of character memories
+  - Streaming Messages: Enable/disable streaming responses (real-time display of AI generation)
+  - Clean Messages: Attempt to remove unwanted content from AI generation (e.g., emojis)
+  - Shuffle Character Order: Randomize character speaking order in multi-person conversations
+  - Dynamic Character Selection: Use LLM to analyze conversation and select the next speaking character
+  - Validate Character Identity: Verify if generated messages match character identity, preventing LLM from generating replies for other characters
+  - Show Suggestions Button: Show/hide the recommended input statement feature in the chat window
+
+- **Insertion Depth Settings**:
+  - Summary Insertion Depth: Controls the insertion position of summaries in conversation history
+  - Memory Insertion Depth: Controls the insertion position of character memories in conversation history
+  - Character Description Insertion Depth: Controls the insertion position of character descriptions in conversation history
+
+- **Instruction Settings**:
+  - Input Sequence: Special markers for user input
+  - Output Sequence: Special markers for AI output
+
+- **Text Generation Parameters**:
+  - Temperature: Controls AI response creativity (default 0.8)
+  - Frequency Penalty: Reduces generation of repetitive content
+  - Presence Penalty: Encourages talking about new topics
+  - Top P: Controls diversity of vocabulary selection (default 0.9)
+
+### 6. System Page
+
+The System page provides application maintenance and community link features.
+
+- **Update Features**:
+  - Display current application version
+  - Check for Updates button: Manually check for new versions
+  - Check for updates on startup: Automatically check for updates when the app starts
+
+- **Log Files**:
+  - If you experience errors/crashes, you can view log files
+  - Open Log Folder button: Direct access to log files
+
+- **Conversation Summary Management**:
+  - Clear Summaries button: Delete previous conversation summaries for all characters
+  - Open Conversation Summary Folder button: Access stored conversation summaries
+
+### 7. Memory Compaction Page
+
+The Memory Compaction page allows you to configure advanced settings for automatically managing conversation history to save context space and preserve key narrative details over long campaigns.
+
+- **Basic Settings**:
+  - **Enable Memory Compaction**: Turn on/off the automatic compaction feature.
+  - **Phase 1 Threshold**: Percentage of the context window at which Phase 1 compaction is triggered (e.g., 70% means compaction starts when 70% of the context window is used).
+  - **Phase 2 Threshold**: Number of Phase 1 summaries that must exist before Phase 2 compaction is triggered.
+  - **Token Budget Allocation (Phase 1 & 2)**: Percentage of the total context window allocated to Phase 1 and Phase 2 summaries, respectively. This controls how much space compacted memories can occupy in the prompt.
+  - **Compaction Cooldown**: Minimum time (in minutes) between compaction runs to prevent overly frequent processing and performance issues.
+  - **Priority Elements**: List of narrative elements (e.g., "secrets", "rivalries") that receive higher relevance scores during summarization to ensure their preservation.
+  - **Entity Extraction Mode**: Method used to identify and extract entities for the knowledge graph. Options include: "LLM" (most accurate), "Regex" (faster, rule-based), or "Hybrid" (combines both).
+  - **Directional Relationships**: Determines if relationships (ee.g., "hates") are treated as directional (e.g., A hates B) or symmetric (A and B hate each other).
+
+- **Manual Compaction**:
+  - **Run Compaction Now button**: Immediately trigger a memory compaction cycle for the current conversation. This is useful for testing or manually managing context.
+
+- **Data Export/Import**:
+  - **Export Player Data button**: Export all player-related data (conversation summaries, diaries, letters, and compacted memory) to a zip file.
+  - **Import Player Data button**: Import player data from a previously exported zip file.
+
+## Chat Interface Features
+
+The chat interface is the primary interface for interacting with game characters, including the following features:
+
+- **Message Display**:
+  - Player messages and AI character messages are displayed in different styles
+  - Supports basic Markdown formatting (bold, italic)
+  - Narrative messages are displayed in a special style, providing scene descriptions
+
+- **Input Features**:
+  - Text Input Box: Enter dialogue content with characters
+  - Enter key to send messages
+  - Supports multi-line input
+
+- **Suggestion Features** (configurable show/hide):
+  - Suggestion Button: Display recommended input statements
+  - Suggestion List: Click a suggestion item to automatically fill the input box
+  - Close Button: Hide the suggestion panel
+
+- **Conversation Control**:
+  - End Conversation Button: Exit the current conversation
+
+- **Status Indicators**:
+  - Loading Dots: Shows AI is generating a response
+  - Error Messages: Displays connection or generation errors
+
+## Summary Manager Features
+
+The Summary Manager is an interface for managing and editing game character conversation summaries, providing the following features:
+
+### Top Control Buttons
+
+- **Refresh Button**: Reload all summary data, including parsing player ID from game logs and reading summary files
+- **Save Button**: Save all current summary changes to file
+- **Close Button**: Close the Summary Manager window
+
+### Information Panel
+
+- **Player ID**: Displays the current player ID parsed from game logs (read-only)
+- **Select Character**: Dropdown menu to filter summaries for a specific character or view all character summaries
+- **Summary File Path**: Displays the storage path of the current summary file (read-only)
+
+### Summary List Area
+
+- **Summary List**: Displays all summaries under current filter criteria, each item containing date, character, and summary content
+- **Add New Summary Button**: Create a new blank summary at the top of the list, defaulting to the currently selected character
+
+### Editor Area
+
+- **Date Input Box**: Edit the date of the currently selected summary
+- **Content Text Box**: Edit the detailed content of the currently selected summary
+- **Update Summary Button**: Save changes to the currently selected summary
+- **Delete Summary Button**: Delete the currently selected summary (requires confirmation)
+- **New Summary Button**: Clear the editor, ready to create a new summary
+
+### Instructions
+
+1. Click a summary item in the list to select and load it into the editor
+2. Use the character filter to view summaries for a specific character or all characters
+3. All changes need to be saved by clicking the "Save" button to be written to file
+4. Deletion is irreversible, please use with caution
+
+## 🚀 Local Setup
+
+### 📥 Installation
+
+**Windows**
+1. Download the `.exe` installer from the latest release.
+2. Run the installer and follow the on-screen instructions.
+3. Launch the VOTC-CE application.
+
+**macOS**
+1. Download the `.zip` or `.dmg` file from the latest release.
+2. If you downloaded the `.dmg`, open it and drag the application icon to your `/Applications` folder.
+3. If you downloaded the `.zip`, unzip it and drag the application icon to your `/Applications` folder.
+4. **Important First Step**: To run the app, you must bypass Apple's Gatekeeper security. Right-click (or Ctrl-click) the application icon and select **Open** from the menu.
+5. A warning dialog will appear. Click the **Open** button to confirm. You only need to do this the first time you run the application.
+
+**CK3 Mod Setup**
+1. Download the latest version of the VOTC-CE mod files (usually a `.zip` file) from the release page.
+2. Extract the contents to your CK3 mod folder (typically located at `Documents/Paradox Interactive/Crusader Kings III/mod`).
+3. Launch Crusader Kings III and enable the "Voices of the Court" mod in the launcher.
+
+### ⚙️ Configuration
+1. Launch the application
+2. Navigate to the configuration interface
+3. Enter your AI service API key
+4. Adjust settings to fit your preferences
+5. Click "Save Configuration" to apply changes
+
+### 🔄 Restore Default Settings
+- Use the "Restore Default Prompt" button to restore all default prompt settings with one click
+- Individual configuration items can be reset in the configuration interface
+
+## 🛠️ Troubleshooting
+
+### 🔧 Common Issues
+
+#### 1. **Application Fails to Start**
+   - Ensure all dependencies are installed: run `npm install`
+   - Check if Node.js version is compatible
+   - Verify game file path is correct
+
+#### 2. **AI Connection Issues**
+   - Check if API key is entered correctly
+   - Verify network connection is normal
+   - Confirm API status of the AI provider
+
+#### 3. **Game Integration Issues**
+   - Ensure CK3 game is running
+   - Check if mod is correctly installed
+   - Verify game file path configuration
+
+#### 6. **Memory Compaction Issues**
+   - Compaction not triggering: Check threshold settings and cooldown period
+   - Low accuracy score: Verify LLM API connectivity and JSON-mode support
+   - Memory not reducing: Adjust token budget allocation in configuration
+
+#### 4. **Performance Issues**
+   - Reduce context window size
+   - Limit the number of conversation history records
+   - Close unnecessary background programs
+
+#### 5. **Restore Default Settings**
+   - Use the "Restore Default Prompt" button in the configuration interface
+   - Reconfigure API settings and model parameters
+   - Check if configuration files are correctly saved
+
+## 🤝 Contribution
+
+Contributions to the project are welcome via:
+- Reporting bugs and suggesting feature requests
+
+### 📝 Contribution Guidelines
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### 🛠️ Local Development Setup
+
+1. Clone the repo
+2. Install dependencies with `npm i`
+3. Start dev mode with `npm run start`
+4. Package app with `npm run make`
+
+Fix for Electron version issues:
+```
+npx electron-rebuild
+```
+
+## Credits & Attribution
+
+This project is a derivative work based on VOTC / AliChat. We would like to extend our deep gratitude to the developers who kept this project alive and pushed the boundaries of AI in Crusader Kings III:
+
+### Original Creators and Supporters
+Durond (Original Creator), the VOTC, VOTC 2.0 Team and community contributors for their contributions to the project.
+
+### Continued Development
+Special thanks to MrAndroPc, the Chinese development community, including Lisiyuan233, zhaowendao2005, and others who provided critical updates and support.
+
+### Community Edition Maintainers
+The VOTC-CE team and contributors.
+
+### Licensing Information
+This project is licensed under the [GPL-3.0 License](LICENSE). Some of the original source material for this mod was released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+
+In accordance with Section 4(b) of the CC BY-SA 4.0 license, this derivative work is being licensed under a BY-SA Compatible License: the GNU General Public License v3.0 (GPLv3).
+
+For more details on licensing, please see the README files in our repositories: Voices of the Court 2.0 - Community Edition README and VOTC-CE Mod README.
+
+**Original License**
+GPLv3 and CC BY-SA 4.0
+
+**Current License**
+GPLv3
+
+### GPLv3 Notice
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/.

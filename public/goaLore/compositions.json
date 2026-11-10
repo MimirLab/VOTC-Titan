@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "compositions": [
+    {
+      "key": "nature_druid",
+      "keys": [
+        "nature_bond",
+        "practice_life"
+      ],
+      "variants": {
+        "female": "Her {rank} druidic practice grows from an inherent bond with plants, animals and land. Healing and growth belong to the same living balance as predation, decay and renewal. Blight, needless slaughter and devastated habitat wound something personally entrusted to her; restoration and safe coexistence are rewarding. Communion, forms and animal instincts offer practical ways to understand and protect that life. Competing commitments can make protection a difficult choice.",
+        "male": "His {rank} druidic practice grows from an inherent bond with plants, animals and land. Healing and growth belong to the same living balance as predation, decay and renewal. Blight, needless slaughter and devastated habitat wound something personally entrusted to him; restoration and safe coexistence are rewarding. Communion, forms and animal instincts offer practical ways to understand and protect that life. Competing commitments can make protection a difficult choice.",
+        "neutral": "Their {rank} druidic practice grows from an inherent bond with plants, animals and land. Healing and growth belong to the same living balance as predation, decay and renewal. Blight, needless slaughter and devastated habitat wound something personally entrusted to them; restoration and safe coexistence are rewarding. Communion, forms and animal instincts offer practical ways to understand and protect that life. Competing commitments can make protection a difficult choice.",
+        "named": "{name}’s {rank} druidic practice grows from an inherent bond with plants, animals and land. Healing and growth belong to the same living balance as predation, decay and renewal. Blight, needless slaughter and devastated habitat wound something personally entrusted to {name}; restoration and safe coexistence are rewarding. Communion, forms and animal instincts offer practical ways to understand and protect that life. Competing commitments can make protection a difficult choice."
+      }
+    },
+    {
+      "key": "demon_nether",
+      "keys": [
+        "demon_identity",
+        "demon_return"
+      ],
+      "variants": {
+        "female": "Fel has made her a demon whose essential power and existence are bound to the Twisting Nether. Destruction of the body outside that realm ordinarily returns the essence there; confinement and the ability to return have distinct stakes. Allegiance and purpose remain choices.",
+        "male": "Fel has made him a demon whose essential power and existence are bound to the Twisting Nether. Destruction of the body outside that realm ordinarily returns the essence there; confinement and the ability to return have distinct stakes. Allegiance and purpose remain choices.",
+        "neutral": "Fel has made them a demon whose essential power and existence are bound to the Twisting Nether. Destruction of the body outside that realm ordinarily returns the essence there; confinement and the ability to return have distinct stakes. Allegiance and purpose remain choices.",
+        "named": "Fel has made {name} a demon whose essential power and existence are bound to the Twisting Nether. Destruction of the body outside that realm ordinarily returns the essence there; confinement and the ability to return have distinct stakes. Allegiance and purpose remain choices."
+      }
+    },
+    {
+      "key": "undead_ageless_parenthood",
+      "keys": [
+        "undead_identity",
+        "infusion_agelessness",
+        "nonbiological_parenthood"
+      ],
+      "variants": {
+        "female": "She is undead, sustained beyond mortal life and ordinary age-related decline, but still vulnerable to harm. Biological children are impossible; adoption remains possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect her to a lost living life; what to protect, resent or pursue remains an individual choice.",
+        "male": "He is undead, sustained beyond mortal life and ordinary age-related decline, but still vulnerable to harm. Biological children are impossible; adoption remains possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect him to a lost living life; what to protect, resent or pursue remains an individual choice.",
+        "neutral": "They are undead, sustained beyond mortal life and ordinary age-related decline, but still vulnerable to harm. Biological children are impossible; adoption remains possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect them to a lost living life; what to protect, resent or pursue remains an individual choice.",
+        "named": "{name} is undead, sustained beyond mortal life and ordinary age-related decline, but still vulnerable to harm. Biological children are impossible; adoption remains possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect {name} to a lost living life; what to protect, resent or pursue remains an individual choice."
+      }
+    },
+    {
+      "key": "undead_parenthood",
+      "keys": [
+        "undead_identity",
+        "nonbiological_parenthood"
+      ],
+      "variants": {
+        "female": "She is undead, sustained beyond ordinary mortal life, with biological parenthood impossible and adoption still possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect her to a lost living life; what to protect, resent or pursue remains an individual choice.",
+        "male": "He is undead, sustained beyond ordinary mortal life, with biological parenthood impossible and adoption still possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect him to a lost living life; what to protect, resent or pursue remains an individual choice.",
+        "neutral": "They are undead, sustained beyond ordinary mortal life, with biological parenthood impossible and adoption still possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect them to a lost living life; what to protect, resent or pursue remains an individual choice.",
+        "named": "{name} is undead, sustained beyond ordinary mortal life, with biological parenthood impossible and adoption still possible. Conscious undeath permits personal will, affection and ambition. Memories, when present, can connect {name} to a lost living life; what to protect, resent or pursue remains an individual choice."
+      }
+    }
+  ]
+}

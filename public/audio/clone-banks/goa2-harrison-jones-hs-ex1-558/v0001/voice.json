@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-harrison-jones-hs-ex1-558",
+  "revision": 1,
+  "name": "Harrison Jones — Harrison Jones (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "84b10f3d9d551a14c27fae4b3596e9bd8e8ec3edbfa7a1d8b18b0a715ef53330",
+    "transcript_sha256": "7804de5847046a5db8ed6d14f4938b2400c0ac970ea95a9562e0282076f5fedf",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 51524,
+      "seconds": 2.1468333333333334,
+      "peak": 0.79657,
+      "rms_dbfs": -16.06,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

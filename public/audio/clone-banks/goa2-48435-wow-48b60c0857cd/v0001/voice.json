@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48435-wow-48b60c0857cd",
+  "revision": 1,
+  "name": "Priscilla Ashvane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2ed0bec4af463380ddf11af050a00916c249e7e81c25e0e9b46122b8ecde1c02",
+    "transcript_sha256": "447814653e13121cad432ca32138b5386816305947f5521ce1f37bdf96911d8e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 453325,
+      "seconds": 18.888541666666665,
+      "peak": 1.0,
+      "rms_dbfs": -17.48,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

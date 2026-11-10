@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-huln-highmountain-wow-261ad26006e1",
+  "revision": 1,
+  "name": "Huln Highmountain — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "56676659ebb543b425df7ed2dd80e01291ba6161a3449801986334da034ec897",
+    "transcript_sha256": "5fbccfce6e11e10c14b9ccf633ba32dd4a6d8985e6e4c1045017b508614a4775",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 421661,
+      "seconds": 17.569208333333332,
+      "peak": 0.97757,
+      "rms_dbfs": -17.44,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

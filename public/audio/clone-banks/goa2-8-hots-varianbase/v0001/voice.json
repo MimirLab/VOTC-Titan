@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-8-hots-varianbase",
+  "revision": 1,
+  "name": "Varian Wrynn — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d843fcaec4bf4e94d2eb3bc315da9cadd7e418553a726fd5aa249720dfc7e7f7",
+    "transcript_sha256": "c310b4eb47c21115b45c883814ac17c18648f986a40bbbee0360a17f5615e47b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 397043,
+      "seconds": 16.543458333333334,
+      "peak": 0.808655,
+      "rms_dbfs": -16.44,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

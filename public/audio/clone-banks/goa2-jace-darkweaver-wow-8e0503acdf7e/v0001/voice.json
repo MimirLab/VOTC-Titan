@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-jace-darkweaver-wow-8e0503acdf7e",
+  "revision": 1,
+  "name": "Jace Darkweaver — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a6250b6264551144574dd44f23802394fcfdf36e303e00b3d4156ed1ae942a5b",
+    "transcript_sha256": "7e6c4503d371878c91fe3cc7bc3fb083d971e60b47740ff46cb1309c0ac15515",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 379568,
+      "seconds": 15.815333333333333,
+      "peak": 0.982178,
+      "rms_dbfs": -18.63,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400505-wow-ad54d0d40679",
+  "revision": 1,
+  "name": "Mimiron — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d2a5e0988294b8ed84f846a59862d0f7d8c89fbeca350abed7da29321d364333",
+    "transcript_sha256": "bc17ec59aed897ec08de6e786e75a5f69445396e169c696a15369178371d5fa6",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 391054,
+      "seconds": 16.293916666666668,
+      "peak": 0.799744,
+      "rms_dbfs": -20.1,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42003-hots-kaelthasbase",
+  "revision": 1,
+  "name": "Kael'thas Sunstrider — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ee08f7f7792dd0ce6d81acfd35aa9f4b62e82e4cf3f0979e188cc6b6dcbaedfe",
+    "transcript_sha256": "de4a509d00af6bca61670576e85c35cdb6830158d30f3a5e1897f43f08dd4ab7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 407597,
+      "seconds": 16.983208333333334,
+      "peak": 0.806824,
+      "rms_dbfs": -18.15,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10017-wow-cb212e8af600",
+  "revision": 1,
+  "name": "Teron Gorefiend — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "13da27ef2cff746a7836ccf7a22a78e03c658ad77ad322e4c5b36722ba540b32",
+    "transcript_sha256": "2f2ca87559e40deed9aa5dbfd749e340669f227b8b08c69719c36bf567830d2b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 119034,
+      "seconds": 4.95975,
+      "peak": 0.611816,
+      "rms_dbfs": -23.87,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

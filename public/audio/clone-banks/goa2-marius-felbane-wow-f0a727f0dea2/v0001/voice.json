@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-marius-felbane-wow-f0a727f0dea2",
+  "revision": 1,
+  "name": "Marius Felbane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "93c540fb9c1186ade7772b5d9ea0f6e732ffb43337bb3bf88c8a0a37c948d26a",
+    "transcript_sha256": "0b97b144e1ea354e62c9fd803d0ba73578c27fd94df2f0923c881ec8baacad7e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 242530,
+      "seconds": 10.105416666666667,
+      "peak": 1.0,
+      "rms_dbfs": -14.97,
+      "clipped_samples": 18
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

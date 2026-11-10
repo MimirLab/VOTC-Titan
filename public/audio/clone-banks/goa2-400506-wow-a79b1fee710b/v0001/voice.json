@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400506-wow-a79b1fee710b",
+  "revision": 1,
+  "name": "Archaedas Khazgorai — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8b0ce2a677e03a4698ce145f453440cbd1f23c8363230ff975ac860b01e6358e",
+    "transcript_sha256": "f049b0bc0bdc68bc8ebb1ac4b630e03afa0111808eeb946b8b7f15a3d6143f6f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376637,
+      "seconds": 15.693208333333333,
+      "peak": 0.967743,
+      "rms_dbfs": -14.34,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

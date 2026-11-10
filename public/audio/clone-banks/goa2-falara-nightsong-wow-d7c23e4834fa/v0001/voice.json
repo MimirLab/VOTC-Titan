@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-falara-nightsong-wow-d7c23e4834fa",
+  "revision": 1,
+  "name": "Falara Nightsong — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "88aa351d0df51f0be42ddf469675fccbde275b40a10eb85dde8ff54c502d05ca",
+    "transcript_sha256": "9907030ada780510c81ce132ada4fec65b8c08c2ef18685bc1fa9274a7c7c719",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 284357,
+      "seconds": 11.848208333333334,
+      "peak": 0.85672,
+      "rms_dbfs": -17.21,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

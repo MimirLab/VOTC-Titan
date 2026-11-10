@@ -1,0 +1,1636 @@
+{
+  "version": "goa2-acoustic-r3.1",
+  "sourceSha256": "1b631ee9ddc39724b09de46a6499c9f77f39dc15f03a93876a5d2fbb98c6d576",
+  "sourceFile": "GOA2-BREEZE-PERFORMANCE-ONLY-r3.txt",
+  "scope": "Authored acoustic casting; not dialogue steering or canonical accent facts",
+  "anatomy": {
+    "001": {
+      "label": "HUMANS",
+      "male": "An adult male voice in a natural middle-to-low register, with balanced chest resonance, clear consonants, and lightly textured breath.",
+      "female": "An adult female voice in a natural middle register, with clear forward resonance, rounded vowels, and clean consonants."
+    },
+    "002": {
+      "label": "IRONFORGE DWARVES / BRONZEBEARD DWARVES",
+      "male": "An adult male voice with a stout, low baritone, compact chest resonance, and a pleasantly gravelled edge.",
+      "female": "An adult female voice in a sturdy lower-middle register, with rounded chest resonance and a lightly husky edge. Keep a compact, barrel-bodied vocal resonance with dense chest support and a firmly voiced vowel center. Let a naturally gravelled surface sit over rounded, weighty vowels and distinct consonant releases. Preserve the individual speaker's Sex and learned accent; this physical weight remains during gentle as well as forceful speech."
+    },
+    "003": {
+      "label": "WILDHAMMER DWARVES",
+      "male": "An adult male voice with a stout, low baritone, compact chest resonance, and a pleasantly gravelled edge.",
+      "female": "An adult female voice in a sturdy lower-middle register, with rounded chest resonance and a lightly husky edge."
+    },
+    "004": {
+      "label": "DARK IRON DWARVES",
+      "male": "An adult male voice with a stout, low baritone, compact chest resonance, and a pleasantly gravelled edge.",
+      "female": "An adult female voice in a sturdy lower-middle register, with rounded chest resonance and a lightly husky edge."
+    },
+    "005": {
+      "label": "HIGH ELVES (QUEL'DOREI)",
+      "male": "An adult male voice with a smooth, light baritone, clear upper resonance, and a fine ringing edge.",
+      "female": "An adult female voice in a clear middle-to-upper register, with a fine ringing resonance and smooth, lightly luminous vowels."
+    },
+    "006": {
+      "label": "BLOOD ELVES (SIN'DOREI)",
+      "male": "An adult male voice with a smooth, light baritone, clear upper resonance, and a fine ringing edge.",
+      "female": "An adult female voice in a clear middle-to-upper register, with a fine ringing resonance and smooth, lightly luminous vowels."
+    },
+    "007": {
+      "label": "NIGHT ELVES (KALDOREI)",
+      "male": "An adult male voice with a deep, spacious baritone, rounded chest resonance, and a clean woodland-dark timbre.",
+      "female": "An adult female voice in a rich lower-middle register, with a clear silver-edged resonance and a firm, smooth texture."
+    },
+    "008": {
+      "label": "GNOMES",
+      "male": "An adult male voice in a bright middle-to-high register, with compact forward resonance and a light nasal sparkle.",
+      "female": "An adult female voice in a bright upper-middle register, with compact forward resonance and a clear bell-like edge."
+    },
+    "009": {
+      "label": "LEPER GNOMES",
+      "male": "An adult male voice in the bright, compact register of a gnome, with nasal forward resonance and a brittle dry rasp.",
+      "female": "An adult female voice in a bright upper-middle register, with compact forward resonance and a brittle, lightly frayed edge."
+    },
+    "010": {
+      "label": "GOBLINS",
+      "male": "An adult male goblin voice in a bright high-middle register, sharply forward and strongly nasal, with pinched resonance and a wiry, scratchy rasp. Give vowels a brassy bite, consonants a snapping edge, and pitch changes quick elastic movement, keeping a focused, fully articulated speech center.",
+      "female": "An adult female goblin voice in a sharp upper-middle register, strongly nasal and forward, with compact brassy resonance and a wiry rasp. Keep the vowel center bright and slightly pinched, consonants cleanly snapping, and pitch movement agile and elastic, supported by clear adult vocal weight."
+    },
+    "011": {
+      "label": "HOBGOBLINS",
+      "male": "An adult male voice with a swollen low register, heavy rounded resonance, and a coarse breathy rumble.",
+      "female": "An adult female voice in a heavily lowered middle register, with thick rounded resonance and a coarse breathy husk."
+    },
+    "012": {
+      "label": "ORCS",
+      "male": "An adult male orc voice in a deep, powerful baritone, with immense chest support, a broad throat cavity, and dense guttural grain beneath rounded vowels. Carry a coarse growling texture through the voiced center, using firm consonant onsets and clear upper articulation above the low resonant body.",
+      "female": "An adult female orc voice in a powerful low-middle register, with broad chest support, thick throat resonance, and a rugged husky grain. Keep the vowel center full and strongly voiced, with coarse lower overtones, firm consonant onsets, and clear upper articulation backed by substantial vocal weight."
+    },
+    "013": {
+      "label": "FEL ORCS AND TAINTED ORCS",
+      "male": "An adult male fel orc voice in an exceptionally deep, forceful bass-baritone, with enormous chest resonance and a raw, abrasive guttural rasp. Dense gravel and growling lower overtones surround a firmly voiced vowel center. Strike consonants heavily and keep the speech core clearly articulated through the coarse demonic grain.",
+      "female": "An adult female fel orc voice in a heavily supported low contralto, with broad chest resonance, dense guttural grain, and a raw abrasive husk. Give sustained vowels a full coarse center with rough lower overtones and a hard upper edge, maintaining firm consonant attacks and clearly articulated supplied words."
+    },
+    "014": {
+      "label": "TAUREN",
+      "male": "An adult male tauren voice in an enormous, sonorous bass, with very broad rounded chest resonance, a cavernous bovine throat, and deep rolling lower overtones. Keep the vowel center rich, warm, and steadily supported, with a soft coarse rumble beneath clear speech and full, unhurried vowel formation.",
+      "female": "An adult female tauren voice in a very full low contralto, with immense rounded chest resonance, broad bovine throat depth, and warm velvet grain. Carry substantial low overtones beneath a clear resonant center. Form vowels broadly and evenly, with softly textured edges, strong support, and naturally weighty vocal presence."
+    },
+    "015": {
+      "label": "JUNGLE TROLLS AND THE DARKSPEAR",
+      "male": "An adult male voice with a lean, low-middle register, nasal-throat resonance, and a dry smoky grain.",
+      "female": "An adult female voice in a textured middle register, with nasal-throat resonance and a dry smoky edge."
+    },
+    "016": {
+      "label": "FOREST TROLLS AND THE REVANTUSK",
+      "male": "An adult male voice with a broad lower baritone, woody throat resonance, and a rough moss-dark grain.",
+      "female": "An adult female voice in a robust lower-middle register, with woody throat resonance and a rough dry grain."
+    },
+    "017": {
+      "label": "ICE TROLLS",
+      "male": "An adult male voice with a broad, low register, dense throat resonance, and a cold dry rasp.",
+      "female": "An adult female voice in a low middle register, with dense throat resonance and a dry frost-edged husk."
+    },
+    "018": {
+      "label": "DARK TROLLS",
+      "male": "An adult male voice with an exceptionally low, hollow chest-and-throat resonance and a soft coarse grain.",
+      "female": "An adult female voice in a very low middle register, with hollow chest-and-throat resonance and a soft coarse husk."
+    },
+    "019": {
+      "label": "SAND TROLLS AND THE SANDFURY",
+      "male": "An adult male voice in a wiry lower-middle register, with nasal-throat resonance and a distinctly dry sandy rasp.",
+      "female": "An adult female voice in a textured middle register, with nasal-throat resonance and a dry sandy edge."
+    },
+    "020": {
+      "label": "ZANDALARI TROLLS",
+      "male": "An adult male voice with a rich low baritone, smooth chest resonance, and a faint grain beneath the vowels.",
+      "female": "An adult female voice in a rich lower-middle register, with smooth forward-and-chest resonance and a faint grain."
+    },
+    "021": {
+      "label": "ATAL'AI AND HAKKARI TROLLS",
+      "male": "An adult male troll voice in a grainy middle-to-low register, with broad forward resonance and a dry throat edge.",
+      "female": "An adult female troll voice in a husky middle register, with broad forward resonance and a dry throat edge."
+    },
+    "022": {
+      "label": "FORSAKEN",
+      "male": "An adult male voice retaining a natural human or elven lower register beneath a thin, dry grave-worn rasp.",
+      "female": "An adult female voice retaining a natural human or elven middle register beneath a thin, dry grave-worn husk."
+    },
+    "023": {
+      "label": "HALF-ELVES",
+      "male": "An adult male voice with a natural middle-to-low register and balanced human chest resonance, brightened by a fine elven ringing edge.",
+      "female": "An adult female voice in a natural middle register, with balanced human resonance and a fine elven ringing clarity."
+    },
+    "024": {
+      "label": "HALF-ELVES OF NIGHT ELVEN ANCESTRY",
+      "male": "An adult male voice with a spacious middle-to-low baritone, balanced chest resonance, and a smooth dark upper edge.",
+      "female": "An adult female voice in a rich middle register, with balanced chest resonance and a smooth silver-edged clarity."
+    },
+    "025": {
+      "label": "HALF-ORCS",
+      "male": "An adult male voice in a sturdy lower baritone, with balanced human resonance deepened by a controlled orcish throat grain.",
+      "female": "An adult female voice in a sturdy lower-middle register, with balanced human resonance and a controlled orcish throat grain."
+    },
+    "026": {
+      "label": "HALF-OGRES (MOK'NATHAL)",
+      "male": "An adult male voice in a deep, broad register, with immense chest resonance and a subdued coarse throat grain.",
+      "female": "An adult female voice in a deep lower-middle register, with broad chest resonance and a subdued coarse husk."
+    },
+    "027": {
+      "label": "FURBOLGS",
+      "male": "An adult male voice with a deep ursine rumble, broad chest resonance, and a soft coarse grain at vowel edges.",
+      "female": "An adult female voice in a low warm register, with broad ursine chest resonance and a soft coarse husk."
+    },
+    "028": {
+      "label": "PANDAREN",
+      "male": "An adult male voice with a rounded warm baritone, ample chest resonance, and a clean softly grained texture.",
+      "female": "An adult female voice in a warm clear middle register, with rounded resonance and a softly grained texture."
+    },
+    "029": {
+      "label": "TUSKARR",
+      "male": "An adult male voice in a round low baritone, with buoyant chest resonance and a lightly throaty walrus-like grain.",
+      "female": "An adult female voice in a round lower-middle register, with buoyant resonance and a lightly throaty warm husk."
+    },
+    "030": {
+      "label": "NAGA",
+      "male": "An adult male naga voice in a massive, extremely low reptilian bass, with cavernous chest-and-throat resonance, dense rumbling vowels, and a coarse wet-edged guttural rasp. A heavy growling texture carries beneath the words. Keep consonant attacks thick and forceful, with a focused articulate center above the rough low body.",
+      "female": "An adult female naga voice in a sleek, dark contralto, retaining smooth ringing elven resonance beneath a fine serpentine hiss edge. Give vowels a rich velvety center and a clear glassy upper overtone. Sustain existing s, z, and sh sounds precisely, with supple voiced transitions and controlled, lightly airy consonant releases."
+    },
+    "031": {
+      "label": "MURLOCS",
+      "male": "A male-coded adult voice in a compact middle-to-low register, with resonant wet-sounding throat tone and rolling liquid consonant transitions.",
+      "female": "A female-coded adult voice in a compact middle register, with clear wet-sounding throat resonance and rolling liquid consonant transitions."
+    },
+    "033": {
+      "label": "QUILBOAR",
+      "male": "An adult male voice in a low compressed register, with strong snout-like nasal resonance and a coarse throat grain.",
+      "female": "An adult female voice in a firm lower-middle register, with strong snout-like nasal resonance and a coarse dry husk."
+    },
+    "034": {
+      "label": "SATYRS",
+      "male": "An adult male voice in a low-middle baritone, with residual elven smoothness under a dry goat-throat rasp.",
+      "female": "An adult female voice in a textured lower-middle register, with residual elven smoothness beneath a dry goat-throat husk."
+    },
+    "035": {
+      "label": "OGRES AND OGRE MAGI",
+      "male": "An adult male voice in a huge low register, with inflated chest resonance, broad cavernous vowels, and a coarse fleshy grain. Speak through an immense fleshy mouth and thick, spacious throat, with a broad heavy vowel center and inflated chest resonance. Let consonants emerge with weight from the large jaw, while keeping a clear upper articulation layer above the coarse rumble. Preserve the speaker's Sex, learned accent and personal fluency, including an articulate ogre mage.",
+      "female": "An adult female voice in a massive low-middle register, with inflated chest resonance, broad cavernous vowels, and a coarse fleshy husk. Speak through an immense fleshy mouth and thick, spacious throat, with a broad heavy vowel center and inflated chest resonance. Let consonants emerge with weight from the large jaw, while keeping a clear upper articulation layer above the coarse rumble. Preserve the speaker's Sex, learned accent and personal fluency, including an articulate ogre mage."
+    },
+    "036": {
+      "label": "NERUBIANS",
+      "male": "A male-coded adult voice with a low dry hollow resonance and a fine chitinous rasp beneath the vowels.",
+      "female": "A female-coded adult voice in a clear lower-middle register, with dry hollow resonance and a fine chitinous rasp."
+    },
+    "037": {
+      "label": "QIRAJI AND THE AQIR LEGACY",
+      "male": "A male-coded adult voice with a dense low resonance, a polished metallic edge, and a restrained dry insectile rasp.",
+      "female": "A female-coded adult voice in a full lower-middle register, with polished metallic resonance and a restrained dry insectile edge."
+    },
+    "039": {
+      "label": "MAGNATAUR",
+      "male": "An adult male voice in an immense low register, with cavernous chest resonance and a coarse mammoth-dark rumble.",
+      "female": "An adult female voice in a massive low register, with cavernous chest resonance and a coarse warm rumble."
+    },
+    "040": {
+      "label": "DRAENEI: SURVIVORS OF DRAENOR",
+      "male": "An adult male voice in a rich lower register, with deep smooth chest resonance and a gentle grain beneath rounded vowels. Keep the existing smooth, rounded resonance firmly sustained through each vowel, with a fine natural grain and softly shaped but distinct consonant releases. Let adjacent vowels connect fluidly while keeping the individual speaker's personal phrase rhythm, Sex and learned accent. Maintain an ordinary living voiced center in quiet and emphatic speech.",
+      "female": "An adult female voice in a clear warm middle register, with smooth rounded resonance and softly shaped vowels. Keep the existing smooth, rounded resonance firmly sustained through each vowel, with a fine natural grain and softly shaped but distinct consonant releases. Let adjacent vowels connect fluidly while keeping the individual speaker's personal phrase rhythm, Sex and learned accent. Maintain an ordinary living voiced center in quiet and emphatic speech."
+    },
+    "041": {
+      "label": "GNOLLS",
+      "male": "An adult male voice in a rough middle-to-low register, with nasal muzzle resonance and a coarse hyena-throat rasp.",
+      "female": "An adult female voice in a rough middle register, with nasal muzzle resonance and a coarse hyena-throat husk."
+    },
+    "042": {
+      "label": "HARPIES",
+      "male": "An authored adult masculine avian voice in a sharp middle register, with penetrating forward resonance and a wiry croaking edge.",
+      "female": "An adult female voice in a penetrating upper-middle register, with sharp bright forward resonance and a lightly avian rasp."
+    },
+    "043": {
+      "label": "KOBOLDS",
+      "male": "An adult male voice in a small, high-middle register, with pinched nasal resonance and a dusty wiry rasp.",
+      "female": "An adult female voice in a small upper-middle register, with pinched nasal resonance and a dusty wiry edge."
+    },
+    "044": {
+      "label": "TROGGS",
+      "male": "An adult male voice in a low compressed register, with blunt stony chest resonance and a coarse gravelly throat.",
+      "female": "An adult female voice in a compressed lower-middle register, with blunt stony resonance and a coarse gravelly husk."
+    },
+    "047": {
+      "label": "CENTAURS",
+      "male": "An adult male voice in a broad rugged baritone, with open chest resonance and a dry wind-weathered grain.",
+      "female": "An adult female voice in a robust lower-middle register, with open chest resonance and a dry wind-weathered husk."
+    },
+    "048": {
+      "label": "MAKRURA",
+      "male": "A male-coded adult voice in a low hollow register, with a hard shell-like resonance and a finely rough throat edge.",
+      "female": "A female-coded adult voice in a clear lower-middle register, with hollow shell-like resonance and a finely rough throat edge."
+    },
+    "049": {
+      "label": "WORGEN",
+      "male": "An adult male voice in a low lupine register, with strong muzzle resonance and a dry controlled throat growl beneath speech.",
+      "female": "An adult female voice in a rough lower-middle register, with strong muzzle resonance and a dry controlled throat growl beneath speech."
+    },
+    "052": {
+      "label": "DRYADS",
+      "male": null,
+      "female": "An adult female voice in a bright clear middle-to-upper register, with light ringing resonance and supple woodland warmth."
+    },
+    "053": {
+      "label": "KEEPERS OF THE GROVE",
+      "male": "An adult male voice in a deep resonant baritone, with spacious chest tone and a warm, lightly wooded grain.",
+      "female": null
+    },
+    "057": {
+      "label": "SEA GIANTS",
+      "male": "An adult male voice in a very low bass register. Broad chest resonance carries a coarse, salt-worn grain and a large resonant cavity without underwater bubbling.",
+      "female": "An adult female voice in a low contralto register. Broad chest resonance carries a coarse, salt-worn grain and a large resonant cavity without underwater bubbling."
+    },
+    "061": {
+      "label": "FLAMEWAKERS",
+      "male": "An adult male voice in a low bass-baritone register. A dense upper-body resonance carries a dry furnace rasp with a faint sibilant edge rather than a constant snake hiss.",
+      "female": "An adult female voice in a low contralto register. A dense upper-body resonance carries a dry furnace rasp with a faint sibilant edge rather than a constant snake hiss."
+    },
+    "066": {
+      "label": "BLACK DRAGONS",
+      "male": "An adult male voice in a very low bass register. Natural dragon form has immense throat resonance, dark rounded vowels and a restrained gravel texture beneath a clear speech core.",
+      "female": "An adult female voice in a low contralto register. Natural dragon form has immense throat resonance, dark rounded vowels and a restrained gravel texture beneath a clear speech core."
+    },
+    "067": {
+      "label": "BLUE DRAGONS",
+      "male": "An adult male voice in a low bass-baritone register. Natural dragon form has spacious throat resonance, a smooth sustained vowel core and a fine bright edge above the low foundation.",
+      "female": "An adult female voice in a contralto register. Natural dragon form has spacious throat resonance, a smooth sustained vowel core and a fine bright edge above the low foundation."
+    },
+    "068": {
+      "label": "BRONZE DRAGONS",
+      "male": "An adult male voice in a low baritone register. Natural dragon form has broad metallic-warm resonance and a lightly weathered grain, with less vocal weight than the largest heavy-bodied wyrms.",
+      "female": "An adult female voice in a low mezzo-soprano register. Natural dragon form has broad metallic-warm resonance and a lightly weathered grain, with less vocal weight than the largest heavy-bodied wyrms."
+    },
+    "069": {
+      "label": "GREEN DRAGONS",
+      "male": "An adult male voice in a low baritone register. Natural dragon form has wide soft-edged throat resonance and a gently airy surface over a stable voiced center.",
+      "female": "An adult female voice in a contralto register. Natural dragon form has wide soft-edged throat resonance and a gently airy surface over a stable voiced center."
+    },
+    "070": {
+      "label": "RED DRAGONS",
+      "male": "An adult male voice in a low bass-baritone register. Natural dragon form has large chest-and-throat resonance, full rounded vowels and a smooth bright overtone above the body of the voice.",
+      "female": "An adult female voice in a low contralto register. Natural dragon form has large chest-and-throat resonance, full rounded vowels and a smooth bright overtone above the body of the voice."
+    },
+    "081": {
+      "label": "REVENANTS",
+      "male": "A nonhuman voice with neutral vocal presentation in a low resonant register. A narrow hollow speech core carries a dry granular edge, as though sound resonates through an armored elemental vessel.",
+      "female": "A nonhuman voice with neutral vocal presentation in a low resonant register. A narrow hollow speech core carries a dry granular edge, as though sound resonates through an armored elemental vessel."
+    },
+    "084": {
+      "label": "DOOMGUARDS (ERED'RUIN)",
+      "male": "An adult male voice in a very low bass register. A heavily supported chest resonance carries rough-edged breath and a large throat cavity while keeping a firm humanlike speech center.",
+      "female": "An adult female voice in a low contralto register. A heavily supported chest resonance carries rough-edged breath and a large throat cavity while keeping a firm humanlike speech center."
+    },
+    "085": {
+      "label": "DREADLORDS (NATHREZIM)",
+      "male": "An adult male voice in a low bass-baritone register. The natural demonic body produces rich velvety resonance, a thin dry rasp and a smooth voiced center with subtle breath control.",
+      "female": "An adult female voice in a low contralto register. The natural demonic body produces rich velvety resonance, a thin dry rasp and a smooth voiced center with subtle breath control."
+    },
+    "086": {
+      "label": "MAN'ARI / DEMONIC EREDAR",
+      "male": "An adult male voice in a low bass-baritone register. A tall living demonic body gives full rounded resonance, a slightly metallic overtone and a clear sustained center with minimal breath noise.",
+      "female": "An adult female voice in a low contralto register. A tall living demonic body gives full rounded resonance, a slightly metallic overtone and a clear sustained center with minimal breath noise."
+    },
+    "088": {
+      "label": "PIT LORDS (ANNIHILAN)",
+      "male": "An adult male voice in an extremely low bass register. Enormous chest resonance carries dense gravel and broad low vowels, supported by a focused intelligible speech layer above the rumble.",
+      "female": "An adult female voice in a very low contralto register. Enormous chest resonance carries dense gravel and broad low vowels, supported by a focused intelligible speech layer above the rumble."
+    },
+    "091": {
+      "label": "IMPS",
+      "male": "An adult male voice in a high tenor register. A small narrow resonance carries a bright pinched nasal edge, light scratchiness and agile pitch movement without becoming a cartoon squeal.",
+      "female": "An adult female voice in a high mezzo-soprano register. A small narrow resonance carries a bright pinched nasal edge, light scratchiness and agile pitch movement without becoming a cartoon squeal."
+    },
+    "092": {
+      "label": "SAYAADI: SUCCUBI AND INCUBI",
+      "male": "An adult male voice in a smooth baritone register. Close warm resonance carries an even velvety center and a light breath edge, with relaxed vocal weight rather than excessive whispering.",
+      "female": "An adult female voice in a low mezzo-soprano register. Close warm resonance carries an even velvety center and a light breath edge, with relaxed vocal weight rather than excessive whispering."
+    },
+    "093": {
+      "label": "VOIDWALKERS",
+      "male": "A nonhuman voice with neutral vocal presentation in a very low hollow register. A diffuse hollow resonance carries a stable low center, softly blurred edges and a clear magically projected speech layer above the low rumble.",
+      "female": "A nonhuman voice with neutral vocal presentation in a very low hollow register. A diffuse hollow resonance carries a stable low center, softly blurred edges and a clear magically projected speech layer above the low rumble."
+    },
+    "095": {
+      "label": "ABOMINATIONS",
+      "male": "An adult male voice in a low bass register. A stitched oversized body produces thick hollow chest resonance, coarse wet-edged grain and uneven breath support beneath recognizable words.",
+      "female": "An adult female voice in a low contralto register. A stitched oversized body produces thick hollow chest resonance, coarse wet-edged grain and uneven breath support beneath recognizable words."
+    },
+    "096": {
+      "label": "BANSHEES",
+      "male": null,
+      "female": "An adult female voice in a contralto-to-mezzo register. A female spectral voice retains a clear former-person center beneath a fine airy edge and light hollow resonance without continuous wailing."
+    },
+    "099": {
+      "label": "GHOULS",
+      "male": "An adult male voice in a low rough baritone register. Damaged jaw and throat produce a thin guttural core, dry scraping texture and unstable breath support beneath whatever speech remains physically possible.",
+      "female": "An adult female voice in a rough low contralto register. Damaged jaw and throat produce a thin guttural core, dry scraping texture and unstable breath support beneath whatever speech remains physically possible."
+    },
+    "100": {
+      "label": "LICHES",
+      "male": "An adult male voice in a low baritone register. A ruined or skeletal vessel projects a clear narrow voiced center inside a dry hollow resonance, with little ordinary breath noise.",
+      "female": "An adult female voice in a low contralto register. A ruined or skeletal vessel projects a clear narrow voiced center inside a dry hollow resonance, with little ordinary breath noise."
+    },
+    "154": {
+      "label": "ANCIENT PROTECTORS",
+      "male": "A nonhuman voice with neutral vocal presentation in a deep broad register. A tree-bodied voice resonates through a wide wooden cavity, carrying slow creaking texture over a steady deep vowel core.",
+      "female": "A nonhuman voice with neutral vocal presentation in a deep broad register. A tree-bodied voice resonates through a wide wooden cavity, carrying slow creaking texture over a steady deep vowel core."
+    },
+    "155": {
+      "label": "ANCIENTS OF LORE",
+      "male": "A nonhuman voice with neutral vocal presentation in a deep rounded register. A tree-bodied voice has a warm hollow wooden resonance, a mild fibrous grain and a stable sustained center rather than continuous cracking.",
+      "female": "A nonhuman voice with neutral vocal presentation in a deep rounded register. A tree-bodied voice has a warm hollow wooden resonance, a mild fibrous grain and a stable sustained center rather than continuous cracking."
+    },
+    "156": {
+      "label": "ANCIENTS OF WAR",
+      "male": "A nonhuman voice with neutral vocal presentation in a deep weighty register. A thick tree trunk produces dense wooden resonance, a coarse barklike grain and a strongly supported speech core with restrained creaking.",
+      "female": "A nonhuman voice with neutral vocal presentation in a deep weighty register. A thick tree trunk produces dense wooden resonance, a coarse barklike grain and a strongly supported speech core with restrained creaking."
+    },
+    "157": {
+      "label": "ANCIENTS OF WIND",
+      "male": "A nonhuman voice with neutral vocal presentation in a deep open register. A tree-bodied voice carries hollow timber resonance with a lightly airy rustling edge over a stable sustained center.",
+      "female": "A nonhuman voice with neutral vocal presentation in a deep open register. A tree-bodied voice carries hollow timber resonance with a lightly airy rustling edge over a stable sustained center."
+    },
+    "158": {
+      "label": "ANKOAN",
+      "male": "An adult male voice in a low baritone register. A fishlike vocal tract gives open rounded vowels, a compact throat resonance and a faint moist edge without constant bubbling or gargling.",
+      "female": "An adult female voice in a low contralto register. A fishlike vocal tract gives open rounded vowels, a compact throat resonance and a faint moist edge without constant bubbling or gargling."
+    },
+    "159": {
+      "label": "BROKEN DRAENEI",
+      "male": "An adult male voice in a low-mid baritone register. An altered draenei-derived throat gives uneven fibrous resonance and a restrained coarse rasp, with a clear voiced center whenever the individual can speak.",
+      "female": "An adult female voice in a low contralto register. An altered draenei-derived throat gives uneven fibrous resonance and a restrained coarse rasp, with a clear voiced center whenever the individual can speak."
+    },
+    "160": {
+      "label": "C'THRAXXI: FACELESS WARBRINGERS",
+      "male": "A nonhuman voice with neutral vocal presentation in an extremely low broad register. An immense unfamiliar vocal cavity produces a dense hollow core, low granular resonance and a faint secondary formant beneath legible speech.",
+      "female": "A nonhuman voice with neutral vocal presentation in an extremely low broad register. An immense unfamiliar vocal cavity produces a dense hollow core, low granular resonance and a faint secondary formant beneath legible speech."
+    },
+    "161": {
+      "label": "CURSED / CORRUPTED ARAKKOA",
+      "male": "An adult male voice in a rasping low tenor register. A beaked avian vocal tract gives narrow forward resonance, a dry croaking grain and small trilled edges around a clear articulate center.",
+      "female": "An adult female voice in a rasping mezzo-soprano register. A beaked avian vocal tract gives narrow forward resonance, a dry croaking grain and small trilled edges around a clear articulate center."
+    },
+    "162": {
+      "label": "DARKFALLEN (UNDEAD ELVES)",
+      "male": "An adult male voice in a low-mid baritone register. An elven voice retains a fine clear resonance beneath a slightly dry hollow edge, with reduced breath noise and smooth controlled vowels.",
+      "female": "An adult female voice in a low mezzo-soprano register. An elven voice retains a fine clear resonance beneath a slightly dry hollow edge, with reduced breath noise and smooth controlled vowels."
+    },
+    "163": {
+      "label": "DROGBAR",
+      "male": "An adult male voice in a low bass-baritone register. A large living body gives dense chest resonance, coarse stony grain and compact rounded vowels with a firm articulate upper core.",
+      "female": "An adult female voice in a low contralto register. A large living body gives dense chest resonance, coarse stony grain and compact rounded vowels with a firm articulate upper core."
+    },
+    "164": {
+      "label": "FACELESS ONES (N'RAQI)",
+      "male": "A nonhuman voice with neutral vocal presentation in a low hollow register. An unfamiliar faceless vocal cavity gives thick dark resonance, subtly shifting formants and a steady intelligible center without a chorus of separate speakers.",
+      "female": "A nonhuman voice with neutral vocal presentation in a low hollow register. An unfamiliar faceless vocal cavity gives thick dark resonance, subtly shifting formants and a steady intelligible center without a chorus of separate speakers."
+    },
+    "165": {
+      "label": "FAL'DOREI",
+      "male": "An adult male voice in a clear low-mid baritone register. The elven upper body preserves fine oral resonance, a smooth bright center and a slight dry chitinlike edge without insectile buzzing.",
+      "female": "An adult female voice in a clear low mezzo-soprano register. The elven upper body preserves fine oral resonance, a smooth bright center and a slight dry chitinlike edge without insectile buzzing."
+    },
+    "166": {
+      "label": "FELBLOOD ELVES",
+      "male": "An adult male voice in a low-mid baritone register. A refined elven speech center carries brighter metallic resonance and a small rough edge, retaining long smooth vowels beneath the demonic alteration.",
+      "female": "An adult female voice in a low mezzo-soprano register. A refined elven speech center carries brighter metallic resonance and a small rough edge, retaining long smooth vowels beneath the demonic alteration."
+    },
+    "167": {
+      "label": "FROST NYMPHS",
+      "male": null,
+      "female": "An adult female voice in a clear light mezzo-soprano register. A feminine woodland voice has clear ringing resonance, a fine airy surface and light flexible vowels without brittle icy sound effects."
+    },
+    "168": {
+      "label": "GIANTS: MOUNTAIN, FROST AND MOLTEN",
+      "male": "A nonhuman voice with neutral vocal presentation in a very low broad register. An enormous body gives a broad low resonant core with slow onset and a coarse material grain beneath a readable upper speech layer.",
+      "female": "A nonhuman voice with neutral vocal presentation in a very low broad register. An enormous body gives a broad low resonant core with slow onset and a coarse material grain beneath a readable upper speech layer."
+    },
+    "169": {
+      "label": "GILBLINS / GILGOBLINS",
+      "male": "An adult male voice in a bright nasal tenor register. A small goblinlike aquatic body gives narrow forward resonance, a lightly wet nasal edge and quick flexible pitch movement without excessive bubbling.",
+      "female": "An adult female voice in a bright nasal mezzo-soprano register. A small goblinlike aquatic body gives narrow forward resonance, a lightly wet nasal edge and quick flexible pitch movement without excessive bubbling."
+    },
+    "170": {
+      "label": "GORLOCS",
+      "male": "A nonhuman voice with neutral vocal presentation in a low-mid guttural register. A squat aquatic vocal tract produces liquid rounded resonance, a mild throaty croak and repeating vowel contours over recognizable words.",
+      "female": "A nonhuman voice with neutral vocal presentation in a low-mid guttural register. A squat aquatic vocal tract produces liquid rounded resonance, a mild throaty croak and repeating vowel contours over recognizable words."
+    },
+    "171": {
+      "label": "GRUMMLES",
+      "male": "An adult male voice in a bright upper baritone register. A compact body and prominent nasal tract give a rounded nasal resonance, a slightly grainy center and clear buoyant vowel movement.",
+      "female": "An adult female voice in a bright low mezzo-soprano register. A compact body and prominent nasal tract give a rounded nasal resonance, a slightly grainy center and clear buoyant vowel movement."
+    },
+    "172": {
+      "label": "HIGHBORNE (QUEL'DOREI OF THE ANCIENT KALDOREI)",
+      "male": "An adult male voice in a low-mid baritone register. A tall elven voice gives smooth resonant vowels, a fine bright upper edge and restrained breath texture with clear sustained support.",
+      "female": "An adult female voice in a low mezzo-soprano register. A tall elven voice gives smooth resonant vowels, a fine bright upper edge and restrained breath texture with clear sustained support."
+    },
+    "173": {
+      "label": "HIGHMOUNTAIN TAUREN",
+      "male": "An adult male voice in a very low bass-baritone register. A large bovine vocal cavity gives deep rounded chest resonance, a warm coarse grain and broad stable vowels with a readable upper core.",
+      "female": "An adult female voice in a low contralto register. A large bovine vocal cavity gives deep rounded chest resonance, a warm coarse grain and broad stable vowels with a readable upper core."
+    },
+    "174": {
+      "label": "HOZEN",
+      "male": "An adult male voice in a bright rough tenor register. A compact primate vocal tract gives a throaty nasal resonance, a small dry rasp and quick flexible pitch changes beneath articulate words.",
+      "female": "An adult female voice in a bright rough mezzo-soprano register. A compact primate vocal tract gives a throaty nasal resonance, a small dry rasp and quick flexible pitch changes beneath articulate words."
+    },
+    "175": {
+      "label": "INFINITE DRAGONS",
+      "male": "An adult male voice in a low bass-baritone register. Natural dragon form has dark spacious throat resonance, a finely rough edge and a stable voiced center with slightly clipped phrase transitions.",
+      "female": "An adult female voice in a low contralto register. Natural dragon form has dark spacious throat resonance, a finely rough edge and a stable voiced center with slightly clipped phrase transitions."
+    },
+    "176": {
+      "label": "JINYU",
+      "male": "An adult male voice in a smooth baritone register. A fishlike vocal tract gives rounded liquid resonance, a softly nasal edge and clear open vowels supported by steady breathlike movement.",
+      "female": "An adult female voice in a smooth low mezzo-soprano register. A fishlike vocal tract gives rounded liquid resonance, a softly nasal edge and clear open vowels supported by steady breathlike movement."
+    },
+    "177": {
+      "label": "KVALDIR",
+      "male": "An adult male voice in a very low bass-baritone register. An immense altered vrykul body produces coarse chest resonance, a dry sea-worn rasp and faint hollow overtones above a stable speech core.",
+      "female": "An adult female voice in a low contralto register. An immense altered vrykul body produces coarse chest resonance, a dry sea-worn rasp and faint hollow overtones above a stable speech core."
+    },
+    "178": {
+      "label": "LIGHTFORGED DRAENEI (CONSECRATED LOST ONES)",
+      "male": "An adult male voice in a rich lower register, with deep smooth chest resonance and a gentle grain beneath rounded vowels.",
+      "female": "An adult female voice in a clear warm middle register, with smooth rounded resonance and softly shaped vowels."
+    },
+    "179": {
+      "label": "LOST ONES: THE SWAMP REFUGEES",
+      "male": "An adult male voice in a rough low-mid baritone register. An altered draenei-derived vocal tract gives irregular throaty resonance, a coarse dry rasp and a strained but intelligible voiced center beneath rounded vowels.",
+      "female": "An adult female voice in a rough low contralto register. An altered draenei-derived vocal tract gives irregular throaty resonance, a coarse dry rasp and a strained but intelligible voiced center beneath rounded vowels."
+    },
+    "180": {
+      "label": "MAG'HAR ORCS (UNCORRUPTED ORCS)",
+      "male": "An adult male orc voice in a deep, powerful baritone, with immense chest support, a broad throat cavity, and dense guttural grain beneath rounded vowels. Carry a coarse growling texture through the voiced center, using firm consonant onsets and clear upper articulation above the low resonant body.",
+      "female": "An adult female orc voice in a powerful low-middle register, with broad chest support, thick throat resonance, and a rugged husky grain. Keep the vowel center full and strongly voiced, with coarse lower overtones, firm consonant onsets, and clear upper articulation backed by substantial vocal weight."
+    },
+    "181": {
+      "label": "MANTID",
+      "male": "A nonhuman voice with neutral vocal presentation in a narrow low-mid register. An insectile voice has a thin focused resonance, dry rasping edges and slight buzzing overtones while maintaining a single articulate center.",
+      "female": "A nonhuman voice with neutral vocal presentation in a narrow low-mid register. An insectile voice has a thin focused resonance, dry rasping edges and slight buzzing overtones while maintaining a single articulate center."
+    },
+    "182": {
+      "label": "MECHAGNOMES",
+      "male": "A nonhuman voice with neutral vocal presentation in a clear mid register. A small mechanical voice has a compact clean resonant center, a faint metallic ring and controlled vowel transitions rather than an emotionless monotone.",
+      "female": "A nonhuman voice with neutral vocal presentation in a clear mid register. A small mechanical voice has a compact clean resonant center, a faint metallic ring and controlled vowel transitions rather than an emotionless monotone."
+    },
+    "183": {
+      "label": "MOGU",
+      "male": "An adult male voice in a very low bass-baritone register. A massive humanoid body gives sculptural chest resonance, a dense slightly gritty center and broad rounded vowels with strong upper articulation.",
+      "female": "An adult female voice in a low contralto register. A massive humanoid body gives sculptural chest resonance, a dense slightly gritty center and broad rounded vowels with strong upper articulation."
+    },
+    "184": {
+      "label": "NIGHTBORNE (SHAL'DOREI)",
+      "male": "An adult male voice in a smooth low-mid baritone register. An elven voice gives fine polished resonance, a soft bright overtone and smooth sustained vowels with little coarse breath texture.",
+      "female": "An adult female voice in a smooth low mezzo-soprano register. An elven voice gives fine polished resonance, a soft bright overtone and smooth sustained vowels with little coarse breath texture."
+    },
+    "185": {
+      "label": "OBSERVERS",
+      "male": "A nonhuman voice with neutral vocal presentation in a rounded low-mid register. A bulbous unfamiliar vocal cavity gives round nasal resonance, a light wet-edged grain and a focused speech center with small timbral shifts.",
+      "female": "A nonhuman voice with neutral vocal presentation in a rounded low-mid register. A bulbous unfamiliar vocal cavity gives round nasal resonance, a light wet-edged grain and a focused speech center with small timbral shifts."
+    },
+    "186": {
+      "label": "PYGMIES",
+      "male": "An adult male voice in a high tenor register. A small humanoid body gives compact forward resonance, a lightly nasal edge and clear flexible pitch movement without sounding like a human child.",
+      "female": "An adult female voice in a high mezzo-soprano register. A small humanoid body gives compact forward resonance, a lightly nasal edge and clear flexible pitch movement without sounding like a human child."
+    },
+    "187": {
+      "label": "SAUROK",
+      "male": "An adult male voice in a low rough baritone register. A reptilian jaw gives narrow throaty resonance, a dry rasp and short sibilant edges with a stable voiced center rather than constant hissing.",
+      "female": "An adult female voice in a rough low contralto register. A reptilian jaw gives narrow throaty resonance, a dry rasp and short sibilant edges with a stable voiced center rather than constant hissing."
+    },
+    "188": {
+      "label": "SETHRAK",
+      "male": "An adult male voice in a low-mid baritone register. A cobra-like vocal tract gives smooth narrow resonance, a fine dry hiss edge and sustained voiced vowels without extending every sibilant.",
+      "female": "An adult female voice in a low contralto register. A cobra-like vocal tract gives smooth narrow resonance, a fine dry hiss edge and sustained voiced vowels without extending every sibilant."
+    },
+    "189": {
+      "label": "SHIVARRA",
+      "male": null,
+      "female": "An adult female voice in a low contralto register. A tall feminine demonic body gives a rich rounded resonance, a firm smooth center and a fine dry overtone with substantial vocal support."
+    },
+    "190": {
+      "label": "TAUNKA",
+      "male": "An adult male voice in a very low bass register. A broad bisonlike vocal cavity gives heavy chest resonance, dense warm grain and rounded low vowels with a firm readable upper speech core.",
+      "female": "An adult female voice in a low contralto register. A broad bisonlike vocal cavity gives heavy chest resonance, dense warm grain and rounded low vowels with a firm readable upper speech core."
+    },
+    "191": {
+      "label": "TITANIC WATCHERS",
+      "male": "A nonhuman voice with neutral vocal presentation in a broad low register. A monumental constructed resonator gives full stone-and-metal resonance, a clear sustained center and a restrained mineral ring above intelligible vowels.",
+      "female": "A nonhuman voice with neutral vocal presentation in a broad low register. A monumental constructed resonator gives full stone-and-metal resonance, a clear sustained center and a restrained mineral ring above intelligible vowels."
+    },
+    "192": {
+      "label": "TOL'VIR",
+      "male": "An adult male voice in a low baritone register. A large feline vocal tract gives warm rounded resonance, a fine throaty grain and smooth sustained vowels beneath clean articulate speech.",
+      "female": "An adult female voice in a low contralto register. A large feline vocal tract gives warm rounded resonance, a fine throaty grain and smooth sustained vowels beneath clean articulate speech."
+    },
+    "193": {
+      "label": "TORTOLLANS",
+      "male": "An adult male voice in a low-mid baritone register. A beaked heavy-bodied voice gives round hollow resonance, a lightly leathery rasp and broad sustained vowels above a steady clear center.",
+      "female": "An adult female voice in a low contralto register. A beaked heavy-bodied voice gives round hollow resonance, a lightly leathery rasp and broad sustained vowels above a steady clear center."
+    },
+    "194": {
+      "label": "VAMPIRES",
+      "male": "An adult male voice in a clear low-mid baritone register. The retained mortal voice has smooth compact resonance, a faint dry edge and little breath noise, with clear vowels beneath the undead alteration.",
+      "female": "An adult female voice in a clear low mezzo-soprano register. The retained mortal voice has smooth compact resonance, a faint dry edge and little breath noise, with clear vowels beneath the undead alteration."
+    },
+    "195": {
+      "label": "VOID ELVES (REN'DOREI)",
+      "male": "An adult male voice in a clear low-mid baritone register. An elven voice retains fine smooth resonance and clear sustained vowels, with a subtle dark hollow edge beneath a stable articulate center.",
+      "female": "An adult female voice in a clear low mezzo-soprano register. An elven voice retains fine smooth resonance and clear sustained vowels, with a subtle dark hollow edge beneath a stable articulate center."
+    },
+    "196": {
+      "label": "VRYKUL",
+      "male": "An adult male voice in a very low bass-baritone register. An immense humanlike living body gives broad chest resonance, a coarse weathered grain and strongly supported open vowels with clear upper articulation.",
+      "female": "An adult female voice in a low contralto register. An immense humanlike living body gives broad chest resonance, a coarse weathered grain and strongly supported open vowels with clear upper articulation."
+    },
+    "197": {
+      "label": "VULPERA",
+      "male": "An adult male voice in a light upper baritone register. A small foxlike vocal tract gives bright forward resonance, a lightly nasal grain and agile clear pitch movement without yipping or childish squeaks.",
+      "female": "An adult female voice in a light mezzo-soprano register. A small foxlike vocal tract gives bright forward resonance, a lightly nasal grain and agile clear pitch movement without yipping or childish squeaks."
+    },
+    "198": {
+      "label": "WICKER BEHEMOTHS",
+      "male": "A nonhuman voice with neutral vocal presentation in a very low hollow register. A huge woven vessel gives deep hollow timber resonance, a coarse creaking edge and one stable speech center when a coherent mind is present.",
+      "female": "A nonhuman voice with neutral vocal presentation in a very low hollow register. A huge woven vessel gives deep hollow timber resonance, a coarse creaking edge and one stable speech center when a coherent mind is present."
+    },
+    "199": {
+      "label": "WICKER GOLEMS",
+      "male": "A nonhuman voice with neutral vocal presentation in a low thick hollow register. A compact heavy woven vessel gives thick hollow wooden resonance, rough strained edges and a slow stable vowel core when speech is physically possible.",
+      "female": "A nonhuman voice with neutral vocal presentation in a low thick hollow register. A compact heavy woven vessel gives thick hollow wooden resonance, rough strained edges and a slow stable vowel core when speech is physically possible."
+    },
+    "200": {
+      "label": "WICKERMEN",
+      "male": "A nonhuman voice with neutral vocal presentation in a mid-low hollow register. A human-sized woven vessel gives hollow branch resonance, a fine creaking edge and a recognizable borrowed speech center beneath the wooden texture.",
+      "female": "A nonhuman voice with neutral vocal presentation in a mid-low hollow register. A human-sized woven vessel gives hollow branch resonance, a fine creaking edge and a recognizable borrowed speech center beneath the wooden texture."
+    },
+    "201": {
+      "label": "WOLVAR",
+      "male": "An adult male voice in a rough low-mid baritone register. A compact strong-jawed mammalian body gives dense throaty resonance, a coarse dry rasp and short bright vowels beneath a clear speech center.",
+      "female": "An adult female voice in a rough low contralto register. A compact strong-jawed mammalian body gives dense throaty resonance, a coarse dry rasp and short bright vowels beneath a clear speech center."
+    },
+    "202": {
+      "label": "YAUNGOL",
+      "male": "An adult male voice in a very low bass register. A huge shaggy bovine body gives dense chest resonance, a coarse fibrous grain and broad low vowels with strong audible upper articulation.",
+      "female": "An adult female voice in a low contralto register. A huge shaggy bovine body gives dense chest resonance, a coarse fibrous grain and broad low vowels with strong audible upper articulation."
+    }
+  },
+  "races": {
+    "creature_human": {
+      "label": "Human",
+      "options": [
+        "001",
+        "022"
+      ],
+      "default": "001"
+    },
+    "creature_orc": {
+      "label": "Orc",
+      "options": [
+        "012",
+        "013",
+        "025",
+        "026"
+      ],
+      "default": "012"
+    },
+    "creature_ogre": {
+      "label": "Ogre",
+      "options": [
+        "035"
+      ],
+      "default": "035"
+    },
+    "creature_troll": {
+      "label": "Troll",
+      "options": [
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021"
+      ],
+      "default": "015"
+    },
+    "creature_murloc": {
+      "label": "Murloc",
+      "options": [
+        "031"
+      ],
+      "default": "031"
+    },
+    "creature_gnoll": {
+      "label": "Gnoll",
+      "options": [
+        "041"
+      ],
+      "default": "041"
+    },
+    "creature_kobold": {
+      "label": "Kobold",
+      "options": [
+        "043"
+      ],
+      "default": "043"
+    },
+    "creature_dwarf": {
+      "label": "Dwarf",
+      "options": [
+        "002",
+        "003",
+        "004"
+      ],
+      "default": "002"
+    },
+    "creature_gnome": {
+      "label": "Gnome",
+      "options": [
+        "008",
+        "009"
+      ],
+      "default": "008"
+    },
+    "creature_high_elf": {
+      "label": "High Elf",
+      "options": [
+        "005",
+        "006",
+        "023"
+      ],
+      "default": "005"
+    },
+    "creature_naga": {
+      "label": "Naga",
+      "options": [
+        "030"
+      ],
+      "default": "030"
+    },
+    "creature_red_dragon": {
+      "label": "Red Dragon",
+      "options": [
+        "070"
+      ],
+      "default": "070"
+    },
+    "creature_blue_dragon": {
+      "label": "Blue Dragon",
+      "options": [
+        "067"
+      ],
+      "default": "067"
+    },
+    "creature_green_dragon": {
+      "label": "Green Dragon",
+      "options": [
+        "069"
+      ],
+      "default": "069"
+    },
+    "creature_black_dragon": {
+      "label": "Black Dragon",
+      "options": [
+        "066"
+      ],
+      "default": "066"
+    },
+    "creature_goblin": {
+      "label": "Goblin",
+      "options": [
+        "010",
+        "011"
+      ],
+      "default": "010"
+    },
+    "creature_pygmy": {
+      "label": "Pygmy",
+      "options": [
+        "186"
+      ],
+      "default": "186"
+    },
+    "creature_hozen": {
+      "label": "Hozen",
+      "options": [
+        "174"
+      ],
+      "default": "174"
+    },
+    "creature_draenei": {
+      "label": "Draenei",
+      "options": [
+        "040"
+      ],
+      "default": "040"
+    },
+    "creature_arakkoa_corrupted": {
+      "label": "Arakkoa",
+      "options": [
+        "161"
+      ],
+      "default": "161"
+    },
+    "creature_abomination": {
+      "label": "Abomination",
+      "options": [
+        "095"
+      ],
+      "default": "095"
+    },
+    "creature_lich": {
+      "label": "Lich",
+      "options": [
+        "100"
+      ],
+      "default": "100"
+    },
+    "creature_wickerman": {
+      "label": "Wickerman",
+      "options": [
+        "200"
+      ],
+      "default": "200"
+    },
+    "creature_wicker_behemoth": {
+      "label": "Wicker Behemoth",
+      "options": [
+        "198"
+      ],
+      "default": "198"
+    },
+    "creature_wicker_golem": {
+      "label": "Wicker Golem",
+      "options": [
+        "199"
+      ],
+      "default": "199"
+    },
+    "creature_annihilan": {
+      "label": "Annihilan",
+      "options": [
+        "088"
+      ],
+      "default": "088"
+    },
+    "creature_nathrezim": {
+      "label": "Nathrezim",
+      "options": [
+        "085"
+      ],
+      "default": "085"
+    },
+    "creature_eredruin": {
+      "label": "Ered'ruin",
+      "options": [
+        "084"
+      ],
+      "default": "084"
+    },
+    "creature_satyr": {
+      "label": "Satyr",
+      "options": [
+        "034"
+      ],
+      "default": "034"
+    },
+    "creature_sayaadi": {
+      "label": "Sayaad",
+      "options": [
+        "092"
+      ],
+      "default": "092"
+    },
+    "creature_shivarra": {
+      "label": "Shivarra",
+      "options": [
+        "189"
+      ],
+      "default": "189"
+    },
+    "creature_observer": {
+      "label": "Observer",
+      "options": [
+        "185"
+      ],
+      "default": "185"
+    },
+    "creature_flamewaker": {
+      "label": "Flamewaker",
+      "options": [
+        "061"
+      ],
+      "default": "061"
+    },
+    "creature_vrykul": {
+      "label": "Vrykul",
+      "options": [
+        "196"
+      ],
+      "default": "196"
+    },
+    "creature_tuskarr": {
+      "label": "Tuskarr",
+      "options": [
+        "029"
+      ],
+      "default": "029"
+    },
+    "creature_magnataur": {
+      "label": "Magnataur",
+      "options": [
+        "039"
+      ],
+      "default": "039"
+    },
+    "creature_furbolg": {
+      "label": "Furbolg",
+      "options": [
+        "027"
+      ],
+      "default": "027"
+    },
+    "creature_gorloc": {
+      "label": "Gorloc",
+      "options": [
+        "170"
+      ],
+      "default": "170"
+    },
+    "creature_watcher": {
+      "label": "Titan Watcher",
+      "options": [
+        "191"
+      ],
+      "default": "191"
+    },
+    "creature_wolvar": {
+      "label": "Wolvar",
+      "options": [
+        "201"
+      ],
+      "default": "201"
+    },
+    "creature_taunka": {
+      "label": "Taunka",
+      "options": [
+        "190"
+      ],
+      "default": "190"
+    },
+    "creature_kvaldir": {
+      "label": "Kvaldir",
+      "options": [
+        "177"
+      ],
+      "default": "177"
+    },
+    "creature_nerubian": {
+      "label": "Nerubian",
+      "options": [
+        "036"
+      ],
+      "default": "036"
+    },
+    "creature_harpy": {
+      "label": "Harpy",
+      "options": [
+        "042"
+      ],
+      "default": "042"
+    },
+    "creature_mechagnome": {
+      "label": "Mechagnome",
+      "options": [
+        "182"
+      ],
+      "default": "182"
+    },
+    "creature_bronze_dragon": {
+      "label": "Bronze Dragon",
+      "options": [
+        "068"
+      ],
+      "default": "068"
+    },
+    "creature_giant": {
+      "label": "Giant",
+      "options": [
+        "168"
+      ],
+      "default": "168"
+    },
+    "creature_nraqi": {
+      "label": "N'raqi",
+      "options": [
+        "164"
+      ],
+      "default": "164"
+    },
+    "creature_cthraxxi": {
+      "label": "C'Thrax",
+      "options": [
+        "160"
+      ],
+      "default": "160"
+    },
+    "creature_night_elf": {
+      "label": "Night Elf",
+      "options": [
+        "007",
+        "024"
+      ],
+      "default": "007"
+    },
+    "creature_tauren": {
+      "label": "Tauren",
+      "options": [
+        "014"
+      ],
+      "default": "014"
+    },
+    "creature_centaur": {
+      "label": "Centaur",
+      "options": [
+        "047"
+      ],
+      "default": "047"
+    },
+    "creature_quilboar": {
+      "label": "Quilboar",
+      "options": [
+        "033"
+      ],
+      "default": "033"
+    },
+    "creature_tolvir": {
+      "label": "Tol'vir",
+      "options": [
+        "192"
+      ],
+      "default": "192"
+    },
+    "creature_qiraji": {
+      "label": "Qiraji",
+      "options": [
+        "037"
+      ],
+      "default": "037"
+    },
+    "creature_dryad": {
+      "label": "Dryad",
+      "options": [
+        "052"
+      ],
+      "default": "052"
+    },
+    "creature_frostnymph": {
+      "label": "Frost Nymph",
+      "options": [
+        "167"
+      ],
+      "default": "167"
+    },
+    "creature_highborne": {
+      "label": "Highborne Elf",
+      "options": [
+        "172"
+      ],
+      "default": "172"
+    },
+    "creature_infinite_dragon": {
+      "label": "Infinite Dragon",
+      "options": [
+        "175"
+      ],
+      "default": "175"
+    },
+    "creature_vulpera": {
+      "label": "Vulpera",
+      "options": [
+        "197"
+      ],
+      "default": "197"
+    },
+    "creature_sethrak": {
+      "label": "Sethrak",
+      "options": [
+        "188"
+      ],
+      "default": "188"
+    },
+    "creature_protector": {
+      "label": "Ancient Protector",
+      "options": [
+        "154"
+      ],
+      "default": "154"
+    },
+    "creature_ancient_war": {
+      "label": "Ancient of War",
+      "options": [
+        "156"
+      ],
+      "default": "156"
+    },
+    "creature_ancient_lore": {
+      "label": "Ancient of Lore",
+      "options": [
+        "155"
+      ],
+      "default": "155"
+    },
+    "creature_ancient_wind": {
+      "label": "Ancient of Wind",
+      "options": [
+        "157"
+      ],
+      "default": "157"
+    },
+    "creature_pandaren": {
+      "label": "Pandaren",
+      "options": [
+        "028"
+      ],
+      "default": "028"
+    },
+    "creature_mogu": {
+      "label": "Mogu",
+      "options": [
+        "183"
+      ],
+      "default": "183"
+    },
+    "creature_saurok": {
+      "label": "Saurok",
+      "options": [
+        "187"
+      ],
+      "default": "187"
+    },
+    "creature_jinyu": {
+      "label": "Jinyu",
+      "options": [
+        "176"
+      ],
+      "default": "176"
+    },
+    "creature_ankoan": {
+      "label": "Ankoan",
+      "options": [
+        "158"
+      ],
+      "default": "158"
+    },
+    "creature_yaungol": {
+      "label": "Yaungol",
+      "options": [
+        "202"
+      ],
+      "default": "202"
+    },
+    "creature_mantid": {
+      "label": "Mantid",
+      "options": [
+        "181"
+      ],
+      "default": "181"
+    },
+    "creature_grummle": {
+      "label": "Grummle",
+      "options": [
+        "171"
+      ],
+      "default": "171"
+    },
+    "creature_nightborne": {
+      "label": "Nightborne",
+      "options": [
+        "184"
+      ],
+      "default": "184"
+    },
+    "creature_drogbar": {
+      "label": "Drogbar",
+      "options": [
+        "163"
+      ],
+      "default": "163"
+    },
+    "creature_highmountain_tauren": {
+      "label": "Highmountain Tauren",
+      "options": [
+        "173"
+      ],
+      "default": "173"
+    },
+    "creature_trogg": {
+      "label": "Trogg",
+      "options": [
+        "044"
+      ],
+      "default": "044"
+    },
+    "creature_faldorei": {
+      "label": "Fal'dorei",
+      "options": [
+        "165"
+      ],
+      "default": "165"
+    },
+    "creature_sea_giant": {
+      "label": "Sea Giant",
+      "options": [
+        "057"
+      ],
+      "default": "057"
+    },
+    "creature_makrura": {
+      "label": "Makrura",
+      "options": [
+        "048"
+      ],
+      "default": "048"
+    },
+    "creature_gilblin": {
+      "label": "Gilblin",
+      "options": [
+        "169"
+      ],
+      "default": "169"
+    },
+    "creature_tortollan": {
+      "label": "Tortollan",
+      "options": [
+        "193"
+      ],
+      "default": "193"
+    },
+    "creature_manari": {
+      "label": "Man'ari",
+      "options": [
+        "086"
+      ],
+      "default": "086"
+    },
+    "creature_broken": {
+      "label": "Broken",
+      "options": [
+        "159"
+      ],
+      "default": "159"
+    },
+    "creature_lost_one": {
+      "label": "Lost One",
+      "options": [
+        "179"
+      ],
+      "default": "179"
+    },
+    "creature_fel_orc": {
+      "label": "Fel Orc",
+      "options": [
+        "013"
+      ],
+      "default": "013"
+    },
+    "creature_banshee": {
+      "label": "Banshee",
+      "options": [
+        "096"
+      ],
+      "default": "096"
+    },
+    "creature_ghoul": {
+      "label": "Ghoul",
+      "options": [
+        "099"
+      ],
+      "default": "099"
+    },
+    "creature_vampire": {
+      "label": "Vampire",
+      "options": [
+        "194"
+      ],
+      "default": "194"
+    },
+    "creature_revenant": {
+      "label": "Revenant",
+      "options": [
+        "081"
+      ],
+      "default": "081"
+    },
+    "creature_imp": {
+      "label": "Imp",
+      "options": [
+        "091"
+      ],
+      "default": "091"
+    },
+    "creature_voidwalker": {
+      "label": "Voidwalker",
+      "options": [
+        "093"
+      ],
+      "default": "093"
+    }
+  },
+  "cultures": {
+    "quilboar": "Strong first syllable stresses lead broad ah and uh vowels, tightly finished k and g sounds, and brief nasal consonant links. Begin each phrase with a substantial beat, compress its middle syllables, and give the final stress a short, planted landing.",
+    "murloc": "Link m, n, and l smoothly across word boundaries, with rounded short o vowels and lively returning pitch contours. Light pickup syllables open a compact connected run. Questions rise, dip, and rebound gently before a clearly articulated final stop.",
+    "gorloc": "Rounded vowels occupy generous syllable space, while l and r transitions connect adjacent words smoothly. Build the phrase around one lengthened central stress, follow with two shorter beats, and settle into a spacious pause. Questions use a broad returning contour.",
+    "arakkoa": "Speak English with Sanskrit pronunciation: sustain ee and ah vowels, tap r once, and articulate each syllable distinctly. Lift the opening stress, trace a measured rising middle arc, then detach the final beat with a precise consonant release and a clearly separated pause.",
+    "qiraji": "Articulate k sounds firmly, with occasional deeper velar catches, broad ah and oo vowels, and sharply bounded syllable groups. Place a sustained central stress between shorter connecting units. Mark clause boundaries distinctly, bringing each complete phrase to one measured final descent.",
+    "nerubian": "Crisp t and k releases, narrow ih vowels, and clearly divided consonant clusters give each word an exact outline. Group brief syllables into measured three beat approaches to a fuller central stress, then separate the next clause with a small, settled pause.",
+    "mantid": "Short ih and eh vowels accompany sharply defined ts, z, and t sounds. Move briskly through paired syllable groups, lengthen the main phrase stress, and finish with an economical consonant closure. Brief clean gaps separate successive phrases within an otherwise quick cadence.",
+    "arathi": "Use a northern English accent with broad open vowels, lightly retained r, and firm initial consonants. Organize speech into sturdy groups of three or four stresses. Keep vowel movement restrained, compress the connecting syllables, and give the closing stress a definite, extended landing.",
+    "lordaeronian": "Speak with a cultivated northern English accent, clear vowels, restrained r sounds, and careful t and d articulation. Balance adjoining clauses at a patient conversational pace. A modest rise carries the phrase middle into a composed descent, with broadened vowels on sustained stresses.",
+    "arathorian": "Use a broad northern English accent with pronounced r, lengthened open vowels, and clearly struck stops. Compress unstressed syllables between full principal beats. Keep phrase openings economical, extend the final stress, and separate complete statements with a measured interval of silence.",
+    "alteraci": "Speak with a compact northern English accent, clear short vowels, strongly articulated r, and closely joined consonant clusters. Short phrases approach a briefly suspended ending before landing on a firm final consonant. Questions follow narrow upward pitch movements through precisely spaced syllables.",
+    "dalaranian": "Use an educated English accent with fully articulated longer words and clearly shaped vowels. Give subordinate clauses distinct pitch contours and clean boundaries. Maintain an unhurried baseline, move briskly through unstressed connections, and widen the central phrase stress before a precisely timed closing descent.",
+    "baradin": "Broad northern English vowels and lightly rolled r sounds sit within a restrained coastal lilt. Keep consonant boundaries definite and give adjoining syllables clean spacing. Let the phrase swell modestly through its middle, soften its vowel transitions, then settle into a level final landing.",
+    "hillsbrad": "A gentle rural northern English lilt uses broad steady vowels, lightly rhotic traces, and softened unstressed endings. Join words into comfortable paired phrases with clear principal consonants. Questions turn upward gradually; statements descend easily into open, unhurried pauses between conversational units.",
+    "azerothian": "Use restrained American English pronunciation with consistent rhotic r, open controlled vowels, and definite consonants. Enter phrases promptly and keep the connecting syllables brisk. Broaden the central stress, space longer clauses evenly, and finish with a clear downward contour and audible final articulation.",
+    "ping": "Speak English with a Mandarin accent. Give vowels lightly separated placement, consonants precise releases, and clauses deliberate pitch contours. Match adjacent phrases in measured length. Keep principal stresses exact, pause briefly at clause boundaries, and close each complete unit with a compact descent.",
+    "draenei": "Speak English with a Slavic accent: pronounce r clearly, keep ah and oh vowels pure, and give unstressed syllables generous space. Link l and r smoothly across longer words. Open briefly, expand into a connected middle clause, and settle on a rounded final stress.",
+    "lightforged_draenei": "Use a Slavic accent with pure ah and oh vowels, clear r sounds, and precisely placed final consonants. Alternate shorter and longer clauses within balanced timing. Give principal stresses full vowel shapes, separate phrase units with deliberate pauses, and finish with concise, clearly articulated closures.",
+    "broken": "Use a Slavic accent with distinct r and pure ah and oh vowels. Compact connecting syllables lead into clearly separated stresses. Alternate brief conversational units with longer linked clauses. Let liquid consonants carry the phrase forward, then establish a definite resting point at each boundary.",
+    "lost_one": "Speak with a Slavic accent, distinct r sounds, and carefully shaped ah and oh vowels. Give principal stresses fuller vowel length. Compact unstressed syllables create a short opening. Slow the phrase center with exact articulation, then return to an economical, clearly separated final unit.",
+    "harpy": "Sharp t and k sounds divide abruptly stressed words, while central vowels lengthen within each phrase. Start quickly, compress connecting syllables, and carry a pronounced rise through the main stress. Finish with two clipped rhythmic beats and a clean interval before the next phrase.",
+    "naga": "Flowing ae and ia vowel turns connect smoothly through l and r, with lightly lengthened s, z, and sh sounds at selected stress boundaries. Contrast long linked spans with decisive consonant endings. Let a sustained central contour resolve into a shorter, precisely bounded closing unit.",
+    "dryad": "Nimble linked ae vowels and lightly tapped r sounds move between quick short syllables and fuller central stresses. Open with a brisk pickup, roll through the middle phrase, then make a small pitch turn before landing lightly. Questions begin their upward movement early in the clause.",
+    "frostnymph": "Use a Scandinavian accent with clear ae transitions, narrow eh vowels, and neatly separated word endings. Pair one rising clause with a settling answer contour. Keep ordinary syllables brisk and evenly articulated, while principal phrase endings receive a firm, compact beat within the lilting rhythm.",
+    "tortollan": "Carefully rounded o vowels and connected l endings support an outward rolling phrase rhythm. Lengthen the middle clause, make a small returning turn in pitch, and resolve onto a shorter anchor stress. Brief replies retain the same rounded articulation and generously spaced final pause.",
+    "makrura": "Clipped k and t sounds create clean syllable boundaries around rounded vowels. Divide each phrase into three clearly spaced rhythmic units, with the last unit slightly longer. Give central stresses an additional beat, keeping consonant releases exact and the overall cadence measured and compact.",
+    "night_elf": "Long linked ae and ah vowels, fluid l and r transitions, and carefully articulated th sounds produce broad phrase arcs. Give the central stress the widest rise and fall. Tighten the closing syllables, release the final consonant clearly, and settle naturally between adjoining clauses.",
+    "illidari": "Connect ae vowels fluidly through l and r within a compact cadence. Contract unstressed connectors and sharpen consonant boundaries around the strongest phrase stress. Follow the main unit with two shorter rhythmic groups, then stop cleanly. Longer clauses broaden their central vowels before the clipped ending.",
+    "protector": "Broad ae transitions and fully shaped long vowels move through two generous phrase arcs around a shorter central unit. Preserve liquid consonant links and give principal stresses careful syllable separation. Keep brief clauses compact, then allow a spacious pause after the complete descending phrase.",
+    "eredar": "Clearly articulate kr and dr clusters, contrasting brief unstressed vowels with sustained stressed ah and eh sounds. A compact opening leads into a substantial central stress. Close in two exact rhythmic units, maintaining careful internal consonant boundaries and a controlled final downward contour.",
+    "annihilan": "Broad ah and aw vowels occupy long central beats, with tightly closed final k and t sounds. Compress small connecting syllables between principal stresses. Give the phrase a short setup, a sustained middle, and two compact closing accents, keeping each consonant boundary distinctly audible.",
+    "eredruin": "Separate dr and kr clusters clearly, keep unstressed vowels brief, and complete final consonants precisely. Place the main phrase stress within one compact opening unit. Pause once, then continue through a slightly longer second unit, preserving firm boundaries and disciplined, evenly placed rhythmic accents.",
+    "shivarra": "Speak English with Sanskrit pronunciation, sustaining stressed vowels and placing consonant boundaries exactly. Balance adjacent clauses in matching rhythmic spans, then shorten the closure. Articulate each syllable distinctly, with a measured rising center and clear final descent across the complete conversational phrase.",
+    "sayaadi": "Elongated stressed vowels and smoothly connected liquids form a long opening span followed by a compact central beat. Final consonants arrive quietly but precisely. Return to a fuller closing span, use subtle pitch turns within the phrase, and leave a deliberate conversational pause.",
+    "observer": "Explicit vowel contrasts and precisely divided consonant clusters shape a connected opening run. Shift one light stress within the phrase middle, make a brief separating pause, and finish on a short exact unit. Questions rise centrally before settling onto a clearly articulated final stress.",
+    "nathrezim": "Extended vowels, restrained s and z sounds, and late precise consonant closures establish a cosmopolitan court inflection. Two flowing spans frame a shorter central stress group. Keep the contour smooth through the middle, slightly delay the final closure, then end with a decisive downward turn.",
+    "imp": "Bunch brief connecting syllables around sharply stressed longer words, with quick z and k transitions and compact vowel shapes. Rush lightly through the opening run, make a clear rhythmic landing, then deliver the shorter closing unit after a conspicuous small gap. Keep articulation agile.",
+    "green_dragon": "Elongated central vowels and rolling single r turns support broad, curved phrase contours. Compress consonant endings lightly and give principal stresses generous space. Let the middle arc return toward a shorter closing rhythm, then rest briefly before continuing into the next linked clause.",
+    "black_dragon": "Speak with an upper class English accent, firm initial consonant catches, sustained central vowels, and tightly compressed endings. Open compactly, extend the principal stress, and close with a shorter exact clause. Keep internal consonants precise and make the final pitch contour contained and decisive.",
+    "red_dragon": "Broad sustained middle vowels connect clearly through r and l, while completed final syllables remain lightly compressed. Join two full phrase spans with open, evenly paced articulation. Give central stresses a complete conversational beat, shorten the closing unit, and leave a naturally spaced final pause.",
+    "blue_dragon": "A clearly caught initial consonant opens into a long central vowel, with precise boundaries inside longer words. Frame the substantial phrase stress with shorter surrounding syllables. Pause distinctly before the final unit, then close quickly and cleanly, keeping each vowel contrast fully articulated.",
+    "bronze_dragon": "Long central vowel spans contrast with quickly compressed endings and exact consonant placement. Start with a short rhythmic unit, expand into one fuller middle clause, and return to a compact close. Place principal stresses precisely, using clear pauses and an even, gently descending contour.",
+    "old_dwarven": "Use a formal Scottish accent with clearly tapped or rolled r, broad stable vowels, and carefully completed consonants. Compact connecting syllables sit between regular principal stresses. Maintain a measured declarative rhythm, keep pitch rises restrained, and give the final word clear, evenly sustained articulation.",
+    "bronzebeard": "Use an urban Scottish accent with confident rhotic r, broad rounded vowels, and briskly articulated consonants. Alternate firm principal beats with a sociable rising middle contour. Let unstressed syllables move quickly between fuller vowel shapes, then finish with a solid, comfortably descending conversational landing.",
+    "wildhammer": "Speak with a broad Highland Scottish accent, strongly tapped r sounds, open sustained vowels, and buoyant alternating stresses. Reduce unstressed syllables naturally while keeping consonants clear. Carry lively rises and falls across longer phrases, then tighten the closing unit into short, clearly separated beats.",
+    "dark_iron": "Use a compact Scottish accent with pronounced rhotic r, hard t and k sounds, and tightly clipped vowel endings. Keep stresses deliberate and closely spaced across level clauses. Insert a brief controlled gap before the closing stress, then make a short, pointed downward finish.",
+    "frostborn": "Speak with a Scottish accent, definite rhotic r, restrained vowel movement, and precise consonant releases. Short unstressed syllables connect economical, measured phrase units. Let longer clauses broaden their vowel lengths while preserving even stress spacing, and finish each statement with a descending contour and settled pause.",
+    "gilnean": "Use a Cockney accent with rounded long vowels, clipped consonants, and dry falling statements. Keep the pace orderly, with compact unstressed syllables and precisely timed final stresses. Small pauses precede the closing beat, allowing a delayed descent across sharply finished phrase endings.",
+    "tirassian": "Use a West Country English accent with audible rhotic r, broad long vowels, and rounded diphthongs. Alternate sturdy stresses within a rolling middle cadence. Keep consonants clean, connect unstressed syllables smoothly, and settle firmly onto the final beat with a clearly articulated downward ending.",
+    "theramore": "Blend softened coastal rhotic vowels with careful northern English consonant articulation. A faint maritime lilt connects complete phrases fluidly, using balanced principal stresses and evenly shaped vowels. Leave a small pause between clauses, then finish with a gentle descending contour and clear final consonants.",
+    "northsea": "Clipped northern coastal pronunciation uses strongly rhotic r, compressed diphthongs, and hard final consonants. Deliver compact phrase bursts with a restrained rolling center. Insert a brief pause, accelerate the following unstressed syllables, and close on a bluntly placed stress with a quick downward finish.",
+    "gnome": "Use an American accent with consistent rhotic r, precisely divided consonants, and brisk unstressed syllables. Advance through eager short clauses with clear rising pitch turns. Accelerate the connecting run, slow the central phrase stress for exact articulation, and settle into a compact conversational ending.",
+    "mechagonian": "Use an American accent with clearly shaped vowels, exact rhotic r, and sharply completed consonants within unusually regular syllable timing. Divide phrases into distinct, evenly measured units. Preserve natural pitch changes, pause cleanly between clauses, and place one precise principal stress before the bounded final descent.",
+    "leper_gnome": "Use an American accent with clear vowels and rhotic r within compressed connecting syllables and unevenly spaced phrase starts. Alternate compact emphatic bursts with brief checking pauses. Longer units settle into precise regular timing, then return to short clauses with sharpened, distinctly articulated final stresses.",
+    "goblin": "Use a rapid New York and New Jersey accent with broad diphthongs, forceful t and k sounds, and clipped unstressed syllables. Deliver bright, fast speech with elastic pitch and explosive clause bursts in a cartoony salesman cadence. Accelerate the opening, strike the central stress hard, snap upward briefly, then close with a quick descending turn.",
+    "blackwater": "Speak with a lively New York and New Jersey coastal accent, strongly rhotic r, broad stressed vowels, and sharply struck consonants. Alternate quick compact runs with longer rolling phrases. Let the middle swing upward slightly, then close on a decisive downward beat.",
+    "gilblin": "Give the accent clear New York vowel turns, firm consonant attacks, and short connective syllables. Keep phrases compact, with distinctly separated main stresses and brief pauses. Questions rise quickly, while statements settle through a stronger final descent and a crisp closing consonant.",
+    "ogre": "Shape o and ah as broad rounded vowels, placing substantial stress on the center of each phrase. Join adjacent stressed syllables into two weighty beats, with compact connectors between them. Finish each group clearly and allow a small pause before the next.",
+    "grummle": "Speak English with a Mandarin accent, pure vowels, and carefully separated syllables. Keep connecting syllables brief while allowing longer words small internal divisions. Alternate a compact opening phrase with a fuller second phrase, then finish briskly with one clearly placed closing stress.",
+    "highborne": "Use cultivated, antique English pronunciation with fully shaped vowels, lightly tapped r, and exact consonant releases. Let long balanced phrases rise gently through their center and descend gracefully. Deliberate spacing around major stresses gives the speech a poised, spacious, carefully articulated rhythm.",
+    "nightborne": "Speak with a French accent, smoothly joined vowel transitions, light r sounds, and precise consonants. Lengthen the last stressed syllable of each phrase. Speech glides through a balanced middle, suspends a small beat, then settles with an elegant delayed descent and clear final articulation.",
+    "faldorei": "Articulate with carefully separated vowels, a lightly retained r, and sharply bounded consonants. Keep pitch movement narrow and connective syllables compact. Short phrases end on an abrupt clear stress, while occasional longer phrases preserve balanced timing and precise vowel shape across their full length.",
+    "jungle_hozen": "Open aw and oo vowels broadly, strike b and p crisply, and link neighboring vowels with quick h or w transitions. Give longer words two uneven beats, briefly compressing their middle. The rhythm bounces forward and reopens into a full final vowel.",
+    "forest_hozen": "Favor close oo and short uh vowels, flowing m and w transitions, rounded b, and lightly released p. Keep final k brief and audible. Link speech into paired beats, alternating a full first syllable with a compressed second before a clearly separated ending.",
+    "mountain_hozen": "Use compact ah and uh vowels with firmly marked p and k. Separate consonant clusters clearly and shorten unstressed interior vowels. The first stressed syllable receives a solid beat; two or three compact words then close cleanly before a short, distinct pause.",
+    "gnoll": "Keep stressed vowels short and final consonants clipped, rebounding quickly onto the next word. A brisk pickup leads into a sharp landing and a small upward return. Short phrases carry clear rises and falls, settling after successive compact beats with well defined boundaries.",
+    "furbolg": "Round o and oo vowels fully and link m and n softly through neighboring syllables. Pace the speech in broad, uncluttered groups: one lengthened stressed unit followed by two compact beats. Leave generous space at clause boundaries and articulate longer words with clear internal timing.",
+    "jinyu": "Speak English with a Mandarin accent, clean y and l transitions, and pure rounded vowels. Balance nearby words in paired stress groups with distinct vowel boundaries. A small pause separates successive pairs, and the final pair receives measured emphasis before a gentle, precise settlement.",
+    "ankoan": "Speak English with a Japanese accent, clear open vowels, evenly separated syllables, and compact connecting sounds. Keep vowels distinct at word boundaries. Short groups have exact, steady timing; an extended central stress receives its own space before the phrase returns to a brisk, precisely articulated close.",
+    "wolvar": "Pair strongly stressed syllables tightly, shorten unstressed vowels, and land n and k endings firmly. Let a compact phrase make one quick rising rebound before settling. Two main beats arrive together, followed by a shorter closing beat and a clear pause between groups.",
+    "mogu": "Speak English with a Mandarin accent, pure vowel centers, and clearly separated consonant beginnings. Place a strong first stress in longer words. Begin each phrase briefly, expand into two substantial paired beats, and close compactly with a distinct final consonant and a measured downward contour.",
+    "kobold": "Clip t and k endings tightly and keep ih vowels brief. Place the main phrase stress early, then link short connecting syllables rapidly. A clear short then long stress pattern runs through complete phrases, ending in a small pause with accurately separated word boundaries.",
+    "snobold": "Combine tightly clipped t and k with round, full o vowels and evenly separated compact groups. Two short stressed units lead into one fuller syllable, giving the rhythm a distinct expanding finish. Keep connective sounds quick and let a clear pause mark the next group.",
+    "northern": "Speak English with a Slavic accent, steady vowel lengths, clearly articulated consonant groups, and tapped r sounds. Compact phrases descend firmly and pause in settled silence. Longer phrases widen gradually through their middle while retaining exact word endings and deliberately placed principal stresses.",
+    "tuskarr": "Shape rounded oo and o vowels fully, connect nasal and liquid consonants smoothly, and give short words crisp articulation. Two short beats lead into a longer rolling word group. Space its syllables clearly, then return to a compact closing beat with an easy downward descent.",
+    "gorgrondic": "Form broad open vowels and strongly mark each initial consonant. Divide short phrases into three substantial, evenly spaced stresses. Keep pronunciation plain and exact, carry the middle at a steady pace, and close the last word firmly before a clean, deliberate pause.",
+    "dragonmaw": "Use broad vowels, distinct hard consonants, and tightly clipped connecting syllables. A brisk rising pickup leads to one held central stress, followed by a short level ending. Give the final consonant a clean release and leave a complete pause before the next phrase.",
+    "blackrock": "Shape broad vowels with unusually precise word boundaries and measured consonant attacks. Keep major stresses square and evenly spaced, shortening unstressed syllables between them. Each clause finishes with a firm downward pitch step, a fully landed final consonant, and a disciplined moment of silence.",
+    "laughing_skull": "Use open vowels and clean consonants with an uneven, springing rhythm. Begin lightly and quickly, delay the central stress by a small beat, then finish with a compact falling contour. Alternate quick syllable runs and brief suspensions, maintaining crisp articulation throughout each turn.",
+    "frostwolf": "Round broad vowels fully and let consonants unfold at an unhurried pace. Space major stresses evenly, with small pauses between complete groups. Each thought settles gently through a sustained central vowel and a grounded downward ending, leaving an open interval before the next phrase.",
+    "durotaric": "Use open vowels, clean consonant beginnings, and brisk, economical syllables. Place the main stress early in each phrase and move the middle forward with quick connectors. Let the ending relax into a modest open vowel tail, keeping the final contour slightly spacious and clear.",
+    "thunderlord": "Form broad open vowels and clip consonants accurately into separate word boundaries. Gather speech in quick pairs of stresses, with short connecting syllables maintaining momentum. Leave a slightly longer gap before the closing stress, then give that final beat a clear, compact downward landing.",
+    "bleeding_hollow": "Use open vowels and precisely bounded consonants, keeping phrase timing measured. Delay the first major stress slightly, then answer it with an equally weighted later beat. Let the intervening syllables move smoothly, ending in a narrow falling contour and a short, measured pause.",
+    "bonechewer": "Use broad open vowels and bluntly closed syllables, with fiercely compact connecting sounds. Hit each phrase with a hard consonant onset, then wrench the rhythm into a short central suspension. Bring the remaining supplied words down into a heavy clipped final stress, keeping consonant releases rough-edged and intelligible.",
+    "burning_blade": "Give open vowels precise lengths and define consonants sharply. Let each phrase begin evenly, accelerate smoothly through its middle, and arrive on one exact final stress. The ending stops cleanly after a fully articulated consonant, with a small, distinct pause before the next line.",
+    "warsong": "Use broad open vowels, hard consonant attacks, and a driving, percussive rhythm. Strike the main stress early, run the connecting syllables forward briskly, and snap the ending shut. Deliver phrase units in powerful compact bursts, with tightly timed pauses, clean articulation, and a forceful downward final contour.",
+    "maghar": "Shape vowels broadly and separate consonants carefully within an evenly balanced rhythm. Give the beginning and end of each clause matching emphasis, allowing the middle to move easily. Keep stress pairs complete and spacious, settling the final vowel before a natural conversational pause.",
+    "pale_orcish": "Open vowels carefully and articulate consonants exactly, spacing complete words with slight rhythmic asymmetry. Keep the opening group compact, then prolong one later stressed vowel. A clean final consonant closes the phrase, followed by a deliberate pause that preserves the uneven but clear timing.",
+    "twilights_hammer": "Use exact consonants and deliberately spaced open vowels. Shape phrases into unequal sections: a compact opening, an extended flowing middle, and a short conclusion arriving after a small delay. Keep stressed syllables clearly defined, with the final vowel settling through a narrow downward contour.",
+    "shadowmoon": "Articulate clean consonants and sustain vowels with controlled, even lengths. Arrange speech into measured paired clauses, giving each a gentle descending pitch contour. Let central stresses linger slightly while connecting syllables remain fluent, and leave a calm interval between the two balanced phrase endings.",
+    "stormreaver": "Use broad vowels and sharply distinguished consonants within a rolling three beat rhythm. Accelerate lightly through the second beat, then delay the final stress a fraction. Keep the phrase flowing through its middle and land the closing syllable precisely, with a clear downward finish.",
+    "shattered_hand": "Keep open vowels short and consonants sharply clipped. Give each compact clause a quick, exact start and an abrupt final stop, with deliberate silence separating successive groups. Main stresses remain economical and firmly timed, while connecting syllables pass quickly through sparse, clearly articulated phrases.",
+    "moknathal": "Form broad vowels plainly and separate consonants carefully. Begin after a small measured pause, then deliver complete short phrases with restrained falling stresses. Keep the pace economical and even, giving each final consonant a clear closure and leaving generous space between successive thought groups.",
+    "flowerpicker": "Round open vowels gently and shape consonants clearly within an unhurried rhythm. Let each phrase open softly, place its strongest stress near the center, and finish with an easy gradual descent. Use spacious pauses and lightly sustained final vowels to keep the timing supple.",
+    "old_pandaren": "Speak English with a Beijing Mandarin accent with curled r, distinct s and sh, full ay and ow diphthongs, and clearly closed n endings. Slightly lengthen stressed vowels before a tight consonant release. Balanced paired clauses meet at a small pause and finish on a decisive final syllable.",
+    "mountain_pandaren": "Use a northern Mandarin accent with distinct aspiration on p, t, and k, curled r separated from l, and full ah and oh vowels. Close n and ng clearly. Stress the first substantial syllable and keep small phrase groups compact, with short intervening vowels.",
+    "spiritual_pandaren": "Speak English with a Jiangnan accent, distinct l, lightly released t and k, separate s and sh, and lengthened eh and oo vowels. Keep n and ng endings intact. Join neighboring open syllables smoothly and let measured central emphasis flow into a slightly delayed closing stress.",
+    "mainland_pandaren": "Use a Sichuan accent, forward s and z, a light l shaped r, and broad ah and eh vowels. Link unstressed syllables briskly while keeping final n audible. Connected phrase bursts end with a slightly stretched stressed vowel and a short, clearly settled pause.",
+    "forest_pandaren": "Speak English with a Wu Chinese accent with lightly connected b, d, and g, clear l, slight r curling, and narrow ee and oo vowels. Stressed syllables remain distinct as unstressed sounds flow across boundaries. Finish each phrase with a small lengthening and a spacious, gentle pause.",
+    "fisher_pandaren": "Use a coastal Min Chinese accent with compact eh and aw vowels, clear l, minimal r curling, and decisive p, t, and k endings. Give stressed syllables clean beginnings and keep vowel movement restrained. Quick connectors link fuller stresses into short phrases with crisp final closures.",
+    "wandering_pandaren": "Use distinct ai and oi diphthongs, clear l, lightly tapped r, and compact t and k endings. Give syllables nearly equal space, strengthening the opening beat of each phrase. Brisk balanced pairs remain clearly separated, with a short pause following a smoothly rising question.",
+    "pygmy": "Keep vowels pure and short, consonant beginnings sharply distinguished, and stresses alternating between light and heavy beats. Start each phrase lightly, broaden its central stress, then close on two compact syllables. Clear pauses divide the groups while the overall pace stays brisk and precise.",
+    "ignan": "Strike k, t, and s precisely, alternating short stressed syllables with one prolonged vowel release. Give each phrase two or three compact beats before its longer central opening. Clean consonant cuts separate clauses, and the extended vowel resolves into a decisive, sharply bounded ending.",
+    "saurok": "Articulate k and t sharply and keep ah vowels short. Begin phrases with two tightly timed beats, extending the s sound within the central stressed syllable slightly. Compact word groups move rapidly toward a clean final cut, followed by a brief, distinct closing pause.",
+    "sethrak": "Distinguish s and sh exactly, narrow ih and eh vowels, and separate stop consonants sharply. Set two compact beats beside a longer central stress, lightly sustaining its existing sibilant. Resume evenly after a precise final consonant, keeping phrase contours narrow and pauses deliberately measured.",
+    "nraqi": "Keep vowels narrowly contrasted and consonant clusters unusually emphasized within otherwise fluent speech. Let a smooth short run land on one densely articulated central stress, then echo its rhythmic contour later in the phrase. Place clear clause pauses around the slightly asymmetric returning beats.",
+    "pirate_culture": "Use a Mediterranean and North African accent in English, clear open vowels, lightly tapped r, and crisp consonants. Link quick syllables fluidly through longer setup phrases, then close with short emphatic beats. Brief upward turns lead into compact downward endings with sharply separated major stresses.",
+    "wastewander": "Use a precise Arabic accent with full vowel shapes, clean tapped r, deliberately articulated consonant clusters, and compact unstressed syllables. Keep pitch movement narrow through an economical opening. Hold a measured central beat, lengthen its vowel slightly, and bring the final phrase down with precise, compact emphasis.",
+    "taunka": "Form ah and oo vowels fully, close n and r endings clearly, and keep connectors compact. Give a substantial first stress two shorter answering beats, then pause. Longer phrases expand this same rhythm, retaining exact consonant closures and a steady alternation of long and short syllables.",
+    "tauren": "Use broad pure ah and oo vowels, smoothly linked m, n, and l, and a spacious, deliberate cadence. Carry one deeply settled central stress into two shorter connecting beats. Sustain vowels evenly, let the pitch descend in broad slow arcs, and land the ending completely before the next phrase.",
+    "highmountain": "Use broad fully rounded vowels, flowing nasal and liquid transitions, and crisp word endings. Set paired stresses on an ascending contour, making the second beat longer and fuller. Resolve into a shorter grounded closing phrase, with distinctly articulated syllables, complete final consonants, and a broad, steady pause.",
+    "high_elf": "Speak English with a cultivated transatlantic accent, elongated clear vowels, lightly articulated r, and precise consonant releases. Balance adjacent phrases through graceful alternating stresses. Maintain smooth syllable connections, spacious central emphasis, and a composed descending finish with a small natural pause.",
+    "blood_elf": "Speak English with a crisp transatlantic accent, elongated stressed vowels, compressed unstressed syllables, lightly articulated r, and decisive consonant boundaries. Carry the opening smoothly into a tighter central stress, then shorten the final phrase. Finish with a sharply controlled descent and a clean, economical pause.",
+    "void_elf": "Speak English with a refined transatlantic accent with clear vowels, light r, and carefully differentiated consonants. Keep clause endings distinctly spaced and the overall pitch contour narrow. Briefly suspend the central phrase, resume with precise syllable placement, and conclude through restrained downward emphasis over complete audible words.",
+    "magnataur": "Use a northern Giant accent in English with fully open ah vowels, clearly tapped or rolled r, and distinctly separated final k and g releases. Give one stressed unit a broad duration, follow with two shorter units, and settle the phrase through a firm closure and spacious turn boundary.",
+    "trogg": "Use an underground Uldamanic accent in English with broad short ah vowels, strong root-syllable stress, and plainly closed k, g, and t endings. Keep phrases clearly segmented. Match an early stress contour with a later rhythmic beat, then finish through one settled word and a compact pause.",
+    "drogbar": "Use a Uldamanic accent in English with tightly connected gr and dr clusters, compressed middle vowels, and clear open vowel releases. Begin with a compact accented beat, broaden the central phrase, and open the ending into a clean release. Maintain articulate consonant transitions through a short, definite pause.",
+    "titanforged": "Speak English with a formal Greek accent with pure eh and oh vowels, brief rolled r, clear t and d contrasts, and distinctly released k. Keep unstressed syllables audible and consonant groups orderly. Balance related phrases through matching stress contours, then complete each clause with an unmistakable downward ending.",
+    "frozen_giant": "Speak English with a Finnish accent with long aa and uu vowels, distinctly timed double consonants, lightly tapped r, and audible h. Weight initial syllables and compress the connecting sequence. Alternate a broad stressed word with a compact following group, closing through intact final consonants and a clean pause.",
+    "storm_giant": "Speak English with a Norwegian highland accent with broad aw and ai vowels, firmly joined br and gr clusters, released d and g, and held final r. Weight the later part of compounds. Follow short opening phrases with a longer conclusion, maintaining economical unstressed vowels and a clearly weighted finish.",
+    "mechagnome": "Use a precise workshop accent with short eh and ih vowels, sharply distinguished t, d, and k, a single tapped r, and exact final s. Articulate every syllable clearly. Alternate stresses within longer words, link concise phrase units, and separate the concluding phrase with a brief clean pause.",
+    "skrog": "Use a broad seafaring accent in English with broad aw and oh vowels, clear b, d, and g, tapped r, and audible final m and n. Give the opening consonant of a cluster slightly more time. Alternate full stressed vowels with short connectors, then finish on a broad, firmly bounded beat.",
+    "tolvir": "Speak English with an Egyptian Arabic accent with pure ah vowels, clearly articulated r, and emphatic but distinct t and d. Place phrase beginnings precisely and sustain the central vowel before a clean consonant closure. Balance two answering phrase contours, keeping syllable boundaries clear and the final descent measured.",
+    "scourge": "Use a standardized Common delivery layered over the established regional accent. Compress unstressed connectors, distinguish consonant boundaries precisely, and match repeated syllable stresses consistently. Speak in bounded phrase units, placing a clear pause between them, with a slightly longer second unit and an exact final closure.",
+    "forsaken": "Use a Gutterspeak accent in the supplied language with contracted unstressed vowels, crisp sk and sh endings, and precisely articulated borrowed consonant clusters. Retain the established regional vowel shapes. Begin with a compact connected run, isolate one central stress through timing, then let the short ending settle through an economical pause.",
+    "voidwalker": "Use an Eredun accent in English with precisely distinguished consonants, fully pronounced short connectors, and one sustained stressed vowel near the clause ending. Keep each phrase articulate and bounded. Hold a clear turn gap between complete units, then finish the following unit through a shorter, distinct consonant release.",
+    "vrykul": "Speak English with a western Norwegian accent with briefly rolled r, firm v, clear dental th, and spread ah, au, and ei vowels. Stress compound openings and reduce connecting syllables. Set one long weighted beat before two shorter beats, then close through definite d or k releases and a natural pause.",
+    "hyldnir": "Speak English with an Icelandic accent with aspirated t and k, distinct hr and hv beginnings, short tapped r, and clearly separated ai and au diphthongs. Keep clusters orderly and front-load word stress. Divide phrases compactly, add a brief central timing gap, and complete unstressed endings with audible consonants.",
+    "frost_vrykul": "Speak English with a northern Norwegian accent with long oo and aw vowels, rolled r at stressed starts, compact t and k endings, and clearly audible h. Alternate extended stressed syllables with tightly compressed linking words. Separate adjoining hard consonants through precise timing, and finish each clause with a short clean gap.",
+    "stormheimir": "Speak English with a coastal Swedish accent with tapped r, long ae and oh vowels, lighter k before front vowels, and precisely timed consonant pairs. Keep unstressed vowels comparatively audible. Shape phrases with a strong beat, lighter following beat, and renewed final weight, adding a small upward lift before the last descent.",
+    "kvaldir": "Use an archaic seafaring Norwegian accent in English with rolled r, hard v, broad au and oh vowels, softened intervocalic d, and clearly finished final k. Compress unstressed syllables. Pair clauses through matching stresses, linking their openings briskly while preserving weighted centers and a sharply bounded pause after each complete phrase.",
+    "drust": "Use a Scots accent with Norwegian consonant timing with sustained kh, tapped r, clear th, and open ah alternating with tight oo. Compress inner unstressed vowels and articulate rn and th endings decisively. Link neighboring words through their consonants, then set one extended beat against two compressed beats before a clean pause.",
+    "lucardir": "Use a formal Swedish accent with tapped r, long ae and oh vowels, precise s and z, and separately released final consonants. Keep dense clusters smoothly connected and unstressed vowels light. Sustain the central phrase, favor later stresses in longer words, and finish with distinctly spaced syllables.",
+    "vulpera": "Speak English with a Levantine Arabic accent with open vowels, distinctly tapped r, linked nasal consonants, and clear short syllables. Keep articulation nimble. Group two quick pickup words before one fuller stressed unit, then follow with a shorter closing beat, maintaining a modest short-long alternation and clean phrase boundaries.",
+    "satyr": "Use flowing Darnassian vowel shapes in English and flowing elven stress, interrupted by sharply caught Eredun consonant endings. Connect a longer opening span to a compact central phrase, then return to a clearly articulated finish. Preserve the contrast between smooth vowel transitions, sudden timing cuts, and exact final releases.",
+    "yaungol": "Use a Taur-ahe accent in English with broad ah vowels, firmly accented compound beginnings, and clearly landed final n and r. Place a strong initial beat before two shorter pulses. Allow longer phrases wider spacing while preserving this recurring stress pattern, then give the conclusion a full, clean landing.",
+    "centaur": "Use a Central Asian steppe accent in English with broad ah and aw vowels, firmly placed initial stress, and tightly connected internal consonant clusters. Pronounce r with a clear single tap. Set one extended opening beat against two lighter following beats, and end the phrase with a definite consonant closure.",
+    "zandalari": "Use a regal, measured African accent in English with fully open vowels, exact consonants, and clearly separated syllables. Arrange phrases in stately paired units, balancing their principal stresses evenly. Let the central vowel carry a sustained beat, then give the final stressed word space to settle through a complete downward cadence.",
+    "blood_troll": "Use a sharply articulated Zandali accent in English with open vowels, clear dental consonants, and quickly clipped final syllables. Keep the opening stresses light and progressively rising. Place the principal weight late in the phrase, then close through a precise final syllable and a brief, tightly defined pause.",
+    "zemlani": "Use a Zandali accent in English with open vowels, clear consonants, and a rolling maritime rhythm. Link several short opening syllables into a compact pickup, sustain the central stressed vowel, and drop the ending sharply. Keep the longer beat distinct within a brisk surrounding run and a clean phrase closure.",
+    "gurubashi": "Use a Caribbean accent in English with fully open vowels and clearly completed consonants. Arrange each phrase in three uneven beats, stretching the middle one and placing the final beat firmly. Retain a deliberate rhythmic swing, moderate conversational pacing, and a distinct pause between fully articulated clauses.",
+    "darkspear": "Speak English with a strong Jamaican accent: open vowels, rounded diphthongs, prominent Caribbean stress, and relaxed syncopation. Use a quick pickup, a long central beat, and lightly bouncing trailing syllables. Let pitch rise easily through the middle and drop into a clear, unhurried ending while pronouncing every supplied word.",
+    "atalai": "Use a tightly enunciated Zandali accent in English with fully shaped vowels and short connecting syllables. Set two slower stress peaks around a quicker central sequence. Separate longer words carefully, keep the phrase contour balanced, and complete each clause through a held final beat followed by a clear pause.",
+    "bloodscalp": "Use a jungle Zandali accent in English with bright open vowels and hard, clearly articulated word endings. Place the first two major stresses close together with matching weight. Keep the following syllables compact, then leave a wider timing gap before the conclusion, ending through one firm and complete downward beat.",
+    "skullsplitter": "Use a jungle Zandali accent in English with open vowels, firmly bounded consonants, and compact syllables. Delay the first major stress slightly, then keep the center close and economical. Deliver the final pair of stressed units near one another, closing with a sharp, complete stop and a clear pause.",
+    "witherbranch": "Use a Zandali accent in English with open vowels and carefully differentiated consonants. Begin the phrase briskly, broaden the central stress through slower timing, and regain a light maritime roll near the ending. Keep the final two beats lightly linked, with exact syllable boundaries and a complete consonant release.",
+    "jellyneck": "Use a Caribbean accent in English with open vowels, smoothly linked syllables, and crisp final consonants. Let phrases lift gently through the middle, maintaining a buoyant rhythmic contour. Settle the last syllables softly, completing the final consonant clearly and leaving a small, natural conversational gap afterward.",
+    "amani": "Use a forest Zandali accent in English with broad fully pronounced vowels and firm dental consonants. Place substantial weight on the initial major stress, then let the remaining phrase descend in measured steps. Keep connecting syllables clear and economical, finishing through one sturdy consonant landing and a complete pause.",
+    "blackleaf": "Use a forest Zandali accent in English with clear open vowels, tightly differentiated consonants, and lightly weighted endings. Give the short opening phrase a small timing gap before the precise central stress. Keep the following syllables articulate, then let the final syllable settle quietly through a compact, definite closure.",
+    "firetree": "Use a forest Zandali accent in English with full open vowels and neatly clipped consonants. Organize each clause into two equal brisk beats, linking unstressed syllables compactly between them. Hold the last stressed word slightly longer, complete its consonant cleanly, and finish through a small, clearly bounded pause.",
+    "mossflayer": "Use a forest Zandali accent in English with open vowels and fully completed consonant endings. Stretch the first major stress slightly, keep the central phrase compact, and place a deliberate timing gap before the closing unit. Give the ending a clear final stress with a sturdy downward landing.",
+    "revantusk": "Use a forest Zandali accent in English with open clear vowels, distinct consonants, and a measured coastal swing. Balance two phrase units, allowing the second a slightly slower pace and fuller central vowel. Keep their stresses clearly related, then finish through a bounded descent and an unforced conversational pause.",
+    "shadowglen": "Use a forest Zandali accent in English with fully open vowels, fine consonant distinctions, and lightly suspended phrase endings. Begin smoothly, place a small timing pause before the central stressed unit, and resume at the same volume. Let the last syllables taper gently through a light, clearly articulated closure.",
+    "shadowpine": "Use a forest Zandali accent in English with fully formed vowels and particularly exact syllable boundaries within longer words. Set a long central phrase between shorter opening and closing beats. Keep the consonants clear through the sustained center, and allow the final phrase a measured descent and a distinct pause.",
+    "smolderthorn": "Use a forest Zandali accent in English with open vowels and quickly, precisely released consonants. Move two compact phrase units forward in close succession, then leave a noticeably longer timing gap before the final unit. Complete the last stress clearly, preserving economical syllable spacing and a sharply bounded finish.",
+    "treeblight": "Use a forest Zandali accent in English with open vowels and narrowly compressed unstressed syllables. Build the phrase through small rising stresses, maintaining clear consonant distinctions. Level out the pitch contour near the conclusion, keep the final vowel steady, and finish with a complete, lightly held syllable boundary.",
+    "vilebranch": "Use a forest Zandali accent in English with wide open vowels and distinctly accented consonants. Move through the opening at a moderate pace, then accelerate the final phrase into a delayed stressed landing. Keep the shortened syllables articulate, and complete the last consonant with a sharp, precisely timed stop.",
+    "witherbark": "Use a forest Zandali accent in English with full open vowels, carefully voiced consonants, and pronounced clause boundaries. Match the timing of an early major stress near the ending, creating balanced phrase arcs. Keep intervening syllables compact and clear, then complete the final beat with a firm, measured descent.",
+    "drakkari": "Use a northern Zandali accent in English with fully open vowels, exact consonant starts, and complete syllable endings. Arrange neighboring phrases into parallel units with matching strong stresses. Maintain clear space between the units, allowing the final vowel a full beat before its complete consonant release and measured pause.",
+    "frostmane": "Use a northern Zandali accent in English with open but shortened vowels and sharply bounded consonants. Begin phrases quickly and place the major stress on the second beat. Keep the connecting sequence compact, then finish through a short downward pitch movement, an exact final release, and a distinctly timed pause.",
+    "winterax": "Use a northern Zandali accent in English with open vowels, clipped connecting syllables, and especially precise final consonants. Speak in evenly spaced short units, keeping each boundary distinct. Place a small timing gap before the last accented word, then complete its consonant firmly and allow the pitch contour to settle.",
+    "winterfang": "Use a northern Zandali accent in English with clear open vowels and carefully linked unstressed syllables. Let the opening phrase move lightly and continuously, then separate the final two accented units into deliberate beats. Complete both endings precisely, maintaining ordinary volume and a clear, attentive turn boundary afterward.",
+    "icetusk": "Use a northern Zandali accent in English with broad open vowels, exact consonants, and a restrained seafaring roll. Set one longer opening beat against two shorter following beats. Keep the connecting syllables clear within this unequal rhythm, then close the last phrase completely through a firm consonant and natural pause.",
+    "farraki": "Use a desert Zandali accent in English with clearly open vowels, finely distinguished sibilants, and economical consonant endings. Keep the opening syllables compact, lengthen one central stressed vowel, then conclude with a firmly bounded word. Maintain the long-center contrast through clear articulation and a measured, complete downward finish.",
+    "dark_troll": "Use a secluded Zandali accent in English with clear open vowels, exact consonants, and economical phrase lengths. Space stressed units distinctly while keeping their connecting syllables brief. Maintain ordinary speaking volume, complete each word boundary precisely, and finish the clause through a clean abrupt closure followed by a definite pause.",
+    "shatterspear": "Use a secluded Zandali accent in English with open connected vowels, crisp consonants, and a gently swaying two-part rhythm. Carry the first half smoothly into a slightly lifted second half, then settle through a soft, clear final landing. Keep individual syllables intelligible within the alternating contour and natural phrase gap."
+  },
+  "faithDelivery": {
+    "holy_light_benediction": {
+      "faithIds": [
+        "holy_light"
+      ],
+      "instruction": "Use composed, clearly supported phrase groups with a gentle rising middle contour and a settled final descent. Keep stressed syllables unhurried and rounded. Allow small open pauses between the supplied units, maintaining a warm, clear delivery and complete consonant releases."
+    },
+    "scarlet_purge_proclamation": {
+      "faithIds": [
+        "scarletism"
+      ],
+      "instruction": "Use tightly organized phrase groups, sharp principal stresses, and decisive endings. Keep the connecting syllables compact while gradually strengthening rhythmic insistence. Maintain exact consonant placement and strongly bounded pauses, allowing force to come through timing and articulation at the selected volume."
+    },
+    "argent_open_resolve": {
+      "faithIds": [
+        "argent"
+      ],
+      "instruction": "Use plain, firmly supported articulation with open phrase spacing and clear final stresses. Let the central unit broaden slightly before an assured descending finish. Maintain a steady conversational pace, generous turn boundaries, and direct, easily intelligible consonant releases throughout."
+    },
+    "khazic_craft_blessing": {
+      "faithIds": [
+        "khazic"
+      ],
+      "instruction": "Use compact phrase units with regular timing, paired stresses, and dependable final falls. Give accented syllables a deliberate full beat and keep unstressed connectors economical. Preserve steady breath support, clear consonant endings, and a firm repeated rhythmic structure across the supplied line."
+    },
+    "velenic_guiding_prayer": {
+      "faithIds": [
+        "velenism"
+      ],
+      "instruction": "Use patient, gradually unfolding phrases with gently rounded stresses and clear articulation. Allow a small pause between the principal units, keeping the pitch contour smooth and supported. Finish through a calm, complete downward cadence with unhurried final syllables and audible consonants."
+    },
+    "lightbound_unifying_declaration": {
+      "faithIds": [
+        "lightbound"
+      ],
+      "instruction": "Use exact, assured pacing with smoothly closed declarative phrase contours. Match any explicitly repeated stress targets through disciplined timing. Keep connecting syllables concise and principal vowels fully formed, maintaining steady intensity, little pitch hesitation, and a clean final descent."
+    },
+    "lunar_devotional_arc": {
+      "faithIds": [
+        "kaldorei_religion",
+        "rushism"
+      ],
+      "instruction": "Use spacious, carefully balanced phrase arcs with soft but clear accented syllables. Sustain the middle of each arc and place a contemplative timing gap before the final unit. Keep the voice fully audible, with smooth breath grouping and a poised, complete ending."
+    },
+    "earth_mother_gratitude": {
+      "faithIds": [
+        "earth_mother_worship"
+      ],
+      "instruction": "Use broad, grounded phrase groups with generous space after each completed unit. Give accented vowels rounded duration and match successive stress contours through a returning rhythm. Maintain moderate pace, relaxed articulation, and full final releases, allowing every unit to settle distinctly."
+    },
+    "ancestral_listening_invocation": {
+      "faithIds": [
+        "orcish_shamanism"
+      ],
+      "instruction": "Give the opening unit a firm, measured stress, then leave the explicit timing gap supplied with the line. Continue through deliberate, evenly weighted syllables and complete phrase boundaries. Preserve clear projection, stable breath support, and a respectful-sounding, firmly supported descending finish."
+    },
+    "household_ancestor_remembrance": {
+      "faithIds": [
+        "wildhammer_shamanism",
+        "old_ways",
+        "staroverstvo"
+      ],
+      "instruction": "Use familiar, understated delivery with deliberate syllable spacing and a gently supported central stress. Place a small pause between the supplied units, then give the ending greater rhythmic firmness. Keep consonants clear and the phrase contour naturally connected at ordinary conversational volume."
+    },
+    "tuskarr_stone_elder_chant": {
+      "faithIds": [
+        "tuskarr_religion"
+      ],
+      "instruction": "Use a clear recurring syllabic pulse with evenly articulated vowels and repeated timing patterns. Respect the explicit pause positions supplied with the line. Keep the voiced center stable and the consonants legible, allowing the selected chant intensity to shape stress duration and final closure."
+    },
+    "taunka_elemental_command": {
+      "faithIds": [
+        "taunka_religion"
+      ],
+      "instruction": "Use evenly spaced accented units with strongly placed initial consonants and unyielding final falls. Sustain stressed vowels through steady support, keep connecting words compact, and separate each phrase clearly. Preserve measured pace and firm projection at the explicitly selected volume."
+    },
+    "zandalari_ritual_learning": {
+      "faithIds": [
+        "zandism"
+      ],
+      "instruction": "Use ordered phrase groups with stately pacing, precise syllable boundaries, and matching central stresses. Give longer units a sustained middle contour before a clean release. Move into shorter units lucidly, maintaining balanced breath groups, deliberate pauses, and carefully completed consonant endings."
+    },
+    "gurubashi_death_bargain": {
+      "faithIds": [
+        "gurubism"
+      ],
+      "instruction": "Alternate weightier, slower phrase units with a lightly lifted shorter contour at the marked positions. Keep pauses measured and final consonants exact. Return the concluding unit to deliberate gravity, preserving clear articulation and restrained pitch movement within the selected expressive delivery."
+    },
+    "blood_offering_refrain": {
+      "faithIds": [
+        "cult_of_hakkar",
+        "farrism"
+      ],
+      "instruction": "Use a controlled, insistent syllabic pulse with precisely placed principal stresses. Match only the repetition already supplied in the literal line or delivery metadata. Let rhythmic pressure gather gradually through concise connectors, sustained accented vowels, and firm releases into clearly bounded pauses."
+    },
+    "torga_story_pilgrimage": {
+      "faithIds": [
+        "cult_of_torga"
+      ],
+      "instruction": "Use patient, companionable phrase timing with small anticipatory pauses at the supplied boundaries. Let longer units curve gently back toward a familiar stress shape, then give the conclusion a satisfying downward return. Maintain clear words, moderate pacing, and lightly rounded vowel transitions."
+    },
+    "tidemother_listening_blessing": {
+      "faithIds": [
+        "tidemother"
+      ],
+      "instruction": "Let the phrase contour gradually recede toward the marked pause, then return with a steady, calmly supported stress. Link vowels smoothly through flowing breath groups. Keep consonants complete and the last unit distinct, ending in a clear descending cadence at the selected volume."
+    },
+    "fire_purification_invocation": {
+      "faithIds": [
+        "ragnarism",
+        "ordonism"
+      ],
+      "instruction": "Use a recurring rhythmic beat with gathering, disciplined intensity. Sustain the marked stressed syllables, then release their consonants firmly. Keep the intervening words compact and articulate, increasing rhythmic pressure through timing while preserving steady vocal support and a complete final closure."
+    },
+    "red_flight_life_benediction": {
+      "faithIds": [
+        "alexstraszism"
+      ],
+      "instruction": "Use broad, generously supported phrase groups with rounded principal stresses and a warm, clear center. Allow the central unit to expand slightly before settling firmly. Maintain smooth vowel connections, complete consonants, and an expansive but intelligible final cadence at the selected intensity."
+    },
+    "green_flight_dream_observance": {
+      "faithIds": [
+        "yserism"
+      ],
+      "instruction": "Use reflective phrase timing with a deliberate pause between the supplied units. Keep the stresses gently balanced and the pitch movement smooth, linking sustained vowels through clear consonant transitions. Preserve fully audible words, attentive moderate pacing, and a soft but complete final descent."
+    },
+    "earthwarder_guardianship_vow": {
+      "faithIds": [
+        "neltharism"
+      ],
+      "instruction": "Use firm, evenly grounded phrase units with deliberate principal stresses and a strongly supported center. Keep connecting syllables concise, maintain steady pace, and close every unit clearly. Finish the final accented phrase with a decisive downward cadence and complete consonant releases."
+    },
+    "blue_flight_arcane_stewardship": {
+      "faithIds": [
+        "malygosism"
+      ],
+      "instruction": "Use exact articulation and carefully grouped phrases, placing small pauses at the supplied boundaries. Balance related units symmetrically while preserving flexible pitch movement. Keep long words clearly syllabified, give the marked stresses precise weight, and finish each explanatory unit with a complete release."
+    },
+    "bronze_flight_causal_observance": {
+      "faithIds": [
+        "nozdormism"
+      ],
+      "instruction": "Use precisely timed phrase boundaries and small pauses at the marked positions. Keep the central contour reflective and narrowly controlled, allowing accented syllables a measured duration. Complete each phrase clearly, with stable pace, distinct consonants, and a calm final descent into a clean turn gap."
+    },
+    "sunwell_crisis_reverence": {
+      "faithIds": [
+        "cult_of_sunwell"
+      ],
+      "instruction": "At the explicitly marked phrase, soften the onset and give the stressed vowel a moment of rounded tenderness. Resume clear, restrained articulation afterward. Keep pitch movement modest and pauses unhurried, ending through a complete, quietly supported downward cadence with the established speaker identity."
+    },
+    "arcane_tradition_recitation": {
+      "faithIds": [
+        "arcane_religion",
+        "cult_of_nightwell",
+        "kirin_torian"
+      ],
+      "instruction": "Use precise, well-preserved syllable articulation with balanced phrase groups and matching stress contours. Give the explicitly marked terms attentive vowel duration and clean boundaries. Maintain a cultivated, flexible delivery, clearly separated clauses, and a measured final descent through complete consonant releases."
+    },
+    "black_harvest_bound_intention": {
+      "faithIds": [
+        "black_harvest"
+      ],
+      "instruction": "Use controlled, deliberate stresses with clean phrase boundaries and exact pause timing. Give the central unit steady support, keep the linking syllables economical, and finish each selected stress cleanly. Maintain narrowly modulated pitch and a firm, complete ending at the supplied intensity."
+    },
+    "nzoth_confidential_insinuation": {
+      "faithIds": [
+        "nzothism"
+      ],
+      "instruction": "Use quiet, patient delivery with small delays at the explicitly marked positions. Link the opening smoothly into a narrowly lifted central contour, then close the phrase deliberately. Keep the supplied words fully audible, the pitch movement restrained, and every final consonant clear beneath the softer projection."
+    },
+    "twilight_inevitable_litany": {
+      "faithIds": [
+        "twilights_hammer_cult"
+      ],
+      "instruction": "Use a measured cadence with evenly advancing stresses and firm downward phrase endings. Match only the repeated timing already specified by the literal line or delivery metadata. Gradually tighten the rhythm, maintaining clear consonants, controlled intensity, and an emphatic but stable final closure."
+    },
+    "azsharan_royal_veneration": {
+      "faithIds": [
+        "azshara_worship"
+      ],
+      "instruction": "Give the marked stressed units exquisitely deliberate vowel duration, with poised pauses on either side. Connect the remaining words smoothly through polished articulation. Maintain assured pitch support, balanced phrase lengths, and a carefully finished final descent, keeping the established accent and anatomical timbre intact."
+    },
+    "scourge_subordination_litany": {
+      "faithIds": [
+        "death_god"
+      ],
+      "instruction": "Use exact phrase segmentation with deliberate pauses between the supplied units. Match their stress patterns through a practiced recurring cadence, keeping connectors compact and vowels clearly formed. Maintain stable intensity, narrowly controlled pitch, and a precisely released final consonant at each complete boundary."
+    },
+    "ebon_freed_duty": {
+      "faithIds": [
+        "ebon"
+      ],
+      "instruction": "Use plain, disciplined articulation with sober, evenly supported stresses and deliberate final beats. Keep the pitch contour restrained and the pauses clearly measured. Give the ending full consonant closure while maintaining the established speaker's grain, accent, and ordinary capacity for expressive variation."
+    },
+    "throsic_binding_rite": {
+      "faithIds": [
+        "throsic"
+      ],
+      "instruction": "Divide the supplied line into the explicitly marked, tightly closed phrase units. Keep stresses deliberate and pauses exact, matching any written repetition through controlled rhythmic timing. Maintain a stable voiced center, fully articulated words, and decisive final consonants after each measured unit."
+    },
+    "nazen_collective_precision": {
+      "faithIds": [
+        "spider_philosophy"
+      ],
+      "instruction": "Keep phrases evenly divided, with restrained pitch movement and exact placement of the marked stresses. Maintain consistent syllable spacing, clearly differentiate consonants, and give each conclusion an economical complete release. Preserve a calm, articulate delivery while retaining the expressive intensity explicitly supplied upstream."
+    },
+    "celestial_meditative_balance": {
+      "faithIds": [
+        "august_celestials"
+      ],
+      "instruction": "Use consciously balanced breath groups, clear restrained stresses, and small composed pauses at the specified boundaries. Keep the voiced center firmly supported and the projection fully audible. Let adjacent phrases answer one another rhythmically, then settle through a smooth final descent and complete consonants."
+    },
+    "candle_guarding_devotion": {
+      "faithIds": [
+        "cult_of_the_candle"
+      ],
+      "instruction": "At the explicitly marked phrase, briefly soften projection while keeping every syllable articulate. Follow with a firmly supported, rounded concluding stress. Maintain small attentive pauses, smooth vowel connections, and a grateful-sounding descending contour through complete final consonants at the selected overall intensity."
+    }
+  },
+  "inactiveCultureKeys": [
+    "wc_dummy"
+  ]
+}

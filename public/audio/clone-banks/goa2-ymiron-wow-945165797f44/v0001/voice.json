@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ymiron-wow-945165797f44",
+  "revision": 1,
+  "name": "Ymiron Dragonflayer — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "847a8278c610b8ef93d647690631e08d3552d30e83977bece3cd4ab401d45668",
+    "transcript_sha256": "12dfa17097bfdbbcdc0078073097319efc94df35aa611b8732faf82619bf73e5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 334313,
+      "seconds": 13.929708333333334,
+      "peak": 0.999969,
+      "rms_dbfs": -14.74,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

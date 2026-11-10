@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-karlain-wow-8a6e8b9c7d27",
+  "revision": 1,
+  "name": "Karlain — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0583e0b093214d8195586f18c9fb4e30ec1cb5d5255c00e1c07635f97ec461e5",
+    "transcript_sha256": "5f8f0283312b4be3d3bc4b8b41418dbf5a920cea6f39bfe8ab596154222b1d1a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 293036,
+      "seconds": 12.209833333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.36,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

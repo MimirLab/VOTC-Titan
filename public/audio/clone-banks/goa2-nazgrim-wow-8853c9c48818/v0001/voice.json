@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-nazgrim-wow-8853c9c48818",
+  "revision": 1,
+  "name": "Nazgrim — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "770b1008ef091988521121df510a77ea7cfe3d4dd46fddd4e58f5016e433ec01",
+    "transcript_sha256": "4235c2a9ec3f9e5a55415d1ce7107c067c04bde6fee2672cc2b122fc9b111f5d",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 318437,
+      "seconds": 13.268208333333334,
+      "peak": 1.0,
+      "rms_dbfs": -15.65,
+      "clipped_samples": 47
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

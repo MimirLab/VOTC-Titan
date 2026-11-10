@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-azuregos-wow-de937d36e31c",
+  "revision": 1,
+  "name": "Azuregos — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "e70197dad18227b5ea5942fe8b57db49e9d979e91a695cf9ff480c7871030846",
+    "transcript_sha256": "9af31d439ba866cb5bc830c32c137752a07eb343ee49cc77be30615c27d5a210",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 382810,
+      "seconds": 15.950416666666667,
+      "peak": 1.0,
+      "rms_dbfs": -15.94,
+      "clipped_samples": 19
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-number-nine-jia-wow-abcc6732ff3e",
+  "revision": 1,
+  "name": "Jia — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "942d7342237ca4f9cd8e07f0691456f553dc6b77a19c60df395c445ca1b97ddf",
+    "transcript_sha256": "ec5aa78237ccf20be91f302fe134bde3df4c28c7955abcaa93305d8bfc465cbe",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 399498,
+      "seconds": 16.64575,
+      "peak": 0.981964,
+      "rms_dbfs": -15.89,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

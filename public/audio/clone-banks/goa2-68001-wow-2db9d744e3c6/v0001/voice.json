@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-68001-wow-2db9d744e3c6",
+  "revision": 1,
+  "name": "Vol'jin — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9f9d134315eb089bc6165615ed706a91a229ecce6ad5cbb15eaf1add7486d175",
+    "transcript_sha256": "61b44fd98dcde0107321b703d1adf3249c72f715a83ea5ab08c1fbcd654a4cab",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 360189,
+      "seconds": 15.007875,
+      "peak": 1.0,
+      "rms_dbfs": -15.56,
+      "clipped_samples": 9
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

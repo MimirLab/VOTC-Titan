@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-500184-hots-lili",
+  "revision": 1,
+  "name": "Li Li Stormstout — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d321771c024729db17bf6aad0f2bbd750974023ed94bc64db8ee6a939f8a26e3",
+    "transcript_sha256": "a8dc794f08d97bc500717ac8e47e3217371df76a8e66da794526ce7e7ae8b5e0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 365650,
+      "seconds": 15.235416666666667,
+      "peak": 0.839447,
+      "rms_dbfs": -17.98,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

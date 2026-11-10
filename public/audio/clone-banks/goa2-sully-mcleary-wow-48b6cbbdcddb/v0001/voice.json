@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-sully-mcleary-wow-48b6cbbdcddb",
+  "revision": 1,
+  "name": "Sully McLeary — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "98e99c0e45944c8a79d7535f647b2668c7cd78b1723d120682d6f2ce0e27e552",
+    "transcript_sha256": "7ee11e8a971c53164195ecf483133a1d7554fd3dfc010931aeb596ba3946f6d0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 43005,
+      "seconds": 1.791875,
+      "peak": 0.996246,
+      "rms_dbfs": -17.46,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

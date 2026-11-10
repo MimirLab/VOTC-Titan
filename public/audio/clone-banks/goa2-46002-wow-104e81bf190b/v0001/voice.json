@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46002-wow-104e81bf190b",
+  "revision": 1,
+  "name": "Mia Greymane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "ca8c2259bb901cd2aeaac6bc72a26c86a8d55e3dfde0bb087a1f0dc36c00f941",
+    "transcript_sha256": "c1eed9e0ee51594b35c266cc0ef842998d64654faeba71a025c982902b6295ca",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 375039,
+      "seconds": 15.626625,
+      "peak": 0.999969,
+      "rms_dbfs": -17.49,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-430200-wow-36e060b8dd14",
+  "revision": 1,
+  "name": "Mephistroth Urgunis — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3648c56ed0e66789627aff99293281e4782103b689df8452b05d2fd4b763ad11",
+    "transcript_sha256": "db3d41af0b7684a22176688a5f592ffa8db947bccd2be41b457d851e2e35d7e0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 430006,
+      "seconds": 17.916916666666665,
+      "peak": 0.939697,
+      "rms_dbfs": -16.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

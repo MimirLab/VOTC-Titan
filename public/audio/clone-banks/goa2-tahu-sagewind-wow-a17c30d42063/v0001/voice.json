@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-tahu-sagewind-wow-a17c30d42063",
+  "revision": 1,
+  "name": "Tahu Sagewind — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "65c859a55340b3894711f95a8496fee2e1872a5088e76756836ffaf9d76ffe6f",
+    "transcript_sha256": "34a66ba58024648dd3c198205bfa863a47cefa61b427c0c4a7844a31f1c381d7",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393067,
+      "seconds": 16.377791666666667,
+      "peak": 0.753418,
+      "rms_dbfs": -15.6,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-krick-wrenchnozzle-wow-a39979978fce",
+  "revision": 1,
+  "name": "Krick Wrenchnozzle — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fddd0010d7b18f0ff4fdb6e452c1b971fa76530067e89d43406e20db4d8c9996",
+    "transcript_sha256": "26ba3d72cc3adc8760d13af141def6e5fbdc2fd34c00a9896db334b018aff916",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 353670,
+      "seconds": 14.73625,
+      "peak": 0.793823,
+      "rms_dbfs": -17.97,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "format": "titan_release_assets_v1",
+  "archive_filename": "VOTC-Titan-Launcher-linux-x64.tar.gz",
+  "archive_sha256": "7305bec503583aa4bcf0cd4a72ceb932552e613693c22dfe573e766baa5324ba",
+  "archive_public_prefix": "VOTC-Titan-Launcher/application/resources/app/public/",
+  "asset_tree_sha256": {
+    "audio": "bb66703c177b7b9b6800f0b4cf6572e47bc0c8c351575dbef7731f53c3889c3e",
+    "scene-art": "5996c1addeb1445b0ddee50bfe893b191f1b0cf49c4c8ddacbbcae8985aba022",
+    "lorebook/bundle": "f9b713fa3fe97bd1b0155e0cb02f3933d8b22132406bc1ad6daa5508548acdf2"
+  },
+  "public_download_url": "https://github.com/MimirLab/VOTC-Titan/releases/download/titan-preview-2026.11.10/VOTC-Titan-Launcher-linux-x64.tar.gz",
+  "publication_status": "User-authorized first public preview; retain CREDITS.md, THIRD_PARTY_NOTICES.md and runtime attribution. No new third-party rights are claimed.",
+  "asset_bytes": {
+    "audio": 291357106,
+    "scene-art": 574648428,
+    "lorebook/bundle": 540205272
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-tally-zapnabber-wow-76a162d895b0",
+  "revision": 1,
+  "name": "Tally Zapnabber — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "836921b7b14d59402302131322d5389d550a0af2bc0027b46573aec315fa6b49",
+    "transcript_sha256": "822d1e77a4e8df1164ca76172c0277a6a8198eaa62167eb77e7a90b8bc1a5564",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 414888,
+      "seconds": 17.287,
+      "peak": 1.0,
+      "rms_dbfs": -17.73,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

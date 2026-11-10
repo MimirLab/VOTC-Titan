@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-amber-shaper-unsok-wow-c0997a4a12ce",
+  "revision": 1,
+  "name": "Un'sok — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b526c7696c867c29c53aa7e41ca35bd4864765a0a60c76dd3fb29573ae41cda0",
+    "transcript_sha256": "bb6d367e9eaccd94dd24d95b018eda8b9af0d25d99343047579ca62c1b372988",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 231556,
+      "seconds": 9.648166666666667,
+      "peak": 0.999969,
+      "rms_dbfs": -20.52,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

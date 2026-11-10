@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-chief-telemancer-oculeth-wow-9276565c5bff",
+  "revision": 1,
+  "name": "Oculeth Telemancer — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "4a1eda60849700719854ff972f3db47e26830dc482d6e18c6114b05b9009beed",
+    "transcript_sha256": "2f9e162ecb6af89d72cdd152903511f78607dcea21ba43953e4fff16eaa14aa1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 375991,
+      "seconds": 15.666291666666666,
+      "peak": 1.0,
+      "rms_dbfs": -16.93,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42211-hots-valeerabase",
+  "revision": 1,
+  "name": "Valeera Sanguinar — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "20a76f6c62b3ae8db92b9b13097507feccb19f32dab8270c35c4610e52277c00",
+    "transcript_sha256": "a39a273a54235f30e4c56ea8a552a4151cbf31c086e5ba7eadd4016acd4c6189",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 384600,
+      "seconds": 16.025,
+      "peak": 0.825439,
+      "rms_dbfs": -16.56,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

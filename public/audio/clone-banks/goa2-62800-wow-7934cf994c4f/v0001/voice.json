@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62800-wow-7934cf994c4f",
+  "revision": 1,
+  "name": "Nozdormu — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8d1938a8711fc170542b842adce8176307f316b016ec3655df04bb625737b288",
+    "transcript_sha256": "29218c3fb2ef93e1f802efac94d5602f8afd548fe86ce3daed65005841f976e4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376628,
+      "seconds": 15.692833333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.48,
+      "clipped_samples": 38
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

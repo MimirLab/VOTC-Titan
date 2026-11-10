@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-grash-wow-acb2ee5d663d",
+  "revision": 1,
+  "name": "Grash Gralashar — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "70d044034aed7d3c351bc40bf1bf81991b593e9da9d1fb2acc7fe11df7dd783e",
+    "transcript_sha256": "5c4096aa6701c030c364ab5180869e63f83e15d7e810d100cf52c900b54b64e2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 230662,
+      "seconds": 9.610916666666666,
+      "peak": 1.0,
+      "rms_dbfs": -14.77,
+      "clipped_samples": 34
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

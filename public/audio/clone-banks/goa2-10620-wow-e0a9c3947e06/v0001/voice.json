@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10620-wow-e0a9c3947e06",
+  "revision": 1,
+  "name": "Garona Halforcen — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "73f51e2c26b39ad7dce205d8a885ebf71de8279a34e94064b4c1aecc2e8321f4",
+    "transcript_sha256": "d67eb5b6d23bfc56d2bac8241ccb7c2e07a2f28d6410923c95de4ff6eb590920",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 418346,
+      "seconds": 17.431083333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.28,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

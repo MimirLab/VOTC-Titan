@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400507-wow-f0e8832f42e1",
+  "revision": 1,
+  "name": "Tyr Aggramai — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "42e54329cb6eefdf759ff9b9c96b6d9ec54f6cfc4d6f7b44fab4af31c13e73b7",
+    "transcript_sha256": "f3b23bdcefd2b940e3e9928e7a4cc4d44c0d1821002ed774ce3bf54f1f11cf9a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 367045,
+      "seconds": 15.293541666666666,
+      "peak": 0.999969,
+      "rms_dbfs": -16.21,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

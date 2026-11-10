@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10567-wow-ebb9e59e6e53",
+  "revision": 1,
+  "name": "Varok Saurfang — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "856b9392547c49b7a541da1ce80cefaa9c74d1f9803aa49d61a2e73065539041",
+    "transcript_sha256": "670924c2070d17519539775288fcdd620b0e84027627cece1663acb213700bd4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 412494,
+      "seconds": 17.18725,
+      "peak": 0.804565,
+      "rms_dbfs": -14.74,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

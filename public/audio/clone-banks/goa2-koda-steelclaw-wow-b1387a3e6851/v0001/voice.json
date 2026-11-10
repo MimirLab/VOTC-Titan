@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-koda-steelclaw-wow-b1387a3e6851",
+  "revision": 1,
+  "name": "Koda Steelclaw — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6dba8c938a4f1d7d351fdfe74a8fdfa03ba79f24ea9664a62a41ddc54c37b0fa",
+    "transcript_sha256": "5a3984432ffb53ca38d880b457c5a6cd1189eb97b2d7d63646dc3b3f405ada22",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 391005,
+      "seconds": 16.291875,
+      "peak": 0.987183,
+      "rms_dbfs": -16.78,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

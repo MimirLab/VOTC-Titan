@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lord-sanguinar-wow-short-20df1ea0",
+  "revision": 1,
+  "name": "Sorrelon Sanguinar — WoW indexed Lord Sanguinar short recorded soundset",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fd957432e37fbaf6f95e2a697f68272608e77e25badc0f2f2ef264c0ff9495a0",
+    "transcript_sha256": "1982e689aa25c24973463bd824cb0353536d9ed0c25481b7648949cab672ee12",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 60922,
+      "seconds": 2.5384166666666665,
+      "peak": 0.926117,
+      "rms_dbfs": -17.92,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

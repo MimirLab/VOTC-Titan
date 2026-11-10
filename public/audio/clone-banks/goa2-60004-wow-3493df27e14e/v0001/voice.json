@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60004-wow-3493df27e14e",
+  "revision": 1,
+  "name": "Calia Menethil — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "12041a7a3c8573d567e65c029dbb3caa47b295cbb9d6b3de60b289787c078416",
+    "transcript_sha256": "8ce0b56f1798e8ae3c1df9c0b5640e6026f3b9273d38a56460f3897e399c2f7b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 401866,
+      "seconds": 16.744416666666666,
+      "peak": 0.996613,
+      "rms_dbfs": -16.67,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

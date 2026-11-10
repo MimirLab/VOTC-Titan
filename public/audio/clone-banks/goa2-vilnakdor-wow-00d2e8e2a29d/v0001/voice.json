@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-vilnakdor-wow-00d2e8e2a29d",
+  "revision": 1,
+  "name": "Vilnak'dor — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "710422104672dea6f66aa8a762b6999ceaf6a0636cb3ca819bd5bbdcdc4ff9bf",
+    "transcript_sha256": "29160f6506a553548960796569521b752b87dd4649f53274f92e23d8e8210dd0",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378367,
+      "seconds": 15.765291666666666,
+      "peak": 1.0,
+      "rms_dbfs": -16.92,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

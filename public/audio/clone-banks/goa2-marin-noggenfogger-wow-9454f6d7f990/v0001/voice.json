@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-marin-noggenfogger-wow-9454f6d7f990",
+  "revision": 1,
+  "name": "Marin Noggenfogger — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fad09ec9338c50fc305d06b23466a4d1f184ac5553072800a4a3457867304fc3",
+    "transcript_sha256": "ca28a240a3fae16f495cf09455be401e21ef2c364db82c48172771abea9cdd0a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 397785,
+      "seconds": 16.574375,
+      "peak": 0.991394,
+      "rms_dbfs": -18.26,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

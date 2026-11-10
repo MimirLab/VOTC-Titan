@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10014-wow-2be1bcc5561c",
+  "revision": 1,
+  "name": "Ner'zhul Shadowmoon — Remnant of Nerzhul (WoW)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "08188cfc14e31dd1a05bb0e42a35b72f9cde18b33b41e8b263d115324196c952",
+    "transcript_sha256": "eea58140f57b1a3e87aa434f31d41effdaef3b6f053beb33c1838e7d72376a56",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 314711,
+      "seconds": 13.112958333333333,
+      "peak": 0.960632,
+      "rms_dbfs": -12.73,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-48081-hots-jainabase",
+  "revision": 1,
+  "name": "Jaina Proudmoore — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "80e7baa1c823eb4fedeb7e38e6be487db59b4d99f6596f09d3189fb639452b96",
+    "transcript_sha256": "ec254096ebf903e1ce6fcdb559da4326c79f48d7c04b2403f055d93814efb5b5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 396075,
+      "seconds": 16.503125,
+      "peak": 0.787292,
+      "rms_dbfs": -15.97,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

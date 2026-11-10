@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400508-wow-ee950714b662",
+  "revision": 1,
+  "name": "Ra-den — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "e20eb2ea500f4e5813a642aef1edafc4eabbe13f46a255724a3dbbbb4194c00e",
+    "transcript_sha256": "355317d7c1fe870771e9e4d9ccd68c90d20a94a4a3d5e8dc49c1f36a727d1f30",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 380773,
+      "seconds": 15.865541666666667,
+      "peak": 1.0,
+      "rms_dbfs": -14.87,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

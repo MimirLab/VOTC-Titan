@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-brother-therold-wow-dd5a5a269278",
+  "revision": 1,
+  "name": "Therold Wavestone — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "0afab99c8bddba5ef3285d89d0069ff9a677f0a6d33f1be87a87003e4cecdeca",
+    "transcript_sha256": "1dd4cf628b62f8fef6884e08ab2f1d9da6fd6d33c253346723fee516af27a3e2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 364197,
+      "seconds": 15.174875,
+      "peak": 0.999969,
+      "rms_dbfs": -16.71,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

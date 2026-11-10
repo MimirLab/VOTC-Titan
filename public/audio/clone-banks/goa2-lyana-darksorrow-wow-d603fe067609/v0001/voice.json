@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lyana-darksorrow-wow-d603fe067609",
+  "revision": 1,
+  "name": "Lyana Darksorrow — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "aed417b5f86ee49dd75c15d6079295346180f7c3f7427217482e3fe7816d598c",
+    "transcript_sha256": "f6d409074bdf75a67b6d5b7fe037a4b367a81564dd126c2fc0cb3e02729048e1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 205963,
+      "seconds": 8.581791666666666,
+      "peak": 0.999969,
+      "rms_dbfs": -15.57,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

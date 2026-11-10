@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-lilian-voss-wow-d24c60dc50df",
+  "revision": 1,
+  "name": "Lilian Voss — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "43905e9e09de01290d8129eec2d54852abb441f0995f15f7aca91ca0a21420d9",
+    "transcript_sha256": "d302a17b2f5e22e93ed4ce2cf5676edf93b9eb7e403767974bfa170d2fa59970",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 390397,
+      "seconds": 16.266541666666665,
+      "peak": 0.999969,
+      "rms_dbfs": -16.71,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

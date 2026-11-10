@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60003-wc3-arthas",
+  "revision": 1,
+  "name": "Arthas Menethil — living paladin (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "eaf2cc017b2c653e8a7bc72769fef899b571fadb3607d1ad8a89a13d12605e16",
+    "transcript_sha256": "049b6c7cc485aa8b61ea61c5ca827036cb4b5272b6c9f23015a7e422d6e589e1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 243973,
+      "seconds": 10.165541666666666,
+      "peak": 0.793915,
+      "rms_dbfs": -22.9,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

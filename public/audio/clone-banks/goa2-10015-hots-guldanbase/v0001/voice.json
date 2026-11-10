@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10015-hots-guldanbase",
+  "revision": 1,
+  "name": "Gul'dan — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3210d7e8a062e0c6a0fe960bb87f590a9c76faa111d9ed7d3be6e3169c447273",
+    "transcript_sha256": "7c5e518542daabd8045afae56c10229a6198a68a41dc479fa1f1ff4fba167175",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 529114,
+      "seconds": 22.046416666666666,
+      "peak": 0.892975,
+      "rms_dbfs": -15.7,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

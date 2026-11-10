@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-aponi-brightmane-wow-146b968289ec",
+  "revision": 1,
+  "name": "Aponi Brightmane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "23d6db5916bb0bfdb65f5caf7f4600ffd05e02aa8af8058ea0c3f729eff25ff1",
+    "transcript_sha256": "1d795fbdaac77e57b90db9660231db070bed96db09157bfcc4030f002a8694e9",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 407156,
+      "seconds": 16.964833333333335,
+      "peak": 0.832001,
+      "rms_dbfs": -15.89,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

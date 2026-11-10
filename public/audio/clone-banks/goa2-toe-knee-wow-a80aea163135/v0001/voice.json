@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-toe-knee-wow-a80aea163135",
+  "revision": 1,
+  "name": "Toe Knee — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "05b2e24a97a1fc26fc6f7b60ae120e5c866f6889b6f9b2eca434731506ac1e46",
+    "transcript_sha256": "831175a3171a4b7a98696c787dfaac7058881a2ae484ea5c110b1fd982ff07d3",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 371104,
+      "seconds": 15.462666666666667,
+      "peak": 1.0,
+      "rms_dbfs": -16.95,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

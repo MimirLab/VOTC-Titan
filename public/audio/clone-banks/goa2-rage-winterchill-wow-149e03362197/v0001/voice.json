@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-rage-winterchill-wow-149e03362197",
+  "revision": 1,
+  "name": "Rage Winterchill — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1fb8731661575ea65834f3f541cb065f1bfa2a164f5cd897e974aaaaf2b6be23",
+    "transcript_sha256": "1c1aaa51d0092d64f3dd30b16a4ebaf703422aa3662f5f3324e9986ff2d6ae18",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 56158,
+      "seconds": 2.339916666666667,
+      "peak": 0.959137,
+      "rms_dbfs": -18.7,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

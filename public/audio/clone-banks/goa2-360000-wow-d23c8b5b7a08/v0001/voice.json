@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-360000-wow-d23c8b5b7a08",
+  "revision": 1,
+  "name": "Kazzak Felblade — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "6e82e70bc948ac6a65a7693fe5b6388ad2de3bb53ad75a1925d4d55c420cb35b",
+    "transcript_sha256": "f9307b5421327cc51e418f86e9992d77b91f708e779e8f02ae9f3a32e4e6966f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 115740,
+      "seconds": 4.8225,
+      "peak": 1.0,
+      "rms_dbfs": -11.39,
+      "clipped_samples": 18
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

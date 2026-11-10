@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-270680-hs-uld-168",
+  "revision": 1,
+  "name": "Tekahn Neferset — Dark Pharaoh Tekahn (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "d84a573b9e4811f205fab30295f3145c4060275f89edb993d30cfa1628ee7c13",
+    "transcript_sha256": "bfe8201b0deb9eebe393451d74e65def21b0fa9e1b06ea24b52f4005bd7b70c5",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 58400,
+      "seconds": 2.433333333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -15.87,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

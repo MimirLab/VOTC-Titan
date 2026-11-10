@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-16000-wow-f1a821d1270e",
+  "revision": 1,
+  "name": "Gelbin Mekkatorque — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3b1ee331e94e4814f0dbae6d1765066a04d84e5218d0b024742c429745f7fd69",
+    "transcript_sha256": "bed17086cd4cfb71c90da981e89c356f2ce3c537891fe19893d88d23c8c82260",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 361540,
+      "seconds": 15.064166666666667,
+      "peak": 1.0,
+      "rms_dbfs": -17.43,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

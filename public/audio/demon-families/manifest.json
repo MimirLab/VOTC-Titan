@@ -1,0 +1,353 @@
+{
+  "version": "player-approved-20261017-v1",
+  "source": "demon-steering-approved-20261016",
+  "canonicalClonesExcluded": true,
+  "presets": [
+    {
+      "key": "dreadlord-male",
+      "family": "dreadlord",
+      "sex": "male",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak with commanding authority and controlled, predatory menace. Use dark cavernous resonance, a coarse restrained throat rasp and crisp, heavily weighted consonants. Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "cd23d40b52314ccda6feb6f37e3b73d411e49820be1f93a8cf9054aeed223401",
+      "mode": "individual"
+    },
+    {
+      "key": "eredar-male",
+      "family": "eredar",
+      "sex": "male",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Use a massive, inhuman demonic voice with coarse layered resonance, low growling harmonics and a harsh crackling edge. Speak with terrible, assured authority. Keep every word clear. Speak aloud naturally.",
+      "effect": {
+        "drive": 3.0,
+        "wet": 0.36,
+        "ringHz": 38,
+        "ringDepth": 0.18,
+        "echo": []
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "ee5bf3316b82bb2368f4971a818f7d1afecff354ee06e031a035c02bc18e584a",
+      "mode": "individual"
+    },
+    {
+      "key": "eredar-female",
+      "family": "eredar",
+      "sex": "female",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Use a massive, inhuman demonic voice with coarse layered resonance, low growling harmonics and a harsh crackling edge. Speak with terrible, assured authority. Keep every word clear. Speak aloud naturally.",
+      "effect": {
+        "drive": 3.0,
+        "wet": 0.36,
+        "ringHz": 38,
+        "ringDepth": 0.18,
+        "echo": []
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "a0edcd2e514923506f11bfb7d7d2bdf5893132f0b3bd5db0785229f38a552299",
+      "mode": "individual"
+    },
+    {
+      "key": "doomguard-shared",
+      "family": "doomguard",
+      "sex": "shared",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Use a brutal, inhuman demon voice: enormous iron-heavy resonance, grinding throat distortion and a coarse guttural growl under each vowel. Command with force and clipped, crushing consonants. Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "2c3bd9ffebc4176fc019c7794cc52a465576d6b1dbdc882a06e7f5fa95639c41",
+      "mode": "individual"
+    },
+    {
+      "key": "satyr-male",
+      "family": "satyr",
+      "sex": "male",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak with cruel, predatory menace through a heavily rasping, snarling demonic throat. Use dark grating resonance, hard consonants and a restrained animal growl under the vowels. Preserve the elven articulation. Speak aloud naturally.",
+      "effect": {
+        "drive": 3.6,
+        "wet": 0.46,
+        "ringHz": 49,
+        "ringDepth": 0.22,
+        "echo": []
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "d02a41df16c7437bbbf6582bb124472e41a547b1e46d347110b6b9bb4bad3d42",
+      "mode": "individual"
+    },
+    {
+      "key": "satyr-female",
+      "family": "satyr",
+      "sex": "female",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak with cruel, predatory menace through a heavily rasping, snarling demonic throat. Use dark grating resonance, hard consonants and a restrained animal growl under the vowels. Preserve the elven articulation. Speak aloud naturally.",
+      "effect": {
+        "drive": 3.6,
+        "wet": 0.46,
+        "ringHz": 49,
+        "ringDepth": 0.22,
+        "echo": []
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "e9bb5bde18197ad852d3600046142d8eeb588155fcc5ad9e4af3d2432612c62c",
+      "mode": "individual"
+    },
+    {
+      "key": "shivarra-female",
+      "family": "shivarra",
+      "sex": "female",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Use a seductive, dangerously intimate female demon voice. Draw out vowels with a rich resonant ring and breathy, tempting closeness. Add eerie trailing echoes and a coarse demonic undertone. Keep one clearly articulated female speaker. Speak aloud naturally.",
+      "effect": {
+        "drive": 2.2,
+        "wet": 0.23,
+        "ringHz": 43,
+        "ringDepth": 0.12,
+        "echo": [
+          [
+            90,
+            0.2
+          ],
+          [
+            170,
+            0.12
+          ],
+          [
+            290,
+            0.07
+          ]
+        ]
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "a6ddf2e525090418aaa99845b68088eb801e55cbc58e1a038460b0ca7e02371a",
+      "mode": "individual"
+    },
+    {
+      "key": "felblood-male",
+      "family": "felblood",
+      "sex": "male",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak with cold, predatory menace. Keep the elven vowels precise beneath a taut metallic demonic rasp and a deep ringing echo. Give the phrase endings a deliberate, threatening weight. Speak aloud naturally.",
+      "effect": {
+        "drive": 2.1,
+        "wet": 0.18,
+        "ringHz": 41,
+        "ringDepth": 0.1,
+        "echo": [
+          [
+            80,
+            0.17
+          ],
+          [
+            160,
+            0.09
+          ],
+          [
+            250,
+            0.045
+          ]
+        ]
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "f84a240accde854909835b9515ac162bc109389d5412f7dfd1cb86a46cbda225",
+      "mode": "individual"
+    },
+    {
+      "key": "felblood-female",
+      "family": "felblood",
+      "sex": "female",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak with cold, predatory menace. Keep the elven vowels precise beneath a taut metallic demonic rasp and a deep ringing echo. Give the phrase endings a deliberate, threatening weight. Speak aloud naturally.",
+      "effect": {
+        "drive": 2.1,
+        "wet": 0.18,
+        "ringHz": 41,
+        "ringDepth": 0.1,
+        "echo": [
+          [
+            80,
+            0.17
+          ],
+          [
+            160,
+            0.09
+          ],
+          [
+            250,
+            0.045
+          ]
+        ]
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "1214360cd962404f52a6d429a4ab3aa6fd63877fa52f130b3ff7cf338f83bd1c",
+      "mode": "individual"
+    },
+    {
+      "key": "sayaad-female",
+      "family": "sayaad",
+      "sex": "female",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak naturally. Use close velvet resonance, a smoky breath edge and a slender uncanny overtone. Retain the speaker's own register and clear words without making ordinary speech a whisper. Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "deac5a8c988f624719a91411b4e325e7aaf98315382f39922ac08bc3daf80910",
+      "mode": "individual"
+    },
+    {
+      "key": "sayaad-male",
+      "family": "sayaad",
+      "sex": "male",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak naturally. Use close velvet resonance, a smoky breath edge and a slender uncanny overtone. Retain the speaker's own register and clear words without making ordinary speech a whisper. Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "3b5f99f6d0ab5d411da87f91d76e34370aa506bb2a53bccae189cd1e6c502798",
+      "mode": "individual"
+    },
+    {
+      "key": "voidwalker-shared",
+      "family": "voidwalker",
+      "sex": "shared",
+      "cfgScale": 1.5,
+      "speech": "Use a deep, electronically processed hollow voice with closely stacked pitch layers and a ringing, metallic modulation. Keep every word distinct and the spoken rhythm steady. Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "19da86b2889fa15128d4de02079ad2a27f4597ffdd2fd5972548c1596467fb6c",
+      "mode": "reference",
+      "referenceFile": "voidwalker-shared.wav",
+      "referenceSha256": "d5d695866f438d07780ee3d3391d3b8c70e39e347f05a929fdd2ceef3b5a2365",
+      "referenceText": "If I must... I don't like this place.",
+      "seed": 75076
+    },
+    {
+      "key": "dreadlord-female",
+      "family": "dreadlord",
+      "sex": "female",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak with commanding authority and controlled, predatory menace. Use dark cavernous resonance, a coarse restrained throat rasp and crisp, heavily weighted consonants. Speak aloud naturally.",
+      "effect": {
+        "algorithm": "vocal-grit",
+        "wet": 0.35,
+        "drive": 3,
+        "layers": [
+          [
+            -5,
+            0.24
+          ]
+        ]
+      },
+      "effectAlgorithm": "vocal-grit",
+      "selectedSha256": "56d4796c0e6ad47f53d0e3040b081f09292a8ddb7956aa41c0e6efa16a848b87",
+      "mode": "individual"
+    },
+    {
+      "key": "imp-shared",
+      "family": "imp",
+      "sex": "shared",
+      "cfgScale": 1,
+      "speech": "Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "7ea7a3699bb9e01d88b0d1cbcf62084d82d77c39fdc2347db22ba84ed1f3ef16",
+      "mode": "reference",
+      "referenceFile": "imp-shared.wav",
+      "referenceSha256": "6512f0d47e1edeb1a95dc9bdf13a1863bf7373dbc76ace0eac0c0ee1cf1d770c",
+      "referenceText": "Yeah, I'll get right on it! This was not in my contract! What's in it for me? Do I have to?",
+      "seed": 75041
+    },
+    {
+      "key": "observer-shared",
+      "family": "observer",
+      "sex": "shared",
+      "cfgScale": 1,
+      "speech": "Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "e08a6db7a5a82f3f4f0ca0b729aa8533b96d6e2ae1ad9a3910289d5e4da46add",
+      "mode": "reference",
+      "referenceFile": "observer-shared.wav",
+      "referenceSha256": "2cb5a8a41396b9da65ca3d3982fe6c69ab1c6ea8aab6af1cd3efa9d2de99efd7",
+      "referenceText": "Did you see that? As you wish.",
+      "seed": 75069
+    },
+    {
+      "key": "felorc-male",
+      "family": "felorc",
+      "sex": "male",
+      "cfgScale": 1,
+      "speech": "Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "e943e10c671cdd6c71388312ae3977c21eee16abe85c7bcd6265deed34792821",
+      "mode": "reference",
+      "referenceFile": "felorc-male.wav",
+      "referenceSha256": "336ece10f05fa20619403053868bed0248322cdc7b487f445768ac93ce5ad043",
+      "referenceText": "Unstoppable! Now you die! You cannot stop us!",
+      "seed": 75083
+    },
+    {
+      "key": "felorc-female",
+      "family": "felorc",
+      "sex": "female",
+      "cfgScale": 1,
+      "speech": "Speak aloud naturally.",
+      "effect": null,
+      "effectAlgorithm": null,
+      "selectedSha256": "4c77e702b1f103f3326340764621e50d2f3a9892abc98ba88b22a694b76b8973",
+      "mode": "reference",
+      "referenceFile": "felorc-female.wav",
+      "referenceSha256": "2c5ff3ed35e9abe33cab2675fc8525c49da6dda0444ab37ca3f8cdd165aae0ed",
+      "referenceText": "Unstoppable! Now you die! You cannot stop us!",
+      "seed": 76084
+    },
+    {
+      "key": "pitlord-shared",
+      "family": "pitlord",
+      "sex": "shared",
+      "cfgScale": 4,
+      "speech": "Speak naturally and clearly. Speak naturally. Carry immense chest-and-throat resonance, a coarse low growl and a furnace-like rasp. Keep every supplied word clear above the rumble. Speak aloud naturally.",
+      "effect": {
+        "drive": 2.0,
+        "wet": 0.14,
+        "ringHz": 37,
+        "ringDepth": 0.06,
+        "echo": []
+      },
+      "effectAlgorithm": "pass2-effects",
+      "selectedSha256": "4b6f6655de96160db2bff1f67772d57e8d9bd0a189e0c5ed43d304c4875a0177",
+      "mode": "reference",
+      "referenceFile": "pitlord-shared.wav",
+      "referenceSha256": "4d89652b9a7f90d287f73ca2980c0abee2def0b2b440e06aafd733160ba59154",
+      "referenceText": "The road turns beyond the quiet hill. I have time to listen, and I will speak plainly when the moment comes.",
+      "seed": 75034
+    },
+    {
+      "key": "metamorphosis-female",
+      "family": "metamorphosis",
+      "sex": "female",
+      "mode": "individual",
+      "cfgScale": 4,
+      "speech": "Keep the reference woman's mezzo-soprano register and clearly female resonance. Add a large, rough demonic throat resonance and a harsh growling edge beneath her own voice. Speak aloud naturally.",
+      "effect": {
+        "dry": 1,
+        "layers": [
+          [
+            -12,
+            0.35
+          ],
+          [
+            -7,
+            0.12
+          ]
+        ],
+        "ringWet": 0.18,
+        "ringHz": 40,
+        "drive": 3,
+        "wet": 0.38
+      },
+      "effectAlgorithm": "pitch-layers",
+      "selectedSha256": "364c4de8a9b869c6a47e6dbf2530b01a740cc586460ae7354f0b4b24d7eaebcc"
+    }
+  ]
+}

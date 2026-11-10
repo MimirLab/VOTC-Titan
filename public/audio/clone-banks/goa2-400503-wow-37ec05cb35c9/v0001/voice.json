@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-400503-wow-37ec05cb35c9",
+  "revision": 1,
+  "name": "Hodir — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "82c6db4f7d5e9f111a45065b37dae314ea5d0e7785399e09bff665f8b6ccfc2a",
+    "transcript_sha256": "e4c269d667db7678f581ae5293d2d6f2db8efddd8670f748db84013445d7bccb",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 383264,
+      "seconds": 15.969333333333333,
+      "peak": 0.999969,
+      "rms_dbfs": -13.44,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

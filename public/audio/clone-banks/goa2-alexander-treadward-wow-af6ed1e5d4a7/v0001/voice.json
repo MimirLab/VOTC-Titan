@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-alexander-treadward-wow-af6ed1e5d4a7",
+  "revision": 1,
+  "name": "Alexander Treadward — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "cb75b02d4e17f3201f248b4712f977e19fae76c009260dffb246c26978be17dc",
+    "transcript_sha256": "b29592703840080d57e7f1700adf86f9e5e37f4aaf43367bc82ea59b320f9d9b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 373820,
+      "seconds": 15.575833333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.71,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-athissa-wow-fb57bfac9270",
+  "revision": 1,
+  "name": "Athissa Hatecoil — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "67a2122beefb8ab46ee87b69433ef4dd95f1b670e2cbaf1a798e0d6d63fdf354",
+    "transcript_sha256": "0a4a9f1ebc9c9153670dfadb68d4cd88280b6b5bd57df7cc97a30c5c01acbe43",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 378414,
+      "seconds": 15.76725,
+      "peak": 1.0,
+      "rms_dbfs": -16.76,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

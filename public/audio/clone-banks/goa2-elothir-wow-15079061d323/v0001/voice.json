@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-elothir-wow-15079061d323",
+  "revision": 1,
+  "name": "Elothir — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "fb919ba593722afd8ae5abcbe058e2e47291e464db1ac2a61de5882a2b27712e",
+    "transcript_sha256": "aed9151c2d5b5f7f173d2631a338cb93d9c25c836ca9180db8524e142e920a48",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 325900,
+      "seconds": 13.579166666666667,
+      "peak": 1.0,
+      "rms_dbfs": -12.94,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

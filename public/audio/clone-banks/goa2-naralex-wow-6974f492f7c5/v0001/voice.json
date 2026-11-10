@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-naralex-wow-6974f492f7c5",
+  "revision": 1,
+  "name": "Archdruid Naralex — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b4ccf742ced6a505ce36df05dfb735a82c8b7c78e18822473a352f72fcf7bd5b",
+    "transcript_sha256": "d55ac918c778d560e0fbaf62d931b463f121f6ca027d7bd1a388cb1d38588780",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 400151,
+      "seconds": 16.672958333333334,
+      "peak": 1.0,
+      "rms_dbfs": -17.9,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-58050-hs-hero-08l",
+  "revision": 1,
+  "name": "Onyxia — Lady Katrana Prestor (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "a1a2887af4f7491e989d830f586eb8eee46efae8a7bb7f2cad7c36a18c3a3803",
+    "transcript_sha256": "0674d9fbefbe1ae9a0589b5c95971be77f2534ba31bb90d8a6a79f10a8d642a1",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 355886,
+      "seconds": 14.828583333333333,
+      "peak": 0.832062,
+      "rms_dbfs": -17.3,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

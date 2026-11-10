@@ -1,0 +1,931 @@
+import { spokenLoreAudience } from '../lorebook/lorebookSpokenPublication';
+import { scenePacket, waitForSceneSelection } from '../scenes/sceneRuntime';
+import { composeGoaContext, finishGoaContext } from '../goa/goaRuntime';
+import { dialogueSteeringFor } from '../dialogue/dialogueSteering';
+import { developmentalSteeringFor } from '../development/developmentSteering';
+import { trimGoaPrompt } from '../goa/goaPromptBudget';
+import type { Conversation } from "./Conversation";
+import { parseVariables } from "../parseVariables";
+import { Message } from "../ts/conversation_interfaces";
+import { Memory, Secret } from "../../shared/gameData/GameData";
+import { Character } from "../../shared/gameData/Character";
+import { Config } from "../../shared/Config";
+import path from 'path';
+import { app } from 'electron';
+import fs from 'fs';
+import { parseGameDate, getDateDifference } from '../../shared/dateUtils.js';
+import { readDiarySummaries } from "../diaryManager.js";
+import { LocalizationManager } from "../../shared/LocalizationManager.js";
+import { GameData } from "../../shared/gameData/GameData.js";
+import { getEffectiveCharacterDescription } from "../characterDescription";
+import { audioCueInstruction } from '../audio/audioDirections';
+import { getRoleplayBackgroundPlacement } from '../background/backgroundPrompt';
+import { characterPromptGame } from './characterPromptDescription';
+import { recipientMessages, recipientEncounterMessages, recipientSummary, SPEECH_WRITER_INSTRUCTION, languageCaptureEnabled, languageRoutingEnabled } from '../language';
+import { promptPerceptionMessages, speakingCharacterMessages, speakingLanguageInstruction, characterKnowledgeInstruction, perceivedMemoryTranscript, summaryPerspectiveInstruction } from '../language/conversationView';
+import { CONTROLLED_WRITER_INSTRUCTION, controlledTraitExamples, ResponseProseEncoding } from '../language/controlledWriter';
+import { compactedMemoryText } from '../language/privateMemory';
+import { lorebookPrompt } from '../lorebook/lorebookRuntime';
+import { LoreDelivery, visibleLoreQuery, loreKnowledgeBoundary } from '../lorebook/lorebookDisclosure';
+import {NativeLoreCapture,nativeLoreSourceCurrent,captureNativeLorePrompt} from '../lorebook/lorebookNativeContext';
+
+export function getPromptsConfig(votcDataPath: string, lang: string = 'en'): any {
+    const promptsDir = path.join(votcDataPath, 'configs', 'prompts');
+    const promptsPath = path.join(promptsDir, `${lang}.json`);
+    const fallbackPath = path.join(promptsDir, 'en.json');
+    let finalPath = promptsPath;
+
+    if (!fs.existsSync(promptsPath)) {
+        console.warn(`Prompt file for language '${lang}' not found at ${promptsPath}. Falling back to 'en.json'.`);
+        finalPath = fallbackPath;
+    }
+
+    if (!fs.existsSync(finalPath)) {
+        console.error(`Fallback prompt file 'en.json' not found at ${fallbackPath}. Cannot load prompts.`);
+        return { prompts: {}, mod_prompt_sets: {} };
+    }
+
+    try {
+        return JSON.parse(fs.readFileSync(finalPath, 'utf-8'));
+    } catch (e) {
+        console.error(`Error parsing prompt file ${finalPath}:`, e);
+        return { prompts: {}, mod_prompt_sets: {} };
+    }
+}
+
+let customPresets: any = null;
+function getCustomPresets(votcDataPath: string) {
+    // For simplicity, we don't cache this so it can be reloaded if changed.
+    const presetsPath = path.join(votcDataPath, 'configs', 'prompt_presets.json');
+    if (fs.existsSync(presetsPath)) {
+        try {
+            return JSON.parse(fs.readFileSync(presetsPath, 'utf-8'));
+        } catch (e) {
+            console.error("Error parsing prompt_presets.json:", e);
+            return {};
+        }
+    }
+    return {};
+}
+
+export function getEffectivePrompts(config: Config, votcDataPath: string, gameData: GameData): any {
+    const lang = config.language || 'en';
+    const defaultPromptsConfig = getPromptsConfig(votcDataPath, lang);
+    const customPresetsConfig = getCustomPresets(votcDataPath);
+
+    const activePreset = config.activePromptPreset || 'Default';
+
+    // 1. Check for built-in mod presets
+    if (defaultPromptsConfig.mod_prompt_sets?.[activePreset]) {
+        return { ...defaultPromptsConfig.prompts, ...defaultPromptsConfig.mod_prompt_sets[activePreset] };
+    }
+
+    // 2. Check for the "Default" preset
+    if (activePreset === 'Default') {
+        return defaultPromptsConfig.prompts;
+    }
+
+    // 3. It's a custom preset. Find it, checking character-specific scope first.
+    const playerId = gameData.playerID.toString();
+    const characterPresets = customPresetsConfig[playerId] || {};
+    const globalPresets = customPresetsConfig['global'] || {};
+
+    let selectedPresetObject = null;
+
+    if (characterPresets[activePreset]) {
+        selectedPresetObject = characterPresets[activePreset];
+    } else if (globalPresets[activePreset]) {
+        selectedPresetObject = globalPresets[activePreset];
+    }
+
+    const defaultLangPrompts = defaultPromptsConfig.prompts;
+
+    if (selectedPresetObject) {
+        // Merge custom preset over the default language prompts to provide fallbacks.
+        return { ...defaultLangPrompts, ...selectedPresetObject };
+    }
+
+    // 4. Fallback to default if the custom preset is active but not found
+    console.warn(`Active custom preset "${activePreset}" not found. Falling back to default prompts.`);
+    return defaultLangPrompts;
+}
+
+export function convertChatToText(chat: Message[], config: Config, aiName: string): string{
+    let output: string = "";
+
+    for(let msg of chat){
+
+        switch(msg.role){
+            case "system":
+                    output += msg.content+"\n";
+                break;
+            case "user":
+                output += `${config.inputSequence}\n${msg.name}: ${msg.content}\n`;
+                break;
+                case "assistant":
+                    output += `${config.outputSequence}\n${msg.name}: ${msg.content}\n`;
+                    break;
+        }
+    }
+
+    output+=config.outputSequence+"\n"+aiName+": ";
+    return output;
+}
+
+export function convertChatToTextNoNames(messages: Message[], config: Config): string{
+    let output: string = "";
+    for(let msg of messages){
+        if(msg.role === "user"){
+            output+=config.inputSequence+"\n";
+        }
+        output += msg.content+"\n";
+    }
+
+    output+=config.outputSequence+"\n";
+    return output;
+}
+
+
+export async function buildChatPrompt(conv: Conversation, character: Character, messagesOverride?: Message[], targetCharacter?: Character, isNonTargetedResponse: boolean = false, plannedLanguageId?: string,
+    proseEncoding: ResponseProseEncoding = 'legacy',nativeCapture?:NativeLoreCapture): Promise<Message[]>{
+    if(nativeCapture)nativeCapture.value=undefined;
+    await waitForSceneSelection(conv.gameData);
+    console.log(`Building chat prompt for character: ${character.fullName}`);
+    let chatPrompt: Message[]  = [];
+    const backgrounds = getRoleplayBackgroundPlacement(character, conv.config);
+    const background = backgrounds.early;
+    const backgroundMessage: Message | undefined = background ? {
+        role: 'system', content: background
+    } : undefined;
+
+    const userDataPath = app.getPath('userData');
+    const votcDataPath = path.join(userDataPath, 'votc_data');
+    const isSelfTalk = conv.gameData.characters.size === 1 && conv.gameData.characters.has(conv.gameData.playerID);
+
+    let exampleMessagesScriptFileName: string;
+    let exampleMessagesPath: string | null;
+
+    const lang = conv.config.language || 'en';
+    const localePath = path.join(app.getAppPath(), 'public', 'locales', `${lang}.json`);
+    let translations;
+    try {
+        translations = JSON.parse(fs.readFileSync(localePath, 'utf-8'));
+    } catch (error) {
+        console.error(`Could not load translation file for language: ${lang}. Falling back to en.`, error);
+        const fallbackLocalePath = path.join(app.getAppPath(), 'public', 'locales', `en.json`);
+        translations = JSON.parse(fs.readFileSync(fallbackLocalePath, 'utf-8'));
+    }
+
+    const roleplayInstructionTemplate = (translations.system && translations.system.roleplay_instruction) || "Your task is to roleplay as the character {characterName}. Write a reply for this character only. Do not write as any other character. Do not narrate the actions of other characters.";
+
+    let messages = promptPerceptionMessages(recipientMessages(conv, character.id, messagesOverride ?? conv.messages), character.id);
+
+    let replyToName: string;
+    let isAiToAi = false;
+
+    if (targetCharacter) {
+        replyToName = targetCharacter.fullName;
+        isAiToAi = true;
+        console.log(`Explicit target provided. Setting reply target for ${character.fullName} to ${replyToName}`);
+    } else {
+        const lastMessage = messages.length > 0 ? messages[messages.length - 1] : null;
+        replyToName = conv.gameData.getPlayer()!.fullName; // Default to player
+        if (lastMessage && lastMessage.role === 'assistant' && lastMessage.name !== character.fullName) {
+            const lastSpeaker = Array.from(conv.gameData.characters.values()).find(c => c.fullName === lastMessage.name || c.shortName === lastMessage.name);
+            if (lastSpeaker) {
+                replyToName = lastSpeaker.fullName;
+                isAiToAi = true;
+                console.log(`AI-to-AI reply detected. Setting reply target for ${character.fullName} to ${replyToName}`);
+            }
+        }
+    }
+
+    // Detect the reply target from canonical roles before assigning provider roles to this actor.
+    if (conv.hasLanguageMessages?.()) messages = speakingCharacterMessages(messages, character.id);
+    const historyForTrimming = messages.slice();
+    const nativeObserved=historyForTrimming.slice();
+    const nativeCurrent=nativeCapture?nativeLoreSourceCurrent(conv,character,votcDataPath):()=>true;
+
+    if (isSelfTalk) {
+        exampleMessagesScriptFileName = conv.config.selectedSelfTalkExMsgScript;
+        exampleMessagesScriptFileName = path.basename(exampleMessagesScriptFileName);
+        const selfTalkPath = path.join(votcDataPath, 'scripts', 'prompts', 'example messages', 'self-talk', exampleMessagesScriptFileName);
+        const customPath = path.join(votcDataPath, 'scripts', 'prompts', 'example messages', 'custom', exampleMessagesScriptFileName);
+
+        if (fs.existsSync(selfTalkPath)) {
+            exampleMessagesPath = selfTalkPath;
+        } else if (fs.existsSync(customPath)) {
+            exampleMessagesPath = customPath;
+        } else {
+            console.error(`Self-talk example message script not found: ${exampleMessagesScriptFileName}. Continuing without example messages.`);
+            exampleMessagesPath = null;
+        }
+    } else {
+        exampleMessagesScriptFileName = conv.config.selectedExMsgScript;
+        exampleMessagesScriptFileName = path.basename(exampleMessagesScriptFileName);
+        const standardPath = path.join(votcDataPath, 'scripts', 'prompts', 'example messages', 'standard', exampleMessagesScriptFileName);
+        const customPath = path.join(votcDataPath, 'scripts', 'prompts', 'example messages', 'custom', exampleMessagesScriptFileName);
+
+        if (fs.existsSync(standardPath)) {
+            exampleMessagesPath = standardPath;
+        } else if (fs.existsSync(customPath)) {
+            exampleMessagesPath = customPath;
+        } else {
+            console.error(`Example message script not found: ${exampleMessagesScriptFileName}. Continuing without example messages.`);
+            exampleMessagesPath = null;
+        }
+    }
+
+    if (exampleMessagesPath && fs.existsSync(exampleMessagesPath)) {
+        try {
+            delete require.cache[require.resolve(exampleMessagesPath)];
+            const exampleTarget = targetCharacter ?? [...conv.gameData.characters.values()].find(person => person.fullName === replyToName);
+            const exampleGame = characterPromptGame(conv.gameData, character, conv.config, conv.translations, exampleTarget);
+            let exampleMessages = require(exampleMessagesPath)(exampleGame, character);
+            if (proseEncoding === 'controls-v1' && exampleMessagesScriptFileName === 'aliChat.js' &&
+                path.dirname(exampleMessagesPath) === path.join(votcDataPath, 'scripts', 'prompts', 'example messages', 'standard'))
+                exampleMessages = controlledTraitExamples(exampleMessages);
+
+            // 只有当example messages不为空时才添加占位符和实际消息
+            if (exampleMessages && exampleMessages.length > 0) {
+                chatPrompt.push({
+                    role: "system",
+                    content: "[example messages]"
+                });
+                chatPrompt = chatPrompt.concat(exampleMessages);
+                console.log(`Added example messages from script: ${exampleMessagesScriptFileName}.`);
+            } else {
+                console.log(`Example messages script returned empty array: ${exampleMessagesScriptFileName}. Skipping example messages.`);
+            }
+        } catch (err) {
+            console.error(`Error loading example message script '${exampleMessagesScriptFileName}': ${err}`);
+            conv.chatWindow.window.webContents.send('error-message', `Error in example message script '${exampleMessagesScriptFileName}'.`);
+        }
+    } else if (exampleMessagesPath) { // If path was set but file doesn't exist
+        console.error(`Example message script file not found at expected path: ${exampleMessagesPath}. Continuing without example messages.`);
+    }
+
+
+    chatPrompt.push({
+        role: "system",
+        content: "[Start a new chat]"
+    })
+
+    const descriptionScriptFileName = conv.config.selectedDescScript;
+    const descriptionPath = path.join(votcDataPath, 'scripts', 'prompts', 'description', descriptionScriptFileName);
+    let description = "";
+    const originalAiId = conv.gameData.aiID; // Store it before the try block
+    const originalPlayerId = conv.gameData.playerID; // Store playerID
+    try{
+        delete require.cache[require.resolve(descriptionPath)];
+
+        // Add a temporary localize function to gameData for the script to use
+        if (conv.translations) {
+            (conv.gameData as any).localize = (key: string, lang: string, vars: any) => {
+                const keys = key.split('.');
+                let result = conv.translations;
+                for (const k of keys) {
+                    if (result === undefined || result === null) {
+                        return key; // fallback to key if path is invalid
+                    }
+                    result = result[k];
+                }
+
+                if (typeof result === 'string') {
+                    if (vars) {
+                        for (const varKey in vars) {
+                            result = result.replace(new RegExp(`{{${varKey}}}`, 'g'), vars[varKey]);
+                        }
+                    }
+                    return result;
+                }
+
+                return key; // fallback to key if not a string
+            };
+        }
+
+        if (isAiToAi && targetCharacter) {
+            // For AI-to-AI, temporarily set player/ai to source/target
+            conv.gameData.playerID = character.id;
+            conv.gameData.aiID = targetCharacter.id;
+        } else {
+            // For AI-to-Player, set ai to the current speaker
+            conv.gameData.aiID = character.id;
+        }
+
+        // Pass character to the script
+        description = require(descriptionPath)(conv.gameData, character);
+
+        // Clean up the temporary function
+        delete (conv.gameData as any).localize;
+
+        console.log(`Description script '${descriptionScriptFileName}' loaded successfully for ${character.fullName}.`);
+    }catch(err){
+        console.error(`Description script error for '${descriptionScriptFileName}': ${err}`);
+        conv.chatWindow.window.webContents.send('error-message', `Error in description script '${descriptionScriptFileName}'.`);
+    } finally {
+        // Always restore the original IDs
+        conv.gameData.aiID = originalAiId;
+        conv.gameData.playerID = originalPlayerId;
+    }
+
+    const goaContext = composeGoaContext(description, character, conv.config, conv.gameData);
+    description = goaContext.description;
+    const dialogueDirection = dialogueSteeringFor(character, conv.config);
+    if (dialogueDirection) description += '\n\n' + dialogueDirection;
+    const goaInjected = !!goaContext.packet;
+    if (goaContext.packet?.exampleInstruction) {
+        const examples = chatPrompt.find(message => message.role === 'system' && message.content === '[example messages]');
+        if (examples) examples.content += '\n' + goaContext.packet.exampleInstruction;
+    }
+
+    let dialoguePersona: { message: Message; styled: string; original: string } | undefined;
+    if (description) {
+        const descMessage: Message = {
+            role: "system",
+            content: "The following is a description of the characters in the conversation, from the perspective of " + character.fullName + ":\n" + description
+        };
+
+        if (dialogueDirection) dialoguePersona = { message: descMessage, styled: descMessage.content,
+            original: descMessage.content.slice(0, descMessage.content.length - description.length) + goaContext.description };
+        insertMessageAtDepth(messages, descMessage, conv.config.descInsertDepth);
+        console.log(`Inserted description for ${character.fullName} at depth: ${conv.config.descInsertDepth}.`);
+    }
+
+    // Inject the user-authored character description for the character being prompted.
+    // This is an optional, player-provided layer on top of the description script output.
+    const userCharacterDescription = getEffectiveCharacterDescription(conv.votcDataPath, String(conv.gameData.playerID), String(character.id));
+    let userDescMessage: Message | undefined;
+    if (userCharacterDescription) {
+        userDescMessage = {
+            role: "system",
+            content: `Character description for ${character.fullName} (provided by the player):\n${userCharacterDescription}`
+        };
+        if (!backgrounds.faith) insertMessageAtDepth(messages, userDescMessage, conv.config.descInsertDepth);
+        console.log(`Inserted user character description for ${character.fullName} at depth: ${conv.config.descInsertDepth}.`);
+    }
+
+
+    const memoryMessage: Message = {
+        role: "system",
+        content: createMemoryString(conv, getEffectivePrompts(conv.config, conv.votcDataPath, conv.gameData), character)
+    }
+
+
+    if(memoryMessage.content){
+        insertMessageAtDepth(messages, memoryMessage, conv.config.memoriesInsertDepth);
+        console.log(`Inserted memories at depth: ${conv.config.memoriesInsertDepth}.`);
+    }
+
+    // Notify the speaking AI which conversation participants are currently silenced,
+    // so its reply can acknowledge the silence instead of addressing them.
+    const silencedIds = conv.gameData.silencedCharacterIds;
+    if (silencedIds && silencedIds.size > 0) {
+        const silencedNames = Array.from(silencedIds)
+            .map(id => conv.gameData.characters.get(id)?.shortName)
+            .filter((name): name is string => !!name);
+        if (silencedNames.length > 0) {
+            const silenceMessage: Message = {
+                role: "system",
+                content: `Note: ${silencedNames.join(', ')} ${silencedNames.length === 1 ? 'is' : 'are'} currently silent and present, but will not be participating in the conversation.`
+            };
+            insertMessageAtDepth(messages, silenceMessage, conv.config.memoriesInsertDepth);
+            console.log(`Inserted silence state note for: ${silencedNames.join(', ')}.`);
+        }
+    }
+
+    const compactedMemoryMessage: Message = {
+        role: "system",
+        content: createCompactedMemoryString(conv, getEffectivePrompts(conv.config, conv.votcDataPath, conv.gameData), character)
+    }
+
+    if(compactedMemoryMessage.content){
+        insertMessageAtDepth(messages, compactedMemoryMessage, conv.config.memoriesInsertDepth);
+        console.log(`Inserted compacted memories at depth: ${conv.config.memoriesInsertDepth}.`);
+    }
+
+    const diarySummaries = await readDiarySummaries(conv.gameData.playerID.toString(), character.id.toString());
+    const recentDiarySummaries = diarySummaries.slice(0, conv.config.maxSummaries);
+    if (recentDiarySummaries.length > 0) {
+        const summaryContent = recentDiarySummaries.map(s => `${s.date}: ${s.summary}`).join('\n');
+        const diarySummaryMessage: Message = {
+            role: "system",
+            content: `Summary of ${character.shortName}'s diary:\n${summaryContent}`
+        };
+        insertMessageAtDepth(messages, diarySummaryMessage, conv.config.memoriesInsertDepth); // Or a new depth config
+        console.log(`Inserted ${recentDiarySummaries.length} diary summaries for ${character.shortName}.`);
+    }
+
+    // too early right now
+    // const secretMessage: Message = {
+    //     role: "system",
+    //     content: createSecretString(conv)
+    // }
+
+    // if(secretMessage.content){
+    //     insertMessageAtDepth(messages, secretMessage, conv.config.memoriesInsertDepth);
+    //     console.log(`Inserted secrets at depth: ${conv.config.memoriesInsertDepth}.`);
+    // }
+
+    const characterSummaries = conv.getBranchVisibleSummaries(character.id);
+
+    if(characterSummaries.length > 0){
+        let summaryString: string;
+        if (isSelfTalk) {
+            summaryString = "Here are the date and summary of previous internal monologues for " + conv.gameData.playerName + ":\n";
+        } else {
+            summaryString = (translations.prompt_builder?.summary_header || "Here are the dates and summaries of previous conversations:") + "\n";
+        }
+
+        const summariesToProcess = [...characterSummaries].slice(0, conv.config.maxSummaries);
+        summariesToProcess.reverse();
+
+        const currentGameDate = parseGameDate(conv.gameData.date);
+
+        for(let summary of summariesToProcess){
+            const summaryDate = parseGameDate(summary.date);
+
+            // Include summary if its date is unknown OR if it's in the past/present.
+            if(!summaryDate || (currentGameDate && summaryDate <= currentGameDate)){
+                let summaryLine = `${summary.date} (${getDateDifference(summary.date, conv.gameData.date)}): ${summary.content}\n`;
+                if ((summary as any).fromPlayerId) {
+                    summaryLine = `(From a conversation with another player) ${summaryLine}`;
+                }
+                summaryString += summaryLine;
+            }
+        }
+
+        let summariesMessage: Message = {
+            role: "system",
+            content: summaryString
+        }
+
+        insertMessageAtDepth(messages, summariesMessage, conv.config.summariesInsertDepth);
+        console.log(`Added ${summariesToProcess.length} previous conversation summaries for ${character.fullName} at depth: ${conv.config.summariesInsertDepth}.`);
+    }
+
+    // Load letter summaries
+    const letterSummaries = conv.letterManager.getLetterSummaries(String(conv.gameData.playerID), String(character.id)).slice(0, conv.config.maxSummaries);
+    if (letterSummaries.length > 0) {
+        const allLetterSummaries = letterSummaries.map((summary, index) =>
+            `${index + 1}. ${summary.date}: ${summary.summary}`
+        ).join('\n');
+
+        const letterSummaryString = `Summaries of previous letters with ${character.fullName}:\n${allLetterSummaries}\n\n`;
+
+        const letterSummaryMessage: Message = {
+            role: "system",
+            content: letterSummaryString
+        };
+
+        insertMessageAtDepth(messages, letterSummaryMessage, conv.config.summariesInsertDepth);
+        console.log(`Added ${letterSummaries.length} letter summaries for ${character.fullName} at depth: ${conv.config.summariesInsertDepth}.`);
+    }
+
+
+    const currentSummary = recipientSummary(conv, character.id);
+    if(currentSummary){
+        let currentSummaryMessage: Message = {
+            role: "system",
+            content: "Summarization of the previous messages in this conversation: "+currentSummary,
+        }
+
+        messages.unshift(currentSummaryMessage);
+        console.log('Added current conversation summary.');
+    }
+
+    if (backgroundMessage) chatPrompt.push(backgroundMessage);
+    chatPrompt = chatPrompt.concat(messages);
+
+    const prompts = getEffectivePrompts(conv.config, conv.votcDataPath, conv.gameData);
+
+    if (!isAiToAi && !isNonTargetedResponse) {
+        const originalAiId = conv.gameData.aiID;
+        try {
+            // Temporarily set the AI to the current speaker for variable parsing
+            conv.gameData.aiID = character.id;
+            if (isSelfTalk) {
+                chatPrompt.push({
+                    role: "system",
+                    content: parseVariables(prompts.selfTalkPrompt, conv.gameData)
+                });
+                console.log('Added self-talk main prompt from config.');
+            } else {
+                let mainPromptText = prompts.mainPrompt;
+                const characterNames = Array.from(conv.gameData.characters.values()).map(c => c.shortName).join(', ');
+                mainPromptText = mainPromptText.replace(/{{characterNames}}/g, characterNames);
+
+                chatPrompt.push({
+                    role: "system",
+                    content: parseVariables(mainPromptText, conv.gameData)
+                });
+                console.log('Added standard main prompt.');
+            }
+        } finally {
+            // Restore the original AI ID
+            conv.gameData.aiID = originalAiId;
+        }
+    }
+
+
+    if(conv.config.enableSuffixPrompt){
+        chatPrompt.push({
+            role: "system",
+            content: prompts.suffixPrompt
+        })
+        console.log('Added suffix prompt.');
+    }
+
+    let roleplayInstruction: string;
+    const isInitiatingAiToAi = isAiToAi && messagesOverride && messagesOverride.length === 0;
+
+    if (isInitiatingAiToAi) {
+        // Case 1: AI 1 is initiating a conversation with AI 2
+        const contextSwitchTemplate = (translations.system && translations.system.ai_to_ai_context_switch) || "[System note: The previous exchange is complete. You will now initiate a new exchange with a different character.]";
+        const aiToAiInitiateTemplate = (translations.system && translations.system.roleplay_instruction_ai_to_ai_initiate) || "[System instruction: You are {sourceCharacterName}. Now, write a message to {targetCharacterName}. Write a message for your character only. Do not write as any other character. Use markdown for actions, like *this*.]";
+
+        // Combine into a single instruction to save tokens
+        roleplayInstruction = `${contextSwitchTemplate}\n\n${aiToAiInitiateTemplate}`
+            .replace(/{sourceCharacterName}/g, character.fullName)
+            .replace(/{targetCharacterName}/g, replyToName);
+        console.log('Combined AI-to-AI context switch and initiate message.');
+
+        const narratorPromptTemplate = (translations.system && translations.system.ai_to_ai_narrator_prompt) || "Now, what does {sourceCharacterName} say to {targetCharacterName}?";
+        const narratorPrompt = narratorPromptTemplate
+            .replace(/{sourceCharacterName}/g, character.shortName)
+            .replace(/{targetCharacterName}/g, replyToName);
+
+        chatPrompt.push({
+            role: "user",
+            name: "Narrator",
+            content: narratorPrompt
+        });
+        console.log('Added AI-to-AI narrator prompt.');
+
+    } else if (isAiToAi) {
+        // Case 2: AI 2 is replying to AI 1
+        const aiToAiTemplate = (translations.system && translations.system.roleplay_instruction_ai_to_ai) || "[System instruction: You are {sourceCharacterName}. Write a reply to {targetCharacterName}. Write a reply for your character only. Do not write as any other character. Use markdown for actions, like *this*.]";
+        roleplayInstruction = aiToAiTemplate
+            .replace(/{sourceCharacterName}/g, character.fullName)
+            .replace(/{targetCharacterName}/g, replyToName);
+
+        const narratorReplyPromptTemplate = (translations.system && translations.system.ai_to_ai_narrator_reply_prompt) || "Now, what is {sourceCharacterName}'s reply to {targetCharacterName}?";
+        const narratorPrompt = narratorReplyPromptTemplate
+            .replace(/{sourceCharacterName}/g, character.shortName)
+            .replace(/{targetCharacterName}/g, replyToName);
+
+        chatPrompt.push({
+            role: "user",
+            name: "Narrator",
+            content: narratorPrompt
+        });
+        console.log('Added AI-to-AI narrator reply prompt.');
+
+    } else if (isNonTargetedResponse) {
+        const nonTargetedTemplate = (translations.system && translations.system.ai_to_ai_narrator_non_targeted_prompt) || "Now, what is {sourceCharacterName}'s response in the ongoing conversation?";
+        const narratorPrompt = nonTargetedTemplate.replace(/{sourceCharacterName}/g, character.shortName);
+        chatPrompt.push({
+            role: "user",
+            name: "Narrator",
+            content: narratorPrompt
+        });
+        console.log('Added non-targeted narrator prompt.');
+
+        roleplayInstruction = roleplayInstructionTemplate
+            .replace(/{characterName}/g, character.fullName)
+            .replace(/{playerName}/g, replyToName);
+    } else {
+        // Case 3: Normal reply to the player
+        roleplayInstruction = roleplayInstructionTemplate
+            .replace(/{characterName}/g, character.fullName)
+            .replace(/{playerName}/g, replyToName);
+    }
+
+    if (proseEncoding === 'controls-v1' || plannedLanguageId !== undefined || (languageRoutingEnabled(conv.config) && (languageCaptureEnabled() || character.languageSnapshot))) {
+        roleplayInstruction += '\n\n' + (proseEncoding === 'controls-v1' ? CONTROLLED_WRITER_INSTRUCTION : SPEECH_WRITER_INSTRUCTION);
+        roleplayInstruction += '\n\n' + characterKnowledgeInstruction(character.fullName);
+        const recipient = targetCharacter ?? [...conv.gameData.characters.values()].find(person => person.fullName === replyToName);
+        const language = speakingLanguageInstruction(character, recipient, plannedLanguageId, conv.config.language || 'en');
+        if (language) roleplayInstruction += '\n\n' + language;
+    }
+    const unframedPersonalContent = userDescMessage?.content;
+    const loreDelivery: LoreDelivery = { scope: conv, channel: 'chat', turns: historyForTrimming,preparing:nativeCapture?.preparing===true,preview:nativeCapture?.preview===true };
+    if(nativeCapture){
+        loreDelivery.initialMaxAccounts=1;
+        const last=nativeObserved.at(-1),lastOther=last?.characterId!==character.id?last?.characterId:undefined;
+        loreDelivery.spokenAudience=spokenLoreAudience(conv,character,targetCharacter?.id??lastOther);
+    }
+    const loreText = await lorebookPrompt(conv.gameData, character.id, conv.config, conv.votcDataPath,
+        visibleLoreQuery(historyForTrimming.at(-1)?.content || '', historyForTrimming.at(-1)),
+        [description, userDescMessage?.content, backgrounds.early, backgrounds.faith].filter(Boolean).join('\n'), loreDelivery);
+    const boundary=loreDelivery.required&&['provided','existing','continuation','not_established'].includes(loreDelivery.knowledge?.access??'')
+        ?loreKnowledgeBoundary(character.fullName,conv.gameData.gameDate,loreDelivery.knowledge,nativeCapture?.preparing===true&&!!loreDelivery.isCurrent&&!!loreDelivery.requestMore&&!!loreDelivery.finishPreparation):'';
+    const loreContext=[boundary,loreText].filter(Boolean).join('\n\n');
+    const boundedLoreContext=loreContext.trim().split(/\s+/u).length<=700?loreContext:'';
+    const loreMessage:Message|undefined=boundedLoreContext?{role:'system',content:boundedLoreContext}:undefined;
+    if (loreMessage) chatPrompt.unshift(loreMessage);
+    const lateFaithMessage: Message | undefined = backgrounds.faith ? { role: 'system', content: backgrounds.faith } : undefined;
+    if (lateFaithMessage) {
+        chatPrompt.push(lateFaithMessage);
+        if (userDescMessage) {
+            userDescMessage.content = "[The following player-authored portrayal describes this individual. Preserve its complete stated convictions and limits, including whether a refusal is blanket or conditional. Community approval and earlier replies do not narrow it. Apply the portrayal within the authoritative body and acting identity.]" + '\n' + userDescMessage.content;
+            chatPrompt.push(userDescMessage);
+        }
+    }
+    const development = developmentalSteeringFor(character, conv.config);
+    if (development) roleplayInstruction += '\n\n' + development;
+    roleplayInstruction = finishGoaContext(roleplayInstruction, goaContext);
+    if (conv.config.audio?.enabled) roleplayInstruction += '\n\n' + audioCueInstruction(conv.config.audio);
+    const currentScene = scenePacket(conv.gameData);
+    if (currentScene) roleplayInstruction += "\n\n" + currentScene;
+
+    // Append the final instruction to the last user/system message to avoid role alternation errors.
+    const lastPromptMessage = chatPrompt.length > 0 ? chatPrompt[chatPrompt.length - 1] : null;
+    let roleOwner:Message;
+    if (lastPromptMessage && lastPromptMessage!==loreMessage && (lastPromptMessage.role === 'user' || lastPromptMessage.role === 'system')) {
+        lastPromptMessage.content += `\n\n${roleplayInstruction}`;
+        roleOwner=lastPromptMessage;
+        console.log('Appended roleplay instruction to the last message.');
+    } else {
+        roleOwner={role:"system",content:roleplayInstruction};
+        chatPrompt.push(roleOwner);
+        console.log('Pushed roleplay instruction as a new system message.');
+    }
+
+    console.log(`Final chat prompt message count: ${chatPrompt.length}`);
+
+    // Enforce context limit by trimming older messages if necessary
+    const calculateTotalTokens = (prompt: Message[]): number => {
+        const text = convertMessagesToString(prompt, "", "");
+        return conv.textGenApiConnection.calculateTokensFromText(text);
+    };
+
+    let contextLimit = 8192; // A safe fallback
+    const connConfig = conv.config.textGenerationApiConnectionConfig.connection;
+    if (connConfig.overwriteContext && connConfig.customContext > 0) {
+        contextLimit = Number(connConfig.customContext);
+    } else if (conv.textGenApiConnection.context && conv.textGenApiConnection.context > 0) {
+        contextLimit = conv.textGenApiConnection.context;
+    }
+
+    if(loreMessage){
+        chatPrompt.splice(chatPrompt.indexOf(loreMessage),1);
+        const controller=goaContext.packet?.identityPolicy==='fallen_controller'?chatPrompt.indexOf(roleOwner):-1;
+        if(controller>=0)chatPrompt.splice(controller,0,loreMessage);else chatPrompt.push(loreMessage);
+    }
+    let totalTokens = calculateTotalTokens(chatPrompt);
+
+    // Optional Chronicle accounts yield before persona, background or history.
+    if (loreMessage && totalTokens + Math.max(0, Number(conv.config.maxTokens) || 0) > contextLimit) {
+        chatPrompt.splice(chatPrompt.indexOf(loreMessage), 1);
+        totalTokens = calculateTotalTokens(chatPrompt);
+    }
+
+    // Optional new voice direction yields before existing backgrounds/persona/history lose capacity.
+    if (dialoguePersona && totalTokens + Math.max(0, Number(conv.config.maxTokens) || 0) > contextLimit) {
+        const { message, styled, original } = dialoguePersona;
+        if (message.content.startsWith(styled)) message.content = original + message.content.slice(styled.length);
+        totalTokens = calculateTotalTokens(chatPrompt);
+    }
+
+    // Shared backgrounds are optional. Remove it before any character facts or history,
+    // accounting for the configured response budget without changing existing trimming rules.
+    if (backgroundMessage && totalTokens + Math.max(0, Number(conv.config.maxTokens) || 0) > contextLimit) {
+        const index = chatPrompt.indexOf(backgroundMessage);
+        if (index !== -1) chatPrompt.splice(index, 1);
+        totalTokens = calculateTotalTokens(chatPrompt);
+    }
+
+    // Drop optional late faith while keeping the complete final role/identity/scene instruction.
+    if (lateFaithMessage && totalTokens + Math.max(0, Number(conv.config.maxTokens) || 0) > contextLimit) {
+        if (lateFaithMessage === roleOwner) lateFaithMessage.content = roleplayInstruction;
+        else chatPrompt.splice(chatPrompt.indexOf(lateFaithMessage), 1);
+        if (userDescMessage && unframedPersonalContent) userDescMessage.content = unframedPersonalContent + '\n\n' + roleplayInstruction;
+        totalTokens = calculateTotalTokens(chatPrompt);
+    }
+
+    const nativeRecord=(built:Message[])=>captureNativeLorePrompt(nativeCapture,built,character,loreDelivery,nativeObserved,loreMessage,nativeCurrent);
+    if (goaInjected || currentScene || development) {
+        const trimmed = trimGoaPrompt(chatPrompt, historyForTrimming, calculateTotalTokens, contextLimit,
+            Math.max(0, Number(conv.config.maxTokens) || 0));
+        loreDelivery.commit?.(!!loreText && !!loreMessage && trimmed.includes(loreMessage));
+        return nativeRecord(trimmed);
+    }
+
+    if (totalTokens > contextLimit) {
+        console.warn(`Prompt exceeds context limit. Tokens: ${totalTokens}, Limit: ${contextLimit}. Trimming...`);
+
+        const trimStartIndex = chatPrompt.findIndex(m => m.content === "[Start a new chat]") + 1;
+        const nonTrimmableSuffixLength = 3; // Protect the last few instructional messages
+
+        if (trimStartIndex > 0) {
+            while (totalTokens > contextLimit) {
+                const trimmableSectionEnd = chatPrompt.length - nonTrimmableSuffixLength;
+                if (trimStartIndex >= trimmableSectionEnd) {
+                    console.warn("Cannot trim further. No trimmable messages left.");
+                    break;
+                }
+                chatPrompt.splice(trimStartIndex, 1);
+                totalTokens = calculateTotalTokens(chatPrompt);
+            }
+        }
+        console.log(`Trimming complete. Final token count: ${totalTokens}, Message count: ${chatPrompt.length}`);
+    }
+
+    loreDelivery.commit?.(!!loreText && !!loreMessage && chatPrompt.includes(loreMessage));
+    return nativeRecord(chatPrompt);
+}
+
+//SUMMARIZATION
+
+/** Keep custom summary style while giving group templates every observed participant. */
+function summaryTemplateGame(conv: Conversation, ownerId: number): GameData {
+    if (!conv.hasLanguageMessages?.()) return conv.gameData;
+    const participants = conv.getEncounterParticipantsForRecipient?.(ownerId) ?? [...conv.gameData.characters.values()];
+    if (participants.length <= 1) return conv.gameData;
+    const otherNames = participants.filter(character => character.id !== conv.gameData.playerID)
+        .map(character => character.fullName);
+    const aiName = otherNames.length > 1
+        ? otherNames.slice(0, -1).join(', ') + ' and ' + otherNames.at(-1)
+        : otherNames[0] ?? conv.gameData.aiName;
+    return Object.assign(Object.create(Object.getPrototypeOf(conv.gameData)), conv.gameData, { aiName });
+}
+
+export function buildSummarizeChatPrompt(conv: Conversation, character: Character, messages?: readonly Message[]): Message[]{
+    const prompts = getEffectivePrompts(conv.config, conv.votcDataPath, conv.gameData);
+    let output: Message[] = [];
+
+    const isSelfTalk = conv.gameData.characters.size === 1 && conv.gameData.characters.has(conv.gameData.playerID);
+    const prompt = isSelfTalk ? prompts.selfTalkSummarizePrompt : prompts.summarizePrompt;
+
+    let finalPrompt = parseVariables(prompt, summaryTemplateGame(conv, character.id));
+    if (!isSelfTalk) {
+        finalPrompt += `\nSummarize from the perspective of ${character.fullName}.`;
+    }
+
+    const heard = messages ? recipientMessages(conv, character.id, messages) : recipientEncounterMessages(conv, character.id);
+    if (conv.hasLanguageMessages?.()) finalPrompt += '\n' + summaryPerspectiveInstruction(character.fullName, heard, character.id);
+    const combinedSystemContent = `${conv.hasLanguageMessages?.() ? perceivedMemoryTranscript(heard, character.id) : convertMessagesToString(heard, "", "")}\n\n${finalPrompt}`;
+
+    output.push({
+        role: "system",
+        content: combinedSystemContent
+    });
+
+    return output;
+}
+
+export function buildResummarizeChatPrompt(conv: Conversation, messagesToSummarize: Message[], ownerId = conv.gameData.aiID,
+    previousSummary?: string): Message[]{
+    const prompts = getEffectivePrompts(conv.config, conv.votcDataPath, conv.gameData);
+    let prompt: Message[] = [];
+    const isSelfTalk = conv.gameData.characters.size === 1 && conv.gameData.characters.has(conv.gameData.playerID);
+
+    let systemContent = "";
+    const owner = conv.getEncounterCharacter?.(ownerId) ?? conv.gameData.characters.get(ownerId);
+    const ownerGame = Object.assign(Object.create(Object.getPrototypeOf(conv.gameData)), summaryTemplateGame(conv, ownerId),
+        { aiID: ownerId });
+    const currentSummary = previousSummary ?? recipientSummary(conv, ownerId);
+    if(currentSummary){
+        const summaryIntro = isSelfTalk
+            ? "Summary of this internal monologue that happened before the messages:"
+            : "Summary of this conversation that happened before the messages:";
+        systemContent += `${summaryIntro}${currentSummary}\\n\\n`;
+    }
+
+    const compactedMemoryString = createCompactedMemoryString(conv, prompts, conv.gameData.characters.get(ownerId));
+    if (compactedMemoryString) {
+        systemContent += `${compactedMemoryString}\\n\\n`;
+    }
+
+    const heard = recipientMessages(conv, ownerId, messagesToSummarize);
+    systemContent += `${conv.hasLanguageMessages?.() ? perceivedMemoryTranscript(heard, ownerId) : convertMessagesToString(heard, "", "")}\n\n`;
+
+    const summarizePrompt = isSelfTalk ? prompts.selfTalkSummarizePrompt : prompts.summarizePrompt;
+    systemContent += parseVariables(summarizePrompt, ownerGame);
+    if (conv.hasLanguageMessages?.() && owner)
+        systemContent += '\n' + summaryPerspectiveInstruction(owner.fullName, recipientMessages(conv, ownerId, messagesToSummarize), ownerId);
+
+    prompt.push({
+        role: "system",
+        content: systemContent
+    });
+
+    return prompt;
+}
+
+//help functions
+
+export function convertMessagesToString(messages: Message[], inputSeq: string, outputSeq: string): string{
+    let output= "";
+    for(const message of messages){
+        if(message.role === 'user'){
+            if (message.name) {
+                output+= `${inputSeq}${message.name}:${message.content}\n`
+            } else {
+                output+= `${inputSeq}${message.content}\n`
+            }
+        }
+        else if(message.role == 'assistant'){
+            if (message.name) {
+                output+= `${outputSeq}${message.name}:${message.content}\n`
+            } else {
+                output+= `${outputSeq}${message.content}\n`
+            }
+        }
+        else if(message.role == 'system'){
+            output+= `${inputSeq}${message.content}\n`
+        }
+    }
+
+    return output;
+}
+
+function insertMessageAtDepth(messages: Message[], messageToInsert: Message, insertDepth: number): void{
+
+    if(messages.length < insertDepth){
+        messages.splice(0, 0, messageToInsert);
+    }
+    else{
+        messages.splice(messages.length - insertDepth + 1, 0, messageToInsert);
+    }
+}
+
+
+
+
+export function createMemoryString(conv: Conversation, prompts: any, character?: Character): string{
+    let allMemories: Memory[] = [];
+
+    if (character) {
+        // Scoped: only the speaking character's own memories.
+        // Prevents unrelated characters (e.g. a wife absent from a private event)
+        // from receiving memories that belong to the player or other characters.
+        allMemories = allMemories.concat(character.memories);
+    } else {
+        // Fallback for legacy callers without a character context: player + main AI only.
+        const player = conv.gameData.characters.get(conv.gameData.playerID);
+        const ai = conv.gameData.characters.get(conv.gameData.aiID);
+        if (player) allMemories = allMemories.concat(player.memories);
+        if (ai) allMemories = allMemories.concat(ai.memories);
+    }
+
+    allMemories.sort((a, b) => (b.relevanceWeight - a.relevanceWeight));
+
+    allMemories.reverse();
+
+
+
+    let output ="";
+    if(allMemories.length>0){
+        output = prompts.memoriesPrompt;
+    }
+
+    let tokenCount = 0;
+    while(allMemories.length>0){
+        const memory: Memory = allMemories.pop()!;
+
+        let memoryLine = `${memory.creationDate}: ${memory.desc}`;
+
+        let memoryLineTokenCount = conv.textGenApiConnection.calculateTokensFromText(memoryLine);
+
+        if(tokenCount + memoryLineTokenCount > conv.config.maxMemoryTokens){
+            break;
+        }
+        else{
+            output+="\n"+memoryLine;
+            tokenCount+=memoryLineTokenCount;
+        }
+
+    }
+
+    return output;
+}
+
+export function createCompactedMemoryString(conv: Conversation, prompts: any, character?: Character): string {
+    if (!conv.memoryCompactor) return "";
+
+    // Use the speaking character's ID so each AI gets their own compacted memories.
+    // Falls back to the main AI ID for callers without a character context (e.g. resummarize).
+    const characterId = String(character ? character.id : conv.gameData.aiID);
+    const compactedMemories = conv.getCompactedMemoriesForRecipient?.(Number(characterId)) ?? conv.memoryCompactor.getCompactedMemories(characterId);
+    if (compactedMemories.length === 0) return "";
+
+    let output = prompts.compactedMemoriesPrompt || "The following is a summary of key long-term memories and narrative threads:\\n";
+
+    const phase2Memories = compactedMemories.filter(m => m.compactionLevel === 2);
+    const phase1Memories = compactedMemories.filter(m => m.compactionLevel === 1).slice(-3); // Only last 3 phase-1 summaries
+    const privateNotesSeen = new Set<string>();
+
+    if (phase2Memories.length > 0) {
+        output += "\\n--- Key Narrative Threads ---\\n";
+        output += phase2Memories.map(m => compactedMemoryText(m, Number(characterId), privateNotesSeen, compactedMemories)).join("\\n");
+    }
+
+    if (phase1Memories.length > 0) {
+        output += "\\n--- Recent Key Events ---\\n";
+        output += phase1Memories.map(m => `${m.date}: ${compactedMemoryText(m, Number(characterId), privateNotesSeen, compactedMemories)}`).join("\\n");
+    }
+
+    return output;
+}

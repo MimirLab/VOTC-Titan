@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-xavius-wow-16c5f7a249bf",
+  "revision": 1,
+  "name": "Xavius Nightmare — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "f14063041138343f4a27b9d0401b24c1555fd98dfd02bb1e0c10f099ce32f286",
+    "transcript_sha256": "ed99fb217c8178fa8486d9dac82d1cf5030b70e3fa7706bee17a552b497e0587",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 395352,
+      "seconds": 16.473,
+      "peak": 1.0,
+      "rms_dbfs": -15.36,
+      "clipped_samples": 21
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

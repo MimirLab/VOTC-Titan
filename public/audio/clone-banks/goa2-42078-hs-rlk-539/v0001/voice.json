@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-42078-hs-rlk-539",
+  "revision": 1,
+  "name": "Dar'Khan Drathir — Dar'Khan Drathir (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "c5737ef896a2f30b3554f921545447911d7a667383c8fc0a0610e16f32840d25",
+    "transcript_sha256": "2262a1fc0fc18a6178aa28273baaf59cd9efa84e5feb974de86e2f28dcf6bc09",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 110409,
+      "seconds": 4.600375,
+      "peak": 0.986176,
+      "rms_dbfs": -16.33,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

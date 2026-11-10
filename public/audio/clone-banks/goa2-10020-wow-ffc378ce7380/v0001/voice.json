@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-10020-wow-ffc378ce7380",
+  "revision": 1,
+  "name": "Draka — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "e4e2b60a7e53f3c0d58fc5f62d501d1179cc561ca9059340374ab9f44fdfd3e9",
+    "transcript_sha256": "e9702857d710b4b0d30be937701e6f3cacf55eef77ca42bb4fd216aba94d3a66",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 370395,
+      "seconds": 15.433125,
+      "peak": 0.879333,
+      "rms_dbfs": -16.22,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

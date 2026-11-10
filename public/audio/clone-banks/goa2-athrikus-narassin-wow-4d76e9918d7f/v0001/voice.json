@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-athrikus-narassin-wow-4d76e9918d7f",
+  "revision": 1,
+  "name": "Athrikus Narassin — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "389c578c6cb7361d991ea3f3ef37feef869e0515f26c7893bb3e2094c1dcc17f",
+    "transcript_sha256": "1d5248a87a69486e08912a4b50804e7dfc20785447413a67db156d557bca67a8",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 454793,
+      "seconds": 18.949708333333334,
+      "peak": 1.0,
+      "rms_dbfs": -15.74,
+      "clipped_samples": 24
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

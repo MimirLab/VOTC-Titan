@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-head-machinist-sparkflux-wow-8c4208956012",
+  "revision": 1,
+  "name": "Sparkflux — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3c172c32a0c1c82e72154e7cba1c914813393c7d800738a094f941cd577ddeaa",
+    "transcript_sha256": "2f07be3c64eacfc00ab1d2c5399f8c0540fbbc3b2ed59c208870f324f0ed456e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 393652,
+      "seconds": 16.402166666666666,
+      "peak": 0.981018,
+      "rms_dbfs": -18.09,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

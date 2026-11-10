@@ -1,0 +1,4713 @@
+{
+  "version": 1,
+  "profiles": {
+    "goa2-10000-wow-485541ad5dcf/v0001": {
+      "name": "Blackhand \u2014 WoW",
+      "manifestHash": "8ef03b4073189b36edc504100076b74f1fdc4cba51373a8a4c94569ab0634b6c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10005-wow-selected-89f54ee079/v0001": {
+      "name": "Kilrogg Deadeye \u2014 Kilrogg; WoW 6.0 Tanaan recorded portrayal",
+      "manifestHash": "54647b648cae57c86bdda695e78f74e52788d9e1b5a4fcbe56fa7e4ea295e671",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10005-wow-selected-dd2eed0a71/v0001": {
+      "name": "Kilrogg Deadeye \u2014 Kilrogg; WoW 6.2 Hellfire Citadel recorded portrayal",
+      "manifestHash": "fde5af67a704c23123b19db6a79667f02fea52bdbb3e62a4381f26d01eb77932",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10014-wow-2be1bcc5561c/v0001": {
+      "name": "Ner'zhul Shadowmoon \u2014 Remnant of Nerzhul (WoW)",
+      "manifestHash": "bf45e996b09c352ff8e8eebac51f74ed3c60d273fbc9146d2bbe227157a5be22",
+      "undeadCoverage": "covered"
+    },
+    "goa2-10014-wow-54d2e68813cd/v0001": {
+      "name": "Ner'zhul Shadowmoon \u2014 WoW",
+      "manifestHash": "bb5d2b9dabf5d8e9b7cefcf97ed1ee0fe938becc8d2e7fbc03291f45fa53f3d7",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-10015-hots-guldanbase/v0001": {
+      "name": "Gul'dan \u2014 HotS",
+      "manifestHash": "ddfe4d892006e5753fc4a96c7c37212fb313bf896f5cb8c5dc296d7ffcf58600",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10017-wow-cb212e8af600/v0001": {
+      "name": "Teron Gorefiend \u2014 WoW",
+      "manifestHash": "9fd9ae5bcfdab183ef8604a6273ff238d4a3846ce0b5f6e26f26adcf3675118b",
+      "undeadCoverage": "covered"
+    },
+    "goa2-10019-wow-selected-9ff4c4e087/v0001": {
+      "name": "Durotan Frostwolf \u2014 Durotan; WoW Draenor recorded portrayal",
+      "manifestHash": "173fcfc30a3352e8ab80268ae6d158c6c50755b33beafa04cc9f2b6a4a7d444b",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-10020-wow-ffc378ce7380/v0001": {
+      "name": "Draka \u2014 WoW",
+      "manifestHash": "ca1460c6ed853c968f5178c231264933f98102dfd8eba7cb845c041fab0564d8",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-10021-hots-thrallbase/v0001": {
+      "name": "Thrall \u2014 HotS",
+      "manifestHash": "f2892cc35d02ff7bed7be88f84e5848f6e1b50270b13668dac83ac3587390fa0",
+      "undeadCoverage": "uncolored",
+      "referenceAge": "adult"
+    },
+    "goa2-1008-wow-8658ae0b80da/v0001": {
+      "name": "Anduin Lothar \u2014 WoW",
+      "manifestHash": "32a477e306be570a2cd71d38d547575cc0806ed149a7b4c36eb103c40f84117e",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-10100-hots-drekthara/v0001": {
+      "name": "Drek'Thar \u2014 HotS",
+      "manifestHash": "cf0058676fa3516c5529bf19556270ec6db44538a8164dcfa9fe55c5fe74dc7f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10200-wow-1943633780cd/v0001": {
+      "name": "Grommash Hellscream \u2014 WoW",
+      "manifestHash": "51ea257ceeadf922e6c12cb44ecced13c2322c769b9d7895a8f7f68855eef0a5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10560-wow-a1b13b35ec31/v0001": {
+      "name": "Malkorok \u2014 WoW",
+      "manifestHash": "b22fc19c63cfda175b69cd174d5272d3f31533339b8b53f504e8af6e2a9dcdbc",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10566-wow-3147dc6a9c33/v0001": {
+      "name": "Broxigar Saurfang \u2014 WoW",
+      "manifestHash": "75db69d01c945a92fc4dc72d8706151b101cee679ecd8c928b4523c7978e5250",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-10567-wow-ebb9e59e6e53/v0001": {
+      "name": "Varok Saurfang \u2014 WoW",
+      "manifestHash": "e3b9c94141f075c8b1347580fa4800543187964bdc0a8588a4ef5a9e4b950085",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10610-hots-rexxarbase/v0001": {
+      "name": "Rexxar \u2014 HotS",
+      "manifestHash": "ee92d2d5c6cac9a4f83298e7667b81bfc73579777c8b7f4b27c955c2bab95499",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10620-wow-e0a9c3947e06/v0001": {
+      "name": "Garona Halforcen \u2014 WoW",
+      "manifestHash": "9adcf3833b25069b4b3449ca7b700ff65def0835e803dc53904f4ba22c3680df",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10656-hots-rehgarbase/v0001": {
+      "name": "Rehgar Earthfury \u2014 HotS",
+      "manifestHash": "afe7ded460a339e0201a876b10a79bf0a0fec297de20a8762735d0961fe2091a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-10658-wc3-nazgrel/v0001": {
+      "name": "Nazgrel Kash'ar \u2014 ordinary (WC3)",
+      "manifestHash": "1a5c097a1ec37103f1b7796bea4ed4d955e11cd4bc93d6fe6fee76284cea2e86",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-12002-wow-d4d9a08039da/v0001": {
+      "name": "Dagran Thaurissan \u2014 WoW",
+      "manifestHash": "dfaad4d40638f246152c43a1f8d22f623d9024bc5d3b38f598b557df186dc78d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-16000-wow-f1a821d1270e/v0001": {
+      "name": "Gelbin Mekkatorque \u2014 WoW",
+      "manifestHash": "be3763fd3a2a50d65d843686da53d9e1496149f3f9396c2bd5c64e242d47e83c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-1602-wow-95b041fd1de3/v0001": {
+      "name": "Mathias Shaw \u2014 WoW",
+      "manifestHash": "ce8fd075c6811ef2b80061ac805f132685c2ad2b06a8ac7d4cdb6c26fa34697a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-1620-wow-19688a0c8f29/v0001": {
+      "name": "Natalie Seline \u2014 WoW",
+      "manifestHash": "ba88584eb1b61515c6c0d444c29e8398fd6cc8b5c2af274ffa06847118b0e34e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-16626-wow-9ac8cdc2a3c2/v0001": {
+      "name": "Tread Sparknozzle \u2014 WoW",
+      "manifestHash": "f3b67d62cfcd65bcf69dc5fb2b2cb941dd8d4679cef751e2312ee0ee9f5b77a9",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-16632-wow-ffe6e6f2ab34/v0001": {
+      "name": "Telzo Sparkspanner \u2014 WoW",
+      "manifestHash": "fec9310f9d586013dea32dc78079dc9947ca7021e845b272bb1168fe1ab36c59",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-16700-wow-b8d85c357ebd/v0001": {
+      "name": "Tinboan Mechagon \u2014 WoW",
+      "manifestHash": "4ed7518bc1f5574996da6aeb2f3cabefb76f8ad10d224bc4a51232bbeb8932b7",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-16701-wow-aad4f86e8846/v0001": {
+      "name": "Erazmin Mechagon \u2014 WoW",
+      "manifestHash": "70af1660a14262ce0680257996ba1abe8e4ca6691802e117128a14d2d7475e55",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-17001-hs-hero-01a/v0001": {
+      "name": "Magni Bronzebeard \u2014 Magni Bronzebeard (Hearthstone)",
+      "manifestHash": "181e546fcdb58d5d3c1d18e7d80df09e7b680c9705688552423cab064d65758f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-17002-hots-muradin/v0001": {
+      "name": "Muradin Bronzebeard \u2014 HotS",
+      "manifestHash": "2648ecaeb3631166b7103295412e9b62923fcad77bb0520740e0d5ab979b65bb",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-17028-wow-09db504fb338/v0001": {
+      "name": "Brann Bronzebeard \u2014 WoW",
+      "manifestHash": "fabb26e9f4e4d939177d7ccabf6ea87a790eddae0fa1a5a9d867be139848a076",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-17029-wow-selected-329b477db4/v0001": {
+      "name": "Moira Bronzebeard \u2014 Moira Thaurissan; WoW 7.0.3",
+      "manifestHash": "e9ce13eed4ce64ed729f8fc9351973196c98d9d863a68820a794dae33ca93226",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-210000-wow-726792ab1ed8/v0001": {
+      "name": "Cairne Bloodhoof \u2014 WoW",
+      "manifestHash": "e03a44186bf8556c2a74f1855e496c68af6692f1bcbbedd5378f1a8e0649c43c",
+      "undeadCoverage": "covered"
+    },
+    "goa2-210001-wow-2ac40f60fb41/v0001": {
+      "name": "Baine Bloodhoof \u2014 WoW",
+      "manifestHash": "4950854b29a401ac016ea9e4592997f50ee7c3c32d059ae2414b10fda65fcb2e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-210033-wow-fa2a06a06517/v0001": {
+      "name": "Hamuul Runetotem \u2014 WoW",
+      "manifestHash": "1fe1727e01699db7b62374887849f3491e122e2daf4995ac3d1368a2ed131841",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-210049-wow-9e5cc223f25c/v0001": {
+      "name": "Magatha Grimtotem \u2014 WoW",
+      "manifestHash": "ac2e38e859aedc487aaef9e253d39e662e4c43ad9fa135610fb240680d445d93",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-22001-hots-falstad/v0001": {
+      "name": "Falstad Wildhammer \u2014 HotS",
+      "manifestHash": "154a4038eec8bb3af48f495ec2864fce25285d250323e5e34772254907c14142",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-22002-wow-1f126927a8f2/v0001": {
+      "name": "Kurdran Wildhammer \u2014 WoW",
+      "manifestHash": "e6da7df4c543998f1c093a378e1b63cea21ba7b965e7e3f154089e4c347cb85f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-26020-wow-947304f68c84/v0001": {
+      "name": "Iain Firebeard \u2014 WoW",
+      "manifestHash": "2d75e5157e15a6b80ea50bde0d2ad39982252fa1185712c9ed16356d18cdbe97",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-26021-wow-c86fa4a609f2/v0001": {
+      "name": "Mackay Firebeard \u2014 WoW",
+      "manifestHash": "259cb38c93d15f7075306b2b42aea94186792ce2f8d56d2876e0b153d03344ff",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-270073-wow-9b0869e117d9/v0001": {
+      "name": "Phaoris Ramkahen \u2014 WoW",
+      "manifestHash": "426f17b81be464e520a20186ad774f21203a46cd4e4175a766877619c107dc3e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-270680-hs-uld-168/v0001": {
+      "name": "Tekahn Neferset \u2014 Dark Pharaoh Tekahn (Hearthstone)",
+      "manifestHash": "87df6d422c7a5407a0aaf9f1e5deb133084f7675b80b382756c13f17c1f45061",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-272689-wow-3d0ce72a35d6/v0001": {
+      "name": "Amet Tothir \u2014 WoW",
+      "manifestHash": "4ce32fa8b2a33b9f28dde127b9dfa355348479d1dbb527818256bed262e757e5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-28025-hots-vanndara/v0001": {
+      "name": "Vanndar Stormpike \u2014 HotS",
+      "manifestHash": "f9430a53cb8d6d42b6aa8836bfb20d7357f59092c1f2ba38e1b8925c23c2572d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-28032-hs-hero-05k/v0001": {
+      "name": "Tavish Stormpike \u2014 Tavish Stormpike (Hearthstone)",
+      "manifestHash": "e07c683389004488ccd19cf20d1be110c337e7e98141d2c2b2290dc2c508ba3d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-29003-hots-hogger/v0001": {
+      "name": "Hogger \u2014 HotS",
+      "manifestHash": "c66e9429cf72d3ba8d4c06a891d55c60a71d369415f3f1be78f052ff6919b729",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-330003-wow-c1553300f5f2/v0001": {
+      "name": "Lady Vashj \u2014 WoW",
+      "manifestHash": "abdfd7e6bb33c32c70c4bc9b659efbfb980eb34472a78cd7e3f55ae74bc6e2e0",
+      "undeadCoverage": "covered"
+    },
+    "goa2-340003-hots-tyrande/v0001": {
+      "name": "Tyrande Whisperwind \u2014 HotS",
+      "manifestHash": "a11db3fc6e282f75b69b28df09a90482445be2b215050ea479f9ece70ee7496e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340008-hots-malfurion/v0001": {
+      "name": "Malfurion Stormrage \u2014 HotS",
+      "manifestHash": "73c7dc30aeeffddb2c689e89d76a6e6f4b9935aa0dc89f5726ad9daeb1016026",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340009-hots-illidan/v0001": {
+      "name": "Illidan Stormrage \u2014 HotS",
+      "manifestHash": "2bfb0b58dff6b2e33579de2113f6a845fe8fedf2d8241bd67281527ef47c6e9a",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-340009-wc3-illidanmorphed/v0001": {
+      "name": "Illidan Stormrage \u2014 metamorphosis (WC3)",
+      "manifestHash": "503994e5b2d2156e06284be69b0927faa59a499ac0dc5356b3573e63c5ed0b32",
+      "performanceFamily": "metamorphosis",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-340014-wow-149e6bdc9e8d/v0001": {
+      "name": "Su'ura Swiftarrow \u2014 WoW",
+      "manifestHash": "c9d0c1d683c8bdd59ae7c2d85b1e8c7b4886abf4b4fad77bfc816e47a291a464",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340018-wow-cc708fae1d75/v0001": {
+      "name": "Fandral Staghelm \u2014 WoW",
+      "manifestHash": "f55b15e2d1538ef336c1c2be0ac37be43d34db6feb31a32ec627086b81061fc1",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-340021-hots-maievbase/v0001": {
+      "name": "Maiev Shadowsong \u2014 HotS",
+      "manifestHash": "91552d627c62508fc7e1b098f6308e49252fb2ae23f35e54d974cec2e6324d4d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340022-wow-ad951b1e619f/v0001": {
+      "name": "Jarod Shadowsong \u2014 WoW",
+      "manifestHash": "d96a48de1ce5f990bed7dc326dbd119b80c7a89a3b08a2dc94524a98003a89c5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340066-wow-d535ca82a776/v0001": {
+      "name": "Lea Stonepaw \u2014 WoW",
+      "manifestHash": "27f17b1b0e949cf8993dc38f3366c3bc761e711d89d13d1294657eee100d0b35",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340100-wc3-shandris/v0001": {
+      "name": "Shandris Feathermoon \u2014 ordinary (WC3)",
+      "manifestHash": "9fbec15ca2c38f512653b15ccc1a168749303f500a94e0a9296016fb872f4ca8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340100-wow-selected-9e0436443b/v0001": {
+      "name": "Shandris Feathermoon \u2014 Shandris Feathermoon; WoW 8.1 recorded portrayal",
+      "manifestHash": "3a2599f16e1607af75661f7706290a1c22ad5e3e946424a231ab1b33e65fcbd5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-340101-wow-adc62b9d023c/v0001": {
+      "name": "Sira Moonwarden \u2014 WoW",
+      "manifestHash": "4e5b5e007e22420a11658ac77ca5e81387fcb1fb55b8f6999ae79fafde20a54c",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-360000-wow-d23c8b5b7a08/v0001": {
+      "name": "Kazzak Felblade \u2014 WoW",
+      "manifestHash": "d9091826e506cad58c57042cd374adce2badadc66ae3daf1a07eda76f235f28e",
+      "performanceFamily": "doomguard",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-38001-wow-000eb7614306/v0001": {
+      "name": "Thoras Trollbane \u2014 WoW",
+      "manifestHash": "6f5148843c5a65fc00410096610cdfc530450ff98c2fdb2e6fbb846833c23943",
+      "undeadCoverage": "covered"
+    },
+    "goa2-38002-wow-7b7ed7ce09fd/v0001": {
+      "name": "Galen Trollbane \u2014 WoW",
+      "manifestHash": "13cd60577d3c350186854c4476c3415ce780e591615edbaaf7a3460612c61751",
+      "undeadCoverage": "covered"
+    },
+    "goa2-38004-wow-3179bb6d071a/v0001": {
+      "name": "Danath Trollbane \u2014 WoW",
+      "manifestHash": "edfaa9ffe9440918b2910871371baacd3dcd0c85afa4128a4490f5bebac23af1",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-381000-wow-09912a8fb790/v0001": {
+      "name": "Kiro Voldunai \u2014 WoW",
+      "manifestHash": "afcc765100b3b2f49ad5847d4d8f8f2cfd2c287477c368b951b412544dcb9c51",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-390000-wow-fece2bda7def/v0001": {
+      "name": "Korthek Snek \u2014 WoW",
+      "manifestHash": "70a9a698118a48d981ee0f817fc14c1208202e25aeb8d5ecde1b9b95b3523644",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-390005-wow-30b37c19d95c/v0001": {
+      "name": "Vorrik Ssthak \u2014 WoW",
+      "manifestHash": "780361f743e4f74d0c11dfb0907d412c1b6f7b041a45f030fb7db8d7f65c822b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400500-wow-3300e8b7be34/v0001": {
+      "name": "Odyn \u2014 WoW",
+      "manifestHash": "6292d07a60732dd5f930bfb8783cf4b84e56ca2205cdd3e55fa22707d65f5060",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400501-wow-de190f38f58d/v0001": {
+      "name": "Loken \u2014 WoW",
+      "manifestHash": "d1a191b1cc90adb77e5c144e464b37ea670b1e7eef156f0cacbc53c323c1a288",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400502-wow-fd7da2c2b899/v0001": {
+      "name": "Thorim \u2014 WoW",
+      "manifestHash": "066ea30e5a09b51591952617b64e932c946ecce3d8ed2b94b7f91b44b8494d9c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400503-wow-37ec05cb35c9/v0001": {
+      "name": "Hodir \u2014 WoW",
+      "manifestHash": "c5184499c9505a977c433d4eefdcbd87ddbad59fb3c4662cdcb4922cd69d09c0",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400504-wow-6fcbf1e26add/v0001": {
+      "name": "Freya \u2014 WoW",
+      "manifestHash": "16302834b2560f62400456583bdb8c6c742f6bac0fab5c86a8ba75426168b886",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400505-wow-ad54d0d40679/v0001": {
+      "name": "Mimiron \u2014 WoW",
+      "manifestHash": "c799fb4195b11e2d2fa1910c85880908e01e869c5324bba07617b7a557795e39",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400506-wow-a79b1fee710b/v0001": {
+      "name": "Archaedas Khazgorai \u2014 WoW",
+      "manifestHash": "c391b3d5c8ab5e260866833cdffb71677e621b0323e90667fa4da6fff86dce65",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400507-wow-f0e8832f42e1/v0001": {
+      "name": "Tyr Aggramai \u2014 WoW",
+      "manifestHash": "ff093db9bca1b0cb4c9fde95ce76d18f5545a929746e94a8bb9632f74f14d069",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-400508-wow-ee950714b662/v0001": {
+      "name": "Ra-den \u2014 WoW",
+      "manifestHash": "5f509464bc7317e630d1413e43486d4c31b3bb9d933a99563b52f5f301d463b6",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-410001-wow-6f7c392c2459/v0001": {
+      "name": "Remulos Deerheart \u2014 WoW",
+      "manifestHash": "48afdb1af058a6514ee824e877f8e3a14171ee383c9548fb7ecaab7cd0232232",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-410002-wow-5ffbbcd0a073/v0001": {
+      "name": "Cenarius \u2014 WoW",
+      "manifestHash": "ef2cf45d79915b4529da2cb9767a6c1e8129a4c6674cfba95a3d99b56137cc84",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-410100-hots-dryadbase/v0001": {
+      "name": "Lunara \u2014 HotS",
+      "manifestHash": "0384c36a86575a81abbd8231efba5758bf995e4dfc7fb3b8ae5321ee706abe98",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-410100-hs-hero-06a/v0001": {
+      "name": "Lunara \u2014 Lunara (Hearthstone)",
+      "manifestHash": "8ecaa0d78f07e57f886fdc5fa197b3f446647583f4ddfcbd16bd1619f800bc9c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42002-wow-1a66401d4566/v0001": {
+      "name": "Anasterian Sunstrider \u2014 WoW",
+      "manifestHash": "e3d6c24aeb3710098ff2a2afa2a1efd492e195c105a80535106469cf033db291",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-42003-hots-kaelthasbase/v0001": {
+      "name": "Kael'thas Sunstrider \u2014 HotS",
+      "manifestHash": "ff5f395df86e87c37f22c55d5ecbc40c920caafd86da08b90759a2def532796a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42075-wow-72cb09c47a94/v0001": {
+      "name": "Lor'themar Theron \u2014 WoW",
+      "manifestHash": "2e83c74a0fce85a9af187ecd33439defaa6ae260f8ad77c78f7ec98cc23105df",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42076-hots-sylvanasbase/v0001": {
+      "name": "Sylvanas Windrunner \u2014 Banshee Queen (HotS)",
+      "manifestHash": "328ef7ad7a197ca272da02331f65346701c059f5afa141242f1c1ff73648037e",
+      "undeadCoverage": "covered"
+    },
+    "goa2-42076-wc3-sylvanas/v0001": {
+      "name": "Sylvanas Windrunner \u2014 living ranger general (WC3)",
+      "manifestHash": "1ff6a2e3c431826165495e8649e9b435aa368fd919bf93b9c18b738b923941d8",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-42078-hs-rlk-539/v0001": {
+      "name": "Dar'Khan Drathir \u2014 Dar'Khan Drathir (Hearthstone)",
+      "manifestHash": "9e6686f4637336e23f35830de1b4b6645ce168eabdb6acdf7bc799bf87d9a9a9",
+      "undeadCoverage": "covered"
+    },
+    "goa2-42086-wow-774d0236c9f8/v0001": {
+      "name": "Alleria Windrunner \u2014 WoW",
+      "manifestHash": "28b0ad0a9497daed6b06e918bce08372690303dc54d86245decb5e3c4224775d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42087-wow-4a6f56d8db0f/v0001": {
+      "name": "Vereesa Windrunner \u2014 WoW",
+      "manifestHash": "faac00daca255e0ac2c1ac95e70d861b1cea108767149bc8b0b2946e705bbc87",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42100-wow-4f24a48b23bb/v0001": {
+      "name": "Arator Windrunner \u2014 WoW",
+      "manifestHash": "06d34d1be9183fff4f476da09a85bcfec675da5a5b0798e19ddd23ae11aa17fc",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42211-hots-valeerabase/v0001": {
+      "name": "Valeera Sanguinar \u2014 HotS",
+      "manifestHash": "e8a238d17a35e05e1492a17fee85cc40207b6674c512b45f5955e9969f3eecdb",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42305-wow-c59eec72b64f/v0001": {
+      "name": "Lady Liadrin \u2014 WoW",
+      "manifestHash": "00b6a6ede2833aeca141a238b6a24d73fcf3187fb85098629f7aad84f1636112",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-42306-wow-8c9fb7204ff7/v0001": {
+      "name": "Grand Magister Rommath \u2014 WoW",
+      "manifestHash": "2a536a75b0f66ddbd4b9e22d1af2370725402ce0780790918dfa13ffd9cf1ebf",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-430000-wow-4913c5205c4c/v0001": {
+      "name": "Tichondrius \u2014 WoW",
+      "manifestHash": "012dbbe13b8cb21fb99dc081e2fe19d7465d9074db5f4f1379d88a6e38e4f74b",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-430100-wow-e8bfec57bdcc/v0001": {
+      "name": "Varimathras \u2014 WoW",
+      "manifestHash": "3aeb849cb85769c99689ece2b4386f2629aeb0b526482786bc12a697ab94e006",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-430200-wow-36e060b8dd14/v0001": {
+      "name": "Mephistroth Urgunis \u2014 WoW",
+      "manifestHash": "2da88b3a8a8e920111ab276d546f5a9c1e06b5df85d93380a04e97fc05c2aae0",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-430300-wow-30e24b43ff3f/v0001": {
+      "name": "Anetheron Xigrakiun \u2014 WoW",
+      "manifestHash": "4ebea3aa0b53803414b79a12b5f7d32d55ca02c8e3f8cf5a7438feaa57b0546f",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-430400-wow-54bea83dfa53/v0001": {
+      "name": "Balnazzar \u2014 WoW",
+      "manifestHash": "72bee95a873eb64c0f06dde24a4e92c81302cceacf3f991973b3dd7c6f75f589",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-430500-wow-e470e8c149dd/v0001": {
+      "name": "Detheroc \u2014 WoW",
+      "manifestHash": "e298fca2d5481f0a38a744c572dca606e65f88effcfc4fddd74cfdd52d95ebb9",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-460000-wow-bacae4f59713/v0001": {
+      "name": "Ulfar Inath \u2014 WoW",
+      "manifestHash": "a7fd8029f3a340f066e190ad7f270fa01339eb59081331c98c772847605d386a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46001-hots-greymanebase/v0001": {
+      "name": "Genn Greymane \u2014 HotS",
+      "manifestHash": "d65d1297e3abad558a5311a1a8210cdd8b478e00c41e42513ce78ceeabb05382",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46002-wow-104e81bf190b/v0001": {
+      "name": "Mia Greymane \u2014 WoW",
+      "manifestHash": "4b26c80b35ef09071708a5ae048a8eb88a59ad856b3eb0c1fb06d797cf9e9091",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46003-hs-gil-694/v0001": {
+      "name": "Liam Greymane \u2014 Prince Liam (Hearthstone)",
+      "manifestHash": "3bb166e9dbeaccb1c6e95979d157f8b90308212dd142fc913d70ae4f0c2848e0",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46004-wow-fa3bcfb84681/v0001": {
+      "name": "Tess Greymane \u2014 WoW",
+      "manifestHash": "a540abf5a78299212d0f180a6275b45c5dee3f09423b6c0856a2bb2dd606cd7c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46005-wow-0d379e546e42/v0001": {
+      "name": "Darius Crowley \u2014 WoW",
+      "manifestHash": "dc8881c632b16a1586576ab5b4e62389d64588633c2dfa9c0cebd93c8ad97616",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46006-wow-b346f39a9cb0/v0001": {
+      "name": "Lorna Crowley \u2014 WoW",
+      "manifestHash": "96a7556144fba384145f9c5584c51a6f6b6e78c498813ac252d38afeb731d386",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-46007-hs-hero-07am-godfrey/v0001": {
+      "name": "Lord Godfrey \u2014 Lord Godfrey (Hearthstone)",
+      "manifestHash": "9d4d7a1ddfae7d884ac92a2804ef623947d1adaa55803c65e872ac96df9680ce",
+      "undeadCoverage": "covered"
+    },
+    "goa2-46100-hs-gil-691/v0001": {
+      "name": "Archmage Arugal \u2014 Archmage Arugal (Hearthstone)",
+      "manifestHash": "eda82255bec619b057e2dea75f0821c5eaad35c6888f0da15abcf9cdeacd962a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48080-wc3-proudmoore/v0001": {
+      "name": "Daelin Proudmoore \u2014 admiral daelin (WC3)",
+      "manifestHash": "2ae68b1bd6160f74c76a9163ebe40d6a4fc743dc7f2e14558620c91c2aa625d8",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-48080-wow-9bea59989761/v0001": {
+      "name": "Daelin Proudmoore \u2014 WoW",
+      "manifestHash": "0ddc2e79264a6d26e3d7a5fd064fa7628d8cae769de84ca90156ca9da4edceb6",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48081-hots-jainabase/v0001": {
+      "name": "Jaina Proudmoore \u2014 HotS",
+      "manifestHash": "4a59288bb8db7ed4a71156fc2c5e326778573315723d47fb3bea634da47ee46d",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-48082-wow-b5aded43f904/v0001": {
+      "name": "Derek Proudmoore \u2014 WoW",
+      "manifestHash": "2b0b4208612059394c96ecbcb731c78d48d042380908b23448a8dfc594cb86a3",
+      "undeadCoverage": "covered"
+    },
+    "goa2-48084-wow-24516ffcc480/v0001": {
+      "name": "Tandred Proudmoore \u2014 WoW",
+      "manifestHash": "f0c33ebb793bf7915cb54d16204a17e2cd9d1e1ef29e8fc4fb9e8d8f6e8fb557",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48085-wow-2b9e292ef719/v0001": {
+      "name": "Katherine Proudmoore \u2014 WoW",
+      "manifestHash": "0146acb3ce98ee4a75aa92d58e1203f926dbf81b66adb0b0918f2e9921d52b4c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48167-wow-c64fcc7ff075/v0001": {
+      "name": "Arthur Waycrest \u2014 WoW",
+      "manifestHash": "99c596efe22176d1dea3b8dc7da524f1d1817296dfcb32acd72ff8718a010724",
+      "undeadCoverage": "covered"
+    },
+    "goa2-48168-wow-d706aa016267/v0001": {
+      "name": "Meredith \u2014 WoW",
+      "manifestHash": "fc345a237cb90429d42faf0c858fe4e48489f3437373bd46f1053b3ee3369fbb",
+      "undeadCoverage": "covered"
+    },
+    "goa2-48169-wow-cf6243c4dfa0/v0001": {
+      "name": "Lucille Waycrest \u2014 WoW",
+      "manifestHash": "07f9daab46d6548c9a0dd1577ef4df8bc66f32ec05472424fbcbc5bce1540c47",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48249-wow-d571c1caffc0/v0001": {
+      "name": "Colm Stormsong \u2014 WoW",
+      "manifestHash": "fdabdb631d9455aa6a53f4b6469be71ccc33ff19a33b67b71ca631c616c5a881",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48250-wow-9b348c517fd3/v0001": {
+      "name": "Brannon Stormsong \u2014 WoW",
+      "manifestHash": "4e29da2a9ff1b7e8e3bc83ad7fa06f1052cb1189cc8a1f34554c3c8ac06b87f5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-48435-wow-48b60c0857cd/v0001": {
+      "name": "Priscilla Ashvane \u2014 WoW",
+      "manifestHash": "a48ab16abb3a77536289f81f916065a3da4359977aa5b4b03c92f0de7c362b8a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-49405-wow-10125c207525/v0001": {
+      "name": "Rosaline Madison \u2014 WoW",
+      "manifestHash": "a9ba9a5530cd002a5f26aa10be7c23c7d2242762f4f3d58a1fbebd7a7c254031",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-5000-hots-medivhbase/v0001": {
+      "name": "Medivh \u2014 HotS",
+      "manifestHash": "9da4655e5127d3b927b635a732bc54c2321eec0ece5be7400c79f5cb4ccfc5a4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-500086-wow-b64b71d0b630/v0001": {
+      "name": "Taran dynn_Zhu \u2014 WoW",
+      "manifestHash": "dcb9625d1892860d392513f14ce7a56347f9ce82add445f34a3dd10dc8f518e5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-500182-hots-chenbase/v0001": {
+      "name": "Chen Stormstout \u2014 HotS",
+      "manifestHash": "495de99e1661c86bd985ebd5ea193d3e102c2db2c186106fd47665625f6b39ae",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-500184-hots-lili/v0001": {
+      "name": "Li Li Stormstout \u2014 HotS",
+      "manifestHash": "652e45a975d589158cdfe73166ca34d011ba87bfa91f9b0e721a55954eff6e48",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-500273-wow-01583687a8e3/v0001": {
+      "name": "Yalia Sagewhisper \u2014 WoW",
+      "manifestHash": "5e2f632dc7775cc6b4716d218c651a4203992f84ff9a69cdecb056cd0032f2b9",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-52000-hots-chobase/v0001": {
+      "name": "Cho'gall \u2014 HotS",
+      "manifestHash": "d8e47257be0fba5675e04ebaf405a9733ca100797687fa2d2e4c38873718265c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-52000-hots-gallbase/v0001": {
+      "name": "Cho'gall \u2014 HotS",
+      "manifestHash": "a6c2ff9c10d11b4ececb55c9a70cfcabb90564db87069d985af4069803de1b37",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-52057-wc3-mugthol/v0001": {
+      "name": "Mug'thol Crushridge \u2014 ordinary (WC3)",
+      "manifestHash": "74b34d7e4bc6cac60ec5a0936d226cc6a197ad32de94ef9a399a7988003bdf4c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-52058-wc3-korgall/v0001": {
+      "name": "Kor'gall Stonemaul \u2014 ordinary (WC3)",
+      "manifestHash": "2962e9bceaf4e7118d9b351274700185dc3ceed8838472f9c900bdbb30a49155",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-540000-wow-48db0ee12e67/v0001": {
+      "name": "Shek'zeer Zeer'thik \u2014 WoW",
+      "manifestHash": "7ad28f80b41635c6d29e863865b33e343c1b16fe27dd7edb55e488f4bfb76637",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-57000-hots-zuljinbase/v0001": {
+      "name": "Zul'jin \u2014 HotS",
+      "manifestHash": "e6968a903795ba56927885fb4654e4531c3e5be66599a8960cd3461f661e607a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-579-wow-09fb169d18b8/v0001": {
+      "name": "Kanrethad Ebonlocke \u2014 WoW",
+      "manifestHash": "b2e3f0f2dffb5c90b3dda7192b321f17cd97bb62d876d1c767597b5e87a76337",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-58018-wow-40d1abef8c6a/v0001": {
+      "name": "Jorach Ravenholdt \u2014 WoW",
+      "manifestHash": "208818671a5a35642ed68e29116e3e2fe0803efd36842d1d959214657eccb153",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-58050-hs-hero-08l/v0001": {
+      "name": "Onyxia \u2014 Lady Katrana Prestor (Hearthstone)",
+      "manifestHash": "dab9388884e8409529be914b72d3720695aca9249919774f0aea00391490e116",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-5806-wow-28cd34590188/v0001": {
+      "name": "Moroes dynn_Stewart \u2014 WoW",
+      "manifestHash": "c72eea607d225ee3543774a59dee20cc0e8d2baab2d2b0c5169e4489c66e1d0d",
+      "undeadCoverage": "covered"
+    },
+    "goa2-5810-wow-eb7d40f3a27f/v0001": {
+      "name": "Gryan Stoutmantle \u2014 WoW",
+      "manifestHash": "5cc59fa538ef741c6a49e37df81f1cb53bd36e0b4af9a2061917158c1dad796f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-5811-hs-hero-03m/v0001": {
+      "name": "Edwin VanCleef \u2014 Edwin VanCleef (Hearthstone)",
+      "manifestHash": "ac874747ed55e3076961faa14e670f358469f5973b234dbd0272928430c15142",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-5812-wow-30c71c3b81f1/v0001": {
+      "name": "Vanessa VanCleef \u2014 WoW",
+      "manifestHash": "f04cfc1147db109fe75e3fb6f64e808a95eb492b98df9f5c16096bc177fe6c96",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-582-wow-e43017acaed2/v0001": {
+      "name": "Althea Ebonlocke \u2014 WoW",
+      "manifestHash": "5908b9db87cc9c99b23014368032a5cb88d39f9086fd7a785ed0f333746cc5e0",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-59000-hs-ex1-559/v0001": {
+      "name": "Antonidas \u2014 Archmage Antonidas (Hearthstone)",
+      "manifestHash": "3db02a1b827cc9d028ba1fcb2d7a106c26438b0be1c9aa3966067c9501d6cad3",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-59000-wc3-antonidas/v0001": {
+      "name": "Antonidas \u2014 archmage antonidas (WC3)",
+      "manifestHash": "7ca6f1b09db141bfd93627758ca191ebae57788f36dbcab678f8a63960a131c1",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-59001-wow-b2ef5796904a/v0001": {
+      "name": "Khadgar \u2014 WoW",
+      "manifestHash": "29e1002b7e2a734ac7d17b79e0daacf780de2bc92f57f8901d358f853a32c9ef",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-59100-hots-kelthuzadbase/v0001": {
+      "name": "Kel'Thuzad \u2014 HotS",
+      "manifestHash": "6a73b316699fb9e6b23734e8c22d96e11799874aaf08c52e1b3794700b9d9dc9",
+      "undeadCoverage": "covered"
+    },
+    "goa2-59110-wow-934728a1093b/v0001": {
+      "name": "Modera \u2014 WoW",
+      "manifestHash": "9f2a7cd6c0be3d80acf5652ba359b97a1e578f0f85b0c9db9ee136ade8d70638",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-59120-wow-34ad26e33c89/v0001": {
+      "name": "Ansirem Runeweaver \u2014 WoW",
+      "manifestHash": "908b705d7920a8d7a3cb4de5ebc20464bffbd59c9dabc75f17e2e461236df4b9",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-59130-wow-fddd5baed5de/v0001": {
+      "name": "Rhonin \u2014 WoW",
+      "manifestHash": "52d0eb2fe0caf2967028111de9e5a909b4c4ded61de86d75d1edcbca350775b7",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-59150-wow-59e43e085756/v0001": {
+      "name": "Laith Sha'ol \u2014 WoW",
+      "manifestHash": "cd07ebf2427176f1f538a93f5fee646011d63ed65491c308ef557ae0f16b87af",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60001-wow-selected-5f140c78f6/v0001": {
+      "name": "Terenas Menethil \u2014 Terenas Menethil II; WoW 11.1.7 recorded portrayal",
+      "manifestHash": "4956ee2b174f0f666823730c44d762831945857649bdc383ceddf5124bff1d84",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60003-hots-lichking/v0001": {
+      "name": "Arthas Menethil \u2014 Lich King (HotS)",
+      "manifestHash": "b4eee951ec2fbe0306c541a30d153e058ac3e2eabd1ab84c695120784eac2aba",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60003-wc3-arthas/v0001": {
+      "name": "Arthas Menethil \u2014 living paladin (WC3)",
+      "manifestHash": "5521d2b5808a1e727be775004109e9daf8d222c3dc374e4d9262d7f5bf7d3877",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-60003-wc3-arthas2/v0001": {
+      "name": "Arthas Menethil \u2014 death knight (WC3)",
+      "manifestHash": "e0e926e5b50e8b940f4d4b91253d7f93b0fbb4f59a4f2507110c33406463f5c0",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60004-wow-3493df27e14e/v0001": {
+      "name": "Calia Menethil \u2014 WoW",
+      "manifestHash": "e1e56f0c41d4686e28efb59b94388a539ac866114d9e8c780140f586337fd4f0",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-60011-wow-567fb5198bf4/v0001": {
+      "name": "Jandice Barov \u2014 WoW",
+      "manifestHash": "ae78b28c42aca66bb77f9af3a2cfafef44ca2e03cffdb8816d5e247c27d6e127",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60014-wow-90e110e13b80/v0001": {
+      "name": "Tirion Fordring \u2014 WoW",
+      "manifestHash": "e59a10eabb35c862adc5997827efcf708352c1950326c9a071e2167754a0a06c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60016-hs-cs3-024/v0001": {
+      "name": "Taelan Fordring \u2014 Taelan Fordring (Hearthstone)",
+      "manifestHash": "e8a07145e4d5ae70e9743cff82300f3cf2d512c116833071aa87efd846b1a54b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60017-wow-9a173bfd3c9c/v0001": {
+      "name": "Alexandros Mograine \u2014 WoW",
+      "manifestHash": "7d3c6abfc2ef6da7063ac0e368e94640159f1ee5ed63f12cc8677e4d31573768",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60020-wow-234a1d611b73/v0001": {
+      "name": "Darion Mograine \u2014 WoW",
+      "manifestHash": "152a3a86965cb32a623af1c3a1a303506ba8f381b5d57b428387863e409a45dc",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60022-hs-nx2-034/v0001": {
+      "name": "Baron Rivendare \u2014 Rivendare, Warrider (Hearthstone)",
+      "manifestHash": "907d3ded757d58cc0ca1fcf3cbc49d63cbbc0385533d89f09b60b1a06b789315",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60030-wc3-garithos/v0001": {
+      "name": "Othmar Garithos \u2014 ordinary (WC3)",
+      "manifestHash": "eb85771d0bf23fc5abd70f07469b1cce2bd54ad7638d0e808f1b670e338f1591",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60036-hots-uther/v0001": {
+      "name": "Uther the Lightbringer \u2014 HotS",
+      "manifestHash": "ff5b34f9416bec995d4d446fb3544ca68c68dba3a3afa56a5df989855a5a29bd",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-60081-wow-77a8e5f66567/v0001": {
+      "name": "Nathanos Blightcaller \u2014 WoW",
+      "manifestHash": "9e7e74c88c3cb86b58c7a546224e734095de536f701313146a113b403b61c910",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60247-hs-sch-135/v0001": {
+      "name": "Turalyon \u2014 Turalyon, the Tenured (Hearthstone)",
+      "manifestHash": "e77e9312dd11bcb334157e812018cb280abbc7719f0c4696a7d990ec988d8522",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60248-wow-selected-1851c5cb6e/v0001": {
+      "name": "Meryl Winterstorm \u2014 Meryl Felstorm; WoW Legion undead recorded portrayal",
+      "manifestHash": "5683e4e60ff6f206004306b27ceb8e615c7a71c73d7b118af1ad2bfdd2a2d80d",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60300-wow-961f6788498b/v0001": {
+      "name": "Alonsus Faol \u2014 WoW",
+      "manifestHash": "5bdee0cd69e1a07101bda84557a15487606ff1ce35e7ba779624c4e792f808cb",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60305-wow-f4664771b1fe/v0001": {
+      "name": "Archbishop Benedictus \u2014 WoW",
+      "manifestHash": "a35d1c36814c93db6c69d243c61b493639c2efc166cb31a279afd319d1c7b5cd",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60572-hots-whitemanebase/v0001": {
+      "name": "Sally Whitemane \u2014 HotS",
+      "manifestHash": "96fa5615c019b1c8f50f1f56400df3d2bb629e00e5e5d86a8787b04d8459c501",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-60578-wow-2111569309ea/v0001": {
+      "name": "Aegwynn \u2014 WoW",
+      "manifestHash": "b98b843457f2c31ead0d381cc1ccd3590d8e489c45ec10f9b728c08a69ee1eb2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60605-wow-5824192bfa23/v0001": {
+      "name": "Falric \u2014 WoW",
+      "manifestHash": "094064f0b0d0fc3bd5b1e1b462a2d2dc810a94013f3fd760ad4661a7a00c0fac",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60610-wow-81bdf963b197/v0001": {
+      "name": "Marwyn \u2014 WoW",
+      "manifestHash": "7eccc5aab9c6fcd7f1c483e637c1c148e0bc923cd51d1fc34ef409c901d262b9",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60650-wow-5d6a234d1860/v0001": {
+      "name": "Maxwell Tyrosus \u2014 WoW",
+      "manifestHash": "6767353a126fe7c6f260bc0ce86c9f6db46ef96dd1888b6391c4b9267b170333",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-60686-wow-8e6318b520f8/v0001": {
+      "name": "Bolvar Fordragon \u2014 WoW",
+      "manifestHash": "3c366e51ea9d5ddfade54f9f0722fd8c436f28c2f8ffd7274f0db9ce1c8a6ac8",
+      "undeadCoverage": "covered"
+    },
+    "goa2-60687-wow-4412710fdd59/v0001": {
+      "name": "Taelia Fordragon \u2014 WoW",
+      "manifestHash": "bf41c755c88498b0a61060f510bdbddfdf6ac908dee3a00ef064ab7ea0bf6b18",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-61197-wow-f63c0813119d/v0001": {
+      "name": "Thassarian \u2014 WoW",
+      "manifestHash": "5c707135267c7b13a747e9f96a4202e872a7d5ca4c8c7b6852e57de01d1740bf",
+      "undeadCoverage": "covered"
+    },
+    "goa2-62001-wow-0819015bdeda/v0001": {
+      "name": "Ysera \u2014 WoW",
+      "manifestHash": "2730f7ba881083e562a60f863a4a8f292d19bbbcd41c4bbd3fdf989eb306f3f7",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-62002-wow-8d8cb83f7727/v0001": {
+      "name": "Merithra Green Dragonflight \u2014 WoW",
+      "manifestHash": "92bb5db080d378c9380f4eb47999f407d0ec6526f5ee4a1f7f06ba3efc1db95d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62200-hots-deathwingbase/v0001": {
+      "name": "Deathwing \u2014 HotS",
+      "manifestHash": "814a86f39d072a976329a8c47e0af67bfdfc4e18b8fdf7a0668698c94f0d726b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62201-wow-f11543fdb966/v0001": {
+      "name": "Sintharia \u2014 WoW",
+      "manifestHash": "502c8b6c5ab4e9cad30f1c7fbdcf2b71194bf94a310636a46acfae3800d0a6e2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62202-wow-selected-e5bdd77fe4/v0001": {
+      "name": "Nefarian Black Dragonflight \u2014 Nefarian; WoW Blackwing Descent recorded portrayal",
+      "manifestHash": "83ef02c0cd9c5eb3b6711f58c90f9f8c5cbcf6d1e4407faf4a4b1e75e8baa7fc",
+      "undeadCoverage": "covered"
+    },
+    "goa2-62203-hs-hero-08l/v0001": {
+      "name": "Onyxia \u2014 Lady Katrana Prestor (Hearthstone)",
+      "manifestHash": "eddc229a7b78d9953c3ee2d6b7d8aaae2ed1d96a2345c62d5962aba70e9a3614",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62205-wow-8e422516ccc2/v0001": {
+      "name": "Sabellian \u2014 WoW",
+      "manifestHash": "00b51d7505a744b2ddff83ad080cff8692e916e13cdda09fd726fcacb0089b4c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62400-hots-alexstraszabase/v0001": {
+      "name": "Alexstrasza \u2014 HotS",
+      "manifestHash": "2835fe4f2f01bd7c1286033fd9c0fae291bb1d769917be8af1568eba428f6c95",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62600-wow-7254ff533b22/v0001": {
+      "name": "Malygos \u2014 WoW",
+      "manifestHash": "65a6ae24612402311e1ce0438ea0637ad6bd98ab388aa0232bbb7a14c7a89c5d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62602-wow-177e0286113a/v0001": {
+      "name": "Arygos Blue Dragonflight \u2014 WoW",
+      "manifestHash": "c798e0c7757246405500cc11cc7b3a7a2901e6ec775871a3f5496eb95be3d6d3",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62800-wow-7934cf994c4f/v0001": {
+      "name": "Nozdormu \u2014 WoW",
+      "manifestHash": "abbc20ae2bd3d9c0363ac89ac792f07a1a2c87dee41775370be030f688672bda",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-62801-wow-d64e87b0748d/v0001": {
+      "name": "Soridormi \u2014 WoW",
+      "manifestHash": "f7f4c3501868959338d6b5ab44cd2a5117254f7c2993bf8de961312bd8959043",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-64000-wow-ee5ef8e99c93/v0001": {
+      "name": "Jazikrax Revilgaz \u2014 WoW",
+      "manifestHash": "eb7a6e916e065a0ec495f304bea405fc052c8d3d18ad2308b22200dd774feb07",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-64102-wow-09139873302a/v0001": {
+      "name": "Trade Prince Gallywix \u2014 WoW",
+      "manifestHash": "4b7706aab3d800723d24b040becff876c976faa0416ede99a7c073d27eb28e03",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-64703-hots-gazlowe/v0001": {
+      "name": "Gazlowe \u2014 HotS",
+      "manifestHash": "399872e1f2b48dfb830c2dc1aa7f6b2903e9dec863bb46d5af94a9e6c06774c1",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-66000-wow-4f6eeb3682e5/v0001": {
+      "name": "Rastakhan \u2014 WoW",
+      "manifestHash": "d62db8aa1c8c4c1419766e6810b02008a6db7c698a32ce9d7e3ef7b935b7fc6b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-66001-wow-2f9a190640a2/v0001": {
+      "name": "Talanji Khan \u2014 WoW",
+      "manifestHash": "3f4609c73bfa721db001715170718615f32e4f8eb1e24e3908842f092bae6bc5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-66008-wow-d9c0a2b9cccb/v0001": {
+      "name": "Zul \u2014 WoW",
+      "manifestHash": "278bea01e41984663d85bb6aed3d405902de4067333d1d0935aa282b047dca42",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-66010-wow-5087a109a555/v0001": {
+      "name": "Yazma dynn_Han \u2014 WoW",
+      "manifestHash": "f9b218b31fba12fd57be1374695016791fb1a01242e824969d4be73338937a1a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-68001-wow-2db9d744e3c6/v0001": {
+      "name": "Vol'jin \u2014 WoW",
+      "manifestHash": "37dc3b21a0ee74fd2160004853394cd390777caef18b2e47484a013697bd4b4d",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-68100-wow-5f0efa75367d/v0001": {
+      "name": "Rokhan \u2014 WoW",
+      "manifestHash": "eb9a777bbffa4d1e7c1759d3edad443627bdc8f007f98d3604d4d84f1e857ffb",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-68102-wow-4c5e0ea16e28/v0001": {
+      "name": "Zalazane \u2014 WoW",
+      "manifestHash": "79bcded6b8fe1d5346c34e5bf6d09309170e82da5abef6eb94e9552eb0e7edfb",
+      "undeadCoverage": "covered"
+    },
+    "goa2-8-hots-varianbase/v0001": {
+      "name": "Varian Wrynn \u2014 HotS",
+      "manifestHash": "4d2b01be5874fa92770c20058f3a03154c8b1bc58108f929d0cfb748fde1df7b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-9-hots-anduinbase/v0001": {
+      "name": "Anduin Wrynn \u2014 HotS",
+      "manifestHash": "18773d2a9403a3904f8546a725bb9e6b8844bbe58d3f1bce5df251058a1fd561",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-90100-wow-0c997260d459/v0001": {
+      "name": "Harlan Sweete \u2014 WoW",
+      "manifestHash": "ab45cb31f555837642671b9ec6617353d5b1fb979a5263087574e07a907e4d71",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-90102-wow-c6268f2bd6c1/v0001": {
+      "name": "Arik Scorpidsting \u2014 WoW",
+      "manifestHash": "ee1cc6c48da5b8ab2047c5125929bee51816514a4bfa8c1ac510e5192278c048",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-addie-fizzlebog-wow-3558e4a96c03/v0001": {
+      "name": "Addie Fizzlebog \u2014 WoW",
+      "manifestHash": "2522c501fc524abc634de0e09e76c7c69954ab525cf8bc4002e7d151c7e5e769",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-aelthalyste-wow-0ba8ade74525/v0001": {
+      "name": "Aelthalyste \u2014 WoW",
+      "manifestHash": "dbe56ed8b57da55c5fe3fed44f04b84f382ccb45d12d0e44401b873e6d2bdb02",
+      "undeadCoverage": "covered"
+    },
+    "goa2-aelyith-wow-0854d85cef32/v0001": {
+      "name": "Ael'Yith \u2014 WoW",
+      "manifestHash": "9323ab2c314d5cc13684d6c97a4be20fa83d299b0b9d9fabf60ca99655d98243",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-aethas-sunreaver-wow-d56212cc8707/v0001": {
+      "name": "Aethas Sunreaver \u2014 WoW",
+      "manifestHash": "c3f84c0ae0bacf9fca3128185e1fa29a89b5dabb510aa706057384c9484b4f38",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-aggralan-wow-bbde37378b72/v0001": {
+      "name": "Aggralan \u2014 WoW",
+      "manifestHash": "782fff82c441970171f2f156efc1f90f4397c5cd6c400774cd0e411ef7445ead",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-alexander-treadward-wow-af6ed1e5d4a7/v0001": {
+      "name": "Alexander Treadward \u2014 WoW",
+      "manifestHash": "beb0b572b4a9c462b01dc767e4d5ea32ce8adac2f8a1e365b7e2ac00bb445c49",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-amber-shaper-unsok-wow-c0997a4a12ce/v0001": {
+      "name": "Un'sok \u2014 WoW",
+      "manifestHash": "26ebd9ce9743b6078497974beffe5737ec39020f8d5ce95c8e750828cace2c0e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-anarys-lunastre-wow-3f917173fafc/v0001": {
+      "name": "Anarys Lunastre \u2014 WoW",
+      "manifestHash": "577f5d6f225aa81a94aceff2da4dd05ed6aa3fd1423b923a8d5048fe2c27915c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-andaris-narassin-wow-890bbaf9b0ef/v0001": {
+      "name": "Andaris Narassin \u2014 WoW",
+      "manifestHash": "3286b3bbcab9705d2ad51b5173e0632ece849ea1fab71dde8bb2965015a1499d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-anubarak-hots-anubarakbase/v0001": {
+      "name": "Anub'arak \u2014 HotS",
+      "manifestHash": "374447237120ae61756f01ffeee6370fbe9cb9f3715943ab063c10a0e94dc63a",
+      "undeadCoverage": "covered"
+    },
+    "goa2-aponi-brightmane-wow-146b968289ec/v0001": {
+      "name": "Aponi Brightmane \u2014 WoW",
+      "manifestHash": "b1e5cb97891648b9a0a28cefcb60e3660b89d559587426194a37c9416feb7e32",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-arcanist-valtrois-wow-71d1d7957675/v0001": {
+      "name": "Valtrois \u2014 WoW",
+      "manifestHash": "275b45955a226992bef1d620ea90aa5df2ed582dd2763dfc5d9d99c79e75b289",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-archimonde-wow-d21efd4eff21/v0001": {
+      "name": "Archimonde \u2014 WoW",
+      "manifestHash": "33c2fec64732716237578c26092b7963c1b450d6a3ca185ee2679c033f881250",
+      "performanceFamily": "eredar",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-archmage-landalock-wow-004f152ce89c/v0001": {
+      "name": "Lan'dalock \u2014 WoW",
+      "manifestHash": "bfb069cbe8be9232a897f58c7dc29aee48f53f3496b5bb14b9313d5009d5c64e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-archmage-sol-wow-f6c28e70c844/v0001": {
+      "name": "Sol \u2014 WoW",
+      "manifestHash": "c9a3996c60cd1ebd269fbaa9bc93530b1b11769a9b1f4743e0d4f251e8a11780",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-archmage-vargoth-wow-7c35801fc15d/v0001": {
+      "name": "Vargoth \u2014 WoW",
+      "manifestHash": "c8d3f44501d8618fddc69c9c9a37eb7e254b9a673903435e33ea8a0c36d0c489",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-archmage-xylem-wow-d6725aa537e2/v0001": {
+      "name": "Xylem \u2014 WoW",
+      "manifestHash": "e58ca472e642c73e10584df6074bb40dac3469b194ac21d23aaaa514114a4fcc",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-arkonarin-starshade-wow-2a08eb07fccd/v0001": {
+      "name": "Arko'narin Starshade \u2014 WoW",
+      "manifestHash": "8af7e88e629fa2d4675a2235da4961a06bd38b87e0fac3fe5858fbd8a491e4e4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-asha-ravensong-wow-7c12f9fdf9cb/v0001": {
+      "name": "Asha Ravensong \u2014 WoW",
+      "manifestHash": "9bf4ffaaba870e0000689f4b73b3713203d6d54266a4eec2ab5d8636dfe5c1da",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-aspix-wow-b83a7c4dc7dd/v0001": {
+      "name": "Aspix \u2014 WoW",
+      "manifestHash": "2240c473b3b97f43ea18fc6c816e37905464ebf862f5dc74d77af2d68f7fef7f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-astalor-bloodsworn-hs-rlk-222/v0001": {
+      "name": "Astalor Bloodsworn \u2014 Astalor Bloodsworn (Hearthstone)",
+      "manifestHash": "f86f9900d6b8b453739c8fcfe55400ab37a88e868f4fcfb0b588c0e4339ba61e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-athissa-wow-fb57bfac9270/v0001": {
+      "name": "Athissa Hatecoil \u2014 WoW",
+      "manifestHash": "14944927fd04b9012db1059263b2d5aca89d283104bdb032b48f46e1655bf339",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-athrikus-narassin-wow-4d76e9918d7f/v0001": {
+      "name": "Athrikus Narassin \u2014 WoW",
+      "manifestHash": "d7460d9658d0b86647e72af4b38ca63a9189c104f58fa5b6a47c9418e1cd02f8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-azgalor-wow-short-f5e27c96/v0001": {
+      "name": "Azgalor \u2014 WoW indexed Azgalor short recorded soundset",
+      "manifestHash": "05cb3662d7c765cfb8b20f4afe45d264ad9648aa7711aadb26044c9d65558518",
+      "performanceFamily": "pitlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-azuregos-wow-de937d36e31c/v0001": {
+      "name": "Azuregos \u2014 WoW",
+      "manifestHash": "d8cf25ff6e57e9c65dcc8ad03ad65ac48f10ed3a125f55cff034b45a7d1b1ab1",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-ban-bearheart-wow-822b7de7732b/v0001": {
+      "name": "Ban Bearheart \u2014 WoW",
+      "manifestHash": "54088337b9fee5dfeb5b3dafb765ee4b0ae08bd539cfe6882dd3ca7d7b5a613d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-barnes-wow-9d8cfb74d9e8/v0001": {
+      "name": "Barnes \u2014 WoW",
+      "manifestHash": "9e15f3b7d26bd10a1074e9d91f704f80a34e912d5dc0cae8a4aac90d27744c83",
+      "undeadCoverage": "covered"
+    },
+    "goa2-belath-dawnblade-wow-5fc0b646edf2/v0001": {
+      "name": "Belath Dawnblade \u2014 WoW",
+      "manifestHash": "286200a187a94a2ceef43b5263579f2fc27d71dcccdccf60dd2d868ca8749520",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-blaumeux-wow-selected-59a570d055/v0001": {
+      "name": "Blaumeux \u2014 Dame Blaumeux; WoW Naxxramas undead recorded portrayal",
+      "manifestHash": "a7bfeb16211b03b4f1f7bfabdb57a2b095066c111930a4da99adc2a08b01c038",
+      "undeadCoverage": "covered"
+    },
+    "goa2-briona-the-bloodthirsty-wow-53f1f4a17088/v0001": {
+      "name": "Briona \u2014 WoW",
+      "manifestHash": "d6def11ffc9f61a77fa5a23c64df907fc04b81ffe031a060f0b4e9377bf3e7a6",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-broll-bearmantle-wow-37a7714146f0/v0001": {
+      "name": "Broll Bearmantle \u2014 WoW",
+      "manifestHash": "187f579f7f68d773c65267211a4b283b3bb1340e8837d49d5aca2bf63f55fd8b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-brother-korloff-wow-1d0a990a6109/v0001": {
+      "name": "Korloff \u2014 WoW",
+      "manifestHash": "4e3161a06c674e1bbf26d8b5ed7c57d78312ac2f5e1a048db6c78f658fba8686",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-brother-pike-wow-3ff77b0c8a56/v0001": {
+      "name": "Pike \u2014 WoW",
+      "manifestHash": "ab0db344d4e8017d8a70388cc5588ce0895b1003298ced8828f95450b517ead4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-brother-therold-wow-dd5a5a269278/v0001": {
+      "name": "Therold Wavestone \u2014 WoW",
+      "manifestHash": "990e30a8c1ee572a0acab21c1c385acb82b2426303b8d083a0463d243c0cbd68",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-captain-eudora-wow-05d4cf265cc3/v0001": {
+      "name": "Eudora \u2014 WoW",
+      "manifestHash": "4971e16c34a567630f71d3b8ffaeb52062a13ef8e8ef752d590cf332f46d75f8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-captain-greenbelly-wow-a505efbb2547/v0001": {
+      "name": "Greenbelly \u2014 WoW",
+      "manifestHash": "be8babb6ed5a3575b58c106a943898fa6520d2597a203775388f287689e79af7",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-captain-jolly-wow-195e0984f034/v0001": {
+      "name": "Jolly \u2014 WoW",
+      "manifestHash": "c0f1f0eed0fe6f3c7599cdfc2912a3bca97b14b26d2a2cdfcf44ec3bde9645ed",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-captain-raoul-wow-e86ae9231f13/v0001": {
+      "name": "Raoul \u2014 WoW",
+      "manifestHash": "1adaf68e81482bca94789f7139a11825e18b005e2e695c2d01a0d7a66346c80f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-caria-felsoul-wow-45290541a607/v0001": {
+      "name": "Caria \u2014 WoW",
+      "manifestHash": "02f73a6520c9cb3bc99a4eb0ca0bf8ca38511c434fdfb9e0a4c61b60dea02196",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-celestine-of-the-harvest-wow-d9d8ee9ed116/v0001": {
+      "name": "Celestine \u2014 WoW",
+      "manifestHash": "75347e69e16a9924ab2d856b0a559bb17988aa459ab657d43c3602ec7a717be3",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-chao-the-voice-wow-f7a9f6b3285d/v0001": {
+      "name": "Chao \u2014 WoW",
+      "manifestHash": "008519cc7cad939176445e9771ff981d204ce527939534299f480528457f56e4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-chief-telemancer-oculeth-wow-9276565c5bff/v0001": {
+      "name": "Oculeth Telemancer \u2014 WoW",
+      "manifestHash": "3e1b3c6e0b2d58d3935278b896406f703980f781716968b792adf8ce1ea1d2f8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-commander-durand-wow-short-ac2f2882/v0001": {
+      "name": "Durand \u2014 WoW indexed Commander Durand short recorded soundset",
+      "manifestHash": "5b9a48d2274c3b073caccac130a5147628452b908808e7b401787397cd5404a3",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-cordana-felsong-wow-1b8d1b4f9ba1/v0001": {
+      "name": "Cordana Felsong \u2014 WoW",
+      "manifestHash": "5f7a56b77df5397c56c4389e3f9d6d6a77a03593e392e13783a0a0168a98a531",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-cyana-nightglaive-wow-17edb914641d/v0001": {
+      "name": "Cyana Nightglaive \u2014 WoW",
+      "manifestHash": "57dd87e5d6b62041d084deb1ca6531311ce2d44eb2fead618a3c0be0a54452da",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-dagnar-stonebrow-wow-50fd756d77a4/v0001": {
+      "name": "Dagnar Stonebrow \u2014 WoW",
+      "manifestHash": "25fb0842db9c40600cbcef6a8d3c80fc58b3ebc35abe0fa2747ab6bf21ad2e3e",
+      "undeadCoverage": "covered"
+    },
+    "goa2-dagran2-wow-b657673bc145/v0001": {
+      "name": "Dagran Thaurissan \u2014 WoW",
+      "manifestHash": "44b276f882ea52e80a69f9ec926f6eda536cd41eae48364d6173095f240d446a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-dargrul-wow-d45a27f84d9f/v0001": {
+      "name": "Dargrul Understone \u2014 WoW",
+      "manifestHash": "f7cbeecef8b5310220e22c131a4794ecb6b5880304844638bb0b3fb13c07d944",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-dark-ranger-velonara-wow-988298de2663/v0001": {
+      "name": "Velonara \u2014 WoW",
+      "manifestHash": "fbe36a09a43ca575e5781b835a5496262b7eec6dfc62c7c8c1a30f7df3dc2ac4",
+      "undeadCoverage": "covered"
+    },
+    "goa2-darkmaster-gandling-wow-short-cd594838/v0001": {
+      "name": "Genobaud Gandling \u2014 WoW indexed Darkmaster Gandling short recorded soundset",
+      "manifestHash": "a99f86b40d43bad4e47e8e45d4d56c48b7d248017c38d4c84db62d7b9ca21501",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-delora-lionheart-wow-47b18d401526/v0001": {
+      "name": "Delora Lionheart \u2014 WoW",
+      "manifestHash": "5bcbc2ee46cc26df9263c3b39991df7d9cd83cd025e15e1cc9f24389b3a5dec6",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-dizzy-dina-wow-c98b508073b2/v0001": {
+      "name": "Dizzy Dina \u2014 WoW",
+      "manifestHash": "8e47b4c1ff894026f911d9529ee5b35cf85d78bda291a59dfecc7b1e1d04584b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-dranosh-wow-b9d16872ecaf/v0001": {
+      "name": "Dranosh Saurfang \u2014 WoW",
+      "manifestHash": "add346bb98e71ccbdd8b1766eb285a147033f328731c6afea550bb0ba410ea49",
+      "undeadCoverage": "covered"
+    },
+    "goa2-durak-wow-4c4f216d5dac/v0001": {
+      "name": "Durak \u2014 WoW",
+      "manifestHash": "8946401bbffe7a4736a0f2603e3cd401f21a63b84f21a6907a8e8960ac9b0d0d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-ebyssian-wow-b55d3da5e0cf/v0001": {
+      "name": "Ebyssian Black Dragonflight \u2014 WoW",
+      "manifestHash": "4ca06553de22f6da6ee5586b2c7d6a4ad51aee2138ba6d0f88d3cfea83649b57",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-eitrigg-wow-4e20bc231e77/v0001": {
+      "name": "Eitrigg \u2014 WoW",
+      "manifestHash": "e516f08aa5802322bfd1e39a4391f926bb34975bcc52b7196f7216f259744557",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-elisande-wow-7b4418e3f683/v0001": {
+      "name": "Elisande Nightwell \u2014 WoW",
+      "manifestHash": "bccc112ecc08deb67c5776769ecb8384dd0e12a730a428c1d0f8efae070e20e8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-elothir-wow-15079061d323/v0001": {
+      "name": "Elothir \u2014 WoW",
+      "manifestHash": "22f4fdc09d35663c00fad0d273af0051201b0bbd95aafca9e4e9146dcfe25c03",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-emeni-wow-464cf1ca2f2a/v0001": {
+      "name": "Emeni \u2014 WoW",
+      "manifestHash": "8199547761311d22401fc3105d07837442fcfb207a7ea982ac442c6cbab858f2",
+      "undeadCoverage": "covered"
+    },
+    "goa2-emeriss-wow-3d2b48897542/v0001": {
+      "name": "Emeriss \u2014 WoW",
+      "manifestHash": "ea3f5df6d67f20ebc11a5d0988f27caeb38f40c9fc53ecaef97f6a29df9bba8a",
+      "undeadCoverage": "covered"
+    },
+    "goa2-erik-the-swift-wow-22096137b55d/v0001": {
+      "name": "Erik Viking \u2014 WoW",
+      "manifestHash": "18bbc42a44a79b9074f8e47a77df503ca9bd63f0ae2f85e7d005330fc6020764",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-everit-reade-wow-fdf4b608ff5b/v0001": {
+      "name": "Everit Reade \u2014 WoW",
+      "manifestHash": "eb54f8ec2dc4a2e5ca32aa0e550f36e7591e6d42bc57b6da20f7f0e307937174",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-falara-nightsong-wow-d7c23e4834fa/v0001": {
+      "name": "Falara Nightsong \u2014 WoW",
+      "manifestHash": "88055a6fe4067267a3754de2cc871f911ebc2e3a21371bc0f464511bf2310dde",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-fearsome-jang-wow-02d410df266f/v0001": {
+      "name": "Jang \u2014 WoW",
+      "manifestHash": "6c6cbfe2cd215ba581061716e9f0a187d6c1feb42b8a6e6c3362cfc6470244a7",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-fenris-wolfbrother-wow-selected-28ddfe2624/v0001": {
+      "name": "Fenris Frostwolf \u2014 Fenris Wolfbrother; WoW alternate Draenor recorded portrayal",
+      "manifestHash": "27f0122eea0a716f7d694e2d14197a494d18fb76874fd9ea7177cafee679002a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-flynn-fairwind-wow-73f8004411f4/v0001": {
+      "name": "Flynn Fairwind \u2014 WoW",
+      "manifestHash": "7ff437498eda5163e2cf812d7b118013c720486d4e034c65d0169f997f809fb2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-galarthus-rivertree-wow-792ae8070945/v0001": {
+      "name": "Galar'thus Rivertree \u2014 WoW",
+      "manifestHash": "f062104434c7f673b7eb6b42c6e636c35b531d1a08b54b7411fcd918884f630a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-ganar-frostwolf-wow-0334671e4b26/v0001": {
+      "name": "Ga'nar Frostwolf \u2014 WoW",
+      "manifestHash": "5bef47c8d553f410a06a81fcbe8d4118901cd875a2b50eecc70a7b05f15e385e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-gargok-wow-889cdfd0926b/v0001": {
+      "name": "Gargok \u2014 WoW",
+      "manifestHash": "89b9eccb13049323e09800be6751e8db607b6dcb24c197e0b0b122d5d4bc211f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-garrosh-hots-garroshbase/v0001": {
+      "name": "Garrosh Hellscream \u2014 HotS",
+      "manifestHash": "f3ac8f4d872072ec2f557561bcb2f48aad70928607e7f8424716bb015812728a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-garrosh-hs-hero-01n/v0001": {
+      "name": "Garrosh Hellscream \u2014 Pirate King Garrosh (Hearthstone)",
+      "manifestHash": "5676282e563aec5c402733a6f521c3e983c1018353c7168685d9c27c54fb9f4f",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-general-angerforge-wow-729733bda101/v0001": {
+      "name": "Galmar Angerforge \u2014 WoW",
+      "manifestHash": "6c8cc791bbb0bcdcc6c7c60cc0aa7a3aa97af8b7553f40b719fb9fd0efb8a066",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-gerithus-wow-20879b9759cd/v0001": {
+      "name": "Gerithus Green Dragonflight \u2014 WoW",
+      "manifestHash": "abe3df47e35a0964bd9915a99f210e574102bc29dc13259c29e8c527ac674f26",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-glutonia-wow-c7cd83807edc/v0001": {
+      "name": "Glutonia \u2014 WoW",
+      "manifestHash": "9e92cf10f0a11e9fe6999166b2a4ae956a5bca2ea5b385b2b3a308da985b0ca8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-gortok-palehoof-wow-8e618306e1e5/v0001": {
+      "name": "Gortok Palehoof \u2014 WoW",
+      "manifestHash": "df98c9cec4508331813a3faded3525d9b9381c65aaaa67a81f713c14d0661b03",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-grand-astromancer-capernian-wow-short-9d383792/v0001": {
+      "name": "Candress Capernian \u2014 WoW indexed Grand Astromancer Capernian short recorded soundset",
+      "manifestHash": "e512033c7c8c891cba5925c0ab1f4f656c32cdd0c2e255ead104054eb0d81190",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-grash-wow-acb2ee5d663d/v0001": {
+      "name": "Grash Gralashar \u2014 WoW",
+      "manifestHash": "afd6ee9ea93781a9372c77296d1616c824b3511183dd5114e103780c32bbe2ae",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-grayson-shadowbreaker-wow-e6e7f24af2b3/v0001": {
+      "name": "Grayson Shadowbreaker \u2014 WoW",
+      "manifestHash": "e0541af299f63dd69a0849b9ebb0f8fe2f70f5a2b003d700c4e45609b54ca8e0",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-griftah-hs-trl-096/v0001": {
+      "name": "Griftah \u2014 Griftah (Hearthstone)",
+      "manifestHash": "2ae6cef1955c903b0524c1ff09ded15204f68bc21a6d1f6f5d9979e51573d752",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-grimla-fizzlecrank-wow-d93ce02b7923/v0001": {
+      "name": "Grimla Fizzlecrank \u2014 WoW",
+      "manifestHash": "93da787cb9066e1e935fabc3a69a22e178f44d50cfa8e4e36598a5fc9a5039c2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-gu-cloudstrike-wow-a8e9428f50fe/v0001": {
+      "name": "Gu Cloudstrike \u2014 WoW",
+      "manifestHash": "4dd13dca9872a4cf8cabf009d3376e2b3c7401b0360b3da3d189851d7bcb96fa",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-gurgthock-wow-92b9651d863e/v0001": {
+      "name": "Gurgthock \u2014 WoW",
+      "manifestHash": "9f5f3a013602ee25972e1bfb0ff8dc521b923cdf1937f1ea1bfc8cb5f09bf5e1",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-hadal-darkfathom-wow-bc309779cedb/v0001": {
+      "name": "Hadal Darkfathom \u2014 WoW",
+      "manifestHash": "a6dd5e532533b83ce141a0bd5f2be78154c6617956473a60655c031717bb9957",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-haleh-wow-c2ee4a0a84dd/v0001": {
+      "name": "Haleh \u2014 WoW",
+      "manifestHash": "2a49b6c5685358e28a72ddf94920432aa08ca5a7a39a4d2c3a09764a94c0a6cf",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-harrison-jones-hs-ex1-558/v0001": {
+      "name": "Harrison Jones \u2014 Harrison Jones (Hearthstone)",
+      "manifestHash": "d055f8ba7e673011b9e6dd7649778e80c5c98d1a8ccaea170c35c68b8c976c6e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-head-machinist-sparkflux-wow-8c4208956012/v0001": {
+      "name": "Sparkflux \u2014 WoW",
+      "manifestHash": "2fe6738df69a3a056faefa3ee9bb3e234dca77cd1a257eaf545f1015a15e290e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-helcular-wow-748432179ae2/v0001": {
+      "name": "Helcular \u2014 WoW",
+      "manifestHash": "cbb013b7f42277c7ae77e010a884b4e31a233d8761b7339c249069331c970751",
+      "undeadCoverage": "covered"
+    },
+    "goa2-helnurath-wow-135483cd02f4/v0001": {
+      "name": "Hel'nurath \u2014 WoW",
+      "manifestHash": "6e86cb32d8ba0938520ef626c49ac41062b77b47e7683b635f4e3404d2f32d62",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-hexlord-raal-wow-db5da4056232/v0001": {
+      "name": "Raal \u2014 WoW",
+      "manifestHash": "523fe015cbf891c805d8d2045956f3903a66e3f883a4f8a1e7da41cb261d7763",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-high-prelate-rata-wow-7d328623edfa/v0001": {
+      "name": "Rata \u2014 WoW",
+      "manifestHash": "612cbe338f1823546d3364a4ab4191d60060fccb7f52bd6046b5d3e425500afd",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-hobart-grapplehammer-wow-3213ea54c5d4/v0001": {
+      "name": "Hobart Grapplehammer \u2014 WoW",
+      "manifestHash": "b75182b9feccdea5be3811cc3ca95f907c90cb112d9c86559ec45f67d4d2459b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-huln-highmountain-wow-261ad26006e1/v0001": {
+      "name": "Huln Highmountain \u2014 WoW",
+      "manifestHash": "5facf9d4700360ce22ec0892cf1f021b05c50d1e8f85e89f2c04d0f8933c1a61",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-iron-body-ponshu-wow-f43f0d71f934/v0001": {
+      "name": "Ponshu \u2014 WoW",
+      "manifestHash": "1a2cacebf7bf18604755e35bc74b5074e28213cd01d0f954ee531bb126e268f4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-izal-whitemoon-wow-18510870fa1a/v0001": {
+      "name": "Izal Whitemoon \u2014 WoW",
+      "manifestHash": "ae13eae1c9c9204f4d78cfc21c32a9ae204f3a24a0b5cd9e3e8b6eca6903e286",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-jace-darkweaver-wow-8e0503acdf7e/v0001": {
+      "name": "Jace Darkweaver \u2014 WoW",
+      "manifestHash": "be8b35061ca3975e621bef29b619987cdea0abd45e5c9bf67f2d5d277784c718",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-jakrazet-wow-6be8a5be53fe/v0001": {
+      "name": "Jakra'zet \u2014 WoW",
+      "manifestHash": "16d09a83e79e8a149c38eafa2c3a705a752da7743310066da6e6dd1495a5a402",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-jale-rivermane-wow-f48f5924ad15/v0001": {
+      "name": "Jale Rivermane \u2014 WoW",
+      "manifestHash": "dcc37e18605caef1e00cb6c35c96b3c1abeb299cb8630a36324d5f290ab9cf1b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-jergosh-the-invoker-wow-39c30c56ec0c/v0001": {
+      "name": "Jergosh \u2014 WoW",
+      "manifestHash": "e4044ea81f51ff75666ff045c43258857c55bda3e5c6db47296bd8a4113a8434",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-jindo-wow-c0a679d14058/v0001": {
+      "name": "Jin'do \u2014 WoW",
+      "manifestHash": "039fc717f9735541ebbc30be348c3f169246decd768d8e94a96629a96a0e848f",
+      "undeadCoverage": "covered"
+    },
+    "goa2-jubeka-shadowbreaker-wow-9216aec42c19/v0001": {
+      "name": "Jubeka Shadowbreaker \u2014 WoW",
+      "manifestHash": "6241e3a14a9466faefbd98e2eedb9fd0c5a26969b552c89bc65255103258d9e7",
+      "undeadCoverage": "covered"
+    },
+    "goa2-kalecgos-wow-40548d782a69/v0001": {
+      "name": "Kalecgos \u2014 WoW",
+      "manifestHash": "07e2895a617ce844a5646396421ca62f2ffcac7cbbc3d3b96d03d579dc7faac8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-karlain-wow-8a6e8b9c7d27/v0001": {
+      "name": "Karlain \u2014 WoW",
+      "manifestHash": "74f990619172b34606df0d0ad0fd7929e35f62dea73c34c9a5c09a2f8f87380f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-kayn-sunfury-wow-5a331465d883/v0001": {
+      "name": "Kayn Sunfury \u2014 WoW",
+      "manifestHash": "8d943613d6da567104bd2ff806ed091ca9ed4d2eb5ff6702e3ad0a71d1b3372b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-kelsey-steelspark-wow-9d8c201fbb1c/v0001": {
+      "name": "Kelsey Steelspark \u2014 WoW",
+      "manifestHash": "50c7b25440b84ccb1fe36afad7c010ccfefd73630e761c5f9cca8ebb47a252ed",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-keristrasza-wow-95ad60126dd7/v0001": {
+      "name": "Keristrasza \u2014 WoW",
+      "manifestHash": "eea817170ef9d715cf544d6d8d44f17ddfc56e0e799f7ccfd076c3e6c8075883",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-kil-jaeden-wow-626c5745a1fc/v0001": {
+      "name": "Kil'jaeden \u2014 WoW",
+      "manifestHash": "b7d84b7f87c0b67eda4bce9a13f508870b330c319268ff9eb009193386504803",
+      "performanceFamily": "eredar",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-king-deepbeard-wow-f1d8674ca7e9/v0001": {
+      "name": "Deepbeard Cove \u2014 WoW",
+      "manifestHash": "2403a1e17bdb4de9e5ea383635ec7fe68824e4f55d930c5c3d6d184c6d167838",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-kisha-tortollan-wow-60b909d16014/v0001": {
+      "name": "Kisha Wale \u2014 WoW",
+      "manifestHash": "de2bc6b93a0954c63026cd3e6b75eca70bb73700ffe8148632fbce9d8bf35342",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-koda-steelclaw-wow-b1387a3e6851/v0001": {
+      "name": "Koda Steelclaw \u2014 WoW",
+      "manifestHash": "1c1c672d3afb65b5cb03be1a8dfa9c4868baa94546a6b4d8f8c1b2e9e4aa84c9",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-koro-mistwalker-wow-a004f53974e1/v0001": {
+      "name": "Koro Mistwalker \u2014 WoW",
+      "manifestHash": "74630725db07b71d2025c18eb747fd20f3fcf14d98bf9de0c8b8c1af5d20cd1a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-korvas-bloodthorn-wow-fe27bc390e9a/v0001": {
+      "name": "Kor'vas Bloodthorn \u2014 WoW",
+      "manifestHash": "8a04508dd02a251790686f49f951ec38cb7635b0c306a3047f155d16f231ab38",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-krick-wrenchnozzle-wow-a39979978fce/v0001": {
+      "name": "Krick Wrenchnozzle \u2014 WoW",
+      "manifestHash": "6c180547151d0a1a7d5874e0593ab7d6fb185db84065eb0ff27fb81eae8d0e2a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-kurtalos-ravencrest-wow-d723efdf5b72/v0001": {
+      "name": "Kur'talos Ravencrest \u2014 WoW",
+      "manifestHash": "6aeb54cbd2aecbef44500619b9b96927a5a406dd03ed93923e15e21a1566880c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lady-hatecoil-wow-9d4b834da78e/v0001": {
+      "name": "Vejsha Hatecoil \u2014 WoW",
+      "manifestHash": "3290cc87ad211d55e73ecd21fffefc2fa741b64105d9ec36eb90a63ee8851a81",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lasan-skyhorn-wow-f06de6298ab4/v0001": {
+      "name": "Lasan Skyhorn \u2014 WoW",
+      "manifestHash": "005f9dfb924c683a257f26298bccbb15dbe699c7162f1d2ed0ccdd058ef87bb5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lashk-tortollan-wow-0f5d9500bd09/v0001": {
+      "name": "Lashk Yazla \u2014 WoW",
+      "manifestHash": "3f051185c13d349bf68de7920e1ed7b0ee493f6d93f307f107da827a2657c937",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-leeroy-jenkins-hs-hero-04u/v0001": {
+      "name": "Leeroy Jenkins \u2014 Leeroy Jenkins (Hearthstone)",
+      "manifestHash": "afc5fcc15850cf790dbc3eabc1a1d2c665769b17de2fa0a9364be8843dc9f313",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-leyara-wow-54cd167ca59e/v0001": {
+      "name": "Leyara \u2014 WoW",
+      "manifestHash": "723ff29a5f85a2ad4eb69f9c6b476b62c47b77ebec870d5a72dbf2913e1dd8bb",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-lieutenant-drake-wow-85e9e384028c/v0001": {
+      "name": "Drake \u2014 WoW",
+      "manifestHash": "44928f914b34f08a093d9630c8b9b9839572559f63923415fe6763e9b2eeb841",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lilian-voss-wow-d24c60dc50df/v0001": {
+      "name": "Lilian Voss \u2014 WoW",
+      "manifestHash": "b06a01440e5e27b31183aff21bbe96ef21ba4365c778f6674ebfdecc53d7300e",
+      "undeadCoverage": "covered"
+    },
+    "goa2-little-lu-wow-6de363f27434/v0001": {
+      "name": "Lu Karasshi \u2014 WoW",
+      "manifestHash": "7845227d50b251d5b4a40396358539d674e9c9db50cda801ca0f1423c6d3c1d8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-liu-flameheart-wow-e2648bfabc88/v0001": {
+      "name": "Liu Flameheart \u2014 WoW",
+      "manifestHash": "eddba07d72009164a513afeb7ee860022fe32dd141f33c22f383ed1dc19f2a27",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lord-sanguinar-wow-short-20df1ea0/v0001": {
+      "name": "Sorrelon Sanguinar \u2014 WoW indexed Lord Sanguinar short recorded soundset",
+      "manifestHash": "8f44dc25ed282fb1c9a235bf2faf344ca373945ab5eae4af33b304588d1ce593",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lorewalker-cho-wow-e8b4c08715e5/v0001": {
+      "name": "Cho \u2014 WoW",
+      "manifestHash": "cbe622f519acfeffba781ccd509958e1e02952ea5e486c30d73113e9bc2a56d6",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lulubelle-fizzlebang-wow-e488f1c5dd44/v0001": {
+      "name": "Lulubelle Fizzlebang \u2014 WoW",
+      "manifestHash": "859c856cbe2187dabe837cfa07d4a662a0b092df09376a4f9762f86d5b72212e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lyana-darksorrow-wow-d603fe067609/v0001": {
+      "name": "Lyana Darksorrow \u2014 WoW",
+      "manifestHash": "7cbe19b5039cbfd4e7ce615eb8b3912460ef394e366da3829cc68825a4d87f93",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lyleth-lunastre-wow-4f7ae6fa892c/v0001": {
+      "name": "Ly'leth Lunastre \u2014 WoW",
+      "manifestHash": "86b0a7271e2df7d915f97727ce7a8b861fea863fb1514d34163e1f6cf2c48dd5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-lysander-starshade-wow-e629d814a721/v0001": {
+      "name": "Lysander Starshade \u2014 WoW",
+      "manifestHash": "d251a1665bc600210815f14a9e05c0760d9ea663bf6398b458aaf394d0650341",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-magister-umbric-wow-45b809126ebe/v0001": {
+      "name": "Umbric \u2014 WoW",
+      "manifestHash": "7232ad1ef87a1c4e1cd07d15a5e89e6a677ba9d2b61fe10e8942738634898528",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-maiden-of-grief-wow-df0fe89d118d/v0001": {
+      "name": "Theodora Eonarai \u2014 WoW",
+      "manifestHash": "fa07caeb3606522ce8dbdc196b47a3cd2146636aff6946ddce611bc47633254e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-majo-tortollan-wow-eae23b186292/v0001": {
+      "name": "Majo Enny \u2014 WoW",
+      "manifestHash": "b365f7017d74aff7524c9abade445dee1b3cf8dbf8f0c58e38e5fc375c306f06",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-malganis-hots-malganisbase/v0001": {
+      "name": "Mal'Ganis \u2014 HotS",
+      "manifestHash": "61822531fb3c8ff09ae2e2c78537bd9fe5f9626b1a7b4d54b35949bd714bead7",
+      "performanceFamily": "dreadlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-mannethrel-darkstar-wow-6654076abb0c/v0001": {
+      "name": "Mannethrel Darkstar \u2014 WoW",
+      "manifestHash": "76de698d7dc52b3266082ef60be498733a676a37daa7bb41a8bc09e18f4b8e02",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-mannoroth-wow-f71a0d889482/v0001": {
+      "name": "Mannoroth \u2014 WoW",
+      "manifestHash": "6de3544a5e9c84c15c2b11c3487c3729e418b723a3d4d3f4d16d70ad0bd36d82",
+      "performanceFamily": "pitlord",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-marin-noggenfogger-wow-9454f6d7f990/v0001": {
+      "name": "Marin Noggenfogger \u2014 WoW",
+      "manifestHash": "c83dbef8c13d337c89a16444ce08e3ba37f4ef185e2e10278c519152248eb493",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-marius-felbane-wow-f0a727f0dea2/v0001": {
+      "name": "Marius Felbane \u2014 WoW",
+      "manifestHash": "e2d54842b512e5597eec1baad7c6005276edce7365b1f8b252a59c8c74ed8846",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-maxima-blastenheimer-hs-dmf-089/v0001": {
+      "name": "Maxima Blastenheimer \u2014 Maxima Blastenheimer (Hearthstone)",
+      "manifestHash": "7c900658d202c1de741e8117b094f68a7e4b48188763cd1b2c5d827b57a953a2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-maximillian-of-northshire-wow-20d0913b7286/v0001": {
+      "name": "Maximillian Northshire \u2014 WoW",
+      "manifestHash": "c3f68c749fd6979d4f4b2c000402740da5374e0d448d46daad7957c4e76b544a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-mayla-highmountain-wow-f63e716f2d4d/v0001": {
+      "name": "Mayla Highmountain \u2014 WoW",
+      "manifestHash": "3678c7e3b5ea8025130364b3f3e237b90c20822f2d517ec32cfe62843c4f4ce8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-melris-malagan-wow-d00d4e0e11d8/v0001": {
+      "name": "Melris Malagan \u2014 WoW",
+      "manifestHash": "b78a98e0fc97c44afc39951518b070179be07d6767ce795f5ecaa4478dbbc19b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-millhouse-manastorm-wow-e2655543ffc0/v0001": {
+      "name": "Millhouse Manastorm \u2014 WoW",
+      "manifestHash": "bd5305ad11b0869c723a4a7e04c91e89d355ee8c18b7e275edb4bfd2111a44a2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-millificent-manastorm-wow-384e55746001/v0001": {
+      "name": "Millificent \u2014 WoW",
+      "manifestHash": "0aba31d616833e4b23ebc30d69691f7e410686c14e83dd14eed1f708d899879d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-mogrin-wc3-mogrin/v0001": {
+      "name": "Mogrin \u2014 ordinary (WC3)",
+      "manifestHash": "6c6bfb6d3214009c6ceb940e24dcc45877747026ea1ab8069cd703a90184dd1f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-morzul-bloodbringer-wow-ca73bdfe2258/v0001": {
+      "name": "Mor'zul Bloodbringer \u2014 WoW",
+      "manifestHash": "2b110a0f1b6ca2452956c75384a66f662495b8764b0aea354bb5c5d65c8b0f30",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-mr-smite-hs-ded-006/v0001": {
+      "name": "Smite \u2014 Mr. Smite (Hearthstone)",
+      "manifestHash": "2664d6d8cfa659bb5918984336c789a9d64f4dddfc3bf5f22c9526a1b8033b1a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-naisha-wc3-naisha/v0001": {
+      "name": "Naisha \u2014 ordinary (WC3)",
+      "manifestHash": "4187ead59804a966ed7ffb9aca28651fbb278378d24d89f012878101d70e7b84",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-naralex-wow-6974f492f7c5/v0001": {
+      "name": "Archdruid Naralex \u2014 WoW",
+      "manifestHash": "e1a2e88e39263e47f823b384150c650368d717ea5f820a3311c27512bd649b3b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-nat-pagle-hs-ex1-557/v0001": {
+      "name": "Nat Pagle \u2014 Nat Pagle (Hearthstone)",
+      "manifestHash": "65caa65755dc39e41572b21dddcb2c933510231343b4f08848f76bc5f329809a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-navigator-tahre-wow-8c1e51bfadc6/v0001": {
+      "name": "Tah're \u2014 WoW",
+      "manifestHash": "3c4770e57853ac30acad000b0ab13478d7eb86d66a35cc5417ded15948be1905",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-nazgrim-wow-8853c9c48818/v0001": {
+      "name": "Nazgrim \u2014 WoW",
+      "manifestHash": "0b7ff2df669cde8ccb1a72c18aa72a55be0dff12d51544ce45005faba094e65d",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-nikki-the-fixer-wow-9860776a19d2/v0001": {
+      "name": "Nikki \u2014 WoW",
+      "manifestHash": "3d39b4a7abd8b123431b3368b8ac027e58ec7d31bb0f3b1b83342ae16792cf27",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-nomi-wow-dd955c39891c/v0001": {
+      "name": "Nomi \u2014 WoW",
+      "manifestHash": "94274a889bc008d4035591fd380139fafd08d11c96c3acc84813c094a725ac8b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-number-nine-jia-wow-abcc6732ff3e/v0001": {
+      "name": "Jia \u2014 WoW",
+      "manifestHash": "36bb4facaed9acac4a760592d0d64c932a687fed048112eaf75c7627e608dc3d",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-ook-ook-wow-a8f74e83cc8a/v0001": {
+      "name": "Ook-Ook \u2014 WoW",
+      "manifestHash": "7f6a0ca32e2783ec234493de05bbf1c718f001df16399b666a6ff8dcd2ebfb83",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-orathiss-wow-a8a69c7e0193/v0001": {
+      "name": "Orathiss Locus \u2014 WoW",
+      "manifestHash": "ce913890070dce08a8df5eb81b8e4511092c47d2dbf3116bb02178d1ed702901",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-orik-trueheart-wow-39386b4e72d1/v0001": {
+      "name": "Orik Trueheart \u2014 WoW",
+      "manifestHash": "78c681d6e852b6a1ce5fc3c2da9fddf1a1b31cf0c88898619741996844f0b5f5",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-patrol-captain-gerdo-wow-8d262288e7e0/v0001": {
+      "name": "Gerdo \u2014 WoW",
+      "manifestHash": "3517b0ab66797b763895dc96e528acaf76b9129c896f2c5834a2e0cba2a10d7a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-penelope-heathrow-wow-short-ea7537dd/v0001": {
+      "name": "Penelope Heathrow \u2014 WoW indexed Penelope Heathrow short recorded soundset",
+      "manifestHash": "d4b73d510ac704b247aed3cdadde65e49d7c6a3b9aad5cd736d2edba261e60a7",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-priestess-alunza-wow-05e74ec2b178/v0001": {
+      "name": "Alun'za Dazar'ai \u2014 WoW",
+      "manifestHash": "20de27d643eae2760d6cae116b0a4c8aed09a97c6a0c63396877cdeb322600a7",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-prince-farondis-wow-79bebebcfec1/v0001": {
+      "name": "Farondis Narkhana \u2014 WoW",
+      "manifestHash": "5e2bdc1a5ae59b31fd9a111e90e4683a60c9507d6072fee06be5065a121bd670",
+      "undeadCoverage": "covered"
+    },
+    "goa2-radulf-leder-wow-82af6c1516a9/v0001": {
+      "name": "Radulf Leder \u2014 WoW",
+      "manifestHash": "f341ecb5fa6a9c7e10e6b5d3412e86a8489a74bf81b27505274937e914c4629e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-rage-winterchill-wow-149e03362197/v0001": {
+      "name": "Rage Winterchill \u2014 WoW",
+      "manifestHash": "0c487beed8289de0f16494347de96b0a6cbea560a3bbfc57395f1743273d2f2b",
+      "undeadCoverage": "covered"
+    },
+    "goa2-razak-ironsides-wow-62163017e72c/v0001": {
+      "name": "Razak Ironsides \u2014 WoW",
+      "manifestHash": "aeefb83aa6ba3af9ab4187546629c877f1452cd3c81fc205dd10401bd4078302",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-revil-kost-wow-f281556b3763/v0001": {
+      "name": "Revil Kost \u2014 WoW",
+      "manifestHash": "94fe223473c2b48a90163a9a204a35662a195eeb19ee0cfffb0399d11156f611",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-ritssyn-flamescowl-wow-235525aaf1f4/v0001": {
+      "name": "Ritssyn Flamescowl \u2014 WoW",
+      "manifestHash": "976ac919f49b678b913c03a4860144b4b2b0cdbfbb97154538ea077f433d7c32",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-rulkan-wow-eb03169bfc40/v0001": {
+      "name": "Rulkan \u2014 WoW",
+      "manifestHash": "fccacb44cf87fbbbaa3e96fda8cbff85b05c3692df067a1cc2e4b93646993a3d",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-salramm-the-fleshcrafter-wow-83e3f727bdc6/v0001": {
+      "name": "Salramm \u2014 WoW",
+      "manifestHash": "cb3c1a94984003bccc8bc8cd5682f6147e0c64551c2f8c43791a063818f00c6c",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-samuro-blademaster-hots-samurobase/v0001": {
+      "name": "Samuro \u2014 HotS",
+      "manifestHash": "7e9908ab30d1db1d2402cb10d59699406302956a8938b89be53b46d38b5f5a4c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-sassy-hardwrench-wow-a6a0d66f6e82/v0001": {
+      "name": "Sassy Hardwrench \u2014 WoW",
+      "manifestHash": "9d30762c91ad4c94638579112fdd7e4dc0857374e249f68168aa775587725ca2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-scrollsage-nola-wow-517a435721cb/v0001": {
+      "name": "Nola Kruppu \u2014 WoW",
+      "manifestHash": "124e0d8e7f250fc650f11dd030a18d5334ec552f5f62ea4c6ac58f0e0e8f9250",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-senegos-wow-7ddf74667f71/v0001": {
+      "name": "Senegos Azurewing \u2014 WoW",
+      "manifestHash": "5e8998bd37c8af2d3c0a1c11c755dbcae31d39821cc0e17501a66971b6a6c20c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-sergeant-bainbridge-wow-c409b6415a67/v0001": {
+      "name": "Bainbridge \u2014 WoW",
+      "manifestHash": "16c694a2927ff4da43b84fac3000088876484d218f1f8cb76288d08b5178806f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-shademaster-kiryn-wow-dcf0a26ec9a2/v0001": {
+      "name": "Kiryn \u2014 WoW",
+      "manifestHash": "3d15ea8ee3ef30bac4cfe66b48d603e26ab4bb682863b95f22469d3ab10e2875",
+      "undeadCoverage": "covered"
+    },
+    "goa2-shinfel-blightsworn-wow-034e4df046fe/v0001": {
+      "name": "Shinfel Blightsworn \u2014 WoW",
+      "manifestHash": "8a097848d2b14d8f2dd79ca42433a175d1e024bbe756aae1201af8c90bff80fb",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-skycapn-kragg-wow-d4cb1f504b79/v0001": {
+      "name": "Kragg \u2014 WoW",
+      "manifestHash": "72e88f3b2d544ae1aba2f5fb9a1a8ddf1ec4c062d63e1747754eb2d32f7cd932",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-snow-blossom-wow-cd7a7dfa8918/v0001": {
+      "name": "Snow Blossom \u2014 WoW",
+      "manifestHash": "86c1424a801c4d97414825e8fbf1932743914a0ab070437a8ea841239b7964be",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-stellagosa-wow-a12b5a00ae95/v0001": {
+      "name": "Stellagosa Azurewing \u2014 WoW",
+      "manifestHash": "95c8029849a3ca356dcb8ed98a1b3f54820907b944944581149c7f44980c4b47",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-stormspeaker-qian-wow-0c39a2078562/v0001": {
+      "name": "Qian Rajani \u2014 WoW",
+      "manifestHash": "497b61274a0795a4d0fd9bb5ff84eb1266c5cbd38c8de11d580403a23254d03f",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-sully-mcleary-wow-48b6cbbdcddb/v0001": {
+      "name": "Sully McLeary \u2014 WoW",
+      "manifestHash": "aa73b5c90dd5a4f314dc345c3b2a2666a366601857ab086d4b7794429608f6c4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-sun-tenderheart-wow-9cb20a3930b7/v0001": {
+      "name": "Sun Tenderheart \u2014 WoW",
+      "manifestHash": "12aa64b40b50adb7ee37d470bbd71427c6d79a46f0653334290306ac815d35c9",
+      "undeadCoverage": "covered"
+    },
+    "goa2-suna-silentstrike-wow-1640134fe416/v0001": {
+      "name": "Suna \u2014 WoW",
+      "manifestHash": "0210f6076107be6906f275ff36bd770af1da5439d3f4a5528d47d4b580b86f5a",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-svala-sorrowgrave-wow-7e2a91fb8509/v0001": {
+      "name": "Svala Sorrowgrave \u2014 WoW",
+      "manifestHash": "0b8e70359780c6244e25a252b63df805d73fa4274743310b2257c241de53b345",
+      "undeadCoverage": "covered"
+    },
+    "goa2-tacha-wow-5ae3455cd127/v0001": {
+      "name": "Tacha \u2014 WoW",
+      "manifestHash": "c438bdcb65770bfbde9ee52cd430a0430a5689f2d06ca84f412a224769b9f791",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-taerar-wow-6b9603326645/v0001": {
+      "name": "Taerar \u2014 WoW",
+      "manifestHash": "11bb8ffc5fb12d456de2c3823d240f263f55a3876434a19c0a0260b0d5ac7096",
+      "undeadCoverage": "covered"
+    },
+    "goa2-taethelan-bloodwatcher-hs-ww-430/v0001": {
+      "name": "Tae'thelan Bloodwatcher \u2014 Tae'thelan Bloodwatcher (Hearthstone)",
+      "manifestHash": "30c62bb3c322c73fa7bda6782c073caeb5e967927c9d947beb4efecd2b0e7688",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-tahu-sagewind-wow-a17c30d42063/v0001": {
+      "name": "Tahu Sagewind \u2014 WoW",
+      "manifestHash": "4f4882eeac174a7dc8ba2eb7d44a8ca23dc232b26c38e9a4539814fb76cca06e",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-tally-zapnabber-wow-76a162d895b0/v0001": {
+      "name": "Tally Zapnabber \u2014 WoW",
+      "manifestHash": "28956e7c2118d87c61cb79f30899eef9f76f9e2b484ab12becc130dbbb6f72f0",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-taoshi-wow-9144b1859267/v0001": {
+      "name": "Taoshi \u2014 WoW",
+      "manifestHash": "d15bb38122c40292c4a603afc0c008a9c00604a55ebea9b56d5b03345f4e6f01",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-taylor-wow-0779cf89d4c6/v0001": {
+      "name": "Taylor \u2014 WoW",
+      "manifestHash": "c14da59e4caefaebb2eaef2e5de0e8c08fa43c05f9541306ec94898ac31b178b",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-tenwu-of-the-red-smoke-hs-dmf-071/v0001": {
+      "name": "Tenwu Red Smoke \u2014 Tenwu of the Red Smoke (Hearthstone)",
+      "manifestHash": "8f0bdfd71e3d2260317cb230268a94e6ec54f4a6d9a75f467cc6469fea5de419",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-thalrenus-rivertree-wow-ffbf0be81439/v0001": {
+      "name": "Thalrenus Rivertree \u2014 WoW",
+      "manifestHash": "814c929670df7585f0e0fb910a8f3bb5b9f5ac4f3f8b13e1cc129d4cec98ecb0",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-thalyssra-wow-32953a443354/v0001": {
+      "name": "Thalyssra \u2014 WoW",
+      "manifestHash": "018fbb04e29d09614a65bbed6fbf82c4ca8fdcb5e64efb8d1439e60f7a253131",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-thaon-moonclaw-wow-134b99a2e09a/v0001": {
+      "name": "Thaon Moonclaw \u2014 WoW",
+      "manifestHash": "847e798a025043655d4833f28fc83555959538b96df44a43a91c02e7a4bbd6ac",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-thisalee-crow-wow-5fae50be8a4a/v0001": {
+      "name": "Thisalee Crow \u2014 WoW",
+      "manifestHash": "34f3f220a32016ba326b79ea521e5461362f750c1d6bb45b57f78ffcd2cc1862",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-thomas-thomson-hots-horsemanvo-headlesshorseman/v0001": {
+      "name": "Sir Thomas Thomson \u2014 HotS",
+      "manifestHash": "8c4c93b876ad9c2e34fc0ed426f0cc1ea48a2db0de61069c6672a815e54d9a76",
+      "undeadCoverage": "covered"
+    },
+    "goa2-thomas-zelling-wow-69efec159b67/v0001": {
+      "name": "Thomas Zelling \u2014 WoW",
+      "manifestHash": "4ab4cbea5776cbb7d5c9a783a55e406b7732f63c7b658dbdeb03bcc94f4189a9",
+      "undeadCoverage": "covered"
+    },
+    "goa2-toe-knee-wow-a80aea163135/v0001": {
+      "name": "Toe Knee \u2014 WoW",
+      "manifestHash": "d94e09caf3ddf217882ea9b28da59b39f950a4e3fbfb31e1c7093eed093bed07",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-toki-tortollan-wow-66ef6cee8f71/v0001": {
+      "name": "Toki Jelbo \u2014 WoW",
+      "manifestHash": "07631c65064ba66bd94b0290c2ad595a43f677bb86db8de1b1edf0a71413f78b",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-torok-bloodtotem-wow-4ab59646258f/v0001": {
+      "name": "Torok Bloodtotem \u2014 WoW",
+      "manifestHash": "c00a47836415c489db8388ce418a94ba3fdfecfd660124bc4d327731f13ee1f4",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-turi-flickerflame-wow-f49b03a0dd6f/v0001": {
+      "name": "Turi Flickerflame \u2014 WoW",
+      "manifestHash": "5280810a73c35622bd1a6df8c8c9f021042bcc7d57f1821e2cf8cafdee991871",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-ularogg-wow-14f2a051bb2a/v0001": {
+      "name": "Ularogg Cragshaper \u2014 WoW",
+      "manifestHash": "acb637cea3773b66a9981f3ddd281aaca6e6522f2ca2ba5c977d2afcce63bf35",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-umbra-tortollan-hs-ung-900/v0001": {
+      "name": "Umbra Numur \u2014 Spiritsinger Umbra (Hearthstone)",
+      "manifestHash": "50de00f163c178fe39025c29aa4c4a39ab7200864d41cc0f32fc9c74eb8a594c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-usha-eyegouge-wow-8ec2cb95584f/v0001": {
+      "name": "Usha Eyegouge \u2014 WoW",
+      "manifestHash": "f3c69ee0ccc0fe9bf987b1560c61883de1c4baacc74239791b7143230cabb7cb",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-valewalker-farodin-wow-635893d46da6/v0001": {
+      "name": "Farodin \u2014 WoW",
+      "manifestHash": "7322a8c81caeb822bd9b668d7ee76c729b0ee68f55b0083a113b14543b64b390",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-vandel-wow-634a1bf8d0f8/v0001": {
+      "name": "Vandel \u2014 WoW",
+      "manifestHash": "488c4db867cbd4383fe31becae478beca875dec1e1f4f900c8838179de2001b2",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-varedis-felsoul-wow-9b3b32a334d9/v0001": {
+      "name": "Varedis Felsoul \u2014 WoW",
+      "manifestHash": "9ad3cdcb7c12ad5e598baa671a2e54cbec227cecb54bde477711924dd67f154c",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-velen-wow-afcfa1ca37ef/v0001": {
+      "name": "Velen \u2014 WoW",
+      "manifestHash": "4a2bb6a2c214af87d65701bed10aa6b052216255c456a2d4b363f6db360954d6",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-vilnakdor-wow-00d2e8e2a29d/v0001": {
+      "name": "Vilnak'dor \u2014 WoW",
+      "manifestHash": "e4b7b2b9051b31b5dda7d7099bffb7cb632f67208ccbc54b5bd9fab445c7be57",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-voljamba-wow-8dd14f06cda5/v0001": {
+      "name": "Vol'jamba Jambani \u2014 WoW",
+      "manifestHash": "79e46138c51dc62960fe29262b822668876136eb938e985f37dc68eba7bfc6b0",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-volkaal-wow-c7c91fce9360/v0001": {
+      "name": "Vol'kaal \u2014 WoW",
+      "manifestHash": "5e92a6f83ee8d6d4b8ca489549d58dc888699c014d5ad97c353215c0cff0f949",
+      "undeadCoverage": "covered"
+    },
+    "goa2-wardruid-loti-wow-fd3f078fae07/v0001": {
+      "name": "Loti \u2014 WoW",
+      "manifestHash": "d50b84528b398d8f7ef88b5f193f4e7e642b5650b3a8f9df0407990f1bd934c9",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-wise-mari-wow-1d51764434af/v0001": {
+      "name": "Mari \u2014 WoW",
+      "manifestHash": "1b79240ba2595e4a757ec6c778b33420e9c317239691685ec0de52d6d8f6e3cf",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-wulferd-fizzbracket-wow-92afdd70065f/v0001": {
+      "name": "Wulferd Fizzbracket \u2014 WoW",
+      "manifestHash": "6624d70f740c57ed1f8cb6d3ea96ecf2f90d853343c6cd4dc38af764007b32e8",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-xavius-wow-16c5f7a249bf/v0001": {
+      "name": "Xavius Nightmare \u2014 WoW",
+      "manifestHash": "a6b69cff9d8521193bc2c9fafbbea3859f81e176b112b060c23a8c68120004aa",
+      "performanceFamily": "satyr",
+      "undeadCoverage": "specialized"
+    },
+    "goa2-ymiron-wow-945165797f44/v0001": {
+      "name": "Ymiron Dragonflayer \u2014 WoW",
+      "manifestHash": "b2ce209da2ee4dc648697871dc2d8ca5e5072924ac044c05a9b6fa2093bcd1dc",
+      "undeadCoverage": "covered"
+    },
+    "goa2-ysondre-wow-658802d69ecd/v0001": {
+      "name": "Ysondre \u2014 WoW",
+      "manifestHash": "2b9f68f8901cc0d9f20a70648576d5ba9948fbc1cfa38f5fdd8645805b3e335c",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-zabra-hexx-wow-58c16f4ad68a/v0001": {
+      "name": "Zabra Hexx \u2014 WoW",
+      "manifestHash": "344f0750e7cf0e276dcf1742fcff4d1b138c6c6c6c1d00e815a8b4ec61a828a8",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-zeliek-wow-c2157ff8e1b6/v0001": {
+      "name": "Zeliek \u2014 WoW",
+      "manifestHash": "c4f99af2dd54603c07d6b50016ec8bbb303203786309125302e5bd08c7080e13",
+      "undeadCoverage": "covered"
+    },
+    "goa2-zelifrax-wobblepox-wow-cc727df44bb4/v0001": {
+      "name": "Zelifrax Wobblepox \u2014 WoW",
+      "manifestHash": "1ddfd4c2e68470d659ad2cd942246603db899940748202434b4b6a6a31e59cb6",
+      "undeadCoverage": "uncolored"
+    },
+    "goa2-zentabra-wow-76252c039dd4/v0001": {
+      "name": "Zen'tabra \u2014 WoW",
+      "manifestHash": "494836a6c621517f3dcb7acd8ae215e177e8407ea689a44b3d9bb62ca28b7941",
+      "undeadCoverage": "unknown"
+    },
+    "goa2-zolani-wow-2fbf677461c5/v0001": {
+      "name": "Zolani \u2014 WoW",
+      "manifestHash": "96b647209080afc9a0a6df0b3c51b6f38537900a01e55f377d0622c64960b3cc",
+      "undeadCoverage": "unknown"
+    }
+  },
+  "identities": {
+    "10000": {
+      "keys": [
+        "goa2-10000-wow-485541ad5dcf/v0001"
+      ],
+      "defaultKey": "goa2-10000-wow-485541ad5dcf/v0001"
+    },
+    "10005": {
+      "keys": [
+        "goa2-10005-wow-selected-89f54ee079/v0001",
+        "goa2-10005-wow-selected-dd2eed0a71/v0001"
+      ],
+      "defaultKey": "goa2-10005-wow-selected-89f54ee079/v0001"
+    },
+    "10014": {
+      "keys": [
+        "goa2-10014-wow-2be1bcc5561c/v0001",
+        "goa2-10014-wow-54d2e68813cd/v0001"
+      ],
+      "defaultKey": "goa2-10014-wow-54d2e68813cd/v0001"
+    },
+    "10015": {
+      "keys": [
+        "goa2-10015-hots-guldanbase/v0001"
+      ],
+      "defaultKey": "goa2-10015-hots-guldanbase/v0001"
+    },
+    "10017": {
+      "keys": [
+        "goa2-10017-wow-cb212e8af600/v0001"
+      ],
+      "defaultKey": "goa2-10017-wow-cb212e8af600/v0001"
+    },
+    "10019": {
+      "keys": [
+        "goa2-10019-wow-selected-9ff4c4e087/v0001"
+      ],
+      "defaultKey": "goa2-10019-wow-selected-9ff4c4e087/v0001"
+    },
+    "10020": {
+      "keys": [
+        "goa2-10020-wow-ffc378ce7380/v0001"
+      ],
+      "defaultKey": "goa2-10020-wow-ffc378ce7380/v0001"
+    },
+    "10021": {
+      "keys": [
+        "goa2-10021-hots-thrallbase/v0001"
+      ],
+      "defaultKey": "goa2-10021-hots-thrallbase/v0001"
+    },
+    "1008": {
+      "keys": [
+        "goa2-1008-wow-8658ae0b80da/v0001"
+      ],
+      "defaultKey": "goa2-1008-wow-8658ae0b80da/v0001"
+    },
+    "10100": {
+      "keys": [
+        "goa2-10100-hots-drekthara/v0001"
+      ],
+      "defaultKey": "goa2-10100-hots-drekthara/v0001"
+    },
+    "10200": {
+      "keys": [
+        "goa2-10200-wow-1943633780cd/v0001"
+      ],
+      "defaultKey": "goa2-10200-wow-1943633780cd/v0001"
+    },
+    "10560": {
+      "keys": [
+        "goa2-10560-wow-a1b13b35ec31/v0001"
+      ],
+      "defaultKey": "goa2-10560-wow-a1b13b35ec31/v0001"
+    },
+    "10566": {
+      "keys": [
+        "goa2-10566-wow-3147dc6a9c33/v0001"
+      ],
+      "defaultKey": "goa2-10566-wow-3147dc6a9c33/v0001"
+    },
+    "10567": {
+      "keys": [
+        "goa2-10567-wow-ebb9e59e6e53/v0001"
+      ],
+      "defaultKey": "goa2-10567-wow-ebb9e59e6e53/v0001"
+    },
+    "10610": {
+      "keys": [
+        "goa2-10610-hots-rexxarbase/v0001"
+      ],
+      "defaultKey": "goa2-10610-hots-rexxarbase/v0001"
+    },
+    "10620": {
+      "keys": [
+        "goa2-10620-wow-e0a9c3947e06/v0001"
+      ],
+      "defaultKey": "goa2-10620-wow-e0a9c3947e06/v0001"
+    },
+    "10656": {
+      "keys": [
+        "goa2-10656-hots-rehgarbase/v0001"
+      ],
+      "defaultKey": "goa2-10656-hots-rehgarbase/v0001"
+    },
+    "10658": {
+      "keys": [
+        "goa2-10658-wc3-nazgrel/v0001"
+      ],
+      "defaultKey": "goa2-10658-wc3-nazgrel/v0001"
+    },
+    "12002": {
+      "keys": [
+        "goa2-12002-wow-d4d9a08039da/v0001"
+      ],
+      "defaultKey": "goa2-12002-wow-d4d9a08039da/v0001"
+    },
+    "16000": {
+      "keys": [
+        "goa2-16000-wow-f1a821d1270e/v0001"
+      ],
+      "defaultKey": "goa2-16000-wow-f1a821d1270e/v0001"
+    },
+    "1602": {
+      "keys": [
+        "goa2-1602-wow-95b041fd1de3/v0001"
+      ],
+      "defaultKey": "goa2-1602-wow-95b041fd1de3/v0001"
+    },
+    "1620": {
+      "keys": [
+        "goa2-1620-wow-19688a0c8f29/v0001"
+      ],
+      "defaultKey": "goa2-1620-wow-19688a0c8f29/v0001"
+    },
+    "16626": {
+      "keys": [
+        "goa2-16626-wow-9ac8cdc2a3c2/v0001"
+      ],
+      "defaultKey": "goa2-16626-wow-9ac8cdc2a3c2/v0001"
+    },
+    "16632": {
+      "keys": [
+        "goa2-16632-wow-ffe6e6f2ab34/v0001"
+      ],
+      "defaultKey": "goa2-16632-wow-ffe6e6f2ab34/v0001"
+    },
+    "16700": {
+      "keys": [
+        "goa2-16700-wow-b8d85c357ebd/v0001"
+      ],
+      "defaultKey": "goa2-16700-wow-b8d85c357ebd/v0001"
+    },
+    "16701": {
+      "keys": [
+        "goa2-16701-wow-aad4f86e8846/v0001"
+      ],
+      "defaultKey": "goa2-16701-wow-aad4f86e8846/v0001"
+    },
+    "17001": {
+      "keys": [
+        "goa2-17001-hs-hero-01a/v0001"
+      ],
+      "defaultKey": "goa2-17001-hs-hero-01a/v0001"
+    },
+    "17002": {
+      "keys": [
+        "goa2-17002-hots-muradin/v0001"
+      ],
+      "defaultKey": "goa2-17002-hots-muradin/v0001"
+    },
+    "17028": {
+      "keys": [
+        "goa2-17028-wow-09db504fb338/v0001"
+      ],
+      "defaultKey": "goa2-17028-wow-09db504fb338/v0001"
+    },
+    "17029": {
+      "keys": [
+        "goa2-17029-wow-selected-329b477db4/v0001"
+      ],
+      "defaultKey": "goa2-17029-wow-selected-329b477db4/v0001"
+    },
+    "210000": {
+      "keys": [
+        "goa2-210000-wow-726792ab1ed8/v0001"
+      ],
+      "defaultKey": "goa2-210000-wow-726792ab1ed8/v0001"
+    },
+    "210001": {
+      "keys": [
+        "goa2-210001-wow-2ac40f60fb41/v0001"
+      ],
+      "defaultKey": "goa2-210001-wow-2ac40f60fb41/v0001"
+    },
+    "210033": {
+      "keys": [
+        "goa2-210033-wow-fa2a06a06517/v0001"
+      ],
+      "defaultKey": "goa2-210033-wow-fa2a06a06517/v0001"
+    },
+    "210049": {
+      "keys": [
+        "goa2-210049-wow-9e5cc223f25c/v0001"
+      ],
+      "defaultKey": "goa2-210049-wow-9e5cc223f25c/v0001"
+    },
+    "22001": {
+      "keys": [
+        "goa2-22001-hots-falstad/v0001"
+      ],
+      "defaultKey": "goa2-22001-hots-falstad/v0001"
+    },
+    "22002": {
+      "keys": [
+        "goa2-22002-wow-1f126927a8f2/v0001"
+      ],
+      "defaultKey": "goa2-22002-wow-1f126927a8f2/v0001"
+    },
+    "26020": {
+      "keys": [
+        "goa2-26020-wow-947304f68c84/v0001"
+      ],
+      "defaultKey": "goa2-26020-wow-947304f68c84/v0001"
+    },
+    "26021": {
+      "keys": [
+        "goa2-26021-wow-c86fa4a609f2/v0001"
+      ],
+      "defaultKey": "goa2-26021-wow-c86fa4a609f2/v0001"
+    },
+    "270073": {
+      "keys": [
+        "goa2-270073-wow-9b0869e117d9/v0001"
+      ],
+      "defaultKey": "goa2-270073-wow-9b0869e117d9/v0001"
+    },
+    "270680": {
+      "keys": [
+        "goa2-270680-hs-uld-168/v0001"
+      ],
+      "defaultKey": "goa2-270680-hs-uld-168/v0001"
+    },
+    "272689": {
+      "keys": [
+        "goa2-272689-wow-3d0ce72a35d6/v0001"
+      ],
+      "defaultKey": "goa2-272689-wow-3d0ce72a35d6/v0001"
+    },
+    "28025": {
+      "keys": [
+        "goa2-28025-hots-vanndara/v0001"
+      ],
+      "defaultKey": "goa2-28025-hots-vanndara/v0001"
+    },
+    "28032": {
+      "keys": [
+        "goa2-28032-hs-hero-05k/v0001"
+      ],
+      "defaultKey": "goa2-28032-hs-hero-05k/v0001"
+    },
+    "29003": {
+      "keys": [
+        "goa2-29003-hots-hogger/v0001"
+      ],
+      "defaultKey": "goa2-29003-hots-hogger/v0001"
+    },
+    "330003": {
+      "keys": [
+        "goa2-330003-wow-c1553300f5f2/v0001"
+      ],
+      "defaultKey": "goa2-330003-wow-c1553300f5f2/v0001"
+    },
+    "340003": {
+      "keys": [
+        "goa2-340003-hots-tyrande/v0001"
+      ],
+      "defaultKey": "goa2-340003-hots-tyrande/v0001"
+    },
+    "340008": {
+      "keys": [
+        "goa2-340008-hots-malfurion/v0001"
+      ],
+      "defaultKey": "goa2-340008-hots-malfurion/v0001"
+    },
+    "340009": {
+      "keys": [
+        "goa2-340009-hots-illidan/v0001",
+        "goa2-340009-wc3-illidanmorphed/v0001"
+      ],
+      "defaultKey": "goa2-340009-hots-illidan/v0001",
+      "forms": [
+        {
+          "anyTraits": [
+            "metamorphosis",
+            "fallen_demon_hunter"
+          ],
+          "key": "goa2-340009-wc3-illidanmorphed/v0001"
+        }
+      ]
+    },
+    "340014": {
+      "keys": [
+        "goa2-340014-wow-149e6bdc9e8d/v0001"
+      ],
+      "defaultKey": "goa2-340014-wow-149e6bdc9e8d/v0001"
+    },
+    "340018": {
+      "keys": [
+        "goa2-340018-wow-cc708fae1d75/v0001"
+      ],
+      "defaultKey": "goa2-340018-wow-cc708fae1d75/v0001"
+    },
+    "340021": {
+      "keys": [
+        "goa2-340021-hots-maievbase/v0001"
+      ],
+      "defaultKey": "goa2-340021-hots-maievbase/v0001"
+    },
+    "340022": {
+      "keys": [
+        "goa2-340022-wow-ad951b1e619f/v0001"
+      ],
+      "defaultKey": "goa2-340022-wow-ad951b1e619f/v0001"
+    },
+    "340066": {
+      "keys": [
+        "goa2-340066-wow-d535ca82a776/v0001"
+      ],
+      "defaultKey": "goa2-340066-wow-d535ca82a776/v0001"
+    },
+    "340100": {
+      "keys": [
+        "goa2-340100-wc3-shandris/v0001",
+        "goa2-340100-wow-selected-9e0436443b/v0001"
+      ],
+      "defaultKey": "goa2-340100-wow-selected-9e0436443b/v0001"
+    },
+    "340101": {
+      "keys": [
+        "goa2-340101-wow-adc62b9d023c/v0001"
+      ],
+      "defaultKey": "goa2-340101-wow-adc62b9d023c/v0001"
+    },
+    "360000": {
+      "keys": [
+        "goa2-360000-wow-d23c8b5b7a08/v0001"
+      ],
+      "defaultKey": "goa2-360000-wow-d23c8b5b7a08/v0001"
+    },
+    "38001": {
+      "keys": [
+        "goa2-38001-wow-000eb7614306/v0001"
+      ],
+      "defaultKey": "goa2-38001-wow-000eb7614306/v0001"
+    },
+    "38002": {
+      "keys": [
+        "goa2-38002-wow-7b7ed7ce09fd/v0001"
+      ],
+      "defaultKey": "goa2-38002-wow-7b7ed7ce09fd/v0001"
+    },
+    "38004": {
+      "keys": [
+        "goa2-38004-wow-3179bb6d071a/v0001"
+      ],
+      "defaultKey": "goa2-38004-wow-3179bb6d071a/v0001"
+    },
+    "381000": {
+      "keys": [
+        "goa2-381000-wow-09912a8fb790/v0001"
+      ],
+      "defaultKey": "goa2-381000-wow-09912a8fb790/v0001"
+    },
+    "390000": {
+      "keys": [
+        "goa2-390000-wow-fece2bda7def/v0001"
+      ],
+      "defaultKey": "goa2-390000-wow-fece2bda7def/v0001"
+    },
+    "390005": {
+      "keys": [
+        "goa2-390005-wow-30b37c19d95c/v0001"
+      ],
+      "defaultKey": "goa2-390005-wow-30b37c19d95c/v0001"
+    },
+    "400500": {
+      "keys": [
+        "goa2-400500-wow-3300e8b7be34/v0001"
+      ],
+      "defaultKey": "goa2-400500-wow-3300e8b7be34/v0001"
+    },
+    "400501": {
+      "keys": [
+        "goa2-400501-wow-de190f38f58d/v0001"
+      ],
+      "defaultKey": "goa2-400501-wow-de190f38f58d/v0001"
+    },
+    "400502": {
+      "keys": [
+        "goa2-400502-wow-fd7da2c2b899/v0001"
+      ],
+      "defaultKey": "goa2-400502-wow-fd7da2c2b899/v0001"
+    },
+    "400503": {
+      "keys": [
+        "goa2-400503-wow-37ec05cb35c9/v0001"
+      ],
+      "defaultKey": "goa2-400503-wow-37ec05cb35c9/v0001"
+    },
+    "400504": {
+      "keys": [
+        "goa2-400504-wow-6fcbf1e26add/v0001"
+      ],
+      "defaultKey": "goa2-400504-wow-6fcbf1e26add/v0001"
+    },
+    "400505": {
+      "keys": [
+        "goa2-400505-wow-ad54d0d40679/v0001"
+      ],
+      "defaultKey": "goa2-400505-wow-ad54d0d40679/v0001"
+    },
+    "400506": {
+      "keys": [
+        "goa2-400506-wow-a79b1fee710b/v0001"
+      ],
+      "defaultKey": "goa2-400506-wow-a79b1fee710b/v0001"
+    },
+    "400507": {
+      "keys": [
+        "goa2-400507-wow-f0e8832f42e1/v0001"
+      ],
+      "defaultKey": "goa2-400507-wow-f0e8832f42e1/v0001"
+    },
+    "400508": {
+      "keys": [
+        "goa2-400508-wow-ee950714b662/v0001"
+      ],
+      "defaultKey": "goa2-400508-wow-ee950714b662/v0001"
+    },
+    "410001": {
+      "keys": [
+        "goa2-410001-wow-6f7c392c2459/v0001"
+      ],
+      "defaultKey": "goa2-410001-wow-6f7c392c2459/v0001"
+    },
+    "410002": {
+      "keys": [
+        "goa2-410002-wow-5ffbbcd0a073/v0001"
+      ],
+      "defaultKey": "goa2-410002-wow-5ffbbcd0a073/v0001"
+    },
+    "410100": {
+      "keys": [
+        "goa2-410100-hots-dryadbase/v0001",
+        "goa2-410100-hs-hero-06a/v0001"
+      ],
+      "defaultKey": "goa2-410100-hots-dryadbase/v0001"
+    },
+    "42002": {
+      "keys": [
+        "goa2-42002-wow-1a66401d4566/v0001"
+      ],
+      "defaultKey": "goa2-42002-wow-1a66401d4566/v0001"
+    },
+    "42003": {
+      "keys": [
+        "goa2-42003-hots-kaelthasbase/v0001"
+      ],
+      "defaultKey": "goa2-42003-hots-kaelthasbase/v0001"
+    },
+    "42075": {
+      "keys": [
+        "goa2-42075-wow-72cb09c47a94/v0001"
+      ],
+      "defaultKey": "goa2-42075-wow-72cb09c47a94/v0001"
+    },
+    "42076": {
+      "keys": [
+        "goa2-42076-hots-sylvanasbase/v0001",
+        "goa2-42076-wc3-sylvanas/v0001"
+      ],
+      "defaultKey": "goa2-42076-wc3-sylvanas/v0001",
+      "forms": [
+        {
+          "anyTraits": [
+            "being_undead",
+            "creature_banshee"
+          ],
+          "key": "goa2-42076-hots-sylvanasbase/v0001"
+        }
+      ]
+    },
+    "42078": {
+      "keys": [
+        "goa2-42078-hs-rlk-539/v0001"
+      ],
+      "defaultKey": "goa2-42078-hs-rlk-539/v0001"
+    },
+    "42086": {
+      "keys": [
+        "goa2-42086-wow-774d0236c9f8/v0001"
+      ],
+      "defaultKey": "goa2-42086-wow-774d0236c9f8/v0001"
+    },
+    "42087": {
+      "keys": [
+        "goa2-42087-wow-4a6f56d8db0f/v0001"
+      ],
+      "defaultKey": "goa2-42087-wow-4a6f56d8db0f/v0001"
+    },
+    "42100": {
+      "keys": [
+        "goa2-42100-wow-4f24a48b23bb/v0001"
+      ],
+      "defaultKey": "goa2-42100-wow-4f24a48b23bb/v0001"
+    },
+    "42211": {
+      "keys": [
+        "goa2-42211-hots-valeerabase/v0001"
+      ],
+      "defaultKey": "goa2-42211-hots-valeerabase/v0001"
+    },
+    "42305": {
+      "keys": [
+        "goa2-42305-wow-c59eec72b64f/v0001"
+      ],
+      "defaultKey": "goa2-42305-wow-c59eec72b64f/v0001"
+    },
+    "42306": {
+      "keys": [
+        "goa2-42306-wow-8c9fb7204ff7/v0001"
+      ],
+      "defaultKey": "goa2-42306-wow-8c9fb7204ff7/v0001"
+    },
+    "430000": {
+      "keys": [
+        "goa2-430000-wow-4913c5205c4c/v0001"
+      ],
+      "defaultKey": "goa2-430000-wow-4913c5205c4c/v0001"
+    },
+    "430100": {
+      "keys": [
+        "goa2-430100-wow-e8bfec57bdcc/v0001"
+      ],
+      "defaultKey": "goa2-430100-wow-e8bfec57bdcc/v0001"
+    },
+    "430200": {
+      "keys": [
+        "goa2-430200-wow-36e060b8dd14/v0001"
+      ],
+      "defaultKey": "goa2-430200-wow-36e060b8dd14/v0001"
+    },
+    "430300": {
+      "keys": [
+        "goa2-430300-wow-30e24b43ff3f/v0001"
+      ],
+      "defaultKey": "goa2-430300-wow-30e24b43ff3f/v0001"
+    },
+    "430400": {
+      "keys": [
+        "goa2-430400-wow-54bea83dfa53/v0001"
+      ],
+      "defaultKey": "goa2-430400-wow-54bea83dfa53/v0001"
+    },
+    "430500": {
+      "keys": [
+        "goa2-430500-wow-e470e8c149dd/v0001"
+      ],
+      "defaultKey": "goa2-430500-wow-e470e8c149dd/v0001"
+    },
+    "460000": {
+      "keys": [
+        "goa2-460000-wow-bacae4f59713/v0001"
+      ],
+      "defaultKey": "goa2-460000-wow-bacae4f59713/v0001"
+    },
+    "46001": {
+      "keys": [
+        "goa2-46001-hots-greymanebase/v0001"
+      ],
+      "defaultKey": "goa2-46001-hots-greymanebase/v0001"
+    },
+    "46002": {
+      "keys": [
+        "goa2-46002-wow-104e81bf190b/v0001"
+      ],
+      "defaultKey": "goa2-46002-wow-104e81bf190b/v0001"
+    },
+    "46003": {
+      "keys": [
+        "goa2-46003-hs-gil-694/v0001"
+      ],
+      "defaultKey": "goa2-46003-hs-gil-694/v0001"
+    },
+    "46004": {
+      "keys": [
+        "goa2-46004-wow-fa3bcfb84681/v0001"
+      ],
+      "defaultKey": "goa2-46004-wow-fa3bcfb84681/v0001"
+    },
+    "46005": {
+      "keys": [
+        "goa2-46005-wow-0d379e546e42/v0001"
+      ],
+      "defaultKey": "goa2-46005-wow-0d379e546e42/v0001"
+    },
+    "46006": {
+      "keys": [
+        "goa2-46006-wow-b346f39a9cb0/v0001"
+      ],
+      "defaultKey": "goa2-46006-wow-b346f39a9cb0/v0001"
+    },
+    "46007": {
+      "keys": [
+        "goa2-46007-hs-hero-07am-godfrey/v0001"
+      ],
+      "defaultKey": "goa2-46007-hs-hero-07am-godfrey/v0001"
+    },
+    "46100": {
+      "keys": [
+        "goa2-46100-hs-gil-691/v0001"
+      ],
+      "defaultKey": "goa2-46100-hs-gil-691/v0001"
+    },
+    "48080": {
+      "keys": [
+        "goa2-48080-wc3-proudmoore/v0001",
+        "goa2-48080-wow-9bea59989761/v0001"
+      ],
+      "defaultKey": "goa2-48080-wc3-proudmoore/v0001"
+    },
+    "48081": {
+      "keys": [
+        "goa2-48081-hots-jainabase/v0001"
+      ],
+      "defaultKey": "goa2-48081-hots-jainabase/v0001"
+    },
+    "48082": {
+      "keys": [
+        "goa2-48082-wow-b5aded43f904/v0001"
+      ],
+      "defaultKey": "goa2-48082-wow-b5aded43f904/v0001"
+    },
+    "48084": {
+      "keys": [
+        "goa2-48084-wow-24516ffcc480/v0001"
+      ],
+      "defaultKey": "goa2-48084-wow-24516ffcc480/v0001"
+    },
+    "48085": {
+      "keys": [
+        "goa2-48085-wow-2b9e292ef719/v0001"
+      ],
+      "defaultKey": "goa2-48085-wow-2b9e292ef719/v0001"
+    },
+    "48167": {
+      "keys": [
+        "goa2-48167-wow-c64fcc7ff075/v0001"
+      ],
+      "defaultKey": "goa2-48167-wow-c64fcc7ff075/v0001"
+    },
+    "48168": {
+      "keys": [
+        "goa2-48168-wow-d706aa016267/v0001"
+      ],
+      "defaultKey": "goa2-48168-wow-d706aa016267/v0001"
+    },
+    "48169": {
+      "keys": [
+        "goa2-48169-wow-cf6243c4dfa0/v0001"
+      ],
+      "defaultKey": "goa2-48169-wow-cf6243c4dfa0/v0001"
+    },
+    "48249": {
+      "keys": [
+        "goa2-48249-wow-d571c1caffc0/v0001"
+      ],
+      "defaultKey": "goa2-48249-wow-d571c1caffc0/v0001"
+    },
+    "48250": {
+      "keys": [
+        "goa2-48250-wow-9b348c517fd3/v0001"
+      ],
+      "defaultKey": "goa2-48250-wow-9b348c517fd3/v0001"
+    },
+    "48435": {
+      "keys": [
+        "goa2-48435-wow-48b60c0857cd/v0001"
+      ],
+      "defaultKey": "goa2-48435-wow-48b60c0857cd/v0001"
+    },
+    "49405": {
+      "keys": [
+        "goa2-49405-wow-10125c207525/v0001"
+      ],
+      "defaultKey": "goa2-49405-wow-10125c207525/v0001"
+    },
+    "5000": {
+      "keys": [
+        "goa2-5000-hots-medivhbase/v0001"
+      ],
+      "defaultKey": "goa2-5000-hots-medivhbase/v0001"
+    },
+    "500086": {
+      "keys": [
+        "goa2-500086-wow-b64b71d0b630/v0001"
+      ],
+      "defaultKey": "goa2-500086-wow-b64b71d0b630/v0001"
+    },
+    "500182": {
+      "keys": [
+        "goa2-500182-hots-chenbase/v0001"
+      ],
+      "defaultKey": "goa2-500182-hots-chenbase/v0001"
+    },
+    "500184": {
+      "keys": [
+        "goa2-500184-hots-lili/v0001"
+      ],
+      "defaultKey": "goa2-500184-hots-lili/v0001"
+    },
+    "500273": {
+      "keys": [
+        "goa2-500273-wow-01583687a8e3/v0001"
+      ],
+      "defaultKey": "goa2-500273-wow-01583687a8e3/v0001"
+    },
+    "52000": {
+      "keys": [
+        "goa2-52000-hots-chobase/v0001",
+        "goa2-52000-hots-gallbase/v0001"
+      ],
+      "defaultKey": "goa2-52000-hots-chobase/v0001"
+    },
+    "52057": {
+      "keys": [
+        "goa2-52057-wc3-mugthol/v0001"
+      ],
+      "defaultKey": "goa2-52057-wc3-mugthol/v0001"
+    },
+    "52058": {
+      "keys": [
+        "goa2-52058-wc3-korgall/v0001"
+      ],
+      "defaultKey": "goa2-52058-wc3-korgall/v0001"
+    },
+    "540000": {
+      "keys": [
+        "goa2-540000-wow-48db0ee12e67/v0001"
+      ],
+      "defaultKey": "goa2-540000-wow-48db0ee12e67/v0001"
+    },
+    "57000": {
+      "keys": [
+        "goa2-57000-hots-zuljinbase/v0001"
+      ],
+      "defaultKey": "goa2-57000-hots-zuljinbase/v0001"
+    },
+    "579": {
+      "keys": [
+        "goa2-579-wow-09fb169d18b8/v0001"
+      ],
+      "defaultKey": "goa2-579-wow-09fb169d18b8/v0001"
+    },
+    "58018": {
+      "keys": [
+        "goa2-58018-wow-40d1abef8c6a/v0001"
+      ],
+      "defaultKey": "goa2-58018-wow-40d1abef8c6a/v0001"
+    },
+    "58050": {
+      "keys": [
+        "goa2-58050-hs-hero-08l/v0001"
+      ],
+      "defaultKey": "goa2-58050-hs-hero-08l/v0001"
+    },
+    "5806": {
+      "keys": [
+        "goa2-5806-wow-28cd34590188/v0001"
+      ],
+      "defaultKey": "goa2-5806-wow-28cd34590188/v0001"
+    },
+    "5810": {
+      "keys": [
+        "goa2-5810-wow-eb7d40f3a27f/v0001"
+      ],
+      "defaultKey": "goa2-5810-wow-eb7d40f3a27f/v0001"
+    },
+    "5811": {
+      "keys": [
+        "goa2-5811-hs-hero-03m/v0001"
+      ],
+      "defaultKey": "goa2-5811-hs-hero-03m/v0001"
+    },
+    "5812": {
+      "keys": [
+        "goa2-5812-wow-30c71c3b81f1/v0001"
+      ],
+      "defaultKey": "goa2-5812-wow-30c71c3b81f1/v0001"
+    },
+    "582": {
+      "keys": [
+        "goa2-582-wow-e43017acaed2/v0001"
+      ],
+      "defaultKey": "goa2-582-wow-e43017acaed2/v0001"
+    },
+    "59000": {
+      "keys": [
+        "goa2-59000-hs-ex1-559/v0001",
+        "goa2-59000-wc3-antonidas/v0001"
+      ],
+      "defaultKey": "goa2-59000-wc3-antonidas/v0001"
+    },
+    "59001": {
+      "keys": [
+        "goa2-59001-wow-b2ef5796904a/v0001"
+      ],
+      "defaultKey": "goa2-59001-wow-b2ef5796904a/v0001"
+    },
+    "59100": {
+      "keys": [
+        "goa2-59100-hots-kelthuzadbase/v0001"
+      ],
+      "defaultKey": "goa2-59100-hots-kelthuzadbase/v0001"
+    },
+    "59110": {
+      "keys": [
+        "goa2-59110-wow-934728a1093b/v0001"
+      ],
+      "defaultKey": "goa2-59110-wow-934728a1093b/v0001"
+    },
+    "59120": {
+      "keys": [
+        "goa2-59120-wow-34ad26e33c89/v0001"
+      ],
+      "defaultKey": "goa2-59120-wow-34ad26e33c89/v0001"
+    },
+    "59130": {
+      "keys": [
+        "goa2-59130-wow-fddd5baed5de/v0001"
+      ],
+      "defaultKey": "goa2-59130-wow-fddd5baed5de/v0001"
+    },
+    "59150": {
+      "keys": [
+        "goa2-59150-wow-59e43e085756/v0001"
+      ],
+      "defaultKey": "goa2-59150-wow-59e43e085756/v0001"
+    },
+    "60001": {
+      "keys": [
+        "goa2-60001-wow-selected-5f140c78f6/v0001"
+      ],
+      "defaultKey": "goa2-60001-wow-selected-5f140c78f6/v0001"
+    },
+    "60003": {
+      "keys": [
+        "goa2-60003-hots-lichking/v0001",
+        "goa2-60003-wc3-arthas/v0001",
+        "goa2-60003-wc3-arthas2/v0001"
+      ],
+      "defaultKey": "goa2-60003-wc3-arthas/v0001",
+      "forms": [
+        {
+          "anyTraits": [
+            "lich_king"
+          ],
+          "key": "goa2-60003-hots-lichking/v0001"
+        },
+        {
+          "anyTraits": [
+            "being_undead"
+          ],
+          "key": "goa2-60003-wc3-arthas2/v0001"
+        }
+      ]
+    },
+    "60004": {
+      "keys": [
+        "goa2-60004-wow-3493df27e14e/v0001"
+      ],
+      "defaultKey": "goa2-60004-wow-3493df27e14e/v0001"
+    },
+    "60011": {
+      "keys": [
+        "goa2-60011-wow-567fb5198bf4/v0001"
+      ],
+      "defaultKey": "goa2-60011-wow-567fb5198bf4/v0001"
+    },
+    "60014": {
+      "keys": [
+        "goa2-60014-wow-90e110e13b80/v0001"
+      ],
+      "defaultKey": "goa2-60014-wow-90e110e13b80/v0001"
+    },
+    "60016": {
+      "keys": [
+        "goa2-60016-hs-cs3-024/v0001"
+      ],
+      "defaultKey": "goa2-60016-hs-cs3-024/v0001"
+    },
+    "60017": {
+      "keys": [
+        "goa2-60017-wow-9a173bfd3c9c/v0001"
+      ],
+      "defaultKey": "goa2-60017-wow-9a173bfd3c9c/v0001"
+    },
+    "60020": {
+      "keys": [
+        "goa2-60020-wow-234a1d611b73/v0001"
+      ],
+      "defaultKey": "goa2-60020-wow-234a1d611b73/v0001"
+    },
+    "60022": {
+      "keys": [
+        "goa2-60022-hs-nx2-034/v0001"
+      ],
+      "defaultKey": "goa2-60022-hs-nx2-034/v0001"
+    },
+    "60030": {
+      "keys": [
+        "goa2-60030-wc3-garithos/v0001"
+      ],
+      "defaultKey": "goa2-60030-wc3-garithos/v0001"
+    },
+    "60036": {
+      "keys": [
+        "goa2-60036-hots-uther/v0001"
+      ],
+      "defaultKey": "goa2-60036-hots-uther/v0001"
+    },
+    "60081": {
+      "keys": [
+        "goa2-60081-wow-77a8e5f66567/v0001"
+      ],
+      "defaultKey": "goa2-60081-wow-77a8e5f66567/v0001"
+    },
+    "60247": {
+      "keys": [
+        "goa2-60247-hs-sch-135/v0001"
+      ],
+      "defaultKey": "goa2-60247-hs-sch-135/v0001"
+    },
+    "60248": {
+      "keys": [
+        "goa2-60248-wow-selected-1851c5cb6e/v0001"
+      ],
+      "defaultKey": "goa2-60248-wow-selected-1851c5cb6e/v0001"
+    },
+    "60300": {
+      "keys": [
+        "goa2-60300-wow-961f6788498b/v0001"
+      ],
+      "defaultKey": "goa2-60300-wow-961f6788498b/v0001"
+    },
+    "60305": {
+      "keys": [
+        "goa2-60305-wow-f4664771b1fe/v0001"
+      ],
+      "defaultKey": "goa2-60305-wow-f4664771b1fe/v0001"
+    },
+    "60572": {
+      "keys": [
+        "goa2-60572-hots-whitemanebase/v0001"
+      ],
+      "defaultKey": "goa2-60572-hots-whitemanebase/v0001"
+    },
+    "60578": {
+      "keys": [
+        "goa2-60578-wow-2111569309ea/v0001"
+      ],
+      "defaultKey": "goa2-60578-wow-2111569309ea/v0001"
+    },
+    "60605": {
+      "keys": [
+        "goa2-60605-wow-5824192bfa23/v0001"
+      ],
+      "defaultKey": "goa2-60605-wow-5824192bfa23/v0001"
+    },
+    "60610": {
+      "keys": [
+        "goa2-60610-wow-81bdf963b197/v0001"
+      ],
+      "defaultKey": "goa2-60610-wow-81bdf963b197/v0001"
+    },
+    "60650": {
+      "keys": [
+        "goa2-60650-wow-5d6a234d1860/v0001"
+      ],
+      "defaultKey": "goa2-60650-wow-5d6a234d1860/v0001"
+    },
+    "60686": {
+      "keys": [
+        "goa2-60686-wow-8e6318b520f8/v0001"
+      ],
+      "defaultKey": "goa2-60686-wow-8e6318b520f8/v0001"
+    },
+    "60687": {
+      "keys": [
+        "goa2-60687-wow-4412710fdd59/v0001"
+      ],
+      "defaultKey": "goa2-60687-wow-4412710fdd59/v0001"
+    },
+    "61197": {
+      "keys": [
+        "goa2-61197-wow-f63c0813119d/v0001"
+      ],
+      "defaultKey": "goa2-61197-wow-f63c0813119d/v0001"
+    },
+    "62001": {
+      "keys": [
+        "goa2-62001-wow-0819015bdeda/v0001"
+      ],
+      "defaultKey": "goa2-62001-wow-0819015bdeda/v0001"
+    },
+    "62002": {
+      "keys": [
+        "goa2-62002-wow-8d8cb83f7727/v0001"
+      ],
+      "defaultKey": "goa2-62002-wow-8d8cb83f7727/v0001"
+    },
+    "62200": {
+      "keys": [
+        "goa2-62200-hots-deathwingbase/v0001"
+      ],
+      "defaultKey": "goa2-62200-hots-deathwingbase/v0001"
+    },
+    "62201": {
+      "keys": [
+        "goa2-62201-wow-f11543fdb966/v0001"
+      ],
+      "defaultKey": "goa2-62201-wow-f11543fdb966/v0001"
+    },
+    "62202": {
+      "keys": [
+        "goa2-62202-wow-selected-e5bdd77fe4/v0001"
+      ],
+      "defaultKey": "goa2-62202-wow-selected-e5bdd77fe4/v0001"
+    },
+    "62203": {
+      "keys": [
+        "goa2-62203-hs-hero-08l/v0001"
+      ],
+      "defaultKey": "goa2-62203-hs-hero-08l/v0001"
+    },
+    "62205": {
+      "keys": [
+        "goa2-62205-wow-8e422516ccc2/v0001"
+      ],
+      "defaultKey": "goa2-62205-wow-8e422516ccc2/v0001"
+    },
+    "62400": {
+      "keys": [
+        "goa2-62400-hots-alexstraszabase/v0001"
+      ],
+      "defaultKey": "goa2-62400-hots-alexstraszabase/v0001"
+    },
+    "62600": {
+      "keys": [
+        "goa2-62600-wow-7254ff533b22/v0001"
+      ],
+      "defaultKey": "goa2-62600-wow-7254ff533b22/v0001"
+    },
+    "62602": {
+      "keys": [
+        "goa2-62602-wow-177e0286113a/v0001"
+      ],
+      "defaultKey": "goa2-62602-wow-177e0286113a/v0001"
+    },
+    "62800": {
+      "keys": [
+        "goa2-62800-wow-7934cf994c4f/v0001"
+      ],
+      "defaultKey": "goa2-62800-wow-7934cf994c4f/v0001"
+    },
+    "62801": {
+      "keys": [
+        "goa2-62801-wow-d64e87b0748d/v0001"
+      ],
+      "defaultKey": "goa2-62801-wow-d64e87b0748d/v0001"
+    },
+    "64000": {
+      "keys": [
+        "goa2-64000-wow-ee5ef8e99c93/v0001"
+      ],
+      "defaultKey": "goa2-64000-wow-ee5ef8e99c93/v0001"
+    },
+    "64102": {
+      "keys": [
+        "goa2-64102-wow-09139873302a/v0001"
+      ],
+      "defaultKey": "goa2-64102-wow-09139873302a/v0001"
+    },
+    "64703": {
+      "keys": [
+        "goa2-64703-hots-gazlowe/v0001"
+      ],
+      "defaultKey": "goa2-64703-hots-gazlowe/v0001"
+    },
+    "66000": {
+      "keys": [
+        "goa2-66000-wow-4f6eeb3682e5/v0001"
+      ],
+      "defaultKey": "goa2-66000-wow-4f6eeb3682e5/v0001"
+    },
+    "66001": {
+      "keys": [
+        "goa2-66001-wow-2f9a190640a2/v0001"
+      ],
+      "defaultKey": "goa2-66001-wow-2f9a190640a2/v0001"
+    },
+    "66008": {
+      "keys": [
+        "goa2-66008-wow-d9c0a2b9cccb/v0001"
+      ],
+      "defaultKey": "goa2-66008-wow-d9c0a2b9cccb/v0001"
+    },
+    "66010": {
+      "keys": [
+        "goa2-66010-wow-5087a109a555/v0001"
+      ],
+      "defaultKey": "goa2-66010-wow-5087a109a555/v0001"
+    },
+    "68001": {
+      "keys": [
+        "goa2-68001-wow-2db9d744e3c6/v0001"
+      ],
+      "defaultKey": "goa2-68001-wow-2db9d744e3c6/v0001"
+    },
+    "68100": {
+      "keys": [
+        "goa2-68100-wow-5f0efa75367d/v0001"
+      ],
+      "defaultKey": "goa2-68100-wow-5f0efa75367d/v0001"
+    },
+    "68102": {
+      "keys": [
+        "goa2-68102-wow-4c5e0ea16e28/v0001"
+      ],
+      "defaultKey": "goa2-68102-wow-4c5e0ea16e28/v0001"
+    },
+    "8": {
+      "keys": [
+        "goa2-8-hots-varianbase/v0001"
+      ],
+      "defaultKey": "goa2-8-hots-varianbase/v0001"
+    },
+    "9": {
+      "keys": [
+        "goa2-9-hots-anduinbase/v0001"
+      ],
+      "defaultKey": "goa2-9-hots-anduinbase/v0001"
+    },
+    "90100": {
+      "keys": [
+        "goa2-90100-wow-0c997260d459/v0001"
+      ],
+      "defaultKey": "goa2-90100-wow-0c997260d459/v0001"
+    },
+    "90102": {
+      "keys": [
+        "goa2-90102-wow-c6268f2bd6c1/v0001"
+      ],
+      "defaultKey": "goa2-90102-wow-c6268f2bd6c1/v0001"
+    },
+    "addie_fizzlebog": {
+      "keys": [
+        "goa2-addie-fizzlebog-wow-3558e4a96c03/v0001"
+      ],
+      "defaultKey": "goa2-addie-fizzlebog-wow-3558e4a96c03/v0001"
+    },
+    "aelthalyste": {
+      "keys": [
+        "goa2-aelthalyste-wow-0ba8ade74525/v0001"
+      ],
+      "defaultKey": "goa2-aelthalyste-wow-0ba8ade74525/v0001"
+    },
+    "aelyith": {
+      "keys": [
+        "goa2-aelyith-wow-0854d85cef32/v0001"
+      ],
+      "defaultKey": "goa2-aelyith-wow-0854d85cef32/v0001"
+    },
+    "aethas_sunreaver": {
+      "keys": [
+        "goa2-aethas-sunreaver-wow-d56212cc8707/v0001"
+      ],
+      "defaultKey": "goa2-aethas-sunreaver-wow-d56212cc8707/v0001"
+    },
+    "aggralan": {
+      "keys": [
+        "goa2-aggralan-wow-bbde37378b72/v0001"
+      ],
+      "defaultKey": "goa2-aggralan-wow-bbde37378b72/v0001"
+    },
+    "alexander_treadward": {
+      "keys": [
+        "goa2-alexander-treadward-wow-af6ed1e5d4a7/v0001"
+      ],
+      "defaultKey": "goa2-alexander-treadward-wow-af6ed1e5d4a7/v0001"
+    },
+    "amber_shaper_unsok": {
+      "keys": [
+        "goa2-amber-shaper-unsok-wow-c0997a4a12ce/v0001"
+      ],
+      "defaultKey": "goa2-amber-shaper-unsok-wow-c0997a4a12ce/v0001"
+    },
+    "anarys_lunastre": {
+      "keys": [
+        "goa2-anarys-lunastre-wow-3f917173fafc/v0001"
+      ],
+      "defaultKey": "goa2-anarys-lunastre-wow-3f917173fafc/v0001"
+    },
+    "andaris_narassin": {
+      "keys": [
+        "goa2-andaris-narassin-wow-890bbaf9b0ef/v0001"
+      ],
+      "defaultKey": "goa2-andaris-narassin-wow-890bbaf9b0ef/v0001"
+    },
+    "anubarak": {
+      "keys": [
+        "goa2-anubarak-hots-anubarakbase/v0001"
+      ],
+      "defaultKey": "goa2-anubarak-hots-anubarakbase/v0001"
+    },
+    "aponi_brightmane": {
+      "keys": [
+        "goa2-aponi-brightmane-wow-146b968289ec/v0001"
+      ],
+      "defaultKey": "goa2-aponi-brightmane-wow-146b968289ec/v0001"
+    },
+    "arcanist_valtrois": {
+      "keys": [
+        "goa2-arcanist-valtrois-wow-71d1d7957675/v0001"
+      ],
+      "defaultKey": "goa2-arcanist-valtrois-wow-71d1d7957675/v0001"
+    },
+    "archimonde": {
+      "keys": [
+        "goa2-archimonde-wow-d21efd4eff21/v0001"
+      ],
+      "defaultKey": "goa2-archimonde-wow-d21efd4eff21/v0001"
+    },
+    "archmage_landalock": {
+      "keys": [
+        "goa2-archmage-landalock-wow-004f152ce89c/v0001"
+      ],
+      "defaultKey": "goa2-archmage-landalock-wow-004f152ce89c/v0001"
+    },
+    "archmage_sol": {
+      "keys": [
+        "goa2-archmage-sol-wow-f6c28e70c844/v0001"
+      ],
+      "defaultKey": "goa2-archmage-sol-wow-f6c28e70c844/v0001"
+    },
+    "archmage_vargoth": {
+      "keys": [
+        "goa2-archmage-vargoth-wow-7c35801fc15d/v0001"
+      ],
+      "defaultKey": "goa2-archmage-vargoth-wow-7c35801fc15d/v0001"
+    },
+    "archmage_xylem": {
+      "keys": [
+        "goa2-archmage-xylem-wow-d6725aa537e2/v0001"
+      ],
+      "defaultKey": "goa2-archmage-xylem-wow-d6725aa537e2/v0001"
+    },
+    "arkonarin_starshade": {
+      "keys": [
+        "goa2-arkonarin-starshade-wow-2a08eb07fccd/v0001"
+      ],
+      "defaultKey": "goa2-arkonarin-starshade-wow-2a08eb07fccd/v0001"
+    },
+    "asha_ravensong": {
+      "keys": [
+        "goa2-asha-ravensong-wow-7c12f9fdf9cb/v0001"
+      ],
+      "defaultKey": "goa2-asha-ravensong-wow-7c12f9fdf9cb/v0001"
+    },
+    "aspix": {
+      "keys": [
+        "goa2-aspix-wow-b83a7c4dc7dd/v0001"
+      ],
+      "defaultKey": "goa2-aspix-wow-b83a7c4dc7dd/v0001"
+    },
+    "astalor_bloodsworn": {
+      "keys": [
+        "goa2-astalor-bloodsworn-hs-rlk-222/v0001"
+      ],
+      "defaultKey": "goa2-astalor-bloodsworn-hs-rlk-222/v0001"
+    },
+    "athissa": {
+      "keys": [
+        "goa2-athissa-wow-fb57bfac9270/v0001"
+      ],
+      "defaultKey": "goa2-athissa-wow-fb57bfac9270/v0001"
+    },
+    "athrikus_narassin": {
+      "keys": [
+        "goa2-athrikus-narassin-wow-4d76e9918d7f/v0001"
+      ],
+      "defaultKey": "goa2-athrikus-narassin-wow-4d76e9918d7f/v0001"
+    },
+    "azgalor": {
+      "keys": [
+        "goa2-azgalor-wow-short-f5e27c96/v0001"
+      ],
+      "defaultKey": "goa2-azgalor-wow-short-f5e27c96/v0001"
+    },
+    "azuregos": {
+      "keys": [
+        "goa2-azuregos-wow-de937d36e31c/v0001"
+      ],
+      "defaultKey": "goa2-azuregos-wow-de937d36e31c/v0001"
+    },
+    "ban_bearheart": {
+      "keys": [
+        "goa2-ban-bearheart-wow-822b7de7732b/v0001"
+      ],
+      "defaultKey": "goa2-ban-bearheart-wow-822b7de7732b/v0001"
+    },
+    "barnes": {
+      "keys": [
+        "goa2-barnes-wow-9d8cfb74d9e8/v0001"
+      ],
+      "defaultKey": "goa2-barnes-wow-9d8cfb74d9e8/v0001"
+    },
+    "belath_dawnblade": {
+      "keys": [
+        "goa2-belath-dawnblade-wow-5fc0b646edf2/v0001"
+      ],
+      "defaultKey": "goa2-belath-dawnblade-wow-5fc0b646edf2/v0001"
+    },
+    "blaumeux": {
+      "keys": [
+        "goa2-blaumeux-wow-selected-59a570d055/v0001"
+      ],
+      "defaultKey": "goa2-blaumeux-wow-selected-59a570d055/v0001"
+    },
+    "briona_the_bloodthirsty": {
+      "keys": [
+        "goa2-briona-the-bloodthirsty-wow-53f1f4a17088/v0001"
+      ],
+      "defaultKey": "goa2-briona-the-bloodthirsty-wow-53f1f4a17088/v0001"
+    },
+    "broll_bearmantle": {
+      "keys": [
+        "goa2-broll-bearmantle-wow-37a7714146f0/v0001"
+      ],
+      "defaultKey": "goa2-broll-bearmantle-wow-37a7714146f0/v0001"
+    },
+    "brother_korloff": {
+      "keys": [
+        "goa2-brother-korloff-wow-1d0a990a6109/v0001"
+      ],
+      "defaultKey": "goa2-brother-korloff-wow-1d0a990a6109/v0001"
+    },
+    "brother_pike": {
+      "keys": [
+        "goa2-brother-pike-wow-3ff77b0c8a56/v0001"
+      ],
+      "defaultKey": "goa2-brother-pike-wow-3ff77b0c8a56/v0001"
+    },
+    "brother_therold": {
+      "keys": [
+        "goa2-brother-therold-wow-dd5a5a269278/v0001"
+      ],
+      "defaultKey": "goa2-brother-therold-wow-dd5a5a269278/v0001"
+    },
+    "captain_eudora": {
+      "keys": [
+        "goa2-captain-eudora-wow-05d4cf265cc3/v0001"
+      ],
+      "defaultKey": "goa2-captain-eudora-wow-05d4cf265cc3/v0001"
+    },
+    "captain_greenbelly": {
+      "keys": [
+        "goa2-captain-greenbelly-wow-a505efbb2547/v0001"
+      ],
+      "defaultKey": "goa2-captain-greenbelly-wow-a505efbb2547/v0001"
+    },
+    "captain_jolly": {
+      "keys": [
+        "goa2-captain-jolly-wow-195e0984f034/v0001"
+      ],
+      "defaultKey": "goa2-captain-jolly-wow-195e0984f034/v0001"
+    },
+    "captain_raoul": {
+      "keys": [
+        "goa2-captain-raoul-wow-e86ae9231f13/v0001"
+      ],
+      "defaultKey": "goa2-captain-raoul-wow-e86ae9231f13/v0001"
+    },
+    "caria_felsoul": {
+      "keys": [
+        "goa2-caria-felsoul-wow-45290541a607/v0001"
+      ],
+      "defaultKey": "goa2-caria-felsoul-wow-45290541a607/v0001"
+    },
+    "celestine_of_the_harvest": {
+      "keys": [
+        "goa2-celestine-of-the-harvest-wow-d9d8ee9ed116/v0001"
+      ],
+      "defaultKey": "goa2-celestine-of-the-harvest-wow-d9d8ee9ed116/v0001"
+    },
+    "chao_the_voice": {
+      "keys": [
+        "goa2-chao-the-voice-wow-f7a9f6b3285d/v0001"
+      ],
+      "defaultKey": "goa2-chao-the-voice-wow-f7a9f6b3285d/v0001"
+    },
+    "chief_telemancer_oculeth": {
+      "keys": [
+        "goa2-chief-telemancer-oculeth-wow-9276565c5bff/v0001"
+      ],
+      "defaultKey": "goa2-chief-telemancer-oculeth-wow-9276565c5bff/v0001"
+    },
+    "commander_durand": {
+      "keys": [
+        "goa2-commander-durand-wow-short-ac2f2882/v0001"
+      ],
+      "defaultKey": "goa2-commander-durand-wow-short-ac2f2882/v0001"
+    },
+    "cordana_felsong": {
+      "keys": [
+        "goa2-cordana-felsong-wow-1b8d1b4f9ba1/v0001"
+      ],
+      "defaultKey": "goa2-cordana-felsong-wow-1b8d1b4f9ba1/v0001"
+    },
+    "cyana_nightglaive": {
+      "keys": [
+        "goa2-cyana-nightglaive-wow-17edb914641d/v0001"
+      ],
+      "defaultKey": "goa2-cyana-nightglaive-wow-17edb914641d/v0001"
+    },
+    "dagnar_stonebrow": {
+      "keys": [
+        "goa2-dagnar-stonebrow-wow-50fd756d77a4/v0001"
+      ],
+      "defaultKey": "goa2-dagnar-stonebrow-wow-50fd756d77a4/v0001"
+    },
+    "dagran2": {
+      "keys": [
+        "goa2-dagran2-wow-b657673bc145/v0001"
+      ],
+      "defaultKey": "goa2-dagran2-wow-b657673bc145/v0001"
+    },
+    "dargrul": {
+      "keys": [
+        "goa2-dargrul-wow-d45a27f84d9f/v0001"
+      ],
+      "defaultKey": "goa2-dargrul-wow-d45a27f84d9f/v0001"
+    },
+    "dark_ranger_velonara": {
+      "keys": [
+        "goa2-dark-ranger-velonara-wow-988298de2663/v0001"
+      ],
+      "defaultKey": "goa2-dark-ranger-velonara-wow-988298de2663/v0001"
+    },
+    "darkmaster_gandling": {
+      "keys": [
+        "goa2-darkmaster-gandling-wow-short-cd594838/v0001"
+      ],
+      "defaultKey": "goa2-darkmaster-gandling-wow-short-cd594838/v0001"
+    },
+    "delora_lionheart": {
+      "keys": [
+        "goa2-delora-lionheart-wow-47b18d401526/v0001"
+      ],
+      "defaultKey": "goa2-delora-lionheart-wow-47b18d401526/v0001"
+    },
+    "dizzy_dina": {
+      "keys": [
+        "goa2-dizzy-dina-wow-c98b508073b2/v0001"
+      ],
+      "defaultKey": "goa2-dizzy-dina-wow-c98b508073b2/v0001"
+    },
+    "dranosh": {
+      "keys": [
+        "goa2-dranosh-wow-b9d16872ecaf/v0001"
+      ],
+      "defaultKey": "goa2-dranosh-wow-b9d16872ecaf/v0001"
+    },
+    "durak": {
+      "keys": [
+        "goa2-durak-wow-4c4f216d5dac/v0001"
+      ],
+      "defaultKey": "goa2-durak-wow-4c4f216d5dac/v0001"
+    },
+    "ebyssian": {
+      "keys": [
+        "goa2-ebyssian-wow-b55d3da5e0cf/v0001"
+      ],
+      "defaultKey": "goa2-ebyssian-wow-b55d3da5e0cf/v0001"
+    },
+    "eitrigg": {
+      "keys": [
+        "goa2-eitrigg-wow-4e20bc231e77/v0001"
+      ],
+      "defaultKey": "goa2-eitrigg-wow-4e20bc231e77/v0001"
+    },
+    "elisande": {
+      "keys": [
+        "goa2-elisande-wow-7b4418e3f683/v0001"
+      ],
+      "defaultKey": "goa2-elisande-wow-7b4418e3f683/v0001"
+    },
+    "elothir": {
+      "keys": [
+        "goa2-elothir-wow-15079061d323/v0001"
+      ],
+      "defaultKey": "goa2-elothir-wow-15079061d323/v0001"
+    },
+    "emeni": {
+      "keys": [
+        "goa2-emeni-wow-464cf1ca2f2a/v0001"
+      ],
+      "defaultKey": "goa2-emeni-wow-464cf1ca2f2a/v0001"
+    },
+    "emeriss": {
+      "keys": [
+        "goa2-emeriss-wow-3d2b48897542/v0001"
+      ],
+      "defaultKey": "goa2-emeriss-wow-3d2b48897542/v0001"
+    },
+    "erik_the_swift": {
+      "keys": [
+        "goa2-erik-the-swift-wow-22096137b55d/v0001"
+      ],
+      "defaultKey": "goa2-erik-the-swift-wow-22096137b55d/v0001"
+    },
+    "everit_reade": {
+      "keys": [
+        "goa2-everit-reade-wow-fdf4b608ff5b/v0001"
+      ],
+      "defaultKey": "goa2-everit-reade-wow-fdf4b608ff5b/v0001"
+    },
+    "falara_nightsong": {
+      "keys": [
+        "goa2-falara-nightsong-wow-d7c23e4834fa/v0001"
+      ],
+      "defaultKey": "goa2-falara-nightsong-wow-d7c23e4834fa/v0001"
+    },
+    "fearsome_jang": {
+      "keys": [
+        "goa2-fearsome-jang-wow-02d410df266f/v0001"
+      ],
+      "defaultKey": "goa2-fearsome-jang-wow-02d410df266f/v0001"
+    },
+    "fenris_wolfbrother": {
+      "keys": [
+        "goa2-fenris-wolfbrother-wow-selected-28ddfe2624/v0001"
+      ],
+      "defaultKey": "goa2-fenris-wolfbrother-wow-selected-28ddfe2624/v0001"
+    },
+    "flynn_fairwind": {
+      "keys": [
+        "goa2-flynn-fairwind-wow-73f8004411f4/v0001"
+      ],
+      "defaultKey": "goa2-flynn-fairwind-wow-73f8004411f4/v0001"
+    },
+    "galarthus_rivertree": {
+      "keys": [
+        "goa2-galarthus-rivertree-wow-792ae8070945/v0001"
+      ],
+      "defaultKey": "goa2-galarthus-rivertree-wow-792ae8070945/v0001"
+    },
+    "ganar_frostwolf": {
+      "keys": [
+        "goa2-ganar-frostwolf-wow-0334671e4b26/v0001"
+      ],
+      "defaultKey": "goa2-ganar-frostwolf-wow-0334671e4b26/v0001"
+    },
+    "gargok": {
+      "keys": [
+        "goa2-gargok-wow-889cdfd0926b/v0001"
+      ],
+      "defaultKey": "goa2-gargok-wow-889cdfd0926b/v0001"
+    },
+    "garrosh": {
+      "keys": [
+        "goa2-garrosh-hots-garroshbase/v0001",
+        "goa2-garrosh-hs-hero-01n/v0001"
+      ],
+      "defaultKey": "goa2-garrosh-hots-garroshbase/v0001"
+    },
+    "general_angerforge": {
+      "keys": [
+        "goa2-general-angerforge-wow-729733bda101/v0001"
+      ],
+      "defaultKey": "goa2-general-angerforge-wow-729733bda101/v0001"
+    },
+    "gerithus": {
+      "keys": [
+        "goa2-gerithus-wow-20879b9759cd/v0001"
+      ],
+      "defaultKey": "goa2-gerithus-wow-20879b9759cd/v0001"
+    },
+    "glutonia": {
+      "keys": [
+        "goa2-glutonia-wow-c7cd83807edc/v0001"
+      ],
+      "defaultKey": "goa2-glutonia-wow-c7cd83807edc/v0001"
+    },
+    "gortok_palehoof": {
+      "keys": [
+        "goa2-gortok-palehoof-wow-8e618306e1e5/v0001"
+      ],
+      "defaultKey": "goa2-gortok-palehoof-wow-8e618306e1e5/v0001"
+    },
+    "grand_astromancer_capernian": {
+      "keys": [
+        "goa2-grand-astromancer-capernian-wow-short-9d383792/v0001"
+      ],
+      "defaultKey": "goa2-grand-astromancer-capernian-wow-short-9d383792/v0001"
+    },
+    "grash": {
+      "keys": [
+        "goa2-grash-wow-acb2ee5d663d/v0001"
+      ],
+      "defaultKey": "goa2-grash-wow-acb2ee5d663d/v0001"
+    },
+    "grayson_shadowbreaker": {
+      "keys": [
+        "goa2-grayson-shadowbreaker-wow-e6e7f24af2b3/v0001"
+      ],
+      "defaultKey": "goa2-grayson-shadowbreaker-wow-e6e7f24af2b3/v0001"
+    },
+    "griftah": {
+      "keys": [
+        "goa2-griftah-hs-trl-096/v0001"
+      ],
+      "defaultKey": "goa2-griftah-hs-trl-096/v0001"
+    },
+    "grimla_fizzlecrank": {
+      "keys": [
+        "goa2-grimla-fizzlecrank-wow-d93ce02b7923/v0001"
+      ],
+      "defaultKey": "goa2-grimla-fizzlecrank-wow-d93ce02b7923/v0001"
+    },
+    "gu_cloudstrike": {
+      "keys": [
+        "goa2-gu-cloudstrike-wow-a8e9428f50fe/v0001"
+      ],
+      "defaultKey": "goa2-gu-cloudstrike-wow-a8e9428f50fe/v0001"
+    },
+    "gurgthock": {
+      "keys": [
+        "goa2-gurgthock-wow-92b9651d863e/v0001"
+      ],
+      "defaultKey": "goa2-gurgthock-wow-92b9651d863e/v0001"
+    },
+    "hadal_darkfathom": {
+      "keys": [
+        "goa2-hadal-darkfathom-wow-bc309779cedb/v0001"
+      ],
+      "defaultKey": "goa2-hadal-darkfathom-wow-bc309779cedb/v0001"
+    },
+    "haleh": {
+      "keys": [
+        "goa2-haleh-wow-c2ee4a0a84dd/v0001"
+      ],
+      "defaultKey": "goa2-haleh-wow-c2ee4a0a84dd/v0001"
+    },
+    "harrison_jones": {
+      "keys": [
+        "goa2-harrison-jones-hs-ex1-558/v0001"
+      ],
+      "defaultKey": "goa2-harrison-jones-hs-ex1-558/v0001"
+    },
+    "head_machinist_sparkflux": {
+      "keys": [
+        "goa2-head-machinist-sparkflux-wow-8c4208956012/v0001"
+      ],
+      "defaultKey": "goa2-head-machinist-sparkflux-wow-8c4208956012/v0001"
+    },
+    "helcular": {
+      "keys": [
+        "goa2-helcular-wow-748432179ae2/v0001"
+      ],
+      "defaultKey": "goa2-helcular-wow-748432179ae2/v0001"
+    },
+    "helnurath": {
+      "keys": [
+        "goa2-helnurath-wow-135483cd02f4/v0001"
+      ],
+      "defaultKey": "goa2-helnurath-wow-135483cd02f4/v0001"
+    },
+    "hexlord_raal": {
+      "keys": [
+        "goa2-hexlord-raal-wow-db5da4056232/v0001"
+      ],
+      "defaultKey": "goa2-hexlord-raal-wow-db5da4056232/v0001"
+    },
+    "high_prelate_rata": {
+      "keys": [
+        "goa2-high-prelate-rata-wow-7d328623edfa/v0001"
+      ],
+      "defaultKey": "goa2-high-prelate-rata-wow-7d328623edfa/v0001"
+    },
+    "hobart_grapplehammer": {
+      "keys": [
+        "goa2-hobart-grapplehammer-wow-3213ea54c5d4/v0001"
+      ],
+      "defaultKey": "goa2-hobart-grapplehammer-wow-3213ea54c5d4/v0001"
+    },
+    "huln_highmountain": {
+      "keys": [
+        "goa2-huln-highmountain-wow-261ad26006e1/v0001"
+      ],
+      "defaultKey": "goa2-huln-highmountain-wow-261ad26006e1/v0001"
+    },
+    "iron_body_ponshu": {
+      "keys": [
+        "goa2-iron-body-ponshu-wow-f43f0d71f934/v0001"
+      ],
+      "defaultKey": "goa2-iron-body-ponshu-wow-f43f0d71f934/v0001"
+    },
+    "izal_whitemoon": {
+      "keys": [
+        "goa2-izal-whitemoon-wow-18510870fa1a/v0001"
+      ],
+      "defaultKey": "goa2-izal-whitemoon-wow-18510870fa1a/v0001"
+    },
+    "jace_darkweaver": {
+      "keys": [
+        "goa2-jace-darkweaver-wow-8e0503acdf7e/v0001"
+      ],
+      "defaultKey": "goa2-jace-darkweaver-wow-8e0503acdf7e/v0001"
+    },
+    "jakrazet": {
+      "keys": [
+        "goa2-jakrazet-wow-6be8a5be53fe/v0001"
+      ],
+      "defaultKey": "goa2-jakrazet-wow-6be8a5be53fe/v0001"
+    },
+    "jale_rivermane": {
+      "keys": [
+        "goa2-jale-rivermane-wow-f48f5924ad15/v0001"
+      ],
+      "defaultKey": "goa2-jale-rivermane-wow-f48f5924ad15/v0001"
+    },
+    "jergosh_the_invoker": {
+      "keys": [
+        "goa2-jergosh-the-invoker-wow-39c30c56ec0c/v0001"
+      ],
+      "defaultKey": "goa2-jergosh-the-invoker-wow-39c30c56ec0c/v0001"
+    },
+    "jindo": {
+      "keys": [
+        "goa2-jindo-wow-c0a679d14058/v0001"
+      ],
+      "defaultKey": "goa2-jindo-wow-c0a679d14058/v0001"
+    },
+    "jubeka_shadowbreaker": {
+      "keys": [
+        "goa2-jubeka-shadowbreaker-wow-9216aec42c19/v0001"
+      ],
+      "defaultKey": "goa2-jubeka-shadowbreaker-wow-9216aec42c19/v0001"
+    },
+    "kalecgos": {
+      "keys": [
+        "goa2-kalecgos-wow-40548d782a69/v0001"
+      ],
+      "defaultKey": "goa2-kalecgos-wow-40548d782a69/v0001"
+    },
+    "karlain": {
+      "keys": [
+        "goa2-karlain-wow-8a6e8b9c7d27/v0001"
+      ],
+      "defaultKey": "goa2-karlain-wow-8a6e8b9c7d27/v0001"
+    },
+    "kayn_sunfury": {
+      "keys": [
+        "goa2-kayn-sunfury-wow-5a331465d883/v0001"
+      ],
+      "defaultKey": "goa2-kayn-sunfury-wow-5a331465d883/v0001"
+    },
+    "kelsey_steelspark": {
+      "keys": [
+        "goa2-kelsey-steelspark-wow-9d8c201fbb1c/v0001"
+      ],
+      "defaultKey": "goa2-kelsey-steelspark-wow-9d8c201fbb1c/v0001"
+    },
+    "keristrasza": {
+      "keys": [
+        "goa2-keristrasza-wow-95ad60126dd7/v0001"
+      ],
+      "defaultKey": "goa2-keristrasza-wow-95ad60126dd7/v0001"
+    },
+    "kil_jaeden": {
+      "keys": [
+        "goa2-kil-jaeden-wow-626c5745a1fc/v0001"
+      ],
+      "defaultKey": "goa2-kil-jaeden-wow-626c5745a1fc/v0001"
+    },
+    "king_deepbeard": {
+      "keys": [
+        "goa2-king-deepbeard-wow-f1d8674ca7e9/v0001"
+      ],
+      "defaultKey": "goa2-king-deepbeard-wow-f1d8674ca7e9/v0001"
+    },
+    "kisha_tortollan": {
+      "keys": [
+        "goa2-kisha-tortollan-wow-60b909d16014/v0001"
+      ],
+      "defaultKey": "goa2-kisha-tortollan-wow-60b909d16014/v0001"
+    },
+    "koda_steelclaw": {
+      "keys": [
+        "goa2-koda-steelclaw-wow-b1387a3e6851/v0001"
+      ],
+      "defaultKey": "goa2-koda-steelclaw-wow-b1387a3e6851/v0001"
+    },
+    "koro_mistwalker": {
+      "keys": [
+        "goa2-koro-mistwalker-wow-a004f53974e1/v0001"
+      ],
+      "defaultKey": "goa2-koro-mistwalker-wow-a004f53974e1/v0001"
+    },
+    "korvas_bloodthorn": {
+      "keys": [
+        "goa2-korvas-bloodthorn-wow-fe27bc390e9a/v0001"
+      ],
+      "defaultKey": "goa2-korvas-bloodthorn-wow-fe27bc390e9a/v0001"
+    },
+    "krick_wrenchnozzle": {
+      "keys": [
+        "goa2-krick-wrenchnozzle-wow-a39979978fce/v0001"
+      ],
+      "defaultKey": "goa2-krick-wrenchnozzle-wow-a39979978fce/v0001"
+    },
+    "kurtalos_ravencrest": {
+      "keys": [
+        "goa2-kurtalos-ravencrest-wow-d723efdf5b72/v0001"
+      ],
+      "defaultKey": "goa2-kurtalos-ravencrest-wow-d723efdf5b72/v0001"
+    },
+    "lady_hatecoil": {
+      "keys": [
+        "goa2-lady-hatecoil-wow-9d4b834da78e/v0001"
+      ],
+      "defaultKey": "goa2-lady-hatecoil-wow-9d4b834da78e/v0001"
+    },
+    "lasan_skyhorn": {
+      "keys": [
+        "goa2-lasan-skyhorn-wow-f06de6298ab4/v0001"
+      ],
+      "defaultKey": "goa2-lasan-skyhorn-wow-f06de6298ab4/v0001"
+    },
+    "lashk_tortollan": {
+      "keys": [
+        "goa2-lashk-tortollan-wow-0f5d9500bd09/v0001"
+      ],
+      "defaultKey": "goa2-lashk-tortollan-wow-0f5d9500bd09/v0001"
+    },
+    "leeroy_jenkins": {
+      "keys": [
+        "goa2-leeroy-jenkins-hs-hero-04u/v0001"
+      ],
+      "defaultKey": "goa2-leeroy-jenkins-hs-hero-04u/v0001"
+    },
+    "leyara": {
+      "keys": [
+        "goa2-leyara-wow-54cd167ca59e/v0001"
+      ],
+      "defaultKey": "goa2-leyara-wow-54cd167ca59e/v0001"
+    },
+    "lieutenant_drake": {
+      "keys": [
+        "goa2-lieutenant-drake-wow-85e9e384028c/v0001"
+      ],
+      "defaultKey": "goa2-lieutenant-drake-wow-85e9e384028c/v0001"
+    },
+    "lilian_voss": {
+      "keys": [
+        "goa2-lilian-voss-wow-d24c60dc50df/v0001"
+      ],
+      "defaultKey": "goa2-lilian-voss-wow-d24c60dc50df/v0001"
+    },
+    "little_lu": {
+      "keys": [
+        "goa2-little-lu-wow-6de363f27434/v0001"
+      ],
+      "defaultKey": "goa2-little-lu-wow-6de363f27434/v0001"
+    },
+    "liu_flameheart": {
+      "keys": [
+        "goa2-liu-flameheart-wow-e2648bfabc88/v0001"
+      ],
+      "defaultKey": "goa2-liu-flameheart-wow-e2648bfabc88/v0001"
+    },
+    "lord_sanguinar": {
+      "keys": [
+        "goa2-lord-sanguinar-wow-short-20df1ea0/v0001"
+      ],
+      "defaultKey": "goa2-lord-sanguinar-wow-short-20df1ea0/v0001"
+    },
+    "lorewalker_cho": {
+      "keys": [
+        "goa2-lorewalker-cho-wow-e8b4c08715e5/v0001"
+      ],
+      "defaultKey": "goa2-lorewalker-cho-wow-e8b4c08715e5/v0001"
+    },
+    "lulubelle_fizzlebang": {
+      "keys": [
+        "goa2-lulubelle-fizzlebang-wow-e488f1c5dd44/v0001"
+      ],
+      "defaultKey": "goa2-lulubelle-fizzlebang-wow-e488f1c5dd44/v0001"
+    },
+    "lyana_darksorrow": {
+      "keys": [
+        "goa2-lyana-darksorrow-wow-d603fe067609/v0001"
+      ],
+      "defaultKey": "goa2-lyana-darksorrow-wow-d603fe067609/v0001"
+    },
+    "lyleth_lunastre": {
+      "keys": [
+        "goa2-lyleth-lunastre-wow-4f7ae6fa892c/v0001"
+      ],
+      "defaultKey": "goa2-lyleth-lunastre-wow-4f7ae6fa892c/v0001"
+    },
+    "lysander_starshade": {
+      "keys": [
+        "goa2-lysander-starshade-wow-e629d814a721/v0001"
+      ],
+      "defaultKey": "goa2-lysander-starshade-wow-e629d814a721/v0001"
+    },
+    "magister_umbric": {
+      "keys": [
+        "goa2-magister-umbric-wow-45b809126ebe/v0001"
+      ],
+      "defaultKey": "goa2-magister-umbric-wow-45b809126ebe/v0001"
+    },
+    "maiden_of_grief": {
+      "keys": [
+        "goa2-maiden-of-grief-wow-df0fe89d118d/v0001"
+      ],
+      "defaultKey": "goa2-maiden-of-grief-wow-df0fe89d118d/v0001"
+    },
+    "majo_tortollan": {
+      "keys": [
+        "goa2-majo-tortollan-wow-eae23b186292/v0001"
+      ],
+      "defaultKey": "goa2-majo-tortollan-wow-eae23b186292/v0001"
+    },
+    "malganis": {
+      "keys": [
+        "goa2-malganis-hots-malganisbase/v0001"
+      ],
+      "defaultKey": "goa2-malganis-hots-malganisbase/v0001"
+    },
+    "mannethrel_darkstar": {
+      "keys": [
+        "goa2-mannethrel-darkstar-wow-6654076abb0c/v0001"
+      ],
+      "defaultKey": "goa2-mannethrel-darkstar-wow-6654076abb0c/v0001"
+    },
+    "mannoroth": {
+      "keys": [
+        "goa2-mannoroth-wow-f71a0d889482/v0001"
+      ],
+      "defaultKey": "goa2-mannoroth-wow-f71a0d889482/v0001"
+    },
+    "marin_noggenfogger": {
+      "keys": [
+        "goa2-marin-noggenfogger-wow-9454f6d7f990/v0001"
+      ],
+      "defaultKey": "goa2-marin-noggenfogger-wow-9454f6d7f990/v0001"
+    },
+    "marius_felbane": {
+      "keys": [
+        "goa2-marius-felbane-wow-f0a727f0dea2/v0001"
+      ],
+      "defaultKey": "goa2-marius-felbane-wow-f0a727f0dea2/v0001"
+    },
+    "maxima_blastenheimer": {
+      "keys": [
+        "goa2-maxima-blastenheimer-hs-dmf-089/v0001"
+      ],
+      "defaultKey": "goa2-maxima-blastenheimer-hs-dmf-089/v0001"
+    },
+    "maximillian_of_northshire": {
+      "keys": [
+        "goa2-maximillian-of-northshire-wow-20d0913b7286/v0001"
+      ],
+      "defaultKey": "goa2-maximillian-of-northshire-wow-20d0913b7286/v0001"
+    },
+    "mayla_highmountain": {
+      "keys": [
+        "goa2-mayla-highmountain-wow-f63e716f2d4d/v0001"
+      ],
+      "defaultKey": "goa2-mayla-highmountain-wow-f63e716f2d4d/v0001"
+    },
+    "melris_malagan": {
+      "keys": [
+        "goa2-melris-malagan-wow-d00d4e0e11d8/v0001"
+      ],
+      "defaultKey": "goa2-melris-malagan-wow-d00d4e0e11d8/v0001"
+    },
+    "millhouse_manastorm": {
+      "keys": [
+        "goa2-millhouse-manastorm-wow-e2655543ffc0/v0001"
+      ],
+      "defaultKey": "goa2-millhouse-manastorm-wow-e2655543ffc0/v0001"
+    },
+    "millificent_manastorm": {
+      "keys": [
+        "goa2-millificent-manastorm-wow-384e55746001/v0001"
+      ],
+      "defaultKey": "goa2-millificent-manastorm-wow-384e55746001/v0001"
+    },
+    "mogrin": {
+      "keys": [
+        "goa2-mogrin-wc3-mogrin/v0001"
+      ],
+      "defaultKey": "goa2-mogrin-wc3-mogrin/v0001"
+    },
+    "morzul_bloodbringer": {
+      "keys": [
+        "goa2-morzul-bloodbringer-wow-ca73bdfe2258/v0001"
+      ],
+      "defaultKey": "goa2-morzul-bloodbringer-wow-ca73bdfe2258/v0001"
+    },
+    "mr_smite": {
+      "keys": [
+        "goa2-mr-smite-hs-ded-006/v0001"
+      ],
+      "defaultKey": "goa2-mr-smite-hs-ded-006/v0001"
+    },
+    "naisha": {
+      "keys": [
+        "goa2-naisha-wc3-naisha/v0001"
+      ],
+      "defaultKey": "goa2-naisha-wc3-naisha/v0001"
+    },
+    "naralex": {
+      "keys": [
+        "goa2-naralex-wow-6974f492f7c5/v0001"
+      ],
+      "defaultKey": "goa2-naralex-wow-6974f492f7c5/v0001"
+    },
+    "nat_pagle": {
+      "keys": [
+        "goa2-nat-pagle-hs-ex1-557/v0001"
+      ],
+      "defaultKey": "goa2-nat-pagle-hs-ex1-557/v0001"
+    },
+    "navigator_tahre": {
+      "keys": [
+        "goa2-navigator-tahre-wow-8c1e51bfadc6/v0001"
+      ],
+      "defaultKey": "goa2-navigator-tahre-wow-8c1e51bfadc6/v0001"
+    },
+    "nazgrim": {
+      "keys": [
+        "goa2-nazgrim-wow-8853c9c48818/v0001"
+      ],
+      "defaultKey": "goa2-nazgrim-wow-8853c9c48818/v0001"
+    },
+    "nikki_the_fixer": {
+      "keys": [
+        "goa2-nikki-the-fixer-wow-9860776a19d2/v0001"
+      ],
+      "defaultKey": "goa2-nikki-the-fixer-wow-9860776a19d2/v0001"
+    },
+    "nomi": {
+      "keys": [
+        "goa2-nomi-wow-dd955c39891c/v0001"
+      ],
+      "defaultKey": "goa2-nomi-wow-dd955c39891c/v0001"
+    },
+    "number_nine_jia": {
+      "keys": [
+        "goa2-number-nine-jia-wow-abcc6732ff3e/v0001"
+      ],
+      "defaultKey": "goa2-number-nine-jia-wow-abcc6732ff3e/v0001"
+    },
+    "ook_ook": {
+      "keys": [
+        "goa2-ook-ook-wow-a8f74e83cc8a/v0001"
+      ],
+      "defaultKey": "goa2-ook-ook-wow-a8f74e83cc8a/v0001"
+    },
+    "orathiss": {
+      "keys": [
+        "goa2-orathiss-wow-a8a69c7e0193/v0001"
+      ],
+      "defaultKey": "goa2-orathiss-wow-a8a69c7e0193/v0001"
+    },
+    "orik_trueheart": {
+      "keys": [
+        "goa2-orik-trueheart-wow-39386b4e72d1/v0001"
+      ],
+      "defaultKey": "goa2-orik-trueheart-wow-39386b4e72d1/v0001"
+    },
+    "patrol_captain_gerdo": {
+      "keys": [
+        "goa2-patrol-captain-gerdo-wow-8d262288e7e0/v0001"
+      ],
+      "defaultKey": "goa2-patrol-captain-gerdo-wow-8d262288e7e0/v0001"
+    },
+    "penelope_heathrow": {
+      "keys": [
+        "goa2-penelope-heathrow-wow-short-ea7537dd/v0001"
+      ],
+      "defaultKey": "goa2-penelope-heathrow-wow-short-ea7537dd/v0001"
+    },
+    "priestess_alunza": {
+      "keys": [
+        "goa2-priestess-alunza-wow-05e74ec2b178/v0001"
+      ],
+      "defaultKey": "goa2-priestess-alunza-wow-05e74ec2b178/v0001"
+    },
+    "prince_farondis": {
+      "keys": [
+        "goa2-prince-farondis-wow-79bebebcfec1/v0001"
+      ],
+      "defaultKey": "goa2-prince-farondis-wow-79bebebcfec1/v0001"
+    },
+    "radulf_leder": {
+      "keys": [
+        "goa2-radulf-leder-wow-82af6c1516a9/v0001"
+      ],
+      "defaultKey": "goa2-radulf-leder-wow-82af6c1516a9/v0001"
+    },
+    "rage_winterchill": {
+      "keys": [
+        "goa2-rage-winterchill-wow-149e03362197/v0001"
+      ],
+      "defaultKey": "goa2-rage-winterchill-wow-149e03362197/v0001"
+    },
+    "razak_ironsides": {
+      "keys": [
+        "goa2-razak-ironsides-wow-62163017e72c/v0001"
+      ],
+      "defaultKey": "goa2-razak-ironsides-wow-62163017e72c/v0001"
+    },
+    "revil_kost": {
+      "keys": [
+        "goa2-revil-kost-wow-f281556b3763/v0001"
+      ],
+      "defaultKey": "goa2-revil-kost-wow-f281556b3763/v0001"
+    },
+    "ritssyn_flamescowl": {
+      "keys": [
+        "goa2-ritssyn-flamescowl-wow-235525aaf1f4/v0001"
+      ],
+      "defaultKey": "goa2-ritssyn-flamescowl-wow-235525aaf1f4/v0001"
+    },
+    "rulkan": {
+      "keys": [
+        "goa2-rulkan-wow-eb03169bfc40/v0001"
+      ],
+      "defaultKey": "goa2-rulkan-wow-eb03169bfc40/v0001"
+    },
+    "salramm_the_fleshcrafter": {
+      "keys": [
+        "goa2-salramm-the-fleshcrafter-wow-83e3f727bdc6/v0001"
+      ],
+      "defaultKey": "goa2-salramm-the-fleshcrafter-wow-83e3f727bdc6/v0001"
+    },
+    "samuro_blademaster": {
+      "keys": [
+        "goa2-samuro-blademaster-hots-samurobase/v0001"
+      ],
+      "defaultKey": "goa2-samuro-blademaster-hots-samurobase/v0001"
+    },
+    "sassy_hardwrench": {
+      "keys": [
+        "goa2-sassy-hardwrench-wow-a6a0d66f6e82/v0001"
+      ],
+      "defaultKey": "goa2-sassy-hardwrench-wow-a6a0d66f6e82/v0001"
+    },
+    "scrollsage_nola": {
+      "keys": [
+        "goa2-scrollsage-nola-wow-517a435721cb/v0001"
+      ],
+      "defaultKey": "goa2-scrollsage-nola-wow-517a435721cb/v0001"
+    },
+    "senegos": {
+      "keys": [
+        "goa2-senegos-wow-7ddf74667f71/v0001"
+      ],
+      "defaultKey": "goa2-senegos-wow-7ddf74667f71/v0001"
+    },
+    "sergeant_bainbridge": {
+      "keys": [
+        "goa2-sergeant-bainbridge-wow-c409b6415a67/v0001"
+      ],
+      "defaultKey": "goa2-sergeant-bainbridge-wow-c409b6415a67/v0001"
+    },
+    "shademaster_kiryn": {
+      "keys": [
+        "goa2-shademaster-kiryn-wow-dcf0a26ec9a2/v0001"
+      ],
+      "defaultKey": "goa2-shademaster-kiryn-wow-dcf0a26ec9a2/v0001"
+    },
+    "shinfel_blightsworn": {
+      "keys": [
+        "goa2-shinfel-blightsworn-wow-034e4df046fe/v0001"
+      ],
+      "defaultKey": "goa2-shinfel-blightsworn-wow-034e4df046fe/v0001"
+    },
+    "skycapn_kragg": {
+      "keys": [
+        "goa2-skycapn-kragg-wow-d4cb1f504b79/v0001"
+      ],
+      "defaultKey": "goa2-skycapn-kragg-wow-d4cb1f504b79/v0001"
+    },
+    "snow_blossom": {
+      "keys": [
+        "goa2-snow-blossom-wow-cd7a7dfa8918/v0001"
+      ],
+      "defaultKey": "goa2-snow-blossom-wow-cd7a7dfa8918/v0001"
+    },
+    "stellagosa": {
+      "keys": [
+        "goa2-stellagosa-wow-a12b5a00ae95/v0001"
+      ],
+      "defaultKey": "goa2-stellagosa-wow-a12b5a00ae95/v0001"
+    },
+    "stormspeaker_qian": {
+      "keys": [
+        "goa2-stormspeaker-qian-wow-0c39a2078562/v0001"
+      ],
+      "defaultKey": "goa2-stormspeaker-qian-wow-0c39a2078562/v0001"
+    },
+    "sully_mcleary": {
+      "keys": [
+        "goa2-sully-mcleary-wow-48b6cbbdcddb/v0001"
+      ],
+      "defaultKey": "goa2-sully-mcleary-wow-48b6cbbdcddb/v0001"
+    },
+    "sun_tenderheart": {
+      "keys": [
+        "goa2-sun-tenderheart-wow-9cb20a3930b7/v0001"
+      ],
+      "defaultKey": "goa2-sun-tenderheart-wow-9cb20a3930b7/v0001"
+    },
+    "suna_silentstrike": {
+      "keys": [
+        "goa2-suna-silentstrike-wow-1640134fe416/v0001"
+      ],
+      "defaultKey": "goa2-suna-silentstrike-wow-1640134fe416/v0001"
+    },
+    "svala_sorrowgrave": {
+      "keys": [
+        "goa2-svala-sorrowgrave-wow-7e2a91fb8509/v0001"
+      ],
+      "defaultKey": "goa2-svala-sorrowgrave-wow-7e2a91fb8509/v0001"
+    },
+    "tacha": {
+      "keys": [
+        "goa2-tacha-wow-5ae3455cd127/v0001"
+      ],
+      "defaultKey": "goa2-tacha-wow-5ae3455cd127/v0001"
+    },
+    "taerar": {
+      "keys": [
+        "goa2-taerar-wow-6b9603326645/v0001"
+      ],
+      "defaultKey": "goa2-taerar-wow-6b9603326645/v0001"
+    },
+    "taethelan_bloodwatcher": {
+      "keys": [
+        "goa2-taethelan-bloodwatcher-hs-ww-430/v0001"
+      ],
+      "defaultKey": "goa2-taethelan-bloodwatcher-hs-ww-430/v0001"
+    },
+    "tahu_sagewind": {
+      "keys": [
+        "goa2-tahu-sagewind-wow-a17c30d42063/v0001"
+      ],
+      "defaultKey": "goa2-tahu-sagewind-wow-a17c30d42063/v0001"
+    },
+    "tally_zapnabber": {
+      "keys": [
+        "goa2-tally-zapnabber-wow-76a162d895b0/v0001"
+      ],
+      "defaultKey": "goa2-tally-zapnabber-wow-76a162d895b0/v0001"
+    },
+    "taoshi": {
+      "keys": [
+        "goa2-taoshi-wow-9144b1859267/v0001"
+      ],
+      "defaultKey": "goa2-taoshi-wow-9144b1859267/v0001"
+    },
+    "taylor": {
+      "keys": [
+        "goa2-taylor-wow-0779cf89d4c6/v0001"
+      ],
+      "defaultKey": "goa2-taylor-wow-0779cf89d4c6/v0001"
+    },
+    "tenwu_of_the_red_smoke": {
+      "keys": [
+        "goa2-tenwu-of-the-red-smoke-hs-dmf-071/v0001"
+      ],
+      "defaultKey": "goa2-tenwu-of-the-red-smoke-hs-dmf-071/v0001"
+    },
+    "thalrenus_rivertree": {
+      "keys": [
+        "goa2-thalrenus-rivertree-wow-ffbf0be81439/v0001"
+      ],
+      "defaultKey": "goa2-thalrenus-rivertree-wow-ffbf0be81439/v0001"
+    },
+    "thalyssra": {
+      "keys": [
+        "goa2-thalyssra-wow-32953a443354/v0001"
+      ],
+      "defaultKey": "goa2-thalyssra-wow-32953a443354/v0001"
+    },
+    "thaon_moonclaw": {
+      "keys": [
+        "goa2-thaon-moonclaw-wow-134b99a2e09a/v0001"
+      ],
+      "defaultKey": "goa2-thaon-moonclaw-wow-134b99a2e09a/v0001"
+    },
+    "thisalee_crow": {
+      "keys": [
+        "goa2-thisalee-crow-wow-5fae50be8a4a/v0001"
+      ],
+      "defaultKey": "goa2-thisalee-crow-wow-5fae50be8a4a/v0001"
+    },
+    "thomas_thomson": {
+      "keys": [
+        "goa2-thomas-thomson-hots-horsemanvo-headlesshorseman/v0001"
+      ],
+      "defaultKey": "goa2-thomas-thomson-hots-horsemanvo-headlesshorseman/v0001"
+    },
+    "thomas_zelling": {
+      "keys": [
+        "goa2-thomas-zelling-wow-69efec159b67/v0001"
+      ],
+      "defaultKey": "goa2-thomas-zelling-wow-69efec159b67/v0001"
+    },
+    "toe_knee": {
+      "keys": [
+        "goa2-toe-knee-wow-a80aea163135/v0001"
+      ],
+      "defaultKey": "goa2-toe-knee-wow-a80aea163135/v0001"
+    },
+    "toki_tortollan": {
+      "keys": [
+        "goa2-toki-tortollan-wow-66ef6cee8f71/v0001"
+      ],
+      "defaultKey": "goa2-toki-tortollan-wow-66ef6cee8f71/v0001"
+    },
+    "torok_bloodtotem": {
+      "keys": [
+        "goa2-torok-bloodtotem-wow-4ab59646258f/v0001"
+      ],
+      "defaultKey": "goa2-torok-bloodtotem-wow-4ab59646258f/v0001"
+    },
+    "turi_flickerflame": {
+      "keys": [
+        "goa2-turi-flickerflame-wow-f49b03a0dd6f/v0001"
+      ],
+      "defaultKey": "goa2-turi-flickerflame-wow-f49b03a0dd6f/v0001"
+    },
+    "ularogg": {
+      "keys": [
+        "goa2-ularogg-wow-14f2a051bb2a/v0001"
+      ],
+      "defaultKey": "goa2-ularogg-wow-14f2a051bb2a/v0001"
+    },
+    "umbra_tortollan": {
+      "keys": [
+        "goa2-umbra-tortollan-hs-ung-900/v0001"
+      ],
+      "defaultKey": "goa2-umbra-tortollan-hs-ung-900/v0001"
+    },
+    "usha_eyegouge": {
+      "keys": [
+        "goa2-usha-eyegouge-wow-8ec2cb95584f/v0001"
+      ],
+      "defaultKey": "goa2-usha-eyegouge-wow-8ec2cb95584f/v0001"
+    },
+    "valewalker_farodin": {
+      "keys": [
+        "goa2-valewalker-farodin-wow-635893d46da6/v0001"
+      ],
+      "defaultKey": "goa2-valewalker-farodin-wow-635893d46da6/v0001"
+    },
+    "vandel": {
+      "keys": [
+        "goa2-vandel-wow-634a1bf8d0f8/v0001"
+      ],
+      "defaultKey": "goa2-vandel-wow-634a1bf8d0f8/v0001"
+    },
+    "varedis_felsoul": {
+      "keys": [
+        "goa2-varedis-felsoul-wow-9b3b32a334d9/v0001"
+      ],
+      "defaultKey": "goa2-varedis-felsoul-wow-9b3b32a334d9/v0001"
+    },
+    "velen": {
+      "keys": [
+        "goa2-velen-wow-afcfa1ca37ef/v0001"
+      ],
+      "defaultKey": "goa2-velen-wow-afcfa1ca37ef/v0001"
+    },
+    "vilnakdor": {
+      "keys": [
+        "goa2-vilnakdor-wow-00d2e8e2a29d/v0001"
+      ],
+      "defaultKey": "goa2-vilnakdor-wow-00d2e8e2a29d/v0001"
+    },
+    "voljamba": {
+      "keys": [
+        "goa2-voljamba-wow-8dd14f06cda5/v0001"
+      ],
+      "defaultKey": "goa2-voljamba-wow-8dd14f06cda5/v0001"
+    },
+    "volkaal": {
+      "keys": [
+        "goa2-volkaal-wow-c7c91fce9360/v0001"
+      ],
+      "defaultKey": "goa2-volkaal-wow-c7c91fce9360/v0001"
+    },
+    "wardruid_loti": {
+      "keys": [
+        "goa2-wardruid-loti-wow-fd3f078fae07/v0001"
+      ],
+      "defaultKey": "goa2-wardruid-loti-wow-fd3f078fae07/v0001"
+    },
+    "wise_mari": {
+      "keys": [
+        "goa2-wise-mari-wow-1d51764434af/v0001"
+      ],
+      "defaultKey": "goa2-wise-mari-wow-1d51764434af/v0001"
+    },
+    "wulferd_fizzbracket": {
+      "keys": [
+        "goa2-wulferd-fizzbracket-wow-92afdd70065f/v0001"
+      ],
+      "defaultKey": "goa2-wulferd-fizzbracket-wow-92afdd70065f/v0001"
+    },
+    "xavius": {
+      "keys": [
+        "goa2-xavius-wow-16c5f7a249bf/v0001"
+      ],
+      "defaultKey": "goa2-xavius-wow-16c5f7a249bf/v0001"
+    },
+    "ymiron": {
+      "keys": [
+        "goa2-ymiron-wow-945165797f44/v0001"
+      ],
+      "defaultKey": "goa2-ymiron-wow-945165797f44/v0001"
+    },
+    "ysondre": {
+      "keys": [
+        "goa2-ysondre-wow-658802d69ecd/v0001"
+      ],
+      "defaultKey": "goa2-ysondre-wow-658802d69ecd/v0001"
+    },
+    "zabra_hexx": {
+      "keys": [
+        "goa2-zabra-hexx-wow-58c16f4ad68a/v0001"
+      ],
+      "defaultKey": "goa2-zabra-hexx-wow-58c16f4ad68a/v0001"
+    },
+    "zeliek": {
+      "keys": [
+        "goa2-zeliek-wow-c2157ff8e1b6/v0001"
+      ],
+      "defaultKey": "goa2-zeliek-wow-c2157ff8e1b6/v0001"
+    },
+    "zelifrax_wobblepox": {
+      "keys": [
+        "goa2-zelifrax-wobblepox-wow-cc727df44bb4/v0001"
+      ],
+      "defaultKey": "goa2-zelifrax-wobblepox-wow-cc727df44bb4/v0001"
+    },
+    "zentabra": {
+      "keys": [
+        "goa2-zentabra-wow-76252c039dd4/v0001"
+      ],
+      "defaultKey": "goa2-zentabra-wow-76252c039dd4/v0001"
+    },
+    "zolani": {
+      "keys": [
+        "goa2-zolani-wow-2fbf677461c5/v0001"
+      ],
+      "defaultKey": "goa2-zolani-wow-2fbf677461c5/v0001"
+    }
+  },
+  "history": {
+    "history/characters/100000_vrykul.txt": "03cee2d8a9c9623e3fd9cd1ffe2a0b24fa4eefda6f16edc5e97b4310afc2d4e1",
+    "history/characters/10000_orc.txt": "0c2aa41a6ef88f81d8e64ee36268c37da2e8c54347d273c80b3dea3724e449d3",
+    "history/characters/110000_scourge.txt": "e5d3e1d61cfe10a91c977de8d2bdb5ef0cffa8b96f4ed50f46316ea5411024f5",
+    "history/characters/11000_dark_iron.txt": "ae510518817dea5a82148b5884283f579f6137cdb12ecf18b628d44e50cce24f",
+    "history/characters/120000_nraqi.txt": "685ee877b18c56076c6ba0326ef7275211d8dbba20b75c2fb68bfbb244377779",
+    "history/characters/140000_satyr.txt": "729ef504c715bd07dd7a0b27cb2b59f4e5b08d822b333da0c704eb85dec24ee5",
+    "history/characters/150000_naga.txt": "af79c351e0c971ae7fb88b3c9a360113c47f9249036f15dcfd006675e678ea08",
+    "history/characters/15000_gurubashi.txt": "74dae3955fddad81c607b9046df3fce397830e9b035fcf3a437d5b2b5603fbaf",
+    "history/characters/160000_quilboar.txt": "6ccd841783ac9df058950b2169b4d675d83dc436eb3fe128ae2eb15110f5c3c0",
+    "history/characters/16000_gnome.txt": "ab49e4adbcae886cead27726455a3c958759fc12df92cd891aac2d6b75394491",
+    "history/characters/170000_tuskarr.txt": "b9938d167118f84973140da741359d2bb04e94804b84536fdf18dd60b4abca1f",
+    "history/characters/17000_28000_bronzebeard.txt": "1d7eaaa44800b056a5366ec4b98ca72f9757ca1f49577122625afe5bd2326f36",
+    "history/characters/180000_magnataur.txt": "f99daca8c9d403b580df07cdfcf4655fd2394dc049b15bf1cdcfacb8a7a3762f",
+    "history/characters/190000_taunka.txt": "6434d69ac66eef0a06d230b5ec1eaea61af16198fe95c8813330554842d36c86",
+    "history/characters/1_azerothian.txt": "d98ff74618250fd7dee0fafd1688d39c9e2e3c096da709d5eaa828ecc8c838de",
+    "history/characters/200000_farraki.txt": "31824319c31275a9b2e6f26567d79753d4e4bfb6e7817c9cea2275c6102a7458",
+    "history/characters/210000_tauren.txt": "bd9cfc94d9e7808e8159bffffb5bdfd2b2b3e599ec70f0c287bb7e2e4e5f625b",
+    "history/characters/220000_dark_troll.txt": "544d00c06d5db0922516d5b88b2564d342aff11d9268a3724753ed530b98d68a",
+    "history/characters/22000_wildhammer.txt": "e318ca3d4ed4d8b3312bb527b88e350d1943e73d1e1350e4b9dbe93166b85ff2",
+    "history/characters/230000_hozen.txt": "72226b92182f9e34571d46a47424f8bafac6fb2c1ec2fa4bd27a76ddd61d7043",
+    "history/characters/240000_qiraji.txt": "ac3b42f0a02c9cf3964096b01c4c721990a930dab093c376fec2957216f804b0",
+    "history/characters/250000_harpy.txt": "feb195664bf84661016bdebb7722d875f217fa5f3ee6dd7e713b28fdbdbfc652",
+    "history/characters/260000_northern.txt": "c884368b6102a810ebd37527422aa14a82a8444625deb69102835d69febeede7",
+    "history/characters/270000_tolvir.txt": "7aeaba28d4411c17407d5bb1264367b1e3c0e70182e1f5eb9e87322915bee55b",
+    "history/characters/280000_pygmy.txt": "717df1e4892b1d2ad19ddbb9f169be57bcd77078f2ec8b4698b589415f62965c",
+    "history/characters/290000_frozen_giant.txt": "4fe93c559be2d04a925e7a268811f1f52c5197c655d621a4420fd70339f04f30",
+    "history/characters/29000_gnoll.txt": "fe033f909d2ea3dc6246ea6beb9814dcf62d91dfb8b01e29cc4e5c52a4f09e09",
+    "history/characters/300000_frostborn.txt": "1eacce6fc1e71111f267dd5430ed968c1ab70642a3ed57ab4d1df0864c370a20",
+    "history/characters/310000_patron_characters.txt": "93ed05eb1d442108c6e4a243af1b7f559aa6d486907fea1fe6a3973b40718d5e",
+    "history/characters/320000_centaur.txt": "192723e86948879acd5b742909225d2371dc312acc03fae2bd08501f87ddd55f",
+    "history/characters/32000_frostmane.txt": "60bc2859ab49f7ede7c8c3612ab8bc421c22beb2bf676aad8a7578119261d6ac",
+    "history/characters/330000_highborne.txt": "a8b7492ab30e65893def6516dd73a83cb6b2e17f9adde9e17c5953d248f59096",
+    "history/characters/33000_vilebranch.txt": "b7387c31f91dd3f996028c464bdf2b0d75cea666c531095e655cab494d0c673d",
+    "history/characters/340000_night_elf.txt": "a6fd40c53ff38c4f16dbe5ae0e0da45d12cd6a056a3ebdb4e1aa4f481d09773a",
+    "history/characters/34000_murloc.txt": "e6bc74e88a90845ddc0fbbae9ae6edac2dd9c8812bbe15e9f786ad0923789507",
+    "history/characters/360000_eredruin.txt": "40d6078cff39b406ab02f0ca0328a1d0458d7f772ce399b7dabd5992b0e3599f",
+    "history/characters/36000_fire_elemental.txt": "52db91d8d26bbde6f71348fad0a49fb6180204e604be6796a282ece1ae9c34eb",
+    "history/characters/370000_shatyar.txt": "8f7462e7ef52087d5b41f929052ea08758c9ef9a867ab0b7556f00bd070213f5",
+    "history/characters/380000_frostnymph.txt": "8991992b22a505b2de2ced84afbb340407b25adc5588559ad9f780faf0af3938",
+    "history/characters/38000_arathorian.txt": "882d2827eb684c10d9943375ead0ef383df019bddebcb827e6452cf6dad60a84",
+    "history/characters/381000_vulpera.txt": "d246c45806f60fd72e6197de3c8f803aea7e57fd982cd5ebef5348fca5d8c002",
+    "history/characters/390000_sethrak.txt": "ae221cd0decd62dc6cb530e1b26b56fcf59e87ba584b9644b0df8002622c5578",
+    "history/characters/400000_titan.txt": "94139d23e5899fca93dd5ce0ed0c6b4f7c66df459ee4ddf8924a4f281b063959",
+    "history/characters/410000_dryad.txt": "720f7348c9e5a01a24cb9daf32be9d8889b113b03dbbe36dafecdcd10d54b031",
+    "history/characters/420000_ancients.txt": "528889eda36bf6c78e74a6cce09a5b0efcf35b07a66488d62992cc155f4fd759",
+    "history/characters/42000_high_elf.txt": "b67ce40f17771a37439a15b8648b52880671429c05c82bbf6bd6957387a0ce36",
+    "history/characters/430000_nathrezim.txt": "3f6050a011b92d25f61f50d21516dde1444b9f29f683ac0a5b9fecc42517f0ba",
+    "history/characters/440000_storm_giant.txt": "9512522f2f45170207969441416513eb3e88117908378af7c41ee9945f455fec",
+    "history/characters/44000_baradin.txt": "2335f4393dd4855578520e0882b3e5d912661bcef46df7a7df72448c721e2a42",
+    "history/characters/450000_sayaadi.txt": "0f6ca56640b2df2a933c4dc5b32b57e6beb00398dbcd3f0e78e783376850722a",
+    "history/characters/460000_drust.txt": "c900ee8a4c944c4bbbbbac2084b45716f456a44d18daaa604a33726344efc6cb",
+    "history/characters/46000_gilnean.txt": "1a5cd27232d0f58dace476f09412e27dd739baa3935e4758e2730895a1ed9f10",
+    "history/characters/48000_tirassian.txt": "94fa22d6da5d4c7c3a2ad1ce45189a2d0793940c29fe814503cdc0f3ea3ddfe6",
+    "history/characters/500000_pandaren.txt": "0ee0278ac22323ef3d0c574984ff58fd6a435712d242edfd01e5ccbadf069845",
+    "history/characters/50000_kobold.txt": "f0d04785b9628275930fdc480ec27df61c1914ec31c790bbc599637e19b7785a",
+    "history/characters/510000_jinyu.txt": "baf878097024899f97b4360b301c751522b007514024e7ecefe532712cdacff1",
+    "history/characters/520000_mogu.txt": "049f233c30f345edc8a1c1209c5364e8139417ad9ae56088c6e0604a3fdb2f26",
+    "history/characters/52000_ogre.txt": "177f2c0017f4b14f3f850e8beebbd13418540fdf60f39d77bc158505d281edfb",
+    "history/characters/530000_saurok.txt": "722e935565f375b141cdad7919925c53ccac6f74d06156d82193554c1892cde2",
+    "history/characters/53000_hillsbrad.txt": "72de5d5cbdbdd0d46b64b59b8a5d3cdca7906c8cd9fec73e76034a461fdcde3c",
+    "history/characters/540000_mantid.txt": "a71b042eea475b4d221ae968425d437f7219adfb4fc3bc0c82f224b5030ed700",
+    "history/characters/54000_witherbark.txt": "da5bb2d1c747fd8a83a922953dfb1f5ced90bf22f798d2b7fe8d265e07b0e9b1",
+    "history/characters/550000_yaungol.txt": "147af542817811a060a0ba547706dcc51487a85d0f04ee4448309255fa056c09",
+    "history/characters/55000_revantusk.txt": "31ca8006a4dad922c5c2735dc83179ed652f7585b8ce4bb586057cc879ad54fd",
+    "history/characters/560000_grummle.txt": "adf79b71d4f864ecd245d96ca8ff4e0f7cca404dfd4ac3651a097eb0e573d13f",
+    "history/characters/56000_mossflayer.txt": "72bef0a2abc215937f59cd04571d649a4831568670a3db95834365e6cd10385c",
+    "history/characters/57000_amani.txt": "ae2c887e6463a22e338440b88df2aa19e6f4796d8d44b5f74c2035b70462ee6c",
+    "history/characters/58000_alteraci.txt": "e564557b89361d6397826b48bd450330a3941b43b9a9160b1b41f420fa9e9f95",
+    "history/characters/59000_dalaranian.txt": "166a0b4f1d2fbe74f1de264f4be67c764b65042973d9fae80f1e9d2b76675014",
+    "history/characters/60000_63000_lordaeronian.txt": "a62ed2bf72862a8abaa3619af168974dbffec2425675e6c60d114deffe02adeb",
+    "history/characters/6000_gurubashi.txt": "3fc6327c2998d4fc49e36759a8e789095f154374f1b67405780e953eb97c9bbb",
+    "history/characters/62000_dragon.txt": "66a61a078e54efedddf1cb87cd3f6682995a28a625e531a891014abb98c34a01",
+    "history/characters/64000_goblin.txt": "c7458db5bb6557e6493ebf79d7833ed3659c94b05f9b99f382da1175f45be61d",
+    "history/characters/66000_zandalari.txt": "dc0ab68f0d54269077cf8b49ac65fdb59148b927e12d5f9db0b2d8b8320474e2",
+    "history/characters/68000_darkspear.txt": "e99e33369b75b4682d3c247bbc05c8aa9d537ffefc41b7f212173c06a2beac38",
+    "history/characters/75000_old_dwarven.txt": "3c5bb3888b1a765731c23b7d083a1c16d444eb593975bb7cfad3c5dd32a87955",
+    "history/characters/76000_nerubian.txt": "6a938227de32a8e5ea16c66ad4f1b4047d357bb56873373ba388fcb5e5342fe4",
+    "history/characters/77000_wolvar.txt": "0f7ebee148f86d8ae24819cc612398c71efee56cbb33e08c3fd36051172de449",
+    "history/characters/78000_gorloc.txt": "33538cd6ea963c18d3daaaf67abe1ee17d2dfdedbc6e9454ca83681a3b855f0a",
+    "history/characters/79000_130000_furbolg.txt": "91d99f4a42a4edc0e4710484aaeecb923f7adcc93066d0d63d5a30aa240ab10b",
+    "history/characters/80000_drakkari.txt": "4904b0f61e8d62286c60f00882ae4e7e0bee16aed719be9fdcbe4f5f17bd9950",
+    "history/characters/90000_pirate.txt": "2c8e17ac19ce5b3aba0ffbf6e5cdfecbd2462266d5a51626174908868c17c72c",
+    "history/characters/annihilan.txt": "37f64fd77a30faaf4047c2303cc8168ace9cf2cd3575cf0b81d146504bdb550c",
+    "history/characters/blood_troll.txt": "88b694d426188785c9163963948d5ef63c76a3eb293910b47011a202a2f9641b",
+    "history/characters/draenei.txt": "a547d682d67d24af160e589f83fb60ab47451c9eea80b4fff5df9eb39f35a4bb",
+    "history/characters/drogbar.txt": "a0901dd1736fdce43c12bd996c381d680bf376579b35990255ae9fb8aa2e5539",
+    "history/characters/gilblin.txt": "477a176ecdfd73e8e578e26645768d1ddce8f6a3e1b93c275c3d596457f46588",
+    "history/characters/highmountain.txt": "42c8476c6484c8b1f9f6d4184f51330a24f13410cd184055877d66164fe005df",
+    "history/characters/icetusk.txt": "1b9189eed3766bfc11000a1f548a207dcfa1421e32ef002bf47300189df137d7",
+    "history/characters/imp.txt": "12a6ca03795b26186efd0ded63cbbfe7160a00e893b22febd5139d7f6bf5258d",
+    "history/characters/makrura.txt": "d2a22ba494fa7f9c64f80398875feab4be0acec0ed57f5a0e500ab5dc5a3fca7",
+    "history/characters/manari.txt": "27ea73de604daee43fa774605e901500aee12cff210eac085757a5ca505eea47",
+    "history/characters/mechagnome.txt": "6c6bb766cfcc7821daa3f3152386d062536a69d378af3bfd460aaafb505729ab",
+    "history/characters/mechagonian.txt": "2549600159d2d17c82d354192a0c7d2503e085d2a241e3a8ca91f2e4d93319a0",
+    "history/characters/nightborne.txt": "f0c9bb9f15a7601a1eaa266053329806e50d19a5e8020740f803d297ab4cadc9",
+    "history/characters/northsea.txt": "944f312597b1e158602dd9ca0f18c0a05d50f6c7a5c5535cc9a0cef9b26b6c62",
+    "history/characters/sandscalp.txt": "cda0ce3600e7fa851d587d5ed03d252b29fc083ce6fb5c9789a6aac45f16ee83",
+    "history/characters/sea giant.txt": "2576a9166b48229ac76b9cf4207f2597a9d8bdfaa80d651cdf22f05749d9efc3",
+    "history/characters/snobold.txt": "3460361d544bab7061ba956e67f7b5362e8bda2d8636cee561a19e5c901b53e2",
+    "history/characters/stormheimir.txt": "03d8ce42c78f296d7831453fcf4ce71fa1489708f198815622b0979d1e1fc11d",
+    "history/characters/tortollan.txt": "e65071b329e2bbfd975e6552ce852de050c39a77083eef8c5de55d31df13b716",
+    "history/characters/trogg.txt": "028e6da334706bba899bf74336b56bd190011a6cce1d8a7a547ca831d2aa3da9",
+    "history/characters/wc_easteregg_characters.txt": "d89cb8d940f318c3a0e8133a494f4f841e56b9857732c5b5dcbc36c0545c22c8",
+    "history/characters/winterax.txt": "e17770f122d37814074bd76c98abc7537ca08bce98ea883a0fb934a273e2667b",
+    "history/characters/winterfang.txt": "738b2e31ffa77902b2fcdd13bdfc0e54851e100dcd3302ee3ede0a9bbd2e4fd6",
+    "history/characters/witherbranch.txt": "3b29dff4d282b22400102f67b9829c9803fa559f850c8dbfbe52cbdf0733b311",
+    "history/characters/zemlani.txt": "813ea2197254a861923ecd72a69218103519bdf6d4545cc25f271bef55ae1018"
+  }
+}

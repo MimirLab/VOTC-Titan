@@ -1,0 +1,781 @@
+import { promptKeys } from '../shared/promptKeys';
+import { ipcRenderer} from "electron";
+import fs from 'fs';
+import path from 'path';
+
+const defaultConfigPath = path.join(__dirname, '..', '..', 'default_userdata', 'configs', 'default_config.json');
+const defaultConfig = JSON.parse(fs.readFileSync(defaultConfigPath, 'utf-8'));
+
+let defaultPrompts: any;
+
+let descScriptSelect: any = document.querySelector("#description-script-select")!;
+let exMessagesScriptSelect: any = document.querySelector("#example-messages-script-select")!;
+let bookmarkScriptSelect: any = document.querySelector("#bookmark-script-select")!;
+
+let scriptSelectorsDiv: HTMLDivElement = document.querySelector("#script-selectors")!;
+
+let suffixPromptCheckbox: any = document.querySelector("#suffix-prompt-checkbox")!;
+let suffixPromptTextarea: any = document.querySelector("#suffix-prompt-textarea")!;
+
+let restoreDefaultPromptsBtn: HTMLButtonElement = document.querySelector("#restore-default-prompts")!;
+
+// Preset elements
+let promptPresetSelect: HTMLSelectElement = document.querySelector("#prompt-preset-select")!;
+let promptPresetNameInput: HTMLInputElement = document.querySelector("#prompt-preset-name-input")!;
+let savePromptPresetBtn: HTMLButtonElement = document.querySelector("#save-prompt-preset")!;
+let deletePromptPresetBtn: HTMLButtonElement = document.querySelector("#delete-prompt-preset")!;
+let resetPresetToDefaultBtn: HTMLButtonElement = document.querySelector("#reset-preset-to-default")!;
+let characterFilterSelect: HTMLSelectElement = document.querySelector("#character-filter-select")!;
+
+// Character Description elements
+let charDescCharacterSelect: HTMLSelectElement = document.querySelector("#char-desc-character-select")!;
+let charDescTextarea: HTMLTextAreaElement = document.querySelector("#char-desc-textarea")!;
+let saveCharDescBtn: HTMLButtonElement = document.querySelector("#save-char-desc-btn")!;
+let charDescTokenCount: HTMLSpanElement = document.querySelector("#char-desc-token-count")!;
+
+let statusMessage: HTMLDivElement;
+
+const conversationPromptKeys = [
+    "mainPrompt", "selfTalkPrompt", "summarizePrompt", "selfTalkSummarizePrompt",
+    "memoriesPrompt", "suffixPrompt", "narrativePrompt", "sceneDescriptionPrompt",
+    "actionPrompt", "actionTriggeredPrompt",
+    "diaryPrompt", "diarySummarizePrompt", "diaryForLetterPrompt", "suggestionPrompt"
+];
+const letterPromptKeys = ["letterPrompt", "letterSummaryPrompt"];
+
+async function updateTotalTokenCounts() {
+    const totalConversationTokensSpan = document.getElementById('total-conversation-tokens');
+    const totalLetterTokensSpan = document.getElementById('total-letter-tokens');
+
+    if (!totalConversationTokensSpan || !totalLetterTokensSpan) return;
+
+    let totalConversationTokens = 0;
+    for (const key of conversationPromptKeys) {
+        const textarea = promptTextareas[key]?.textarea;
+        if (textarea && promptTextareas[key].isConnected) { // Check if component is connected
+            const count = await ipcRenderer.invoke('calculate-tokens', textarea.value);
+            if (typeof count === 'number') {
+                totalConversationTokens += count;
+            }
+        }
+    }
+
+    let totalLetterTokens = 0;
+    for (const key of letterPromptKeys) {
+        const textarea = promptTextareas[key]?.textarea;
+        if (textarea && promptTextareas[key].isConnected) { // Check if component is connected
+            const count = await ipcRenderer.invoke('calculate-tokens', textarea.value);
+            if (typeof count === 'number') {
+                totalLetterTokens += count;
+            }
+        }
+    }
+
+    const maxTokens = await ipcRenderer.invoke('get-context-limit');
+
+    totalConversationTokensSpan.textContent = `${totalConversationTokens} / ${maxTokens}`;
+    totalLetterTokensSpan.textContent = `${totalLetterTokens} / ${maxTokens}`;
+}
+
+
+async function updateTokenCount(key: string) {
+    const textarea = promptTextareas[key]?.textarea;
+    const tokenCountSpan = document.getElementById(`${key}-token-count`);
+
+    if (textarea && tokenCountSpan) {
+        const text = textarea.value;
+        try {
+            const count = await ipcRenderer.invoke('calculate-tokens', text);
+            // @ts-ignore
+            const tokensLabel = window.LocalizationManager.getNestedTranslation('chat.tokenizer_tokens', null, 'Tokens:');
+            tokenCountSpan.textContent = `${tokensLabel} ${count}`;
+            updateTotalTokenCounts(); // Update totals whenever a single prompt changes
+        } catch (error) {
+            console.error(`Failed to calculate tokens for ${key}:`, error);
+            // @ts-ignore
+            const tokensLabel = window.LocalizationManager.getNestedTranslation('chat.tokenizer_tokens', null, 'Tokens:');
+            tokenCountSpan.textContent = `${tokensLabel} Error`;
+        }
+    }
+}
+
+let promptTextareas: { [key: string]: any } = {};
+promptKeys.forEach(key => {
+    promptTextareas[key] = document.querySelector(`config-textarea[confID="${key}"]`);
+});
+
+
+let promptPresets: any = {};
+
+function setSaveButtonState(enabled: boolean) {
+    savePromptPresetBtn.disabled = !enabled;
+    if (savePromptPresetBtn.disabled) {
+        savePromptPresetBtn.style.opacity = '0.5';
+        savePromptPresetBtn.style.cursor = 'not-allowed';
+    } else {
+        savePromptPresetBtn.style.opacity = '1';
+        savePromptPresetBtn.style.cursor = 'pointer';
+    }
+}
+
+function showStatusMessage(message: string, type: 'success' | 'error' | 'info') {
+    if (!statusMessage) return;
+    statusMessage.textContent = message;
+    statusMessage.className = `status-message ${type} show`;
+    setTimeout(() => {
+        statusMessage.classList.remove('show');
+    }, 3000);
+}
+
+
+//init
+document.getElementById("container")!.style.display = "block";
+
+
+
+init();
+
+// 应用主题函数
+function applyTheme(theme: string) {
+    const body = document.querySelector('body');
+    if (body) {
+        body.classList.remove('theme-original', 'theme-chinese', 'theme-west');
+        body.classList.add(`theme-${theme}`);
+    }
+}
+
+// 监听主题更新
+
+
+// 监听语言更新
+ipcRenderer.on('update-language', async (event, lang) => {
+    // @ts-ignore
+    if (window.LocalizationManager) {
+        // @ts-ignore
+        await window.LocalizationManager.loadTranslations(lang);
+        // @ts-ignore
+        window.LocalizationManager.applyTranslations();
+    }
+
+    // Reload the default prompts for the new language
+    defaultPrompts = await ipcRenderer.invoke('get-default-prompts');
+    if (!defaultPrompts) {
+        console.error("Failed to reload default prompts for new language.");
+        return;
+    }
+
+    // Re-apply the currently selected preset logic, which will use the new `defaultPrompts`
+    await handlePresetChange();
+});
+
+async function init(){
+    try {
+        defaultPrompts = await ipcRenderer.invoke('get-default-prompts');
+        if (!defaultPrompts) {
+            console.error("Failed to load default prompts from main process.");
+            // @ts-ignore
+            const errorMsg = window.LocalizationManager.getNestedTranslation('dialog.init_error', {}, 'An error occurred while initializing the configuration page, please check the console log.');
+            showStatusMessage(errorMsg, 'error');
+            return;
+        }
+        statusMessage = document.querySelector("#status-message")!;
+            setSaveButtonState(false); // Initially disabled
+
+        const handleInputChange = () => setSaveButtonState(true);
+
+        promptPresetNameInput.addEventListener('input', handleInputChange);
+        promptKeys.forEach(key => {
+            if (promptTextareas[key] && promptTextareas[key].textarea) {
+                // Ensure all prompt textareas are editable
+                promptTextareas[key].textarea.disabled = false;
+                promptTextareas[key].textarea.addEventListener('input', handleInputChange);
+                promptTextareas[key].textarea.addEventListener('input', () => updateTokenCount(key));
+            }
+        });
+
+        // Initial calculation
+        setTimeout(updateTotalTokenCounts, 500); // Delay to ensure components are ready
+
+        // 应用初始主题
+        const savedTheme = 'titan';
+        applyTheme(savedTheme);
+
+        let config = await ipcRenderer.invoke('get-config');
+        promptPresets = await ipcRenderer.invoke('get-prompt-presets');
+
+        // 初始化语言
+        // @ts-ignore
+        if (window.LocalizationManager) {
+            // @ts-ignore
+            await window.LocalizationManager.loadTranslations(config.language || 'en');
+            // @ts-ignore
+            window.LocalizationManager.applyTranslations();
+        }
+
+        await populateCharacterFilter();
+        await populatePresetSelector(config.activePromptPreset);
+        console.log('Config loaded, selectedDescScript:', config.selectedDescScript);
+        console.log('selectedExMsgScript:', config.selectedExMsgScript);
+        console.log('selectedBookmarkScript:', config.selectedBookmarkScript);
+
+        const votcDataPath = await ipcRenderer.invoke('get-userdata-path');
+        console.log('votcDataPath:', votcDataPath);
+
+        // Compute fallback paths from default_userdata (located two levels up from this file)
+        const defaultScriptsBase = path.join(__dirname, '..', '..', 'default_userdata', 'scripts');
+        console.log('Default scripts base:', defaultScriptsBase);
+        console.log('Default scripts base exists?', fs.existsSync(defaultScriptsBase));
+
+        const descPath = path.join(votcDataPath, 'scripts', 'prompts', 'description');
+        const fallbackDescPath = path.join(defaultScriptsBase, 'prompts', 'description');
+        console.log('Populating desc scripts from:', descPath, 'fallback:', fallbackDescPath);
+        console.log('Description folder exists?', fs.existsSync(descPath));
+        console.log('Fallback description folder exists?', fs.existsSync(fallbackDescPath));
+        populateSelectWithFileNames(descScriptSelect, descPath, '.js', fallbackDescPath, 'desc');
+        descScriptSelect.value = config.selectedDescScript;
+        console.log('Selected desc script:', config.selectedDescScript, 'options count:', descScriptSelect.options.length);
+
+        const exMsgPath = path.join(votcDataPath, 'scripts', 'prompts', 'example messages');
+        const fallbackExMsgPath = path.join(defaultScriptsBase, 'prompts', 'example messages');
+        console.log('Populating exMsg scripts from:', exMsgPath, 'fallback:', fallbackExMsgPath);
+        console.log('Example messages folder exists?', fs.existsSync(exMsgPath));
+        console.log('Fallback example messages folder exists?', fs.existsSync(fallbackExMsgPath));
+        populateSelectWithFileNames(exMessagesScriptSelect, exMsgPath, '.js', fallbackExMsgPath, 'exMsg');
+        exMessagesScriptSelect.value = config.selectedExMsgScript;
+        console.log('Selected exMsg script:', config.selectedExMsgScript, 'options count:', exMessagesScriptSelect.options.length);
+
+        const bookmarkPath = path.join(votcDataPath, 'scripts', 'bookmarks');
+        const fallbackBookmarkPath = path.join(defaultScriptsBase, 'bookmarks');
+        console.log('Populating bookmark scripts from:', bookmarkPath, 'fallback:', fallbackBookmarkPath);
+        console.log('Bookmarks folder exists?', fs.existsSync(bookmarkPath));
+        console.log('Fallback bookmarks folder exists?', fs.existsSync(fallbackBookmarkPath));
+        populateSelectWithFileNames(bookmarkScriptSelect, bookmarkPath, '.json', fallbackBookmarkPath, 'bookmark');
+        bookmarkScriptSelect.value = config.selectedBookmarkScript;
+        console.log('Selected bookmark script:', config.selectedBookmarkScript, 'options count:', bookmarkScriptSelect.options.length);
+
+        togglePrompt(suffixPromptCheckbox.checkbox, suffixPromptTextarea.textarea);
+
+        //events
+        characterFilterSelect.addEventListener('change', () => {
+            populatePresetSelector();
+            populateCharDescCharacters();
+        });
+        promptPresetSelect.addEventListener('change', handlePresetChange);
+        savePromptPresetBtn.addEventListener('click', saveCurrentPreset);
+        deletePromptPresetBtn.addEventListener('click', deleteSelectedPreset);
+        resetPresetToDefaultBtn.addEventListener('click', resetCurrentPresetToDefault);
+
+        // Character Description events
+        charDescCharacterSelect.addEventListener('change', loadCharDesc);
+        saveCharDescBtn.addEventListener('click', saveCharDesc);
+        charDescTextarea.addEventListener('input', updateCharDescTokenCount);
+        await populateCharDescCharacters();
+
+        descScriptSelect.addEventListener('change', () =>{
+            ipcRenderer.send('config-change', "selectedDescScript", descScriptSelect.value);
+        });
+
+        exMessagesScriptSelect.addEventListener('change', () =>{
+            ipcRenderer.send('config-change', "selectedExMsgScript", exMessagesScriptSelect.value);
+        });
+
+        bookmarkScriptSelect.addEventListener('change', () =>{
+            ipcRenderer.send('config-change', "selectedBookmarkScript", bookmarkScriptSelect.value);
+        });
+
+        suffixPromptCheckbox.checkbox.addEventListener('change', () =>{
+            togglePrompt(suffixPromptCheckbox.checkbox, suffixPromptTextarea.textarea);
+        });
+
+        // 恢复默认prompts按钮事件
+        restoreDefaultPromptsBtn.addEventListener('click', () => restoreDefaultPrompts(true));
+    } catch (error) {
+        console.error('Error in init:', error);
+        // @ts-ignore
+        const errorMsg = window.LocalizationManager.getTranslation('dialog.init_error', {}, 'An error occurred while initializing the configuration page, please check the console log.');
+        showStatusMessage(errorMsg, 'error');
+    }
+}
+
+async function populateCharacterFilter() {
+    characterFilterSelect.innerHTML = '';
+
+    const allCharsOption = document.createElement('option');
+    allCharsOption.value = 'global';
+    // @ts-ignore
+    allCharsOption.textContent = window.LocalizationManager.getNestedTranslation('prompts.all_characters', null, 'All Characters');
+    characterFilterSelect.appendChild(allCharsOption);
+
+    const result = await ipcRenderer.invoke('get-all-summary-player-ids');
+    if (result.success) {
+        const players = result.ids;
+        players.forEach((player: { id: string, name: string }) => {
+            if (!player.id || !player.name) return;
+            const option = document.createElement('option');
+            option.value = player.id;
+            option.textContent = `${player.name} (${player.id})`;
+            characterFilterSelect.appendChild(option);
+        });
+    } else {
+        console.error("Failed to get player characters for filter:", result.error);
+    }
+}
+
+
+
+// Character Description functions
+async function populateCharDescCharacters() {
+    charDescCharacterSelect.innerHTML = '';
+    const playerId = characterFilterSelect.value;
+    if (!playerId) {
+        charDescTextarea.value = '';
+        return;
+    }
+    const result = await ipcRenderer.invoke('get-character-description-characters', playerId);
+    if (result.success) {
+        result.ids.forEach((char: { id: string, name: string }) => {
+            const option = document.createElement('option');
+            option.value = char.id;
+            option.textContent = `${char.name} (${char.id})`;
+            charDescCharacterSelect.appendChild(option);
+        });
+    } else {
+        console.error("Failed to get character description characters:", result.error);
+    }
+    await loadCharDesc();
+}
+
+async function loadCharDesc() {
+    const playerId = characterFilterSelect.value;
+    const characterId = charDescCharacterSelect.value;
+    if (!playerId || !characterId) {
+        charDescTextarea.value = '';
+        return;
+    }
+    const description = await ipcRenderer.invoke('get-character-description', playerId, characterId);
+    charDescTextarea.value = description || '';
+    updateCharDescTokenCount();
+
+    // Personalize the placeholder with the selected character's name, e.g.
+    // "Describe <name>'s appearance, backstory, personality traits, and significant events..."
+    const selectedOption = charDescCharacterSelect.selectedOptions[0];
+    const charName = selectedOption ? selectedOption.textContent.replace(/\s*\(\d+\)\s*$/, '').trim() : '';
+    // @ts-ignore
+    const basePlaceholder = window.LocalizationManager.getNestedTranslation('prompts.char_desc_placeholder', null, "Describe the character's appearance, backstory, personality traits, and significant events...");
+    charDescTextarea.placeholder = charName
+        ? basePlaceholder.replace(/the character's/i, `${charName}'s`)
+        : basePlaceholder;
+}
+
+async function saveCharDesc() {
+    const playerId = characterFilterSelect.value;
+    const characterId = charDescCharacterSelect.value;
+    if (!playerId || !characterId) {
+        // @ts-ignore
+        showStatusMessage(window.LocalizationManager.getNestedTranslation('prompts.char_desc_select_alert', null, 'Select a player and character first.'), 'error');
+        return;
+    }
+    const result = await ipcRenderer.invoke('save-character-description', playerId, characterId, charDescTextarea.value);
+    if (result.success) {
+        // @ts-ignore
+        showStatusMessage(window.LocalizationManager.getNestedTranslation('prompts.char_desc_saved', null, 'Character description saved.'), 'success');
+    } else {
+        // @ts-ignore
+        showStatusMessage(window.LocalizationManager.getNestedTranslation('prompts.char_desc_save_error', null, 'Failed to save character description.'), 'error');
+    }
+}
+
+async function updateCharDescTokenCount() {
+    if (!charDescTokenCount) return;
+    const text = charDescTextarea.value;
+    try {
+        const count = await ipcRenderer.invoke('calculate-tokens', text);
+        // @ts-ignore
+        const tokensLabel = window.LocalizationManager.getNestedTranslation('chat.tokenizer_tokens', null, 'Tokens:');
+        charDescTokenCount.textContent = `${tokensLabel} ${count}`;
+    } catch (error) {
+        console.error('Failed to calculate tokens for character description:', error);
+        // @ts-ignore
+        const tokensLabel = window.LocalizationManager.getNestedTranslation('chat.tokenizer_tokens', null, 'Tokens:');
+        charDescTokenCount.textContent = `${tokensLabel} Error`;
+    }
+}
+
+//functions
+
+function togglePrompt(checkbox: HTMLInputElement, textarea: HTMLTextAreaElement){
+
+    if(checkbox.checked){
+        textarea.style.opacity = "1";
+        textarea.disabled = false;
+    }
+    else{
+        textarea.style.opacity = "0.5";
+        textarea.disabled = true;
+    }
+}
+
+function populateSelectWithFileNames(selectElement: HTMLSelectElement, folderPath: string, fileExtension: string, fallbackFolderPath?: string, label?: string): void {
+    const logPrefix = label ? `[${label}] ` : '';
+    console.log(`${logPrefix}populateSelectWithFileNames: folderPath=${folderPath}, ext=${fileExtension}, fallback=${fallbackFolderPath}`);
+
+    // Clear existing options
+    selectElement.innerHTML = '';
+
+    // Helper to try populating from a given folder
+    const tryPopulate = (targetPath: string, sourceLabel: string): boolean => {
+        console.log(`${logPrefix}tryPopulate: targetPath=${targetPath}, sourceLabel=${sourceLabel}`);
+        if (!fs.existsSync(targetPath)) {
+            console.warn(`${logPrefix}Folder does not exist: ${targetPath}`);
+            return false;
+        }
+
+        let added = false;
+        let fileCount = 0;
+        function walkDir(currentPath: string, relativePath: string = "") {
+            try {
+                const entries = fs.readdirSync(currentPath, { withFileTypes: true });
+                console.log(`${logPrefix}walkDir: currentPath=${currentPath}, entries=${entries.length}`);
+
+                for (const entry of entries) {
+                    const entryRelativePath = relativePath ? path.join(relativePath, entry.name) : entry.name;
+                    const entryFullPath = path.join(currentPath, entry.name);
+                    const entryExt = path.extname(entry.name).toLowerCase();
+
+                    console.log(`${logPrefix}  entry: ${entry.name}, isDirectory: ${entry.isDirectory()}, ext: ${entryExt}`);
+
+                    if (entry.isDirectory()) {
+                        walkDir(entryFullPath, entryRelativePath);
+                    } else if (entry.isFile() && entryExt === fileExtension.toLowerCase()) {
+                        const el = document.createElement("option");
+                        // Format display name: "folder / subfolder / filename"
+                        const displayName = entryRelativePath
+                            .replace(new RegExp(fileExtension + '$', 'i'), '')
+                            .replace(/[\\/]/g, ' / ');
+
+                        el.textContent = displayName;
+                        el.value = entryRelativePath.replace(/\\/g, '/');
+                        selectElement.appendChild(el);
+                        added = true;
+                        fileCount++;
+                        console.log(`${logPrefix}Added option: ${el.value}`);
+                    }
+                }
+            } catch (error) {
+                console.error(`${logPrefix}Error walking directory ${currentPath}:`, error);
+            }
+        }
+
+        walkDir(targetPath);
+        console.log(`${logPrefix}tryPopulate result: added=${added}, fileCount=${fileCount}`);
+        return added;
+    };
+
+    // First try the primary folder
+    let success = tryPopulate(folderPath, 'primary');
+
+    // If primary folder yielded no files and a fallback is provided, try the fallback
+    if (!success && fallbackFolderPath && fs.existsSync(fallbackFolderPath)) {
+        console.log(`${logPrefix}Primary folder empty, trying fallback: ${fallbackFolderPath}`);
+        success = tryPopulate(fallbackFolderPath, 'fallback');
+    }
+
+    // If still no options were added, add a placeholder
+    if (!success) {
+        const option = document.createElement('option');
+        option.textContent = `No ${fileExtension} files found`;
+        option.value = '';
+        selectElement.appendChild(option);
+        console.log(`${logPrefix}Added placeholder option because no files found`);
+    } else {
+        console.log(`${logPrefix}Total options added: ${selectElement.options.length}`);
+    }
+}
+
+async function populatePresetSelector(activePreset?: string) {
+    promptPresetSelect.innerHTML = '';
+    const config = await ipcRenderer.invoke('get-config');
+    const selectedCharacterId = characterFilterSelect.value;
+
+    // Add default option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = 'Default';
+    // @ts-ignore
+    defaultOption.textContent = window.LocalizationManager.getNestedTranslation('prompts.mod_default', null, 'Default (Vanilla)');
+    promptPresetSelect.appendChild(defaultOption);
+
+    // Add mod presets
+    if (defaultPrompts.mod_prompt_sets) {
+        const modSeparator = document.createElement('option');
+        modSeparator.disabled = true;
+        modSeparator.textContent = '--- Mod Presets ---';
+        promptPresetSelect.appendChild(modSeparator);
+
+        const modNameLocaleKeyMap: { [key: string]: string } = {
+            "A Game of Thrones": "prompts.mod_agot",
+            "LotR: Realms in Exile": "prompts.mod_lotr_realms_in_exile",
+            "The Fallen Eagle": "prompts.mod_tfe",
+            "Warcraft: Guardians of Azeroth 2": "prompts.mod_warcraft_goa2",
+            "Elder Kings 2": "prompts.mod_elder_kings_2"
+        };
+
+        for (const modName in defaultPrompts.mod_prompt_sets) {
+            const option = document.createElement('option');
+            option.value = modName;
+            const localeKey = modNameLocaleKeyMap[modName];
+            // @ts-ignore
+            option.textContent = localeKey ? window.LocalizationManager.getNestedTranslation(localeKey, null, modName) : modName;
+            promptPresetSelect.appendChild(option);
+        }
+    }
+
+    // Add custom presets (global and character-specific)
+    const customGlobalPresets = promptPresets['global'] || {};
+    const customCharacterPresets = promptPresets[selectedCharacterId] || {};
+
+    if (Object.keys(customGlobalPresets).length > 0 || Object.keys(customCharacterPresets).length > 0) {
+        const customSeparator = document.createElement('option');
+        customSeparator.disabled = true;
+        customSeparator.textContent = '--- Custom Presets ---';
+        promptPresetSelect.appendChild(customSeparator);
+
+        // Add character-specific presets first
+        for (const presetName in customCharacterPresets) {
+            const option = document.createElement('option');
+            option.value = presetName;
+            option.textContent = presetName;
+            promptPresetSelect.appendChild(option);
+        }
+
+        // Add global presets if "All Characters" is selected
+        if (selectedCharacterId === 'global') {
+            for (const presetName in customGlobalPresets) {
+                const option = document.createElement('option');
+                option.value = presetName;
+                option.textContent = presetName;
+                promptPresetSelect.appendChild(option);
+            }
+        }
+    }
+
+    promptPresetSelect.value = activePreset || 'Default';
+    await handlePresetChange();
+}
+
+async function handlePresetChange() {
+    const selectedPresetName = promptPresetSelect.value;
+    console.log(`Preset changed to: ${selectedPresetName}`);
+    promptPresetNameInput.value = selectedPresetName;
+
+    // Re-enable textareas before loading new content
+    promptKeys.forEach(key => {
+        if (promptTextareas[key] && promptTextareas[key].textarea) {
+            promptTextareas[key].textarea.disabled = false;
+        }
+    });
+    promptPresetNameInput.disabled = false;
+    suffixPromptCheckbox.checkbox.disabled = false;
+    togglePrompt(suffixPromptCheckbox.checkbox, suffixPromptTextarea.textarea);
+
+    const config = await ipcRenderer.invoke('get-config');
+    const lang = config.language || 'en';
+    let promptsToLoad: any = null;
+
+    if (selectedPresetName === 'Default') {
+        promptsToLoad = defaultPrompts.prompts;
+    } else if (defaultPrompts.mod_prompt_sets && defaultPrompts.mod_prompt_sets[selectedPresetName]) {
+        promptsToLoad = { ...defaultPrompts.prompts, ...defaultPrompts.mod_prompt_sets[selectedPresetName] };
+    } else {
+        const selectedCharacterId = characterFilterSelect.value;
+        const presetsForScope = promptPresets[selectedCharacterId] || {};
+        const customPreset = presetsForScope[selectedPresetName];
+
+        if (customPreset) {
+            const originalKeys = Object.keys(customPreset);
+            // Merge with default prompts to fill in any missing keys
+            promptsToLoad = { ...defaultPrompts.prompts, ...customPreset };
+            const mergedKeys = Object.keys(promptsToLoad);
+
+            // If new keys were added, it means the preset was outdated. Save it back.
+            if (mergedKeys.length > originalKeys.length) {
+                console.log(`Updating custom preset "${selectedPresetName}" with missing default keys.`);
+                if (!promptPresets[selectedCharacterId]) {
+                    promptPresets[selectedCharacterId] = {};
+                }
+                promptPresets[selectedCharacterId][selectedPresetName] = promptsToLoad;
+                await ipcRenderer.invoke('save-prompt-presets', promptPresets);
+                // @ts-ignore
+                const updateMsg = window.LocalizationManager.getNestedTranslation('prompts.preset_updated_with_defaults', { presetName: selectedPresetName }, `Preset "${selectedPresetName}" was updated with new default prompt fields.`);
+                showStatusMessage(updateMsg, 'info');
+            }
+        } else {
+            promptsToLoad = null; // Preset not found
+        }
+    }
+
+    if (promptsToLoad) {
+        for (const key of promptKeys) {
+            if (promptTextareas[key] && promptsToLoad[key] !== undefined) {
+                promptTextareas[key].textarea.value = promptsToLoad[key];
+                // Manually trigger the input event to notify the component and update token count
+                promptTextareas[key].textarea.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+        }
+    } else {
+        // If prompts didn't load (e.g. new custom preset), still update counts for any existing text
+        promptKeys.forEach(key => updateTokenCount(key));
+    }
+
+    ipcRenderer.send('config-change', 'activePromptPreset', selectedPresetName);
+
+    const isProtected = selectedPresetName === 'Default' || (defaultPrompts.mod_prompt_sets && defaultPrompts.mod_prompt_sets[selectedPresetName]);
+    deletePromptPresetBtn.disabled = isProtected;
+
+    if (deletePromptPresetBtn.disabled) {
+        deletePromptPresetBtn.style.opacity = '0.5';
+        deletePromptPresetBtn.style.cursor = 'not-allowed';
+    } else {
+        deletePromptPresetBtn.style.opacity = '1';
+        deletePromptPresetBtn.style.cursor = 'pointer';
+    }
+    setSaveButtonState(false); // Reset on preset change
+}
+
+
+async function saveCurrentPreset() {
+    let presetName = promptPresetNameInput.value.trim();
+    // @ts-ignore
+    const lang = window.LocalizationManager?.language || 'en';
+    const selectedCharacterId = characterFilterSelect.value;
+
+    if (!presetName) {
+        // @ts-ignore
+        showStatusMessage(window.LocalizationManager.getNestedTranslation('prompts.save_preset_empty_alert'), 'error');
+        return;
+    }
+
+    const config = await ipcRenderer.invoke('get-config');
+    const isProtected = presetName === 'Default' || (defaultPrompts.mod_prompt_sets && defaultPrompts.mod_prompt_sets[presetName]);
+
+    if (isProtected) {
+        let baseName = presetName;
+        let counter = 2;
+        let newPresetName = `${baseName} (${counter})`;
+
+        // Check for uniqueness across ALL scopes to avoid confusion
+        let isGloballyUnique = false;
+        while (!isGloballyUnique) {
+            let nameFound = false;
+            for (const scopeId in promptPresets) {
+                if (promptPresets[scopeId] && promptPresets[scopeId][newPresetName]) {
+                    nameFound = true;
+                    break;
+                }
+            }
+
+            if (nameFound) {
+                counter++;
+                newPresetName = `${baseName} (${counter})`;
+            } else {
+                isGloballyUnique = true;
+            }
+        }
+        presetName = newPresetName;
+    }
+
+    const newPreset: any = {};
+    for (const key of promptKeys) {
+        newPreset[key] = promptTextareas[key].textarea.value;
+    }
+
+    if (!promptPresets[selectedCharacterId]) {
+        promptPresets[selectedCharacterId] = {};
+    }
+    promptPresets[selectedCharacterId][presetName] = newPreset;
+    await ipcRenderer.invoke('save-prompt-presets', promptPresets);
+
+    await populatePresetSelector(presetName);
+    // @ts-ignore
+    const successMsg = window.LocalizationManager.getNestedTranslation('prompts.save_preset_success', { presetName: presetName });
+    // @ts-ignore
+    showStatusMessage(successMsg.replace('{{presetName}}', presetName), 'success');
+    setSaveButtonState(false);
+    promptPresetNameInput.focus();
+}
+
+async function deleteSelectedPreset() {
+    const selectedPresetName = promptPresetSelect.value;
+    const selectedCharacterId = characterFilterSelect.value;
+    const config = await ipcRenderer.invoke('get-config');
+
+    if (selectedPresetName === 'Default' || (defaultPrompts.mod_prompt_sets && defaultPrompts.mod_prompt_sets[selectedPresetName])) {
+        // @ts-ignore
+        showStatusMessage(window.LocalizationManager.getNestedTranslation('prompts.delete_default_preset_alert'), 'error');
+        return;
+    }
+
+    if (promptPresets[selectedCharacterId] && promptPresets[selectedCharacterId][selectedPresetName]) {
+        delete promptPresets[selectedCharacterId][selectedPresetName];
+        await ipcRenderer.invoke('save-prompt-presets', promptPresets);
+        await populatePresetSelector('Default'); // Switch to default after deletion
+        // @ts-ignore
+        let successMsg = window.LocalizationManager.getNestedTranslation('prompts.delete_preset_success', { presetName: selectedPresetName });
+        // @ts-ignore
+        showStatusMessage(successMsg.replace('{{presetName}}', selectedPresetName), 'success');
+
+        // Re-enable textareas after deleting
+        promptKeys.forEach(key => {
+            if (promptTextareas[key] && promptTextareas[key].textarea) {
+                promptTextareas[key].textarea.disabled = false;
+            }
+        });
+        togglePrompt(suffixPromptCheckbox.checkbox, suffixPromptTextarea.textarea);
+        promptPresetNameInput.focus();
+    } else {
+        console.error(`Preset "${selectedPresetName}" not found for character scope "${selectedCharacterId}"`);
+    }
+}
+
+async function restoreDefaultPrompts(showConfirmation = true): Promise<void> {
+    try {
+        console.log('Restoring default prompts...');
+
+        const promptsToApply = defaultPrompts.prompts;
+
+        for (const [key, value] of Object.entries(promptsToApply)) {
+            if (promptTextareas[key]) {
+                promptTextareas[key].textarea.value = value;
+                // Manually trigger the input event to notify the component
+                promptTextareas[key].textarea.dispatchEvent(new Event('input', { bubbles: true }));
+            }
+        }
+
+        console.log('All prompts restored to default values successfully');
+        if (showConfirmation) {
+            // @ts-ignore
+            const successMsg = window.LocalizationManager.getNestedTranslation('prompts.restore_defaults_success');
+            showStatusMessage(successMsg, 'success');
+            setTimeout(() => location.reload(), 1500);
+        } else {
+            // Re-enable textareas if not reloading
+            promptKeys.forEach(key => {
+                if (promptTextareas[key] && promptTextareas[key].textarea) {
+                    promptTextareas[key].textarea.disabled = false;
+                }
+            });
+            togglePrompt(suffixPromptCheckbox.checkbox, suffixPromptTextarea.textarea);
+            promptPresetNameInput.focus();
+        }
+
+    } catch (error) {
+        console.error('Error restoring default prompts:', error);
+        // @ts-ignore
+        const errorMsg = window.LocalizationManager.getNestedTranslation('prompts.restore_defaults_error', { error: error });
+        showStatusMessage(errorMsg, 'error');
+    }
+}
+
+async function resetCurrentPresetToDefault() {
+    await restoreDefaultPrompts(false);
+    await saveCurrentPreset();
+}

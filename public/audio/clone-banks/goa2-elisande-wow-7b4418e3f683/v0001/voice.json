@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-elisande-wow-7b4418e3f683",
+  "revision": 1,
+  "name": "Elisande Nightwell — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "30f84d8c5f0d4f3489b7c11cf98fb43db4207fe294cc37c2c01e540e678247f6",
+    "transcript_sha256": "a23d65ad2d530b88f581f8c859d3955d9edf0f3a91788633753a0321f6acf676",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 411899,
+      "seconds": 17.162458333333333,
+      "peak": 1.0,
+      "rms_dbfs": -17.77,
+      "clipped_samples": 1
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-sassy-hardwrench-wow-a6a0d66f6e82",
+  "revision": 1,
+  "name": "Sassy Hardwrench — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "30f0ab1b414e116d0105aec55b6aaecb667ed42125eab8b9f50386a7259d46c2",
+    "transcript_sha256": "6a6d0ea60fd68544ff8e772684c755a6337164df142a5d4330cc759803c34312",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 376574,
+      "seconds": 15.690583333333333,
+      "peak": 0.954285,
+      "rms_dbfs": -19.1,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

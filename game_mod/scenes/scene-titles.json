@@ -1,0 +1,4352 @@
+{
+  "schema": 1,
+  "revision": 1,
+  "baseline": {
+    "file": "presentation-baseline.json",
+    "sha256": "489da17d33733924ad00f69fc9fe546972755bd7d3f96daac907044de6945ab7",
+    "scenes": 868
+  },
+  "direction": "Concise scene names under a single current-location heading. Preserve all art, identity, gating and roleplay facts. All scenes individually reviewed; no truncation or runtime naming generator.",
+  "titles": [
+    {
+      "id": "titan_farraki_court",
+      "expectedLabel": "Farraki sandstone audience court",
+      "label": "Sandstone Audience Court"
+    },
+    {
+      "id": "titan_kaldorei_lodge",
+      "expectedLabel": "Kaldorei forest gathering lodge",
+      "label": "Forest Gathering Lodge"
+    },
+    {
+      "id": "titan_dwarven_ale_hall",
+      "expectedLabel": "Dwarven ale hall",
+      "label": "Dwarven Ale Hall"
+    },
+    {
+      "id": "titan_human_inn",
+      "expectedLabel": "Human roadside inn",
+      "label": "Roadside Inn"
+    },
+    {
+      "id": "titan_ashenvale_gathering",
+      "expectedLabel": "Ashenvale woodland gathering place",
+      "label": "Ancient Woodland Glade"
+    },
+    {
+      "id": "titan_desert",
+      "expectedLabel": "Open desert",
+      "label": "Open Desert"
+    },
+    {
+      "id": "titan_forest",
+      "expectedLabel": "Woodland path",
+      "label": "Woodland Path"
+    },
+    {
+      "id": "titan_taiga",
+      "expectedLabel": "Conifer woodland",
+      "label": "Conifer Woods"
+    },
+    {
+      "id": "titan_jungle",
+      "expectedLabel": "Jungle meeting",
+      "label": "Jungle Clearing"
+    },
+    {
+      "id": "titan_hills",
+      "expectedLabel": "Hill country",
+      "label": "Hill Country"
+    },
+    {
+      "id": "titan_mountains",
+      "expectedLabel": "Mountain country",
+      "label": "Mountain Slopes"
+    },
+    {
+      "id": "titan_plains",
+      "expectedLabel": "Open country",
+      "label": "Open Country"
+    },
+    {
+      "id": "titan_steppe",
+      "expectedLabel": "Steppe meeting",
+      "label": "Open Steppe"
+    },
+    {
+      "id": "titan_wetlands",
+      "expectedLabel": "Wetland meeting",
+      "label": "Reed Marsh"
+    },
+    {
+      "id": "titan_coast",
+      "expectedLabel": "Coastal meeting",
+      "label": "Coastal Strand"
+    },
+    {
+      "id": "titan_sea",
+      "expectedLabel": "Shipboard conversation",
+      "label": "Ship's Deck"
+    },
+    {
+      "id": "titan_azsharic_court",
+      "expectedLabel": "Naga imperial audience hall",
+      "label": "Court of the Tides"
+    },
+    {
+      "id": "titan_goblin_court",
+      "expectedLabel": "Goblin cartel audience headquarters",
+      "label": "Cartel Headquarters"
+    },
+    {
+      "id": "titan_northern_court",
+      "expectedLabel": "Solsticean carved timber court",
+      "label": "Carved Timber Hall"
+    },
+    {
+      "id": "titan_arathi_court",
+      "expectedLabel": "Arathorian royal audience hall",
+      "label": "Royal Audience Hall"
+    },
+    {
+      "id": "titan_gilnean_court",
+      "expectedLabel": "Gilnean aristocratic audience manor",
+      "label": "Gabled Manor Court"
+    },
+    {
+      "id": "titan_southern_court",
+      "expectedLabel": "Southern trading audience pavilion",
+      "label": "Merchant Princes' Pavilion"
+    },
+    {
+      "id": "titan_orcish_court",
+      "expectedLabel": "Orcish clan command great hall",
+      "label": "Clan Command Hall"
+    },
+    {
+      "id": "titan_gorian_court",
+      "expectedLabel": "Gorian ogre imperial audience court",
+      "label": "Gorian Imperial Court"
+    },
+    {
+      "id": "titan_vrykulic_court",
+      "expectedLabel": "Vrykul ancestral high-seat hall",
+      "label": "Ancestral High Seat"
+    },
+    {
+      "id": "titan_mogu_court",
+      "expectedLabel": "Mogu imperial authority palace",
+      "label": "Palace of Iron and Gold"
+    },
+    {
+      "id": "titan_grummle_court",
+      "expectedLabel": "Grummle caravan council lodge",
+      "label": "Caravan Council Lodge"
+    },
+    {
+      "id": "titan_sauroken_court",
+      "expectedLabel": "Saurok warband stronghold court",
+      "label": "Warband Stronghold"
+    },
+    {
+      "id": "titan_pandaren_court",
+      "expectedLabel": "Pandaren cultivated audience pavilion",
+      "label": "Jade Garden Pavilion"
+    },
+    {
+      "id": "titan_jinyu_court",
+      "expectedLabel": "Jinyu water-forged audience hall",
+      "label": "Water-Forged Hall"
+    },
+    {
+      "id": "titan_hozen_court",
+      "expectedLabel": "Hozen chief's elevated audience lodge",
+      "label": "Treetop Chieftain's Lodge"
+    },
+    {
+      "id": "titan_zulian_court",
+      "expectedLabel": "Troll ancestral imperial audience hall",
+      "label": "Ancestral Empire Court"
+    },
+    {
+      "id": "titan_gilblin_court",
+      "expectedLabel": "Gilblin treasure-chief audience hall",
+      "label": "Treasure-Chief's Hall"
+    },
+    {
+      "id": "titan_dwarven_court",
+      "expectedLabel": "Dwarven masterwork royal audience hall",
+      "label": "Masterwork Throne Hall"
+    },
+    {
+      "id": "titan_gnomish_court",
+      "expectedLabel": "Gnomish tinkers' civic audience court",
+      "label": "High Tinker's Court"
+    },
+    {
+      "id": "titan_darnassian_court",
+      "expectedLabel": "Kaldorei moon-silver sovereignty court",
+      "label": "Moon-Silver Court"
+    },
+    {
+      "id": "titan_highborne_court",
+      "expectedLabel": "Highborne arcane aristocratic court",
+      "label": "Arcane Aristocrats' Court"
+    },
+    {
+      "id": "titan_thalassian_court",
+      "expectedLabel": "Thalassian sun-gold audience palace",
+      "label": "Sun-Gold Palace"
+    },
+    {
+      "id": "titan_xavic_court",
+      "expectedLabel": "Satyr appropriated elven audience den",
+      "label": "Desecrated Elven Den"
+    },
+    {
+      "id": "titan_argussian_court",
+      "expectedLabel": "Draenic crystalline audience sanctuary",
+      "label": "Crystal Audience Sanctuary"
+    },
+    {
+      "id": "titan_apexis_court",
+      "expectedLabel": "Arakkoa feather-carved audience court",
+      "label": "Feather-Carved Court"
+    },
+    {
+      "id": "titan_cenaric_court",
+      "expectedLabel": "Cenari living-root audience bower",
+      "label": "Living-Root Bower"
+    },
+    {
+      "id": "titan_zaetaric_court",
+      "expectedLabel": "Centaur khan's canopied assembly camp",
+      "label": "Khan's Assembly Camp"
+    },
+    {
+      "id": "titan_tharian_court",
+      "expectedLabel": "Magnataur monumental warlord stronghold",
+      "label": "Warlord's Giant Hold"
+    },
+    {
+      "id": "titan_ulduaric_court",
+      "expectedLabel": "Titanforged geometric supervisory court",
+      "label": "Hall of Ordered Stone"
+    },
+    {
+      "id": "titan_uldumic_court",
+      "expectedLabel": "Tol'vir guardian royal audience hall",
+      "label": "Guardian Kings' Hall"
+    },
+    {
+      "id": "titan_uldamanic_court",
+      "expectedLabel": "Trogg occupied-vault audience hold",
+      "label": "Occupied Vault"
+    },
+    {
+      "id": "titan_yaungolic_court",
+      "expectedLabel": "Yaungol oil-lit command pavilion",
+      "label": "Oil-Flame Command Tent"
+    },
+    {
+      "id": "titan_tauren_court",
+      "expectedLabel": "Tauren communal sovereignty lodge",
+      "label": "Painted Council Lodge"
+    },
+    {
+      "id": "titan_taunka_court",
+      "expectedLabel": "Taunka tusk-framed chieftain court",
+      "label": "Tusk-Framed Council Hall"
+    },
+    {
+      "id": "titan_sethralic_court",
+      "expectedLabel": "Sethrak sculpted serpent audience court",
+      "label": "Serpent Sovereign's Court"
+    },
+    {
+      "id": "titan_vulpine_court",
+      "expectedLabel": "Vulpera caravan-chief audience pavilion",
+      "label": "Caravan Chief's Pavilion"
+    },
+    {
+      "id": "titan_hyenaic_court",
+      "expectedLabel": "Gnoll chief's defended trophy court",
+      "label": "Trophy Chief's Hold"
+    },
+    {
+      "id": "titan_lupine_court",
+      "expectedLabel": "Wolvar hunter-chief assembly lodge",
+      "label": "Hunter Chief's Lodge"
+    },
+    {
+      "id": "titan_odobenus_court",
+      "expectedLabel": "Tuskarr elder's maritime great house",
+      "label": "Elders' Maritime Hall"
+    },
+    {
+      "id": "titan_chelonian_court",
+      "expectedLabel": "Tortollan keeper's collected audience house",
+      "label": "Storykeeper's Audience House"
+    },
+    {
+      "id": "titan_agamagganic_court",
+      "expectedLabel": "Quilboar living-bramble audience kraul",
+      "label": "Living Bramble Kraul"
+    },
+    {
+      "id": "titan_jalgaric_court",
+      "expectedLabel": "Furbolg ancestral carved-log court",
+      "label": "Carved Ancestral Lodge"
+    },
+    {
+      "id": "titan_pygmy_court",
+      "expectedLabel": "Pygmy shell-crowned royal compound",
+      "label": "Shell-Crowned Compound"
+    },
+    {
+      "id": "titan_avianic_court",
+      "expectedLabel": "Harpy matriarch's monumental audience roost",
+      "label": "Matriarch's High Roost"
+    },
+    {
+      "id": "titan_amphibian_court",
+      "expectedLabel": "Murloc shell-crested gathering shelter",
+      "label": "Shell-Crested Gathering"
+    },
+    {
+      "id": "titan_crustacean_court",
+      "expectedLabel": "Makrura armored tidal audience hall",
+      "label": "Armored Tidal Hall"
+    },
+    {
+      "id": "titan_murine_court",
+      "expectedLabel": "Kobold candle-crowned mining court",
+      "label": "Candle-Crowned Court"
+    },
+    {
+      "id": "titan_draconic_court",
+      "expectedLabel": "Draconic ancestral sovereignty court",
+      "label": "Dragons' Sovereign Court"
+    },
+    {
+      "id": "titan_shathyar_court",
+      "expectedLabel": "N'raqi watched imperial audience court",
+      "label": "Court of Watching Eyes"
+    },
+    {
+      "id": "titan_aqir_court",
+      "expectedLabel": "Qiraji carapace imperial audience court",
+      "label": "Carapace Imperial Court"
+    },
+    {
+      "id": "titan_undead_court",
+      "expectedLabel": "Undead necropolis command audience hall",
+      "label": "Necropolis Command Hall"
+    },
+    {
+      "id": "titan_pyromantic_court",
+      "expectedLabel": "Ignan fireproof sovereign audience keep",
+      "label": "Sovereign's Fire Keep"
+    },
+    {
+      "id": "titan_aquatic_court",
+      "expectedLabel": "Aquatic elemental mineral audience court",
+      "label": "Court of Living Water"
+    },
+    {
+      "id": "titan_geomantic_court",
+      "expectedLabel": "Geomantic monolithic sovereignty court",
+      "label": "Monolith Sovereign's Hall"
+    },
+    {
+      "id": "titan_aerian_court",
+      "expectedLabel": "Aerian suspended sovereign audience court",
+      "label": "Court Among the Clouds"
+    },
+    {
+      "id": "titan_demonic_court",
+      "expectedLabel": "Demonic imperial command audience citadel",
+      "label": "Demonic Command Citadel"
+    },
+    {
+      "id": "titan_void_court",
+      "expectedLabel": "Voidwalker suspended shadow audience court",
+      "label": "Court of Suspended Shadows"
+    },
+    {
+      "id": "titan_forsaken_court",
+      "expectedLabel": "Forsaken gothic civic audience court",
+      "label": "Forsaken Civic Court"
+    },
+    {
+      "id": "titan_drogbar_court",
+      "expectedLabel": "Drogbar carved cavern assembly hold",
+      "label": "Carved Cavern Hold"
+    },
+    {
+      "id": "titan_nerubian_court",
+      "expectedLabel": "Nerubian silken imperial audience court",
+      "label": "Silken Imperial Court"
+    },
+    {
+      "id": "titan_mantid_court",
+      "expectedLabel": "Mantid amber-engineered imperial court",
+      "label": "Amber Imperial Court"
+    },
+    {
+      "id": "titan_region_elwynn_forest_farm_gathering",
+      "expectedLabel": "Elwynn Forest and Stormwind Hinterland: Woodland farm gathering yard",
+      "label": "Woodland Farmyard"
+    },
+    {
+      "id": "titan_region_westfall_barn_assembly",
+      "expectedLabel": "Westfall: Farmstead barn and assembly yard",
+      "label": "Harvest Barnyard"
+    },
+    {
+      "id": "titan_region_dun_morogh_mountain_guest_hall",
+      "expectedLabel": "Dun Morogh: Mountain guest and supply hall",
+      "label": "Mountain Guest Hall"
+    },
+    {
+      "id": "titan_region_gilneas_gilneas_coaching_room",
+      "expectedLabel": "Gilneas: Coaching-house common room",
+      "label": "Coaching House"
+    },
+    {
+      "id": "titan_region_tiragarde_sound_soundside_working_pier",
+      "expectedLabel": "Tiragarde Sound: Soundside working pier",
+      "label": "Working Pier"
+    },
+    {
+      "id": "titan_region_echo_isles_echo_isles_common_shelter",
+      "expectedLabel": "Echo Isles: Island common shelter",
+      "label": "Island Gathering Shelter"
+    },
+    {
+      "id": "titan_region_barrens_barrens_hunting_supply_camp",
+      "expectedLabel": "The Barrens: Open-plain hunting and supply camp",
+      "label": "Savanna Hunting Camp"
+    },
+    {
+      "id": "titan_region_zuldazar_provincial_terraced_common",
+      "expectedLabel": "Zuldazar and Mugamba: Provincial terraced common",
+      "label": "Terraced Gathering Court"
+    },
+    {
+      "id": "titan_region_kun_lai_summit_training_guest_court",
+      "expectedLabel": "Kun-Lai Summit: Mountain guest and training court",
+      "label": "Mountain Training Court"
+    },
+    {
+      "id": "titan_region_valley_of_the_four_winds_brew_farm_hall",
+      "expectedLabel": "Valley of the Four Winds: Farmhouse brewing and guest hall",
+      "label": "Farmhouse Brew Hall"
+    },
+    {
+      "id": "titan_region_stormheim_hall_forecourt",
+      "expectedLabel": "Stormheim: Timber hall forecourt and guest bench",
+      "label": "Longhall Guest Bench"
+    },
+    {
+      "id": "titan_region_elwynn_forest_orchard_pressroom",
+      "expectedLabel": "Elwynn Forest and Stormwind Hinterland: Woodland orchard pressroom",
+      "label": "Orchard Pressroom"
+    },
+    {
+      "id": "titan_region_westfall_mill_measure_room",
+      "expectedLabel": "Westfall: Windmill weighing and milling chamber",
+      "label": "Windmill Weighing Room"
+    },
+    {
+      "id": "titan_region_dalaran_hinterland_dalaran_bookbinder",
+      "expectedLabel": "Dalaran lake country and lesser arcane quarters: Scroll-copying and book repair room",
+      "label": "Bookbinder's Workshop"
+    },
+    {
+      "id": "titan_region_stormsong_valley_stream_grainmill",
+      "expectedLabel": "Stormsong Valley: Stream grainmill",
+      "label": "Streamside Grainmill"
+    },
+    {
+      "id": "titan_region_ashenvale_forest_household_hearth",
+      "expectedLabel": "Ashenvale: Forest household hearth and pantry",
+      "label": "Forest Hearth"
+    },
+    {
+      "id": "titan_region_durotar_redstone_forge_room",
+      "expectedLabel": "Durotar: Redstone forge and commissioning room",
+      "label": "Redstone Forge"
+    },
+    {
+      "id": "titan_region_mulgore_household_hearth_pantry",
+      "expectedLabel": "Mulgore: Pasture household hearth and pantry",
+      "label": "Pasture Hearth"
+    },
+    {
+      "id": "titan_region_howling_fjord_upper_guest_loft",
+      "expectedLabel": "Howling Fjord: Upper guest loft and changing screen",
+      "label": "Guest Loft"
+    },
+    {
+      "id": "titan_region_darkspear_islands_rainproof_guest_hearth",
+      "expectedLabel": "Darkspear Islands: Rainproof guest hearth",
+      "label": "Rainproof Guest Hearth"
+    },
+    {
+      "id": "titan_region_highmountain_highland_hide_workshop",
+      "expectedLabel": "Highmountain: Highland Hide Workshop",
+      "label": "Highland Hide Workshop"
+    },
+    {
+      "id": "titan_region_suramar_aristocratic_inner_salon",
+      "expectedLabel": "Suramar: Aristocratic Inner Salon",
+      "label": "Aristocratic Salon"
+    },
+    {
+      "id": "titan_region_elwynn_forest_old_hardwood_woods",
+      "expectedLabel": "Elwynn Forest and Stormwind Hinterland: Old hardwood woods",
+      "label": "Old Hardwood Woods"
+    },
+    {
+      "id": "titan_region_elwynn_forest_clear_brook_margin",
+      "expectedLabel": "Elwynn Forest and Stormwind Hinterland: Clear brook margin",
+      "label": "Clear Brookside"
+    },
+    {
+      "id": "titan_region_westfall_windbent_grassland",
+      "expectedLabel": "Westfall: Wind-bent grassland",
+      "label": "Wind-Bent Grassland"
+    },
+    {
+      "id": "titan_region_westfall_long_sandy_shore",
+      "expectedLabel": "Westfall: Long sandy shore",
+      "label": "Long Sandy Shore"
+    },
+    {
+      "id": "titan_region_westfall_coastal_bluff_country",
+      "expectedLabel": "Westfall: Coastal bluff country",
+      "label": "Coastal Bluffs"
+    },
+    {
+      "id": "titan_region_duskwood_living_woodland",
+      "expectedLabel": "Brightwood: Living Brightwood woods",
+      "label": "Living Greenwood"
+    },
+    {
+      "id": "titan_region_duskwood_living_stream_banks",
+      "expectedLabel": "Brightwood: Brightwood stream banks",
+      "label": "Woodland Stream"
+    },
+    {
+      "id": "titan_region_redridge_mountains_red_foothill_woods",
+      "expectedLabel": "Redridge Mountains: Red foothill woods",
+      "label": "Red Foothill Woods"
+    },
+    {
+      "id": "titan_region_redridge_mountains_ochre_ridge_ground",
+      "expectedLabel": "Redridge Mountains: Ochre ridge ground",
+      "label": "Ochre Ridges"
+    },
+    {
+      "id": "titan_region_burning_steppes_ash_plain",
+      "expectedLabel": "Burning Steppes: Ash-covered open country",
+      "label": "Ash-Covered Wastes"
+    },
+    {
+      "id": "titan_region_burning_steppes_black_volcanic_ridge",
+      "expectedLabel": "Burning Steppes: Black volcanic ridge",
+      "label": "Black Volcanic Ridge"
+    },
+    {
+      "id": "titan_region_deadwind_pass_living_pass_woods",
+      "expectedLabel": "Deadwind Pass: Living pass woodland",
+      "label": "Living Pass Woodland"
+    },
+    {
+      "id": "titan_region_deadwind_pass_living_ravine_ground",
+      "expectedLabel": "Deadwind Pass: Living grey-rock ravine",
+      "label": "Grey-Rock Ravine"
+    },
+    {
+      "id": "titan_region_deadwind_pass_living_stream_margin",
+      "expectedLabel": "Deadwind Pass: Living pass stream margin",
+      "label": "Pass Streambank"
+    },
+    {
+      "id": "titan_region_swamp_of_sorrows_mossy_bayou_woods",
+      "expectedLabel": "Swamp of Sorrows: Moss-hung bayou woods",
+      "label": "Moss-Hung Bayou"
+    },
+    {
+      "id": "titan_region_swamp_of_sorrows_open_reed_marsh",
+      "expectedLabel": "Swamp of Sorrows: Open reed marsh",
+      "label": "Open Reed Marsh"
+    },
+    {
+      "id": "titan_region_blasted_lands_morass_lowland",
+      "expectedLabel": "Black Morass: Black Morass lowland",
+      "label": "Dark Lowland Mire"
+    },
+    {
+      "id": "titan_region_blasted_lands_morass_wooded_rise",
+      "expectedLabel": "Black Morass: Black Morass wooded rise",
+      "label": "Wooded Marsh Rise"
+    },
+    {
+      "id": "titan_region_blasted_lands_morass_coastal_margin",
+      "expectedLabel": "Black Morass: Black Morass coastal margin",
+      "label": "Morass Shoreline"
+    },
+    {
+      "id": "titan_region_northern_stranglethorn_deep_rooted_jungle",
+      "expectedLabel": "Northern Stranglethorn: Deep-rooted jungle",
+      "label": "Deep-Rooted Jungle"
+    },
+    {
+      "id": "titan_region_northern_stranglethorn_broad_jungle_riverbank",
+      "expectedLabel": "Northern Stranglethorn: Broad jungle riverbank",
+      "label": "Broad Jungle River"
+    },
+    {
+      "id": "titan_region_northern_stranglethorn_leafy_tropical_hills",
+      "expectedLabel": "Northern Stranglethorn: Leafy tropical hills",
+      "label": "Tropical Green Hills"
+    },
+    {
+      "id": "titan_region_cape_of_stranglethorn_coastal_jungle_woods",
+      "expectedLabel": "Cape of Stranglethorn: Coastal jungle woods",
+      "label": "Coastal Jungle"
+    },
+    {
+      "id": "titan_region_cape_of_stranglethorn_palm_sand_shore",
+      "expectedLabel": "Cape of Stranglethorn: Palm-fringed sandy shore",
+      "label": "Palm-Fringed Beach"
+    },
+    {
+      "id": "titan_region_cape_of_stranglethorn_tropical_coastal_cliffs",
+      "expectedLabel": "Cape of Stranglethorn: Tropical coastal cliffs",
+      "label": "Tropical Sea Cliffs"
+    },
+    {
+      "id": "titan_region_dun_morogh_snowy_conifer_woods",
+      "expectedLabel": "Dun Morogh: Snowy conifer woods",
+      "label": "Snowy Pine Woods"
+    },
+    {
+      "id": "titan_region_dun_morogh_open_snow_valley",
+      "expectedLabel": "Dun Morogh: Open snowy valley",
+      "label": "Open Snow Valley"
+    },
+    {
+      "id": "titan_region_dun_morogh_frosted_rock_heights",
+      "expectedLabel": "Dun Morogh: Frosted rock heights",
+      "label": "Frosted Rock Heights"
+    },
+    {
+      "id": "titan_region_badlands_ochre_dry_country",
+      "expectedLabel": "Badlands: Ochre dry country",
+      "label": "Ochre Drylands"
+    },
+    {
+      "id": "titan_region_badlands_red_canyon_ground",
+      "expectedLabel": "Badlands: Red canyon ground",
+      "label": "Red Canyon"
+    },
+    {
+      "id": "titan_region_searing_gorge_gorge_volcanic_uplands",
+      "expectedLabel": "Searing Gorge: Volcanic gorge uplands",
+      "label": "Volcanic Uplands"
+    },
+    {
+      "id": "titan_region_searing_gorge_deep_rock_cut",
+      "expectedLabel": "Searing Gorge: Deep volcanic rock cut",
+      "label": "Deep Volcanic Gorge"
+    },
+    {
+      "id": "titan_region_wetlands_broad_delta_marsh",
+      "expectedLabel": "Wetlands: Broad delta marsh",
+      "label": "Delta Marsh"
+    },
+    {
+      "id": "titan_region_wetlands_estuary_shore",
+      "expectedLabel": "Wetlands: Estuary shore",
+      "label": "Estuary Shore"
+    },
+    {
+      "id": "titan_region_loch_modan_pine_basin_woods",
+      "expectedLabel": "Loch Modan: Pine basin woods",
+      "label": "Pine Basin Woods"
+    },
+    {
+      "id": "titan_region_northeron_northeron_heavy_ironwood_country",
+      "expectedLabel": "Northeron uplands: Heavy ironwood country",
+      "label": "Heavy Ironwood Forest"
+    },
+    {
+      "id": "titan_region_northeron_northeron_stormexposed_highlands",
+      "expectedLabel": "Northeron uplands: Storm-exposed highlands",
+      "label": "Storm-Beaten Highlands"
+    },
+    {
+      "id": "titan_region_northeron_northeron_rugged_coastal_faces",
+      "expectedLabel": "Northeron uplands: Rugged highland coastal faces",
+      "label": "Rugged Coastal Cliffs"
+    },
+    {
+      "id": "titan_region_far_highlands_far_highlands_greenwood_pockets",
+      "expectedLabel": "The Far Highlands: Green highland woodland pockets",
+      "label": "Highland Greenwoods"
+    },
+    {
+      "id": "titan_region_far_highlands_far_highlands_broad_ridge_country",
+      "expectedLabel": "The Far Highlands: Broad rough ridge country",
+      "label": "Rough Ridge Country"
+    },
+    {
+      "id": "titan_region_far_highlands_far_highlands_watercut_ravines",
+      "expectedLabel": "The Far Highlands: Water-cut gray ravines",
+      "label": "Water-Cut Ravines"
+    },
+    {
+      "id": "titan_region_arathi_highlands_arathi_windborne_grasslands",
+      "expectedLabel": "Arathi Highlands: Windborne green-gold grasslands",
+      "label": "Green-Gold Grasslands"
+    },
+    {
+      "id": "titan_region_arathi_highlands_arathi_gray_ridge_country",
+      "expectedLabel": "Arathi Highlands: Gray-ribbed ridge country",
+      "label": "Grey-Ribbed Ridges"
+    },
+    {
+      "id": "titan_region_hillsbrad_foothills_hillsbrad_pastoral_folds",
+      "expectedLabel": "Hillsbrad Foothills: Pastoral green folds",
+      "label": "Pastoral Hills"
+    },
+    {
+      "id": "titan_region_hillsbrad_foothills_hillsbrad_river_meadows",
+      "expectedLabel": "Hillsbrad Foothills: Fertile river meadows",
+      "label": "Fertile River Meadows"
+    },
+    {
+      "id": "titan_region_hillsbrad_foothills_hillsbrad_grassy_seaboard",
+      "expectedLabel": "Hillsbrad Foothills: Grassy southern seaboard",
+      "label": "Grassy Seaboard"
+    },
+    {
+      "id": "titan_region_dalaran_hinterland_dalaran_cool_wooded_rises",
+      "expectedLabel": "Dalaran lake country and lesser arcane quarters: Cool wooded lake-country rises",
+      "label": "Wooded Lakeside Rises"
+    },
+    {
+      "id": "titan_region_alterac_mountains_alterac_lower_pine_slopes",
+      "expectedLabel": "Alterac Mountains: Lower mountain pine woods",
+      "label": "Mountain Pinewoods"
+    },
+    {
+      "id": "titan_region_alterac_mountains_alterac_gray_highcountry",
+      "expectedLabel": "Alterac Mountains: Exposed gray high country",
+      "label": "Exposed High Country"
+    },
+    {
+      "id": "titan_region_alterac_mountains_alterac_upper_snowfields",
+      "expectedLabel": "Alterac Mountains: Upper snowfields and ice-crusted crags",
+      "label": "Ice-Crusted Crags"
+    },
+    {
+      "id": "titan_region_gilneas_gilneas_rain_dark_woods",
+      "expectedLabel": "Gilneas: Rain-dark peninsula woods",
+      "label": "Rain-Dark Woods"
+    },
+    {
+      "id": "titan_region_gilneas_gilneas_windwashed_moors",
+      "expectedLabel": "Gilneas: Wind-washed gray-green moors",
+      "label": "Wind-Washed Moors"
+    },
+    {
+      "id": "titan_region_gilneas_gilneas_stormgray_coast",
+      "expectedLabel": "Gilneas: Storm-gray peninsula coast",
+      "label": "Storm-Grey Coast"
+    },
+    {
+      "id": "titan_region_silverpine_forest_silverpine_silver_trunk_depths",
+      "expectedLabel": "Silverpine Forest: Silver-trunk forest depths",
+      "label": "Silver-Trunk Forest"
+    },
+    {
+      "id": "titan_region_silverpine_forest_silverpine_rocky_maritime_edge",
+      "expectedLabel": "Silverpine Forest: Pine-clad maritime edge",
+      "label": "Pine-Clad Coast"
+    },
+    {
+      "id": "titan_region_tirisfal_glades_tirisfal_deep_greenwood",
+      "expectedLabel": "Tirisfal Glades: Deep, misty greenwood",
+      "label": "Misty Greenwood"
+    },
+    {
+      "id": "titan_region_tirisfal_glades_tirisfal_agrarian_glades",
+      "expectedLabel": "Tirisfal Glades: Broad agrarian glades",
+      "label": "Agrarian Glades"
+    },
+    {
+      "id": "titan_region_western_plaguelands_western_weald_living_woods",
+      "expectedLabel": "Western Weald: Living western weald woods",
+      "label": "Living Weald Woods"
+    },
+    {
+      "id": "titan_region_western_plaguelands_western_weald_grain_country",
+      "expectedLabel": "Western Weald: Broad grain-country fields",
+      "label": "Golden Grain Fields"
+    },
+    {
+      "id": "titan_region_eastern_plaguelands_eastweald_living_forest",
+      "expectedLabel": "Eastweald: Living Eastweald forest",
+      "label": "Deep Weald Forest"
+    },
+    {
+      "id": "titan_region_eastern_plaguelands_eastweald_open_folds",
+      "expectedLabel": "Eastweald: Open Eastweald folds",
+      "label": "Open Weald Hills"
+    },
+    {
+      "id": "titan_region_eastern_plaguelands_eastweald_clean_waters",
+      "expectedLabel": "Eastweald: Clean Eastweald water margins",
+      "label": "Clear Woodland Banks"
+    },
+    {
+      "id": "titan_region_hinterlands_hinterlands_cliff_enclosed_forest",
+      "expectedLabel": "The Hinterlands: Cliff-enclosed pine country",
+      "label": "Cliff-Enclosed Pinewoods"
+    },
+    {
+      "id": "titan_region_hinterlands_hinterlands_grassy_rock_shelves",
+      "expectedLabel": "The Hinterlands: High grassy rock shelves",
+      "label": "High Grassy Shelves"
+    },
+    {
+      "id": "titan_region_hinterlands_hinterlands_eastern_rockshore",
+      "expectedLabel": "The Hinterlands: Rugged eastern rockshore",
+      "label": "Eastern Rockshore"
+    },
+    {
+      "id": "titan_region_tol_barad_salt_wind_moor",
+      "expectedLabel": "Tol Barad: Salt-wind moor",
+      "label": "Salt-Wind Moor"
+    },
+    {
+      "id": "titan_region_tol_barad_grey_surf_rocks",
+      "expectedLabel": "Tol Barad: Grey surf rocks",
+      "label": "Grey Surf Rocks"
+    },
+    {
+      "id": "titan_region_channel_islands_channel_island_woodland",
+      "expectedLabel": "Channel Islands: Channel-island woodland",
+      "label": "Channel-Island Woods"
+    },
+    {
+      "id": "titan_region_channel_islands_grassy_channel_headland",
+      "expectedLabel": "Channel Islands: Grassy channel headland",
+      "label": "Grassy Headland"
+    },
+    {
+      "id": "titan_region_channel_islands_shingle_between_channels",
+      "expectedLabel": "Channel Islands: Shingle between channels",
+      "label": "Channel Shingle Shore"
+    },
+    {
+      "id": "titan_region_darkmoon_island_violet_crooked_wood",
+      "expectedLabel": "Darkmoon Island: Violet crooked wood",
+      "label": "Crooked Violet Woods"
+    },
+    {
+      "id": "titan_region_darkmoon_island_dim_island_grass_openings",
+      "expectedLabel": "Darkmoon Island: Dim island grass openings",
+      "label": "Dim Island Glades"
+    },
+    {
+      "id": "titan_region_darkmoon_island_purple_grey_island_coast",
+      "expectedLabel": "Darkmoon Island: Purple-grey island coast",
+      "label": "Purple-Grey Coast"
+    },
+    {
+      "id": "titan_region_zuldare_dense_maritime_woodland",
+      "expectedLabel": "Zul'Dare: Dense maritime woodland",
+      "label": "Maritime Woodland"
+    },
+    {
+      "id": "titan_region_zuldare_low_rocky_island_grassland",
+      "expectedLabel": "Zul'Dare: Low rocky island grassland",
+      "label": "Rocky Island Grassland"
+    },
+    {
+      "id": "titan_region_zuldare_forest_backed_island_shore",
+      "expectedLabel": "Zul'Dare: Forest-backed island shore",
+      "label": "Forest-Backed Shore"
+    },
+    {
+      "id": "titan_region_queldanas_queldanas_coastal_goldgroves",
+      "expectedLabel": "Isle of Quel’Danas: Coastal golden groves",
+      "label": "Coastal Golden Groves"
+    },
+    {
+      "id": "titan_region_queldanas_queldanas_pale_sandshore",
+      "expectedLabel": "Isle of Quel’Danas: Pale sand and turquoise shore",
+      "label": "Turquoise Sandshore"
+    },
+    {
+      "id": "titan_region_eversong_woods_eversong_radiant_goldwood",
+      "expectedLabel": "Eversong Woods: Radiant golden woodland",
+      "label": "Radiant Golden Woods"
+    },
+    {
+      "id": "titan_region_eversong_woods_eversong_springlight_glades",
+      "expectedLabel": "Eversong Woods: Spring-lit golden glades",
+      "label": "Springlit Golden Glades"
+    },
+    {
+      "id": "titan_region_eversong_woods_eversong_goldwood_seamargin",
+      "expectedLabel": "Eversong Woods: Golden woodland sea margin",
+      "label": "Golden Woodland Coast"
+    },
+    {
+      "id": "titan_region_ghostlands_southern_queldorei_living_woods",
+      "expectedLabel": "Southern Eversong: Living southern golden woods",
+      "label": "Southern Golden Woods"
+    },
+    {
+      "id": "titan_region_ghostlands_southern_queldorei_green_waterbanks",
+      "expectedLabel": "Southern Eversong: Green southern woodland banks",
+      "label": "Green Woodland Banks"
+    },
+    {
+      "id": "titan_region_zulaman_zulaman_immense_pineforest",
+      "expectedLabel": "Zul’Aman and Amani forestlands: Immense shadowed pine forest",
+      "label": "Shadowed Giant Pines"
+    },
+    {
+      "id": "titan_region_zulaman_zulaman_wooded_ridge_shoulders",
+      "expectedLabel": "Zul’Aman and Amani forestlands: Wooded ridge shoulders",
+      "label": "Wooded Ridge Shoulders"
+    },
+    {
+      "id": "titan_region_tiragarde_sound_sound_country_pine_woods",
+      "expectedLabel": "Tiragarde Sound: Sound-country pine woods",
+      "label": "Soundside Pinewoods"
+    },
+    {
+      "id": "titan_region_tiragarde_sound_grey_sound_crag_country",
+      "expectedLabel": "Tiragarde Sound: Grey Sound crag country",
+      "label": "Grey Crag Country"
+    },
+    {
+      "id": "titan_region_tiragarde_sound_rounded_rock_sound_shore",
+      "expectedLabel": "Tiragarde Sound: Rounded-rock Sound shore",
+      "label": "Rounded-Rock Shore"
+    },
+    {
+      "id": "titan_region_drustvar_russet_knotted_forest",
+      "expectedLabel": "Drustvar: Russet knotted forest",
+      "label": "Knotted Russet Forest"
+    },
+    {
+      "id": "titan_region_drustvar_cold_mountain_rock_slopes",
+      "expectedLabel": "Drustvar: Cold mountain rock slopes",
+      "label": "Cold Mountain Slopes"
+    },
+    {
+      "id": "titan_region_stormsong_valley_flowering_green_valley",
+      "expectedLabel": "Stormsong Valley: Flowering green valley",
+      "label": "Flowering Green Valley"
+    },
+    {
+      "id": "titan_region_stormsong_valley_clear_valley_water_margin",
+      "expectedLabel": "Stormsong Valley: Clear valley water margin",
+      "label": "Clear Valley Banks"
+    },
+    {
+      "id": "titan_region_stormsong_valley_windy_tidal_bluffs",
+      "expectedLabel": "Stormsong Valley: Windy tidal bluffs",
+      "label": "Windy Tidal Bluffs"
+    },
+    {
+      "id": "titan_region_mechagon_remnant_island_conifers",
+      "expectedLabel": "Mechagon: Remnant island conifers",
+      "label": "Remnant Island Pines"
+    },
+    {
+      "id": "titan_region_mechagon_weathered_grey_island_uplands",
+      "expectedLabel": "Mechagon: Weathered grey island uplands",
+      "label": "Weathered Grey Uplands"
+    },
+    {
+      "id": "titan_region_mechagon_gravelly_island_waterline",
+      "expectedLabel": "Mechagon: Gravelly island waterline",
+      "label": "Gravelly Waterline"
+    },
+    {
+      "id": "titan_region_ashenvale_emerald_trunk_woodland",
+      "expectedLabel": "Ashenvale: Emerald forest beneath ancient trunks",
+      "label": "Ancient Emerald Forest"
+    },
+    {
+      "id": "titan_region_ashenvale_bluegreen_forest_water",
+      "expectedLabel": "Ashenvale: Blue-green woodland water margin",
+      "label": "Blue-Green Woodland Banks"
+    },
+    {
+      "id": "titan_region_moonglade_teal_basin_woodland",
+      "expectedLabel": "Moonglade: Teal woodland of the sheltered basin",
+      "label": "Sheltered Teal Woodland"
+    },
+    {
+      "id": "titan_region_darkshore_grey_pebble_surf",
+      "expectedLabel": "Darkshore: Grey pebble coast and kelp line",
+      "label": "Grey Pebble Coast"
+    },
+    {
+      "id": "titan_region_darkshore_sea_facing_evergreens",
+      "expectedLabel": "Darkshore: Sea-facing evergreen woodland",
+      "label": "Seaward Evergreen Woods"
+    },
+    {
+      "id": "titan_region_darkshore_reeded_river_mouth",
+      "expectedLabel": "Darkshore: Reeded river mouth and wet bank",
+      "label": "Reeded River Mouth"
+    },
+    {
+      "id": "titan_region_felwood_pinkwood_high_canopy",
+      "expectedLabel": "Pinkwood: Living Pinkwood high canopy",
+      "label": "Pinkwood High Canopy"
+    },
+    {
+      "id": "titan_region_felwood_pinkwood_clear_water",
+      "expectedLabel": "Pinkwood: Clear mountain-forest water margin",
+      "label": "Mountain Forest Stream"
+    },
+    {
+      "id": "titan_region_felwood_pinkwood_wooded_ravines",
+      "expectedLabel": "Pinkwood: Wooded mountain ravines",
+      "label": "Wooded Mountain Ravines"
+    },
+    {
+      "id": "titan_region_azshara_copper_autumn_woodland",
+      "expectedLabel": "Azshara: Copper and crimson autumn woodland",
+      "label": "Crimson Autumn Woods"
+    },
+    {
+      "id": "titan_region_azshara_golden_coastal_heights",
+      "expectedLabel": "Azshara: Golden coastal heights",
+      "label": "Golden Coastal Heights"
+    },
+    {
+      "id": "titan_region_azshara_autumn_cove_shore",
+      "expectedLabel": "Azshara: Blue cove beneath autumn cliffs",
+      "label": "Blue Autumn Cove"
+    },
+    {
+      "id": "titan_region_mount_hyjal_ancient_mountain_conifers",
+      "expectedLabel": "Mount Hyjal: Ancient mountain conifer forest",
+      "label": "Ancient Mountain Pines"
+    },
+    {
+      "id": "titan_region_winterspring_lavender_snow_firs",
+      "expectedLabel": "Winterspring: Lavender snow beneath firs",
+      "label": "Lavender Snow Woods"
+    },
+    {
+      "id": "titan_region_winterspring_open_white_valley",
+      "expectedLabel": "Winterspring: Open white valley and pale rock",
+      "label": "Pale Winter Valley"
+    },
+    {
+      "id": "titan_region_kalidar_island_canopy",
+      "expectedLabel": "Kalidar: Island forest beneath pale trunks",
+      "label": "Pale-Trunk Island Woods"
+    },
+    {
+      "id": "titan_region_kalidar_rocky_island_inlet",
+      "expectedLabel": "Kalidar: Rocky island inlet and forest edge",
+      "label": "Forested Rock Inlet"
+    },
+    {
+      "id": "titan_region_durotar_red_sandstone_recesses",
+      "expectedLabel": "Durotar: Red sandstone recesses",
+      "label": "Red Sandstone Hollows"
+    },
+    {
+      "id": "titan_region_durotar_red_bank_river_green",
+      "expectedLabel": "Durotar: River green beneath red banks",
+      "label": "Green River, Red Banks"
+    },
+    {
+      "id": "titan_region_durotar_red_bluff_sandy_coast",
+      "expectedLabel": "Durotar: Sand beneath the red coastal bluffs",
+      "label": "Red-Bluff Sandshore"
+    },
+    {
+      "id": "titan_region_echo_isles_warm_palm_beach",
+      "expectedLabel": "Echo Isles: Warm palm beach",
+      "label": "Warm Palm Beach"
+    },
+    {
+      "id": "titan_region_barrens_wide_gold_savanna",
+      "expectedLabel": "The Barrens: Wide gold savanna",
+      "label": "Golden Savanna"
+    },
+    {
+      "id": "titan_region_barrens_savanna_saltwater_edge",
+      "expectedLabel": "The Barrens: Savanna saltwater edge",
+      "label": "Savanna Shoreline"
+    },
+    {
+      "id": "titan_region_dustwallow_marsh_moss_curtain_swamp",
+      "expectedLabel": "Dustwallow Marsh: Moss-curtain swamp",
+      "label": "Moss-Curtain Swamp"
+    },
+    {
+      "id": "titan_region_dustwallow_marsh_reed_channel_wetlands",
+      "expectedLabel": "Dustwallow Marsh: Reed-channel wetlands",
+      "label": "Reed-Channel Wetlands"
+    },
+    {
+      "id": "titan_region_dustwallow_marsh_low_marsh_coast",
+      "expectedLabel": "Dustwallow Marsh: Low marsh coast",
+      "label": "Low Marsh Coast"
+    },
+    {
+      "id": "titan_region_mulgore_green_rolling_pastures",
+      "expectedLabel": "Mulgore: Green rolling pasture",
+      "label": "Rolling Green Pasture"
+    },
+    {
+      "id": "titan_region_mulgore_pine_freshwater_banks",
+      "expectedLabel": "Mulgore: Pine-fringed freshwater banks",
+      "label": "Pine-Fringed Freshwater"
+    },
+    {
+      "id": "titan_region_stonetalon_mountains_pine_valley_woodland",
+      "expectedLabel": "Stonetalon Mountains: Pine woodland below orange cliffs",
+      "label": "Pines Beneath Orange Cliffs"
+    },
+    {
+      "id": "titan_region_stonetalon_mountains_red_sandstone_country",
+      "expectedLabel": "Stonetalon Mountains: Red sandstone canyon country",
+      "label": "Red Sandstone Canyons"
+    },
+    {
+      "id": "titan_region_stonetalon_mountains_pine_mountain_water",
+      "expectedLabel": "Stonetalon Mountains: Mountain water beneath red cliffs",
+      "label": "Red-Cliff Mountain Stream"
+    },
+    {
+      "id": "titan_region_feralas_deep_old_growth_canopy",
+      "expectedLabel": "Feralas: Deep old-growth canopy",
+      "label": "Deep Old-Growth Forest"
+    },
+    {
+      "id": "titan_region_feralas_fern_riverbanks",
+      "expectedLabel": "Feralas: Fern-heavy riverbanks",
+      "label": "Fern-Heavy Riverbanks"
+    },
+    {
+      "id": "titan_region_feralas_rainforest_ocean_edge",
+      "expectedLabel": "Feralas: Rainforest ocean edge",
+      "label": "Rainforest Ocean Edge"
+    },
+    {
+      "id": "titan_region_desolace_grey_dust_open_waste",
+      "expectedLabel": "Desolace: Grey-dust open waste",
+      "label": "Grey-Dust Wastes"
+    },
+    {
+      "id": "titan_region_desolace_weathered_grey_ridge_country",
+      "expectedLabel": "Desolace: Weathered grey ridge country",
+      "label": "Weathered Grey Ridges"
+    },
+    {
+      "id": "titan_region_desolace_green_shelf_western_coast",
+      "expectedLabel": "Desolace: Green-shelf western coast",
+      "label": "Green-Shelf Coast"
+    },
+    {
+      "id": "titan_region_thousand_needles_dry_pillar_canyon",
+      "expectedLabel": "Thousand Needles and the Shimmering Flats: Dry pillar canyon",
+      "label": "Dry Pillar Canyon"
+    },
+    {
+      "id": "titan_region_thousand_needles_shimmering_salt_basin",
+      "expectedLabel": "Thousand Needles and the Shimmering Flats: Shimmering salt basin",
+      "label": "Shimmering Salt Flats"
+    },
+    {
+      "id": "titan_region_uldum_pale_desert_sands",
+      "expectedLabel": "Uldum riverlands and desert: Pale desert sands",
+      "label": "Pale Desert Sands"
+    },
+    {
+      "id": "titan_region_uldum_palm_river_greenbelt",
+      "expectedLabel": "Uldum riverlands and desert: Palm-fringed river greenbelt",
+      "label": "Palm-Fringed River"
+    },
+    {
+      "id": "titan_region_uldum_bare_sandstone_plateau",
+      "expectedLabel": "Uldum riverlands and desert: Bare sandstone plateau shoulders",
+      "label": "Sandstone Plateau"
+    },
+    {
+      "id": "titan_region_silithus_ancient_desert_sand",
+      "expectedLabel": "Silithus: Ancient desert sand",
+      "label": "Ancient Desert Sands"
+    },
+    {
+      "id": "titan_region_silithus_purple_stone_desert_heights",
+      "expectedLabel": "Silithus: Purple-stone desert heights",
+      "label": "Purple-Stone Heights"
+    },
+    {
+      "id": "titan_region_tanaris_white_gold_dune_country",
+      "expectedLabel": "Tanaris: White-gold dune country",
+      "label": "White-Gold Dunes"
+    },
+    {
+      "id": "titan_region_tanaris_turquoise_desert_coast",
+      "expectedLabel": "Tanaris: Turquoise desert coast",
+      "label": "Turquoise Desert Coast"
+    },
+    {
+      "id": "titan_region_ungoro_crater_primeval_leaf_canopy",
+      "expectedLabel": "Un'Goro Crater: Primeval giant-leaf canopy",
+      "label": "Primeval Giant-Leaf Jungle"
+    },
+    {
+      "id": "titan_region_azuremyst_isle_blue_lavender_conifer_forest",
+      "expectedLabel": "Azuremyst Isle: Blue-lavender conifer forest",
+      "label": "Blue-Lavender Pinewoods"
+    },
+    {
+      "id": "titan_region_azuremyst_isle_cool_island_stone_coast",
+      "expectedLabel": "Azuremyst Isle: Cool island stone coast",
+      "label": "Cool Island Stone Coast"
+    },
+    {
+      "id": "titan_region_bloodmyst_isle_silvergale_conifer_ground",
+      "expectedLabel": "Silvergale: Silvergale conifer ground",
+      "label": "Island Conifer Woods"
+    },
+    {
+      "id": "titan_region_bloodmyst_isle_silvergale_stony_coast",
+      "expectedLabel": "Silvergale: Silvergale stony coast",
+      "label": "Stony Island Shore"
+    },
+    {
+      "id": "titan_region_feralas_isles_moss_draped_island_rainforest",
+      "expectedLabel": "Feralas Isles: Moss-draped island rainforest",
+      "label": "Moss-Draped Island Jungle"
+    },
+    {
+      "id": "titan_region_feralas_isles_green_haze_stony_shore",
+      "expectedLabel": "Feralas Isles: Green-haze stony shore",
+      "label": "Green-Haze Rockshore"
+    },
+    {
+      "id": "titan_region_borean_tundra_tawny_tundra_expanses",
+      "expectedLabel": "Borean Tundra: Tawny tundra beneath the great sky",
+      "label": "Tawny Tundra"
+    },
+    {
+      "id": "titan_region_borean_tundra_mineral_steam_flats",
+      "expectedLabel": "Borean Tundra: Mineral flats and low steam pools",
+      "label": "Mineral Steam Flats"
+    },
+    {
+      "id": "titan_region_borean_tundra_rust_grass_rock_coast",
+      "expectedLabel": "Borean Tundra: Rust-grass coast and stone stacks",
+      "label": "Rust-Grass Coast"
+    },
+    {
+      "id": "titan_region_borean_tundra_coldarra_crystal_ice_basin",
+      "expectedLabel": "Borean Tundra: Coldarra ice basin and crystal outcrops",
+      "label": "Crystal Ice Basin"
+    },
+    {
+      "id": "titan_region_sholazar_basin_broadleaf_jungle_depths",
+      "expectedLabel": "Sholazar Basin: Broadleaf jungle depths",
+      "label": "Broadleaf Jungle Depths"
+    },
+    {
+      "id": "titan_region_icecrown_serrated_blue_black_glacier",
+      "expectedLabel": "Icecrown Glacier: Serrated blue-black glacier",
+      "label": "Serrated Blue-Black Glacier"
+    },
+    {
+      "id": "titan_region_icecrown_frozen_northern_sea_margin",
+      "expectedLabel": "Icecrown Glacier: Frozen northern sea margin",
+      "label": "Frozen Sea Margin"
+    },
+    {
+      "id": "titan_region_isle_of_conquest_sharp_rock_blue_shore",
+      "expectedLabel": "Isle of Conquest: Sharp rock and blue island water",
+      "label": "Blue-Water Rockshore"
+    },
+    {
+      "id": "titan_region_isle_of_conquest_bare_island_crags",
+      "expectedLabel": "Isle of Conquest: Bare island crags",
+      "label": "Bare Island Crags"
+    },
+    {
+      "id": "titan_region_dragonblight_ancient_bone_snowplain",
+      "expectedLabel": "Dragonblight: Snowplain of ancient dragon bones",
+      "label": "Dragonbone Snowplain"
+    },
+    {
+      "id": "titan_region_dragonblight_rimed_winter_woodland",
+      "expectedLabel": "Dragonblight: Rimed winter woodland",
+      "label": "Rimed Winter Woods"
+    },
+    {
+      "id": "titan_region_dragonblight_southern_cold_stone_coast",
+      "expectedLabel": "Dragonblight: Cold stone coast beneath the snowlands",
+      "label": "Snowland Stone Coast"
+    },
+    {
+      "id": "titan_region_storm_peaks_high_snow_undulations",
+      "expectedLabel": "Storm Peaks: High snow beneath immense peaks",
+      "label": "Immense Snow Peaks"
+    },
+    {
+      "id": "titan_region_storm_peaks_dark_mountain_rock_hollows",
+      "expectedLabel": "Storm Peaks: Dark mountain rock and sheltered hollows",
+      "label": "Sheltered Mountain Hollows"
+    },
+    {
+      "id": "titan_region_crystalsong_forest_daylit_crystal_thicket",
+      "expectedLabel": "Crystalsong Forest: Daylit crystal thicket",
+      "label": "Daylit Crystal Thicket"
+    },
+    {
+      "id": "titan_region_crystalsong_forest_western_dark_conifers",
+      "expectedLabel": "Crystalsong Forest: Western dark conifer woods",
+      "label": "Dark Conifer Woods"
+    },
+    {
+      "id": "titan_region_crystalsong_forest_cold_river_stone_banks",
+      "expectedLabel": "Crystalsong Forest: Cold river and dark stone banks",
+      "label": "Cold River, Dark Stone"
+    },
+    {
+      "id": "titan_region_grizzly_hills_amber_giant_conifer_forest",
+      "expectedLabel": "Grizzly Hills: Amber forest of immense conifers",
+      "label": "Giant Amber Pinewoods"
+    },
+    {
+      "id": "titan_region_grizzly_hills_mossy_forest_river",
+      "expectedLabel": "Grizzly Hills: Forest river and mossy stone banks",
+      "label": "Mossy Forest River"
+    },
+    {
+      "id": "titan_region_grizzly_hills_grass_rock_high_slopes",
+      "expectedLabel": "Grizzly Hills: Grass and rock above the forest",
+      "label": "Rock Above the Forest"
+    },
+    {
+      "id": "titan_region_howling_fjord_russet_fir_woodland",
+      "expectedLabel": "Howling Fjord: Russet fir woodland",
+      "label": "Russet Fir Woodland"
+    },
+    {
+      "id": "titan_region_howling_fjord_fjord_wall_grass_ledges",
+      "expectedLabel": "Howling Fjord: Great fjord walls and grassy ledges",
+      "label": "Great Fjord Ledges"
+    },
+    {
+      "id": "titan_region_howling_fjord_fjord_stone_waterline",
+      "expectedLabel": "Howling Fjord: Stony fjord waterline",
+      "label": "Stony Fjord Shore"
+    },
+    {
+      "id": "titan_region_wintergrasp_cold_grass_steppe",
+      "expectedLabel": "Wintergrasp: Cold grass steppe",
+      "label": "Cold Grass Steppe"
+    },
+    {
+      "id": "titan_region_wintergrasp_shadowed_valley_woods",
+      "expectedLabel": "Wintergrasp: Shadowed valley woods",
+      "label": "Shadowed Valley Woods"
+    },
+    {
+      "id": "titan_region_zuldrak_purple_red_frost_woods",
+      "expectedLabel": "Zul'Drak: Red-purple frost woods",
+      "label": "Purple Frost Woods"
+    },
+    {
+      "id": "titan_region_zuldrak_grey_stone_heath",
+      "expectedLabel": "Zul'Drak: Grey-stone heath and rising slopes",
+      "label": "Grey-Stone Heath"
+    },
+    {
+      "id": "titan_region_strand_of_the_ancients_pale_sand_waterline",
+      "expectedLabel": "Strand of the Ancients: Pale sand and the open waterline",
+      "label": "Pale Sand Waterline"
+    },
+    {
+      "id": "titan_region_strand_of_the_ancients_palm_grass_openings",
+      "expectedLabel": "Strand of the Ancients: Palm and grass openings",
+      "label": "Palm and Grass Glades"
+    },
+    {
+      "id": "titan_region_strand_of_the_ancients_weathered_boulder_country",
+      "expectedLabel": "Strand of the Ancients: Weathered boulders and coastal greenery",
+      "label": "Green Coastal Boulders"
+    },
+    {
+      "id": "titan_region_hrothgars_landing_snowy_island_waterline",
+      "expectedLabel": "Hrothgar's Landing: Snowy island waterline",
+      "label": "Snowy Island Shore"
+    },
+    {
+      "id": "titan_region_hrothgars_landing_low_windswept_snowland",
+      "expectedLabel": "Hrothgar's Landing: Low windswept island snowland",
+      "label": "Windswept Snowland"
+    },
+    {
+      "id": "titan_region_hrothgars_landing_dark_island_rock_recesses",
+      "expectedLabel": "Hrothgar's Landing: Dark island rock recesses",
+      "label": "Dark Rock Recesses"
+    },
+    {
+      "id": "titan_region_plunder_isles_palm_broadleaf_island_wood",
+      "expectedLabel": "Plunder Isles: Palm-broadleaf island wood",
+      "label": "Broadleaf Palm Woods"
+    },
+    {
+      "id": "titan_region_plunder_isles_pale_reef_fringed_shore",
+      "expectedLabel": "Plunder Isles: Pale reef-fringed shore",
+      "label": "Reef-Fringed Shore"
+    },
+    {
+      "id": "titan_region_hiji_isles_layered_humid_island_jungle",
+      "expectedLabel": "Hiji and Lapidis: Layered humid island jungle",
+      "label": "Humid Island Jungle"
+    },
+    {
+      "id": "titan_region_hiji_isles_pale_sand_jungle_coast",
+      "expectedLabel": "Hiji and Lapidis: Pale-sand jungle coast",
+      "label": "Jungle Sandshore"
+    },
+    {
+      "id": "titan_region_voldun_pale_gold_dune_fields",
+      "expectedLabel": "Vol'Dun: Pale-gold dune fields",
+      "label": "Pale-Gold Dunes"
+    },
+    {
+      "id": "titan_region_voldun_red_sandstone_fold_country",
+      "expectedLabel": "Vol'Dun: Red-sandstone fold country",
+      "label": "Red Sandstone Folds"
+    },
+    {
+      "id": "titan_region_zuldazar_deep_zuldazar_canopy",
+      "expectedLabel": "Zuldazar and Mugamba: Deep Zuldazar canopy",
+      "label": "Deep Jungle Canopy"
+    },
+    {
+      "id": "titan_region_zuldazar_green_gorge_water_margins",
+      "expectedLabel": "Zuldazar and Mugamba: Green gorge water margins",
+      "label": "Green Gorge River"
+    },
+    {
+      "id": "titan_region_zuldazar_mugamba_cloud_uplands",
+      "expectedLabel": "Zuldazar and Mugamba: Mugamba cloud uplands",
+      "label": "Cloud-Wrapped Uplands"
+    },
+    {
+      "id": "titan_region_nazmir_giant_root_marshwood",
+      "expectedLabel": "Nazmir: Giant-root marshwood",
+      "label": "Giant-Root Marshwood"
+    },
+    {
+      "id": "titan_region_nazmir_reed_and_shallow_mire",
+      "expectedLabel": "Nazmir: Reed and shallow mire",
+      "label": "Reed and Shallow Mire"
+    },
+    {
+      "id": "titan_region_isle_of_giants_umbrella_conifer_island_wood",
+      "expectedLabel": "Isle of Giants: Umbrella-conifer island wood",
+      "label": "Umbrella Conifer Woods"
+    },
+    {
+      "id": "titan_region_isle_of_giants_misty_volcanic_waterline",
+      "expectedLabel": "Isle of Giants: Misty volcanic waterline",
+      "label": "Misty Volcanic Shore"
+    },
+    {
+      "id": "titan_region_kezan_dark_volcanic_island_slopes",
+      "expectedLabel": "Kezan: Dark volcanic island slopes",
+      "label": "Dark Volcanic Slopes"
+    },
+    {
+      "id": "titan_region_kezan_palm_and_basalt_coast",
+      "expectedLabel": "Kezan: Palm and basalt coast",
+      "label": "Palm and Basalt Coast"
+    },
+    {
+      "id": "titan_region_lost_isles_bamboo_tropical_depths",
+      "expectedLabel": "The Lost Isles: Bamboo tropical depths",
+      "label": "Tropical Bamboo Depths"
+    },
+    {
+      "id": "titan_region_lost_isles_black_rock_island_uplands",
+      "expectedLabel": "The Lost Isles: Black-rock island uplands",
+      "label": "Black-Rock Uplands"
+    },
+    {
+      "id": "titan_region_lost_isles_golden_sand_basalt_margin",
+      "expectedLabel": "The Lost Isles: Golden-sand basalt margin",
+      "label": "Golden Basalt Shore"
+    },
+    {
+      "id": "titan_region_glaive_isle_green_rolling_island_hills",
+      "expectedLabel": "Glaive Isle: Green rolling island hills",
+      "label": "Rolling Island Hills"
+    },
+    {
+      "id": "titan_region_glaive_isle_weathered_island_ridge_rock",
+      "expectedLabel": "Glaive Isle: Weathered island ridge rock",
+      "label": "Weathered Island Ridges"
+    },
+    {
+      "id": "titan_region_glaive_isle_steep_hill_island_coast",
+      "expectedLabel": "Glaive Isle: Steep hill-island coast",
+      "label": "Steep Island Coast"
+    },
+    {
+      "id": "titan_region_tel_abim_broadleaf_banana_growth",
+      "expectedLabel": "Tel'Abim: Broadleaf banana growth",
+      "label": "Banana Groves"
+    },
+    {
+      "id": "titan_region_tel_abim_sunlit_palm_sand_coast",
+      "expectedLabel": "Tel'Abim: Sunlit palm-sand coast",
+      "label": "Sunlit Palm Shore"
+    },
+    {
+      "id": "titan_region_darkspear_islands_rain_dark_island_woodland",
+      "expectedLabel": "Darkspear Islands: Humid island woodland",
+      "label": "Humid Island Woods"
+    },
+    {
+      "id": "titan_region_darkspear_islands_wet_rock_ocean_edge",
+      "expectedLabel": "Darkspear Islands: Wet-rock ocean edge",
+      "label": "Wet-Rock Ocean Edge"
+    },
+    {
+      "id": "titan_region_balor_open_balor_coastal_country",
+      "expectedLabel": "Balor: Open Balor coastal country",
+      "label": "Open Coastal Country"
+    },
+    {
+      "id": "titan_region_balor_rock_and_shingle_balor_shore",
+      "expectedLabel": "Balor: Rock-and-shingle Balor shore",
+      "label": "Rock and Shingle Shore"
+    },
+    {
+      "id": "titan_region_kun_lai_summit_golden_foothill_expanses",
+      "expectedLabel": "Kun-Lai Summit: Golden Foothill Expanses",
+      "label": "Golden Foothills"
+    },
+    {
+      "id": "titan_region_kun_lai_summit_high_snow_ridges",
+      "expectedLabel": "Kun-Lai Summit: High Snow Ridges",
+      "label": "High Snow Ridges"
+    },
+    {
+      "id": "titan_region_townlong_steppes_green_steppe_shelves",
+      "expectedLabel": "Townlong Steppes: Green Steppe Shelves",
+      "label": "Green Steppe Shelves"
+    },
+    {
+      "id": "titan_region_townlong_steppes_russet_upland_woodland",
+      "expectedLabel": "Townlong Steppes: Russet Upland Woodland",
+      "label": "Russet Upland Woods"
+    },
+    {
+      "id": "titan_region_townlong_steppes_kypari_canyon_marsh",
+      "expectedLabel": "Townlong Steppes: Kypari Canyon Marsh",
+      "label": "Kypari Canyon Marsh"
+    },
+    {
+      "id": "titan_region_dread_wastes_living_kypari_woodland",
+      "expectedLabel": "Dread Wastes: Living Kypari Woodland",
+      "label": "Living Kypari Woods"
+    },
+    {
+      "id": "titan_region_dread_wastes_violet_coastal_margins",
+      "expectedLabel": "Dread Wastes: Violet Coastal Margins",
+      "label": "Violet Coastal Margins"
+    },
+    {
+      "id": "titan_region_vale_of_eternal_blossoms_golden_blossom_woodland",
+      "expectedLabel": "Vale of Eternal Blossoms: Golden Blossom Woodland",
+      "label": "Golden Blossom Woods"
+    },
+    {
+      "id": "titan_region_vale_of_eternal_blossoms_clear_blossom_waterbanks",
+      "expectedLabel": "Vale of Eternal Blossoms: Clear Blossom Waterbanks",
+      "label": "Clear Blossom Banks"
+    },
+    {
+      "id": "titan_region_krasarang_wilds_deep_tropical_canopy",
+      "expectedLabel": "Krasarang Wilds: Deep Tropical Canopy",
+      "label": "Deep Tropical Canopy"
+    },
+    {
+      "id": "titan_region_krasarang_wilds_pale_tropical_strand",
+      "expectedLabel": "Krasarang Wilds: Pale Tropical Strand",
+      "label": "Pale Tropical Strand"
+    },
+    {
+      "id": "titan_region_jade_forest_emerald_bamboo_thicket",
+      "expectedLabel": "Jade Forest: Emerald Bamboo Thicket",
+      "label": "Emerald Bamboo Thicket"
+    },
+    {
+      "id": "titan_region_jade_forest_rounded_karst_uplands",
+      "expectedLabel": "Jade Forest: Rounded Karst Uplands",
+      "label": "Rounded Karst Uplands"
+    },
+    {
+      "id": "titan_region_jade_forest_willow_river_margins",
+      "expectedLabel": "Jade Forest: Willow River Margins",
+      "label": "Willow Riverbanks"
+    },
+    {
+      "id": "titan_region_isle_of_thunder_storm_island_swamp",
+      "expectedLabel": "Isle of Thunder: Storm-Island Swamp",
+      "label": "Storm-Island Swamp"
+    },
+    {
+      "id": "titan_region_isle_of_thunder_vegetated_island_crags",
+      "expectedLabel": "Isle of Thunder: Vegetated Island Crags",
+      "label": "Green Island Crags"
+    },
+    {
+      "id": "titan_region_isle_of_thunder_dark_island_waterline",
+      "expectedLabel": "Isle of Thunder: Dark Island Waterline",
+      "label": "Dark Island Waterline"
+    },
+    {
+      "id": "titan_region_valley_of_the_four_winds_warm_rolling_grassland",
+      "expectedLabel": "Valley of the Four Winds: Warm Rolling Grassland",
+      "label": "Warm Rolling Grassland"
+    },
+    {
+      "id": "titan_region_valley_of_the_four_winds_flowering_meadow_water",
+      "expectedLabel": "Valley of the Four Winds: Flowering Meadow Water",
+      "label": "Flowering Meadow Stream"
+    },
+    {
+      "id": "titan_region_veiled_stair_mist_enclosed_cliffs",
+      "expectedLabel": "Veiled Stair travel corridor: Mist-Enclosed Cliffs",
+      "label": "Mist-Enclosed Cliffs"
+    },
+    {
+      "id": "titan_region_veiled_stair_steep_freshwater_cleft",
+      "expectedLabel": "Veiled Stair travel corridor: Steep Freshwater Cleft",
+      "label": "Steep Freshwater Cleft"
+    },
+    {
+      "id": "titan_region_broken_shore_exposed_dark_rock_coast",
+      "expectedLabel": "Broken Shore and adjacent shattered shorelands: Exposed Dark-Rock Coast",
+      "label": "Dark-Rock Coast"
+    },
+    {
+      "id": "titan_region_broken_shore_stony_sparse_uplands",
+      "expectedLabel": "Broken Shore and adjacent shattered shorelands: Stony Sparse Uplands",
+      "label": "Sparse Stony Uplands"
+    },
+    {
+      "id": "titan_region_broken_shore_faronaar_wooded_coastal_country",
+      "expectedLabel": "Broken Shore and adjacent shattered shorelands: Faronaar Wooded Coastal Country",
+      "label": "Wooded Coastal Country"
+    },
+    {
+      "id": "titan_region_azsuna_olive_cypress_woodland",
+      "expectedLabel": "Azsuna: Olive and Cypress Woodland",
+      "label": "Olive and Cypress Woods"
+    },
+    {
+      "id": "titan_region_azsuna_lavender_rock_uplands",
+      "expectedLabel": "Azsuna: Lavender Rock Uplands",
+      "label": "Lavender Rock Uplands"
+    },
+    {
+      "id": "titan_region_azsuna_clear_coastal_shallows",
+      "expectedLabel": "Azsuna: Clear Coastal Shallows",
+      "label": "Clear Coastal Shallows"
+    },
+    {
+      "id": "titan_region_highmountain_pine_valley_woodland",
+      "expectedLabel": "Highmountain: Pine Valley Woodland",
+      "label": "Pine Valley Woodland"
+    },
+    {
+      "id": "titan_region_highmountain_colossal_pale_rock_country",
+      "expectedLabel": "Highmountain: Colossal Pale Rock Country",
+      "label": "Colossal Pale Crags"
+    },
+    {
+      "id": "titan_region_highmountain_high_alpine_snowfields",
+      "expectedLabel": "Highmountain: High Alpine Snowfields",
+      "label": "High Alpine Snowfields"
+    },
+    {
+      "id": "titan_region_highmountain_deep_mineral_caverns",
+      "expectedLabel": "Highmountain: Deep Mineral Caverns",
+      "label": "Deep Mineral Caverns"
+    },
+    {
+      "id": "titan_region_stormheim_golden_birch_woodland",
+      "expectedLabel": "Stormheim: Golden Birch Woodland",
+      "label": "Golden Birch Woods"
+    },
+    {
+      "id": "titan_region_stormheim_green_cliff_uplands",
+      "expectedLabel": "Stormheim: Green Cliff Uplands",
+      "label": "Green Cliff Uplands"
+    },
+    {
+      "id": "titan_region_suramar_crimson_violet_woodland",
+      "expectedLabel": "Suramar: Crimson and Violet Woodland",
+      "label": "Crimson and Violet Woods"
+    },
+    {
+      "id": "titan_region_suramar_starlight_rose_country",
+      "expectedLabel": "Suramar: Starlight Rose Country",
+      "label": "Starlight Rose Fields"
+    },
+    {
+      "id": "titan_region_suramar_pale_canyon_waterbanks",
+      "expectedLabel": "Suramar: Pale Canyon Waterbanks",
+      "label": "Pale Canyon Banks"
+    },
+    {
+      "id": "titan_region_valsharah_ancient_living_forest",
+      "expectedLabel": "Val’sharah: Ancient Living Forest",
+      "label": "Ancient Living Forest"
+    },
+    {
+      "id": "titan_region_dun_morogh_sheltered_foothills",
+      "expectedLabel": "Dun Morogh: Sheltered rocky foothills",
+      "label": "Sheltered Rocky Foothills"
+    },
+    {
+      "id": "titan_region_winterspring_sheltered_foothills",
+      "expectedLabel": "Winterspring: Sheltered rocky foothills",
+      "label": "Snowland Rocky Foothills"
+    },
+    {
+      "id": "titan_region_fel_verge",
+      "expectedLabel": "Fel-affected sheltered verge",
+      "label": "Fel-Scarred Shelter"
+    },
+    {
+      "id": "titan_region_death_verge",
+      "expectedLabel": "Death-affected sheltered verge",
+      "label": "Death-Scarred Shelter"
+    },
+    {
+      "id": "titan_region_shadow_verge",
+      "expectedLabel": "Shadow-affected sheltered verge",
+      "label": "Shadow-Scarred Shelter"
+    },
+    {
+      "id": "titan_region_uncertain_aftermath_verge",
+      "expectedLabel": "Sheltered verge with uncertain aftermath",
+      "label": "Wayside Stone Shelter"
+    },
+    {
+      "id": "titan_region_military_reception_awning",
+      "expectedLabel": "Military camp reception awning",
+      "label": "Military Reception Camp"
+    },
+    {
+      "id": "titan_city_stormwind_the_lion_throne_hall",
+      "expectedLabel": "Stormwind: The Lion Throne Hall",
+      "label": "The Lion Throne"
+    },
+    {
+      "id": "titan_city_stormwind_royal_library_and_garden_gallery",
+      "expectedLabel": "Stormwind: Royal Library and Garden Gallery",
+      "label": "Royal Library Gallery"
+    },
+    {
+      "id": "titan_city_stormwind_trade_district_exchange",
+      "expectedLabel": "Stormwind: Trade District Exchange",
+      "label": "Trade District Exchange"
+    },
+    {
+      "id": "titan_city_stormwind_canal_bridge_and_waterside_steps",
+      "expectedLabel": "Stormwind: Canal Bridge and Waterside Steps",
+      "label": "Canal Bridge and Steps"
+    },
+    {
+      "id": "titan_city_stormwind_old_towns_pig_and_whistle",
+      "expectedLabel": "Stormwind: Old Town’s Pig and Whistle",
+      "label": "The Pig and Whistle"
+    },
+    {
+      "id": "titan_city_stormwind_harbor_customs_gallery",
+      "expectedLabel": "Stormwind: Harbor Customs Gallery",
+      "label": "Harbor Customs Gallery"
+    },
+    {
+      "id": "titan_city_stormwind_stormwinds_deeprun_platform",
+      "expectedLabel": "Stormwind: Stormwind’s Deeprun Platform",
+      "label": "Deeprun Platform"
+    },
+    {
+      "id": "titan_city_stormwind_the_city_garden",
+      "expectedLabel": "Stormwind: The City Garden",
+      "label": "The City Garden"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_lordaerons_imperial_audience_chamber",
+      "expectedLabel": "Lordaeron / Undercity: Lordaeron’s imperial audience chamber",
+      "label": "Imperial Audience Chamber"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_lordaerons_royal_garden_terrace",
+      "expectedLabel": "Lordaeron / Undercity: Lordaeron’s royal garden terrace",
+      "label": "Royal Garden Terrace"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_the_ruined_imperial_chamber",
+      "expectedLabel": "Lordaeron / Undercity: The ruined imperial chamber",
+      "label": "Ruined Imperial Chamber"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_undercitys_royal_quarter_chamber",
+      "expectedLabel": "Lordaeron / Undercity: Undercity’s Royal Quarter chamber",
+      "label": "Royal Quarter Chamber"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_undercitys_central_trade_ring",
+      "expectedLabel": "Lordaeron / Undercity: Undercity’s central trade ring",
+      "label": "Central Trade Ring"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_a_bridge_between_undercity_quarters",
+      "expectedLabel": "Lordaeron / Undercity: A bridge between Undercity quarters",
+      "label": "Bridge Between Quarters"
+    },
+    {
+      "id": "titan_city_lordaeron_city_undercity_the_apothecariums_receiving_laboratory",
+      "expectedLabel": "Lordaeron / Undercity: The Apothecarium’s receiving laboratory",
+      "label": "Apothecarium Laboratory"
+    },
+    {
+      "id": "titan_city_boralus_proudmoore_keeps_admiralty_audience_room",
+      "expectedLabel": "Boralus: Proudmoore Keep’s admiralty audience room",
+      "label": "Admiralty Audience Room"
+    },
+    {
+      "id": "titan_city_boralus_unity_squares_bay_facing_ceremonial_terrace",
+      "expectedLabel": "Boralus: Unity Square’s bay-facing ceremonial terrace",
+      "label": "Unity Square Terrace"
+    },
+    {
+      "id": "titan_city_boralus_the_harbormasters_office_receiving_desk",
+      "expectedLabel": "Boralus: The Harbormaster’s Office receiving desk",
+      "label": "Harbormaster's Office"
+    },
+    {
+      "id": "titan_city_boralus_tradewinds_markets_fountain_and_upper_counters",
+      "expectedLabel": "Boralus: Tradewinds Market’s fountain and upper counters",
+      "label": "Tradewinds Market"
+    },
+    {
+      "id": "titan_city_boralus_the_snug_harbor_inn_common_room",
+      "expectedLabel": "Boralus: The Snug Harbor Inn common room",
+      "label": "The Snug Harbor Inn"
+    },
+    {
+      "id": "titan_city_boralus_boraluss_working_repair_quay",
+      "expectedLabel": "Boralus: Boralus’s working repair quay",
+      "label": "Shipwright's Repair Quay"
+    },
+    {
+      "id": "titan_city_ironforge_the_great_forge_ring",
+      "expectedLabel": "Ironforge: The Great Forge Ring",
+      "label": "The Great Forge"
+    },
+    {
+      "id": "titan_city_ironforge_the_high_seat",
+      "expectedLabel": "Ironforge: The High Seat",
+      "label": "The High Seat"
+    },
+    {
+      "id": "titan_city_ironforge_hall_of_explorers",
+      "expectedLabel": "Ironforge: Hall of Explorers",
+      "label": "Hall of Explorers"
+    },
+    {
+      "id": "titan_city_ironforge_a_commons_alehall",
+      "expectedLabel": "Ironforge: A Commons Alehall",
+      "label": "Commons Alehall"
+    },
+    {
+      "id": "titan_city_ironforge_ironforges_deeprun_station",
+      "expectedLabel": "Ironforge: Ironforge’s Deeprun Station",
+      "label": "Deeprun Station"
+    },
+    {
+      "id": "titan_city_ironforge_old_ironforges_ancestral_vault",
+      "expectedLabel": "Ironforge: Old Ironforge’s Ancestral Vault",
+      "label": "Ancestral Vault"
+    },
+    {
+      "id": "titan_city_shadowforge_city_the_imperial_seat",
+      "expectedLabel": "Shadowforge City: The Imperial Seat",
+      "label": "The Imperial Seat"
+    },
+    {
+      "id": "titan_city_shadowforge_city_the_black_anvil_crafting_court",
+      "expectedLabel": "Shadowforge City: The Black Anvil Crafting Court",
+      "label": "The Black Anvil"
+    },
+    {
+      "id": "titan_city_shadowforge_city_the_grim_guzzler",
+      "expectedLabel": "Shadowforge City: The Grim Guzzler",
+      "label": "The Grim Guzzler"
+    },
+    {
+      "id": "titan_city_shadowforge_city_the_black_vault_receiving_room",
+      "expectedLabel": "Shadowforge City: The Black Vault Receiving Room",
+      "label": "Black Vault Antechamber"
+    },
+    {
+      "id": "titan_city_zulaman_the_monumental_fortress_reception_stair",
+      "expectedLabel": "Zul’Aman: The monumental fortress reception stair",
+      "label": "Fortress Reception Stair"
+    },
+    {
+      "id": "titan_city_zulaman_the_high_amani_council_terrace",
+      "expectedLabel": "Zul’Aman: The high Amani council terrace",
+      "label": "High Council Terrace"
+    },
+    {
+      "id": "titan_city_zulaman_the_timber_roofed_forest_market",
+      "expectedLabel": "Zul’Aman: The timber-roofed forest market",
+      "label": "Timber-Roofed Market"
+    },
+    {
+      "id": "titan_city_zulaman_a_carved_longhouse_reception_room",
+      "expectedLabel": "Zul’Aman: A carved longhouse reception room",
+      "label": "Carved Longhouse"
+    },
+    {
+      "id": "titan_city_zulgurub_the_great_stepped_audience_court",
+      "expectedLabel": "Zul’Gurub: The great stepped audience court",
+      "label": "Great Stepped Court"
+    },
+    {
+      "id": "titan_city_zulgurub_the_feather_and_spice_market",
+      "expectedLabel": "Zul’Gurub: The feather and spice market",
+      "label": "Feather and Spice Market"
+    },
+    {
+      "id": "titan_city_zulgurub_a_household_veranda_above_the_jungle",
+      "expectedLabel": "Zul’Gurub: A household veranda above the jungle",
+      "label": "Jungle Household Veranda"
+    },
+    {
+      "id": "titan_city_zulgurub_the_shaded_cistern_bathing_court",
+      "expectedLabel": "Zul’Gurub: The shaded cistern bathing court",
+      "label": "Shaded Cistern Court"
+    },
+    {
+      "id": "titan_city_dalaran_the_violet_citadel_audience_stair",
+      "expectedLabel": "Dalaran: The Violet Citadel audience stair",
+      "label": "Violet Citadel Audience"
+    },
+    {
+      "id": "titan_city_dalaran_the_citadels_archive_consultation_room",
+      "expectedLabel": "Dalaran: The Citadel’s archive consultation room",
+      "label": "Citadel Archive"
+    },
+    {
+      "id": "titan_city_dalaran_the_eventide_wishing_fountain",
+      "expectedLabel": "Dalaran: The Eventide wishing fountain",
+      "label": "Eventide Wishing Fountain"
+    },
+    {
+      "id": "titan_city_dalaran_the_legerdemain_lounge_supper_room",
+      "expectedLabel": "Dalaran: The Legerdemain Lounge supper room",
+      "label": "The Legerdemain Lounge"
+    },
+    {
+      "id": "titan_city_dalaran_grounded_dalarans_lake_facing_terrace",
+      "expectedLabel": "Dalaran: Grounded Dalaran’s lake-facing terrace",
+      "label": "Lakeside City Terrace"
+    },
+    {
+      "id": "titan_city_gnomeregan_the_high_tinkers_civic_chamber",
+      "expectedLabel": "Gnomeregan: The High Tinker’s Civic Chamber",
+      "label": "High Tinker's Chamber"
+    },
+    {
+      "id": "titan_city_gnomeregan_design_registry_and_model_gallery",
+      "expectedLabel": "Gnomeregan: Design Registry and Model Gallery",
+      "label": "Design Registry"
+    },
+    {
+      "id": "titan_city_gnomeregan_a_gnomish_foldaway_household",
+      "expectedLabel": "Gnomeregan: A Gnomish Foldaway Household",
+      "label": "Foldaway Household"
+    },
+    {
+      "id": "titan_city_gnomeregan_the_clockwork_canteen",
+      "expectedLabel": "Gnomeregan: The Clockwork Canteen",
+      "label": "The Clockwork Canteen"
+    },
+    {
+      "id": "titan_city_silvermoon_city_the_shepherds_gate_reception_walk",
+      "expectedLabel": "Silvermoon City: The Shepherd’s Gate reception walk",
+      "label": "Shepherd's Gate"
+    },
+    {
+      "id": "titan_city_silvermoon_city_sunfury_spires_inner_sanctum",
+      "expectedLabel": "Silvermoon City: Sunfury Spire’s Inner Sanctum",
+      "label": "Sunfury Inner Sanctum"
+    },
+    {
+      "id": "titan_city_silvermoon_city_the_court_of_the_sun_fountain_terraces",
+      "expectedLabel": "Silvermoon City: The Court of the Sun fountain terraces",
+      "label": "Court of the Sun"
+    },
+    {
+      "id": "titan_city_silvermoon_city_the_royal_exchanges_jewel_stalls",
+      "expectedLabel": "Silvermoon City: The Royal Exchange’s jewel stalls",
+      "label": "Royal Exchange"
+    },
+    {
+      "id": "titan_city_silvermoon_city_wayfarers_rest_salon",
+      "expectedLabel": "Silvermoon City: Wayfarer’s Rest salon",
+      "label": "Wayfarer's Rest"
+    },
+    {
+      "id": "titan_city_silvermoon_city_murder_rows_shuttered_side_passage",
+      "expectedLabel": "Silvermoon City: Murder Row’s shuttered side passage",
+      "label": "Murder Row Passage"
+    },
+    {
+      "id": "titan_city_aerie_peak_the_high_thanes_terrace",
+      "expectedLabel": "Aerie Peak: The High Thane’s Terrace",
+      "label": "High Thane's Terrace"
+    },
+    {
+      "id": "titan_city_aerie_peak_the_mighty_hearth_hall",
+      "expectedLabel": "Aerie Peak: The Mighty Hearth Hall",
+      "label": "The Mighty Hearth"
+    },
+    {
+      "id": "titan_city_aerie_peak_a_cliffside_household_and_guest_room",
+      "expectedLabel": "Aerie Peak: A Cliffside Household and Guest Room",
+      "label": "Cliffside Guest House"
+    },
+    {
+      "id": "titan_city_aerie_peak_the_landing_terrace_exchange",
+      "expectedLabel": "Aerie Peak: The Landing Terrace Exchange",
+      "label": "Landing Terrace Exchange"
+    },
+    {
+      "id": "titan_city_jinthaalor_the_summit_court_terrace",
+      "expectedLabel": "Jintha’alor: The Summit Court Terrace",
+      "label": "Summit Court"
+    },
+    {
+      "id": "titan_city_jinthaalor_the_lower_terrace_exchange",
+      "expectedLabel": "Jintha’alor: The Lower Terrace Exchange",
+      "label": "Lower Terrace Exchange"
+    },
+    {
+      "id": "titan_city_jinthaalor_a_terrace_household",
+      "expectedLabel": "Jintha’alor: A Terrace Household",
+      "label": "Terrace Household"
+    },
+    {
+      "id": "titan_city_stratholme_kings_square_in_the_living_city",
+      "expectedLabel": "Stratholme: King’s Square in the living city",
+      "label": "King's Square"
+    },
+    {
+      "id": "titan_city_stratholme_market_rows_guild_counter",
+      "expectedLabel": "Stratholme: Market Row’s guild counter",
+      "label": "Market Row Guild Counter"
+    },
+    {
+      "id": "titan_city_stratholme_festival_lanes_inn_room_and_street_balcony",
+      "expectedLabel": "Stratholme: Festival Lane’s inn room and street balcony",
+      "label": "Festival Lane Inn"
+    },
+    {
+      "id": "titan_city_stromgarde_stromgardes_high_keep_hall",
+      "expectedLabel": "Stromgarde: Stromgarde’s High Keep Hall",
+      "label": "High Keep Hall"
+    },
+    {
+      "id": "titan_city_stromgarde_the_gates_ledger_court",
+      "expectedLabel": "Stromgarde: The Gate’s Ledger Court",
+      "label": "Gate Ledger Court"
+    },
+    {
+      "id": "titan_city_stromgarde_the_inner_ward_market_and_hostel",
+      "expectedLabel": "Stromgarde: The Inner Ward Market and Hostel",
+      "label": "Inner Ward Market"
+    },
+    {
+      "id": "titan_city_booty_bay_port_authority_s_lagoon_balcony",
+      "expectedLabel": "Booty Bay: Port authority's lagoon balcony",
+      "label": "Port Authority Balcony"
+    },
+    {
+      "id": "titan_city_booty_bay_salty_sailor_s_crowded_common_room",
+      "expectedLabel": "Booty Bay: Salty Sailor's crowded common room",
+      "label": "The Salty Sailor"
+    },
+    {
+      "id": "titan_city_booty_bay_the_crowded_arrival_wharf",
+      "expectedLabel": "Booty Bay: The crowded arrival wharf",
+      "label": "Arrival Wharf"
+    },
+    {
+      "id": "titan_city_booty_bay_broker_s_shuttered_counting_room",
+      "expectedLabel": "Booty Bay: Broker's shuttered counting room",
+      "label": "Broker's Counting Room"
+    },
+    {
+      "id": "titan_city_gilneas_city_greymane_courts_civic_receiving_room",
+      "expectedLabel": "Gilneas City: Greymane Court’s civic receiving room",
+      "label": "Greymane Receiving Court"
+    },
+    {
+      "id": "titan_city_gilneas_city_gilneas_merchant_square_beneath_the_gables",
+      "expectedLabel": "Gilneas City: Gilneas Merchant Square beneath the gables",
+      "label": "Gabled Merchant Square"
+    },
+    {
+      "id": "titan_city_gilneas_city_a_gilnean_inns_tea_and_cards_parlor",
+      "expectedLabel": "Gilneas City: A Gilnean inn’s tea-and-cards parlor",
+      "label": "Tea and Cards Parlor"
+    },
+    {
+      "id": "titan_city_grim_batol_the_mountain_capitals_high_hall",
+      "expectedLabel": "Grim Batol: The Mountain Capital’s High Hall",
+      "label": "Mountain Capital Hall"
+    },
+    {
+      "id": "titan_city_grim_batol_cliff_gate_receiving_gallery",
+      "expectedLabel": "Grim Batol: Cliff Gate Receiving Gallery",
+      "label": "Cliff Gate Gallery"
+    },
+    {
+      "id": "titan_city_grim_batol_the_fortress_hearth_hall",
+      "expectedLabel": "Grim Batol: The Fortress Hearth Hall",
+      "label": "Fortress Hearth Hall"
+    },
+    {
+      "id": "titan_city_caer_darrow_caer_darrows_lake_approach_and_town_gate",
+      "expectedLabel": "Caer Darrow: Caer Darrow’s lake approach and town gate",
+      "label": "Island Gate Approach"
+    },
+    {
+      "id": "titan_city_caer_darrow_the_old_estates_lake_facing_hall",
+      "expectedLabel": "Caer Darrow: The old estate’s lake-facing hall",
+      "label": "Lakeside Estate Hall"
+    },
+    {
+      "id": "titan_city_caer_darrow_the_island_estates_supper_terrace",
+      "expectedLabel": "Caer Darrow: The island estate’s supper terrace",
+      "label": "Island Supper Terrace"
+    },
+    {
+      "id": "titan_city_caer_darrow_scholomances_restricted_archive_consultation",
+      "expectedLabel": "Caer Darrow: Scholomance’s restricted archive consultation",
+      "label": "Scholomance Archive"
+    },
+    {
+      "id": "titan_city_hearthglen_mardenholde_keep_hearthglens_fortified_reception_court",
+      "expectedLabel": "Hearthglen: Hearthglen’s fortified reception court",
+      "label": "Fortified Reception Court"
+    },
+    {
+      "id": "titan_city_hearthglen_mardenholde_keep_mardenholdes_dining_hall_and_adjoining_sitting_room",
+      "expectedLabel": "Hearthglen: Mardenholde’s dining hall and adjoining sitting room",
+      "label": "Mardenholde Dining Hall"
+    },
+    {
+      "id": "titan_city_hearthglen_mardenholde_keep_hearthglens_training_courtyard",
+      "expectedLabel": "Hearthglen: Hearthglen’s training courtyard",
+      "label": "Training Courtyard"
+    },
+    {
+      "id": "titan_city_revantusk_village_the_chiefs_coastal_receiving_court",
+      "expectedLabel": "Revantusk Village: The Chief’s Coastal Receiving Court",
+      "label": "Chief's Coastal Court"
+    },
+    {
+      "id": "titan_city_revantusk_village_the_rope_pier_and_landing_shelter",
+      "expectedLabel": "Revantusk Village: The Rope Pier and Landing Shelter",
+      "label": "Rope Pier Landing"
+    },
+    {
+      "id": "titan_city_revantusk_village_the_saltwind_common_house",
+      "expectedLabel": "Revantusk Village: The Saltwind Common House",
+      "label": "Saltwind Common House"
+    },
+    {
+      "id": "titan_city_andorhal_andorhals_grain_weighing_yard",
+      "expectedLabel": "Andorhal: Andorhal’s grain weighing yard",
+      "label": "Grain Weighing Yard"
+    },
+    {
+      "id": "titan_city_andorhal_andorhals_town_hall_receiving_room",
+      "expectedLabel": "Andorhal: Andorhal’s town hall receiving room",
+      "label": "Town Hall Reception"
+    },
+    {
+      "id": "titan_city_andorhal_the_grain_carriers_inn_yard",
+      "expectedLabel": "Andorhal: The grain carriers’ inn yard",
+      "label": "Grain Carriers' Inn"
+    },
+    {
+      "id": "titan_city_tyrs_hand_tyrs_hand_abbey_receiving_hall",
+      "expectedLabel": "Tyr’S Hand: Tyr’s Hand Abbey receiving hall",
+      "label": "Abbey Receiving Hall"
+    },
+    {
+      "id": "titan_city_tyrs_hand_the_basilicas_great_nave",
+      "expectedLabel": "Tyr’S Hand: The Basilica’s great nave",
+      "label": "Basilica Nave"
+    },
+    {
+      "id": "titan_city_tyrs_hand_the_abbeys_cloister_and_bread_table",
+      "expectedLabel": "Tyr’S Hand: The Abbey’s cloister and bread table",
+      "label": "Cloister Bread Table"
+    },
+    {
+      "id": "titan_city_brennadam_brennadam_square_produce_stalls",
+      "expectedLabel": "Brennadam: Brennadam Square produce stalls",
+      "label": "Produce Market Square"
+    },
+    {
+      "id": "titan_city_brennadam_brennadams_produce_town_receiving_room",
+      "expectedLabel": "Brennadam: Brennadam’s produce-town receiving room",
+      "label": "Market Town Hall"
+    },
+    {
+      "id": "titan_city_brennadam_the_golden_flagons_supper_and_apple_brandy_table",
+      "expectedLabel": "Brennadam: The Golden Flagon’s supper and apple-brandy table",
+      "label": "The Golden Flagon"
+    },
+    {
+      "id": "titan_city_ramkahen_the_monumental_seat_of_ramkahen_audience",
+      "expectedLabel": "Ramkahen: The monumental Seat of Ramkahen audience",
+      "label": "Seat of Ramkahen"
+    },
+    {
+      "id": "titan_city_ramkahen_the_palm_shaded_oasis_bazaar",
+      "expectedLabel": "Ramkahen: The palm-shaded oasis bazaar",
+      "label": "Palm-Shaded Bazaar"
+    },
+    {
+      "id": "titan_city_ramkahen_the_spacious_inner_court_of_a_tolvir_household",
+      "expectedLabel": "Ramkahen: The spacious inner court of a tol’vir household",
+      "label": "Household Oasis Court"
+    },
+    {
+      "id": "titan_city_ramkahen_the_water_gardens_carved_game_tables",
+      "expectedLabel": "Ramkahen: The water garden’s carved game tables",
+      "label": "Water Garden Game Tables"
+    },
+    {
+      "id": "titan_city_ahnqiraj_the_immense_imperial_audience_hall",
+      "expectedLabel": "Ahn’Qiraj: The immense imperial audience hall",
+      "label": "Imperial Hive Hall"
+    },
+    {
+      "id": "titan_city_ahnqiraj_the_hive_distribution_rotunda",
+      "expectedLabel": "Ahn’Qiraj: The hive distribution rotunda",
+      "label": "Hive Distribution Rotunda"
+    },
+    {
+      "id": "titan_city_ahnqiraj_the_shell_metal_and_inlay_work_hall",
+      "expectedLabel": "Ahn’Qiraj: The shell, metal and inlay work hall",
+      "label": "Shell and Inlay Workshop"
+    },
+    {
+      "id": "titan_city_ahnqiraj_the_high_caste_residences_inner_suite",
+      "expectedLabel": "Ahn’Qiraj: The high-caste residence’s inner suite",
+      "label": "High-Caste Inner Suite"
+    },
+    {
+      "id": "titan_city_darnassus_temple_of_the_moon_the_upper_audience",
+      "expectedLabel": "Darnassus: Temple of the Moon: the Upper Audience",
+      "label": "Temple of the Moon"
+    },
+    {
+      "id": "titan_city_darnassus_temple_gardens_the_lake_causeway",
+      "expectedLabel": "Darnassus: Temple Gardens: the Lake Causeway",
+      "label": "Temple Lake Causeway"
+    },
+    {
+      "id": "titan_city_darnassus_warriors_terrace_the_sentinel_loggia",
+      "expectedLabel": "Darnassus: Warrior’s Terrace: the Sentinel Loggia",
+      "label": "Sentinel Loggia"
+    },
+    {
+      "id": "titan_city_darnassus_craftsmens_terrace_the_living_workroom",
+      "expectedLabel": "Darnassus: Craftsmen’s Terrace: the Living Workroom",
+      "label": "Living Craft Workroom"
+    },
+    {
+      "id": "titan_city_darnassus_craftsmens_terrace_the_guest_balcony",
+      "expectedLabel": "Darnassus: Craftsmen’s Terrace: the Guest Balcony",
+      "label": "Craftsmen's Guest Balcony"
+    },
+    {
+      "id": "titan_city_zulfarrak_the_covered_caravan_exchange",
+      "expectedLabel": "Zul’Farrak: The covered caravan exchange",
+      "label": "Caravan Exchange"
+    },
+    {
+      "id": "titan_city_zulfarrak_the_water_keepers_cistern_court",
+      "expectedLabel": "Zul’Farrak: The water keepers’ cistern court",
+      "label": "Water Keepers' Cistern"
+    },
+    {
+      "id": "titan_city_zulfarrak_the_cool_inner_court_of_a_sandfury_home",
+      "expectedLabel": "Zul’Farrak: The cool inner court of a Sandfury home",
+      "label": "Sandfury Household Court"
+    },
+    {
+      "id": "titan_city_zulfarrak_the_roof_terraces_evening_meal",
+      "expectedLabel": "Zul’Farrak: The roof terrace’s evening meal",
+      "label": "Rooftop Supper Terrace"
+    },
+    {
+      "id": "titan_city_eldrethalas_dire_maul_dire_maul_the_gordok_audience_commons",
+      "expectedLabel": "Eldre’Thalas / Dire Maul: Dire Maul: the Gordok Audience Commons",
+      "label": "Gordok Audience Commons"
+    },
+    {
+      "id": "titan_city_eldrethalas_dire_maul_dire_maul_the_broken_garden_loggia",
+      "expectedLabel": "Eldre’Thalas / Dire Maul: Dire Maul: the Broken Garden Loggia",
+      "label": "Broken Garden Loggia"
+    },
+    {
+      "id": "titan_city_eldrethalas_dire_maul_dire_maul_the_athenaeum_remnant_refuge",
+      "expectedLabel": "Eldre’Thalas / Dire Maul: Dire Maul: the Athenaeum Remnant Refuge",
+      "label": "Athenaeum Refuge"
+    },
+    {
+      "id": "titan_city_orgrimmar_grommash_hold_the_cliff_audience",
+      "expectedLabel": "Orgrimmar: Grommash Hold: the Cliff Audience",
+      "label": "Grommash Hold Audience"
+    },
+    {
+      "id": "titan_city_orgrimmar_the_holds_screened_council_room",
+      "expectedLabel": "Orgrimmar: The Hold’s Screened Council Room",
+      "label": "Screened Council Room"
+    },
+    {
+      "id": "titan_city_orgrimmar_the_drags_layered_exchange",
+      "expectedLabel": "Orgrimmar: The Drag’s Layered Exchange",
+      "label": "The Drag Exchange"
+    },
+    {
+      "id": "titan_city_orgrimmar_valley_of_honor_the_forge_apron",
+      "expectedLabel": "Orgrimmar: Valley of Honor: the Forge Apron",
+      "label": "Valley of Honor Forge"
+    },
+    {
+      "id": "titan_city_orgrimmar_a_valley_food_house",
+      "expectedLabel": "Orgrimmar: A Valley Food House",
+      "label": "Valley Food House"
+    },
+    {
+      "id": "titan_city_the_exodar_the_exodars_grounded_entrance",
+      "expectedLabel": "The Exodar: The Exodar’s Grounded Entrance",
+      "label": "Grounded Crystal Entrance"
+    },
+    {
+      "id": "titan_city_the_exodar_seat_of_the_naaru_the_delegation_gallery",
+      "expectedLabel": "The Exodar: Seat of the Naaru: the Delegation Gallery",
+      "label": "Seat of the Naaru"
+    },
+    {
+      "id": "titan_city_the_exodar_vault_of_lights_the_knowledge_chamber",
+      "expectedLabel": "The Exodar: Vault of Lights: the Knowledge Chamber",
+      "label": "Vault of Lights"
+    },
+    {
+      "id": "titan_city_the_exodar_traders_tier_the_curved_exchange",
+      "expectedLabel": "The Exodar: Trader’s Tier: the Curved Exchange",
+      "label": "Trader's Tier"
+    },
+    {
+      "id": "titan_city_the_exodar_the_caregiver_centers_guest_niche",
+      "expectedLabel": "The Exodar: The Caregiver Center’s Guest Niche",
+      "label": "Caregiver's Guest Niche"
+    },
+    {
+      "id": "titan_city_thunder_bluff_high_rise_council_lodge",
+      "expectedLabel": "Thunder Bluff: High Rise Council Lodge",
+      "label": "High Rise Council Lodge"
+    },
+    {
+      "id": "titan_city_thunder_bluff_the_mesa_lift_landing",
+      "expectedLabel": "Thunder Bluff: The Mesa Lift Landing",
+      "label": "Mesa Lift Landing"
+    },
+    {
+      "id": "titan_city_thunder_bluff_lower_rise_trade_circle",
+      "expectedLabel": "Thunder Bluff: Lower Rise Trade Circle",
+      "label": "Lower Rise Trade Circle"
+    },
+    {
+      "id": "titan_city_thunder_bluff_the_mesa_guest_lodge",
+      "expectedLabel": "Thunder Bluff: The Mesa Guest Lodge",
+      "label": "Mesa Guest Lodge"
+    },
+    {
+      "id": "titan_city_feathermoon_stronghold_old_feathermoon_the_island_command_hall",
+      "expectedLabel": "Feathermoon Stronghold: Old Feathermoon: the Island Command Hall",
+      "label": "Island Command Hall"
+    },
+    {
+      "id": "titan_city_feathermoon_stronghold_old_feathermoon_the_supply_pier_shelter",
+      "expectedLabel": "Feathermoon Stronghold: Old Feathermoon: the Supply Pier Shelter",
+      "label": "Supply Pier Shelter"
+    },
+    {
+      "id": "titan_city_feathermoon_stronghold_old_feathermoon_the_moonwell_care_court",
+      "expectedLabel": "Feathermoon Stronghold: Old Feathermoon: the Moonwell Care Court",
+      "label": "Moonwell Care Court"
+    },
+    {
+      "id": "titan_city_theramore_theramore_tower_the_upper_audience",
+      "expectedLabel": "Theramore: Theramore Tower: the Upper Audience",
+      "label": "Tower Audience Room"
+    },
+    {
+      "id": "titan_city_theramore_the_towers_harbor_chart_room",
+      "expectedLabel": "Theramore: The Tower’s Harbor Chart Room",
+      "label": "Harbor Chart Room"
+    },
+    {
+      "id": "titan_city_theramore_the_harbor_crane_and_ledger_shelter",
+      "expectedLabel": "Theramore: The Harbor Crane and Ledger Shelter",
+      "label": "Crane and Ledger Quay"
+    },
+    {
+      "id": "titan_city_theramore_theramores_lamplit_common_room",
+      "expectedLabel": "Theramore: Theramore’s Lamplit Common Room",
+      "label": "Lamplit Common Room"
+    },
+    {
+      "id": "titan_city_everlook_the_inns_thawing_anteroom",
+      "expectedLabel": "Everlook: The Inn’s Thawing Anteroom",
+      "label": "Inn Thawing Room"
+    },
+    {
+      "id": "titan_city_everlook_the_penguin_wallpaper_parlor",
+      "expectedLabel": "Everlook: The Penguin-Wallpaper Parlor",
+      "label": "Penguin-Wallpaper Parlor"
+    },
+    {
+      "id": "titan_city_everlook_the_snowbound_banks_consultation_bay",
+      "expectedLabel": "Everlook: The Snowbound Bank’s Consultation Bay",
+      "label": "Snowbound Bank Office"
+    },
+    {
+      "id": "titan_city_gadgetzan_the_cartel_contract_exchange",
+      "expectedLabel": "Gadgetzan: The Cartel Contract Exchange",
+      "label": "Cartel Contract Exchange"
+    },
+    {
+      "id": "titan_city_gadgetzan_the_thunderdrome_viewing_rail",
+      "expectedLabel": "Gadgetzan: The Thunderdrome Viewing Rail",
+      "label": "Thunderdrome Viewing Rail"
+    },
+    {
+      "id": "titan_city_gadgetzan_the_inns_deep_shade_room",
+      "expectedLabel": "Gadgetzan: The Inn’s Deep Shade Room",
+      "label": "Inn's Deep Shade Room"
+    },
+    {
+      "id": "titan_city_nighthaven_the_woodland_receiving_lodge",
+      "expectedLabel": "Nighthaven: The woodland receiving lodge",
+      "label": "Woodland Receiving Lodge"
+    },
+    {
+      "id": "titan_city_nighthaven_the_herbal_study_and_teaching_table",
+      "expectedLabel": "Nighthaven: The herbal study and teaching table",
+      "label": "Herbal Teaching Table"
+    },
+    {
+      "id": "titan_city_nighthaven_the_lakeward_guest_veranda",
+      "expectedLabel": "Nighthaven: The lakeward guest veranda",
+      "label": "Lakeward Guest Veranda"
+    },
+    {
+      "id": "titan_city_ratchet_ratchets_dockside_bank_windows",
+      "expectedLabel": "Ratchet: Ratchet’s Dockside Bank Windows",
+      "label": "Dockside Bank Windows"
+    },
+    {
+      "id": "titan_city_ratchet_the_broken_keels_sheltered_booth",
+      "expectedLabel": "Ratchet: The Broken Keel’s Sheltered Booth",
+      "label": "The Broken Keel"
+    },
+    {
+      "id": "titan_city_ratchet_the_harbor_brokers_upper_room",
+      "expectedLabel": "Ratchet: The Harbor Broker’s Upper Room",
+      "label": "Harbor Broker's Room"
+    },
+    {
+      "id": "titan_city_sen_jin_and_the_echo_isles_seats_sen_jin_s_open_receiving_shelter",
+      "expectedLabel": "Sen’jin: Sen'jin's open receiving shelter",
+      "label": "Open Receiving Shelter"
+    },
+    {
+      "id": "titan_city_sen_jin_and_the_echo_isles_seats_sen_jin_s_shaded_fishing_landing",
+      "expectedLabel": "Sen’jin: Sen'jin's shaded fishing landing",
+      "label": "Shaded Fishing Landing"
+    },
+    {
+      "id": "titan_city_ulduar_the_titan_city_s_receiving_concourse",
+      "expectedLabel": "Ulduar: The Titan City's Receiving Concourse",
+      "label": "Titan Receiving Concourse"
+    },
+    {
+      "id": "titan_city_ulduar_the_keeper_scale_council_rotunda",
+      "expectedLabel": "Ulduar: The Keeper-Scale Council Rotunda",
+      "label": "Keepers' Council Rotunda"
+    },
+    {
+      "id": "titan_city_ulduar_the_conservatory_garden",
+      "expectedLabel": "Ulduar: The Conservatory Garden",
+      "label": "The Conservatory"
+    },
+    {
+      "id": "titan_city_gundrak_the_imperial_temple_approach",
+      "expectedLabel": "Gundrak: The Imperial Temple Approach",
+      "label": "Imperial Temple Approach"
+    },
+    {
+      "id": "titan_city_gundrak_the_drakkari_receiving_hall",
+      "expectedLabel": "Gundrak: The Drakkari Receiving Hall",
+      "label": "Drakkari Receiving Hall"
+    },
+    {
+      "id": "titan_city_gundrak_the_carved_tribute_room",
+      "expectedLabel": "Gundrak: The Carved Tribute Room",
+      "label": "Carved Tribute Room"
+    },
+    {
+      "id": "titan_city_icecrown_citadel_the_citadel_s_blade_gate",
+      "expectedLabel": "Icecrown Citadel: The Citadel's Blade Gate",
+      "label": "Citadel Blade Gate"
+    },
+    {
+      "id": "titan_city_icecrown_citadel_the_lower_spire_receiving_hall",
+      "expectedLabel": "Icecrown Citadel: The Lower Spire Receiving Hall",
+      "label": "Lower Spire Hall"
+    },
+    {
+      "id": "titan_city_icecrown_citadel_the_inner_citadel_cabinet",
+      "expectedLabel": "Icecrown Citadel: The Inner Citadel Cabinet",
+      "label": "Inner Citadel Cabinet"
+    },
+    {
+      "id": "titan_city_wyrmrest_temple_the_temple_s_lower_receiving_court",
+      "expectedLabel": "Wyrmrest Temple: The Temple's Lower Receiving Court",
+      "label": "Lower Temple Court"
+    },
+    {
+      "id": "titan_city_wyrmrest_temple_the_skyward_reception_gallery",
+      "expectedLabel": "Wyrmrest Temple: The Skyward Reception Gallery",
+      "label": "Skyward Reception Gallery"
+    },
+    {
+      "id": "titan_city_wyrmrest_temple_the_temple_guest_chamber",
+      "expectedLabel": "Wyrmrest Temple: The Temple Guest Chamber",
+      "label": "Temple Guest Chamber"
+    },
+    {
+      "id": "titan_city_utgarde_the_ironbound_ascent",
+      "expectedLabel": "Utgarde: The Ironbound Ascent",
+      "label": "The Ironbound Ascent"
+    },
+    {
+      "id": "titan_city_utgarde_the_great_vrykul_longhall",
+      "expectedLabel": "Utgarde: The Great Vrykul Longhall",
+      "label": "Great Vrykul Longhall"
+    },
+    {
+      "id": "titan_city_utgarde_the_high_household_chamber",
+      "expectedLabel": "Utgarde: The High Household Chamber",
+      "label": "High Household Chamber"
+    },
+    {
+      "id": "titan_city_wintergarde_keep_the_keep_s_receiving_yard",
+      "expectedLabel": "Wintergarde Keep: The Keep's Receiving Yard",
+      "label": "Keep Reception Yard"
+    },
+    {
+      "id": "titan_city_wintergarde_keep_the_frontier_council_room",
+      "expectedLabel": "Wintergarde Keep: The Frontier Council Room",
+      "label": "Frontier Council Room"
+    },
+    {
+      "id": "titan_city_wintergarde_keep_the_keep_town_common_room",
+      "expectedLabel": "Wintergarde Keep: The Keep-Town Common Room",
+      "label": "Keep-Town Common Room"
+    },
+    {
+      "id": "titan_city_frosthold_the_mountain_king_s_stone_hall",
+      "expectedLabel": "Frosthold: The Mountain King's Stone Hall",
+      "label": "Mountain King's Hall"
+    },
+    {
+      "id": "titan_city_frosthold_the_deep_forge_house",
+      "expectedLabel": "Frosthold: The Deep Forge House",
+      "label": "Deep Forge House"
+    },
+    {
+      "id": "titan_city_kaskala_the_coastal_capital_receiving_house",
+      "expectedLabel": "Kaskala: The Coastal Capital Receiving House",
+      "label": "Coastal Elders' House"
+    },
+    {
+      "id": "titan_city_kaskala_the_tayutka_altar",
+      "expectedLabel": "Kaskala: The Tayutka Altar",
+      "label": "Tayutka Altar"
+    },
+    {
+      "id": "titan_city_kaskala_the_shared_kin_house_hearth",
+      "expectedLabel": "Kaskala: The Shared Kin-House Hearth",
+      "label": "Kin-House Hearth"
+    },
+    {
+      "id": "titan_city_moa_ki_harbor_the_harbour_story_hearth",
+      "expectedLabel": "Moa’ki Harbor: The Harbour Story Hearth",
+      "label": "Harbor Story Hearth"
+    },
+    {
+      "id": "titan_city_moa_ki_harbor_the_harbour_net_house",
+      "expectedLabel": "Moa’ki Harbor: The Harbour Net House",
+      "label": "Harbor Net House"
+    },
+    {
+      "id": "titan_city_taunka_le_village_the_taunka_council_hearth",
+      "expectedLabel": "Taunka’le: The Taunka Council Hearth",
+      "label": "Taunka Council Hearth"
+    },
+    {
+      "id": "titan_city_taunka_le_village_the_hideworkers_provision_room",
+      "expectedLabel": "Taunka’le: The Hideworkers' Provision Room",
+      "label": "Hideworkers' Store"
+    },
+    {
+      "id": "titan_city_unu_pe_the_coastal_passage_shelter",
+      "expectedLabel": "Unu’pe: The Coastal Passage Shelter",
+      "label": "Coastal Passage Shelter"
+    },
+    {
+      "id": "titan_city_unu_pe_the_bonecraft_and_gear_store",
+      "expectedLabel": "Unu’pe: The Bonecraft and Gear Store",
+      "label": "Bonecraft Gear Store"
+    },
+    {
+      "id": "titan_city_mogu_shan_palace_and_the_vale_civic_precinct_the_gilded_foyer",
+      "expectedLabel": "Mogu’shan Palace: The Gilded Foyer",
+      "label": "The Gilded Foyer"
+    },
+    {
+      "id": "titan_city_mogu_shan_palace_and_the_vale_civic_precinct_the_crimson_assembly_hall",
+      "expectedLabel": "Mogu’shan Palace: The Crimson Assembly Hall",
+      "label": "Crimson Assembly Hall"
+    },
+    {
+      "id": "titan_city_mogu_shan_palace_and_the_vale_civic_precinct_the_imperial_guest_antechamber",
+      "expectedLabel": "Mogu’shan Palace: The Imperial Guest Antechamber",
+      "label": "Imperial Guest Antechamber"
+    },
+    {
+      "id": "titan_city_halfhill_the_halfhill_weighing_court",
+      "expectedLabel": "Halfhill: The Halfhill Weighing Court",
+      "label": "Market Weighing Court"
+    },
+    {
+      "id": "titan_city_halfhill_the_six_way_cooking_kitchen",
+      "expectedLabel": "Halfhill: The Six-Way Cooking Kitchen",
+      "label": "Six-Way Cooking Kitchen"
+    },
+    {
+      "id": "titan_city_halfhill_the_lazy_turnip_and_its_plaza",
+      "expectedLabel": "Halfhill: The Lazy Turnip and Its Plaza",
+      "label": "The Lazy Turnip"
+    },
+    {
+      "id": "titan_city_dawn_s_blossom_the_blossom_receiving_hall",
+      "expectedLabel": "Dawn’s Blossom: The Blossom Receiving Hall",
+      "label": "Blossom Receiving Hall"
+    },
+    {
+      "id": "titan_city_dawn_s_blossom_silk_dye_and_pattern_books",
+      "expectedLabel": "Dawn’s Blossom: Silk, Dye and Pattern Books",
+      "label": "Silk and Pattern Shop"
+    },
+    {
+      "id": "titan_city_dawn_s_blossom_the_stepped_trade_terrace",
+      "expectedLabel": "Dawn’s Blossom: The Stepped Trade Terrace",
+      "label": "Stepped Trade Terrace"
+    },
+    {
+      "id": "titan_city_klaxxi_vess_the_root_council_circle",
+      "expectedLabel": "Klaxxi’vess: The Root Council Circle",
+      "label": "Root Council Circle"
+    },
+    {
+      "id": "titan_city_klaxxi_vess_the_ambersmiths_commission_room",
+      "expectedLabel": "Klaxxi’vess: The Ambersmith’s Commission Room",
+      "label": "Ambersmith's Workshop"
+    },
+    {
+      "id": "titan_city_klaxxi_vess_the_ground_visitors_alcove",
+      "expectedLabel": "Klaxxi’vess: The Ground Visitors’ Alcove",
+      "label": "Ground Visitors' Alcove"
+    },
+    {
+      "id": "titan_city_shado_pan_monastery_the_masters_receiving_floor",
+      "expectedLabel": "Shado-Pan Monastery: The Master’s Receiving Floor",
+      "label": "Master's Receiving Floor"
+    },
+    {
+      "id": "titan_city_shado_pan_monastery_the_mountain_practice_floor",
+      "expectedLabel": "Shado-Pan Monastery: The Mountain Practice Floor",
+      "label": "Mountain Practice Hall"
+    },
+    {
+      "id": "titan_city_shado_pan_monastery_a_monastery_recovery_cell",
+      "expectedLabel": "Shado-Pan Monastery: A Monastery Recovery Cell",
+      "label": "Monastery Recovery Cell"
+    },
+    {
+      "id": "titan_city_binan_village_a_binan_healing_room",
+      "expectedLabel": "Binan Village: A Binan Healing Room",
+      "label": "Village Healing Room"
+    },
+    {
+      "id": "titan_city_binan_village_binan_brew_stew",
+      "expectedLabel": "Binan Village: Binan Brew & Stew",
+      "label": "Binan Brew and Stew"
+    },
+    {
+      "id": "titan_city_honeydew_village_the_honeybrew_vat_hall",
+      "expectedLabel": "Honeydew Village: The Honeybrew Vat Hall",
+      "label": "Honeybrew Vat Hall"
+    },
+    {
+      "id": "titan_city_honeydew_village_supper_behind_the_village_wall",
+      "expectedLabel": "Honeydew Village: Supper Behind the Village Wall",
+      "label": "Village Supper Room"
+    },
+    {
+      "id": "titan_city_one_keg_the_lucky_traveller",
+      "expectedLabel": "One Keg: The Lucky Traveller",
+      "label": "The Lucky Traveller"
+    },
+    {
+      "id": "titan_city_one_keg_straps_luckydos_and_mountain_gear",
+      "expectedLabel": "One Keg: Straps, Luckydos and Mountain Gear",
+      "label": "Luckydo Gear Exchange"
+    },
+    {
+      "id": "titan_city_paw_don_village_the_bridge_side_receiving_porch",
+      "expectedLabel": "Paw’don: The Bridge-Side Receiving Porch",
+      "label": "Bridge-Side Porch"
+    },
+    {
+      "id": "titan_city_paw_don_village_the_cider_scented_inn_veranda",
+      "expectedLabel": "Paw’don: The Cider-Scented Inn Veranda",
+      "label": "Cider Inn Veranda"
+    },
+    {
+      "id": "titan_city_shrine_of_seven_stars_the_emperors_step",
+      "expectedLabel": "Shrine of Seven Stars: The Emperor’s Step",
+      "label": "The Emperor's Step"
+    },
+    {
+      "id": "titan_city_shrine_of_seven_stars_the_stars_bazaar_craft_counters",
+      "expectedLabel": "Shrine of Seven Stars: The Star’s Bazaar Craft Counters",
+      "label": "Star Bazaar Workshops"
+    },
+    {
+      "id": "titan_city_shrine_of_two_moons_the_hall_of_the_crescent_moon",
+      "expectedLabel": "Shrine of Two Moons: The Hall of the Crescent Moon",
+      "label": "Hall of the Crescent Moon"
+    },
+    {
+      "id": "titan_city_shrine_of_two_moons_the_chamber_of_masters",
+      "expectedLabel": "Shrine of Two Moons: The Chamber of Masters",
+      "label": "Chamber of Masters"
+    },
+    {
+      "id": "titan_city_zouchin_village_the_elders_sheltered_room",
+      "expectedLabel": "Zouchin Village: The Elders’ Sheltered Room",
+      "label": "Elders' Sheltered Room"
+    },
+    {
+      "id": "titan_city_zouchin_village_the_north_wind_tavern_alcove",
+      "expectedLabel": "Zouchin Village: The North Wind Tavern Alcove",
+      "label": "The North Wind Tavern"
+    },
+    {
+      "id": "titan_city_suramar_city_the_nightholds_reception_chamber",
+      "expectedLabel": "Suramar City: The Nighthold’s Reception Chamber",
+      "label": "Nighthold Reception"
+    },
+    {
+      "id": "titan_city_suramar_city_the_palace_botanical_terrace",
+      "expectedLabel": "Suramar City: The Palace Botanical Terrace",
+      "label": "Palace Botanical Terrace"
+    },
+    {
+      "id": "titan_city_suramar_city_the_grand_promenade_water_gardens",
+      "expectedLabel": "Suramar City: The Grand Promenade Water Gardens",
+      "label": "Promenade Water Gardens"
+    },
+    {
+      "id": "titan_city_suramar_city_the_evermoon_bazaar",
+      "expectedLabel": "Suramar City: The Evermoon Bazaar",
+      "label": "Evermoon Bazaar"
+    },
+    {
+      "id": "titan_city_suramar_city_an_evermoon_canal_side_home",
+      "expectedLabel": "Suramar City: An Evermoon Canal-Side Home",
+      "label": "Canalside Home"
+    },
+    {
+      "id": "titan_city_suramar_city_the_evermoon_neighborhood_tavern",
+      "expectedLabel": "Suramar City: The Evermoon Neighborhood Tavern",
+      "label": "Evermoon Tavern"
+    },
+    {
+      "id": "titan_city_suramar_city_the_astravar_port_receiving_gallery",
+      "expectedLabel": "Suramar City: The Astravar Port Receiving Gallery",
+      "label": "Astravar Port Gallery"
+    },
+    {
+      "id": "titan_city_thunder_totem_the_hall_of_chieftains_shared_circle",
+      "expectedLabel": "Thunder Totem: The Hall of Chieftains' shared circle",
+      "label": "Hall of Chieftains"
+    },
+    {
+      "id": "titan_city_thunder_totem_the_upper_platform_s_trade_circle",
+      "expectedLabel": "Thunder Totem: The upper platform's trade circle",
+      "label": "Upper Trade Circle"
+    },
+    {
+      "id": "titan_city_thunder_totem_the_mountain_bluff_s_great_lift",
+      "expectedLabel": "Thunder Totem: The mountain bluff's great lift",
+      "label": "Mountain Bluff Lift"
+    },
+    {
+      "id": "titan_city_thunder_totem_the_hammer_s_cradle_guest_hearth",
+      "expectedLabel": "Thunder Totem: The Hammer's Cradle guest hearth",
+      "label": "Hammer's Cradle Hearth"
+    },
+    {
+      "id": "titan_city_black_rook_hold_an_audience_in_the_grand_hall",
+      "expectedLabel": "Black Rook Hold: An Audience in the Grand Hall",
+      "label": "The Grand Hall"
+    },
+    {
+      "id": "titan_city_black_rook_hold_the_working_chamber_of_war",
+      "expectedLabel": "Black Rook Hold: The Working Chamber of War",
+      "label": "Chamber of War"
+    },
+    {
+      "id": "titan_city_black_rook_hold_dust_in_the_fortress_library",
+      "expectedLabel": "Black Rook Hold: Dust in the Fortress Library",
+      "label": "Dusty Fortress Library"
+    },
+    {
+      "id": "titan_city_nar_thalas_the_crumbled_palaces_sheltered_audience",
+      "expectedLabel": "Nar’Thalas: The Crumbled Palace’s Sheltered Audience",
+      "label": "Crumbled Palace Audience"
+    },
+    {
+      "id": "titan_city_nar_thalas_the_hall_of_arcane_learning",
+      "expectedLabel": "Nar’Thalas: The Hall of Arcane Learning",
+      "label": "Hall of Arcane Learning"
+    },
+    {
+      "id": "titan_city_nar_thalas_the_drowned_gardens_surviving_balustrade",
+      "expectedLabel": "Nar’Thalas: The Drowned Gardens’ Surviving Balustrade",
+      "label": "Drowned Garden Balustrade"
+    },
+    {
+      "id": "titan_city_valdisdall_watchpost_the_watchtower_s_great_scaled_landing",
+      "expectedLabel": "Valdisdall Watchpost: The watchtower's great-scaled landing",
+      "label": "Watchtower Landing"
+    },
+    {
+      "id": "titan_city_valdisdall_watchpost_the_watchpost_s_mead_and_hearth_shelter",
+      "expectedLabel": "Valdisdall Watchpost: The watchpost's mead-and-hearth shelter",
+      "label": "Mead and Hearth Shelter"
+    },
+    {
+      "id": "titan_city_dazar_alor_and_zuldazar_the_golden_throne_s_public_approach",
+      "expectedLabel": "Dazar’alor: The Golden Throne's public approach",
+      "label": "Golden Throne Approach"
+    },
+    {
+      "id": "titan_city_dazar_alor_and_zuldazar_the_great_seal_s_envoy_tables",
+      "expectedLabel": "Dazar’alor: The Great Seal's envoy tables",
+      "label": "Great Seal Envoy Tables"
+    },
+    {
+      "id": "titan_city_dazar_alor_and_zuldazar_the_grand_bazaar_s_shaded_bargaining_steps",
+      "expectedLabel": "Dazar’alor: The Grand Bazaar's shaded bargaining steps",
+      "label": "Grand Bazaar Steps"
+    },
+    {
+      "id": "titan_city_dazar_alor_and_zuldazar_the_hall_of_chroniclers_consultation_table",
+      "expectedLabel": "Dazar’alor: The Hall of Chroniclers' consultation table",
+      "label": "Hall of Chroniclers"
+    },
+    {
+      "id": "titan_city_dazar_alor_and_zuldazar_a_terrace_guest_house_above_the_canopy",
+      "expectedLabel": "Dazar’alor: A terrace guest house above the canopy",
+      "label": "Canopy Guest House"
+    },
+    {
+      "id": "titan_city_undermine_cartel_reception_and_contract_counter",
+      "expectedLabel": "Undermine: Cartel reception and contract counter",
+      "label": "Cartel Contract Counter"
+    },
+    {
+      "id": "titan_city_undermine_hotel_lobby_of_spectacular_excess",
+      "expectedLabel": "Undermine: Hotel lobby of spectacular excess",
+      "label": "Palatial Hotel Lobby"
+    },
+    {
+      "id": "titan_city_undermine_an_auction_gallery_above_the_bidding_floor",
+      "expectedLabel": "Undermine: An auction gallery above the bidding floor",
+      "label": "Auction Viewing Gallery"
+    },
+    {
+      "id": "titan_city_undermine_the_invention_demonstration_floor",
+      "expectedLabel": "Undermine: The invention demonstration floor",
+      "label": "Invention Showroom"
+    },
+    {
+      "id": "titan_city_undermine_the_steam_and_street_food_junction",
+      "expectedLabel": "Undermine: The steam-and-street-food junction",
+      "label": "Steam and Street Food"
+    },
+    {
+      "id": "titan_city_bilgewater_port_on_kezan_the_port_s_brass_and_rivet_reception_hall",
+      "expectedLabel": "Bilgewater Port On Kezan: The port's brass-and-rivet reception hall",
+      "label": "Brass-and-Rivet Hall"
+    },
+    {
+      "id": "titan_city_bilgewater_port_on_kezan_the_riveted_industrial_arrival_dock",
+      "expectedLabel": "Bilgewater Port On Kezan: The riveted industrial arrival dock",
+      "label": "Industrial Arrival Dock"
+    },
+    {
+      "id": "titan_city_bilgewater_port_on_kezan_an_extravagant_port_rooftop_lounge",
+      "expectedLabel": "Bilgewater Port On Kezan: An extravagant port rooftop lounge",
+      "label": "Rooftop Port Lounge"
+    },
+    {
+      "id": "titan_dynamic_winter_veil_boughs_and_shared_feast_mountain_hearth",
+      "expectedLabel": "Winter Veil boughs and shared feast: Mountain hearth",
+      "label": "Winter Veil Mountain Feast"
+    },
+    {
+      "id": "titan_dynamic_winter_veil_boughs_and_shared_feast_human_hearth",
+      "expectedLabel": "Winter Veil boughs and shared feast: Human communal hearth",
+      "label": "Winter Veil Hearth Feast"
+    },
+    {
+      "id": "titan_dynamic_harvest_end_wicker_burden_fire",
+      "expectedLabel": "Harvest-end wicker fire",
+      "label": "Harvest Wicker Fire"
+    },
+    {
+      "id": "titan_dynamic_tastyfish_tournament_waterside",
+      "expectedLabel": "Shore fishing day",
+      "label": "Shore Fishing Day"
+    },
+    {
+      "id": "titan_dynamic_summer_bass_catch_on_the_warm_coast_jaguero",
+      "expectedLabel": "Summer Bass catch on the warm coast: Jaguero shore",
+      "label": "Summer Bass Catch"
+    },
+    {
+      "id": "titan_dynamic_summer_bass_catch_on_the_warm_coast_swamp_coast",
+      "expectedLabel": "Summer Bass catch on the warm coast: Swamp coast",
+      "label": "Summer Bass Baskets"
+    },
+    {
+      "id": "titan_dynamic_winter_squid_catch_on_the_warm_coast_jaguero",
+      "expectedLabel": "Winter Squid catch on the warm coast: Jaguero shore",
+      "label": "Winter Squid Catch"
+    },
+    {
+      "id": "titan_dynamic_winter_squid_catch_on_the_warm_coast_swamp_coast",
+      "expectedLabel": "Winter Squid catch on the warm coast: Swamp coast",
+      "label": "Winter Squid Baskets"
+    },
+    {
+      "id": "titan_dynamic_downpour_beneath_the_jungle_canopy",
+      "expectedLabel": "Downpour beneath the jungle canopy",
+      "label": "Jungle Downpour"
+    },
+    {
+      "id": "titan_dynamic_driving_maritime_squall_gilneas",
+      "expectedLabel": "Driving maritime squall: Gilnean cliffs",
+      "label": "Cliffside Squall"
+    },
+    {
+      "id": "titan_dynamic_driving_maritime_squall_kul_tiras",
+      "expectedLabel": "Driving maritime squall: Kul Tiran shore",
+      "label": "Saltwater Squall"
+    },
+    {
+      "id": "titan_dynamic_high_country_snow_whiteout",
+      "expectedLabel": "High-country snow whiteout",
+      "label": "Mountain Whiteout"
+    },
+    {
+      "id": "titan_dynamic_honeyback_bees_at_the_flower_peak",
+      "expectedLabel": "Honeyback bees at the flower peak",
+      "label": "Honeyback Flower Season"
+    },
+    {
+      "id": "titan_dynamic_oat_cutting_fields_in_the_coastal_wind",
+      "expectedLabel": "Oat-cutting fields in the coastal wind",
+      "label": "Oat Harvest"
+    },
+    {
+      "id": "titan_dynamic_winter_veil_snowdrifts_and_warming_corner",
+      "expectedLabel": "Winter Veil snowdrifts and warming corner",
+      "label": "Winter Veil Warming Corner"
+    },
+    {
+      "id": "titan_dynamic_wild_kodo_herd_passage_barrens",
+      "expectedLabel": "Wild kodo herd passage: Barrens savanna",
+      "label": "Kodo Herd Passage"
+    },
+    {
+      "id": "titan_dynamic_wild_kodo_herd_passage_mulgore",
+      "expectedLabel": "Wild kodo herd passage: Mulgore pasture",
+      "label": "Kodo Across the Pasture"
+    },
+    {
+      "id": "titan_dynamic_elder_kodo_on_an_onward_journey",
+      "expectedLabel": "Elder kodo on an onward journey",
+      "label": "The Elder Kodo's Journey"
+    },
+    {
+      "id": "titan_dynamic_sandstorm_over_the_desert_tanaris",
+      "expectedLabel": "Sandstorm over the desert: Tanaris",
+      "label": "Dune Sandstorm"
+    },
+    {
+      "id": "titan_dynamic_sandstorm_over_the_desert_silithus",
+      "expectedLabel": "Sandstorm over the desert: Silithus",
+      "label": "Desert Sandstorm"
+    },
+    {
+      "id": "titan_dynamic_sandstorm_over_the_desert_uldum",
+      "expectedLabel": "Sandstorm over the desert: Uldum",
+      "label": "Riverland Sandstorm"
+    },
+    {
+      "id": "titan_dynamic_driving_snow_through_winterspring",
+      "expectedLabel": "Driving snow through Winterspring",
+      "label": "Snow Through the Pines"
+    },
+    {
+      "id": "titan_dynamic_downpour_beneath_the_giant_canopy_feralas",
+      "expectedLabel": "Downpour beneath the giant canopy: Feralas giant forest",
+      "label": "Rain Beneath Giant Trees"
+    },
+    {
+      "id": "titan_dynamic_downpour_beneath_the_giant_canopy_ungoro",
+      "expectedLabel": "Downpour beneath the giant canopy: Un’Goro primeval jungle",
+      "label": "Primeval Jungle Downpour"
+    },
+    {
+      "id": "titan_dynamic_arcane_squall_over_azuremyst",
+      "expectedLabel": "Arcane squall over Azuremyst",
+      "label": "Arcane Squall"
+    },
+    {
+      "id": "titan_dynamic_bloodpetal_seeds_in_the_current",
+      "expectedLabel": "Bloodpetal seeds in the current",
+      "label": "Drifting Bloodpetal Seeds"
+    },
+    {
+      "id": "titan_dynamic_bloodpetal_driven_flower_proliferation",
+      "expectedLabel": "Bloodpetal-driven flower proliferation",
+      "label": "Bloodpetal Bloom"
+    },
+    {
+      "id": "titan_dynamic_northern_aurora_above_open_country_borean",
+      "expectedLabel": "Northern aurora above open country: Borean tundra",
+      "label": "Tundra Aurora"
+    },
+    {
+      "id": "titan_dynamic_northern_aurora_above_open_country_fjord",
+      "expectedLabel": "Northern aurora above open country: Howling Fjord",
+      "label": "Fjord Aurora"
+    },
+    {
+      "id": "titan_dynamic_northern_aurora_above_open_country_dragonblight",
+      "expectedLabel": "Northern aurora above open country: Dragonblight",
+      "label": "Snowplain Aurora"
+    },
+    {
+      "id": "titan_dynamic_northern_aurora_above_open_country_zuldrak",
+      "expectedLabel": "Northern aurora above open country: Zul’Drak",
+      "label": "Frostland Aurora"
+    },
+    {
+      "id": "titan_dynamic_passing_ice_along_the_frozen_sea_coast_borean",
+      "expectedLabel": "Passing ice along the Frozen Sea coast: Borean coast",
+      "label": "Drifting Coastal Ice"
+    },
+    {
+      "id": "titan_dynamic_passing_ice_along_the_frozen_sea_coast_fjord",
+      "expectedLabel": "Passing ice along the Frozen Sea coast: Fjord mouth",
+      "label": "Ice at the Fjord Mouth"
+    },
+    {
+      "id": "titan_dynamic_passing_ice_along_the_frozen_sea_coast_dragonblight",
+      "expectedLabel": "Passing ice along the Frozen Sea coast: Dragonblight coast",
+      "label": "Snowland Sea Ice"
+    },
+    {
+      "id": "titan_dynamic_driving_snow_across_the_storm_peaks",
+      "expectedLabel": "Driving snow across the Storm Peaks",
+      "label": "High-Peak Snowstorm"
+    },
+    {
+      "id": "titan_dynamic_rainburst_beneath_the_sholazar_canopy",
+      "expectedLabel": "Rainburst beneath the Sholazar canopy",
+      "label": "Canopy Rainburst"
+    },
+    {
+      "id": "titan_dynamic_low_cloud_and_a_stormheim_rain_front",
+      "expectedLabel": "Low cloud and a Stormheim rain front",
+      "label": "Low-Cloud Rain Front"
+    },
+    {
+      "id": "titan_dynamic_winter_reaching_the_lower_highmountain_pines",
+      "expectedLabel": "Winter reaching the lower Highmountain pines",
+      "label": "Winter Among the Pines"
+    },
+    {
+      "id": "titan_dynamic_highmountain_salmon_run_banks",
+      "expectedLabel": "Highmountain salmon-run banks",
+      "label": "Salmon-Run Riverbanks"
+    },
+    {
+      "id": "titan_dynamic_highmountain_eagle_nesting_heights",
+      "expectedLabel": "Highmountain eagle-nesting heights",
+      "label": "Eagle-Nesting Heights"
+    },
+    {
+      "id": "titan_dynamic_howling_fjord_reef_sea_lion_pup_shores",
+      "expectedLabel": "Howling Fjord reef sea-lion pup shores",
+      "label": "Sea-Lion Pup Shores"
+    },
+    {
+      "id": "titan_dynamic_cloud_serpent_hatching_days",
+      "expectedLabel": "Cloud-serpent hatching ledge",
+      "label": "Cloud-Serpent Hatchlings"
+    },
+    {
+      "id": "titan_dynamic_jade_forest_firefly_evenings",
+      "expectedLabel": "Jade Forest Firefly Evenings",
+      "label": "Firefly Evening"
+    },
+    {
+      "id": "titan_dynamic_giant_harvest_days",
+      "expectedLabel": "Giant Harvest Days",
+      "label": "Giant Harvest"
+    },
+    {
+      "id": "titan_dynamic_aged_kypari_sap_opening",
+      "expectedLabel": "Aged Kypari Sap Opening",
+      "label": "Kypari Sap Opening"
+    },
+    {
+      "id": "titan_dynamic_rain_swollen_krasarang_marsh",
+      "expectedLabel": "Rain-Swollen Krasarang Marsh",
+      "label": "Rain-Swollen Marsh"
+    },
+    {
+      "id": "titan_dynamic_kun_lai_windborne_snow",
+      "expectedLabel": "Kun-Lai Windborne Snow",
+      "label": "Windborne Snow"
+    },
+    {
+      "id": "titan_dynamic_thunder_island_squall_front",
+      "expectedLabel": "Thunder-Island Squall Front",
+      "label": "Storm-Island Squall"
+    },
+    {
+      "id": "titan_dynamic_windborne_vale_blossoms",
+      "expectedLabel": "Windborne Vale Blossoms",
+      "label": "Windborne Blossoms"
+    },
+    {
+      "id": "titan_dynamic_suramar_vintage_opening",
+      "expectedLabel": "Suramar vintage opening",
+      "label": "Opening the Vintage"
+    },
+    {
+      "id": "titan_dynamic_suramar_arcane_air_shimmer",
+      "expectedLabel": "Suramar Arcane Air Shimmer",
+      "label": "Arcane Air Shimmer"
+    },
+    {
+      "id": "titan_dynamic_wisp_lit_forest_evenings",
+      "expectedLabel": "Wisp-Lit Forest Evenings",
+      "label": "Wisp-Lit Evening"
+    },
+    {
+      "id": "titan_dynamic_darkmoon_tents_in_an_elwynn_meadow",
+      "expectedLabel": "Woodland travelling fair",
+      "label": "Woodland Travelling Fair"
+    },
+    {
+      "id": "titan_dynamic_darkmoon_canvas_on_mulgore_s_grassland",
+      "expectedLabel": "Pasture travelling fair",
+      "label": "Pasture Travelling Fair"
+    },
+    {
+      "id": "titan_dynamic_midsummer_fire_and_ribbon_clearing_elwynn",
+      "expectedLabel": "Midsummer fire and ribbon clearing: Elwynn clearing",
+      "label": "Midsummer Woodland Fire"
+    },
+    {
+      "id": "titan_dynamic_midsummer_fire_and_ribbon_clearing_durotar",
+      "expectedLabel": "Midsummer fire and ribbon clearing: Durotar red-rock clearing",
+      "label": "Midsummer Red-Rock Fire"
+    },
+    {
+      "id": "titan_dynamic_midsummer_fire_and_ribbon_clearing_mulgore",
+      "expectedLabel": "Midsummer fire and ribbon clearing: Mulgore pasture clearing",
+      "label": "Midsummer Pasture Fire"
+    },
+    {
+      "id": "titan_dynamic_fireworks_over_the_southern_coast",
+      "expectedLabel": "Fireworks over the southern coast",
+      "label": "Coastal Fireworks"
+    },
+    {
+      "id": "titan_dynamic_mountain_brewfest_barrel_yard",
+      "expectedLabel": "Mountain brew gathering",
+      "label": "Mountain Brew Gathering"
+    },
+    {
+      "id": "titan_dynamic_red_rock_brewfest_gathering",
+      "expectedLabel": "Red-rock brew gathering",
+      "label": "Red-Rock Brew Gathering"
+    },
+    {
+      "id": "titan_dynamic_lunar_lanterns_beneath_moonglade_s_trees",
+      "expectedLabel": "Lunar lanterns beneath Moonglade's trees",
+      "label": "Lunar Lanterns"
+    },
+    {
+      "id": "titan_dynamic_lunar_dark_blossoms_at_woodland_roots_duskwood",
+      "expectedLabel": "Lunar dark blossoms at woodland roots: Duskwood roots",
+      "label": "Dark Blossom Roots"
+    },
+    {
+      "id": "titan_dynamic_lunar_dark_blossoms_at_woodland_roots_silverpine",
+      "expectedLabel": "Lunar dark blossoms at woodland roots: Silverpine roots",
+      "label": "Lunar Woodland Blossoms"
+    },
+    {
+      "id": "titan_landmark_nordrassil_living_summit",
+      "expectedLabel": "Nordrassil: Crown above the summit waters",
+      "label": "Nordrassil's Living Crown"
+    },
+    {
+      "id": "titan_landmark_nordrassil_wounded_summit",
+      "expectedLabel": "Nordrassil: The wounded standing crown",
+      "label": "Nordrassil's Wounded Crown"
+    },
+    {
+      "id": "titan_landmark_grizzlemaw_gathering_floor",
+      "expectedLabel": "Grizzlemaw: Gathering beneath the broken crown",
+      "label": "Beneath the Broken Crown"
+    },
+    {
+      "id": "titan_landmark_vordrassil_fallen_valley",
+      "expectedLabel": "Vordrassil: Ancient timber across the valley",
+      "label": "Vordrassil's Fallen Trunk"
+    },
+    {
+      "id": "titan_landmark_ravenholdt_hidden_approach",
+      "expectedLabel": "Ravenholdt: The concealed plateau approach",
+      "label": "Hidden Plateau Approach"
+    },
+    {
+      "id": "titan_landmark_karazhan_opera",
+      "expectedLabel": "Karazhan: The opera hall’s quiet box",
+      "label": "The Opera Box"
+    },
+    {
+      "id": "titan_landmark_karazhan_library",
+      "expectedLabel": "Karazhan: The Guardian’s library",
+      "label": "The Guardian's Library"
+    },
+    {
+      "id": "titan_landmark_uldaman_map_chamber",
+      "expectedLabel": "Uldaman: The ancient map chamber",
+      "label": "Ancient Map Chamber"
+    },
+    {
+      "id": "titan_landmark_atalhakkar_water_gate",
+      "expectedLabel": "Atal’Hakkar: Outlook over the drowned temple pool",
+      "label": "Drowned Temple Outlook"
+    },
+    {
+      "id": "titan_landmark_razorfen_kraul_thorn_court",
+      "expectedLabel": "Razorfen Kraul: Audience within the living brambles",
+      "label": "Audience in Living Brambles"
+    },
+    {
+      "id": "titan_landmark_stonefield_farm_yard",
+      "expectedLabel": "Stonefield: The farmhouse gathering yard",
+      "label": "Farmhouse Gathering Yard"
+    },
+    {
+      "id": "titan_landmark_alexston_farmstead_yard",
+      "expectedLabel": "Alexston: The sheltered barn court",
+      "label": "Sheltered Barn Court"
+    },
+    {
+      "id": "titan_landmark_saldeans_farm_yard",
+      "expectedLabel": "Saldean: The farmyard visiting table",
+      "label": "Farmyard Visiting Table"
+    },
+    {
+      "id": "titan_landmark_red_rocks_burial_ground",
+      "expectedLabel": "Red Rocks: Markers beneath the vermilion stone",
+      "label": "Vermilion Stone Markers"
+    },
+    {
+      "id": "titan_landmark_dooker_wooden_history",
+      "expectedLabel": "Dooker Dome: Wooden history beneath the hozen idol",
+      "label": "History Beneath the Idol"
+    },
+    {
+      "id": "titan_landmark_dark_portal_open_approach",
+      "expectedLabel": "Dark Portal: Beneath the open gateway",
+      "label": "Beneath the Open Portal"
+    },
+    {
+      "id": "titan_landmark_dark_portal_residual_rift",
+      "expectedLabel": "Dark Portal: The rift among broken stone",
+      "label": "Rift Among Broken Stone"
+    },
+    {
+      "id": "titan_landmark_blackrock_chain_landing",
+      "expectedLabel": "Blackrock Mountain: Above the molten heart",
+      "label": "Above the Molten Heart"
+    },
+    {
+      "id": "titan_landmark_sunwell_ceremonial_approach",
+      "expectedLabel": "Sunwell Plateau: The gilded approach",
+      "label": "Sunwell's Gilded Approach"
+    },
+    {
+      "id": "titan_landmark_monastery_athenaeum",
+      "expectedLabel": "Maplechill Monastery: The Athenaeum",
+      "label": "The Athenaeum"
+    },
+    {
+      "id": "titan_landmark_monastery_cathedral_court",
+      "expectedLabel": "Maplechill Monastery: The cathedral fountain court",
+      "label": "Cathedral Fountain Court"
+    },
+    {
+      "id": "titan_landmark_teldrassil_over_the_sea",
+      "expectedLabel": "Darkshore: Teldrassil above the northern sea",
+      "label": "Teldrassil Across the Sea"
+    },
+    {
+      "id": "titan_landmark_teldrassil_burned_sea_monument",
+      "expectedLabel": "Darkshore: The burned crown across the sea",
+      "label": "Burned Crown Across the Sea"
+    },
+    {
+      "id": "titan_landmark_springtail_giant_carrot",
+      "expectedLabel": "Springtail Warren: A carrot bigger than the table",
+      "label": "The Giant Carrot"
+    },
+    {
+      "id": "titan_landmark_boralus_cat_parlor",
+      "expectedLabel": "Boralus: The cat-filled parlor",
+      "label": "Cat-Filled Parlor"
+    },
+    {
+      "id": "titan_landmark_teldrassil_charred_bough_margin",
+      "expectedLabel": "Teldrassil: The charred bough margin",
+      "label": "Charred Bough Margin"
+    },
+    {
+      "id": "titan_landmark_shaladrassil_living_vale",
+      "expectedLabel": "Shaladrassil: The living crown above the vale",
+      "label": "Shaladrassil's Living Crown"
+    },
+    {
+      "id": "titan_landmark_shaladrassil_nightmare_skyline",
+      "expectedLabel": "Shaladrassil: The crimson Nightmare skyline",
+      "label": "Nightmare Crimson Crown"
+    },
+    {
+      "id": "titan_landmark_shaladrassil_scarred_skyline",
+      "expectedLabel": "Shaladrassil: The scarred giant after the Nightmare",
+      "label": "Shaladrassil's Scarred Crown"
+    },
+    {
+      "id": "titan_landmark_thasalah_golden_crown",
+      "expectedLabel": "Thas’alah: The golden mother-tree grove",
+      "label": "Golden Mother-Tree Grove"
+    },
+    {
+      "id": "titan_landmark_thasalah_withered_roots",
+      "expectedLabel": "Thas’alah: The mother tree’s withered roots",
+      "label": "Withered Mother-Tree Roots"
+    },
+    {
+      "id": "titan_landmark_seradane_mountain_crown",
+      "expectedLabel": "Seradane: The Great Tree’s mountain crown",
+      "label": "The Great Tree's Crown"
+    },
+    {
+      "id": "titan_landmark_dream_bough_lake_crown",
+      "expectedLabel": "Dream Bough: The island crown across Jademir Lake",
+      "label": "Dream Bough Across the Lake"
+    },
+    {
+      "id": "titan_landmark_twilight_grove_green_crown",
+      "expectedLabel": "Twilight Grove: A green crown within the dark woods",
+      "label": "Green Crown, Dark Woods"
+    },
+    {
+      "id": "titan_landmark_taldoren_root_hollow",
+      "expectedLabel": "Tal’doren: The ancient root hollow",
+      "label": "Ancient Root Hollow"
+    },
+    {
+      "id": "titan_landmark_nordrassil_legion_fire_summit",
+      "expectedLabel": "Nordrassil: Green fire after the Legion catastrophe",
+      "label": "Nordrassil's Infernal Fire"
+    },
+    {
+      "id": "titan_landmark_twin_colossals_summit",
+      "expectedLabel": "Twin Colossals: A high ledge over the rainforest",
+      "label": "High Rainforest Ledge"
+    },
+    {
+      "id": "titan_landmark_twin_colossals_root_shelf",
+      "expectedLabel": "Twin Colossals: Between the two mountain walls",
+      "label": "Between the Colossals"
+    },
+    {
+      "id": "titan_landmark_scarab_wall_sealed",
+      "expectedLabel": "Scarab Wall: The sealed insectile gate",
+      "label": "Sealed Scarab Gate"
+    },
+    {
+      "id": "titan_landmark_scarab_wall_open",
+      "expectedLabel": "Scarab Wall: An empire beyond the open gate",
+      "label": "Beyond the Open Scarab Gate"
+    },
+    {
+      "id": "titan_landmark_scarab_dais_gong",
+      "expectedLabel": "Scarab Dais: The silent bronze gong",
+      "label": "The Silent Bronze Gong"
+    },
+    {
+      "id": "titan_landmark_grim_batol_lifebinder_scars",
+      "expectedLabel": "Grim Batol: The Lifebinder’s empty chain chamber",
+      "label": "The Lifebinder's Chains"
+    },
+    {
+      "id": "titan_landmark_tabetha_marsh_garden",
+      "expectedLabel": "Tabetha’s Farm: Spellwork between the garden rows",
+      "label": "Spellwork in the Garden"
+    },
+    {
+      "id": "titan_landmark_shindigger_brew_hollow",
+      "expectedLabel": "Shindigger’s Camp: Kegs at the end of the faint path",
+      "label": "Kegs at the Path's End"
+    },
+    {
+      "id": "titan_landmark_dathremar_founder_pillar",
+      "expectedLabel": "Sunstrider Isle: Dath’Remar’s pillar beneath golden leaves",
+      "label": "Dath'Remar's Pillar"
+    },
+    {
+      "id": "titan_landmark_sunstrider_strait_bridge",
+      "expectedLabel": "Sunstrider crossing: Golden trees on both sides of the strait",
+      "label": "Golden Strait Crossing"
+    },
+    {
+      "id": "titan_landmark_stillwhisper_pond_study",
+      "expectedLabel": "Stillwhisper Pond: Study beside the golden water",
+      "label": "Study by the Golden Pond"
+    },
+    {
+      "id": "titan_landmark_karazhan_inverted_library",
+      "expectedLabel": "Karazhan: The library on the wrong side of gravity",
+      "label": "The Upside-Down Library"
+    },
+    {
+      "id": "titan_landmark_karazhan_netherspace_margin",
+      "expectedLabel": "Karazhan: The last tower stones before Netherspace",
+      "label": "Netherspace Threshold"
+    },
+    {
+      "id": "titan_landmark_uldaman_dormant_discs",
+      "expectedLabel": "Uldaman: The platinum records in the deep vault",
+      "label": "Platinum Records Vault"
+    },
+    {
+      "id": "titan_landmark_ironhorn_practice_forge",
+      "expectedLabel": "Ironhorn Enclave: Little plates at the apprentice forge",
+      "label": "Apprentice Forge"
+    },
+    {
+      "id": "titan_landmark_prepfoot_disaster_pantry",
+      "expectedLabel": "Prepfoot Compound: The pantry waiting for the ocean",
+      "label": "Pantry for the Ocean"
+    },
+    {
+      "id": "titan_landmark_candle_rock_earwax_monument",
+      "expectedLabel": "Candle Rock: The biggest candle in the cave",
+      "label": "The Biggest Candle"
+    },
+    {
+      "id": "titan_landmark_gol_inath_crimson_hollow",
+      "expectedLabel": "Gol Inath: The hollow above the crimson wood",
+      "label": "Hollow Above Crimson Woods"
+    },
+    {
+      "id": "titan_landmark_gol_inath_ash_footprint",
+      "expectedLabel": "Gol Inath: Where the hollow tree burned",
+      "label": "The Burned Hollow Tree"
+    },
+    {
+      "id": "titan_landmark_dreamers_scroll_house",
+      "expectedLabel": "Dreamer’s Pavilion: The house of unopened scrolls",
+      "label": "House of Unopened Scrolls"
+    },
+    {
+      "id": "titan_landmark_hope_bridge_bell",
+      "expectedLabel": "Gong of Hope: Beneath the old bell",
+      "label": "Beneath the Old Bell"
+    },
+    {
+      "id": "titan_landmark_tideview_wishing_well",
+      "expectedLabel": "Tideview Thicket: Coins on a high bluff",
+      "label": "Coins on the High Bluff"
+    },
+    {
+      "id": "titan_landmark_lions_pride_common_room",
+      "expectedLabel": "Goldshire: Lion’s Pride common room",
+      "label": "The Lion's Pride"
+    },
+    {
+      "id": "titan_landmark_lions_pride_guest_room",
+      "expectedLabel": "Goldshire: Upstairs at the Lion’s Pride",
+      "label": "Upstairs at the Lion's Pride"
+    },
+    {
+      "id": "titan_landmark_goldshire_forge_green",
+      "expectedLabel": "Goldshire: The crossroads forge green",
+      "label": "Crossroads Forge Green"
+    },
+    {
+      "id": "titan_landmark_storm_altar_receiving_ring",
+      "expectedLabel": "Altar of Storms: Outside the unlit stone ring",
+      "label": "Unlit Storm Altar"
+    },
+    {
+      "id": "titan_landmark_twilight_altar_outer_dais",
+      "expectedLabel": "Altar of Twilight: The silent outer dais",
+      "label": "Silent Twilight Dais"
+    },
+    {
+      "id": "titan_landmark_maldraz_tainted_roots",
+      "expectedLabel": "Maldraz: The tainted root margin",
+      "label": "Tainted Root Margin"
+    },
+    {
+      "id": "titan_landmark_seradane_skull_ring",
+      "expectedLabel": "Seradane: The skull inside the carved faces",
+      "label": "Skull Among Carved Faces"
+    },
+    {
+      "id": "titan_landmark_beezils_wreck",
+      "expectedLabel": "Dustwallow: Canvas ribs above green water",
+      "label": "Canvas Ribs, Green Water"
+    },
+    {
+      "id": "titan_landmark_masters_wine_cellar",
+      "expectedLabel": "Karazhan: Wine beneath the village",
+      "label": "Wine Beneath the Village"
+    },
+    {
+      "id": "titan_landmark_grizzlemaw_wall_shelf",
+      "expectedLabel": "Grizzlemaw: The lower dwelling shelf",
+      "label": "Lower Dwelling Shelf"
+    },
+    {
+      "id": "titan_landmark_grizzlemaw_root_room",
+      "expectedLabel": "Grizzlemaw: The room within the roots",
+      "label": "The Room Within the Roots"
+    },
+    {
+      "id": "titan_landmark_uldaman_excavation_threshold",
+      "expectedLabel": "Uldaman: The excavated threshold",
+      "label": "Excavated Threshold"
+    },
+    {
+      "id": "titan_landmark_stonedark_lifting_hearth",
+      "expectedLabel": "Stonedark: A hearth built for heavy lifting",
+      "label": "A Heavy-Lifting Hearth"
+    },
+    {
+      "id": "titan_landmark_stonedark_snail_race",
+      "expectedLabel": "Stonedark: The very slow race",
+      "label": "The Very Slow Race"
+    },
+    {
+      "id": "titan_landmark_jani_zocalo_castoffs",
+      "expectedLabel": "Zocalo: The treasures nobody else wanted",
+      "label": "Nobody Else's Treasures"
+    },
+    {
+      "id": "titan_landmark_swamplight_peculiar_cookhouse",
+      "expectedLabel": "Swamplight: A manor with eyes on the shelf",
+      "label": "Eyes on the Manor Shelf"
+    },
+    {
+      "id": "titan_landmark_karazhan_gamesman_board",
+      "expectedLabel": "Karazhan: The Gamesman’s Hall",
+      "label": "The Gamesman's Hall"
+    },
+    {
+      "id": "titan_landmark_oneiros_rooted_terrace",
+      "expectedLabel": "Oneiros: The rooted terrace",
+      "label": "Rooted Terrace"
+    },
+    {
+      "id": "titan_landmark_riplash_shrine_scales",
+      "expectedLabel": "Riplash: The Shrine of Scales",
+      "label": "Shrine of Scales"
+    },
+    {
+      "id": "titan_landmark_alther_practice_locks",
+      "expectedLabel": "Alther’s Mill: Cheap locks behind the mill",
+      "label": "Cheap Locks Behind the Mill"
+    },
+    {
+      "id": "titan_landmark_nesingwary_fruit_still",
+      "expectedLabel": "Nesingwary: Fruit and formidable hardware",
+      "label": "Fruit and the Great Still"
+    },
+    {
+      "id": "titan_landmark_soggy_eroded_bust",
+      "expectedLabel": "Soggy’s Gamble: The face the sea wore smooth",
+      "label": "The Sea-Worn Face"
+    },
+    {
+      "id": "titan_landmark_silvermyst_impaled_home",
+      "expectedLabel": "Silvermyst: Crystal through a fishing house",
+      "label": "Crystal Through the Roof"
+    },
+    {
+      "id": "titan_landmark_cryo_core_care_cases",
+      "expectedLabel": "The Cryo-Core: Care cases among the ribs",
+      "label": "Care Cases Among the Ribs"
+    },
+    {
+      "id": "titan_landmark_ethel_rethor_closed_door",
+      "expectedLabel": "Ethel Rethor: A door above drowned stone",
+      "label": "Door Above Drowned Stone"
+    },
+    {
+      "id": "titan_landmark_thoradin_wall_passage",
+      "expectedLabel": "Thoradin’s Wall: Beneath the ancient passage",
+      "label": "Beneath the Ancient Wall"
+    },
+    {
+      "id": "titan_landmark_ring_of_law_gallery",
+      "expectedLabel": "Blackrock Depths: The Ring of Law gallery",
+      "label": "Ring of Law Gallery"
+    },
+    {
+      "id": "titan_landmark_wailing_skull_entrance",
+      "expectedLabel": "Wailing Caverns: The skull above the oasis",
+      "label": "Skull Above the Oasis"
+    },
+    {
+      "id": "titan_landmark_galakrond_winter_bones",
+      "expectedLabel": "Galakrond’s Rest: Winter beneath the giant’s jaw",
+      "label": "Winter Beneath the Giant's Jaw"
+    },
+    {
+      "id": "titan_community_goblin_repair_counter",
+      "expectedLabel": "Goblin repair counter",
+      "label": "Goblin Repair Counter"
+    },
+    {
+      "id": "titan_community_shadowmoon_star_table",
+      "expectedLabel": "Shadowmoon star-reading worktable",
+      "label": "Star-Reading Worktable"
+    },
+    {
+      "id": "titan_community_nerubian_silk_gallery",
+      "expectedLabel": "Nerubian silk workshop gallery",
+      "label": "Silk Workshop Gallery"
+    },
+    {
+      "id": "titan_community_pandaren_kitchen",
+      "expectedLabel": "Pandaren shared kitchen",
+      "label": "Shared Pandaren Kitchen"
+    },
+    {
+      "id": "titan_community_murloc_catch_common",
+      "expectedLabel": "Murloc shore-catch common",
+      "label": "Shore-Catch Gathering"
+    },
+    {
+      "id": "titan_community_quilboar_thorn_yard",
+      "expectedLabel": "Quilboar thornbound warband yard",
+      "label": "Thornbound Warband Yard"
+    },
+    {
+      "id": "titan_community_candle_shrine",
+      "expectedLabel": "Candle shrine alcove",
+      "label": "Candle Shrine"
+    },
+    {
+      "id": "titan_community_monkey_king_shelter",
+      "expectedLabel": "Monkey King's shiny shelter",
+      "label": "Monkey King's Shiny Shelter"
+    },
+    {
+      "id": "titan_community_light_hospice",
+      "expectedLabel": "Light hospice receiving room",
+      "label": "Light Hospice"
+    },
+    {
+      "id": "titan_community_hakkar_inner_altar",
+      "expectedLabel": "Soulflayer devotional chamber",
+      "label": "Soulflayer Chamber"
+    },
+    {
+      "id": "titan_community_scarlet_inner_chapel",
+      "expectedLabel": "Crimson devotional chapel",
+      "label": "Crimson Chapel"
+    },
+    {
+      "id": "titan_community_warlock_exchange_threshold",
+      "expectedLabel": "Warlock knowledge-exchange threshold",
+      "label": "Warlock Knowledge Exchange"
+    },
+    {
+      "id": "titan_community_shadow_balance_chapel",
+      "expectedLabel": "Forgotten Shadow reflection chapel",
+      "label": "Forgotten Shadow Chapel"
+    },
+    {
+      "id": "titan_community_torga_story_shelter",
+      "expectedLabel": "Torga story-keepers' shelter",
+      "label": "Torga's Story Shelter"
+    },
+    {
+      "id": "titan_community_anzu_shaded_shrine",
+      "expectedLabel": "Raven's shaded shrine",
+      "label": "Raven's Shaded Shrine"
+    },
+    {
+      "id": "titan_community_rukhmar_prayer_disc",
+      "expectedLabel": "Rukhmar prayer-disc shelter",
+      "label": "Rukhmar Prayer Shelter"
+    },
+    {
+      "id": "titan_community_four_teachings_room",
+      "expectedLabel": "Four Celestials teaching room",
+      "label": "Four Celestials Classroom"
+    },
+    {
+      "id": "titan_community_twin_bears_hearth",
+      "expectedLabel": "Twin Bears council hearth",
+      "label": "Twin Bears Council Hearth"
+    },
+    {
+      "id": "titan_community_earth_mother_lodge",
+      "expectedLabel": "Earth Mother's teaching lodge",
+      "label": "Earth Mother's Teaching Lodge"
+    },
+    {
+      "id": "titan_community_bronze_hourglass_study",
+      "expectedLabel": "Bronze hourglass study",
+      "label": "Bronze Hourglass Study"
+    },
+    {
+      "id": "titan_community_sethraliss_receiving_shelter",
+      "expectedLabel": "Protective Coil receiving shelter",
+      "label": "Protective Coil Shelter"
+    },
+    {
+      "id": "titan_community_oracle_shiny_shelter",
+      "expectedLabel": "Oracle shiny-offering shelter",
+      "label": "Oracle Offering Shelter"
+    },
+    {
+      "id": "titan_community_old_ways_seed_shelter",
+      "expectedLabel": "Old Ways seed-and-offering shelter",
+      "label": "Old Ways Offering Shelter"
+    },
+    {
+      "id": "titan_community_balor_offering_ledge",
+      "expectedLabel": "Balor: wind-and-tide offering ledge",
+      "label": "Wind-and-Tide Offering Ledge"
+    },
+    {
+      "id": "titan_community_pearlfin_listening_pool",
+      "expectedLabel": "Pearlfin: circular listening pool",
+      "label": "Circular Listening Pool"
+    },
+    {
+      "id": "titan_community_grookin_guardian_entrance",
+      "expectedLabel": "Grookin: green stone guardian threshold",
+      "label": "Green Guardian Threshold"
+    },
+    {
+      "id": "titan_community_astranaar_prayer_pavilion",
+      "expectedLabel": "Astranaar: island prayer pavilion",
+      "label": "Island Prayer Pavilion"
+    },
+    {
+      "id": "titan_community_hearthglen_chapel",
+      "expectedLabel": "Hearthglen: stronghold chapel",
+      "label": "Stronghold Chapel"
+    },
+    {
+      "id": "titan_community_dawn_first_burden",
+      "expectedLabel": "Dawn’s Blossom: First Burden pond shrine",
+      "label": "First Burden Pond Shrine"
+    },
+    {
+      "id": "titan_community_niuzao_fifth_burden",
+      "expectedLabel": "Niuzao: bell and Fifth Burden terrace",
+      "label": "Fifth Burden Bell Terrace"
+    },
+    {
+      "id": "titan_community_njord_tayutka_altar",
+      "expectedLabel": "Njord’s Breath Bay: Tayutka island altar",
+      "label": "Tayutka Island Altar"
+    },
+    {
+      "id": "titan_community_kamagua_silver_eagle",
+      "expectedLabel": "Kamagua: silver-eagle spear shelter",
+      "label": "Silver-Eagle Spear Shelter"
+    },
+    {
+      "id": "titan_community_hrothgar_stone_elders",
+      "expectedLabel": "Hrothgar island: stone-elder circle",
+      "label": "Stone-Elder Circle"
+    },
+    {
+      "id": "titan_community_red_earth_origins",
+      "expectedLabel": "Red Desert: stone-origins survey shelter",
+      "label": "Stone-Origins Survey Shelter"
+    },
+    {
+      "id": "titan_community_stormwright_life_shelf",
+      "expectedLabel": "Stormwright: life-offering shelf",
+      "label": "Life-Offering Shelf"
+    },
+    {
+      "id": "titan_community_alteraci_route_hearth",
+      "expectedLabel": "Alteraci route-rescue hearth",
+      "label": "Mountain Rescue Hearth"
+    },
+    {
+      "id": "titan_community_dalaranian_commissions",
+      "expectedLabel": "Dalaranian enchantment commissions counter",
+      "label": "Enchantment Counter"
+    },
+    {
+      "id": "titan_community_pirate_shares_room",
+      "expectedLabel": "Buccaneer prize-and-shares room",
+      "label": "Prize-and-Shares Room"
+    },
+    {
+      "id": "titan_community_dwarven_ale_reckoning",
+      "expectedLabel": "Dwarven ale-and-reckoning room",
+      "label": "Ale and Reckoning"
+    },
+    {
+      "id": "titan_community_gnomish_prototypes",
+      "expectedLabel": "Gnomish prototype commissions shop",
+      "label": "Prototype Commissions Shop"
+    },
+    {
+      "id": "titan_community_mechagon_reclamation",
+      "expectedLabel": "Mechagonian reclamation bay",
+      "label": "Reclamation Bay"
+    },
+    {
+      "id": "titan_community_drogbar_stonecraft",
+      "expectedLabel": "Drogbar stonecraft and sounding shelf",
+      "label": "Stonecraft Sounding Shelf"
+    },
+    {
+      "id": "titan_community_laughing_skull_masks",
+      "expectedLabel": "Laughing Skull mask-work common",
+      "label": "Mask-Work Gathering"
+    },
+    {
+      "id": "titan_community_burning_blade_swordcraft",
+      "expectedLabel": "Burning Blade swordcraft room",
+      "label": "Swordcraft Room"
+    },
+    {
+      "id": "titan_community_grummle_pack_exchange",
+      "expectedLabel": "Grummle pack-and-luckydo exchange",
+      "label": "Pack-and-Luckydo Exchange"
+    },
+    {
+      "id": "titan_community_mogu_ironweight",
+      "expectedLabel": "Mogu ironweight armorer",
+      "label": "Ironweight Armorer"
+    },
+    {
+      "id": "titan_community_draenei_crystal_repair",
+      "expectedLabel": "Draenei crystal repair atelier",
+      "label": "Crystal Repair Atelier"
+    },
+    {
+      "id": "titan_community_arakkoa_scroll_room",
+      "expectedLabel": "Arakkoa feather-and-scroll receiving room",
+      "label": "Feather and Scroll Room"
+    },
+    {
+      "id": "titan_community_vulpera_patchwork",
+      "expectedLabel": "Vol’dunai patchwork caravan common",
+      "label": "Patchwork Caravan Common"
+    },
+    {
+      "id": "titan_community_nerubian_argument",
+      "expectedLabel": "Nerubian argument gallery",
+      "label": "Silken Argument Gallery"
+    },
+    {
+      "id": "titan_community_troll_carving_common",
+      "expectedLabel": "Troll face-carving common",
+      "label": "Face-Carving Workshop"
+    },
+    {
+      "id": "titan_community_troll_herb_room",
+      "expectedLabel": "Troll herbkeeper’s receiving room",
+      "label": "Herbkeeper's Room"
+    },
+    {
+      "id": "titan_community_kaldorei_bowcraft",
+      "expectedLabel": "Kaldorei bow-and-glaive craft room",
+      "label": "Bow-and-Glaive Workshop"
+    },
+    {
+      "id": "titan_community_thalassian_sunthread",
+      "expectedLabel": "Thalassian sunthread atelier",
+      "label": "Sunthread Atelier"
+    },
+    {
+      "id": "titan_community_tauren_story_posts",
+      "expectedLabel": "Tauren painted-story lodge",
+      "label": "Painted-Story Lodge"
+    },
+    {
+      "id": "titan_community_tuskarr_soup_hearth",
+      "expectedLabel": "Tuskarr shared soup hearth",
+      "label": "Shared Soup Hearth"
+    },
+    {
+      "id": "titan_community_tortollan_routes",
+      "expectedLabel": "Tortollan scroll-and-route exchange",
+      "label": "Scroll-and-Route Exchange"
+    },
+    {
+      "id": "titan_community_mantid_ambercraft",
+      "expectedLabel": "Mantid amber craft room",
+      "label": "Amber Craft Room"
+    },
+    {
+      "id": "titan_community_forsaken_second_life",
+      "expectedLabel": "Forsaken second-life common room",
+      "label": "Second-Life Common Room"
+    },
+    {
+      "id": "titan_community_sayaadi_guest_salon",
+      "expectedLabel": "Sayaadi guest salon",
+      "label": "Sayaadi Guest Salon"
+    },
+    {
+      "id": "titan_community_nathrezim_record_receiving",
+      "expectedLabel": "Nathrezim sealed-record receiving room",
+      "label": "Sealed-Record Chamber"
+    },
+    {
+      "id": "titan_community_warsong_drum_room",
+      "expectedLabel": "Warsong drum-and-muster shelter",
+      "label": "Drum-and-Muster Shelter"
+    },
+    {
+      "id": "titan_community_furbolg_honey_herbs",
+      "expectedLabel": "Furbolg honey-and-herb room",
+      "label": "Honey-and-Herb Room"
+    },
+    {
+      "id": "titan_community_lost_one_barter",
+      "expectedLabel": "Lost One shard-and-hide barter shelter",
+      "label": "Shard-and-Hide Barter"
+    },
+    {
+      "id": "titan_community_tide_voyage_chapel",
+      "expectedLabel": "Tidemother voyage chapel",
+      "label": "Tidemother Voyage Chapel"
+    },
+    {
+      "id": "titan_community_arcane_ordered_study",
+      "expectedLabel": "Ordered Arcane study room",
+      "label": "Ordered Arcane Study"
+    },
+    {
+      "id": "titan_community_death_rune_engraving",
+      "expectedLabel": "Death-Lord rune-engraving chamber",
+      "label": "Death-Lord Rune Chamber"
+    },
+    {
+      "id": "titan_community_legion_submission",
+      "expectedLabel": "Dark Titan devotional chamber",
+      "label": "Dark Titan Chapel"
+    },
+    {
+      "id": "titan_community_elune_receiving",
+      "expectedLabel": "Elune sanctuary receiving room",
+      "label": "Elune Sanctuary"
+    },
+    {
+      "id": "titan_community_profit_exchange",
+      "expectedLabel": "Fortunist profit exchange",
+      "label": "Fortunist Profit Exchange"
+    },
+    {
+      "id": "titan_community_cthun_aniconic_rings",
+      "expectedLabel": "Aniconic witness-ring chamber",
+      "label": "Aniconic Witness Ring"
+    },
+    {
+      "id": "titan_community_ghuun_offering",
+      "expectedLabel": "Blood-and-rot preparation chamber",
+      "label": "Blood-and-Rot Chamber"
+    },
+    {
+      "id": "titan_community_stone_elder_carving",
+      "expectedLabel": "Stone-Elder memorial carving room",
+      "label": "Stone-Elder Memorials"
+    },
+    {
+      "id": "titan_community_masonic_common_work",
+      "expectedLabel": "Masonic common-work lodge",
+      "label": "Common-Work Lodge"
+    },
+    {
+      "id": "titan_community_void_disciplined_study",
+      "expectedLabel": "Disciplined Shadow study room",
+      "label": "Disciplined Shadow Study"
+    },
+    {
+      "id": "titan_community_thros_preparation",
+      "expectedLabel": "Throsi bone-and-willow preparation room",
+      "label": "Bone-and-Willow Chamber"
+    },
+    {
+      "id": "titan_community_osul_fire_tending",
+      "expectedLabel": "Osul: horn-post fire-tending court",
+      "label": "Horn-Post Fire Court"
+    },
+    {
+      "id": "titan_community_thok_rib_offerings",
+      "expectedLabel": "Thok: claw-mark offering shelf",
+      "label": "Claw-Mark Offering Shelf"
+    },
+    {
+      "id": "titan_community_zulkunda_mask_bay",
+      "expectedLabel": "Zul’Kunda: devotional mask receiving bay",
+      "label": "Devotional Mask Gallery"
+    },
+    {
+      "id": "titan_community_rashi_oasis_vows",
+      "expectedLabel": "Rashi: oasis vow court",
+      "label": "Oasis Vow Court"
+    },
+    {
+      "id": "titan_community_shatterspear_moonmask",
+      "expectedLabel": "Shatterspear: waterfall moon-mask alcove",
+      "label": "Waterfall Moon-Mask Alcove"
+    },
+    {
+      "id": "titan_oddity_cragpool_waterwheel",
+      "expectedLabel": "Cragpool Lake: Above the great waterwheel",
+      "label": "Above the Great Waterwheel"
+    },
+    {
+      "id": "titan_oddity_windshear_shredder",
+      "expectedLabel": "Windshear: The oversize demonstration yard",
+      "label": "Oversize Demonstration Yard"
+    },
+    {
+      "id": "titan_oddity_mulgore_mine_store",
+      "expectedLabel": "Mulgore mine: Provisions and the pay window",
+      "label": "Provisions and the Pay Window"
+    },
+    {
+      "id": "titan_oddity_swindlegrin_blasting_yard",
+      "expectedLabel": "Swindlegrin’s Dig: Bars beside the blasting stock",
+      "label": "Iron Bars and Blasting Stock"
+    },
+    {
+      "id": "titan_oddity_remtravel_stone_faces",
+      "expectedLabel": "Remtravel’s Excavation: Faces in the stone",
+      "label": "Faces in the Stone"
+    },
+    {
+      "id": "titan_oddity_dustwind_field_table",
+      "expectedLabel": "Dustwind Dig: The disputed little find",
+      "label": "The Disputed Little Find"
+    },
+    {
+      "id": "titan_oddity_ivald_giant_hand",
+      "expectedLabel": "Ivald’s Ruin: The buried giant’s hand",
+      "label": "The Buried Giant's Hand"
+    },
+    {
+      "id": "titan_oddity_satyrnaar_marble_tents",
+      "expectedLabel": "Satyrnaar: Tents between the old marble walls",
+      "label": "Tents Among Marble Ruins"
+    },
+    {
+      "id": "titan_oddity_jadefire_crooked_yard",
+      "expectedLabel": "Jadefire Run: The crooked assembly yard",
+      "label": "Crooked Assembly Yard"
+    },
+    {
+      "id": "titan_oddity_sargeron_broken_moon",
+      "expectedLabel": "Sargeron: The broken moon precinct",
+      "label": "Broken Moon Precinct"
+    },
+    {
+      "id": "titan_oddity_bathran_herb_ground",
+      "expectedLabel": "Bathran’s Haunt: Hair among the fallen columns",
+      "label": "Hair Among Fallen Columns"
+    },
+    {
+      "id": "titan_oddity_agamagor_bramble_threshold",
+      "expectedLabel": "Agama’gor: The barred bramble threshold",
+      "label": "Barred Bramble Threshold"
+    },
+    {
+      "id": "titan_oddity_razormane_thorn_watch",
+      "expectedLabel": "Razormane Grounds: The canyon’s thorn watch",
+      "label": "Canyon Thorn Watch"
+    },
+    {
+      "id": "titan_oddity_woodpaw_map_common",
+      "expectedLabel": "Woodpaw Hills: The crate that serves as a map table",
+      "label": "Crate-Top Map Table"
+    },
+    {
+      "id": "titan_oddity_stonesplinter_burrow",
+      "expectedLabel": "Stonesplinter Valley: The split-rock burrow",
+      "label": "Split-Rock Burrow"
+    },
+    {
+      "id": "titan_oddity_winterfall_brew_shelter",
+      "expectedLabel": "Winterfall: The runner’s sheltered delivery corner",
+      "label": "Runner's Delivery Corner"
+    },
+    {
+      "id": "titan_oddity_bristlelimb_cage_patch",
+      "expectedLabel": "Bristlelimb Village: The empty cage enclosure",
+      "label": "Empty Cage Enclosure"
+    },
+    {
+      "id": "titan_oddity_dunemaul_chitin_cookyard",
+      "expectedLabel": "Dunemaul: Chitin beneath the cookyard shade",
+      "label": "Chitin in the Cookyard"
+    },
+    {
+      "id": "titan_oddity_agamand_ancestral_crypt",
+      "expectedLabel": "Agamand: The ancestral burial bays",
+      "label": "Ancestral Burial Bays"
+    },
+    {
+      "id": "titan_oddity_deathknell_stitching_room",
+      "expectedLabel": "Deathknell: The twine and embalming room",
+      "label": "Twine and Embalming"
+    },
+    {
+      "id": "titan_oddity_baradin_ration_gallery",
+      "expectedLabel": "Baradin Hold: The ration gallery below the locks",
+      "label": "Rations Below the Locks"
+    },
+    {
+      "id": "titan_oddity_forgotten_hill_mausoleum",
+      "expectedLabel": "Forgotten Hill: Graves above the sea",
+      "label": "Graves Above the Sea"
+    },
+    {
+      "id": "titan_oddity_barrowknoll_gravebloom",
+      "expectedLabel": "Barrowknoll: Gravebloom at the caretaker’s porch",
+      "label": "Gravebloom Porch"
+    },
+    {
+      "id": "titan_oddity_lonely_tower_watchroom",
+      "expectedLabel": "Lonely Tower: Above Eastvale’s greatoaks",
+      "label": "Above the Greatoaks"
+    },
+    {
+      "id": "titan_oddity_banethil_rooted_junction",
+      "expectedLabel": "Ban’ethil: The chest at the rooted crossroads",
+      "label": "Chest at the Root Crossroads"
+    },
+    {
+      "id": "titan_oddity_dordanil_resting_cells",
+      "expectedLabel": "Dor’Danil: The quiet inner resting cells",
+      "label": "Quiet Resting Cells"
+    },
+    {
+      "id": "titan_oddity_cliffspring_mushroom_shelf",
+      "expectedLabel": "Cliffspring Falls: Mushrooms behind the water",
+      "label": "Mushrooms Behind the Falls"
+    },
+    {
+      "id": "titan_oddity_melthandris_hidden_shrine",
+      "expectedLabel": "Howling Vale: The shrine beyond the narrow cave",
+      "label": "Shrine Beyond the Cave"
+    },
+    {
+      "id": "titan_oddity_mathystra_lost_stair",
+      "expectedLabel": "Mathystra: The stair beneath the old gateway",
+      "label": "Stair Beneath the Old Gate"
+    },
+    {
+      "id": "titan_oddity_ordilaran_heartswood",
+      "expectedLabel": "Ordil’aran: Heartswood behind the fallen wall",
+      "label": "Heartswood Behind the Wall"
+    },
+    {
+      "id": "titan_oddity_stardust_silver_shrubs",
+      "expectedLabel": "Stardust: Silver dust inside the old holy walls",
+      "label": "Silver Dust in Holy Ruins"
+    },
+    {
+      "id": "titan_oddity_shadowbreak_purple_caps",
+      "expectedLabel": "Shadowbreak Ravine: Beneath the giant purple caps",
+      "label": "Beneath Giant Purple Caps"
+    },
+    {
+      "id": "titan_oddity_nazzivian_glyph_monument",
+      "expectedLabel": "Nazzivian: The boast cut into the monument",
+      "label": "Boast Carved in Stone"
+    },
+    {
+      "id": "titan_oddity_utgarde_spiral_landing",
+      "expectedLabel": "Utgarde Catacombs: Where the spiral divides",
+      "label": "Where the Spiral Divides"
+    },
+    {
+      "id": "titan_oddity_drakiljin_canopic_gallery",
+      "expectedLabel": "Drakil’jin: Jars for kings and commoners",
+      "label": "Jars for Kings and Commoners"
+    },
+    {
+      "id": "titan_oddity_guolai_royal_crypt",
+      "expectedLabel": "Guo-Lai: The burial hall of forgotten kings",
+      "label": "Forgotten Kings' Burial Hall"
+    },
+    {
+      "id": "titan_oddity_stormwind_clocktower_door",
+      "expectedLabel": "Stormwind: The clocktower across the canal",
+      "label": "Clocktower Across the Canal"
+    },
+    {
+      "id": "titan_oddity_forgotten_crypt_well",
+      "expectedLabel": "Forgotten Crypt: The well below the graves",
+      "label": "Well Below the Graves"
+    },
+    {
+      "id": "titan_oddity_forgotten_crypt_bone_pit",
+      "expectedLabel": "Forgotten Crypt: Beneath the bone chute",
+      "label": "Beneath the Bone Chute"
+    },
+    {
+      "id": "titan_oddity_forgotten_crypt_drowned_chains",
+      "expectedLabel": "Forgotten Crypt: The faces below the water",
+      "label": "Faces Below the Water"
+    },
+    {
+      "id": "titan_oddity_mosshide_raised_common",
+      "expectedLabel": "Mosshide Fen: The common above the marsh",
+      "label": "Common Above the Marsh"
+    },
+    {
+      "id": "titan_oddity_scarlet_atonement_chamber",
+      "expectedLabel": "Scarlet Monastery: The Chamber of Atonement",
+      "label": "Chamber of Atonement"
+    },
+    {
+      "id": "titan_trait_ice_structure_recess",
+      "expectedLabel": "Conjured ice fortification: Sheltered receiving recess",
+      "label": "Conjured Ice Shelter"
+    },
+    {
+      "id": "titan_trait_orc_burrow_stores",
+      "expectedLabel": "Orc Burrow: Food stores and spear stations",
+      "label": "Food Stores and Spear Racks"
+    }
+  ]
+}

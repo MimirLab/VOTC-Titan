@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-jergosh-the-invoker-wow-39c30c56ec0c",
+  "revision": 1,
+  "name": "Jergosh — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "8c03df5e222df5a678e98b82a64f78d8e6fabe75e0d063cd936025fabf3d9890",
+    "transcript_sha256": "094a3d0f48e1a397107429bb450ee88250026d88db264d95c90735a0d7363419",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 229946,
+      "seconds": 9.581083333333334,
+      "peak": 1.0,
+      "rms_dbfs": -16.75,
+      "clipped_samples": 6
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-dargrul-wow-d45a27f84d9f",
+  "revision": 1,
+  "name": "Dargrul Understone — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "3383995428a655d9e097e83c9324512341fd1bbcaede7d73438f18d7c435ee34",
+    "transcript_sha256": "9d19037031f5c7cdfd9c076c8aea6a82d0506d6ba6f5eb0c943b4c852f89dc5a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 409783,
+      "seconds": 17.074291666666667,
+      "peak": 1.0,
+      "rms_dbfs": -15.26,
+      "clipped_samples": 20
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

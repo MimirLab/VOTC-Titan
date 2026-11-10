@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60605-wow-5824192bfa23",
+  "revision": 1,
+  "name": "Falric — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "793e683c65ba0c904fbd5d1583fe78e0aaec6f02a8dba4118b868559792c4b28",
+    "transcript_sha256": "639806df7d4da83370f761cd724b7cdb4d3a6e5c2401ba3641f37941ab664638",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 90066,
+      "seconds": 3.75275,
+      "peak": 1.0,
+      "rms_dbfs": -18.44,
+      "clipped_samples": 5
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-naisha-wc3-naisha",
+  "revision": 1,
+  "name": "Naisha — ordinary (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "43ebfc3d857a8d268d875ef3cc00f80fdf0a1666b6fee82e174e318aa3187141",
+    "transcript_sha256": "6c74095066290696e17484c37d2b9b9b49045de34b77e27457b17b4d344ffc93",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 118741,
+      "seconds": 4.947541666666667,
+      "peak": 0.412262,
+      "rms_dbfs": -24.5,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

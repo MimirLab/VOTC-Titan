@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-46004-wow-fa3bcfb84681",
+  "revision": 1,
+  "name": "Tess Greymane — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "93a04b56858737f05b2eb946e6f1ce822c62ced3b6a30556b7cca9dfea10afb8",
+    "transcript_sha256": "4fb2a6ca2a6c0b6ce7d9fec1dcaecfffdaef0462eb05de66f2eb83f3224e4016",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 356305,
+      "seconds": 14.846041666666666,
+      "peak": 0.899261,
+      "rms_dbfs": -16.34,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

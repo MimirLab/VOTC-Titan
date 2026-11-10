@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-everit-reade-wow-fdf4b608ff5b",
+  "revision": 1,
+  "name": "Everit Reade — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b806047c32d8c96db6b40c51bcdf2437e211018d67df3a0268c027b1c2ecc847",
+    "transcript_sha256": "a34dc156a6ac505d7c5703529def5ec7e98e5ba1077ac90e80c9e39a07da2e9e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 418018,
+      "seconds": 17.417416666666668,
+      "peak": 1.0,
+      "rms_dbfs": -16.33,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

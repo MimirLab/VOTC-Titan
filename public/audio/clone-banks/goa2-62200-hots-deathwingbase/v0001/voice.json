@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-62200-hots-deathwingbase",
+  "revision": 1,
+  "name": "Deathwing — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1a5e1d33ef604bcb01269e1b80ca1fc6c4b2f084c668435f1f43278660a33de3",
+    "transcript_sha256": "059cadb1874020168cbdaffc6455ec0cb1edc044179bd0f4bc0839fd680d653f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 364844,
+      "seconds": 15.201833333333333,
+      "peak": 0.789398,
+      "rms_dbfs": -15.66,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

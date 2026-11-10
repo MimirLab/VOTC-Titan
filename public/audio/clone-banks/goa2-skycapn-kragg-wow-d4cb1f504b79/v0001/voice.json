@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-skycapn-kragg-wow-d4cb1f504b79",
+  "revision": 1,
+  "name": "Kragg — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b0f3ac1971d2fcef664b6539074052272fd5e38f1d8ea724e95eee5c95d8be1e",
+    "transcript_sha256": "9f8f09316da37a535221909cdef5add4b92dc5a45158d77e789820e9255400bf",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 428612,
+      "seconds": 17.858833333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.32,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

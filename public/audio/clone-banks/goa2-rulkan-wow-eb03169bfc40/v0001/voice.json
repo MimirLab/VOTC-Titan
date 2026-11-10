@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-rulkan-wow-eb03169bfc40",
+  "revision": 1,
+  "name": "Rulkan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "11da90b7abb3adf018f888a72213305c92d419f1c5e32172f261e65791ce8c46",
+    "transcript_sha256": "93177a4c9eb9d36a5b6225d362b6c5092e17284658e445457f973017f0aa545a",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 452179,
+      "seconds": 18.840791666666668,
+      "peak": 1.0,
+      "rms_dbfs": -14.61,
+      "clipped_samples": 2
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

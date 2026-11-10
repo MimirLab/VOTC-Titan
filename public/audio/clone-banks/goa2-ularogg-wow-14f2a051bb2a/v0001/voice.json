@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-ularogg-wow-14f2a051bb2a",
+  "revision": 1,
+  "name": "Ularogg Cragshaper — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b4ed4001f176c526808de41ac39e1f263d4b5d95af1d40342718e1546d9bbe61",
+    "transcript_sha256": "fb53a21c6db8f753e264d640090eae91eb8a4f217d59c8ec42b9fb9b748c503f",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 392685,
+      "seconds": 16.361875,
+      "peak": 0.985992,
+      "rms_dbfs": -16.85,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

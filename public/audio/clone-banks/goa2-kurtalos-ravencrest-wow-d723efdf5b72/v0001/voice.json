@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-kurtalos-ravencrest-wow-d723efdf5b72",
+  "revision": 1,
+  "name": "Kur'talos Ravencrest — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "2d6d395cfb5210112f8118efdc11bca71c31fa6884f84b3d872187cb7c8337b2",
+    "transcript_sha256": "a1a37f63ed33c67b95936979843a85b4a71447677887d4a96599fedfbbe49cdd",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 386453,
+      "seconds": 16.102208333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.74,
+      "clipped_samples": 7
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

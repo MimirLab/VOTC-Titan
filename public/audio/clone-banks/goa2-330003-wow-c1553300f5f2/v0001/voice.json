@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-330003-wow-c1553300f5f2",
+  "revision": 1,
+  "name": "Lady Vashj — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "133df54c70d8fdde04748a5182ccb0b32121684397908039145a68519c67d246",
+    "transcript_sha256": "11d302fe1cadc6a1be18fee2620df90a0e407349b4b53507f9fa5a00c57e89d4",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 390173,
+      "seconds": 16.257208333333335,
+      "peak": 1.0,
+      "rms_dbfs": -16.98,
+      "clipped_samples": 19
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-koro-mistwalker-wow-a004f53974e1",
+  "revision": 1,
+  "name": "Koro Mistwalker — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "57a84fbf2819e3d6a3bf9a465fe63858430d2f84098f80a11436fef0c265459d",
+    "transcript_sha256": "ad9f14e8f606317baa4dcde7ef5de255e2fa9cb880e3ebcaaf2eff1f89ae8c1c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 113987,
+      "seconds": 4.749458333333333,
+      "peak": 0.949432,
+      "rms_dbfs": -18.47,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

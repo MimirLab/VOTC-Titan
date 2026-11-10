@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-caria-felsoul-wow-45290541a607",
+  "revision": 1,
+  "name": "Caria — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b2d1fbadcd6f04b30a2117ead024f72cf04d48197348c7e025fb2fdfdb1560d3",
+    "transcript_sha256": "fdde624a9973a8780606ac379c7f171a5ce19c0bc65093051f2acfa5039e3f8e",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 414095,
+      "seconds": 17.253958333333333,
+      "peak": 1.0,
+      "rms_dbfs": -15.83,
+      "clipped_samples": 4
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

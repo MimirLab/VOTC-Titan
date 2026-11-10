@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-magister-umbric-wow-45b809126ebe",
+  "revision": 1,
+  "name": "Umbric — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "07fb11af34198f8c604e1afb8c53f274c5a1ac25545279f6d8e672962b0453fa",
+    "transcript_sha256": "08164b4fc2bfbde898f24c71b4c985886e66ca664d67cc0b90fa7337ef5bf28c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 405075,
+      "seconds": 16.878125,
+      "peak": 1.0,
+      "rms_dbfs": -15.45,
+      "clipped_samples": 55
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

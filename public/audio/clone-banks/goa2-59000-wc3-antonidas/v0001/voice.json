@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-59000-wc3-antonidas",
+  "revision": 1,
+  "name": "Antonidas — archmage antonidas (WC3)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1337b397a2f3ad2d19b8166ce915ec47e4f6597699da3db6070aa4ad9e493025",
+    "transcript_sha256": "dfdc035fe72b559f058cb89e26408cb3cd5cee8249af548ff1af25a718cd985c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 96936,
+      "seconds": 4.039,
+      "peak": 0.597473,
+      "rms_dbfs": -22.27,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

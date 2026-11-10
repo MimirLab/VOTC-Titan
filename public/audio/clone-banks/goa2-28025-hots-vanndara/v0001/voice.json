@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-28025-hots-vanndara",
+  "revision": 1,
+  "name": "Vanndar Stormpike — HotS",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "854c8bc1d71d8d2439018db06bf845dda972adda299320400585a4fb541bd450",
+    "transcript_sha256": "28cff9e305933784e95e0dd92078f8cd9034fb5ed899a692fb6575e3b498fff2",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 361944,
+      "seconds": 15.081,
+      "peak": 0.927643,
+      "rms_dbfs": -18.25,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

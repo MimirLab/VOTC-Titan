@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-arcanist-valtrois-wow-71d1d7957675",
+  "revision": 1,
+  "name": "Valtrois — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "1c7e15dc501c21d4b4719bfe41532a10d489393e18dcc82207c934e211b633a9",
+    "transcript_sha256": "cb00663ec79bb566d6c3e6380f74b504d742c73a0874835bb865f1c68951ed85",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 425598,
+      "seconds": 17.73325,
+      "peak": 0.601501,
+      "rms_dbfs": -18.6,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a Titan launcher or RP integration problem.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Report Titan problems here. Review logs before attaching them; remove API keys, tokens and private RP content."
+  - type: input
+    id: titan_version
+    attributes:
+      label: Titan build or release
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Game and system versions
+      description: "Include CK3 patch, GoA2 version, VOTC CE version, OS and relevant AI/voice backend."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant redacted error or log excerpt
+      description: "Use a small excerpt around the error. Do not include credentials or a private campaign transcript."

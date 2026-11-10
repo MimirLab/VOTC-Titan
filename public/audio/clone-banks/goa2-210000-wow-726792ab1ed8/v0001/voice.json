@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-210000-wow-726792ab1ed8",
+  "revision": 1,
+  "name": "Cairne Bloodhoof — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "edbb33b64f688e73f013096f234774d89e3116c0471eb68b955f8c5dcb209f5f",
+    "transcript_sha256": "ebb75976410b81d6839ca2ac95f67f5a2b7d01b4074c66315e3ce7eac74cc710",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 371682,
+      "seconds": 15.48675,
+      "peak": 0.940857,
+      "rms_dbfs": -16.76,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

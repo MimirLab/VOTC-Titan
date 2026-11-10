@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-58018-wow-40d1abef8c6a",
+  "revision": 1,
+  "name": "Jorach Ravenholdt — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "05a527757ac683366d203362b43c7b53ac4071055052c42fe2591a731b0b03d4",
+    "transcript_sha256": "b1c39be8a6e64c32d66e925dfc93f346b4e2f54b94d8ad5c5448deb8cc22965c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 420288,
+      "seconds": 17.512,
+      "peak": 0.983337,
+      "rms_dbfs": -17.95,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

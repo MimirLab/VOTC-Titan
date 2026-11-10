@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60016-hs-cs3-024",
+  "revision": 1,
+  "name": "Taelan Fordring — Taelan Fordring (Hearthstone)",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "96c92b2d7798e41bd645df4cd4b10592183c441078ed407f6138753aa7ac6be5",
+    "transcript_sha256": "9e8cfdbefccde631cf957d434fe674ed422e490709bdb58c451aad48a30fc681",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 49032,
+      "seconds": 2.043,
+      "peak": 0.989136,
+      "rms_dbfs": -16.31,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

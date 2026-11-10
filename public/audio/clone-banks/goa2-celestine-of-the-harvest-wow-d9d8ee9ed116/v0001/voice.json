@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-celestine-of-the-harvest-wow-d9d8ee9ed116",
+  "revision": 1,
+  "name": "Celestine — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "9bb6a141bde44d35a287101bf26e5806528d11532f3899d5a4c53be583e3699b",
+    "transcript_sha256": "b97ad1d2542c95b4c2938ef19f339d174fbc82a848bff0384ba73a5df0b77a9b",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 357703,
+      "seconds": 14.904291666666667,
+      "peak": 0.88028,
+      "rms_dbfs": -16.05,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

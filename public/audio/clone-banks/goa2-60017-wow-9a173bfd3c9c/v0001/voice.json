@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-60017-wow-9a173bfd3c9c",
+  "revision": 1,
+  "name": "Alexandros Mograine — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "34311346797299253c27b8c13f1b001d2b72d632e702a157414b5b79cd682c8a",
+    "transcript_sha256": "79628b7d9c3903c454669bfc5cd2a9a06b273d26e98d673ee1550e0941031a7c",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 379289,
+      "seconds": 15.803708333333333,
+      "peak": 0.985077,
+      "rms_dbfs": -16.84,
+      "clipped_samples": 0
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}

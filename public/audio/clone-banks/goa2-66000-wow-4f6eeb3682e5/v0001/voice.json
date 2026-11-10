@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "goa2-66000-wow-4f6eeb3682e5",
+  "revision": 1,
+  "name": "Rastakhan — WoW",
+  "role": "character",
+  "language": "en",
+  "source": {
+    "kind": "recording",
+    "description": "Original character performance excerpts; see metadata.json for every constituent."
+  },
+  "seed": 17,
+  "delivery": {
+    "identity": "reference",
+    "automatic_casting": false,
+    "tone": true,
+    "whisper": true
+  },
+  "reference": {
+    "audio": "reference.wav",
+    "transcript": "transcript.txt",
+    "audio_sha256": "b662202dbd907bf67da63b9c496a80c19a1a501d42ccf083867bdc6b36cb8ee8",
+    "transcript_sha256": "bb43fe33651a6a6e9e721f9812cfd2bf1305523d6277e5bddbb4b5d3109a9cf6",
+    "audio_info": {
+      "sample_rate": 24000,
+      "channels": 1,
+      "sample_bits": 16,
+      "frames": 398601,
+      "seconds": 16.608375,
+      "peak": 1.0,
+      "rms_dbfs": -16.94,
+      "clipped_samples": 3
+    }
+  },
+  "quality": {
+    "state": "prepared",
+    "review": null
+  }
+}
