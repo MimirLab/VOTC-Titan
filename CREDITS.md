@@ -1,8 +1,8 @@
 # The worlds and people behind Titan
 
 VOTC Titan Edition is MimirLab's GoA2-dedicated fork of Voices of the Court
-Community Edition. Its lineage is part of its identity. Thank you to everyone
-whose games, code, lore, performances, tools and patient feedback made it possible.
+Community Edition. Thank you to the developers, writers, performers and contributors whose work
+made Titan possible.
 
 ## The foundations
 
@@ -25,8 +25,8 @@ describe upstream; [Titan's setup guide](docs/getting-started.md) describes this
 **[Warcraft Wiki contributors](https://warcraft.wiki.gg/)** supplied a major source
 foundation for the assembled lorebank. The bundled attribution records retain
 source URLs, snapshot and revision metadata, and CC BY-SA 4.0 attribution.
-Titan's passages were locally extracted, condensed, reorganized and expanded;
-the adapted presentation is not an unmodified official source.
+Titan's passages were extracted, condensed, reorganized and expanded from that
+material.
 
 Thanks also to **[WikiTeam / wikiteam3](https://github.com/saveweb/wikiteam3)** and
 **[Internet Archive](https://archive.org/details/wiki-warcraft.wiki.gg-20231113)**
@@ -36,9 +36,9 @@ supply the campaign-specific material and interpretation boundaries.
 ## Voices and audio tools
 
 Original reference performances remain credited to **Blizzard Entertainment and
-their performers**. A character mapping does not establish an actor's identity;
-unknown performers are left unknown. Source clips and their metadata are distinct
-from newly synthesized dialogue.
+their performers**. Individual performers are credited where their identity is known. The bank
+records keep the original recordings and source information separate from newly
+synthesized dialogue.
 
 - **[BreezeBlue / Breeze TTS](https://github.com/breezeblue-ai/breeze-tts)** and
   **[Breeze-TTS-2](https://huggingface.co/BreezeBlue/Breeze-TTS-2)** — voice synthesis.
@@ -49,8 +49,8 @@ from newly synthesized dialogue.
   **[HeroesToolChest](https://github.com/HeroesToolChest/HeroesDataParser)**,
   **[Hive Workshop's campaign sound compiler](https://www.hiveworkshop.com/threads/sound-sets-from-campaign-dialog.328584/)**
   and **[HearthSFX](https://hearthsfx.github.io/)** — credited source-discovery,
-  extraction and indexing routes. These are research/acquisition sources, not
-  grants of ownership or blanket approval of every recording.
+  extraction and indexing routes. Their source information is retained in
+  the collection records.
 
 See [the bank's source attribution](public/audio/clone-banks/ATTRIBUTION.md).
 Runtime code, model weights and original recordings have separate terms.
@@ -80,13 +80,11 @@ language perspective and memory work, saved casting and clone routing,
 illustrated launcher scenes, native packaging and regression infrastructure.
 
 Player listening, actual roleplay feedback and the upstream communities have
-shaped these systems. Human approvals and unresolved experiments are kept
-separate; this release does not silently ship every research candidate.
+shaped these systems. Production choices reflect those listening and playtest decisions.
 
 The new repository cover and council illustration were generated specifically
 for this presentation using the built-in image generation tool. Their prompts
-and provenance are recorded in [artwork notes](docs/media/ARTWORK.md). Promotional
-illustrations are labeled as artwork, not gameplay captures.
+and provenance are recorded in [artwork notes](docs/media/ARTWORK.md). The illustrations are promotional artwork.
 
 Titan is independent and noncommercial. These acknowledgments do not imply
 endorsement by Paradox, Blizzard, the GoA2 team or the VOTC/CE maintainers.

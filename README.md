@@ -1,23 +1,24 @@
 <p align="center">
-  <img src="docs/media/titan-release-hero.png" alt="VOTC Titan: an emerald-crowned titan watches a living Azeroth unfold from an illuminated lorebook" width="100%">
+  <img src="docs/media/titan-release-hero.png" alt="VOTC Titan: Azeroth unfolds from an illuminated lorebook beneath an emerald-crowned titan" width="100%">
 </p>
 
-<h1 align="center">Your campaign deserves a living world.</h1>
+<h1 align="center">Warcraft roleplay for your CK3 campaign</h1>
 
 <p align="center">
-  <strong>An embedded Warcraft lorebank. A changing history. Characters with convictions, memories and voices.</strong><br>
-  A GoA2-dedicated evolution of Voices of the Court, maintained by MimirLab.
-</p>
-
-<p align="center">
-  <a href="https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.10"><img src="docs/media/download-titan.svg" alt="Download the first Titan preview" width="300"></a>
+  <strong>Talk to Azeroth's characters with its lore, voices and your campaign's history behind them.</strong><br>
+  Titan is MimirLab's GoA2 fork of Voices of the Court Community Edition.<br>
+  Play with local AI or connect the provider of your choice.
 </p>
 
 <p align="center">
-  <a href="#a-world-that-can-change">Explore Titan</a> ·
+  <a href="https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.10"><img src="docs/media/download-titan.svg" alt="Download Titan" width="300"></a>
+</p>
+
+<p align="center">
+  <a href="#the-lorebook-follows-your-campaign">Explore Titan</a> ·
   <a href="docs/getting-started.md">Installation & requirements</a> ·
-  <a href="docs/features.md">The full feature tour</a> ·
-  <a href="CREDITS.md">Credits & thanks</a> ·
+  <a href="docs/features.md">Feature tour</a> ·
+  <a href="CREDITS.md">Credits</a> ·
   <a href="https://github.com/MimirLab/VOTC-Titan/issues">Report a problem</a>
 </p>
 
@@ -28,86 +29,73 @@
 
 | **37,026 lore passages** | **419 character voice banks** | **868 scenes** |
 | :---: | :---: | :---: |
-| A complete embedded release of the assembled lorebank, including expanded and GoA2 material | Prepared references covering **407 named identities**, alongside individual character casting | **855 custom scenes**, with **851 distinct paintings** bundled in Titan |
+| Warcraft lore, expanded material and GoA2 histories built into the launcher | Voices for **407 named characters**, plus individual casting | **855 custom scenes** with **851 paintings** |
 
-> **Before you download:** this first preview targets **Linux x64 with X11**. You need **Crusader Kings III**, the **GoA2** and **VOTC Community Edition** Steam addons, and a configured AI model or API. Optional spoken audio needs Breeze and suitable hardware or a remote Breeze endpoint. [Check the version notes and setup guide →](docs/getting-started.md)
+> **Linux x64 / X11.** Requires CK3, the GoA2 and VOTC CE Steam addons, and an AI connection. [Requirements, game versions and installation →](docs/getting-started.md)
 
-## A world that can change
+## The lorebook follows your campaign
 
-### The lore lives here. Your campaign gives it a present.
+Titan's embedded Warcraft lorebook covers the people, places, histories and beliefs of Azeroth. Expanded setting material and **141 GoA2 branch accounts** carry that world into your campaign.
 
-Titan carries the assembled **Warcraft lorebank inside the launcher**: people, peoples, places, beliefs, histories and their connections. It adds expanded material and **141 authored GoA2 branch accounts** so a campaign can be understood as its own evolving history.
+As the game changes, Titan reads the current state and changes which history reaches the roleplay engine. It retrieves the relevant entries for a conversation, then opens deeper details as they are needed. Character knowledge controls access: public history, personal experience and private thoughts are handled separately.
 
-The book is more than a flat timeline. Titan reads the current game state when roleplay needs it, selects the applicable account and reveals details in layers. Current transformations and supported world changes can affect the lore being delivered. Missing historical choices remain unknown, rather than being filled in from the calendar.
-
-**The world knowing something does not mean your character knows it.** Character knowledge, private experience and public history have separate boundaries. A relevant slice reaches the normal character prompt; deeper lore is available when it is needed. The aim is a rich world that stays focused on the scene in front of you.
-
-[Inside the evolving lorebook →](docs/features.md#the-embedded-evolving-lorebook)
+[Read about the evolving lorebook →](docs/features.md#the-embedded-evolving-lorebook)
 
 <p align="center">
-  <img src="docs/media/titan-council.png" alt="An orc envoy, dwarf scholar, elven priestess and human ruler bring distinct perspectives to a council beneath a branching illuminated chronicle" width="100%">
-  <sub>Original Titan promotional artwork. An illustration of the experience, rather than a gameplay screenshot.</sub>
+  <img src="docs/media/titan-council.png" alt="An orc envoy, male dwarf scholar, night elf priestess and human ruler at council, with their faction banners and homelands behind them" width="100%">
+  <sub>Promotional artwork for Titan.</sub>
 </p>
 
-## Every voice has a history
+## Character voices and individual casting
 
-### Familiar characters. Individual people.
+**419 voice banks cover 407 named GoA2 characters.** Automatic matching connects encountered characters to their collected recordings. Characters with several forms have separate voice routes: Arthas's living, death knight and Lich King voices follow his current traits in the game.
 
-The bundled clone bank contains **419 prepared reference banks for 407 authored GoA2 identities**. Supported characters can use their collected voice automatically, with verified current forms selecting supported alternatives. Arthas's living, death knight and Lich King portrayals, for example, are distinct routes driven by observed traits.
+Individual casting gives other characters a saved voice built from their physical form, cultural pronunciation, maturity and personal voice design. You can preview voices, assign your own references and keep those choices across later conversations.
 
-Other characters receive **saved individual casting**. Physical form, learned cultural pronunciation, maturity and personal texture work together, while the saved reference keeps a person recognizable across later lines. Named clones and player-assigned voices retain priority.
+Dialogue, whispered thoughts and narration have separate delivery. Titan prepares later passages during playback and keeps them in story order, with pause, resume and stop controls.
 
-Speech, whispered thoughts and narration have their own delivery. Playback preserves literary order, supports pause and stop, and can prepare later passages while the current passage plays. The sound system has grown through synthesis trials, regression checks and player listening—not just a list of voice prompts.
+[Voice system →](docs/features.md#voices-with-continuity) · [Set up Breeze →](docs/getting-started.md#optional-character-audio)
 
-**You can also choose, preview and manage voices yourself.** Voice-model downloads are explicit, and audio starts disabled.
+## Culture, faith and language
 
-[Meet the voice system →](docs/features.md#voices-with-continuity) · [Audio setup →](docs/getting-started.md#optional-character-audio)
+A character's upbringing and beliefs affect how they speak and what matters to them. Titan supplies current culture and faith backgrounds, **166 cultural speech profiles**, and **35 devotional profiles covering 42 faiths**. Their traits and convictions shape how those influences come through in conversation.
 
-## Culture is lived. Faith is felt.
-
-Titan gives culture and religion a continuing place in character portrayal. Current cultural and faith identities guide the background libraries and the character's perspective. Speech steering supplies **166 cultural registers** and **35 devotional registers covering 42 faith IDs**, alongside bounded role guidance when the role is actually known.
-
-Traits, upbringing, convictions and the current body still matter. A shared race does not make every person identical; membership in a faith does not erase personality. Cultural diction and devotional language enrich the character instead of turning every reply into an exposition of the setting.
-
-Languages have consequences, too. Different listeners can hear the same utterance with full, partial or unfamiliar comprehension. Learning and actual language knowledge shape that understanding, and later memories retain what the listener received.
+Languages affect what each person hears. Known languages, related tongues, cultural contact and Learning govern comprehension. Two listeners can understand different amounts of the same speech, and their memories retain what each received.
 
 [Culture, faith and language →](docs/features.md#culture-faith-and-language)
 
-## Make the court worth inhabiting
+## Choose the scene
 
-| In the moment | Across a life |
-| --- | --- |
-| Character-aware roleplay built around current traits, relationships, form and knowledge | Persistent conversations, summaries and memories, with recipient-specific perspective |
-| Scene selection with current eligibility checks and a large illustrated venue catalogue | Stable saved voices, historical replay identities and supported changes of form |
-| Spoken dialogue, thoughts, narration and optional player suggestions | Letters, diaries and the continuing VOTC conversation foundation |
-| Independent lore, culture, faith, language and audio controls | Your chosen local model or configured provider, with editable prompts and connection settings |
+Meet in courts, halls, lodges and other locations across **868 scenes**. Titan includes **855 custom scenes and 851 paintings**, with current participant and location checks for venue selection. The painting appears in the conversation window, and scene changes refresh those checks before moving the encounter.
 
-Titan concentrates these additions in the **launcher**. Your installation uses the ordinary Steam subscriptions for GoA2 and VOTC CE. The Titan installer installs the companion application and shortcut; it does not require a Titan Workshop mod, rewritten game files or a Steam launch wrapper.
+Conversations continue through the VOTC foundation of letters, diaries, histories and memories. Titan brings its GoA2 character context and language perspectives into that continuing story.
 
-## Enter Azeroth
+## Install Titan
 
-1. Install **CK3** and choose a compatible game/addon version combination.
-2. Subscribe to **[Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945)** and **[VOTC Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139)**, following their load-order and dependency instructions.
-3. Download the **[Titan Linux preview](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.10)**, verify its checksum, extract it and run `./install.sh`.
-4. Open Titan, select the CK3 installation and user folders, then configure your AI connection.
-5. Start CK3 with the subscribed addons and begin a conversation. Enable optional audio after configuring Breeze.
+1. Install **CK3** and select compatible game and addon versions.
+2. Subscribe to **[Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945)** and **[VOTC Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139)**. Follow their dependency and load-order instructions.
+3. Download **[Titan](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.10)**, verify its checksum, extract it and run `./install.sh`.
+4. Open Titan, select your CK3 installation and user folders, then configure your AI connection.
+5. Start CK3 with the subscribed addons and open a conversation. Configure Breeze in Audio to enable speech.
 
-**Version transparency:** the exercised development combination is CK3 **1.19.0.6**, GoA2 **0.6.5** and CE **2.5**. CE 2.5 declares CK3 **1.20**; the successful bridge tests do not establish complete gameplay compatibility across that mismatch. This is an early public preview for testing, with the [exact limits and troubleshooting](docs/getting-started.md#versions-and-preview-status) documented.
+All Titan additions run in the **launcher**. Installation adds the application and shortcut, leaving your game files, Workshop subscriptions, playset and Steam launch options alone. AI model weights are separate downloads.
 
-## Built on extraordinary work
+The game bridge was tested with **CK3 1.19.0.6, GoA2 0.6.5 and CE 2.5**. CE 2.5 targets CK3 1.20; this version mismatch remains a known issue. [See the setup guide](docs/getting-started.md#versions-and-preview-status) before choosing your versions.
 
-Titan exists because **Paradox's Crusader Kings III**, **Blizzard's Warcraft universe**, **Guardians of Azeroth 2**, **Durond's Voices of the Court**, and the **VOTC 2.0 / Community Edition teams** gave this project a world, a game and a foundation.
+## Credits
 
-Thank you to **Durond, MrAndroPC, Lisiyuan233, zhaowendao2005, the CE maintainers, the GoA2 team, Warcraft Wiki contributors**, and the many contributors behind the audio runtimes, libraries, tools and community sources. Their work is credited as upstream work; the Titan additions are described separately in the [feature tour](docs/features.md).
+Thank you to **Paradox** for Crusader Kings III, **Blizzard** for Warcraft, and the **Guardians of Azeroth 2 team** for bringing Azeroth to CK3.
 
-**[Full credits & project links](CREDITS.md)** · **[Software license](LICENSE)** · **[Third-party notices](THIRD_PARTY_NOTICES.md)**
+Titan builds on **Durond's Voices of the Court** and the work of the **VOTC 2.0 and Community Edition teams**. Thanks to **MrAndroPC, Lisiyuan233, zhaowendao2005, the CE maintainers, Warcraft Wiki contributors**, the Breeze and runtime developers, and everyone whose code, research and feedback helped build this fork.
 
-Titan is an independent, noncommercial fan project. Third-party names, recordings, artwork and other assets retain their respective ownership and terms. No affiliation or endorsement is implied.
+**[Full credits](CREDITS.md)** · **[Software license](LICENSE)** · **[Third-party notices](THIRD_PARTY_NOTICES.md)**
+
+An independent, noncommercial fan project. Third-party material retains its ownership and terms. Titan is not affiliated with or endorsed by Paradox, Blizzard or the upstream mod teams.
 
 <details>
-<summary><strong>For builders and contributors</strong></summary>
+<summary><strong>Build from source</strong></summary>
 
-Source and downloadable runtime assets are separate. The source archive alone does not contain the voice WAVs, scene paintings, bundled lore databases or model weights.
+Import the runtime assets from the Titan download, then install dependencies and build:
 
 ```sh
 python3 tools/import-release-assets.py /path/to/VOTC-Titan-Launcher-linux-x64.tar.gz
@@ -117,6 +105,6 @@ npm test -- --runInBand
 npm run build:linux
 ```
 
-See [contributing](CONTRIBUTING.md), [maintenance](docs/github-maintenance.md), [validation and provenance](docs/release-validation.md), and [the upstream README](README.upstream.md). The public source omits private listening archives and player data. Historical listening comparisons have explicit evidence-dependent skips; production assertions remain active.
+[Contributing](CONTRIBUTING.md) · [Maintenance](docs/github-maintenance.md) · [Test results](docs/release-validation.md) · [Upstream README](README.upstream.md)
 
 </details>

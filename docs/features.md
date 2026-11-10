@@ -1,141 +1,120 @@
-# Inside Titan
+# Titan features
 
-Titan develops the VOTC/Community Edition conversation foundation into a
-GoA2-focused roleplay companion. The original projects supply the game integration
-and much of the conversation, history, action, letter and settings foundation.
-The systems below describe Titan's dedicated additions and integrations.
+Titan is a GoA2-focused fork of VOTC Community Edition. It extends the original
+conversation, action, letter and memory systems with Warcraft lore, character
+casting, cultural and religious backgrounds, language comprehension and
+illustrated scenes.
 
 ## The embedded evolving lorebook
 
-The whole assembled runtime edition is bundled in Titan, including the reader
-and databases. The release manifest contains:
+The lorebook and its reader are built into Titan. The release contains:
 
-| Material | Structured passages |
+| Material | Passages |
 | --- | ---: |
-| Base lorebank | 33,366 |
+| Warcraft lorebank | 33,366 |
 | Expanded setting | 3,364 |
 | GoA2 material | 296 |
 | **Total** | **37,026** |
 
-The corpus also records **78,269 aliases** and **114,119 connections**. These are
-structured corpus counts, not a claim that every possible Warcraft fact or future
-story update exists in the collection.
+The book has **78,269 aliases** and **114,119 connections** between its entries.
+Search finds the relevant material, and nested disclosure opens deeper details
+as a conversation needs them. The character keeps their full roleplay prompt.
+Lore retrieval runs locally; optional semantic search adds another way to find
+topics.
 
-Lexical retrieval selects relevant material. Nested progressive disclosure starts
-with a bounded account and allows deeper access, preserving the normal complete
-character prompt. Optional qualified semantic routing can help select topics;
-it does not turn a similarity match into permission to know a fact. Lore does
-not require a separate always-running wiki service or an extra mandatory model
-roundtrip before each normal reply.
+**141 GoA2 branch accounts** extend the source history for the campaign. During
+roleplay, Titan reads current game state through CE and selects the applicable
+history. Public world events and personal knowledge have separate access rules.
+A change of controlling mind also changes whose private experiences apply.
 
-Campaign history is a layer on top of the source world. **141 authored GoA2 branch
-accounts** remain available. Current state is read through CE during RP, with
-**18 world-state predicates and nine character-owned trace bindings** in the
-current adapter. Other supported explicit knowledge reports keep their own
-provenance. This does not reconstruct every historical choice: transient or
-missing game evidence remains unknown. A choice is distinct from an outcome;
-the observation date is distinct from an event's occurrence date.
-
-Public world state and private character knowledge remain separate. A changed
-controller does not inherit the earlier mind's private experiences. The full
-bank supports grounding; the text model can still misinterpret or invent details.
-
-Implementation: `src/main/lorebook/`, `tools/lorebook_disclosure.py`,
-`tools/lorebook_game_state.py` and `tools/lorebook_mutations.py`.
+The current adapter reads **18 world-state predicates and nine character-owned
+traces**. It cannot recover choices the game has stopped recording. Those choices
+stay unknown. An attempted action and its outcome are separate records, as are
+the date of an event and the date Titan observes it.
 
 ## Character portrayal
 
-Titan combines current traits, relationships, body, race, cultural upbringing,
-faith and admitted lore. It distinguishes the body from the acting mind and
-handles supported forms, appetites and nonhuman physical constraints through
-bounded context rather than forcing a single human template.
+Current traits, relationships, body, race, upbringing, faith and knowledge feed
+into the character's roleplay context. Titan distinguishes the acting mind from
+the body it occupies and supplies the relevant physical constraints, forms and
+appetites for nonhuman characters.
 
-The roleplay writer chooses the prose. Acoustic casting chooses how literal
-words sound. Source facts, authored portrayal direction and generated model
-behavior are distinct; the companion does not claim that every generated ritual,
-myth or flourish is established Warcraft canon.
-
-Player suggestions and letter writers receive their applicable integrations.
-Editable prompts and the inherited connection controls remain available.
+Your text model writes the roleplay. The voice system handles its spoken words.
+Player suggestions and letter writers also receive their character context, and
+you retain control of prompts and model connections.
 
 ## Culture, faith and language
 
-Culture and faith libraries resolve current game identities and supply roleplay
-background. Separate speech steering includes **166 cultural registers**,
-**35 devotional registers covering 42 faith IDs**, and **12 bounded role/training
-records**. A role record is used only when there is suitable evidence; race or
-title alone does not confer a role or erase a person's traits.
+Culture and faith libraries build backgrounds from the character's current game
+identity. Speech profiles add **166 cultural registers**, **35 devotional
+registers covering 42 faiths**, and **12 role or training profiles**. Role guidance
+requires evidence of that role. Personality and conviction remain part of the
+character's portrayal.
 
-The spoken-language engine projects the same utterance separately for each
-listener. Known languages, related tongues, current cultural contact and Learning
-can affect full, partial or unfamiliar comprehension. Canonical source words are
-kept apart from recipient prompts and delivered history. Thoughts and unspoken
-material retain owner-specific boundaries. Memory and summaries preserve the
-listener's delivered perspective rather than quietly granting untranslated facts.
+The language engine works out what each listener understands. Known languages,
+related tongues, cultural contact and Learning affect comprehension. Each
+recipient receives their own version of an utterance, and that version carries
+into their memories and summaries. Private thoughts stay with their owner.
 
-These systems enrich roleplay. They do not replace GoA2's underlying culture,
-religion or language game mechanics with a new external ruleset.
-
-Implementation: `src/main/culture/`, `src/main/faith/`, `src/main/dialogue/`,
-`src/main/language/` and `public/dialogue-steering/registers.json`.
+These are roleplay systems built around GoA2's culture, faith and language data.
+GoA2 continues to run the underlying game mechanics.
 
 ## Voices with continuity
 
-The clone catalogue contains **419 prepared reference profiles covering 407 named
-GoA2 identities**. Exact identity/source checks drive automatic matches;
-unsupported histories retain manual assignment and ordinary casting. Some
-identities have multiple performances. Supported form routes use observed traits,
-including Illidan's supported metamorphosis and Arthas's living/undead/Lich King
-states. Calendar dates do not select a form.
+**419 voice banks cover 407 named GoA2 characters.** Titan matches historical
+identities to their reference recordings and checks current traits for alternate
+forms. Arthas has living, death knight and Lich King routes; Illidan has a
+metamorphosis route. You can also assign a bank manually.
 
-Unbound ordinary people receive saved individual casting, with approved shared
-reference exceptions for difficult forms. Player-assigned and canonical voices
-have priority. A stable seed and personal reference retain continuity; current
-maturity and bounded delivery can change without casually replacing the person.
-Historical replays retain their recorded identity and delivered words.
+Ordinary characters receive saved individual casting, with shared references for
+selected creature families. Physical form, cultural pronunciation, maturity and
+personal design guide new casts. Your own assignments and named-character voices
+have priority. Saved references keep a person's voice consistent, while historical
+replays retain the voice used when they were recorded.
 
-Speech, whispered thoughts and narrator delivery are separate. Literal words,
-reference transcripts and performance instructions travel in distinct fields.
-The producer prepares later passages while playback proceeds, preserves order,
-and keeps a bounded future-audio buffer. Preview, pause, resume, stop, narrator
-selection and voice management are part of the Audio interface.
+Dialogue, whispered thoughts and narration have separate delivery. Spoken text,
+reference transcripts and performance instructions travel separately to Breeze.
+Later passages can be prepared during playback. Preview, pause, resume, stop,
+narrator selection and voice management are available in Audio.
 
-Synthesis tests, word checks and player listening have informed refinements.
-**419 banks is a coverage count, not 419 distinct performers, proof of universal
-voice identity, or human approval of every possible output.** Private auditions,
-rejected takes and unresolved later race experiments are not included as newly
-approved production directions. Model weights and personal player libraries are
-not bundled.
-
-Implementation: `src/main/audio/`, `public/audio/clone-banks/catalog.json`,
-`public/audio/race-selections/manifest.json` and `public/audio/goa-casting.json`.
+Synthesis trials, word checks and player listening guide the casting refinements.
+The bank count measures recordings and character coverage; several recordings
+can feature the same performer. Model weights are downloaded separately, and
+personal voice libraries stay in your private data.
 
 ## Illustrated encounters
 
-The retained catalogue has **868 scenes**, including **855 custom scenes** and
-**851 distinct bundled custom paintings**. Titan reads current encounter facts
-and checks current participants before admitting a private venue. An existing CE
-venue remains unless there is a clear custom equivalent; other Titan venues are
-explicit choices. Changing scene refreshes current eligibility first.
+Titan has **868 scenes**, including **855 custom scenes and 851 paintings**.
+Venue selection uses current encounter facts and participant checks. Existing CE
+venues carry through to Titan; custom venues are available through the scene
+selector. Changing scene refreshes eligibility first.
 
-Paintings appear in the Titan interface. The installer does not replace CE's
-presentation files or install another game addon. Historical plot windows do not
-become current scene facts merely because a date falls inside a range.
+Paintings appear in Titan's conversation interface. The scene system reads game
+state through CE and runs inside the launcher.
 
-Implementation: `src/main/scenes/launcherScene*.ts`, authored scene JSON under
-`game_mod/scenes/`, and the release's `public/scene-art/` asset set. The legacy
-source directory name does not mean those JSON files are an installed game mod.
+## Installation and your data
 
-## A launcher you can share
+Install CK3, subscribe to GoA2 and VOTC CE, then install Titan and configure your
+model. The installer adds the companion and shortcut. It leaves game files,
+Workshop addons, playsets and Steam launch options alone.
 
-The native companion carries these integrations. Users obtain CK3, GoA2 and VOTC
-CE through their normal channels, install Titan and configure their model.
-No Titan Workshop entry, required wrapper, edited base/Workshop file or external
-lore event-listening hook is part of this release.
+Your histories, connections, settings and personal voices stay in the private
+user-data directory. Titan releases are maintained in **MimirLab/VOTC-Titan**.
 
-Conversation history, model connections, personal voices and player settings stay
-in the private user-data directory. Upstream automatic application replacement is
-disabled; Titan releases and maintenance are handled in MimirLab/VOTC-Titan.
+[Installation and version notes](getting-started.md) · [Test results and known limits](release-validation.md)
 
-See [getting started](getting-started.md) for platform and version limits, and
-[release validation](release-validation.md) for what has actually been checked.
+<details>
+<summary><strong>Implementation reference</strong></summary>
+
+| System | Source |
+| --- | --- |
+| Lore | `src/main/lorebook/`, `tools/lorebook_disclosure.py`, `tools/lorebook_game_state.py`, `tools/lorebook_mutations.py` |
+| Culture and faith | `src/main/culture/`, `src/main/faith/` |
+| Speech profiles | `src/main/dialogue/`, `public/dialogue-steering/registers.json` |
+| Language and perspective | `src/main/language/` |
+| Casting and playback | `src/main/audio/`, `public/audio/clone-banks/catalog.json`, `public/audio/race-selections/manifest.json`, `public/audio/goa-casting.json` |
+| Scenes | `src/main/scenes/launcherScene*.ts`, authored JSON in `game_mod/scenes/`, runtime paintings in `public/scene-art/` |
+
+`game_mod/scenes` is a source-data directory. It is not an installed game addon.
+
+</details>
