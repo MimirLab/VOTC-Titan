@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Seal, install or roll back Titan's main Linux runtime; preserve the frozen Wine fallback."""
 import argparse
+import ctypes
 import datetime
 import hashlib
 import json
@@ -11,13 +12,18 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from deployment_common import deployment_lock, ensure_closed, save_existing, tree_hash, user_data_root
-from storage_policy import require_space, tree_bytes, prune_backups, copy_tree
+from storage_policy import require_space, require_deployment_space, tree_bytes, prune_backups, copy_tree
 
 ROOT = Path(__file__).resolve().parent.parent
 USER = Path.home()
 STATE = USER / '.local/share/votc-mimir'
 TARGET = STATE / 'native/app-2.2.0-beta2-titan'
 STAGE = ROOT / 'out/titan-rebrand/native/application'
+
+
+def data_home():
+    configured = Path(os.environ.get('XDG_DATA_HOME', ''))
+    return configured if configured.is_absolute() else USER / '.local/share'
 
 
 def retired_targets():
@@ -29,8 +35,8 @@ def retired_targets():
 def integration_targets():
     return [(USER / '.local/bin/votc-launch', 'launcher'),
             (USER / 'Desktop/VOTC Titan Edition.desktop', 'titan-desktop'),
-            (USER / '.local/share/applications/votc.desktop', 'titan-menu'),
-            (USER / '.local/share/icons/hicolor/256x256/apps/votc-titan-edition.png', 'titan-icon'),
+            (data_home() / 'applications/votc.desktop', 'titan-menu'),
+            (data_home() / 'icons/hicolor/256x256/apps/votc-titan-edition.png', 'titan-icon'),
             (STATE / 'default-runtime', 'default-runtime'), *retired_targets()]
 
 
@@ -68,13 +74,13 @@ def retire_test_shortcuts():
 
 def apply_integration(runtime, launcher_source, icon_source):
     atomic_write(USER / '.local/bin/votc-launch', launcher_source.read_bytes(), 0o755)
-    icon = USER / '.local/share/icons/hicolor/256x256/apps/votc-titan-edition.png'
+    icon = data_home() / 'icons/hicolor/256x256/apps/votc-titan-edition.png'
     atomic_write(icon, icon_source.read_bytes(), 0o644)
     entry = ('[Desktop Entry]\nType=Application\nName=VOTC Titan Edition\n'
              'Comment=Titan companion for Crusader Kings III\n'
              'Exec="' + str(USER / '.local/bin/votc-launch') + '"\nIcon=' + str(icon) + '\n'
              'Terminal=false\nCategories=Game;\nStartupNotify=true\n')
-    for target in (USER / 'Desktop/VOTC Titan Edition.desktop', USER / '.local/share/applications/votc.desktop'):
+    for target in (USER / 'Desktop/VOTC Titan Edition.desktop', data_home() / 'applications/votc.desktop'):
         atomic_write(target, entry, 0o755)
     atomic_write(STATE / 'default-runtime', runtime + '\n')
     retire_test_shortcuts()
@@ -142,8 +148,81 @@ def install():
         install_locked()
 
 
+def exchange_directories(first, second):
+    libc = ctypes.CDLL(None, use_errno=True)
+    exchange = getattr(libc, 'renameat2', None)
+    if exchange is None:
+        raise RuntimeError('Atomic application upgrade is unavailable on this system.')
+    exchange.argtypes = [ctypes.c_int, ctypes.c_char_p, ctypes.c_int, ctypes.c_char_p, ctypes.c_uint]
+    exchange.restype = ctypes.c_int
+    if exchange(-100, os.fsencode(first), -100, os.fsencode(second), 2) != 0:
+        number = ctypes.get_errno()
+        raise OSError(number, os.strerror(number))
+
+
+def restore_integration(backup):
+    entries = json.loads((Path(backup) / 'deployment.json').read_text())['entries']
+    allowed = {name: target for target, name in integration_targets()}
+    for name, target in allowed.items():
+        entry = entries.get(name)
+        if not entry or Path(entry['path']) != target:
+            raise RuntimeError('Unexpected integration restore target.')
+        if name in {n for _, n in retired_targets()}:
+            continue
+        if entry['existed']:
+            atomic_write(target, (Path(backup) / name).read_bytes(), (Path(backup) / name).stat().st_mode & 0o777)
+        else:
+            target.unlink(missing_ok=True)
+
+
+def recover_pending_install():
+    journal = STATE / 'native-install-pending.json'
+    temporary_journal = journal.with_name(journal.name + '.titan-tmp')
+    if temporary_journal.exists():
+        draft = json.loads(temporary_journal.read_text())
+        if draft.get('target') != str(TARGET) or draft.get('temp') != str(TARGET.with_name(TARGET.name + '.staging')):
+            raise RuntimeError('Unexpected interrupted install journal.')
+        if not journal.exists():
+            temporary_journal.replace(journal)
+        else:
+            active = json.loads(journal.read_text())
+            if any(active.get(k) != draft.get(k) for k in ('target', 'temp', 'inode', 'backup', 'old', 'new')):
+                raise RuntimeError('Conflicting interrupted install journals.')
+            temporary_journal.unlink()
+    if not journal.exists():
+        return
+    pending = json.loads(journal.read_text())
+    temp = TARGET.with_name(TARGET.name + '.staging')
+    if pending.get('target') != str(TARGET) or pending.get('temp') != str(temp):
+        raise RuntimeError('Inspect an unexpected native install journal.')
+    backup = Path(pending['backup'])
+    if backup.parent.resolve() != (STATE / 'native-deployments').resolve():
+        raise RuntimeError('Unexpected install recovery backup.')
+    owned_temp = temp.exists() and temp.stat().st_ino in (pending['inode'], pending.get('old_inode'))
+    live_hash = tree_hash(TARGET) if TARGET.exists() else None
+    if pending['phase'] == 'committed':
+        if live_hash != pending['new']:
+            raise RuntimeError('Installed application changed during interrupted cleanup.')
+    elif live_hash == pending['new']:
+        if pending['old'] is not None:
+            if not owned_temp or tree_hash(temp) != pending['old']:
+                raise RuntimeError('Prior application is unavailable for atomic install recovery.')
+            exchange_directories(TARGET, temp)
+        else:
+            shutil.rmtree(TARGET)
+        restore_integration(backup)
+    elif live_hash != pending['old']:
+        raise RuntimeError('Native application changed during interrupted installation.')
+    if temp.exists():
+        if not owned_temp:
+            raise RuntimeError('Staging directory ownership changed; inspect before retrying.')
+        shutil.rmtree(temp)
+    journal.unlink()
+
+
 def install_locked():
     ensure_closed()
+    recover_pending_install()
     manifest = json.loads((STAGE.parent / 'manifest.json').read_text())
     if tree_hash(STAGE) != manifest['application_sha256']:
         raise RuntimeError('Native application changed after sealing.')
@@ -160,22 +239,36 @@ def install_locked():
     if temp.exists():
         raise RuntimeError('Inspect an existing native staging directory first.')
     # Budget both the independent rollback and new installation before touching live.
-    require_space(STATE, tree_bytes(STAGE) + (tree_bytes(TARGET) if TARGET.exists() else 0))
+    require_deployment_space(STATE, tree_bytes(STAGE) + (tree_bytes(TARGET) if TARGET.exists() else 0))
     backup = make_backup(targets(), manifest)
+    temp.parent.mkdir(parents=True, exist_ok=True)
+    temp.mkdir()
+    journal = STATE / 'native-install-pending.json'
+    pending = {'target': str(TARGET), 'temp': str(temp), 'inode': temp.stat().st_ino,
+               'old': tree_hash(TARGET) if TARGET.exists() else None, 'old_inode': TARGET.stat().st_ino if TARGET.exists() else None,
+               'new': manifest['application_sha256'], 'backup': str(backup), 'phase': 'copying'}
     try:
-        temp.parent.mkdir(parents=True, exist_ok=True)
-        copy_tree(STAGE, temp, symlinks=True)
+        atomic_write(journal, json.dumps(pending))
+        copy_tree(STAGE, temp, symlinks=True, dirs_exist_ok=True)
+        if tree_hash(temp) != pending['new']:
+            raise RuntimeError('Staged native application failed copy verification.')
         if TARGET.exists():
-            shutil.rmtree(TARGET)
-        temp.replace(TARGET)
+            exchange_directories(TARGET, temp)
+        else:
+            temp.replace(TARGET)
+        pending['phase'] = 'promoted'
+        atomic_write(journal, json.dumps(pending))
         apply_integration(runtime, launcher, TARGET / 'resources/app/public/assets/titan-icon.png')
+        pending['phase'] = 'committed'
+        atomic_write(journal, json.dumps(pending))
+        recover_pending_install()
         prune_backups(STATE)
         print(json.dumps({'installed': True, 'native': str(TARGET), 'backup': str(backup),
                           'default_runtime': runtime, 'ck3_acceptance': manifest['engine_acceptance']}, indent=2))
-    except Exception:
-        if temp.exists():
+    except BaseException:
+        recover_pending_install()
+        if not journal.exists() and temp.exists() and temp.stat().st_ino == pending['inode']:
             shutil.rmtree(temp)
-        rollback(backup, guard=False)
         raise
 
 

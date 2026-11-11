@@ -260,7 +260,7 @@ async function init(){
             populatePresetSelector();
             populateCharDescCharacters();
         });
-        promptPresetSelect.addEventListener('change', handlePresetChange);
+        promptPresetSelect.addEventListener('change', () => handlePresetChange(true));
         savePromptPresetBtn.addEventListener('click', saveCurrentPreset);
         deletePromptPresetBtn.addEventListener('click', deleteSelectedPreset);
         resetPresetToDefaultBtn.addEventListener('click', resetCurrentPresetToDefault);
@@ -558,11 +558,12 @@ async function populatePresetSelector(activePreset?: string) {
         }
     }
 
-    promptPresetSelect.value = activePreset || 'Default';
-    await handlePresetChange();
+    promptPresetSelect.value = activePreset || config.activePromptPreset || 'Default';
+    if (!promptPresetSelect.value) promptPresetSelect.value = 'Default';
+    await handlePresetChange(false);
 }
 
-async function handlePresetChange() {
+async function handlePresetChange(activate = false) {
     const selectedPresetName = promptPresetSelect.value;
     console.log(`Preset changed to: ${selectedPresetName}`);
     promptPresetNameInput.value = selectedPresetName;
@@ -596,18 +597,7 @@ async function handlePresetChange() {
             promptsToLoad = { ...defaultPrompts.prompts, ...customPreset };
             const mergedKeys = Object.keys(promptsToLoad);
 
-            // If new keys were added, it means the preset was outdated. Save it back.
-            if (mergedKeys.length > originalKeys.length) {
-                console.log(`Updating custom preset "${selectedPresetName}" with missing default keys.`);
-                if (!promptPresets[selectedCharacterId]) {
-                    promptPresets[selectedCharacterId] = {};
-                }
-                promptPresets[selectedCharacterId][selectedPresetName] = promptsToLoad;
-                await ipcRenderer.invoke('save-prompt-presets', promptPresets);
-                // @ts-ignore
-                const updateMsg = window.LocalizationManager.getNestedTranslation('prompts.preset_updated_with_defaults', { presetName: selectedPresetName }, `Preset "${selectedPresetName}" was updated with new default prompt fields.`);
-                showStatusMessage(updateMsg, 'info');
-            }
+            // Missing fields are merged for display; browsing never writes a preset.
         } else {
             promptsToLoad = null; // Preset not found
         }
@@ -626,7 +616,7 @@ async function handlePresetChange() {
         promptKeys.forEach(key => updateTokenCount(key));
     }
 
-    ipcRenderer.send('config-change', 'activePromptPreset', selectedPresetName);
+    if (activate) ipcRenderer.send('config-change', 'activePromptPreset', selectedPresetName);
 
     const isProtected = selectedPresetName === 'Default' || (defaultPrompts.mod_prompt_sets && defaultPrompts.mod_prompt_sets[selectedPresetName]);
     deletePromptPresetBtn.disabled = isProtected;
@@ -688,13 +678,18 @@ async function saveCurrentPreset() {
         newPreset[key] = promptTextareas[key].textarea.value;
     }
 
-    if (!promptPresets[selectedCharacterId]) {
-        promptPresets[selectedCharacterId] = {};
+    const nextPresets = { ...promptPresets, [selectedCharacterId]: { ...promptPresets[selectedCharacterId], [presetName]: newPreset } };
+    try {
+        const result = await ipcRenderer.invoke('save-prompt-presets', nextPresets);
+        if (!result?.success) throw new Error(result?.error || 'Unable to save preset.');
+    } catch (error) {
+        showStatusMessage(String(error), 'error');
+        setSaveButtonState(true);
+        return;
     }
-    promptPresets[selectedCharacterId][presetName] = newPreset;
-    await ipcRenderer.invoke('save-prompt-presets', promptPresets);
-
+    promptPresets = nextPresets;
     await populatePresetSelector(presetName);
+    await handlePresetChange(true);
     // @ts-ignore
     const successMsg = window.LocalizationManager.getNestedTranslation('prompts.save_preset_success', { presetName: presetName });
     // @ts-ignore
@@ -715,9 +710,15 @@ async function deleteSelectedPreset() {
     }
 
     if (promptPresets[selectedCharacterId] && promptPresets[selectedCharacterId][selectedPresetName]) {
-        delete promptPresets[selectedCharacterId][selectedPresetName];
-        await ipcRenderer.invoke('save-prompt-presets', promptPresets);
-        await populatePresetSelector('Default'); // Switch to default after deletion
+        const nextPresets = { ...promptPresets, [selectedCharacterId]: { ...promptPresets[selectedCharacterId] } };
+        delete nextPresets[selectedCharacterId][selectedPresetName];
+        try {
+            const result = await ipcRenderer.invoke('save-prompt-presets', nextPresets);
+            if (!result?.success) throw new Error(result?.error || 'Unable to delete preset.');
+        } catch (error) { showStatusMessage(String(error), 'error'); return; }
+        promptPresets = nextPresets;
+        await populatePresetSelector('Default');
+        if (config.activePromptPreset === selectedPresetName) await handlePresetChange(true);
         // @ts-ignore
         let successMsg = window.LocalizationManager.getNestedTranslation('prompts.delete_preset_success', { presetName: selectedPresetName });
         // @ts-ignore

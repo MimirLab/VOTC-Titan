@@ -97,12 +97,14 @@ export interface Action{
 }
 
 export interface ActionResponse{
+    proposalId?: string;
     actionName: string,
     chatMessage: string,
     chatMessageClass: string
 }
 
 export interface PendingAction {
+    proposalId?: string;
     action: Action;
     args: string[];
     sourceId: number;

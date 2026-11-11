@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "wildhammer_gryphon_falconry",
+      "cultureDefinitions": {
+        "wildhammer": "fa232830a155b0e6f8bd90a5e41bd9d35c03727d5abd3ea1c223d98187335fe0"
+      },
+      "anchors": [
+        {
+          "key": "tradition_ep2_avid_falconers",
+          "definitionHash": "a18ef9c6374835b27de1125aaacfad4044627fbfb00ffe74f29d633dfb4419aa"
+        },
+        {
+          "key": "tradition_hunters",
+          "definitionHash": "d6735b0d37478693fdde1a72924cdea12bba194d882e5a8c41e44eb6d0fd2ee7"
+        },
+        {
+          "key": "tradition_tribe_unity",
+          "definitionHash": "b628f7665f3c7b291226e3c1ecb325ab2a33da4fad4e034987fbfba1553e4101"
+        }
+      ],
+      "text": "Shared roost work teaches companionship before command. Hunters provide for nesting gryphons, and a gryphon's care and deeds belong to clan life alongside those of dwarven companions. The wider community sustains these bonds even when its members do not ride.",
+      "coveredReadingIds": [
+        "falconry_wildhammer_gryphon"
+      ],
+      "rationale": "Approved finding G02. A retained Wildhammer gryphon-care practice plus an actually adopted relevant hunting or kinship custom; resolve one combined meaning if both qualify. Do not require Falconry for all gryphon custom. Keep care for companions separate from a particular person's ownership, birth-year group, marriage or present hunt. Preserve the practice through unrelated reforms and renaming."
+    },
+    {
+      "id": "retained_dark_iron_forge_practice",
+      "cultureDefinitions": {
+        "dark_iron": "6316012c558066c0979c66248905f2937d178e50d1b0a2e49876afcd104583d6"
+      },
+      "anchors": [
+        {
+          "key": "tradition_metal_craftsmanship",
+          "definitionHash": "48d80f02672931c10a3a1debc5d6955c8d333cec5c8ee8a24c9ba8caca8df9a9"
+        },
+        {
+          "key": "tradition_sorcerous_metallurgy",
+          "definitionHash": "22f4b4aa04d8db5b39bda22f2a6f10a12ce158303b72e181b898f1f49df52a62"
+        }
+      ],
+      "text": "A clever improvement in metal or machinery earns regard through the advantage it delivers. The maker's demanding standard can outlast loyalty to the patron who ordered the work; skill, resentment and pride need not share an allegiance.",
+      "coveredReadingIds": [
+        "dark_iron_metalwork_standard_beyond_the_patron",
+        "dark_iron_sorcerous_metallurgy_ingenious_advantage",
+        "dark_iron_metal_with_artisans_the_standard_can_outlast_its_employer",
+        "dark_iron_metal_with_family_enterprise_the_household_can_outlast_the_patron",
+        "dark_iron_metal_with_artisans_and_family_enterprise_the_method_need_not_inherit_its_master"
+      ],
+      "rationale": "Approved finding G04. The exact adopted craft plus a retained Dark Iron forge practice. Metal Craftsmanship has a current source-seed witness; Sorcerous Metallurgy is a later-adoption case. Reuse existing variants where sufficient. Do not infer Ragnaros worship, forced service, a named forge, magical skill or an individual grievance from cultural craft."
+    },
+    {
+      "id": "retained_moknathal_chosen_companionship",
+      "cultureDefinitions": {
+        "moknathal": "deddf8f406468fe7a987b3f6e402df9d6e1baf484db2414da429c7bcc005dfac"
+      },
+      "anchors": [
+        {
+          "key": "tradition_hunters",
+          "definitionHash": "d6735b0d37478693fdde1a72924cdea12bba194d882e5a8c41e44eb6d0fd2ee7"
+        },
+        {
+          "key": "tradition_fp2_ritualised_friendship",
+          "definitionHash": "5001e1fa73941727b97f38ebe4859ea298679e5d724986af00ce9248d02da6db"
+        }
+      ],
+      "text": "Good hunting attends to the companion who notices another part of the trail. Freely offered service has value that an elaborate honor or commanding voice cannot buy; avoiding a needless fight can show better judgment than proving strength.",
+      "coveredReadingIds": [
+        "moknathal_hunting_attention_before_command",
+        "moknathal_friendship_a_promise_freely_chosen",
+        "moknathal_frostwolf_hunting_two_inheritances_of_trust"
+      ],
+      "rationale": "Approved finding G05. Actual Hunters plus an authoritative retained Mok'nathal companionship practice; do not select the variant for all Orcish heritage. Do not require a friendship tradition the source culture does not have, assign a pet, or make reserve a compulsory personal disposition."
+    },
+    {
+      "id": "retained_frostwolf_wolf_partnership",
+      "cultureDefinitions": {
+        "frostwolf": "35cf17b5a7aa1059c7e4d5b4f8f6adb9bd6bb9576ef08659a13870ccd425d03f"
+      },
+      "anchors": [
+        {
+          "key": "tradition_hunters",
+          "definitionHash": "d6735b0d37478693fdde1a72924cdea12bba194d882e5a8c41e44eb6d0fd2ee7"
+        },
+        {
+          "key": "tradition_loyal_soldiers",
+          "definitionHash": "dd38e43a5b2640039717fed8225e1b578b46a2f0ad454c60ad90d1754e6c1e17"
+        },
+        {
+          "key": "tradition_tribe_unity",
+          "definitionHash": "b628f7665f3c7b291226e3c1ecb325ab2a33da4fad4e034987fbfba1553e4101"
+        },
+        {
+          "key": "tradition_pastoralists",
+          "definitionHash": "0ae14b139d1e938d2cdb996d50d768ccbf79c02b2e5cc53dbe11cd82a8fc3c07"
+        }
+      ],
+      "text": "Wolf tending belongs to the household's shared responsibilities. Knowing a companion's needs and temperament, keeping it fed and listening to its warning give loyalty a practical meaning beyond obedience or a rider's boast.",
+      "coveredReadingIds": [
+        "frostwolf_hunting_partner_worth_listening_to",
+        "frostwolf_loyal_service_keeps_the_partner_in_view",
+        "moknathal_frostwolf_hunting_two_inheritances_of_trust"
+      ],
+      "rationale": "Approved finding G03. Retained Frostwolf wolf partnership combined with an adopted relevant kinship or animal-care custom; keep independent pastoral husbandry intact. Do not replace all herds with wolves, turn every orc into a wolf rider, or introduce a living animal from ancestry alone. Existing hunting variants remain useful for later actual adoption."
+    },
+    {
+      "id": "retained_nerubian_civic_practice",
+      "cultureDefinitions": {
+        "nerubian": "7ddaac1c96082a8cb2fdc0991ef65a3747a376726f9c12cf6affa237a6f704a8"
+      },
+      "anchors": [
+        {
+          "key": "tradition_city_keepers",
+          "definitionHash": "efb7c86900107286be57c44f199ae0dab6e25e04bb8b65edb3c3d79e788f2aee"
+        },
+        {
+          "key": "tradition_philosopher_culture",
+          "definitionHash": "ece3d11ce4bece28391fc23be3d7d43de0d16d676c08e5a4b8bd0e551de632ec"
+        },
+        {
+          "key": "tradition_scholar_officials",
+          "definitionHash": "e8af36a9d07cdf2f9fc4d606160ca26a9171e9c53c56d14b6b5b72d61348d93d"
+        },
+        {
+          "key": "tradition_legalistic",
+          "definitionHash": "44ebb5db15f4c4eec24124b0a49d5b88943ba3de77742cfa78d251ac5646d72d"
+        },
+        {
+          "key": "tradition_astute_diplomats",
+          "definitionHash": "228e87c2fc9fcaf456128acfc9bcdeb87bc41195de4ed062b8b6b0c12ca25005"
+        }
+      ],
+      "text": "A chamber, instrument or silk record preserves another person's work as well as its present use. Keeping a contribution attributed, recording a warning and improving a predecessor's pattern sustain civic memory; a clever revision need not erase its maker.",
+      "coveredReadingIds": [],
+      "rationale": "Approved finding G06. A retained Nerubian civic/archival practice and an actually adopted relevant civic or learning custom. This is a proposed scoped interpretation, not an assertion that City Keepers' game effects create archives. Aqir heritage also includes distinct societies. Do not grant a Scourge history, occupation, archive, religion or communal consciousness to an individual. Existing legal/diplomatic/learning readings do not independently retain attribution of a predecessor's contribution; adopting them must not suppress this civic-memory clause."
+    },
+    {
+      "id": "retained_kobold_candle_care",
+      "cultureDefinitions": {
+        "kobold": "2e99deeacb71141e5e1235e4e4fbec504b658e67678ffa26db75b2133cb654c6"
+      },
+      "anchors": [
+        {
+          "key": "tradition_ancient_miners",
+          "definitionHash": "dbc3e9c04db4345064afcb42826d472e0184f7cd4d34ed784bf59528cf1793d7"
+        }
+      ],
+      "text": "A personal candle is a tool, comfort and token of dependable company. Borrowing it calls for permission and a plan for its return; contributing wax or useful salvage helps another person trust the newcomer sharing the shelter.",
+      "coveredReadingIds": [],
+      "rationale": "Approved finding G10. Retained warren candle-care practice in a relevant mining, borrowing or hospitality context. Review whether a short mining refinement or topic-selected local custom is the better route. Do not infer candle worship, religious sacrifice, ownership of a candle or the location of the current scene from Murine heritage. Do not append this passage to every mining discussion."
+    }
+  ]
+}

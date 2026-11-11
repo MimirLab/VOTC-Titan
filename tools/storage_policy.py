@@ -13,6 +13,7 @@ import time
 import warnings
 
 MIN_FREE_BYTES = 30 * 1024 ** 3
+INSTALL_FREE_RESERVE = 1024 ** 3
 KEEP_ROLLBACKS = 3
 KEEP_STAGES = 2
 KEEP_PORTABLE_PRIORS = 1
@@ -40,6 +41,20 @@ def require_space(destination, additional_bytes=0, reserve=MIN_FREE_BYTES):
                            'including a %.0f GiB reserve. Run tools/maintain-storage.py '
                            'plan, then apply its reviewed plan; live files were not changed.' %
                            (free / 1024**3, needed / 1024**3, reserve / 1024**3))
+
+
+def require_deployment_space(destination, additional_bytes=0):
+    """Public installation: budget new writes/rollback plus 1 GiB of free headroom."""
+    path = Path(destination)
+    while not path.exists():
+        path = path.parent
+    free = shutil.disk_usage(path).free
+    needed = max(0, int(additional_bytes)) + INSTALL_FREE_RESERVE
+    if free < needed:
+        raise RuntimeError('Insufficient installation space: %.1f GiB free; need %.1f GiB '
+                           'including 1 GiB of free headroom. Free space on this drive or '
+                           'choose another installation location, then rerun the installer; '
+                           'live files were not changed.' % (free / 1024**3, needed / 1024**3))
 
 
 def tree_bytes(path):
@@ -102,8 +117,9 @@ def _payloads(root, kind):
     if kind == 'native-stage':
         app = root / 'resources/app'
         prefixes = [('resources/app/' + n, app / n) for n in
-                    ('src', 'dist', 'public', 'default_userdata', 'docs', 'build/icons')]
-        singles = ['resources/app/' + n for n in ('package.json', 'LICENSE', 'README.md', 'README.upstream.md', 'node_modules/.package-lock.json')]
+                    ('src', 'dist', 'public', 'default_userdata', 'docs', 'build', 'tools')]
+        singles = ['resources/app/' + n for n in ('package.json', 'package-lock.json', 'tsconfig.json',
+                   'LICENSE', 'README.md', 'README.upstream.md', 'node_modules/.package-lock.json')]
     elif kind == 'native-backup':
         for name, path in _payloads(root / 'application', 'native-stage'):
             yield 'application/' + name, path

@@ -57,3 +57,19 @@ test('qualified index requires its exact edition row count before it becomes rea
         expect(await index.rankQualified(config,directory,{manifest_sha256:'edition',authored_qualified:2}as any,'Question')).toEqual([]);
     }finally{fs.rmSync(directory,{recursive:true,force:true});}
 });
+
+test('the UI-shaped build selects the shipped qualified recipe and survives reopening', async () => {
+    const directory=fs.mkdtempSync(path.join(os.tmpdir(),'titan-ui-index-'));
+    const previous=process.env.VOTC_LORE_NATIVE_SEMANTIC_STUDY; process.env.VOTC_LORE_NATIVE_SEMANTIC_STUDY='1';
+    const client:any={request:jest.fn(async request=>request.after?[]:[{id:'human-custom',text:'Apprenticeship fees.',body_sha256:'fixture',embedding_text:'Guild fees'}])};
+    const config:any={embeddingApiConnectionConfig:{connection:{type:'custom',model:'fixture',baseUrl:'https://fixture.invalid',useCustomEmbeddingDimension:true,embeddingDimension:2}}};
+    const edition:any={manifest_sha256:'fixture-edition',authored_qualified:1};
+    const embed=jest.spyOn(EmbeddingProvider.prototype,'embed').mockResolvedValue([1,0]);
+    const query=jest.spyOn(EmbeddingProvider.prototype,'embedOnce').mockResolvedValue([1,0]);
+    try {
+        await new LorebookVectors(client).build(config,directory,edition);
+        expect(client.request).toHaveBeenCalledWith({op:'qualified-documents',after:''});
+        const reopened=new LorebookVectors(client);
+        expect((await reopened.recall(config,directory,edition,'apprenticeship',true)).ids).toEqual(['human-custom']);
+    } finally { embed.mockRestore();query.mockRestore();if(previous===undefined)delete process.env.VOTC_LORE_NATIVE_SEMANTIC_STUDY;else process.env.VOTC_LORE_NATIVE_SEMANTIC_STUDY=previous;fs.rmSync(directory,{recursive:true,force:true}); }
+});

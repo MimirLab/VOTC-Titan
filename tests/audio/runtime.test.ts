@@ -1,8 +1,9 @@
 import fs from 'fs';
+import {createHash} from 'crypto';
 import os from 'os';
 import path from 'path';
 import { app } from 'electron';
-import { AudioRuntime } from '../../src/main/audio/AudioRuntime';
+import { AudioRuntime, DEFAULT_NARRATOR_BANK, DEFAULT_NARRATOR_NAME } from '../../src/main/audio/AudioRuntime';
 import { BreezeProvider } from '../../src/main/audio/BreezeProvider';
 import { designCharacterVoice } from '../../src/main/audio/voiceDesign';
 import { normalizeAudio } from '../../src/shared/audio';
@@ -11,7 +12,7 @@ import type { Message } from '../../src/main/ts/conversation_interfaces';
 import type { Conversation } from '../../src/main/conversation/Conversation';
 import * as cloneRuntime from '../../src/main/audio/cloneRuntime';
 import * as cloneCapture from '../../src/main/audio/cloneCapture';
-import { readCloneBank } from '../../src/main/audio/CloneBanks';
+import { cloneIdentity, readCloneBank } from '../../src/main/audio/CloneBanks';
 import { cloneFixture } from './clone-fixture';
 import { cloneAgeInstruction } from '../../src/main/audio/cloneAge';
 import * as maturationRuntime from '../../src/main/audio/maturationRuntime';
@@ -45,6 +46,50 @@ function fixture(root: string, enabled = true) {
 let root: string;
 beforeEach(() => { root = fs.mkdtempSync(path.join(os.tmpdir(), 'titan-audio-runtime-')); jest.clearAllMocks(); (app as any).getAppPath = () => path.resolve('.'); });
 afterEach(() => fs.rmSync(root, { recursive: true, force: true }));
+test('an empty narrator library previews the exact bundled Medivh without generating an identity', async () => {
+    const f = fixture(root), bank = readCloneBank(path.join(cloneCapture.BUNDLED_CLONES, DEFAULT_NARRATOR_BANK));
+    try {
+        expect(f.runtime.list()).toEqual([]);
+        await f.runtime.previewVoice(undefined, undefined, 'The last light slipped from the ridge.');
+        expect(f.speech).toHaveBeenCalledTimes(1);
+        const [text, direction, profile] = f.speech.mock.calls[0];
+        expect(text).toBe('The last light slipped from the ridge.'); expect(direction).toBe('');
+        expect(profile).toMatchObject({ characterId: '__narrator__', campaign: '__global__', label: DEFAULT_NARRATOR_NAME, seed: 17, referenceText: bank.text });
+        expect(fs.readFileSync(profile.referenceFile!)).toEqual(bank.wav);
+        expect(cloneIdentity(profile)).toMatchObject({ key: DEFAULT_NARRATOR_BANK, audioHash: bank.audioHash, manifestHash: bank.manifestHash });
+        expect(designCharacterVoice).not.toHaveBeenCalled();
+    } finally { f.runtime.shutdown(); }
+});
+test('narrator overrides persist and restoring Medivh reuses one reference without deleting saved choices', async () => {
+    const f = fixture(root);
+    try {
+        const custom = f.runtime.saveNarrator('My storyteller', 'A bright, clear storyteller.');
+        await f.runtime.previewVoice(); expect(f.speech.mock.calls.at(-1)![2].id).toBe(custom.id);
+        const medivh = f.runtime.useDefaultNarrator(); f.runtime.selectVoice(custom.id);
+        await f.runtime.previewVoice(); expect(f.speech.mock.calls.at(-1)![2].id).toBe(custom.id);
+        expect(f.runtime.useDefaultNarrator().id).toBe(medivh.id); expect(f.runtime.useDefaultNarrator().id).toBe(medivh.id);
+        f.runtime.selectVoice(custom.id); f.runtime.selectVoice(medivh.id);
+        expect(f.runtime.list()).toHaveLength(2); expect(f.runtime.list().find(v => v.active)?.id).toBe(medivh.id);
+        f.runtime.deleteVoice(medivh.id); expect(f.runtime.list()).toHaveLength(1);
+        expect(f.runtime.list()[0]).toMatchObject({ id: custom.id, active: true });
+    } finally { f.runtime.shutdown(); }
+});
+test('encounter narration uses Medivh without inheriting the character age and historical replay retains that narrator', async () => {
+    const f = fixture(root); f.settings.narrator = true; f.actor.age = 80;
+    f.view.editableContent = '**The last light slipped from the ridge.**';
+    try {
+        f.runtime.enqueue(f.conv, f.source); await until(() => f.seen.some(e => e[0] === 'audio-end'));
+        expect(f.speech).toHaveBeenCalledTimes(1);
+        const first = f.speech.mock.calls[0];
+        expect(first[1]).toBe(''); expect(first[2].label).toBe(DEFAULT_NARRATOR_NAME);
+        expect(first[5]).toMatchObject({ deliveryKind: 'narration', cloneAge: undefined, maturity: undefined, demonFamily: undefined });
+        expect(designCharacterVoice).not.toHaveBeenCalled();
+        f.runtime.stop(); await until(() => !(f.runtime as any).draining); f.seen.length = 0;
+        const custom = f.runtime.saveNarrator('Override', 'A gentle storyteller.'); f.speech.mockClear();
+        f.runtime.replay(f.conv, f.source.id!); await until(() => f.seen.some(e => e[0] === 'audio-end'));
+        expect(f.speech.mock.calls[0][2].id).toBe(first[2].id); expect(f.speech.mock.calls[0][2].id).not.toBe(custom.id);
+    } finally { f.runtime.shutdown(); }
+});
 test('disabled audio performs no voice design, storage, model loading or output', async () => {
     const f = fixture(root, false); f.runtime.enqueue(f.conv, f.source); await tick();
     expect(designCharacterVoice).not.toHaveBeenCalled(); expect(f.speech).not.toHaveBeenCalled();
@@ -327,6 +372,7 @@ test('narration hands off to the character, whispers and back without losing the
 });
 test('starts with narrator preparation and keeps synthesis busy while narration plays without starting later playback', async () => {
     const f = fixture(root); f.settings.narrator = true;
+    f.runtime.saveNarrator('Custom storyteller', 'A clear, measured storyteller.');
     f.view.editableContent = '**She nods.** ""Welcome."" **She smiles.** ""Come in.""';
     try {
         f.runtime.replay(f.conv, 'first');
@@ -689,4 +735,43 @@ test.each(['unknown','older','elderly','mismatched'] as const)('current old age 
         await f.runtime.previewVoice(f.speech.mock.calls[0][2].id,undefined,'Exact old voice words.','older');
         expect(f.speech.mock.calls[1][5].cloneAge).toBeUndefined();
     }finally{f.runtime.shutdown();capture.mockRestore();observed.mockRestore();catalog.mockRestore()}
+});
+
+test.each(['openai-speech','elevenlabs'] as const)('completed %s playback persists a replayable receipt across restart',async provider=>{
+    const f=fixture(root);f.settings.provider=provider;f.settings.sideVoiceId='fixture-voice';f.settings.endpoint='https://fixture.invalid';
+    const original=global.fetch;global.fetch=jest.fn(async()=>new Response(Buffer.alloc(960),{headers:{'content-type':'audio/pcm'}}));
+    try {
+        f.runtime.enqueue(f.conv,f.source);await until(()=>f.seen.some(e=>e[0]==='audio-end'));
+        f.runtime.completed(f.seen.find(e=>e[0]==='audio-start')![1].id);await until(()=>!(f.runtime as any).draining);
+        const library=(f.runtime as any).store(),saved=library.plan('campaign-a','1','first');expect(saved).toMatchObject({pending:false,audioState:'completed',provider});
+        // Preview builds persisted pending:true even after successful optional playback.
+        const preview={...saved,pending:true};delete preview.provider;delete preview.audioState;
+        library.savePlan('campaign-a','1','first',createHash('sha256').update(JSON.stringify([f.view.content,f.view.editableContent])).digest('hex'),preview);
+        f.runtime.shutdown();const second=fixture(root);second.settings.provider=provider;second.settings.sideVoiceId='fixture-voice';second.settings.endpoint='https://fixture.invalid';
+        second.conv.getHistory=()=>[];second.conv.getEncounterCharacter=()=>undefined;second.conv.historicalConversations=[{messages:[second.view]}] as any;
+        try {expect(()=>second.runtime.replay(second.conv,'first')).not.toThrow();await until(()=>second.seen.some(e=>e[0]==='audio-end'));}
+        finally {second.runtime.shutdown();}
+    } finally {global.fetch=original;f.runtime.shutdown();}
+});
+test('muted narration and preview pending narration receipts can use the storyteller later',async()=>{
+    const f=fixture(root);f.settings.narrator=false;f.view.editableContent='**The room falls quiet.**';
+    try {
+        f.runtime.enqueue(f.conv,f.source);await until(()=>!(f.runtime as any).draining);
+        const library=(f.runtime as any).store(),saved=library.plan('campaign-a','1','first');expect(saved).toMatchObject({pending:false,audioState:'muted'});
+        // Preview receipts lacked the explicit muted/completed distinction.
+        library.savePlan('campaign-a','1','first',createHash('sha256').update(JSON.stringify([f.view.content,f.view.editableContent])).digest('hex'),{...saved,pending:true});
+        f.settings.narrator=true;f.conv.getHistory=()=>[];f.conv.historicalConversations=[{messages:[f.view]}] as any;
+        expect(()=>f.runtime.replay(f.conv,'first')).not.toThrow();await until(()=>f.seen.some(e=>e[0]==='audio-end'));
+    } finally {f.runtime.shutdown();}
+});
+
+test.each(['openai-speech','elevenlabs'] as const)('optional %s character preview uses the selected speech service without designing a Breeze voice',async provider=>{
+    const f=fixture(root);f.settings.provider=provider;
+    const design=designCharacterVoice as jest.Mock;design.mockClear();
+    const side=jest.spyOn(require('../../src/main/audio/SideSpeechProvider'),'sideSpeech').mockImplementation(async(...args:any[])=>{await args[4](Buffer.alloc(80));});
+    try{
+        const before=f.runtime.list();const result=await f.runtime.previewCharacter(f.conv,2,'Exact optional preview.');
+        expect(result.subarray(0,4).toString()).toBe('RIFF');expect(side).toHaveBeenCalledTimes(1);expect(side.mock.calls[0][1]).toBe('Exact optional preview.');
+        expect(design).not.toHaveBeenCalled();expect(f.runtime.list()).toEqual(before);
+    } finally {side.mockRestore();f.runtime.shutdown();}
 });

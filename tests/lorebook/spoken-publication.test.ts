@@ -144,3 +144,23 @@ test('working-context compaction preserves a canonical publication and working-o
     const g = fixture(), draft = g.accept(g.start()); g.conv.working = [draft];
     expect(g.start().session.previous).toBeUndefined();
 });
+
+test('a verified tool-only account advances only the listeners who actually understood its publication', () => {
+    const f=fixture(), first=f.start();
+    const result={actor_id:'2',context_fingerprint:'reader',passages:[{node_id:'tool-chapter',subject_id:'root',heading:'Apprenticeship fees',text:body}],
+        state:{version:'titan-progressive-lore-v2',context:'reader',root:'root',focus:'tool-chapter',shown:['tool-chapter']},
+        trace:[{status:'accepted',node_id:'tool-chapter',resolved_body_sha256:createHash('sha256').update(body).digest('hex')}]};
+    f.bridge.bind(first.delivery,2,{...result,passages:[],trace:[]},first.delivery.isCurrent!);
+    (f.bridge as any).addToolResult?.(first.delivery,2,result);
+    const message=f.accept(first); f.publish(message);
+    expect(f.start().session.previous).toMatchObject({focus:'tool-chapter'});
+    expect(f.start(3).session.previous).toBeUndefined();
+});
+test('merely returning a verified tool account grants no listener progress', () => {
+    const f=fixture(), first=f.start();
+    const text='A fee of three silver coins applies only if the apprentice agrees.';
+    const next={actor_id:'2',context_fingerprint:'reader',passages:[{node_id:'new-tool',subject_id:'root',heading:'Tool account',text}],
+        trace:[{status:'accepted',node_id:'new-tool',resolved_body_sha256:createHash('sha256').update(text).digest('hex')}]};
+    f.bridge.addToolResult(first.delivery,2,next);
+    expect(f.start().session.previous).toBeUndefined();
+});

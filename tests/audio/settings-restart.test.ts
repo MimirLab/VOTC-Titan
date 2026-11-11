@@ -41,3 +41,9 @@ test('startup keeps audio disabled for new users and preserves an explicit saved
     await checkUserData();
     expect(new Config(configPath).audio).toEqual(config.audio);
 });
+
+test('a temporarily unavailable explicit CK3 folder survives startup even when Documents has another install',async()=>{
+    const config=new Config(configPath);const selected=path.join(root,'disconnected-drive/CK3');config.userFolderPath=selected;config.export();
+    fs.mkdirSync(path.join(root,'documents/Paradox Interactive/Crusader Kings III'),{recursive:true});
+    await checkUserData();expect(new Config(configPath).userFolderPath).toBe(selected);
+});

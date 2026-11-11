@@ -170,12 +170,15 @@ export async function captureCurrentLanguages(characters: Character[], signal: A
     const languages = currentLanguageCaptureCatalog();
     const dialogue = currentDialogueCaptureCatalog();
     const development = developmentCaptureEnabled();
-    if (!languages && !dialogue && !development && !currentLoreMutationCatalog() && !currentLoreGameStateCatalog() && !launcherScenesEnabled()) return false;
+    if (!currentGoaCatalog() && !languages && !dialogue && !development && !currentLoreMutationCatalog() && !currentLoreGameStateCatalog() && !launcherScenesEnabled()) return false;
     if (development) invalidateDevelopment(characters);
     const captured = await encounter?.capture(configuration?.userFolderPath, encounterTargets(game, characters.map(c => c.id)),
         signal, 'votc.txt', 6000, { languagesOnly: true }) ?? false;
     signal.throwIfAborted();
     if (epoch !== captureEpoch) throw Object.assign(new Error('Game encounter changed'), { name: 'AbortError' });
+    if (currentGoaCatalog() && configuration?.goaLoreEnabled !== false &&
+        (!captured || characters.some(character => !getVerifiedGoaSnapshot(character))))
+        throw new Error('Current Warcraft identity capture is not ready. Retry the reply.');
     if (captured && encounter?.lastGameDate) game.gameDate = { ...encounter.lastGameDate };
     if (captured) bindLauncherScene(game, encounter?.lastAcknowledgedNonce);
     if (captured && currentLoreGameStateCatalog() && !bindLoreGameStateClock(game, characters)) return false;

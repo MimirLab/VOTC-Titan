@@ -161,7 +161,7 @@ export async function checkUserData(){
         // Set platform-specific user folder path if not set or invalid
         const documentsPath = app.getPath('documents');
         const defaultCk3Path = path.join(documentsPath, 'Paradox Interactive', 'Crusader Kings III');
-        if ((!mergedConfig.userFolderPath || !fs.existsSync(ck3RuntimePath(mergedConfig.userFolderPath))) && fs.existsSync(defaultCk3Path)) {
+        if (!mergedConfig.userFolderPath && fs.existsSync(defaultCk3Path)) {
             mergedConfig.userFolderPath = defaultCk3Path;
             console.log(`User folder path updated to platform-specific default: ${defaultCk3Path}`);
         }

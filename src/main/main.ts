@@ -9,7 +9,7 @@ import { AudioRuntime, setAudioRuntime } from './audio/AudioRuntime';
 import { registerAudioIpc } from './audio/audioIpc';
 import { requestBackgroundLibraryPurge } from './background/backgroundLibraryPurge';
 import { clearFaithLibrary } from './faith/faithRuntime';
-import { observeSceneLine, applySceneSnapshot, resetSceneReader, runActionWithScenePolicy, sceneUiState, selectLauncherVenue } from './scenes/sceneRuntime';
+import { observeSceneLine, applySceneSnapshot, resetSceneReader, runActionWithScenePolicy, sceneUiState, selectLauncherVenue, waitForSceneSelection } from './scenes/sceneRuntime';
 import { textProviderLane } from '../shared/providerActivity';
 import { observeEncounterLine } from './culture/cultureRuntime';
 import { setLanguageRoutingEnabled } from './language';
@@ -37,7 +37,7 @@ import { LetterManager } from "./letter/LetterManager";
 import { LetterApprovalQueue } from "./letter/LetterApprovalQueue";
 import { LetterActionTrigger } from "./letter/LetterActionTrigger.js";
 import { evaluateReplyDeliveryGate } from "./letter/letterDeliveryGate.js";
-import { parseLog, readLastLogLineContaining } from "../shared/gameData/parseLog";
+import { parseLog, readLastLogLineContaining, parseCampaignLoadedLine } from "../shared/gameData/parseLog";
 import { parseLettersFromLog } from "./letter/parseLogForLetters";
 import { parseLogForBookmarks } from "./parseLogforbookmarks";
 import { processBookmarkToSummary } from "./bookmarktosummary";
@@ -47,6 +47,9 @@ import { parseDiaryIdsFromLog, getAllDiaryPlayerIds, getDiaryFiles, readDiaryFil
 import { getConversationHistoryFiles, readConversationHistoryFile } from "./conversationHistory";
 import { readPromptHistory, savePromptHistory } from "./promptHistory";
 import { Message, ActionResponse } from "./ts/conversation_interfaces";
+import { SummaryEdits, SummaryKind } from './summaryEdits';
+import { normalizePromptPresets } from '../shared/promptPresets';
+import { executeSlashAction } from './conversation/executeSlashAction';
 import { ActionEffectWriter } from "./conversation/ActionEffectWriter";
 import { formatActionNotice } from './conversation/actionNotice';
 import { registerTimelineIpc, resolveTimelineWindowRequest } from "./ipc/timelineIpc.js";
@@ -242,6 +245,7 @@ let observedCampaignIdProvider: () => string | undefined = getObservedCampaignId
 let applyLiveScene: (scene: import("../shared/scenes/types").SceneSnapshot) => void = () => {};
 let conversationOpenChecker: () => boolean = () => false;
 let cancelConversationBackgrounds: () => void = () => {};
+let revokeEncounterOnSaveBoundary: () => void = () => {};
 
 // --- Private helpers for testing ---
 export function _private_setCurrentTotalDays(days: number): void { currentTotalDays = days; }
@@ -848,7 +852,7 @@ function processLogLine(line: string) {
     }
     // Save-load identity from the mod's load relay: the earliest identity signal
     // of a session, and the only one available before the first conversation.
-    if (line.includes('VOTC:CAMPAIGN/;/loaded/;/')) { ceCompatibility.reset(); cancelConversationBackgrounds(); clearCultureObservations(); clearFaithObservations(); clearGoaObservations(); resetSceneReader(); }
+    if (parseCampaignLoadedLine(line)) { revokeEncounterOnSaveBoundary(); ceCompatibility.reset(); cancelConversationBackgrounds(); clearCultureObservations(); clearFaithObservations(); clearGoaObservations(); resetSceneReader(); currentTotalDays = 0; }
     observeCampaignLoadLine(line);
     observeCultureLine(line);
     observeFaithLine(line);
@@ -891,14 +895,15 @@ async function initCurrentDateFromLog(): Promise<void> {
         const dateRegex = /VOTC:DATE\/;\/(\d+)/;
         let latestDays = 0;
         for (const line of lines) {
+            if (parseCampaignLoadedLine(line)) latestDays = 0;
             const match = line.match(dateRegex);
             if (match) {
                 const days = Number(match[1]);
-                if (days > latestDays) latestDays = days;
+                if (Number.isSafeInteger(days) && days > 0) latestDays = days;
             }
         }
+        currentTotalDays = latestDays;
         if (latestDays > 0) {
-            currentTotalDays = latestDays;
             console.log(`initCurrentDateFromLog: Initialized currentTotalDays to ${currentTotalDays} from log.`);
         }
     } catch (err) {
@@ -1554,7 +1559,7 @@ app.on('ready',  async () => {
             }, targetDimension);
 
             sendMemoriesChanged();
-            return { success: true, ...result };
+            return { success: result.failed === 0, ...result, ...(result.failed ? { error: 'Reindexing did not finish. The previous index is intact.' } : {}) };
         } catch (error: any) {
             console.error('Error reindexing embedding dimensions:', error);
             return { success: false, error: error?.message || String(error) };
@@ -1628,14 +1633,13 @@ app.on('ready',  async () => {
             }
 
             const statusDimension = getEffectiveEmbeddingDimension(config?.embeddingApiConnectionConfig?.connection);
-            const localMemoryManager = new MemoryManager(votcDataPath, statusDimension);
+            const localMemoryManager = memoryManager;
             let loadedCount = 0;
             for (const compacted of compactedMemories) {
-                if (localMemoryManager.hasMemory(compacted.id)) {
+                if (localMemoryManager?.hasIndexedMemory(compacted.id, statusDimension)) {
                     loadedCount++;
                 }
             }
-            localMemoryManager.close();
 
             return {
                 success: true,
@@ -1867,17 +1871,9 @@ ipcMain.on('clear-summaries', ()=>{
         if (returnValue.response === 0){
             const remPath = path.join(votcDataPath, 'conversation_summaries');
 
-            fs.readdir(remPath, (err, files) => {
-                if (err) throw err;
-
-                for(const file of files){
-                    const filePath = path.join(remPath, file);
-                    fs.rmSync(filePath, { recursive: true, force: true });
-                    console.log(`Removed summary file: ${filePath}`);
-                }
-
-
-            })
+            conversation?.clearCachedSummaries();
+            for (const file of fs.existsSync(remPath) ? fs.readdirSync(remPath) : [])
+                fs.rmSync(path.join(remPath, file), { recursive: true, force: true });
         }
       })
 })
@@ -1918,6 +1914,7 @@ let conversationLock: Promise<void> | null = null;
 let conversationGeneration = 0;
 let pendingChatSetup: (() => Promise<void>) | undefined;
 chatWindow.onTargetClosed = retireConversationWithoutGame;
+revokeEncounterOnSaveBoundary = retireConversationWithoutGame;
 
 function retireConversationWithoutGame(): void {
     conversationGeneration++;
@@ -2518,14 +2515,7 @@ ipcMain.handle('get-prompt-presets', async () => {
     if (fs.existsSync(presetsPath)) {
         try {
             const presetsRaw = await fs.promises.readFile(presetsPath, 'utf-8');
-            const presets = JSON.parse(presetsRaw);
-            // Ensure the new structure exists
-            if (!presets.global && !Object.keys(presets).some(k => k !== 'global')) {
-                // Old flat structure detected, migrate it
-                console.log('Old preset structure detected, migrating to new structure.');
-                return { global: presets };
-            }
-            return presets;
+            return normalizePromptPresets(JSON.parse(presetsRaw));
         } catch (error) {
             console.error('Error reading prompt presets file:', error);
             return { global: {} }; // Return new structure
@@ -2641,6 +2631,9 @@ ipcMain.on('config-change-nested', (e, outerConfID: string, innerConfID: string,
         if (!newValue.apiKeys && previous.apiKeys) {
             newValue.apiKeys = previous.apiKeys;
         }
+        for (const field of ['useCustomEmbeddingDimension', 'embeddingDimension', 'embeddingInputType'])
+            if (!Object.prototype.hasOwnProperty.call(newValue, field) && Object.prototype.hasOwnProperty.call(previous, field))
+                newValue[field] = previous[field];
     }
 
     // Save custom player2 models
@@ -2921,100 +2914,12 @@ ipcMain.on('execute-action', async (event, signature: string, args: any[]) => {
                 }
                 return;
             }
-            const originalPlayerId = conversation.gameData.playerID;
-            const originalAiId = conversation.gameData.aiID;
-            const originalAiName = conversation.gameData.aiName;
+            const current = conversation;
             try {
-                const sourceId = args[0] ? parseInt(args[0], 10) : null;
-                const targetId = args[1] ? parseInt(args[1], 10) : null;
-                const actionArgs = args.slice(2);
-
-                if ((args[0] && isNaN(sourceId!)) || (args[1] && isNaN(targetId!))) {
-                    throw new Error('Invalid source or target character ID.');
-                }
-
-                if (signature !== 'noOp') {
-                    if (sourceId !== null) conversation.actionInvolvedCharacterIds.add(sourceId);
-                    if (targetId !== null) conversation.actionInvolvedCharacterIds.add(targetId);
-                }
-
-                if ((sourceId !== null && !conversation.gameData.characters.has(sourceId)) || (targetId !== null && !conversation.gameData.characters.has(targetId))) {
-                    throw new Error('Source or target character not found in conversation.');
-                }
-
-                // Temporarily set gameData context for the action
-                conversation.gameData.playerID = sourceId !== null ? sourceId : originalPlayerId;
-                conversation.gameData.aiID = targetId !== null ? targetId : originalAiId;
-                if (targetId !== null) {
-                    const targetCharacter = conversation.gameData.characters.get(targetId);
-                    if (targetCharacter) {
-                        conversation.gameData.aiName = targetCharacter.shortName;
-                    }
-                }
-
-                const chatMessage = typeof action.chatMessage === 'function' ? formatActionNotice(
-                    action, actionArgs, conversation.gameData, sourceId, targetId, conversation.config.language
-                ) : '';
-
-                // Run the action to get the effect body
-                let effectBody = "";
-                runActionWithScenePolicy(action, conversation.gameData, (text: string) => { effectBody += text; }, actionArgs, sourceId!, targetId!);
-
-                // Use the writer to create the full script with prelude
-                ActionEffectWriter.writeEffect(
-                    conversation.runFileManager,
-                    conversation.gameData,
-                    sourceId,
-                    targetId,
-                    effectBody
-                );
-
-                // Append the trigger to execute the script
-                const triggerScript = `
-          root = {trigger_event = mcc_event_v2.9003}
-                `;
-                conversation.runFileManager.append(triggerScript);
-                console.log('Appended trigger event for slash command.');
-
-                // Hardcoded effects for specific actions
-                if ((signature === 'leaveConversation' || signature === 'killCharacter') && targetId !== null) {
-                    if (targetId === conversation.gameData.playerID) {
-                        console.log(`Player is leaving or was killed. Ending session. Action: ${signature}`);
-                        chatWindow.window.webContents.send('chat-hide');
-                        chatWindow.hide();
-                        if (conversation && conversation.isOpen) {
-                            if (conversation.gameData.gameDate?.totalDays ?? conversation.gameData.totalDays) {
-                                updateCurrentDate(conversation.gameData.gameDate?.totalDays ?? conversation.gameData.totalDays);
-                            }
-                            conversation.saveHistoryAndTriggerSummarization();
-                        }
-                    } else {
-                        conversation.removeCharacter(targetId);
-                    }
-                }
-                if (signature === 'changeLocation' && !conversation.gameData.sceneSnapshot) {
-                    conversation.generateSceneDescription();
-                }
-
-                // Generate the chat message if it exists
-                if (chatMessage) {
-                    const response: ActionResponse = {
-                        actionName: action.signature,
-                        chatMessage,
-                        chatMessageClass: action.chatMessageClass
-                    };
-                    // Send the single action response back to be displayed
-                    event.sender.send('actions-receive', [response], ""); // Send as an array
-                }
-            } catch (e) {
-                const errMsg = `Action error: failure in run function for action: ${action.signature}; details: ` + e;
-                console.error(errMsg);
-                event.sender.send('error-message', errMsg);
-            } finally {
-                // Restore original gameData context
-                conversation.gameData.playerID = originalPlayerId;
-                conversation.gameData.aiID = originalAiId;
-                conversation.gameData.aiName = originalAiName;
+                const response = await executeSlashAction(current, action, args);
+                if (conversation === current && response) event.sender.send('actions-receive', [response], '');
+            } catch (error) {
+                if (conversation === current) event.sender.send('error-message', String(error));
             }
         } else {
             console.warn(`Execute-action warning: Action "${signature}" not found.`);
@@ -3376,7 +3281,7 @@ ipcMain.handle('save-character-description', async (event, playerId: string, cha
     }
 });
 
-ipcMain.handle('read-summary-file', async (event, playerId, checkpointEpoch?: number) => {
+async function readConversationSummaryRecords(playerId: string, checkpointEpoch?: number) {
     console.log(`IPC: Received read-summary-file event for player: ${playerId}`);
     try {
         // Resolve through the timeline context so node-tagged summaries are
@@ -3408,18 +3313,21 @@ ipcMain.handle('read-summary-file', async (event, playerId, checkpointEpoch?: nu
         console.error('Error reading summary file:', error);
         return [];
     }
+}
+ipcMain.handle('read-summary-file', (event, playerId, checkpointEpoch) => readConversationSummaryRecords(playerId, checkpointEpoch));
+const summaryEdits = new SummaryEdits(votcDataPath);
+ipcMain.handle('read-summary-edit-snapshot', async (event, playerId: string, kind: SummaryKind) => {
+    return summaryEdits.read(playerId, kind, async () => {
+        if (kind === 'conversations') return readConversationSummaryRecords(playerId);
+        if (kind === 'letters') return LetterManager.getInstance().getAllLetterSummaries(playerId);
+        if (kind === 'diaries') return getAllDiarySummaries(playerId);
+        throw new Error('Invalid summary kind.');
+    });
 });
 
-ipcMain.handle('save-summary-file', async (event, playerId, summaryData) => {
-    console.log(`IPC: Received save-summary-file event for player: ${playerId}`);
-    try {
-        await saveSummaryFile(votcDataPath, playerId, summaryData);
-        return { success: true };
-    } catch (error) {
-        console.error('Error saving summary file:', error);
-        const errorMessage = error instanceof Error ? error.message : String(error);
-        return { success: false, error: errorMessage };
-    }
+ipcMain.handle('save-summary-file', (event, playerId: string, data: any[], revision: string) => {
+    try { return summaryEdits.save(playerId, 'conversations', data, revision); }
+    catch (error) { return { success: false, error: String(error) }; }
 });
 
 // Letter Summary IPC handlers
@@ -3435,45 +3343,9 @@ ipcMain.handle('get-all-letter-summaries-for-player', async (event, playerId: st
     }
 });
 
-ipcMain.handle('save-all-letter-summaries', async (event, playerId: string, summariesData: any[]) => {
-    console.log(`IPC: Received save-all-letter-summaries event for player: ${playerId}`);
-    try {
-        const letterManager = LetterManager.getInstance();
-        const summaryDir = path.join(app.getPath('userData'), 'votc_data', 'letter_summaries', playerId);
-        const existingSummaryFiles = fs.existsSync(summaryDir) ? fs.readdirSync(summaryDir).filter(f => f.endsWith('.json') && f !== '_character_map.json') : [];
-        const existingCharIds = new Set(existingSummaryFiles.map(f => f.replace('.json', '')));
-
-        const summariesByCharacter: { [key: string]: any[] } = {};
-        summariesData.forEach(summary => {
-            const characterId = summary.characterId;
-            if (!summariesByCharacter[characterId]) {
-                summariesByCharacter[characterId] = [];
-            }
-            summariesByCharacter[characterId].push(summary);
-            existingCharIds.delete(characterId);
-        });
-
-        for (const [characterId, summaries] of Object.entries(summariesByCharacter)) {
-            summaries.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
-            const cleanSummaries = summaries.map(({ characterId, characterName, ...rest }) => rest);
-            letterManager.saveLetterSummaries(playerId, characterId, cleanSummaries);
-        }
-
-        // Delete summaries for characters that were removed
-        for (const charIdToDelete of existingCharIds) {
-            const summaryPath = path.join(summaryDir, `${charIdToDelete}.json`);
-            if (fs.existsSync(summaryPath)) {
-                fs.unlinkSync(summaryPath);
-                console.log(`Deleted letter summary for character ${charIdToDelete}`);
-            }
-        }
-
-        return { success: true };
-    } catch (error) {
-        console.error('Error saving letter summaries:', error);
-        const errorMessage = error instanceof Error ? error.message : String(error);
-        return { success: false, error: errorMessage };
-    }
+ipcMain.handle('save-all-letter-summaries', (event, playerId: string, data: any[], revision: string) => {
+    try { return summaryEdits.save(playerId, 'letters', data, revision); }
+    catch (error) { return { success: false, error: String(error) }; }
 });
 
 // Diary Summary IPC handlers
@@ -3489,44 +3361,9 @@ ipcMain.handle('get-all-diaries-for-player', async (event, playerId: string) => 
     }
 });
 
-ipcMain.handle('save-all-diary-summaries', async (event, playerId: string, summariesData: any[]) => {
-    console.log(`IPC: Received save-all-diary-summaries event for player: ${playerId}`);
-    try {
-        const summaryDir = path.join(app.getPath('userData'), 'votc_data', 'diary_summaries', playerId);
-        const existingSummaryFiles = fs.existsSync(summaryDir) ? fs.readdirSync(summaryDir).filter(f => f.endsWith('.json') && f !== '_character_map.json') : [];
-        const existingCharIds = new Set(existingSummaryFiles.map(f => f.replace('.json', '')));
-
-        const summariesByCharacter: { [key: string]: any[] } = {};
-        summariesData.forEach(summary => {
-            const characterId = summary.characterId;
-            if (!summariesByCharacter[characterId]) {
-                summariesByCharacter[characterId] = [];
-            }
-            summariesByCharacter[characterId].push(summary);
-            existingCharIds.delete(characterId);
-        });
-
-        for (const [characterId, summaries] of Object.entries(summariesByCharacter)) {
-            summaries.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime());
-            const cleanSummaries = summaries.map(({ characterName, ...rest }) => rest);
-            await saveDiarySummaries(playerId, characterId, cleanSummaries);
-        }
-
-        // Delete summaries for characters that were removed
-        for (const charIdToDelete of existingCharIds) {
-            const summaryPath = path.join(summaryDir, `${charIdToDelete}.json`);
-            if (fs.existsSync(summaryPath)) {
-                fs.unlinkSync(summaryPath);
-                console.log(`Deleted diary summary for character ${charIdToDelete}`);
-            }
-        }
-
-        return { success: true };
-    } catch (error) {
-        console.error('Error saving diary summaries:', error);
-        const errorMessage = error instanceof Error ? error.message : String(error);
-        return { success: false, error: errorMessage };
-    }
+ipcMain.handle('save-all-diary-summaries', (event, playerId: string, data: any[], revision: string) => {
+    try { return summaryEdits.save(playerId, 'diaries', data, revision); }
+    catch (error) { return { success: false, error: String(error) }; }
 });
 
 ipcMain.handle('get-letter-thread-status', () => {

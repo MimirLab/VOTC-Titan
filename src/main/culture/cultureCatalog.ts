@@ -5,6 +5,7 @@ import { CultureFact, CultureFactKind } from '../../shared/gameData/CultureSnaps
 import { canonicalJsonStringify, logicalRequestHash } from '../promptWorkbench/canonicalJson';
 import { parseCk3Script, ScriptEntry, scriptString, scriptStrings } from './ck3Script';
 import { staticLocalizationText } from './staticLocalization';
+import { getCulturePracticeBank } from '../background/culturePracticeBank';
 
 export interface CultureCatalog {
     version: 2;
@@ -267,6 +268,7 @@ export function catalogFromFiles(files: Map<string, string>): CultureCatalog {
         if (!safeKey.test(key)) throw new Error('An aesthetic identifier cannot safely be captured.');
         facts.push({ kind: 'aesthetic', key: `${category}:${key}`, category, name: key.replace(/_/g, ' '), description: '', rules: '' });
     }
+    facts.push(...getCulturePracticeBank().catalogueFacts(files, facts));
     facts.sort((a, b) => `${a.kind}:${a.key}` < `${b.kind}:${b.key}` ? -1 : 1);
     eras.sort((a, b) => a.key < b.key ? -1 : 1);
     if (!facts.some(f => f.kind === 'tradition') || !facts.some(f => f.kind === 'pillar'))

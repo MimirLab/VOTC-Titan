@@ -12,6 +12,7 @@ import { Config } from "../../shared/Config";
 import { Message, Summary, Action } from "../ts/conversation_interfaces";
 import * as fs from "fs";
 import * as path from "path";
+import { memoryReadContext, filterMemoryRecordsForGame } from '../memoryReadContext';
 import { readSummaryFile, saveSummaryFile } from '../summaryManager.js';
 import { createMemoryString } from '../conversation/promptBuilder.js';
 import { LetterManager } from "./LetterManager.js";
@@ -211,7 +212,9 @@ export class LetterReplyGenerator {
         try {
             // @ts-ignore
             const depth = this.config.summaries_insert_depth || 3;
-            const summaries: Summary[] = await readSummaryFile(this.votcDataPath, String(player.id));
+            const context = memoryReadContext(gameData);
+            const summaries = filterMemoryRecordsForGame(await readSummaryFile(this.votcDataPath, String(player.id),
+                gameData.votcCheckpointEpoch, context.registry, context.currentNodeId, context.identity), gameData, context);
             const aiSummaries = summaries.filter(summary => summary.characterId === String(ai.id)).slice(0, depth);
 
             if (aiSummaries.length > 0) {

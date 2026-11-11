@@ -1,6 +1,7 @@
 import type { GameData } from '../../shared/gameData/GameData';
 import { validateCk3GameDate } from '../../shared/gameData/gameDate';
 import { requireCampaignIdentity } from '../campaignIdentityResolver';
+import { TimelineRegistry } from '../timelineManager';
 import { buildContextFromGameData } from '../timelineManager';
 
 export interface LoreReport {
@@ -22,14 +23,17 @@ export function encounterLoreIdentity(game: GameData, actorId: number): { campai
 }
 
 /** Knowledge never travels to another actor/save fork or backwards past its report. */
-export function projectLoreReport(report: LoreReport, game: GameData, actorId: number, setting: string): LoreReport {
+export function projectLoreReport(report: LoreReport, game: GameData, actorId: number, setting: string, registry?: TimelineRegistry): LoreReport {
     const actual = encounterLoreIdentity(game, actorId);
-    if (report.origin !== 'user_reported' || report.campaign_id !== actual.campaign || report.timeline_id !== actual.timeline ||
+    const ancestry = registry?.snapshot().playerId === String(game.playerID)
+        ? registry.getVerifiedAncestors(actual.timeline, buildContextFromGameData(game).checkpointEpoch) : [];
+    if (report.origin !== 'user_reported' || report.campaign_id !== actual.campaign ||
+        (report.timeline_id !== actual.timeline && !ancestry.includes(report.timeline_id)) ||
         report.lore_knowledge?.actor_id !== actual.actor || report.lore_knowledge?.setting_sha256 !== setting)
         throw new Error('The knowledge report belongs to another character, campaign, timeline or edition.');
     if (!/^\d{4}-\d{2}-\d{2}$/.test(report.as_of) || report.as_of > actual.date || report.lore_knowledge.as_of !== report.as_of)
         throw new Error('Knowledge cannot be reused before its reported date.');
     if (!Array.isArray(report.choices) || report.choices.some((v: any) => typeof v?.occurred_at !== 'string' || v.occurred_at > actual.date))
         throw new Error('A selected choice is outside the actual game clock.');
-    return { ...report, as_of: actual.date, lore_knowledge: { ...report.lore_knowledge, as_of: actual.date } };
+    return { ...report, timeline_id: actual.timeline, as_of: actual.date, lore_knowledge: { ...report.lore_knowledge, as_of: actual.date } };
 }

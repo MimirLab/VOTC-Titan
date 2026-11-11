@@ -147,3 +147,13 @@ describe('native and learned language capture', () => {
         expect(languageCaptureBody(capture)).not.toContain('set_');
     });
 });
+
+test('a plural explicit audience uses their shared fluent tongue and preserves an explicit player choice',()=>{
+    const {game,session}=setup();
+    game.characters.get(1)!.languageSnapshot!.knownLanguageIds.push('language_orcish');
+    game.characters.get(2)!.languageSnapshot!.knownLanguageIds.push('language_orcish');
+    const message:Message & {targetCharacterIds:number[]}={role:'user',content:'Bring water.',targetCharacterIds:[2,3]};
+    session.record(message);expect(message.spokenLanguageId).toBe('language_orcish');
+    const explicit:Message & {targetCharacterIds:number[]}={role:'user',content:'Bring water.',targetCharacterIds:[2,3],spokenLanguageId:'language_low_common'};
+    session.record(explicit);expect(explicit.spokenLanguageId).toBe('language_low_common');
+});

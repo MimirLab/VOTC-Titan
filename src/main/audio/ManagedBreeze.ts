@@ -21,10 +21,17 @@ export async function verifyArtifact(file: string, sha256: string, bytes: number
 }
 export async function downloadArtifact(file: string, url: string, sha256: string, bytes: number,
     signal: AbortSignal, progress: (done: number, total: number) => void): Promise<void> {
+    signal.throwIfAborted();
     fs.mkdirSync(path.dirname(file), { recursive: true, mode: 0o700 });
     if (await verifyArtifact(file, sha256, bytes)) { progress(bytes, bytes); return; }
     const partial = file + '.partial';
     let done = fs.existsSync(partial) ? fs.statSync(partial).size : 0;
+    if (done === bytes) {
+        const valid = await verifyArtifact(partial, sha256, bytes);
+        signal.throwIfAborted();
+        if (valid) { fs.renameSync(partial, file); progress(bytes, bytes); return; }
+        fs.unlinkSync(partial); done = 0;
+    }
     if (done > bytes) { fs.unlinkSync(partial); done = 0; }
     const response = await fetch(url, { signal, headers: done ? { Range: `bytes=${done}-` } : {} });
     if (!response.ok || !response.body) throw new Error(`Model download failed (${response.status}).`);
@@ -43,6 +50,13 @@ export async function downloadArtifact(file: string, url: string, sha256: string
         fs.unlinkSync(partial); throw new Error('Download checksum did not match the pinned artifact. Please retry.');
     }
     signal.throwIfAborted(); fs.renameSync(partial, file);
+}
+/** Bytes still to write; extraction/dependency reserves are budgeted separately. */
+export function remainingArtifactBytes(file: string, bytes: number): number {
+    if (fs.existsSync(file) && fs.statSync(file).size === bytes) return 0;
+    const partial = file + '.partial';
+    const size = fs.existsSync(partial) ? fs.statSync(partial).size : 0;
+    return size > 0 && size <= bytes ? bytes - size : bytes;
 }
 export class ManagedBreeze {
     private cuda: CudaBreezePackage;
@@ -73,9 +87,12 @@ export class ManagedBreeze {
             if (isCuda(model)) { await this.cuda.install(model, signal); return; }
             fs.mkdirSync(this.root, { recursive: true, mode: 0o700 });
             const spec = BREEZE_MODELS[model];
-            if (fs.statfsSync(this.root).bavail * fs.statfsSync(this.root).bsize < spec.bytes + 500_000_000)
-                throw new Error('There is not enough free disk space for this Breeze package.');
             const archive = path.join(this.root, 'runtime-v0.1.0.tar.gz');
+            const remaining = remainingArtifactBytes(path.join(this.root, spec.file), spec.bytes) +
+                remainingArtifactBytes(archive, BREEZE_RUNTIME.bytes);
+            // Preserve the existing extraction margin; retained download bytes need no new space.
+            if (fs.statfsSync(this.root).bavail * fs.statfsSync(this.root).bsize < remaining + 500_000_000)
+                throw new Error('There is not enough free disk space for the remaining Breeze download and runtime extraction.');
             let last = 0;
             const progress = (label: string) => (done: number, total: number) => {
                 if (Date.now() - last > 500 || done === total) { last = Date.now(); this.report(`${label}: ${(done / total * 100).toFixed(1)}%`); }

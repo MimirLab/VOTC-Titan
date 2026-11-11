@@ -5,6 +5,14 @@ import { Message, MessageChunk } from "../main/ts/conversation_interfaces";
 import OpenAI from "openai";
 const contextLimits = require("../../public/contextLimits.json");
 
+export function geminiAnswer(candidate: any): string {
+    return (candidate?.content?.parts ?? []).filter((part: any) => part.thought !== true && typeof part.text === 'string')
+        .map((part: any) => part.text).join('');
+}
+function geminiFinishReason(reason: string | undefined): string | undefined {
+    return reason === 'MAX_TOKENS' ? 'length' : reason === 'STOP' ? 'stop' : reason;
+}
+
 export const player2GameKey = '019cb2bb-6704-7d22-89e5-41ce7c765942';
 export const player2BaseUrl = 'http://127.0.0.1:4315/v1';
 
@@ -291,6 +299,8 @@ export class ApiConnection{
                 body: JSON.stringify({
                     model: this.model,
                     prompt: promptString,
+                    ...this.parameters,
+                    ...otherArgs,
                     stream: false
                 }),
                 signal: signal
@@ -304,6 +314,7 @@ export class ApiConnection{
             const data = await response.json();
             const choice = data.choices?.[0];
             const content = choice?.text ?? '';
+            if (choice) completionObserver?.({ finishReason: choice.finish_reason });
 
             // If VOTC requested streaming, pass the completed response through streamRelay
             if (stream && streamRelay) {
@@ -391,7 +402,7 @@ export class ApiConnection{
                             temperature: this.parameters.temperature,
                             topP: this.parameters.top_p,
                             // Gemini doesn't have frequency_penalty or presence_penalty
-                            // maxOutputTokens: ??? - not available in otherArgs
+                            ...((otherArgs as any).max_tokens !== undefined ? { maxOutputTokens: (otherArgs as any).max_tokens } : {})
                         }
                     };
                     console.debug("Making Gemini request with body:", JSON.stringify(requestBody, null, 2));
@@ -428,9 +439,11 @@ export class ApiConnection{
                                     try {
                                         const jsonStr = line.substring(6);
                                         const parsed = JSON.parse(jsonStr);
-                                        if (parsed.candidates && parsed.candidates[0].content.parts[0].text) {
-                                            const textChunk = parsed.candidates[0].content.parts[0].text;
-                                            streamRelay!({ content: textChunk });
+                                        const candidate = parsed.candidates?.[0];
+                                        if (candidate?.finishReason) completionObserver?.({ finishReason: geminiFinishReason(candidate.finishReason) });
+                                        const textChunk = geminiAnswer(candidate);
+                                        if (textChunk) {
+                                            streamRelay?.({ content: textChunk });
                                             responseText += textChunk;
                                         }
                                     } catch (e) {
@@ -443,15 +456,12 @@ export class ApiConnection{
                     } else {
                         const data = await res.json();
                         console.debug("Received Gemini non-stream response:", data);
-                        if (data.candidates && data.candidates[0].content.parts[0].text) {
-                            return data.candidates[0].content.parts[0].text;
-                        } else if (data.candidates && data.candidates[0].finishReason === "SAFETY") {
-                            throw new Error("Response blocked by Gemini's safety filters.");
-                        }
-                        else {
-                            console.error("Invalid Gemini response:", data);
-                            throw new Error("Invalid response from Gemini API");
-                        }
+                        const candidate = data.candidates?.[0];
+                        if (!candidate) throw new Error('Invalid response from Gemini API');
+                        completionObserver?.({ finishReason: geminiFinishReason(candidate.finishReason) });
+                        const answer = geminiAnswer(candidate);
+                        if (!answer.trim() && !completionObserver) throw new Error('No answer returned by Gemini');
+                        return answer;
                     }
                 }
 
@@ -531,8 +541,10 @@ export class ApiConnection{
                                             continue;
                                         }
                                         const parsed = JSON.parse(jsonStr);
-                                        if (parsed.choices && parsed.choices[0].delta.content) {
-                                            const textChunk = parsed.choices[0].delta.content;
+                                        const choice = parsed.choices?.[0];
+                                        if (choice?.finish_reason) completionObserver?.({ finishReason: choice.finish_reason });
+                                        if (choice?.delta?.content) {
+                                            const textChunk = choice.delta.content;
                                             streamRelay!({ content: textChunk });
                                             responseText += textChunk;
                                         }
@@ -546,12 +558,12 @@ export class ApiConnection{
                     } else {
                         const data = await res.json();
                         console.debug("Received GLM non-stream response:", data);
-                        if (data.choices && data.choices[0].message.content) {
-                            return data.choices[0].message.content;
-                        } else {
-                            console.error("Invalid GLM response:", data);
-                            throw new Error("Invalid response from GLM API");
-                        }
+                        const choice = data.choices?.[0];
+                        if (!choice) throw new Error('Invalid response from GLM API');
+                        completionObserver?.({ finishReason: choice.finish_reason });
+                        const answer = choice.message?.content ?? '';
+                        if (!answer.trim() && !completionObserver) throw new Error('No answer returned by GLM');
+                        return answer;
                     }
                 }
                 //OPENAI DOESN'T ALLOW spaces inside message.name so we have to put them inside the Message content.
@@ -606,7 +618,10 @@ export class ApiConnection{
                     if (stream) {
                         // @ts-ignore
                         for await (const chunk of completion) {
-                            let msgChunk: MessageChunk = chunk.choices[0].delta;
+                            const choice = chunk.choices?.[0];
+                            if (!choice) continue;
+                            if (choice.finish_reason) completionObserver?.({ finishReason: choice.finish_reason });
+                            const msgChunk: MessageChunk = choice.delta ?? {};
                             if (msgChunk.content) {
                                 streamRelay!(msgChunk);
                                 response += msgChunk.content;
@@ -679,7 +694,10 @@ export class ApiConnection{
                         // @ts-ignore
                         for await (const chunk of completion) {
                             // @ts-ignore
-                            const textChunk = chunk.choices[0].text ?? chunk.choices[0].delta?.content ?? "";
+                            const choice = chunk.choices?.[0];
+                            if (!choice) continue;
+                            if (choice.finish_reason) completionObserver?.({ finishReason: choice.finish_reason });
+                            const textChunk = choice.text ?? choice.delta?.content ?? "";
                             if (textChunk) {
                                 let msgChunk: MessageChunk = {
                                     content: textChunk

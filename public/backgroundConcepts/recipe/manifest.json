@@ -7,12 +7,14 @@
   "sourceReceiptFilesVerified": 197,
   "relationshipSource": "out/steering-education-scope-model-20261012/builds/education/public/backgroundConcepts/relationships.json",
   "files": {
-    "relationships.json": "a50d774a3e01631713bcc0338864709079fe41be22bbae9f5a3a1c9765c6d128",
-    "essential.json": "87a9205cd81f05f1be128854783778dedd99a84031971f6f761258f0382a18dc",
+    "relationships.json": "0a22921fd3886c63daa30fbe945791662f82b91bbfc846a19426b8145ff7eedf",
+    "essential.json": "cd20e7ec49e5be3615e981f263cdb8c5100b8a47716b9f0097972121efeddd2f",
     "compositions.json": "ebaf94466a4687124ecbd88cb4050f9d934e860f579940615228c437b8d176ca",
-    "authored.json": "8ab139a6a2d624eb71ce46896a05293ed7356bdd1720a72ed10bf6b28f56ae30"
+    "authored.json": "66e834e22a69c8a019b46ebce5d445fca4cafb9702b7ab1dd6a72ea4eba2be44",
+    "practices.json": "5e07916c5cb92dc3f3d356be03eedd33d18c2a871bcf0d383fe8e9bc94ecb84b"
   },
-  "status": "Reviewed source/model coverage correction; native receipt required separately.",
+  "status": "Ten approved targeted guidance findings; native deployment tracked separately.",
   "baseEntries": 270,
-  "additionalSource": "out/steering-eastern-conclave-authoring-20261012"
+  "additionalSource": "out/lore-guidance-expansion-20261111",
+  "practiceRules": 6
 }

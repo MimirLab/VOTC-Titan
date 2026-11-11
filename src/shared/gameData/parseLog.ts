@@ -725,29 +725,23 @@ export async function readLastLogLineContaining(filePath: string, marker: string
         handle = await fs.promises.open(filePath, 'r');
         const {size} = await handle.stat();
 
-        let position = Math.max(0, size - CHUNK_SIZE);
-        let currentReadSize = size - position;
-
-        while (true) {
-            const buffer = Buffer.alloc(currentReadSize);
-            await handle.read(buffer, 0, currentReadSize, position);
-            const content = buffer.toString('utf8');
-
-            const lastIndex = content.lastIndexOf(marker);
+        let position = size;
+        let suffix = Buffer.alloc(0);
+        while (position > 0) {
+            const start = Math.max(0, position - CHUNK_SIZE);
+            const buffer = Buffer.alloc(position - start);
+            await handle.read(buffer, 0, buffer.length, start);
+            const window = Buffer.concat([buffer, suffix]);
+            const lastIndex = window.lastIndexOf(Buffer.from(marker));
             if (lastIndex !== -1) {
-                const lineStart = content.lastIndexOf('\n', lastIndex) + 1;
-                const lineEnd = content.indexOf('\n', lastIndex);
-                const line = content.slice(lineStart, lineEnd === -1 ? content.length : lineEnd);
-                return line.replace(/\r$/, '');
+                const lineStart = window.lastIndexOf(10, lastIndex) + 1;
+                const lineEnd = window.indexOf(10, lastIndex);
+                return window.subarray(lineStart, lineEnd === -1 ? window.length : lineEnd).toString('utf8').replace(/\r$/, '');
             }
-
-            if (position === 0) break;
-
-            // Step back another chunk, keeping an overlap so a marker spanning
-            // the boundary is still found.
-            const newPosition = Math.max(0, position - CHUNK_SIZE);
-            currentReadSize = position - newPosition + marker.length;
-            position = newPosition;
+            // Carry the entire unfinished record, not just the marker's bytes.
+            const newline = window.indexOf(10);
+            suffix = newline === -1 ? window : window.subarray(0, newline + 1);
+            position = start;
         }
     } catch (err) {
         console.error(`Error reading log file efficiently: ${err}`);

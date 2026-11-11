@@ -11,9 +11,11 @@ import { Memory, Secret } from "../../shared/gameData/GameData";
 import { Character } from "../../shared/gameData/Character";
 import { Config } from "../../shared/Config";
 import path from 'path';
+import { normalizePromptPresets } from '../../shared/promptPresets';
 import { app } from 'electron';
 import fs from 'fs';
 import { parseGameDate, getDateDifference } from '../../shared/dateUtils.js';
+import { filterMemoryRecordsForGame } from '../memoryReadContext';
 import { readDiarySummaries } from "../diaryManager.js";
 import { LocalizationManager } from "../../shared/LocalizationManager.js";
 import { GameData } from "../../shared/gameData/GameData.js";
@@ -59,7 +61,7 @@ function getCustomPresets(votcDataPath: string) {
     const presetsPath = path.join(votcDataPath, 'configs', 'prompt_presets.json');
     if (fs.existsSync(presetsPath)) {
         try {
-            return JSON.parse(fs.readFileSync(presetsPath, 'utf-8'));
+            return normalizePromptPresets(JSON.parse(fs.readFileSync(presetsPath, 'utf-8')));
         } catch (e) {
             console.error("Error parsing prompt_presets.json:", e);
             return {};
@@ -405,7 +407,9 @@ export async function buildChatPrompt(conv: Conversation, character: Character, 
     }
 
     const diarySummaries = await readDiarySummaries(conv.gameData.playerID.toString(), character.id.toString());
-    const recentDiarySummaries = diarySummaries.slice(0, conv.config.maxSummaries);
+    const recentDiarySummaries = filterMemoryRecordsForGame(diarySummaries, conv.gameData)
+        .sort((a, b) => (parseGameDate(b.date)?.getTime() ?? 0) - (parseGameDate(a.date)?.getTime() ?? 0))
+        .slice(0, conv.config.maxSummaries);
     if (recentDiarySummaries.length > 0) {
         const summaryContent = recentDiarySummaries.map(s => `${s.date}: ${s.summary}`).join('\n');
         const diarySummaryMessage: Message = {
@@ -705,35 +709,11 @@ export async function buildChatPrompt(conv: Conversation, character: Character, 
     }
 
     const nativeRecord=(built:Message[])=>captureNativeLorePrompt(nativeCapture,built,character,loreDelivery,nativeObserved,loreMessage,nativeCurrent);
-    if (goaInjected || currentScene || development) {
-        const trimmed = trimGoaPrompt(chatPrompt, historyForTrimming, calculateTotalTokens, contextLimit,
-            Math.max(0, Number(conv.config.maxTokens) || 0));
-        loreDelivery.commit?.(!!loreText && !!loreMessage && trimmed.includes(loreMessage));
-        return nativeRecord(trimmed);
-    }
+    const trimmed = trimGoaPrompt(chatPrompt, historyForTrimming, calculateTotalTokens, contextLimit,
+        Math.max(0, Number(conv.config.maxTokens) || 0));
+    loreDelivery.commit?.(!!loreText && !!loreMessage && trimmed.includes(loreMessage));
+    return nativeRecord(trimmed);
 
-    if (totalTokens > contextLimit) {
-        console.warn(`Prompt exceeds context limit. Tokens: ${totalTokens}, Limit: ${contextLimit}. Trimming...`);
-
-        const trimStartIndex = chatPrompt.findIndex(m => m.content === "[Start a new chat]") + 1;
-        const nonTrimmableSuffixLength = 3; // Protect the last few instructional messages
-
-        if (trimStartIndex > 0) {
-            while (totalTokens > contextLimit) {
-                const trimmableSectionEnd = chatPrompt.length - nonTrimmableSuffixLength;
-                if (trimStartIndex >= trimmableSectionEnd) {
-                    console.warn("Cannot trim further. No trimmable messages left.");
-                    break;
-                }
-                chatPrompt.splice(trimStartIndex, 1);
-                totalTokens = calculateTotalTokens(chatPrompt);
-            }
-        }
-        console.log(`Trimming complete. Final token count: ${totalTokens}, Message count: ${chatPrompt.length}`);
-    }
-
-    loreDelivery.commit?.(!!loreText && !!loreMessage && chatPrompt.includes(loreMessage));
-    return nativeRecord(chatPrompt);
 }
 
 //SUMMARIZATION
@@ -793,7 +773,7 @@ export function buildResummarizeChatPrompt(conv: Conversation, messagesToSummari
         systemContent += `${summaryIntro}${currentSummary}\\n\\n`;
     }
 
-    const compactedMemoryString = createCompactedMemoryString(conv, prompts, conv.gameData.characters.get(ownerId));
+    const compactedMemoryString = createCompactedMemoryString(conv, prompts, ownerId);
     if (compactedMemoryString) {
         systemContent += `${compactedMemoryString}\\n\\n`;
     }
@@ -902,19 +882,45 @@ export function createMemoryString(conv: Conversation, prompts: any, character?:
     return output;
 }
 
-export function createCompactedMemoryString(conv: Conversation, prompts: any, character?: Character): string {
+/** Keep stored derivations for retraction, but render only complete, unsuperseded groups. */
+function currentConsolidations(memories: import('../../shared/compactionTypes').CompactedMemory[]) {
+    const groups = new Map<string, typeof memories>();
+    for (const memory of memories.filter(memory => memory.compactionLevel === 2)) {
+        const key = memory.consolidation?.groupId ?? memory.id;
+        groups.set(key, [...(groups.get(key) ?? []), memory]);
+    }
+    const complete = [...groups.values()].filter(group => !group[0].consolidation ||
+        group.length === group[0].consolidation.threadCount);
+    return complete.filter((group, index) => {
+        const sources = new Set(group.flatMap(memory => memory.sourceMessageIds));
+        if (!sources.size) return true; // Unstamped historical threads retain their original behavior.
+        return !complete.some((other, otherIndex) => {
+            if (other === group) return false;
+            const newer = Math.max(...other.map(memory => memory.creationTimestamp)) > Math.max(...group.map(memory => memory.creationTimestamp)) ||
+                (Math.max(...other.map(memory => memory.creationTimestamp)) === Math.max(...group.map(memory => memory.creationTimestamp)) && otherIndex > index);
+            const covered = new Set(other.flatMap(memory => memory.sourceMessageIds));
+            return newer && [...sources].every(id => covered.has(id));
+        });
+    }).flat();
+}
+
+export function createCompactedMemoryString(conv: Conversation, prompts: any, character?: Character | number): string {
     if (!conv.memoryCompactor) return "";
 
     // Use the speaking character's ID so each AI gets their own compacted memories.
     // Falls back to the main AI ID for callers without a character context (e.g. resummarize).
-    const characterId = String(character ? character.id : conv.gameData.aiID);
+    const ownerId = typeof character === 'number' ? character : character?.id ?? conv.gameData.aiID;
+    if (character !== undefined && !(conv.getEncounterCharacter?.(ownerId) ?? conv.gameData.characters.get(ownerId))) return "";
+    const characterId = String(ownerId);
     const compactedMemories = conv.getCompactedMemoriesForRecipient?.(Number(characterId)) ?? conv.memoryCompactor.getCompactedMemories(characterId);
     if (compactedMemories.length === 0) return "";
 
     let output = prompts.compactedMemoriesPrompt || "The following is a summary of key long-term memories and narrative threads:\\n";
 
-    const phase2Memories = compactedMemories.filter(m => m.compactionLevel === 2);
-    const phase1Memories = compactedMemories.filter(m => m.compactionLevel === 1).slice(-3); // Only last 3 phase-1 summaries
+    const phase2Memories = currentConsolidations(compactedMemories);
+    const covered = new Set(phase2Memories.flatMap(memory => memory.sourceMessageIds));
+    const phase1Memories = compactedMemories.filter(m => m.compactionLevel === 1 &&
+        !(m.sourceMessageIds.length > 0 && m.sourceMessageIds.every(id => covered.has(id)))).slice(-3);
     const privateNotesSeen = new Set<string>();
 
     if (phase2Memories.length > 0) {

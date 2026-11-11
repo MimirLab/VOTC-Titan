@@ -4,6 +4,7 @@ import path from 'path';
 import { CultureCatalog } from './cultureCatalog';
 import { FaithCatalog } from '../faith/faithCatalog';
 import { writeFaithCapture } from '../faith/faithBridge';
+import { getCulturePracticeBank } from '../background/culturePracticeBank';
 
 export const CULTURE_ADDON_NAME = 'VOTC Titan Edition Backgrounds';
 
@@ -16,6 +17,11 @@ export function cultureCaptureEffect(catalog: CultureCatalog): string {
         `\t\tdebug_log = "VOTC:CULTURE/;/begin/;/2/;/${catalog.digest}/;/[THIS.Char.GetID]/;/[THIS.Char.GetCulture.GetID]/;/[GetDataModelSize(THIS.Char.GetCulture.GetTraditions)]/;/[THIS.Char.GetCulture.GetNumberOfDiscoveredInnovations]"`
     ];
     for (const fact of catalog.facts) {
+        if (fact.kind === 'practice') {
+            const predicate = getCulturePracticeBank().capturePredicate(fact);
+            lines.push(`\t\tif = { limit = { culture = { ${predicate} } } debug_log = "VOTC:CULTURE/;/practice/;/${fact.key}/;/1" } else = { debug_log = "VOTC:CULTURE/;/practice/;/${fact.key}/;/0" }`);
+            continue;
+        }
         let trigger: string;
         let identifier = fact.key;
         switch (fact.kind) {

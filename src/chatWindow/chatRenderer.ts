@@ -174,6 +174,8 @@ chatInput.addEventListener('input', function(e) {
 let currentGameData: GameData | null = null; // Store current game data for scene/location and character list
 
 // Store initial window state
+let chatSessionGeneration = 0;
+let chatSessionLoading = false;
 let initialWindowState = {
     width: '',
     height: '',
@@ -204,6 +206,7 @@ async function initChat(){
 }
 
 async function displayMessage(message: Message, isHistorical: boolean = false): Promise<HTMLDivElement | void> {
+    const generation = chatSessionGeneration;
     if (message.name === 'Narrator' || message.role === 'system') {
         return; // Do not display narrator or system messages directly
     }
@@ -236,6 +239,7 @@ async function displayMessage(message: Message, isHistorical: boolean = false): 
     contentSpan.className = 'message-content';
     // Keep source text in the message object; the reading view uses only safe inline prose.
     contentSpan.innerHTML = await renderReadingProse(message.content, message.editableContent);
+    if (generation !== chatSessionGeneration) return;
 
 
     messageDiv.appendChild(nameSpan);
@@ -560,6 +564,43 @@ function updateTokenCount(text: string) {
         contextLimitElement.textContent = '/0';
     });
 }
+async function submitPlayerMessage(messageText: string): Promise<void> {
+    if (!currentGameData || chatInput.disabled || chatSessionLoading) return;
+    const generation = chatSessionGeneration;
+    // Add to history if it's a new message and not a duplicate of the last one
+        if (messageHistory.length === 0 || messageHistory[messageHistory.length - 1] !== messageText) {
+            messageHistory.push(messageText);
+        }
+        historyIndex = messageHistory.length; // Reset index to point after the last item
+
+        if (currentGameData) {
+            ipcRenderer.send('save-prompt-history', { playerId: currentGameData.playerID.toString(), history: messageHistory });
+        }
+
+        chatInput.value = '';
+
+        let message: Message = {
+            id: randomUUID(),
+            role: "user",
+            name: playerName,
+            content: messageText
+        };
+
+        // Add multiple target character IDs if selected
+        const hiddenInput = document.getElementById('character-target-hidden-input') as HTMLInputElement;
+        const wrapper = document.getElementById('character-target-wrapper') as HTMLDivElement;
+        if (wrapper.style.display === 'flex' && hiddenInput.value) {
+            (message as any).targetCharacterIds = hiddenInput.value.split(',').filter(Boolean).map(Number);
+        }
+
+        const messageDiv = await displayMessage(message);
+        if (generation !== chatSessionGeneration) return;
+        if (messageDiv) {
+            currentConversationMessageDivs.push(messageDiv as HTMLDivElement);
+        }
+        showLoadingDots();
+        ipcRenderer.send('message-send', message);
+}
 chatInput.addEventListener('keydown', async function(e) {
     // Handle slash command navigation
     if (slashCommandContainer.style.display === 'block') {
@@ -626,38 +667,7 @@ chatInput.addEventListener('keydown', async function(e) {
         const messageText = chatInput.value.trim();
         if (!messageText) return;
 
-        // Add to history if it's a new message and not a duplicate of the last one
-        if (messageHistory.length === 0 || messageHistory[messageHistory.length - 1] !== messageText) {
-            messageHistory.push(messageText);
-        }
-        historyIndex = messageHistory.length; // Reset index to point after the last item
-
-        if (currentGameData) {
-            ipcRenderer.send('save-prompt-history', { playerId: currentGameData.playerID.toString(), history: messageHistory });
-        }
-
-        chatInput.value = '';
-
-        let message: Message = {
-            id: randomUUID(),
-            role: "user",
-            name: playerName,
-            content: messageText
-        };
-
-        // Add multiple target character IDs if selected
-        const hiddenInput = document.getElementById('character-target-hidden-input') as HTMLInputElement;
-        const wrapper = document.getElementById('character-target-wrapper') as HTMLDivElement;
-        if (wrapper.style.display === 'flex' && hiddenInput.value) {
-            (message as any).targetCharacterIds = hiddenInput.value.split(',').filter(Boolean).map(Number);
-        }
-
-        const messageDiv = await displayMessage(message);
-        if (messageDiv) {
-            currentConversationMessageDivs.push(messageDiv as HTMLDivElement);
-        }
-        showLoadingDots();
-        ipcRenderer.send('message-send', message);
+        await submitPlayerMessage(messageText);
     }
 });
 
@@ -846,18 +856,7 @@ function displaySuggestions(suggestions: string[]) {
                 // 如果启用了自动发送建议功能，直接发送消息
                 if (autoSendSuggestion) {
                     console.log('Auto-sending suggestion:', processedText);
-                    const messageText = processedText;
-                    chatInput.value = ''
-
-                    let message: Message = {
-                        role: "user",
-                        name: playerName,
-                        content: messageText
-                    }
-
-                    await displayMessage(message);
-                    showLoadingDots();
-                    ipcRenderer.send('message-send', message);
+                    await submitPlayerMessage(processedText);
                 } else {
                     console.log('Not auto-sending suggestion, autoSendSuggestion is:', autoSendSuggestion);
                     chatInput.focus()
@@ -925,21 +924,18 @@ function setupCharacterTargeting(gameData: GameData) {
         hiddenInput.value = '';
 
         // Clone to remove any previously attached click listeners (setupCharacterTargeting can be called multiple times)
-        const freshValueDiv = valueDiv.cloneNode(true) as HTMLDivElement;
-        valueDiv.replaceWith(freshValueDiv);
-        const freshOptionsDiv = optionsDiv.cloneNode(true) as HTMLDivElement;
-        optionsDiv.replaceWith(freshOptionsDiv);
+        const freshValueDiv = valueDiv;
+        // These populated checkboxes own their change listeners.
+        const freshOptionsDiv = optionsDiv;
 
         // Toggle dropdown
-        freshValueDiv.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent the global listener from closing it immediately
+        freshValueDiv.onclick = (e) => {
+            e.stopPropagation();
             freshOptionsDiv.style.display = freshOptionsDiv.style.display === 'block' ? 'none' : 'block';
-        });
+        };
 
         // Prevent dropdown from closing when clicking inside
-        freshOptionsDiv.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+        freshOptionsDiv.onclick = (e) => { e.stopPropagation(); };
 
         // Manually set the tooltip since the element might have been hidden during initial localization
         // @ts-ignore
@@ -1266,16 +1262,19 @@ window.addEventListener('beforeunload', () => {
 
 //IPC Events
 ipcRenderer.on('chat-loading-data', () => {
+    ++chatSessionGeneration;
     chatReadyReceived = false;
     showLoadingDots(true);
 });
 
 ipcRenderer.on('historical-conversations-update', async (e, conversations: any[]) => {
+    const generation = chatSessionGeneration;
     console.log(`Renderer: Received update with ${conversations.length} more historical conversations.`);
     const fragment = document.createDocumentFragment();
     // Reverse the incoming batch of older conversations so the oldest is first.
-    for (const conv of conversations.reverse()) {
+    for (const conv of [...conversations].reverse()) {
         await appendConversationToFragment(conv, fragment);
+        if (generation !== chatSessionGeneration) return;
     }
 
     const historicalHeader = chatMessages.querySelector('.historical-header');
@@ -1289,6 +1288,7 @@ ipcRenderer.on('historical-conversations-update', async (e, conversations: any[]
 });
 
 async function appendConversationToFragment(conv: any, fragment: DocumentFragment) {
+    const generation = chatSessionGeneration;
     const convHeader = document.createElement('div');
     convHeader.classList.add('historical-conversation-header', 'message');
     let headerText = `Date: ${conv.date}`;
@@ -1309,6 +1309,7 @@ async function appendConversationToFragment(conv: any, fragment: DocumentFragmen
 
     for (const msg of conv.messages) {
         const msgDiv = await displayMessage(msg, true);
+        if (generation !== chatSessionGeneration) return;
         if (msgDiv) fragment.appendChild(msgDiv);
         if ((msg as any).narrative && typeof (msg as any).narrative === 'string') {
             const narrativeMsg: Message = { role: 'system', name: 'Narrator', content: (msg as any).narrative, id: msg.id ? `${msg.id}-narrative` : randomUUID() };
@@ -1803,6 +1804,7 @@ ipcRenderer.on('status-update', (e, textKey: string, vars: any) => {
 });
 
 ipcRenderer.on('chat-hide', () =>{
+    ++chatSessionGeneration;
     updateLauncherSceneGallery();
     void updateLauncherSceneArt();
     hideChat();
@@ -1838,12 +1840,16 @@ ipcRenderer.on('scene-context-update', (_event, state) => {
 
 ipcRenderer.on('chat-ready', () => {
     chatReadyReceived = true;
-    chatInput.disabled = false;
+    chatInput.disabled = chatSessionLoading;
     chatInput.placeholder = window.LocalizationManager?.getNestedTranslation('chat.input_placeholder', 'Write a message...');
     chatInput.focus();
 });
 
 ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: Message[], narratives: [number, string[]][], historicalMetadata: any[], actions: any[], basePromptTokens: number }) => {
+    const generation = ++chatSessionGeneration;
+    chatSessionLoading = true;
+    chatInput.disabled = true;
+    const owns = () => generation === chatSessionGeneration;
     console.log('Renderer: Received chat-start event.');
     removeLoadingDots();
     try {
@@ -1867,10 +1873,13 @@ ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: 
 
     // Load prompt history
     try {
-        messageHistory = await ipcRenderer.invoke('get-prompt-history', gameData.playerID.toString());
+        const loadedHistory = await ipcRenderer.invoke('get-prompt-history', gameData.playerID.toString());
+        if (!owns()) return;
+        messageHistory = loadedHistory;
         historyIndex = messageHistory.length;
         console.log(`Loaded ${messageHistory.length} items from prompt history for player ${gameData.playerID}`);
     } catch (error) {
+        if (!owns()) return;
         console.error('Failed to load prompt history:', error);
         messageHistory = [];
         historyIndex = 0;
@@ -1896,8 +1905,11 @@ ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: 
 
     // Config and translations are now loaded on init.
     const config = await ipcRenderer.invoke('get-config');
+    if (!owns()) return;
 
     setupCharacterTargeting(gameData);
+    chatSessionLoading = false;
+    chatInput.disabled = !chatReadyReceived;
 
     // Initialize chat UI elements (this clears the display)
     initChat();
@@ -1919,6 +1931,7 @@ ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: 
 
     // Get context limit once per chat session
     ipcRenderer.invoke('get-context-limit').then((limit: number) => {
+        if (!owns()) return;
         if (limit > 0) {
             contextLimit = limit;
         } else if (config && config.contextSize > 0) {
@@ -1949,8 +1962,9 @@ ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: 
 
         const fragment = document.createDocumentFragment();
         // Reverse the initial batch to display the oldest conversations at the top.
-        for (const conv of historicalMetadata.reverse()) {
+        for (const conv of [...historicalMetadata].reverse()) {
             await appendConversationToFragment(conv, fragment);
+            if (!owns()) return;
         }
         chatMessages.appendChild(fragment);
     }
@@ -1987,7 +2001,7 @@ ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: 
     }
 
     setTimeout(() => {
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+        if (owns()) chatMessages.scrollTop = chatMessages.scrollHeight;
     }, 100);
 
     // The ready signal is now sent from 'chat-show', so this is no longer needed.
@@ -2026,7 +2040,7 @@ ipcRenderer.on('action-approval-request', (event, messageId: string, proposedAct
             const approveTooltip = (lm ? lm.getNestedTranslation('chat.action_approve_tooltip') : null) || 'Accept this action and apply its effects in-game.';
             approveButton.setAttribute('data-tooltip', approveTooltip);
             approveButton.onclick = () => {
-                ipcRenderer.send('execute-approved-action', messageId, action.actionName);
+                ipcRenderer.send('execute-approved-action', messageId, action.proposalId ?? action.actionName);
                 actionPrompt.remove();
                 // If no more prompts, remove the container
                 if (approvalContainer.childElementCount === 0) {

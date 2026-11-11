@@ -216,3 +216,41 @@ test.each(['budget','context','source-callback'])('pending %s ownership cannot c
     expect(()=>r!.validate()).toThrow('changed');expect(()=>r!.commit(true)).toThrow('changed');
     expect(f.finish).toHaveBeenCalledWith(false,{initialFocusOnly:true});
 });
+
+test.each(['length','stop'])('controlled %s whitespace reaches the existing reply recovery',async reason=>{
+    const f=fixture();
+    f.create.mockResolvedValue(response(' \n ',undefined,reason));
+    const r=await completeNativeLoreLookup(f.context,f.api,{...f.options,allowIncomplete:true});
+    expect(r?.reply.trim()).toBe('');
+    expect(r?.finishReason).toBe(reason);
+    r!.commit(false);
+    expect(f.finish).toHaveBeenCalledWith(false,{initialFocusOnly:true});
+});
+test.each(['length','stop'])('ordinary %s whitespace remains unpublished',async reason=>{
+    const f=fixture();
+    f.create.mockResolvedValue(response(' \n ',undefined,reason));
+    await expect(completeNativeLoreLookup(f.context,f.api,f.options)).rejects.toThrow('Incomplete');
+    expect(f.finish).toHaveBeenCalledWith(false,{initialFocusOnly:true});
+});
+
+test('tool incompatibility falls back once to the unchanged complete ordinary prompt', async () => {
+    const f=fixture();
+    f.create.mockRejectedValueOnce(Object.assign(new Error('Unsupported parameter: tools'),{status:400,param:'tools'}));
+    const result=await completeNativeLoreLookup(f.context,f.api,f.options);
+    expect(result?.providerCalls).toBe(2); expect(result?.reply).toContain('sit with you');
+    expect(f.create.mock.calls[1][0].messages).toEqual(f.context.original);
+    expect(f.create.mock.calls[1][0]).not.toHaveProperty('tools');
+    result!.commit(false);
+});
+test('the optional schema yields when the full ordinary prompt still fits', async () => {
+    const f=fixture(); f.api.context=1000; f.options.maxOutputTokens=256;
+    f.options.countTokens=((_messages:readonly unknown[],tools:readonly unknown[])=>tools.length?760:700) as any;
+    const result=await completeNativeLoreLookup(f.context,f.api,f.options);
+    expect(result?.providerCalls).toBe(1); expect(f.create.mock.calls[0][0].messages).toEqual(f.context.original);
+    expect(f.create.mock.calls[0][0]).not.toHaveProperty('tools'); result!.commit(false);
+});
+test('an incompatible tool response cannot trigger fallback after ownership is revoked', async () => {
+    const f=fixture(); f.create.mockImplementationOnce(async()=>{f.revoke();throw Object.assign(new Error('tools unsupported'),{status:400});});
+    await expect(completeNativeLoreLookup(f.context,f.api,f.options)).rejects.toThrow('changed');
+    expect(f.create).toHaveBeenCalledTimes(1);
+});

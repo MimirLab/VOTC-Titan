@@ -1,10 +1,23 @@
-# First public preview: validation and scope
+# Current preview: validation and scope
 
 The release presentation describes shipped systems, not every experiment in the
 private research workspace. Counts are taken from the bundled corpus and active
 catalogues. Source metadata and the exact release checksum identify the edition.
 
-## Verified foundations
+## Current update
+
+This edition carries both defect-repair passes, the default Medivh narrator,
+targeted cultural and religious guidance, and the approved Sand/Atal’ai Troll
+casting descriptions. Installer recovery, XDG integration and dependency-receipt
+repairs are included in the downloadable package.
+
+The source, compiled runtime, desktop checks and extracted installers are tested
+together for each release. Exact results and checksums ship in
+`release-validation.json` beside the download. Provider regressions use synthetic
+responses; narrator checks reuse retained audition PCM. No fresh natural campaign
+playtest or new model synthesis is claimed for these repairs.
+
+## Earlier foundations
 
 The preceding launcher-only release passed **3,507 tests in 150 suites**, four
 native desktop reports and wide/narrow Electron scene-art checks. An isolated

@@ -246,7 +246,8 @@ test('embedding batches report actual inserts when one provider request fails', 
     ]);
     expect(inserted).toBe(2); expect(embed).toHaveBeenCalledTimes(3);
     expect(conv.memoryManager.batchInsertMemories.mock.calls[0][0].map((m: any) => m.id)).toEqual(['a', 'c']);
-    expect(conv.memoryManager.applyDecay.mock.calls).toEqual([['2'], ['3']]);
+    expect(conv.memoryManager.applyDecay.mock.calls).toEqual([['2', .01, 1, '1'], ['3', .01, 1, '1']]);
+    expect(conv.memoryManager.consolidateMemories.mock.calls).toEqual([['2', .85, '1'], ['3', .85, '1']]);
 });
 test('empty and disabled embedding batches report zero inserts', async () => {
     const conv = conversation(); config.embeddingApiConnectionConfig = undefined as any;
@@ -950,4 +951,32 @@ test('a late callback cannot mutate a closed encounter or corrupt its archived i
     const name = fs.readdirSync(directory).find(name => name.endsWith('.txt'))!;
     expect(loadLedgerHistory(directory, name.replace(/\.txt$/, ''), 1)!.messages.map(m => m.id)).toEqual(['source']);
     expect(conv.getHistory().map((m: Message) => m.id)).toEqual(['source']);
+});
+
+test('the actual chat prompt excludes a future legacy diary summary after a rewind',async()=>{
+    const diary=require('../../src/main/diaryManager');
+    jest.spyOn(diary,'readDiarySummaries').mockResolvedValue([
+        {id:'future',diaryEntryId:'future',date:'1066.10.01',summary:'FUTURE_DIARY_FIRE'},
+        {id:'past',diaryEntryId:'past',date:'1066.9.01',summary:'PAST_DIARY_WATER'}]);
+    const conv=conversation(),prompt=JSON.stringify(await buildChatPrompt(conv,game.getAi()));
+    expect(prompt).toContain('PAST_DIARY_WATER');expect(prompt).not.toContain('FUTURE_DIARY_FIRE');
+});
+
+test('ordinary prompt admission reserves the requested output tokens even without optional lore or scenes',async()=>{
+    const conv=conversation();conv.messages=[];conv.historicalConversations=[];config.lorebookEnabled=false;config.goaLoreEnabled=false;
+    conv.textGenApiConnection.calculateTokensFromText=()=>100;
+    config.textGenerationApiConnectionConfig.connection.overwriteContext=false;
+    config.maxTokens=50;conv.textGenApiConnection.context=149;
+    await expect(buildChatPrompt(conv,game.characters.get(2)!)).rejects.toThrow(/exceed|budget/i);
+});
+
+test('clearing summaries while a close summary is pending neither resurrects old cache nor loses the new summary',async()=>{
+    const conv=conversation();config.diaryGenerationChance=0;config.enableMemoryCompaction=false;
+    conv.actionInvolvedCharacterIds=new Set();conv.summaryFileWatcher={pauseWatcher:jest.fn(),resumeWatcher:jest.fn(),unwatchAll:jest.fn()};
+    conv.summaries=new Map([[2,[{date:'1066.9.1',content:'CLEARED_OLD_CACHE'}]]]);config.embeddingApiConnectionConfig=undefined as any;conv.generateEncounterSummary=jest.fn(async()=> 'ONLY_NEW_SUMMARY').mockImplementationOnce(async()=>{
+        const directory=path.join(data,'conversation_summaries','1');fs.rmSync(directory,{recursive:true,force:true});conv.clearCachedSummaries();return 'ONLY_NEW_SUMMARY';
+    });
+    conv.messages=[{id:'player',role:'user',characterId:1,content:'Hello.'},{id:'npc',role:'assistant',characterId:2,content:'Good morning.'}];
+    await conv._generateSummariesAndDiariesInBackground();
+    const stored=fs.readFileSync(path.join(data,'conversation_summaries/1/2.json'),'utf8');expect(stored).toContain('ONLY_NEW_SUMMARY');expect(stored).not.toContain('CLEARED_OLD_CACHE');
 });

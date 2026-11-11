@@ -57,7 +57,11 @@ module.exports = {
      * @param {number} targetId
      */
     run: (gameData, runGameEffect, args, sourceId, targetId) => {
-		if (args[0]) { // if willingly
+        const value = typeof args[0] === 'string' ? args[0].trim().toLowerCase() : args[0];
+        if (value !== true && value !== false && value !== 'true' && value !== 'false')
+            throw new Error('isWillinglyConverted must be true or false');
+        const willingly = value === true || value === 'true';
+		if (willingly) { // if willingly
 			runGameEffect(`
 				random_list = {
 					10 = {

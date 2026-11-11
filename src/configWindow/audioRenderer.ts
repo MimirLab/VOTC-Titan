@@ -36,6 +36,7 @@ function updateControls(): void {
     button('#audio-save-narrator').disabled = busy || !breeze || !input('#audio-narrator-name').value.trim() ||
         !(hasDraft || unchanged && selected?.referenceFile);
     button('#audio-use-narrator').disabled = busy || !breeze || !unchanged || !selected?.referenceFile;
+    button('#audio-default-narrator').disabled = busy || !breeze;
     button('#audio-delete-narrator').disabled = busy || !selected;
     button('#audio-rename-narrator').disabled = busy || !selected || input('#audio-narrator-name').value.trim() === selected.label || !input('#audio-narrator-name').value.trim();
     const hasActor = actors.some(a => String(a.id) === input('#audio-character').value);
@@ -141,7 +142,7 @@ async function refresh(options: { narratorId?: string; resetNarrator?: boolean }
     const chosen = options.narratorId ?? (loaded && (previousNarrator === '__new__' || narrators.some(v => v.id === previousNarrator)) ? previousNarrator : active?.id ?? '__new__');
     input('#audio-narrator-voice').value = chosen;
     element('#audio-narrator-count').textContent = `${narrators.length} saved`;
-    element('#audio-active-narrator').textContent = active ? `In use: ${active.label}` : 'No narrator selected. Preview a voice, then save it to use it.';
+    element('#audio-active-narrator').textContent = active ? `In use: ${active.label}` : `In use: ${info.narratorDefaultName} · Default storyteller`;
     if (!loaded || options.resetNarrator || previousNarrator !== chosen) narratorFields();
     if (!input('#audio-preview-text').value) input('#audio-preview-text').value = info.previewDefault;
     loaded = true; selectedCasting(); renderLibrary(); connectionVisibility(); updateControls();
@@ -224,6 +225,10 @@ element('#audio-new-narrator').addEventListener('click', () => void run(async ()
     await ipcRenderer.invoke('audio-discard-narrator-draft'); input('#audio-narrator-voice').value = '__new__'; narratorFields(); input('#audio-narrator-name').focus();
 }));
 element('#audio-use-narrator').addEventListener('click', () => void run(async () => { await ipcRenderer.invoke('audio-select-voice', input('#audio-narrator-voice').value); await refresh(); }));
+element('#audio-default-narrator').addEventListener('click', () => void run(async () => {
+    const saved = await ipcRenderer.invoke('audio-use-default-narrator');
+    draftReceipt = undefined; await refresh({ narratorId: saved.id, resetNarrator: true });
+}));
 element('#audio-rename-narrator').addEventListener('click', () => void run(async () => {
     const id = input('#audio-narrator-voice').value; await ipcRenderer.invoke('audio-rename-voice', id, input('#audio-narrator-name').value); await refresh({ narratorId: id, resetNarrator: true });
 }));

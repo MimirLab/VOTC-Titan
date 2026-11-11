@@ -79,3 +79,50 @@ test('the gallery rejects out-of-area venues and can retry an unacknowledged cho
     expect(data.scene).toBe(venue);
     expect(publish).toHaveBeenCalledTimes(1);
 });
+
+test.each([false,true])('automatic/approved scene actions record success only after a confirmed selection (approval=%s)',async approval=>{
+    const {Conversation}=require('../../src/main/conversation/Conversation');
+    const {checkActions}=require('../../src/main/conversation/checkActions');
+    const data=game('throne_room');observe();const census=bindLauncherScene(data,nonce)!;
+    const venue=census.eligible.find(id=>id.includes('pig_and_whistle'))!;
+    let confirm!:(snapshot:any)=>void;
+    const {setLauncherSceneSelector}=require('../../src/main/scenes/sceneRuntime');
+    setLauncherSceneSelector(()=>new Promise(resolve=>{confirm=resolve;}));
+    const action=require('../../default_userdata/scripts/actions/standard/changeLocation.js');
+    const send=jest.fn(),conv:any=Object.assign(Object.create(Conversation.prototype),{gameData:data,
+        config:{language:'en',selectedDescScript:'missing.js',manualActionApproval:approval},votcDataPath:'synthetic',actions:[action],
+        messages:[{id:'reply',role:'assistant',content:'A synthetic reply.'}],actionsApiConnection:{isChat:()=>true,complete:async()=>`<rationale>Choose the venue.</rationale><actions>changeLocation(31575,40001,${venue})</actions>`},
+        currentTurnTriggeredActions:new Set(),pendingActions:new Map(),executedActions:new Map(),runFileManager:{append:jest.fn()},chatWindow:{window:{webContents:{send}}}});
+    if(approval){await checkActions(conv,31575,40001);}
+    let settled=false;
+    const waiting=(approval?conv.executeApprovedAction('reply','changeLocation'):checkActions(conv,31575,40001)).then((result:any)=>{settled=true;return result;});
+    for(let n=0;n<6&&!confirm;n++)await Promise.resolve();
+    await new Promise(resolve=>setImmediate(resolve));
+    expect(confirm).toBeDefined();expect(settled).toBe(false);expect(conv.executedActions.size).toBe(0);
+    expect(send.mock.calls.filter(([name]:any[])=>name==='actions-receive')).toHaveLength(0);
+    confirm({...census,selected:venue});const result=await waiting;
+    if(approval)expect(conv.executedActions.get('reply')).toHaveLength(1);else expect(result).toHaveLength(1);
+});
+
+test.each([[false,'rejected'],[true,'rejected'],[false,'timeout'],[true,'timeout']] as const)('scene %s approval with %s never records or announces success',async(approval,outcome)=>{
+    jest.useFakeTimers();
+    const {Conversation}=require('../../src/main/conversation/Conversation'),{checkActions}=require('../../src/main/conversation/checkActions');
+    const {setLauncherSceneSelector}=require('../../src/main/scenes/sceneRuntime');
+    const data=game('throne_room');observe();const census=bindLauncherScene(data,nonce)!;
+    const venue=outcome==='rejected'?'titan_farraki_court':census.eligible.find(id=>id.includes('pig_and_whistle'))!;
+    setLauncherSceneSelector(()=>new Promise(()=>{}));
+    const send=jest.fn(),conv:any=Object.assign(Object.create(Conversation.prototype),{gameData:data,
+        config:{language:'en',selectedDescScript:'missing.js',manualActionApproval:approval},votcDataPath:'synthetic',
+        actions:[require('../../default_userdata/scripts/actions/standard/changeLocation.js')],messages:[{id:'reply',role:'assistant',content:'A synthetic reply.'}],
+        actionsApiConnection:{isChat:()=>true,complete:async()=>`<rationale>Venue request.</rationale><actions>changeLocation(31575,40001,${venue})</actions>`},
+        currentTurnTriggeredActions:new Set(),pendingActions:new Map(),executedActions:new Map(),runFileManager:{append:jest.fn()},chatWindow:{window:{webContents:{send}}}});
+    const initial=data.scene;
+    try{
+        if(approval)await checkActions(conv,31575,40001);
+        const waiting=approval?conv.executeApprovedAction('reply','changeLocation'):checkActions(conv,31575,40001);
+        await jest.advanceTimersByTimeAsync(15001);const result=await waiting;
+        if(!approval)expect(result).toEqual([]);
+        expect(data.scene).toBe(initial);expect(conv.executedActions.size).toBe(0);
+        expect(send.mock.calls.some(([name]:any[])=>name==='actions-receive')).toBe(false);
+    }finally{jest.useRealTimers();}
+});

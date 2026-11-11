@@ -21,7 +21,7 @@ TOOLS = {
  'native-storage-smoke.cjs', 'native-runtime-smoke.cjs', 'native-overlay-smoke.cjs',
  'native-background-fixtures.json',
  'native-verification-windows.cjs', 'native-scene-art-smoke.cjs', 'titan-ui-smoke.cjs',
- 'language-ui-smoke.cjs',
+ 'language-ui-smoke.cjs', 'narrator-default-ui-smoke.cjs',
  'background-purge-ui-smoke.cjs', 'scene-menu-smoke.cjs',
  'clipboard-peer.cjs', 'import-release-assets.py', 'export-public-source.py',
  'audit-goa-lore.cjs', 'lorebook-worker.py', 'lorebook_disclosure.py',
@@ -33,8 +33,8 @@ TOOLS = {
  'scene_presentation_contract.py', 'world_scene_contract.py', 'titan-scenes-qualification.json',
 }
 PY_TESTS = {
- 'test_native_build.py', 'test_launcher_only_install.py', 'test_launcher_package.py',
- 'test_launcher_userdata.py', 'test_import_release_assets.py',
+ 'test_native_build.py', 'test_install_integrity.py', 'test_launcher_only_install.py', 'test_launcher_package.py',
+ 'test_launcher_userdata.py', 'test_import_release_assets.py', 'test_scene_reenable.py',
 }
 PUBLIC_AGENTS = """# VOTC Titan Edition
 Titan is the MimirLab-maintained GoA2 roleplay launcher.
@@ -84,6 +84,8 @@ def selected(name):
         return len(p.parts)==2 and p.name in DOCS
     if p.parts[0] == 'tools':
         return len(p.parts)==2 and p.name in TOOLS
+    if name == 'tests/helpers/renderer-integrity.cjs':
+        return True
     if p.parts[0] == 'tests':
         return p.suffix in {'.ts','.json','.txt','.log'} or p.name in PY_TESTS
     return False
@@ -94,6 +96,13 @@ def export(target):
         raise RuntimeError('Inspect the existing public-source candidate before replacing it.')
     names=[n.decode() for n in subprocess.check_output(
         ['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT).split(b'\0') if n]
+    # This authored picker input is ignored by the private working Git tree.
+    # A public export must carry it even when git ls-files omits that path.
+    required = ['game_mod/overrides/gui/custom_gui/votc_scene_selector.gui']
+    for name in required:
+        if not (ROOT / name).is_file() or (ROOT / name).is_symlink():
+            raise RuntimeError('Missing required public scene input: ' + name)
+    names.extend(required)
     files={}
     target.mkdir(parents=True)
     for name in sorted(set(names)):

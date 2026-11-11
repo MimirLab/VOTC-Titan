@@ -9,7 +9,7 @@ import sqlite3
 from tempfile import TemporaryDirectory
 
 from deployment_common import ensure_closed, tree_hash
-from storage_policy import require_space, tree_bytes
+from storage_policy import require_deployment_space, tree_bytes
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,12 +43,16 @@ def enable(ck3, art, state):
         print('Titan Scenes is already enabled in this playset.')
         return
 
+    if (ck3 / installer.REGISTRY).exists() or (ck3 / installer.REGISTRY).with_suffix('').exists():
+        installer.reenable(ck3, state, expected)
+        return
+
     ce = installer.mod_root(ck3, installer.CE)
     goa = installer.mod_root(ck3, installer.GOA)
     state.mkdir(parents=True, exist_ok=True)
     artwork_bytes = tree_bytes(art)
-    require_space(state, 2 * artwork_bytes)
-    require_space(ck3, artwork_bytes)
+    require_deployment_space(state, 2 * artwork_bytes)
+    require_deployment_space(ck3, artwork_bytes)
     with TemporaryDirectory(prefix='titan-scene-build-', dir=state) as temp:
         stage = Path(temp) / 'votc_titan_scenes'
         builder.build(ce, goa, art, stage)

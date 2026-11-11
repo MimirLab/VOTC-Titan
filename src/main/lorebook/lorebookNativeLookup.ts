@@ -103,13 +103,32 @@ export async function completeNativeLoreLookup(context:NativeLookupContext|undef
         // question. Keep the opportunity unless this explicit control omits it.
         const lookupRequested=offerTools!==false;
         const messages=nativeLookupMessages(context.original,currentTurn),lookups:{query:string;accountsAdded:number}[]=[],ids=new Set<string>();
+        let providerCalls = 0;
         for(let index=0;index<3;index++){
             check();const beforeWords=words(),room={maxWords:350-beforeWords,maxAccounts:3-accounts.length};
-            const allow=lookupRequested&&!omittedLore&&lookups.length<2&&room.maxWords>0&&room.maxAccounts>0,tools=allow?[LORE_LOOKUP_TOOL]:[];
-            const tokens=options.countTokens?options.countTokens(messages,tools):api.calculateTokensFromText(JSON.stringify({messages,tools}))+messages.length*8;
-            if(!Number.isFinite(tokens)||tokens<0||tokens+options.maxOutputTokens>api.context)throw new Error('Native lookup exceeds context budget.');
-            const response=await bounded(api.completeWithTools(messages,{...options.parameters,max_tokens:options.maxOutputTokens,
-                ...(allow?{tools,tool_choice:'auto',parallel_tool_calls:false}:{})},{isCurrent:()=>{check();return true;},signal,timeoutMs:Math.max(1,deadlineAt-Date.now())}));
+            let allow=lookupRequested&&!omittedLore&&lookups.length<2&&room.maxWords>0&&room.maxAccounts>0;
+            const tokens = (tools: readonly unknown[]) => options.countTokens ? options.countTokens(messages, tools) :
+                api.calculateTokensFromText(JSON.stringify({messages,tools}))+messages.length*8;
+            const fits = (count: number) => Number.isFinite(count) && count >= 0 && count + maxOutputTokens <= api.context;
+            if (allow && !fits(tokens([LORE_LOOKUP_TOOL]))) allow = false;
+            if (!fits(tokens(allow ? [LORE_LOOKUP_TOOL] : []))) throw new Error('Native lookup exceeds context budget.');
+            const request = () => {
+                providerCalls++;
+                return bounded(api.completeWithTools(messages,{...options.parameters,max_tokens:options.maxOutputTokens,
+                    ...(allow?{tools:[LORE_LOOKUP_TOOL],tool_choice:'auto',parallel_tool_calls:false}:{})},
+                    {isCurrent:()=>{check();return true;},signal,timeoutMs:Math.max(1,deadlineAt-Date.now())}));
+            };
+            let response;
+            try { response = await request(); }
+            catch (error) {
+                check(); // Cancellation, stale actor, or changed provider must still abort.
+                const e = error as any;
+                const detail = [e.message, e.error?.message, e.param, e.error?.param].filter(Boolean).join(' ');
+                if (!allow || messages.some(message => message.role === 'tool') ||
+                    ![400,404,422].includes(e.status) || !/\btools?\b|tool_choice|parallel_tool_calls/i.test(detail)) throw error;
+                allow = false;
+                response = await request();
+            }
             check();
             if(response.toolCalls?.length){
                 if(!allow||response.toolCalls.length!==1||!['stop','tool_calls'].includes(response.finishReason??''))throw new Error('Unexpected native lookup calls.');
@@ -139,13 +158,14 @@ export async function completeNativeLoreLookup(context:NativeLookupContext|undef
                         ...(added.length&&d.currentWorldStateNotes?{privateWorldConstraints:d.currentWorldStateNotes}:{})})});
                 continue;
             }
-            if((response.finishReason!=='stop'&&!(allowIncomplete&&response.finishReason==='length'))||!response.content.trim())throw new Error('Incomplete native RP reply.');
+            if((response.finishReason!=='stop'&&!(allowIncomplete&&response.finishReason==='length'))||
+                (!allowIncomplete&&!response.content.trim()))throw new Error('Incomplete native RP reply.');
             const commit=(accepted:boolean,retainedPublication?:()=>boolean)=>{
                 if(finished)return;
                 if(accepted){try{check();}catch(error){release();throw error;}}
                 finished=true;clearDeadline();finish(accepted&&initial.length>0,{initialFocusOnly:true,...(retainedPublication?{retainedPublication}:{})});
             };
-            return{reply:response.content,providerCalls:index+1,lookups,assurance:'guarded-input-only',finishReason:response.finishReason,validate:check,commit};
+            return{reply:response.content,providerCalls,lookups,assurance:'guarded-input-only',finishReason:response.finishReason,validate:check,commit};
         }
         throw new Error('Native lookup turn limit exceeded.');
     }catch(error){release();throw error;}

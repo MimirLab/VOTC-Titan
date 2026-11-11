@@ -12,6 +12,7 @@ interface Pending {
     facts: Map<string, CultureFact>;
     started: number;
     invalid: boolean;
+    practices: Set<string>;
 }
 
 /** Shared log framing handles records split across file reads, including split UTF-8 code points. */
@@ -52,7 +53,7 @@ export class CultureLogReader {
             const [characterId, cultureId, traditions, innovations] = fields.slice(3).map(Number);
             if (![characterId, cultureId, traditions, innovations].every(Number.isSafeInteger) ||
                 traditions > 4096 || innovations > 4096) return;
-            this.pending = { characterId, cultureId, traditions, innovations, facts: new Map(), started: this.now(), invalid: false };
+            this.pending = { characterId, cultureId, traditions, innovations, facts: new Map(), practices: new Set(), started: this.now(), invalid: false };
             return;
         }
         const pending = this.pending;
@@ -60,8 +61,15 @@ export class CultureLogReader {
         if (command === 'fact') {
             const id = `${fields[1]}:${fields[2]}`;
             const fact = this.lookup.get(id);
-            if (fields.length !== 3 || !fact || pending.facts.has(id)) pending.invalid = true;
+            if (fields.length !== 3 || !fact || fact.kind === 'practice' || pending.facts.has(id)) pending.invalid = true;
             else pending.facts.set(id, fact);
+        } else if (command === 'practice') {
+            const fact = this.lookup.get('practice:' + fields[1]);
+            if (fields.length !== 3 || !fact || !['0', '1'].includes(fields[2]) || pending.practices.has(fields[1])) pending.invalid = true;
+            else {
+                pending.practices.add(fields[1]);
+                if (fields[2] === '1') pending.facts.set('practice:' + fact.key, fact);
+            }
         } else if (command === 'support') {
             if (!['era', 'naming_order', 'primary_naming'].includes(fields[1]) || fields.length !== 3 || !fields[2] || fields[2].includes('[')) pending.invalid = true;
             else {
@@ -79,7 +87,8 @@ export class CultureLogReader {
         } else if (command === 'end') {
             this.reset();
             if (fields.length !== 4 || fields[1] !== this.catalog.digest || fields[2] !== String(pending.characterId) ||
-                fields[3] !== String(pending.cultureId) || pending.invalid) return;
+                fields[3] !== String(pending.cultureId) || pending.invalid ||
+                pending.practices.size !== this.catalog.facts.filter(f => f.kind === 'practice').length) return;
             const facts = [...pending.facts.values()];
             if (facts.filter(f => f.kind === 'tradition').length !== pending.traditions ||
                 facts.filter(f => f.kind === 'innovation').length !== pending.innovations ||

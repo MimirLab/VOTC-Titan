@@ -68,7 +68,7 @@ export class MemoryCompactor {
      * race conditions. If a compaction is already in progress, concurrent callers
      * receive the same promise and wait for the ongoing operation to complete.
      */
-    public async compact(conv: Conversation): Promise<CompactionResult> {
+    public async compact(conv: Conversation, options: { preservePendingInput?: boolean } = {}): Promise<CompactionResult> {
         // If a compaction is already in progress, return the existing promise.
         // This serializes all compaction calls: concurrent triggers wait for the
         // ongoing compaction to finish rather than starting a parallel one.
@@ -81,7 +81,7 @@ export class MemoryCompactor {
         const sourceRevision = conv.getEncounterRevision?.();
         const beforeMessages = [...conv.messages];
         const before = new Map([...this.compactedMemories].map(([id, memories]) => [id, [...memories]]));
-        this._compactionLock = this._executeCompaction(conv).catch(error => {
+        this._compactionLock = this._executeCompaction(conv, options).catch(error => {
             if (sourceRevision === conv.getEncounterRevision?.()) {
                 this.compactedMemories = before;
                 conv.messages = beforeMessages;
@@ -108,7 +108,7 @@ export class MemoryCompactor {
      * Internal implementation of the compaction logic. Separated from compact()
      * so the lock management (set/clear) is cleanly isolated from the work.
      */
-    private async _executeCompaction(conv: Conversation): Promise<CompactionResult> {
+    private async _executeCompaction(conv: Conversation, options: { preservePendingInput?: boolean }): Promise<CompactionResult> {
         const ledgerRevision = conv.getEncounterRevision?.();
         const verifyRevision = () => {
             if (ledgerRevision !== undefined && ledgerRevision !== conv.getEncounterRevision?.())
@@ -139,7 +139,7 @@ export class MemoryCompactor {
 
         // Phase 1: Check if we need to compact recent messages
         if (this.scheduler.shouldRunPhase1(conv.messages, tokenCount, contextSize)) {
-            const messagesToCompact = this.selectMessagesForCompaction(conv, tokenCount, contextSize);
+            const messagesToCompact = this.selectMessagesForCompaction(conv, tokenCount, contextSize, options.preservePendingInput);
             if (messagesToCompact.length > 0) {
                 const phase1Start = Date.now();
                 const phase1Results = await this.phase1Compactor.compact(
@@ -328,7 +328,8 @@ export class MemoryCompactor {
     private selectMessagesForCompaction(
         conv: Conversation,
         tokenCount: number,
-        contextSize: number
+        contextSize: number,
+        preservePendingInput = false
     ): Message[] {
         const threshold = contextSize * (this.config.compactionPhase1Threshold / 100);
         const excessTokens = tokenCount - threshold;
@@ -337,8 +338,12 @@ export class MemoryCompactor {
         const messagesToCompact: Message[] = [];
         let accumulatedTokens = 0;
 
-        // Take oldest messages first until we've covered the excess
-        for (const msg of conv.messages) {
+        // The final user input has not been targeted or checked for actions yet.
+        // Keep that exact input (including consecutive user turns) in working context.
+        let pendingStart = conv.messages.length;
+        while (preservePendingInput && pendingStart > 0 && conv.messages[pendingStart - 1].role === 'user') pendingStart--;
+        // Take oldest completed messages first until we've covered the excess.
+        for (const msg of conv.messages.slice(0, pendingStart)) {
             if (accumulatedTokens >= excessTokens) break;
             const msgTokens = conv.textGenApiConnection.calculateTokensFromMessage(msg);
             messagesToCompact.push(msg);

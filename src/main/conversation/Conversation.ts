@@ -9,6 +9,7 @@ import { appendPrivateNarration, collectPrivateNarration, compactedMemoryText } 
 import { visibleCompactedMemories } from '../language/compactedMemoryScope';
 import { ControlledProseError, parseControlledProse, normalizeControlledProseFormatting } from '../../shared/language/controlledProse';
 import { loadLedgerHistory, saveLedgerHistory, saveLedgerCheckpoint } from '../language/ledgerStorage';
+import { currentGoaCatalog } from '../goa/goaRuntime';
 import { runActionWithScenePolicy, waitForSceneSelection, sceneUiState } from '../scenes/sceneRuntime';
 import { captureRoleplayEncounter, captureCurrentLanguages, prepareRoleplayBackground, beginCultureForeground } from '../culture/cultureRuntime';
 import { currentLoreMutationCatalog } from '../lorebook/loreMutationRuntime';
@@ -475,7 +476,7 @@ export class Conversation{
     private async refreshCurrentLanguageFacts(signal: AbortSignal): Promise<void> {
         const refreshLanguages = languageCaptureEnabled() && languageRoutingEnabled(this.config) &&
             (defaultLanguageEngine().relations.practiceRules.length > 0 || !!currentLanguageCaptureCatalog()?.captureStudy);
-        if (!refreshLanguages && !currentDialogueCaptureCatalog() && !developmentCaptureEnabled() && !(currentLoreMutationCatalog() || currentLoreGameStateCatalog()) && !launcherScenesEnabled()) return;
+        if (!currentGoaCatalog() && !refreshLanguages && !currentDialogueCaptureCatalog() && !developmentCaptureEnabled() && !(currentLoreMutationCatalog() || currentLoreGameStateCatalog()) && !launcherScenesEnabled()) return;
         if (this.languageFactRefresh) return this.languageFactRefresh;
         const task = (async () => {
             await this.encounterCapture;
@@ -872,14 +873,9 @@ export class Conversation{
     }
 
     private async withLimitedHistory<T>(callback: () => Promise<T>): Promise<T> {
-        const originalHistory = this.historicalConversations;
-        // Slice the most recent conversations for the prompt
-        this.historicalConversations = originalHistory.slice(-this.config.maxHistoricalConversations);
-        try {
-            return await callback();
-        } finally {
-            this.historicalConversations = originalHistory;
-        }
+        // The displayed archive also owns historical replay. Prompt builders use
+        // recipient ledger views and summaries; never swap this shared collection.
+        return await callback();
     }
 
     pushMessage(message: Message): void{
@@ -1000,7 +996,7 @@ export class Conversation{
             const contextSize = this.textGenApiConnection.context || 8192;
             if (this.memoryCompactor.shouldTriggerCompaction(this.messages, tokenCount, contextSize)) {
                 console.log('Context usage is over the threshold, triggering pre-emptive compaction.');
-                await this.resummarize();
+                await this.resummarize(true);
             }
         }
 
@@ -1498,7 +1494,7 @@ export class Conversation{
 
         if(currentTokens > this.textGenApiConnection.context){
             console.log(`Context limit hit (${currentTokens}/${this.textGenApiConnection.context} tokens), resummarizing conversation!`);
-            await this.resummarize();
+            await this.resummarize(true);
             // Rebuild prompt after summarization
             prompt = await buildChatPrompt(this, source, this.hasLanguageMessages() ? this.messages : [], target, false, spokenLanguageId, proseEncoding);
         }
@@ -1976,7 +1972,10 @@ ${validationTranslations.instruction}`
             return;
         }
 
-        const actionToExecute = pending.find(p => p.action.signature === actionName);
+        // Old callers may use a signature only when it identifies exactly one proposal.
+        const byId = pending.filter(p => p.proposalId === actionName);
+        const matches = byId.length ? byId : pending.filter(p => p.action.signature === actionName);
+        const actionToExecute = matches.length === 1 ? matches[0] : undefined;
         if (!actionToExecute) {
             console.error(`Action ${actionName} not found in pending actions for message ID ${messageId}`);
             return;
@@ -1997,6 +1996,11 @@ ${validationTranslations.instruction}`
                 effectBody
             );
 
+            if (action.signature === 'changeLocation' && this.gameData.sceneSnapshot) {
+                if (effectBody) this.runFileManager.append('root = { trigger_event = mcc_event_v2.9003 }');
+                await waitForSceneSelection(this.gameData);
+            }
+
             // Hardcoded effect for leaveConversation
             if (action.signature === 'leaveConversation' || action.signature === 'killCharacter') {
                 if (targetId === this.gameData.playerID) {
@@ -2016,7 +2020,7 @@ ${validationTranslations.instruction}`
                 this.generateSceneDescription();
             }
 
-            this.runFileManager.append(`
+            if (action.signature !== 'changeLocation' || !this.gameData.sceneSnapshot) this.runFileManager.append(`
                 root = {trigger_event = mcc_event_v2.9003}                `
             );
 
@@ -2042,27 +2046,31 @@ ${validationTranslations.instruction}`
         }
 
         // Remove the executed action from pending
-        const updatedPending = pending.filter(p => p.action.signature !== actionName);
+        const updatedPending = pending.filter(p => p !== actionToExecute);
         if (updatedPending.length === 0) {
             this.pendingActions.delete(messageId);
         } else {
             this.pendingActions.set(messageId, updatedPending);
         }
     }
+    clearCachedSummaries(): void {
+        this.summaries.clear();
+        this.summaryFileWatcher.unwatchAll();
+    }
     public memoryCompactor: MemoryCompactor;
 
-    async resummarize(): Promise<void> {
+    async resummarize(preservePendingInput = false): Promise<void> {
         if (this.summaryOperation) return this.summaryOperation;
-        this.summaryOperation = this.performResummarize();
+        this.summaryOperation = this.performResummarize(preservePendingInput);
         try { await this.summaryOperation; } finally { this.summaryOperation = undefined; }
     }
 
-    private async performResummarize(){
+    private async performResummarize(preservePendingInput = false){
         this.ledger();
         if (this.config.enableMemoryCompaction) {
             console.log('Starting agentic memory compaction due to context limit.');
             try {
-                const result = await this.memoryCompactor.compact(this);
+                const result = await this.memoryCompactor.compact(this, { preservePendingInput });
 
                 // After compaction, vectorize the new memories and insert them into the vector store.
                 if (result.newlyCompactedMemories && result.newlyCompactedMemories.length > 0) {
@@ -2209,10 +2217,10 @@ ${validationTranslations.instruction}`
             const charIds = new Set(memoriesToInsert.map(m => m.characterId).filter(Boolean));
             for (const cid of charIds) {
                 try {
-                    this.memoryManager.applyDecay(cid);
+                    this.memoryManager.applyDecay(cid, 0.01, 1, String(this.gameData.playerID));
                     // Keep retractable language-derived vectors under their source IDs.
                     if (!items.some(item => item.characterId === cid && item.perspectiveOwned))
-                        this.memoryManager.consolidateMemories(cid);
+                        this.memoryManager.consolidateMemories(cid, 0.85, String(this.gameData.playerID));
                 } catch (e) {
                     console.error(`Memory upkeep (decay/consolidation) failed for character ${cid}:`, e);
                 }
@@ -2582,13 +2590,18 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
                     const newDiaryEntry = await this.diaryGenerator.generateDiaryEntry(this.gameData, this, character.id.toString(), 'background-resumable');
                     if (newDiaryEntry) {
                         verifyCloseRevision();
+                        const diaryStamp = { ...(this.campaignIdentity ? { votcCampaignId: this.campaignIdentity.campaignId } : {}),
+                            votcCheckpointEpoch: closeStamp?.checkpointEpoch ?? this.gameData.votcCheckpointEpoch,
+                            ...(closeStamp ? { votcTimelineNodeId: closeStamp.timelineNodeId } : {}) };
+                        Object.assign(newDiaryEntry, diaryStamp);
                         await saveDiaryFile(this.gameData.playerID.toString(), character.id.toString(), newDiaryEntry);
 
                         // Re-summarize the diary with the new entry
                         const summaryResult = await this.diaryGenerator.summarizeDiaryEntry(newDiaryEntry, this.gameData, 'background-resumable');
                         if (summaryResult) {
                             const summaries = await readDiarySummaries(this.gameData.playerID.toString(), character.id.toString());
-                            summaries.unshift({ id: randomUUID(), ...summaryResult });
+                            verifyCloseRevision();
+                            summaries.unshift({ id: randomUUID(), ...summaryResult, ...diaryStamp });
                             await saveDiarySummaries(this.gameData.playerID.toString(), character.id.toString(), summaries);
                         }
                     }
@@ -2602,6 +2615,7 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
             }
 
             const summaryDirForMap = path.join(this.votcDataPath, 'conversation_summaries', this.gameData.playerID.toString());
+            fs.mkdirSync(summaryDirForMap, { recursive: true });
             const characterMapPath = path.join(summaryDirForMap, '_character_map.json');
             let characterMap: {[key: number]: string} = {};
             if (fs.existsSync(characterMapPath)) {
@@ -2649,7 +2663,9 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
 
                 this.summaryFileWatcher.pauseWatcher(summaryFile);
 
-                const existingSummaries = this.summaries.get(character.id) || [];
+                fs.mkdirSync(summaryDir, { recursive: true });
+                const existingSummaries: Summary[] = fs.existsSync(summaryFile) ? JSON.parse(fs.readFileSync(summaryFile, 'utf8')) : [];
+                if (!Array.isArray(existingSummaries)) throw new Error('Invalid summary file.');
 
                 const isErrorText = /low balance|not enough credits|top up|api error|too many requests|rate limit/i.test(newSummary.content);
                 if (isErrorText) {
@@ -2734,18 +2750,15 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
         console.log("Config updated! Reloading conversation configuration.");
         this.config = config;
         this.loadConfig();
-        if (this.memoryCompactor) {
-            this.memoryCompactor.initialize(this.config);
-        }
-        this.loadConfig();
+        if (this.memoryCompactor) this.memoryCompactor.initialize(this.config);
     }
 
     loadConfig(){
         console.log('Loading conversation configuration.');
         console.log('Current config (safe version):', this.config.toSafeConfig());
 
+        // Configuration changes cannot erase an effect awaiting CK3's receipt.
         this.runFileManager = new RunFileManager(this.config.userFolderPath);
-        this.runFileManager.clear();
 
         // Re-initialize API connections with the new config
         if (!this.config.textGenerationApiConnectionConfig) {

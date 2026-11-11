@@ -134,3 +134,28 @@ test('chat commits disclosure only when the actual prompt retains its lore messa
     expect(tight).not.toContain('SYNTHETIC PROGRESSIVE ACCOUNT'); expect(commit).toHaveBeenLastCalledWith(false);
     expect(tight).toContain('PLAYER AUTHORED: Keeps compassion');
 });
+
+test('an identity-changing trait is recaptured during the existing per-turn probe before the next prompt',async()=>{
+    const {EncounterCapture}=require('../../src/main/background/EncounterCapture');
+    const catalog=buildGoaCaptureCatalog(config.cultureGameInstallPath,config.userFolderPath)!;
+    catalog.traitIds.push('demon_hunter');
+    // The real catalogue already contains fallen_demon_hunter; use its accepted frame format.
+    const actor=game.getAi();capture(2,'creature_sayaadi','female').forEach(observeGoaLine);
+    getVerifiedGoaSnapshot(actor); // Pin the pre-action body as a normal open encounter does.
+    const action=require('../../default_userdata/scripts/actions/standard/addTrait.js'),effects:string[]=[];
+    action.run(game,(effect:string)=>effects.push(effect),['fallen_demon_hunter'],1,2);
+    expect(effects.join('\n')).toContain('fallen_demon_hunter');
+    const file=path.join(config.userFolderPath,'run/votc.txt');fs.mkdirSync(path.dirname(file),{recursive:true});
+    let bridge:any;
+    bridge=new EncounterCapture(()=>({goa:catalog}),()=>{
+        if(!fs.existsSync(file))return;const script=fs.readFileSync(file,'utf8');const nonce=script.match(/ack\/;\/([a-f0-9]{24})/)?.[1];
+        if(!nonce)return;
+        if(script.includes('has_trait = fallen_demon_hunter'))capture(2,'fallen_demon_hunter','female').forEach(observeGoaLine);
+        bridge.observe('VOTC:ENCOUNTER/;/ack/;/'+nonce);
+    });
+    expect(await bridge.capture(config.userFolderPath,[{characterId:2,position:1}],new AbortController().signal,'votc.txt',6000,{languagesOnly:true})).toBe(true);
+    const prompt=convertMessagesToString(await buildChatPrompt(conversation(),actor),'','');
+    expect(prompt).toContain('controlling demon');
+    const {composeGoaContext,finishGoaContext}=require('../../src/main/goa/goaRuntime');
+    const context=composeGoaContext('',actor,config,game,'action');expect(finishGoaContext(context.description,context)).toContain('demon');
+});

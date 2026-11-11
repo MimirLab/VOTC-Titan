@@ -66,6 +66,26 @@ test('automatic Wildhammer dwarf women use the auditioned description without re
     body(['creature_dwarf'], 'male');
     expect(resolveVoiceCasting(actor).anatomyCore).toBe(c.anatomy['002'].male);
 });
+test.each([['farraki', '019'], ['atalai', '021']])('automatic male %s trolls retain the picked recipe and stable identity keys', (cultureId, preset) => {
+    body(['creature_troll'], 'male');
+    (getAcousticCulture as jest.Mock).mockReturnValue({ version: 1, complete: true, cultureId });
+    const c = castingCatalogue();
+    const original = resolveVoiceCasting(actor, { anatomyId: '015', cultureId });
+    const automatic = resolveVoiceCasting(actor);
+    const audition = resolveVoiceCasting(actor, { anatomyId: preset, cultureId });
+    const individual = 'A patient cadence and dry individual grain.';
+    expect(composeVoiceDesign(automatic, individual)).toBe(composeVoiceDesign(audition, individual));
+    expect(automatic.formKey).toBe(original.formKey);
+    expect(automatic.anatomyId).toBe('015');
+    expect(original.anatomyCore).toBe(c.anatomy['015'].male);
+    expect(automatic.cultureCore).toBe(original.cultureCore);
+    expect(resolveVoiceCasting(actor, {}, automatic).anatomyCore).toBe(automatic.anatomyCore);
+    expect(resolveVoiceCasting(actor, { cultureId: 'darkspear' }).anatomyCore).toBe(original.anatomyCore);
+    body(['creature_human'], 'male');
+    expect(resolveVoiceCasting(actor).anatomyCore).toBe(c.anatomy['001'].male);
+    body(['creature_troll'], 'female');
+    expect(resolveVoiceCasting(actor).anatomyCore).toBe(c.anatomy['015'].female);
+});
 test('naga presentations remain different under the identical Nazja culture; dryad/keeper and banshee restrictions stay distinct', () => {
     body(['creature_naga'], 'male'); const male = resolveVoiceCasting(actor, { cultureId: 'naga' });
     body(['creature_naga'], 'female'); const female = resolveVoiceCasting(actor, { cultureId: 'naga' });

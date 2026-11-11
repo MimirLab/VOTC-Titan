@@ -1,9 +1,5 @@
 # Titan launcher distribution contract
 
-The [installation guide](getting-started.md#ck3s-native-venue-picker) covers the
-optional Titan Scenes add-on for CK3’s native venue picker. The launcher-only
-path described here uses the stock Steam playset and Titan’s in-chat gallery.
-
 The supported user setup is CK3 at the compatible patch, the normal GoA2 and
 VOTC Community Edition Steam subscriptions, and the downloaded Titan launcher.
 Titan must not require a separate Workshop publication, a Titan game-component

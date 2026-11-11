@@ -510,6 +510,24 @@ export class TimelineRegistry {
         return result;
     }
 
+    /** Nearest-first lineage for a resolved node, including committed v2 visibility. */
+    getVerifiedAncestors(nodeId: string, checkpointEpoch?: number): string[] {
+        if (!isValidNodeId(nodeId)) return [];
+        if (this.hasNode(nodeId)) return this.getAncestors(nodeId);
+        const graph = this.v2VisibilityGraph;
+        if (!graph?.nodes[nodeId] || !Number.isFinite(checkpointEpoch)) return [];
+        const lineage: string[] = [], seen = new Set<string>();
+        let current: string | null = nodeId;
+        while (current !== null) {
+            if (seen.has(current)) return [];
+            seen.add(current);
+            const node: TimelineNode | undefined = graph.nodes[current];
+            if (!node || (node.epoch !== undefined && node.epoch > checkpointEpoch!)) return [];
+            lineage.push(current); current = node.parentId;
+        }
+        return lineage;
+    }
+
     getAncestorSet(nodeId: string): Set<string> {
         return new Set(this.getAncestors(nodeId));
     }

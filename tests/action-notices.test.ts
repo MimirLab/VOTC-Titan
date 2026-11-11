@@ -166,3 +166,26 @@ test('an action decision cannot execute against a changed source turn', async ()
     expect(await checkActions(conv, 1, 2)).toEqual([]);
     expect(conv.runFileManager.append).not.toHaveBeenCalled();
 });
+
+test.each([['false',60,40],['true',10,90]])('ordinary conversion parser honors Boolean string %s', async (value, secret, publicWeight) => {
+    const conv=conversation('convertReligion',`<rationale>Conversion.</rationale><actions>convertReligion(1,2,${value})</actions>`);
+    game.characters.get(1)!.faith='source_faith';game.characters.get(2)!.faith='target_faith';
+    const writer=require('../src/main/conversation/ActionEffectWriter').ActionEffectWriter.appendEffect as jest.Mock;
+    writer.mockClear();await checkActions(conv,1,2);
+    const effect=writer.mock.calls[0][4];expect(effect).toMatch(new RegExp(`\\b${secret} = \\{`));expect(effect).toMatch(new RegExp(`\\b${publicWeight} = \\{`));
+    const slashEffect=jest.fn(); moduleFor('convertReligion').run(game,slashEffect,[value],1,2);
+    expect(slashEffect.mock.calls[0][0]).toBe(effect);
+});
+test('conversion rejects invalid Boolean values before writing an effect',()=>{
+    const emit=jest.fn();expect(()=>moduleFor('convertReligion').run(game,emit,['perhaps'],1,2)).toThrow('true or false');expect(emit).not.toHaveBeenCalled();
+});
+
+test('same-signature approvals execute only the selected proposal and leave the other available',async()=>{
+    const conv=conversation('changeStress','<rationale>Two different participants.</rationale><actions>changeStress(1,2,soothe_minor), changeStress(2,1,rattle_minor)</actions>',true);
+    await checkActions(conv,1,2);
+    const proposals=conv.pendingActions.get('reply');expect(proposals).toHaveLength(2);expect(proposals[0].proposalId).not.toBe(proposals[1].proposalId);
+    const original=proposals[0], chosen=proposals[1];
+    await conv.executeApprovedAction('reply','changeStress');expect(conv.pendingActions.get('reply')).toHaveLength(2);expect(conv.executedActions.size).toBe(0);
+    await conv.executeApprovedAction('reply',chosen.proposalId);expect(conv.executedActions.get('reply')[0].chatMessage).toContain('Aegwynn rattled Arthas');expect(conv.pendingActions.get('reply')).toEqual([original]);
+    await conv.executeApprovedAction('reply',original.proposalId);expect(conv.executedActions.get('reply')).toHaveLength(2);expect(conv.pendingActions.size).toBe(0);
+});

@@ -241,3 +241,16 @@ test('Learning is emitted through the existing bridge and required exactly once 
         bad.forEach(line => reader.observe(line)); expect(reader.snapshot(1)).toBeUndefined();
     }
 });
+
+test('narration-only editing retains the unchanged CLOSE opaque speech mask in memories', () => {
+    const { session, ledger, message } = encounter();
+    const before = session.forRecipient(message, 1, 'reader');
+    expect(before.perceivedOpaqueSpeechSpans!.length).toBeGreaterThan(0);
+    const edited = before.editableContent!.replace('He waits.', 'He nods slowly.');
+    expect(edited).not.toBe(before.editableContent);
+    session.editForRecipient(message, 1, edited, 'reader');
+    const after = session.forRecipient(message, 1);
+    expect(after.perceivedOpaqueSpeechSpans!.length).toBeGreaterThan(0);
+    expect(perceivedMemoryTranscript([after], 1)).toContain('[unrecognized speech]');
+    expect(() => readRecipientHistory(JSON.parse(JSON.stringify(ledger.snapshot('date', 1))), 1)).not.toThrow();
+});

@@ -5,7 +5,7 @@ import type { Message } from '../ts/conversation_interfaces';
 import type { LoreDelivery } from './lorebookDisclosure';
 import { getEffectiveCharacterDescription } from '../characterDescription';
 import { getCultureBackground } from '../culture/cultureRuntime';
-import { getFaithBackground, getFaithLiveContext } from '../faith/faithRuntime';
+import { getFaithBackground, bindFaithLiveContext } from '../faith/faithRuntime';
 import { getVerifiedGoaSnapshot } from '../goa/goaRuntime';
 
 export interface NativeLoreContext {
@@ -16,20 +16,25 @@ export interface NativeLoreContext {
 }
 export interface NativeLoreCapture { preparing?:boolean; preview?:boolean; value?:NativeLoreContext }
 
-/** This binds actual mutable sources before the builder's first lore await.
- * Empty, unrendered live-faith context and its absence are equivalent; a real
- * nonempty context expiring is a change. No source value is cached across waits.
+/** Bind prepared religious facts to their source observation across the reply.
+ * Cache freshness still controls what a new prompt can acquire.
  */
 export function nativeLoreSourceCurrent(conv:Conversation,actor:Character,data:string):()=>boolean{
     const game=conv.gameData,participants=[...game.characters.entries()];
+    const faithContexts=participants.map(([id,person])=>({id,binding:bindFaithLiveContext(person)}));
     const snapshot=()=>{
-        const live=getFaithLiveContext(actor);
+        const goa=getVerifiedGoaSnapshot(actor);
+        const culture=getCultureBackground(actor);
+        const faith=getFaithBackground(actor);
         return{
             config:conv.config,history:conv.messages,summary:conv.currentSummary,historical:conv.historicalConversations,
             game:{...game,characters:undefined,silencedCharacterIds:[...(game.silencedCharacterIds??[])]},
-            participants:[...game.characters.entries()],goa:getVerifiedGoaSnapshot(actor),
-            personal:participants.map(([id])=>[id,getEffectiveCharacterDescription(data,String(game.playerID),String(id))]),
-            culture:getCultureBackground(actor),faith:getFaithBackground(actor),faithLive:live&&Object.keys(live).length?live:undefined
+            participants:[...game.characters.entries()].map(([id,person])=>[id,{...person,faithLiveContext:undefined}]),
+            goa,personal:participants.map(([id])=>[id,getEffectiveCharacterDescription(data,String(game.playerID),String(id))]),
+            culture,faith,faithLive:faithContexts.map(({id,binding})=>{
+                const context=binding.context;
+                return[id,context&&Object.keys(context).length?context:undefined];
+            })
         };
     };
     const fingerprint=()=>createHash('sha256').update(JSON.stringify(snapshot())).digest('hex');
@@ -37,7 +42,8 @@ export function nativeLoreSourceCurrent(conv:Conversation,actor:Character,data:s
     return()=>{
         try{
             return conv.isOpen!==false&&conv.gameData===game&&game.characters.get(actor.id)===actor&&
-                participants.length===game.characters.size&&participants.every(([id,person])=>game.characters.get(id)===person)&&fingerprint()===binding;
+                participants.length===game.characters.size&&participants.every(([id,person])=>game.characters.get(id)===person)&&
+                faithContexts.every(({binding})=>binding.isCurrent())&&fingerprint()===binding;
         }catch{return false;}
     };
 }

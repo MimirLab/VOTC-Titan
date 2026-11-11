@@ -63,6 +63,12 @@ export function resolveVoiceCasting(actor: Character, choices: CastingChoices = 
     // The generic dwarf route otherwise sends the longer Ironforge refinement.
     if (!choices.anatomyId && body === 'creature_dwarf' && presentation === 'female' && cultureId === 'wildhammer')
         anatomyCore = c.anatomy['003'].female ?? anatomyCore;
+    // Keep the reviewed Sand/Atal'ai descriptions inside individual casting.
+    // These Culture-specific recipes do not change ancestry or saved form keys.
+    if (!choices.anatomyId && body === 'creature_troll' && presentation === 'male') {
+        const reviewedPreset = cultureId === 'farraki' ? '019' : cultureId === 'atalai' ? '021' : undefined;
+        if (reviewedPreset) anatomyCore = c.anatomy[reviewedPreset].male ?? anatomyCore;
+    }
     return { version: c.version, sourceSha256: c.sourceSha256, ...(anatomyId ? { anatomyId } : {}), ...(body ? { body } : {}),
         ...(presentation ? { presentation } : {}), ...(cultureId ? { cultureId } : {}), anatomyCore, cultureCore,
         formKey: createHash('sha256').update(JSON.stringify([anatomyId ?? body ?? '', presentation ?? '', cultureId ?? ''])).digest('hex'),

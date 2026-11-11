@@ -54,11 +54,11 @@
           <div class="audio-main">
             <section class="audio-card" id="audio-panel-narrator" role="tabpanel" aria-labelledby="audio-tab-narrator" hidden>
               <div class="audio-section-heading"><h3>Narrator</h3><span id="audio-narrator-count" class="audio-badge"></span><button id="audio-delete-narrator" class="audio-danger" type="button" data-audio-action>Delete narrator</button></div>
-              <p class="audio-help">Try a description and preview it. Save only the voices you want to keep.</p>
+              <p class="audio-help">Medivh (HotS) is the default storyteller. Choose a saved narrator or create your own to change the voice.</p>
               <p id="audio-active-narrator" class="audio-current"></p>
               <div id="audio-narrator-controls">
                 <label class="audio-field">Saved narrator<select id="audio-narrator-voice"></select></label>
-                <div class="audio-actions audio-library-actions"><button id="audio-new-narrator" type="button" data-audio-action>New narrator</button><button id="audio-use-narrator" type="button" data-audio-action>Use this narrator</button></div>
+                <div class="audio-actions audio-library-actions"><button id="audio-default-narrator" type="button" data-audio-action>Use default Medivh</button><button id="audio-new-narrator" type="button" data-audio-action>New narrator</button><button id="audio-use-narrator" type="button" data-audio-action>Use this narrator</button></div>
                 <div id="audio-narrator-delete-confirm" class="audio-confirm" role="alert" hidden><p id="audio-narrator-delete-message"></p><div class="audio-actions"><button id="audio-confirm-delete-narrator" type="button" class="audio-danger" data-audio-action>Delete narrator and recording</button><button id="audio-cancel-delete-narrator" type="button">Cancel</button></div></div>
                 <div class="audio-name-row"><label class="audio-field">Voice name<input id="audio-narrator-name" maxlength="100" value="Narrator"></label><button id="audio-rename-narrator" type="button" data-audio-action>Rename</button></div>
                 <label class="audio-field">Voice description<textarea id="audio-narrator-description" rows="4" maxlength="2400" placeholder="Describe the voice, accent, texture and cadence you want."></textarea></label>

@@ -72,6 +72,8 @@ personal design guide new casts. Your own assignments and named-character voices
 have priority. Saved references keep a person's voice consistent, while historical
 replays retain the voice used when they were recorded.
 
+Medivh is the default storyteller, using the retained Heroes of the Storm reference. You can choose another narrator or restore Medivh in Audio. Existing custom narrators remain available.
+
 Dialogue, whispered thoughts and narration have separate delivery. Spoken text,
 reference transcripts and performance instructions travel separately to Breeze.
 Later passages can be prepared during playback. Preview, pause, resume, stop,
@@ -84,13 +86,16 @@ personal voice libraries stay in your private data.
 
 ## Illustrated encounters
 
-Titan has **868 scenes**, including **855 custom scenes and 851 paintings**. The optional Titan Scenes add-on puts the regional choices in CK3’s conversation picker.
-Venue selection uses current encounter facts and participant checks. Existing CE
-venues carry through to Titan; custom venues are available through the scene
-selector. Changing scene refreshes eligibility first.
+Titan has **868 scenes**, including **855 custom scenes and 851 paintings**.
+Start a conversation in CK3, then click **Scenes** in Titan’s chat header to
+browse the painted venues available to your party. The gallery uses the current
+location and participant checks, and Titan checks again when you choose a venue.
+Your choice updates the painting and the setting used in roleplay.
 
-Paintings appear in Titan's conversation interface. The scene system reads game
-state through CE and runs inside the launcher.
+With the **VOTC Titan Scenes** add-on enabled after Community Edition in the
+CK3 playset, **Start Conversation** opens Titan’s illustrated venue list inside
+CK3. The game uses the chosen venue for the encounter background. Titan uses
+the same confirmed choice for roleplay and for later scene changes.
 
 ## Installation and your data
 
@@ -115,6 +120,6 @@ user-data directory. Titan releases are maintained in **MimirLab/VOTC-Titan**.
 | Casting and playback | `src/main/audio/`, `public/audio/clone-banks/catalog.json`, `public/audio/race-selections/manifest.json`, `public/audio/goa-casting.json` |
 | Scenes | `src/main/scenes/launcherScene*.ts`, authored JSON in `game_mod/scenes/`, runtime paintings in `public/scene-art/` |
 
-`game_mod/scenes` holds the source data for the launcher gallery and the optional native picker.
+`game_mod/scenes` is a source-data directory. It is not an installed game addon.
 
 </details>

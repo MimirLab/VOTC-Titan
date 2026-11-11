@@ -8,6 +8,7 @@ import { ConceptCompositionBank, ConceptComposition } from './conceptComposition
 import { FaithRelationshipBank, FaithRelationshipUnavailable } from './faithRelationshipBank';
 import { canonicalJsonStringify, sha256Hex } from '../promptWorkbench/canonicalJson';
 import { cultureSourceId } from '../culture/cultureEvidence';
+import { CulturePracticeBank, ResolvedCulturePractice } from './culturePracticeBank';
 
 type Snapshot = CultureSnapshot | FaithSnapshot;
 interface Passage { source: string; kind: string; text: string; required: boolean; subject?: string; contributors?: string[] }
@@ -18,12 +19,14 @@ export class BackgroundIngredientBank {
     readonly essential: EssentialConceptBank;
     readonly compositions: ConceptCompositionBank;
     readonly relationships: FaithRelationshipBank;
-    private views = new WeakMap<Snapshot, { fingerprint: string; rows: ConceptComposition[] }>();
+    readonly practices: CulturePracticeBank;
+    private views = new WeakMap<Snapshot, { fingerprint: string; rows: ConceptComposition[]; practices: ResolvedCulturePractice[] }>();
 
-    constructor(assets: { authored: unknown; essential: unknown; compositions: unknown; relationships: unknown }) {
+    constructor(assets: { authored: unknown; essential: unknown; compositions: unknown; relationships: unknown; practices?: unknown }) {
         this.relationships = new FaithRelationshipBank(assets.relationships);
+        this.practices = new CulturePracticeBank(assets.practices);
         this.authored = new AuthoredConceptBank(assets.authored, (domain, snapshot) =>
-            domain === 'faith' ? this.relationships.teachingContext(snapshot as FaithSnapshot) : []);
+            domain === 'faith' ? this.relationships.teachingContext(snapshot as FaithSnapshot) : this.practices.context(snapshot as CultureSnapshot));
         this.essential = new EssentialConceptBank(assets.essential);
         this.compositions = new ConceptCompositionBank(assets.compositions);
     }
@@ -32,9 +35,11 @@ export class BackgroundIngredientBank {
     revision(domain: ConceptDomain, snapshot: Snapshot): string {
         try {
             const meanings = this.essential.resolve(domain, snapshot, this.authored);
+            const practices = domain === 'culture' ? this.practices.resolve(snapshot as CultureSnapshot, meanings.flatMap(m => m.readingId ? [m.readingId] : [])) : [];
             return sha256Hex(canonicalJsonStringify({ version: 1, domain,
                 essential: this.essential.revision(domain, snapshot, this.authored),
                 compositions: this.compositions.revision(domain, meanings),
+                ...(practices.length && { practices: practices.map(({ id, anchor, text }) => ({ id, anchor, text })) }),
                 ...(domain === 'faith' && { relationships: this.relationships.resolve(snapshot as FaithSnapshot).revision }) }));
         } catch (error) {
             if (!(error instanceof AuthoredConceptUnavailable || error instanceof EssentialConceptUnavailable ||
@@ -52,7 +57,8 @@ export class BackgroundIngredientBank {
             ? this.essential.project('culture', snapshot as CultureSnapshot, this.authored)
             : this.relationships.project(this.essential.project('faith', snapshot as FaithSnapshot, this.authored));
         this.views.set(projected, { fingerprint: sha256Hex(canonicalJsonStringify(projected)),
-            rows: this.compositions.resolve(domain, meanings) });
+            rows: this.compositions.resolve(domain, meanings), practices: domain === 'culture'
+                ? this.practices.resolve(snapshot as CultureSnapshot, meanings.flatMap(m => m.readingId ? [m.readingId] : [])) : [] });
         return projected;
     }
 
@@ -79,6 +85,15 @@ export class BackgroundIngredientBank {
             result = result.filter(p => !removed.has(p));
             result.splice(Math.min(earliest, result.length), 0, union);
         }
+        for (const practice of view.practices) {
+            const fact = snapshot.facts.find(f => f.kind === 'tradition' && f.key === practice.anchor)!;
+            const source = cultureSourceId(fact as any);
+            const target = result.find(p => p.kind === 'adopted custom' && (p.source === source || p.contributors?.includes(source)));
+            if (!target) throw new Error('Missing adopted custom for cultural practice');
+            const index = result.indexOf(target);
+            result[index] = { ...target, text: target.text + ' ' + practice.text,
+                contributors: [...new Set([...(target.contributors ?? [target.source]), cultureSourceId(practice.fact)])] };
+        }
         return result;
     }
 }
@@ -88,7 +103,7 @@ export function getBackgroundIngredients(): BackgroundIngredientBank {
     const directory = path.join(__dirname, '../../../public/backgroundConcepts/recipe');
     const read = (name: string) => JSON.parse(readFileSync(path.join(directory, name + '.json'), 'utf8'));
     return bundled ??= new BackgroundIngredientBank({ authored: read('authored'), essential: read('essential'),
-        compositions: read('compositions'), relationships: read('relationships') });
+        compositions: read('compositions'), relationships: read('relationships'), practices: read('practices') });
 }
 export function ingredientRevision(domain: ConceptDomain, snapshot: Snapshot): string {
     return getBackgroundIngredients().revision(domain, snapshot);

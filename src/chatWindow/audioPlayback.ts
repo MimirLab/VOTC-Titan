@@ -6,6 +6,7 @@ import { createVoiceOutput } from '../shared/voiceOutput';
 let context: AudioContext | undefined;
 let output: ReturnType<typeof createVoiceOutput> | undefined;
 let active = '';
+let paused = false;
 let queued: Float32Array[] = [];
 let pendingByte: number | undefined;
 let nextTime = 0;
@@ -30,7 +31,7 @@ function renderStatus(): void {
 }
 function reset(): void {
     active = ''; queued = []; pendingByte = undefined; nextTime = 0; earliestStart = 0; lastCompletedAt = undefined; started = false; ended = false;
-    pause.textContent = 'Pause voice';
+    pause.textContent = paused ? 'Resume voice' : 'Pause voice';
     for (const source of sources) { source.onended = null; try { source.stop(); } catch {} source.disconnect(); }
     sources.clear();
     renderStatus();
@@ -77,7 +78,7 @@ ipcRenderer.on('audio-start', (_event, info: { id: string; volume: number; kind?
     context ??= new AudioContext({ sampleRate: 24000 });
     output ??= createVoiceOutput(context);
     output.setLevel(info.volume, info.kind === 'thought');
-    void context.resume();
+    void (paused ? context.suspend() : context.resume());
     renderStatus();
 });
 ipcRenderer.on('audio-chunk', (_event, id: string, bytes: Uint8Array) => {
@@ -90,8 +91,8 @@ ipcRenderer.on('audio-chunk', (_event, id: string, bytes: Uint8Array) => {
     if (samples.length) queued.push(samples); schedule();
 });
 ipcRenderer.on('audio-end', (_event, id: string) => { if (id === active) { ended = true; schedule(); } });
-ipcRenderer.on('audio-stop', reset);
-ipcRenderer.on('audio-pause', (_event, value: boolean) => { pause.textContent = value ? 'Resume voice' : 'Pause voice'; if (context) void (value ? context.suspend() : context.resume()); });
+ipcRenderer.on('audio-stop', () => { paused = false; reset(); });
+ipcRenderer.on('audio-pause', (_event, value: boolean) => { paused = value; pause.textContent = value ? 'Resume voice' : 'Pause voice'; if (context) void (value ? context.suspend() : context.resume()); });
 export function addAudioReplay(element: HTMLElement, messageId?: string): void {
     if (!messageId) return;
     const button = document.createElement('button'); button.textContent = '▶'; button.title = 'Replay voice'; button.className = 'audio-replay';

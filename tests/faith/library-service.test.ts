@@ -149,3 +149,30 @@ test('personal zeal binds to the current character, survives transient expiry an
         service.clearObservations(); expect(service.zealousFor(person)).toBeUndefined();
     } finally { await service.close(); }
 });
+
+test('a prepared faith context survives elapsed freshness and rejects new or invalidated evidence', async () => {
+    let now = 0;
+    const service = new FaithService(new FaithLibrary(':memory:'), async () => result(),
+        { ...options, now: () => now });
+    try {
+        const person = character(2, 'Believer');
+        service.observe(observation());
+        const turn = service.bindLiveContext(person);
+        expect(turn.context?.fervor).toBe(65);
+        now = 15001;
+        expect(service.contextFor(person)).toBeUndefined();
+        expect(turn.context?.fervor).toBe(65);
+        expect(turn.isCurrent()).toBe(true);
+        service.observe(observation());
+        expect(turn.isCurrent()).toBe(true);
+        service.observe({ ...observation(), liveContext: { fervor: 20 } });
+        expect(turn.isCurrent()).toBe(false);
+        const next = service.bindLiveContext(person);
+        expect(next.context?.fervor).toBe(20);
+        service.forgetCharacter(2);
+        expect(next.isCurrent()).toBe(false);
+        const cleared = service.bindLiveContext(person);
+        service.clearObservations();
+        expect(cleared.isCurrent()).toBe(false);
+    } finally { await service.close(); }
+});

@@ -170,7 +170,7 @@ export class EncounterCapture {
         const nonce = randomBytes(12).toString('hex');
         try {
             const catalogs = this.catalogs();
-            const body = encounterScript(options.languagesOnly ? { languages: catalogs.languages, dialogue: catalogs.dialogue,
+            const body = encounterScript(options.languagesOnly ? { goa: catalogs.goa, languages: catalogs.languages, dialogue: catalogs.dialogue,
                 development: catalogs.development, loreMutation: catalogs.loreMutation, loreGameState: catalogs.loreGameState, scenes: catalogs.scenes, clock: catalogs.clock } : catalogs, targets, nonce);
             script = `# VOTC:TITAN:PROBE/;/${nonce}/;/${createHash('sha256').update(body).digest('hex')}\n` + body;
         } catch { return false; }

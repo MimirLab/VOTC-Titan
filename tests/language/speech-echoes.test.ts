@@ -368,3 +368,18 @@ test('the shipped historical CLOSE archive recognizes a sound delivered before t
     expect(current.forRecipient(reply, 2).content).toContain(`'${word}'`);
     expect(current.forRecipient(reply, 1).content).toContain(`'${sound}'`);
 });
+
+test('narration-only editing by a bilingual reader preserves the opaque echoed source for monolingual listeners', () => {
+    const { record, sound, session, game, ledger } = fixture();
+    game.characters.get(1)!.languageSnapshot!.knownLanguageIds.push('language_zandali');
+    record('""brother""');
+    const reply = record(`**He gestures.** ""Does '${sound('brother')}' mean grain?""`, 3);
+    const editor = session.forRecipient(reply, 1, 'reader').editableContent!;
+    expect(editor).toContain("'brother'");
+    const before = session.forRecipient(reply, 3).content;
+    session.editForRecipient(reply, 1, editor.replace('He gestures.', 'He nods.'), 'reader');
+    expect(session.forRecipient(reply, 3).content).toBe(before.replace('He gestures.', 'He nods.'));
+    expect(session.forRecipient(reply, 3).content).not.toContain('brother');
+    expect(reply.utterance!.originalText).toContain(sound('brother'));
+    expect(() => validateLedger(JSON.parse(JSON.stringify(ledger.snapshot('date', 1))))).not.toThrow();
+});

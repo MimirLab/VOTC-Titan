@@ -8,6 +8,11 @@ import { FaithObservation } from './faithLog';
 
 export type FaithGenerator = (input: FaithInput, signal: AbortSignal) => Promise<FaithGenerationResult>;
 
+export interface FaithLiveContextBinding {
+    context?: FaithLiveContext;
+    isCurrent: () => boolean;
+}
+
 export class FaithService {
     private observations = new Map<number, { snapshot: FaithSnapshot; liveContext: FaithLiveContext; seenAt: number; characterZealous?: boolean }>();
     private bindings = new WeakMap<Character, { snapshot: FaithSnapshot; epoch: number; revision: number; characterZealous?: boolean }>();
@@ -92,6 +97,26 @@ export class FaithService {
                 characterZealous: observation.characterZealous });
             return observation.liveContext;
         }
+    }
+
+    /** A prepared reply keeps its captured facts until new evidence replaces them. */
+    bindLiveContext(character: Character): FaithLiveContextBinding {
+        const context = this.contextFor(character);
+        const epoch = this.epoch;
+        const revision = this.revisions.get(character.id) ?? 0;
+        const active = this.options.enabled() && !this.stopped;
+        const source = () => {
+            const observed = this.observations.get(character.id);
+            const live = observed?.liveContext;
+            return JSON.stringify([observed?.snapshot, live && Object.keys(live).length ? live : undefined,
+                observed?.characterZealous]);
+        };
+        const binding = source();
+        return {
+            context,
+            isCurrent: () => this.epoch === epoch && (this.revisions.get(character.id) ?? 0) === revision &&
+                (this.options.enabled() && !this.stopped) === active && source() === binding,
+        };
     }
 
     /** Match the Character's bound encounter even after transient faith circumstances expire. */

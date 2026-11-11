@@ -41,7 +41,7 @@ export class LorebookVectors {
         return new EmbeddingProvider(c.type as EmbeddingProviderType, c.model, c.baseUrl, c.key,
             getEffectiveEmbeddingDimension(c), query && (qualified||c.embeddingInputType) ? 'query' : c.embeddingInputType??(qualified?'document':undefined));
     }
-    async build(config: Config, data: string, edition: ChronicleStatus, qualified=false): Promise<void> {
+    async build(config: Config, data: string, edition: ChronicleStatus, qualified=process.env.VOTC_LORE_NATIVE_SEMANTIC_STUDY === '1'): Promise<void> {
         if (this.job?.state === 'Building semantic index') throw new Error('Lore indexing is already running.');
         // Freeze the shared connection for this job; changing it never mixes spaces.
         const frozen: Config = JSON.parse(JSON.stringify(config));

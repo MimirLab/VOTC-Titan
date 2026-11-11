@@ -57,6 +57,7 @@ if (require.main === module) (async()=>{
    assert.equal((await banner()).visible,false,'Late outdated mismatch cannot restore the warning');
    report.embeddingDimensionWarning={emptyStoreHidden:true,matchingHidden:true,mismatchVisible:true,clearsAfterCorrection:true,disabledOverrideUsesDefault:true,clearsAfterDeletion:true,outdatedResponseIgnored:true,syntheticOnly:true};
   }
+  if(name==='audio')report.narratorDefault=await require('./narrator-default-ui-smoke.cjs').probeNarratorDefault(c);
   if(name==='system' && m && await c.eval(`!!document.querySelector('config-checkbox[confid="languageRoutingEnabled"]')`))report.roleplayLanguages=await require('./language-ui-smoke.cjs').probeLanguages(c,m);
   if(name==='system' && m && await c.eval(`!!document.querySelector('#clear-culture-library')`))report.backgroundPurge=await require('./background-purge-ui-smoke.cjs').probeBackgroundPurge(c,m);
   if(['connection','memories','system'].includes(name)){const shot=await c.call('Page.captureScreenshot');fs.writeFileSync(path.join(resultDir,name+'.png'),Buffer.from(shot.data,'base64'));}

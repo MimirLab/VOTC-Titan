@@ -23,3 +23,10 @@ test('unknown, primitive and broken exception objects cannot leak data or suppre
         expect(generationFailure(error)).toEqual({ code: 'unknown', message: 'An unexpected error occurred during generation.' });
     }
 });
+
+test('changed character sources receive an actionable context notice',()=>{
+    for(const message of ['Character sources changed during the native lore turn.',
+        'Character knowledge changed during deeper lore lookup.']){
+        expect(generationFailure(new Error(message)).code).toBe('context_changed');
+    }
+});

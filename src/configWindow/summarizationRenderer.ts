@@ -43,6 +43,9 @@ let allDiaries: any[] = [];
 let filteredDiaries: any[] = [];
 let currentSummaryIndex = -1;
 let selectedPlayerId = '';
+let summaryLoadGeneration = 0;
+let loadedPlayerId = '';
+let editRevisions: Record<string, string> = {};
 let selectedCharacterId = 'all';
 let votcDataPath = '';
 let currentHighlightIndex = -1;
@@ -275,6 +278,11 @@ async function loadPlayerIds(currentPlayerId?: string, currentCharacterId?: stri
 }
 
 async function loadAllDataForPlayer(currentCharacterId?: string) {
+    const generation = ++summaryLoadGeneration;
+    const player = playerIdSelect.value;
+    const owns = () => generation === summaryLoadGeneration && playerIdSelect.value === player;
+    loadedPlayerId = '';
+    saveBtn.disabled = true;
     const storedCharacterId = selectedCharacterId;
     summaryLoader.style.display = 'block';
     summaryList.innerHTML = '';
@@ -289,26 +297,17 @@ async function loadAllDataForPlayer(currentCharacterId?: string) {
     try {
         showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.loading_data', 'Loading data...'), 'info');
 
-        // Load character map
-        const { success, map, error } = await ipcRenderer.invoke('get-character-map', selectedPlayerId);
-        if (success) {
-            characterMap = map;
-        } else {
-            console.warn('Could not load character map:', error);
-            characterMap = {}; // Reset on failure
-        }
-
-        // Load conversation summaries
-        allSummaries = await ipcRenderer.invoke('read-summary-file', selectedPlayerId);
-
-        // Load letters
-        allLetters = await ipcRenderer.invoke('get-all-letters-for-player', selectedPlayerId);
-
-        allLetters = await ipcRenderer.invoke('get-all-letter-summaries-for-player', selectedPlayerId);
-
-        // Load diaries
-        allDiaries = await ipcRenderer.invoke('get-all-diaries-for-player', selectedPlayerId);
-
+        const [mapResult, conversations, letters, diaries] = await Promise.all([
+            ipcRenderer.invoke('get-character-map', player),
+            ipcRenderer.invoke('read-summary-edit-snapshot', player, 'conversations'),
+            ipcRenderer.invoke('read-summary-edit-snapshot', player, 'letters'),
+            ipcRenderer.invoke('read-summary-edit-snapshot', player, 'diaries')
+        ]);
+        if (!owns()) return;
+        characterMap = mapResult.success ? mapResult.map : {};
+        allSummaries = conversations.data; allLetters = letters.data; allDiaries = diaries.data;
+        editRevisions = { conversations: conversations.revision, letters: letters.revision, diaries: diaries.revision };
+        loadedPlayerId = player;
         populateCharacterSelect(currentCharacterId);
         if (storedCharacterId && Array.from(characterSelect.options).some(opt => opt.value === storedCharacterId)) {
             characterSelect.value = storedCharacterId;
@@ -319,11 +318,12 @@ async function loadAllDataForPlayer(currentCharacterId?: string) {
         hasUnsavedChanges = false;
         updateSaveButtonState();
     } catch (error: any) {
+        if (!owns()) return;
         const errorMsg = window.LocalizationManager.getTranslation('summary_manager.load_fail_generic', 'Failed to load data: ');
         showStatusMessage(errorMsg + error.message, 'error');
         console.error('Error loading data:', error);
     } finally {
-        summaryLoader.style.display = 'none';
+        if (owns()) { summaryLoader.style.display = 'none'; saveBtn.disabled = loadedPlayerId !== player; }
     }
 }
 
@@ -806,6 +806,12 @@ function resetEditor() {
 }
 
 async function saveCurrentTabData() {
+    if (!loadedPlayerId || loadedPlayerId !== selectedPlayerId || selectedPlayerId !== playerIdSelect.value) {
+        showStatusMessage('Wait for this player’s summaries to finish loading.', 'error'); return;
+    }
+    const player = loadedPlayerId, generation = summaryLoadGeneration, tab = activeTab;
+    const owns = () => player === loadedPlayerId && generation === summaryLoadGeneration;
+
     if (!selectedPlayerId) {
         const errorMsg = window.LocalizationManager.getTranslation(
             'summary_manager.no_player_selected_save',
@@ -819,26 +825,22 @@ async function saveCurrentTabData() {
     try {
         showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.saving', 'Saving data...'), 'info');
 
-        if (activeTab === 'conversations') {
-            await ipcRenderer.invoke('save-summary-file', selectedPlayerId, allSummaries);
-            showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.save_success', 'Summaries saved successfully'), 'success');
-        } else if (activeTab === 'letters') {
-            await ipcRenderer.invoke('save-all-letter-summaries', selectedPlayerId, allLetters);
-            showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.save_success', 'Letter summaries saved successfully'), 'success');
-        } else if (activeTab === 'diaries') {
-            await ipcRenderer.invoke('save-all-diary-summaries', selectedPlayerId, allDiaries);
-            showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.save_success', 'Diary summaries saved successfully'), 'success');
-        }
+        const channels = { conversations: 'save-summary-file', letters: 'save-all-letter-summaries', diaries: 'save-all-diary-summaries' };
+        const data = tab === 'conversations' ? allSummaries : tab === 'letters' ? allLetters : allDiaries;
+        const result = await ipcRenderer.invoke(channels[tab], player, data, editRevisions[tab]);
+        if (!owns()) return;
+        if (!result?.success) throw new Error(result?.error || 'Unable to save summaries.');
+        showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.save_success', 'Summaries saved successfully'), 'success');
 
         hasUnsavedChanges = false;
         updateSaveButtonState();
     } catch (error: any) {
+        if (!owns()) return;
         const errorMsg = window.LocalizationManager.getTranslation('summary_manager.save_fail', 'Failed to save data: ');
         showStatusMessage(errorMsg + error.message, 'error');
         console.error('Error saving data:', error);
     } finally {
-        refreshBtn.disabled = false;
-        saveBtn.disabled = false;
+        if (owns()) { refreshBtn.disabled = false; saveBtn.disabled = false; }
     }
 }
 

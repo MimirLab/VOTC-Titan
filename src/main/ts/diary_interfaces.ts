@@ -1,4 +1,10 @@
-export interface DiaryEntry {
+export interface DiaryTimelineStamp {
+    votcCampaignId?: string;
+    votcCheckpointEpoch?: number;
+    votcTimelineNodeId?: string;
+}
+
+export interface DiaryEntry extends DiaryTimelineStamp {
     id: string;
     date: string;
     location: string;
@@ -9,7 +15,7 @@ export interface DiaryEntry {
     creationTimestamp?: Date;
 }
 
-export interface DiarySummary {
+export interface DiarySummary extends DiaryTimelineStamp {
     id: string;
     diaryEntryId: string;
     date: string;

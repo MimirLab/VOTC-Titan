@@ -159,6 +159,7 @@ test('both compaction phases retain exact owned private context even when every 
     }
     expect(owned.some((memory: any) => memory.compactionLevel === 2)).toBe(true);
     for (const id of ['1', '3']) expect(compactor.getCompactedMemories(id).every(memory => !memory.retainedPrivateNarration)).toBe(true);
+    conv.memoryCompactor = compactor;
     const prompt = createCompactedMemoryString(conv, {}, conv.gameData.characters.get(2));
     expect(prompt.match(/ruby/g)).toHaveLength(1);
     const disk = JSON.parse(JSON.stringify(compactor.getAllCompactedMemories()));
@@ -423,4 +424,55 @@ test('edits while compaction awaits its algorithm invalidate the pending result'
     await expect(compactor.compact(conv)).rejects.toThrow('changed');
     expect(conv.messages).toHaveLength(1); expect(compactor.getAllCompactedMemories()).toEqual([]);
     expect(compactedMemoryStore.saveCompactedMemoryBatch).not.toHaveBeenCalled();
+});
+
+test('preemptive compaction preserves the exact pending target and action input', async () => {
+    const { conv, compactor } = fixture();
+    const pending: Message = { id: 'pending-player', role: 'user', characterId: 1,
+        content: '[I offer my hand.] Actor3, will you stay?', targetCharacterIds: [3] } as Message;
+    conv.messages = [pending]; conv.config.compactionPhase1Threshold=70;
+    (compactor as any).config.compactionPhase1Threshold=70;conv.calculateBasePromptTokens=async()=>900;
+    conv.npcQueue = [conv.gameData.characters.get(2), conv.gameData.characters.get(3)];
+    expect((await conv.determineTargetedCharacters()).map((actor: any) => actor.id)).toEqual([3]);
+    await compactor.compact(conv, { preservePendingInput: true });
+    expect(conv.messages.at(-1)).toBe(pending);
+    expect((await conv.determineTargetedCharacters()).map((actor: any) => actor.id)).toEqual([3]);
+    expect(conv.messages.at(-1).content).toContain('[I offer my hand.]');
+});
+
+test('a departed observer compacts their own observed turn without reading the lead private memory', async () => {
+    const { conv, compactor } = fixture();
+    const retained = new Map(conv.gameData.characters);
+    conv.getEncounterCharacter = (id: number) => retained.get(id);
+    conv.messages[0].observedByCharacterIds = [1, 2, 3];
+    conv.gameData.characters.delete(3); conv.memoryCompactor = compactor;
+    (compactor as any).compactedMemories.set('2', [{ id: 'lead-private', content: 'LEAD_PRIVATE_MARKER I hid the stolen opal.',
+        characterIds: [2], compactionLevel: 1, sourceMessageIds: ['earlier'], date: '', gameDate: '', creationTimestamp: 0 }]);
+    const lookup = jest.spyOn(compactor, 'getCompactedMemories');
+    await compactor.compact(conv);
+    const requests = conv.summarizationApiConnection.complete.mock.calls.map((call: [Message[]]) => call[0].map(m => m.content).join('\n'));
+    const departed = requests.find((text: string) => text.includes("This is Actor3's record"));
+    expect(departed).toBeDefined(); expect(departed).not.toContain('LEAD_PRIVATE_MARKER');
+    expect(departed).toContain('Her hands tremble'); expect(lookup).toHaveBeenCalledWith('3');
+    expect(createCompactedMemoryString(conv, {}, 999)).toBe('');
+});
+
+test('growing consolidation groups render early facts once while retaining their source records for retraction', async () => {
+    const { conv, compactor } = fixture();
+    conv.summarizationApiConnection.complete.mockImplementation(async (prompt: Message[]) => {
+        const input = prompt.map(m => m.content).join(' ');
+        return input.includes('later-words-1') ? 'Agreement SECOND_PACT' : input.includes('later-words-') ? 'Another agreement.' : 'Agreement FIRST_PACT';
+    });
+    (compactor as any).scheduler.shouldRunPhase2 = () => true;
+    for (let index = 0; index < 4; index++) {
+        if (index) conv.messages.push({ id: 'later-' + index, role: 'assistant', characterId: 2, name: 'Actor2',
+            content: '"later-words-' + index + '"', observedByCharacterIds: [1, 2, 3] });
+        await compactor.compact(conv);
+    }
+    expect(compactor.getCompactedMemories('2').filter(m => m.compactionLevel === 2).length).toBeGreaterThan(1);
+    conv.memoryCompactor = compactor;
+    const prompt = createCompactedMemoryString(conv, {}, conv.gameData.characters.get(2));
+    expect(prompt.match(/FIRST_PACT/g)).toHaveLength(1); expect(prompt.match(/SECOND_PACT/g)).toHaveLength(1);
+    await compactor.invalidateSourceMessages(['source'], '1', jest.fn());
+    expect(createCompactedMemoryString(conv, {}, conv.gameData.characters.get(2))).not.toContain('Key Narrative Threads');
 });

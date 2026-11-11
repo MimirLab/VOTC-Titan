@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11"><img src="docs/media/download-titan.svg" alt="Download Titan" width="300"></a>
+  <a href="https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11.2"><img src="docs/media/download-titan.svg" alt="Download Titan" width="300"></a>
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@ Languages affect what each person hears. Known languages, related tongues, cultu
 
 ## Choose the scene
 
-Meet in courts, halls, lodges and other locations across **868 scenes**. Titan includes **855 custom scenes and 851 paintings**, with current participant and location checks for venue selection. The painting appears in the conversation window, and scene changes refresh those checks before moving the encounter. Enable the included **Titan Scenes** add-on to choose the venue directly in CK3’s conversation picker.
+Meet in courts, halls, lodges and other locations across **868 scenes**. After starting a conversation in CK3, open **Scenes** in Titan’s chat header to browse the custom venues available to your party. Titan includes **855 custom scenes and 851 paintings** and checks the location and participants again when you choose.
 
 Conversations continue through the VOTC foundation of letters, diaries, histories and memories. Titan brings its GoA2 character context and language perspectives into that continuing story.
 
@@ -74,7 +74,7 @@ Conversations continue through the VOTC foundation of letters, diaries, historie
 
 1. Install **CK3** and select compatible game and addon versions.
 2. Subscribe to **[Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945)** and **[VOTC Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139)**. Follow their dependency and load-order instructions.
-3. Download **[Titan](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11)**, verify its checksum, extract it and run `./install.sh`. Run `./install-scenes.sh` to enable the native picker in your active playset.
+3. Download **[Titan](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11.2)**, verify its checksum, extract it and run `./install.sh`.
 4. Open Titan, select your CK3 installation and user folders, then configure your AI connection.
 5. Start CK3 with the subscribed addons and open a conversation. Configure Breeze in Audio to enable speech.
 

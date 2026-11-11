@@ -36,10 +36,10 @@ jobs:
         run: npm ci --no-audit --no-fund
       - name: Compile TypeScript
         run: npm run build
-      - name: Check maintenance, CE message routing and voice casting
-        run: >-
-          npm test -- --runInBand --runTestsByPath
-          tests/project-maintenance.test.ts tests/ce-compatibility.test.ts tests/audio/casting.test.ts
+      - name: Check source maintenance routing
+        run: npm test -- --runInBand --runTestsByPath tests/project-maintenance.test.ts
+      - name: Check renderer ownership and save errors
+        run: node tests/helpers/renderer-integrity.cjs
       - name: Check asset import, native build and launcher-only installation
         run: python3 -m unittest discover -s tests/deployment -p 'test_*.py'
 

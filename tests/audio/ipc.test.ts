@@ -22,16 +22,17 @@ test('both owned Audio settings windows can manage audio; foreign and navigated 
 test('voice management and exact preview words are restricted to the owned Audio page', async () => {
     (app as any).getAppPath = () => path.resolve('.'); (ipcMain.handle as jest.Mock).mockClear();
     const sender = { getURL: () => pathToFileURL(path.resolve('public/configWindow/audio.html')).href };
-    const runtime = { previewVoice: jest.fn(), previewCharacter: jest.fn(), saveNarrator: jest.fn(), renameVoice: jest.fn(), deleteVoice: jest.fn() } as any;
+    const runtime = { previewVoice: jest.fn(), previewCharacter: jest.fn(), saveNarrator: jest.fn(), useDefaultNarrator: jest.fn(), renameVoice: jest.fn(), deleteVoice: jest.fn() } as any;
     const conv = { gameData: { characters: new Map([[2, {}]]) } } as any;
     registerAudioIpc(runtime, { audio: normalizeAudio() } as any, () => conv,
         () => [{ webContents: sender, isDestroyed: () => false }] as any, () => undefined);
     const handler = (channel: string) => (ipcMain.handle as jest.Mock).mock.calls.find(([name]) => name === channel)![1];
-    for (const channel of ['audio-save-narrator', 'audio-rename-voice', 'audio-delete-voice']) {
+    for (const channel of ['audio-save-narrator', 'audio-use-default-narrator', 'audio-rename-voice', 'audio-delete-voice']) {
         expect(() => handler(channel)({ sender: {} }, 'id', 'value')).toThrow('Open Audio');
         handler(channel)({ sender }, 'id', 'value');
     }
     expect(runtime.renameVoice).toHaveBeenCalledWith('id', 'value'); expect(runtime.deleteVoice).toHaveBeenCalledWith('id');
+    expect(runtime.useDefaultNarrator).toHaveBeenCalledTimes(1);
     await handler('audio-preview')({ sender }, 'chosen-narrator', undefined, 'My exact preview words.');
     expect(runtime.previewVoice).toHaveBeenCalledWith('chosen-narrator', undefined, 'My exact preview words.');
     await handler('audio-preview-character')({ sender }, 2, 'Different character words.');

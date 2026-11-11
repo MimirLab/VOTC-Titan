@@ -2,7 +2,7 @@
   "name": "voices_of_the_court_ce",
   "productName": "VOTC Titan Edition",
   "private": true,
-  "version": "2.2.0-beta.2-titan.1",
+  "version": "2.2.0-beta.2-titan.2",
   "description": "GoA2-dedicated AI roleplay launcher for Crusader Kings III",
   "main": "dist/main/main.js",
   "scripts": {

@@ -33,7 +33,7 @@ export class SummaryFileWatcher {
         try {
             // 创建文件监控
             const watcher = fs.watch(filePath, (eventType, filename) => {
-                if (eventType === 'change') {
+                if (eventType === 'change' || eventType === 'rename') {
                     // 使用防抖机制，避免频繁触发
                     this.debounceFileChange(filePath, callback);
                 }
@@ -144,6 +144,7 @@ export class SummaryFileWatcher {
     private handleFileChange(filePath: string, callback: (summaries: Summary[]) => void): void {
         try {
             // 读取文件内容
+            if (!fs.existsSync(filePath)) { callback([]); return; }
             const fileContent = fs.readFileSync(filePath, 'utf8');
             const summaries = JSON.parse(fileContent) as Summary[];
             

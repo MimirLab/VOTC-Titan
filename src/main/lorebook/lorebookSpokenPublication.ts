@@ -25,7 +25,7 @@ export function spokenLoreAudience(conv: Conversation, actor: Character, targetI
 }
 interface Registration {
     actorId: number; binding: string; context: SpokenLoreContext; audience: SpokenLoreAudience;
-    result?: any; sourceCurrent?: () => boolean;
+    result?: any; sourceCurrent?: () => boolean; toolEvidence?: Message[];
 }
 interface Pending { registration: Registration; original: readonly Message[]; message: Message; retained: () => boolean }
 interface ScopeState { tickets: Map<string, object>; pending: Map<number, Pending>; contexts: Map<string, SpokenLoreContext> }
@@ -112,12 +112,28 @@ export class SpokenPublicationSessions {
         if (registration.actorId !== actorId || result.actor_id !== String(actorId) || !current()) throw new Error('Spoken source belongs to a different current actor.');
         registration.result = result; registration.sourceCurrent = current;
     }
+    /** Only the actor-bound reader calls this after accepting a deeper result. */
+    addToolResult(delivery: LoreDelivery, actorId: number, next: any): void {
+        const registration = this.registrations.get(delivery);
+        if (!registration) return;
+        const previous = registration.result;
+        if (!previous || registration.actorId !== actorId || next.actor_id !== String(actorId) ||
+            next.context_fingerprint !== previous.context_fingerprint || !registration.sourceCurrent?.())
+            throw new Error('Deeper spoken source changed its acting identity or knowledge context.');
+        const passages = [...previous.passages, ...next.passages];
+        if (passages.length > 3 || new Set(passages.map(p => p.node_id)).size !== passages.length)
+            throw new Error('Deeper spoken source duplicates or exceeds the admitted accounts.');
+        registration.result = { ...next, passages, trace: [...previous.trace, ...next.trace] };
+        registration.toolEvidence = [...(registration.toolEvidence ?? []),
+            ...next.passages.map((p: any) => ({ role: 'system' as const, content: p.heading + '\n' + p.text }))];
+    }
     queue(delivery: LoreDelivery, original: readonly Message[], message: Message, retained: () => boolean): void {
         const registration = this.registrations.get(delivery);
         if (!registration?.result?.passages?.length || delivery.preview) return;
         if (message.characterId !== registration.actorId || message.role !== 'assistant') throw new Error('Spoken publication is not the acting character message.');
-        bindSpokenLoreAccounts({ original, actorId: registration.actorId, result: registration.result, isCurrent: registration.sourceCurrent! });
-        this.scope(delivery.scope).pending.set(registration.actorId, { registration, original, message, retained });
+        const supplied = [...original, ...(registration.toolEvidence ?? [])];
+        bindSpokenLoreAccounts({ original: supplied, actorId: registration.actorId, result: registration.result, isCurrent: registration.sourceCurrent! });
+        this.scope(delivery.scope).pending.set(registration.actorId, { registration, original: supplied, message, retained });
     }
     clear(delivery: LoreDelivery | undefined, actorId: number): void {
         if (!delivery || delivery.preview) return;

@@ -49,7 +49,10 @@
         "CreatorName": "Akil'zon"
       },
       "text": "This loa tradition especially reveres hunting patrons. Hunting animals or people carries sacred significance, and consuming a defeated opponent is described as more honorable than eating small game. Akil'zon appears as its leading named power among several loa.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_loa_patronage_teaching"
+      ]
     },
     {
       "accountHash": "3f4a3b35552b4a78d8c285422747879e4bdd715fe0226107b0380343f30c6807",
@@ -286,6 +289,9 @@
           "value": "Bwonsamdi",
           "label": "Loa of death within the observed sacred vocabulary"
         }
+      ],
+      "teachingContext": [
+        "affirmed_loa_patronage_teaching"
       ]
     },
     {
@@ -349,7 +355,10 @@
         "CreatorName": "Rezan"
       },
       "text": "This loa tradition reveres Mueh'zala through a severe relationship with death and blood rites that other trolls view as dangerously near Hakkar's practices. Pride in an inherited patron can coexist with dread and disagreement over what that patron or his priests deserve.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_loa_patronage_teaching"
+      ]
     },
     {
       "accountHash": "5ddc1bbfaead760a691f7fc32dd6c1c5673e6895fd512891ba6e60cb2226629f",
@@ -436,6 +445,9 @@
           "value": "Bwonsamdi",
           "label": "Loa of death, distinct from the departed kin"
         }
+      ],
+      "teachingContext": [
+        "affirmed_loa_patronage_teaching"
       ]
     },
     {
@@ -476,7 +488,10 @@
         "CreatorName": "Elune"
       },
       "text": "Elune, moon goddess, leads a pantheon including the Ancient Guardians. The inherited tradition gives priestesses considerable social authority and druids a distinct kinship with the Guardians; protecting nature and honoring ancestral sacrifices carry sacred significance.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_elune_teaching"
+      ]
     },
     {
       "accountHash": "7ba675f861f2f217bde98c3ab51ef8034ce6ed0ff28e21753289487e6c6f09fe",
@@ -667,7 +682,10 @@
         "CreatorName": "the Ancestors"
       },
       "text": "Ancestors remain significant powers in the lives of the living. This tradition seeks their counsel and help through practices such as dreams and visions, within a broader reverence for spirits and natural forces.",
-      "vocabulary": "ancestral"
+      "vocabulary": "ancestral",
+      "teachingContext": [
+        "affirmed_ancestral_unfinished_duties_teaching"
+      ]
     },
     {
       "accountHash": "f8015cff56f759af2b5ef5a6b55815c976ab5ecde66113e44227ea7d719f3b13",
@@ -747,6 +765,9 @@
           "value": "Bwonsamdi",
           "label": "Loa of death within the observed sacred vocabulary"
         }
+      ],
+      "teachingContext": [
+        "affirmed_loa_patronage_teaching"
       ]
     },
     {
@@ -1088,6 +1109,9 @@
           "value": "Bwonsamdi",
           "label": "Loa of death within the observed sacred vocabulary"
         }
+      ],
+      "teachingContext": [
+        "affirmed_loa_patronage_teaching"
       ]
     }
   ],

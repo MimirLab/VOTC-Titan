@@ -38,10 +38,14 @@ export class RunFileManager {
         fs.writeFileSync(this.path, UTF8_BOM + content, 'utf-8');
     }
 
-    writeWhenIdle(text: string): void {
+    assertIdle(): void {
         if (!this.path || this.readCurrent().trim()) {
-            throw new Error('CK3 is processing another command. Try the scene choice again.');
+            throw new Error('CK3 is processing another command. Try again after it finishes.');
         }
+    }
+
+    writeWhenIdle(text: string): void {
+        this.assertIdle();
         this.writeUtf8Bom(text);
     }
 

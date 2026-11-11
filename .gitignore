@@ -43,3 +43,12 @@ __pycache__/
 
 # Declared synthetic stock-CE response used by the launcher regression suite.
 !/tests/scenes/fixtures/stock-ce-scene-response.log
+
+# The optional native picker ships this authored GUI input only.
+!/game_mod/overrides/
+/game_mod/overrides/*
+!/game_mod/overrides/gui/
+/game_mod/overrides/gui/*
+!/game_mod/overrides/gui/custom_gui/
+/game_mod/overrides/gui/custom_gui/*
+!/game_mod/overrides/gui/custom_gui/votc_scene_selector.gui

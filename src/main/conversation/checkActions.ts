@@ -1,4 +1,5 @@
-import { scenePacket, actionForScene, runActionWithScenePolicy } from '../scenes/sceneRuntime';
+import { randomUUID } from 'crypto';
+import { scenePacket, actionForScene, runActionWithScenePolicy, waitForSceneSelection } from '../scenes/sceneRuntime';
 import { composeGoaContext, finishGoaContext } from '../goa/goaRuntime';
 import { Conversation } from "./Conversation";
 import { recipientMessages, promptPerceptionMessages } from '../language';
@@ -164,6 +165,7 @@ export async function checkActions(conv: Conversation, sourceId: number, targetI
             }
 
             const pendingAction: PendingAction = {
+                proposalId: randomUUID(),
                 action: matchedAction,
                 args: actionArgs,
                 sourceId: newSourceId,
@@ -176,6 +178,7 @@ export async function checkActions(conv: Conversation, sourceId: number, targetI
             conv.pendingActions.get(lastMessage.id)!.push(pendingAction);
 
             const approvalResponse: ActionResponse = {
+                proposalId: pendingAction.proposalId,
                 actionName: matchedAction.signature,
                 chatMessage: formatActionNotice(matchedAction, actionArgs, conv.gameData, newSourceId, newTargetId, conv.config.language),
                 chatMessageClass: matchedAction.chatMessageClass
@@ -201,6 +204,11 @@ export async function checkActions(conv: Conversation, sourceId: number, targetI
                     effectBody
                 );
 
+                if (matchedAction.signature === 'changeLocation' && conv.gameData.sceneSnapshot) {
+                    if (effectBody) conv.runFileManager.append('root = { trigger_event = mcc_event_v2.9003 }');
+                    await waitForSceneSelection(conv.gameData);
+                }
+
                 // Hardcoded effect for leaveConversation
                 if (matchedAction.signature === 'leaveConversation' || matchedAction.signature === 'killCharacter') {
                     if (newTargetId === conv.gameData.playerID) {
@@ -223,6 +231,7 @@ export async function checkActions(conv: Conversation, sourceId: number, targetI
                 let errMsg =`Action error: failure in run function for action: ${matchedAction.signature}; details: `+e;
                 console.error(errMsg)
                 conv.chatWindow.window.webContents.send('error-message', errMsg);
+                continue;
             }
 
             if(matchedAction.chatMessageClass != null){
@@ -236,7 +245,8 @@ export async function checkActions(conv: Conversation, sourceId: number, targetI
         }
     }
 
-    if (triggeredActions.length > 0) {
+    if (triggeredActions.some(action => action.actionName !== 'changeLocation') ||
+        (triggeredActions.length > 0 && !conv.gameData.sceneSnapshot)) {
         conv.runFileManager.append(`
           root = {trigger_event = mcc_event_v2.9003}
             `

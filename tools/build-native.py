@@ -25,6 +25,21 @@ RUNTIME_TOOLS = (
 )
 
 
+def prepare_dependencies(source, modules, receipt, fingerprint):
+    try:
+        previous = json.loads(receipt.read_text())
+    except (OSError, ValueError):
+        previous = {}
+    valid = (isinstance(previous, dict) and previous.get('fingerprint') == fingerprint
+             and previous.get('electron') == VERSION and previous.get('abi') == 130)
+    # A failed/interrupted build must never leave an old certificate on new bytes.
+    receipt.unlink(missing_ok=True)
+    if modules.exists() and not valid:
+        shutil.rmtree(modules)
+    if not modules.exists():
+        copy_tree(source, modules, symlinks=True)
+
+
 def copy_runtime_tools(source, target):
     """Ship the launcher reader, never game-hook installers or local histories."""
     source, target = Path(source), Path(target)
@@ -162,13 +177,7 @@ def build(refresh=False):
         'dependencies': package['dependencies'], 'devDependencies': package['devDependencies'],
         'electron': VERSION, 'platform': 'linux-x64'
     }, sort_keys=True).encode()).hexdigest()
-    previous = json.loads(dependency_state.read_text()) if dependency_state.exists() else {}
-    copied_modules = not modules.exists()
-    if modules.exists() and previous and previous.get('fingerprint') != fingerprint:
-        shutil.rmtree(modules)
-        copied_modules = True
-    if copied_modules:
-        copy_tree(ROOT / 'node_modules', modules, symlinks=True)
+    prepare_dependencies(ROOT / 'node_modules', modules, dependency_state, fingerprint)
     # A development install may still contain this removed upstream dependency.
     # Never carry its application replacement client into another Titan build.
     remove_upstream_client(modules)

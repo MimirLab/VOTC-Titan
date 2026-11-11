@@ -26,7 +26,7 @@ function player() {
     };
     jest.isolateModules(() => require('../../src/chatWindow/audioPlayback'));
     const emit = (name: string, ...args: any[]) => handlers.get(name)!(undefined, ...args);
-    return { emit, contexts, status: elements[0], cleanup: () => { emit('audio-stop'); (globalThis as any).document = savedDocument; (globalThis as any).AudioContext = savedContext; } };
+    return { emit, contexts, pause: elements[2], status: elements[0], cleanup: () => { emit('audio-stop'); (globalThis as any).document = savedDocument; (globalThis as any).AudioContext = savedContext; } };
 }
 
 beforeEach(() => jest.clearAllMocks());
@@ -116,4 +116,17 @@ test('stop cancels a scheduled breath handoff and a new reply starts without an 
         p.emit('audio-chunk', 'new-reply', Buffer.alloc(48_000)); p.emit('audio-end', 'new-reply');
         expect(context.sources[2].start).toHaveBeenCalledWith(1.08);
     } finally { p.cleanup(); }
+});
+
+test('pause before the first passage and across later starts remains suspended until explicit resume', () => {
+    const p=player();
+    try {
+        p.emit('audio-pause',true);
+        for(const id of ['first','second']) {
+            p.emit('audio-start',{id,volume:.8,bufferAll:true});p.emit('audio-chunk',id,Buffer.alloc(48_000));p.emit('audio-end',id);
+            expect(p.contexts[0].state).toBe('suspended');expect(p.contexts[0].resume).not.toHaveBeenCalled();expect(p.pause.textContent).toBe('Resume voice');
+        }
+        p.emit('audio-pause',false);expect(p.contexts[0].state).toBe('running');expect(p.pause.textContent).toBe('Pause voice');
+        p.emit('audio-stop');p.emit('audio-start',{id:'new',volume:.8});expect(p.contexts[0].state).toBe('running');
+    } finally {p.cleanup();}
 });

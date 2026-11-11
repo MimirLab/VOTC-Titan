@@ -6,7 +6,7 @@ import { Character } from '../../shared/gameData/Character';
 import { ApiConnection } from '../../shared/apiConnection';
 import { FaithLiveContext } from '../../shared/gameData/FaithSnapshot';
 import { FaithLibrary } from './FaithLibrary';
-import { FaithService } from './FaithService';
+import { FaithService, FaithLiveContextBinding } from './FaithService';
 import { FaithLogReader } from './faithLog';
 import { buildFaithCatalog, FaithCatalog } from './faithCatalog';
 import { generateFaithProfile } from './faithGeneration';
@@ -65,6 +65,12 @@ export function getFaithLiveContext(character: Character): FaithLiveContext | un
         else delete character.faithLiveContext;
         return context;
     } catch { return; }
+}
+export function bindFaithLiveContext(character: Character): FaithLiveContextBinding {
+    try { refreshLog?.(); } catch { return { isCurrent: () => false }; }
+    const current = service;
+    const binding = current?.bindLiveContext(character);
+    return { context: binding?.context, isCurrent: () => service === current && (binding?.isCurrent() ?? true) };
 }
 export function getFaithZealous(character: Character): boolean | undefined {
     try { return service?.zealousFor(character); } catch { return; }

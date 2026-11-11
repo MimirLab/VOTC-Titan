@@ -42,3 +42,30 @@ test('vector spaces and candidate fusion remain separate from access permission'
     expect(() => unitVector([1], 2)).toThrow();
     expect(fuseCandidates(['a', 'b'], ['c', 'b'])).toEqual(['b', 'a', 'c']);
 });
+
+test('manually reported knowledge follows only verified ancestry, preserving owner, date and edition checks', () => {
+    const { TimelineRegistry } = require('../../src/main/timelineManager');
+    const node = (parentId: string | null, epoch: number) => ({parentId,epoch,source:'conversation',eventKey:String(epoch),createdAt:new Date(0).toISOString()});
+    const registry = new TimelineRegistry('1',{version:1,playerId:'1',nodes:{'1-1':node(null,1),'9-10':node('1-1',2),'9-11':node('1-1',2),'10-10':node('9-10',3)}});
+    const g=game(),r=report();g.timelineSnapshotResult.snapshot.nodeA=10;g.timelineSnapshotResult.snapshot.nodeB=10;
+    expect(projectLoreReport(r,g,2,'edition',registry)).toMatchObject({timeline_id:'10-10',as_of:'0583-02-02'});
+    expect(r.timeline_id).toBe('9-10');
+    g.timelineSnapshotResult.snapshot.nodeA=9;g.timelineSnapshotResult.snapshot.nodeB=11;
+    expect(()=>projectLoreReport(r,g,2,'edition',registry)).toThrow();
+    g.timelineSnapshotResult.snapshot.nodeA=10;g.timelineSnapshotResult.snapshot.nodeB=10;
+    expect(()=>projectLoreReport({...r,campaign_id:'foreign'},g,2,'edition',registry)).toThrow();
+    expect(()=>projectLoreReport(r,g,3,'edition',registry)).toThrow();
+    expect(()=>projectLoreReport(r,g,2,'other',registry)).toThrow();
+    expect(()=>projectLoreReport({...r,as_of:'0583-03-01'},g,2,'edition',registry)).toThrow();
+});
+
+test('committed v2 lineage inherits a parent report only at an observed checkpoint',()=>{
+    const {TimelineRegistry}=require('../../src/main/timelineManager');
+    const node=(parentId:string|null,epoch:number)=>({parentId,epoch,source:'conversation',eventKey:String(epoch),createdAt:new Date(0).toISOString()});
+    const nodes={'1-1':node(null,1),'9-10':node('1-1',2),'9-11':node('1-1',2),'10-10':node('9-10',3)};
+    const registry=new TimelineRegistry('1',undefined,undefined,{nodes,v2NodeIds:new Set(Object.keys(nodes))});
+    const g=game();g.timelineSnapshotResult.snapshot.nodeA=10;g.timelineSnapshotResult.snapshot.nodeB=10;g.timelineSnapshotResult.snapshot.epoch=3;
+    expect(projectLoreReport(report(),g,2,'edition',registry).timeline_id).toBe('10-10');
+    expect(()=>projectLoreReport({...report(),timeline_id:'9-11'},g,2,'edition',registry)).toThrow();
+    g.timelineSnapshotResult.snapshot.epoch=2;expect(()=>projectLoreReport(report(),g,2,'edition',registry)).toThrow();
+});

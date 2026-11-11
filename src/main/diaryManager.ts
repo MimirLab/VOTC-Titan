@@ -41,6 +41,7 @@ export async function readDiarySummaries(playerId: string, characterId: string):
             return data.reduce((acc: DiarySummary[], s: any) => {
                 if (typeof s === 'object' && s !== null && s.summary && typeof s.date !== 'undefined') {
                     acc.push({
+                        ...s, // Preserve campaign/checkpoint/node stamps through reads and updates.
                         id: s.id || randomUUID(),
                         diaryEntryId: s.diaryEntryId || '',
                         date: s.date,
@@ -53,7 +54,8 @@ export async function readDiarySummaries(playerId: string, characterId: string):
         } else if (typeof data === 'object' && data !== null && data.summary) {
             // Old format (single summary object), possibly without a date.
             return [{
-                id: randomUUID(),
+                ...data,
+                id: data.id || randomUUID(),
                 diaryEntryId: '',
                 date: data.date || '', // Provide empty string if date is missing
                 summary: data.summary,

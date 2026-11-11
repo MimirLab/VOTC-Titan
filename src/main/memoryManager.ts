@@ -43,6 +43,7 @@ export class MemoryManager {
     private db: Database.Database;
     private dbPath: string;
     private vecAvailable: boolean = false;
+    private vecExtensionLoaded = false;
     private embeddingDimension: number;
     /** Set when the on-disk vec0 index dimension differed from the configured dimension at startup. */
     public dimensionMismatchDetected: boolean = false;
@@ -120,6 +121,10 @@ export class MemoryManager {
             console.warn("MemoryManager: Could not check schema, proceeding with index creation.", error);
         }
 
+        const decayColumns = this.db.pragma('table_info(memories)') as { name: string }[];
+        if (!decayColumns.some(column => column.name === 'decay_updated_at'))
+            this.db.exec('ALTER TABLE memories ADD COLUMN decay_updated_at INTEGER NOT NULL DEFAULT 0');
+
         this.db.exec(`
             CREATE INDEX IF NOT EXISTS idx_memories_character
                 ON memories(character_id);
@@ -147,6 +152,7 @@ export class MemoryManager {
             const sqliteVec = require('sqlite-vec');
             this.db.loadExtension(sqliteVec.getLoadablePath());
             this.vecAvailable = true;
+            this.vecExtensionLoaded = true;
 
             // Detect a stale vec0 index dimension: vec0 tables cannot be resized in
             // place, so if the on-disk FLOAT[N] differs from the configured dimension,
@@ -157,9 +163,10 @@ export class MemoryManager {
                 if (match) {
                     const existingDim = parseInt(match[1], 10);
                     if (existingDim !== this.embeddingDimension) {
-                        console.warn(`MemoryManager: memory_vectors dimension mismatch (index=${existingDim}, config=${this.embeddingDimension}). Dropping stale vec0 index; run Re-index to rebuild.`);
-                        this.db.exec('DROP TABLE IF EXISTS memory_vectors');
+                        console.warn(`MemoryManager: memory_vectors dimension mismatch (index=${existingDim}, config=${this.embeddingDimension}). Existing index retained; run Re-index to change dimensions.`);
                         this.dimensionMismatchDetected = true;
+                        this.vecAvailable = false;
+                        return;
                     }
                 }
             } catch (e) {
@@ -445,24 +452,21 @@ export class MemoryManager {
     applyDecay(
         characterId: string,
         decayRate: number = 0.01,
-        maxDecay: number = 1.0
+        maxDecay: number = 1.0,
+        playerId?: string
     ): void {
-        const now = Date.now();
-        const msPerDay = 24 * 60 * 60 * 1000;
-
-        // Update decay for all memories of this character
-        const stmt = this.db.prepare(`
-            UPDATE memories
-            SET decay = decay + ((? - last_accessed) / ?) * ?
-            WHERE character_id = ?
-        `);
-        stmt.run(now, msPerDay, decayRate, characterId);
-
-        // Remove memories that have exceeded the maximum decay
-        this.db.prepare(`
-            DELETE FROM memories
-            WHERE character_id = ? AND decay >= ?
-        `).run(characterId, maxDecay);
+        const now = Date.now(), msPerDay = 86400000;
+        const scope = playerId === undefined ? '' : ' AND player_id = ?';
+        const owner = playerId === undefined ? [] : [playerId];
+        this.db.transaction(() => {
+            this.db.prepare(`UPDATE memories SET
+                decay = decay + (MAX(0, ? - MAX(last_accessed, decay_updated_at)) / ?) * ?,
+                decay_updated_at = MAX(?, last_accessed, decay_updated_at)
+                WHERE character_id = ?${scope}`).run(now, msPerDay, decayRate, now, characterId, ...owner);
+            const expired = this.db.prepare(`SELECT id FROM memories WHERE character_id = ? AND decay >= ?${scope}`)
+                .all(characterId, maxDecay, ...owner) as { id: string }[];
+            for (const memory of expired) this.deleteMemory(memory.id);
+        })();
     }
 
     /**
@@ -473,14 +477,15 @@ export class MemoryManager {
      */
     consolidateMemories(
         characterId: string,
-        similarityThreshold: number = 0.85
+        similarityThreshold: number = 0.85,
+        playerId?: string
     ): void {
         if (!this.vecAvailable) {
             console.warn('MemoryManager: Consolidation requires sqlite-vec. Skipping.');
             return;
         }
 
-        const memories = this.getMemoriesByCharacter(characterId, 1000);
+        const memories = this.getMemoriesByCharacter(characterId, 1000, playerId);
         if (memories.length < 2) return;
 
         const merged = new Set<string>();
@@ -489,7 +494,7 @@ export class MemoryManager {
             if (merged.has(memories[i].id)) continue;
 
             for (let j = i + 1; j < memories.length; j++) {
-                if (merged.has(memories[j].id)) continue;
+                if (merged.has(memories[j].id) || memories[i].playerId !== memories[j].playerId) continue;
 
                 const similarity = this.cosineSimilarity(
                     memories[i].vector as number[],
@@ -508,6 +513,8 @@ export class MemoryManager {
                         emotion: mergedEmotion
                     });
 
+                    memories[i].text = mergedText;
+                    memories[i].timestamp = mergedTimestamp;
                     this.deleteMemory(memories[j].id);
                     merged.add(memories[j].id);
                 }
@@ -568,6 +575,15 @@ export class MemoryManager {
             ORDER BY dimensions
         `).all() as { dimensions: number }[];
         return rows.map(row => row.dimensions);
+    }
+
+    /** Status queries never create or resize an index. */
+    hasIndexedMemory(id: string, dimension = this.embeddingDimension): boolean {
+        if (!this.vecExtensionLoaded) return false;
+        const table = this.db.prepare("SELECT sql FROM sqlite_master WHERE name='memory_vectors'").get() as { sql?: string } | undefined;
+        if (Number(table?.sql?.match(/FLOAT\[(\d+)\]/i)?.[1]) !== dimension) return false;
+        return !!this.db.prepare('SELECT 1 FROM memory_vectors v JOIN memories m ON m.id=v.memory_id WHERE m.id=? AND length(m.embedding)=?')
+            .get(id, dimension * 4);
     }
 
     close(): void {
@@ -639,7 +655,7 @@ export class MemoryManager {
      * Remove a vector from the sqlite-vec virtual table.
      */
     private removeVectorIndex(memoryId: string): void {
-        if (!this.vecAvailable) return;
+        if (!this.vecExtensionLoaded) return;
 
         try {
             this.db.prepare(
@@ -755,61 +771,37 @@ export class MemoryManager {
         embedFn: (text: string) => Promise<number[]>,
         targetDimension: number
     ): Promise<{ total: number; embedded: number; failed: number; errors: string[] }> {
-        const rows = this.db.prepare('SELECT id, text FROM memories').all() as { id: string; text: string }[];
-        const total = rows.length;
-        if (total === 0) {
-            return { total: 0, embedded: 0, failed: 0, errors: [] };
-        }
-
-        const embedded: { id: string; vector: number[] }[] = [];
-        const errors: string[] = [];
+        if (!Number.isInteger(targetDimension) || targetDimension < 1) throw new Error('Invalid embedding dimension.');
+        const snapshot = () => this.db.prepare('SELECT id, text, embedding FROM memories ORDER BY id').all() as { id: string; text: string; embedding: Buffer }[];
+        const rows = snapshot(), before = JSON.stringify(rows), embedded: { id: string; vector: number[] }[] = [], errors: string[] = [];
         for (const row of rows) {
             try {
                 const vector = await embedFn(row.text);
+                if (!Array.isArray(vector) || vector.length !== targetDimension || vector.some(value => !Number.isFinite(value)))
+                    throw new Error('Embedding does not match the requested dimension.');
                 embedded.push({ id: row.id, vector });
-            } catch (e: any) {
+            } catch (error) {
+                if ((error as Error)?.name === 'AbortError') throw error;
                 errors.push(row.id);
-                console.error(`MemoryManager: Failed to re-embed memory ${row.id}:`, e);
             }
         }
-
-        // Safety: do not destroy the existing index unless we produced at least
-        // one valid embedding at the new dimension.
-        if (embedded.length === 0) {
-            return { total, embedded: 0, failed: errors.length, errors };
-        }
-
-        // Rebuild the vec0 table at the new dimension (vec0 cannot resize in place).
-        if (this.vecAvailable) {
-            this.db.exec('DROP TABLE IF EXISTS memory_vectors');
-            this.db.exec(`CREATE VIRTUAL TABLE IF NOT EXISTS memory_vectors USING vec0(
-                memory_id TEXT,
-                embedding FLOAT[${targetDimension}]
-            );`);
-        }
-
-        // Write full-dimension vectors (no truncation) into the rebuilt index.
-        const insertVectorStmt = this.db.prepare(
-            'INSERT OR REPLACE INTO memory_vectors (memory_id, embedding) VALUES (?, ?)'
-        );
-        const insertMany = this.db.transaction((items: { id: string; vector: number[] }[]) => {
-            for (const item of items) {
-                insertVectorStmt.run(item.id, this.rawVectorToBlob(item.vector));
+        if (errors.length) return { total: rows.length, embedded: 0, failed: errors.length, errors };
+        // Async provider work cannot replace rows that were added or edited meanwhile.
+        if (JSON.stringify(snapshot()) !== before) throw new Error('Memories changed during reindexing; retry the rebuild.');
+        this.db.transaction(() => {
+            if (this.vecExtensionLoaded) {
+                this.db.exec('DROP TABLE IF EXISTS memory_vectors');
+                this.db.exec(`CREATE VIRTUAL TABLE memory_vectors USING vec0(memory_id TEXT, embedding FLOAT[${targetDimension}])`);
+                const insert = this.db.prepare('INSERT INTO memory_vectors (memory_id, embedding) VALUES (?, ?)');
+                for (const item of embedded) insert.run(item.id, this.rawVectorToBlob(item.vector));
             }
-        });
-        insertMany(embedded);
-
-        // Refresh the base table BLOBs so base-table reads match the new index.
-        const updateStmt = this.db.prepare('UPDATE memories SET embedding = ? WHERE id = ?');
-        const updateMany = this.db.transaction((items: { id: string; vector: number[] }[]) => {
-            for (const item of items) {
-                updateStmt.run(this.rawVectorToBlob(item.vector), item.id);
-            }
-        });
-        updateMany(embedded);
-
-        console.log(`MemoryManager: Re-indexed ${embedded.length}/${total} memories at dimension ${targetDimension}.`);
-        return { total, embedded: embedded.length, failed: errors.length, errors };
+            const update = this.db.prepare('UPDATE memories SET embedding = ? WHERE id = ?');
+            for (const item of embedded) update.run(this.rawVectorToBlob(item.vector), item.id);
+        })();
+        this.embeddingDimension = targetDimension;
+        this.dimensionMismatchDetected = false;
+        this.vecAvailable = this.vecExtensionLoaded;
+        return { total: rows.length, embedded: embedded.length, failed: 0, errors: [] };
     }
 
     /**

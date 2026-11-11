@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import type { Config } from '../../shared/Config';
 import { normalizeAudio } from '../../shared/audio';
 import type { Conversation } from '../conversation/Conversation';
-import { AudioRuntime, DEFAULT_NARRATOR, REFERENCE_TEXT } from './AudioRuntime';
+import { AudioRuntime, DEFAULT_NARRATOR, DEFAULT_NARRATOR_NAME, REFERENCE_TEXT } from './AudioRuntime';
 import { BREEZE_MODELS } from './modelCatalog';
 import { audioHardware } from './hardware';
 import { castingCatalogue } from './castingCatalog';
@@ -27,7 +27,7 @@ export function registerAudioIpc(runtime: AudioRuntime, config: Config, conversa
         const conv = conversation();
         return { settings: config.audio, status: runtime.status, hardware: audioHardware(),
             models: Object.entries(BREEZE_MODELS).map(([id, model]) => ({ id, ...model, installed: runtime.managed.installed(id as keyof typeof BREEZE_MODELS) })),
-            voices: runtime.list(), cloneBanks: runtime.cloneBanks(), castingCatalogue: castingCatalogue(), narratorDefault: DEFAULT_NARRATOR, previewDefault: REFERENCE_TEXT,
+            voices: runtime.list(), cloneBanks: runtime.cloneBanks(), castingCatalogue: castingCatalogue(), narratorDefault: DEFAULT_NARRATOR, narratorDefaultName: DEFAULT_NARRATOR_NAME, previewDefault: REFERENCE_TEXT,
             activeLocalModel: runtime.managed.activeModel,
             activeLocalBackend: runtime.managed.activeBackend,
             defaultCharacterId: conv?.gameData.aiID,
@@ -70,6 +70,7 @@ export function registerAudioIpc(runtime: AudioRuntime, config: Config, conversa
         return runtime.previewCharacter(conv, id, text, faithDeliveryId);
     });
     ipcMain.handle('audio-save-narrator', (event, label: string, instruction: string) => { requireSettings(event.sender); return runtime.saveNarrator(label, instruction); });
+    ipcMain.handle('audio-use-default-narrator', event => { requireSettings(event.sender); return runtime.useDefaultNarrator(); });
     ipcMain.handle('audio-preview-narrator-draft', async (event, instruction: string, text?: string, faithDeliveryId?: string) => {
         requireSettings(event.sender); checkFaith(faithDeliveryId); return runtime.previewNarratorDraft(instruction, text, faithDeliveryId);
     });

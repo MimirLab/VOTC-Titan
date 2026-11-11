@@ -3741,7 +3741,7 @@
       "conceptKey": "tradition_ep2_avid_falconers",
       "definitionHash": "a18ef9c6374835b27de1125aaacfad4044627fbfb00ffe74f29d633dfb4419aa",
       "label": "Gryphon Partnership",
-      "description": "Falconry takes the Wildhammer form of raising gryphons and earning the trust of a powerful flying hunter. Those drawn to the calling learn fledgling care, mountain roosts, weather, and the country below a flight; riding is an honored partnership. A broad beak lowering toward a familiar hand and restless wings settling beside a trusted companion express a confidence that remains selective. The same gryphon may be gentle with its rider and dangerous to a stranger, with territorial instincts and an inconvenient appetite for horse flesh. A good rider listens when a partner refuses a landing or turns toward home. Care before and after flight sustains the bond beyond the boast of a daring crossing.",
+      "description": "Falconry takes the Wildhammer form of raising gryphons and earning the trust of a powerful flying hunter. Those drawn to the calling learn fledgling care, mountain roosts, weather, and the country below a flight; riding is an honored partnership. A broad beak lowering toward a familiar hand and restless wings settling beside a trusted companion express a confidence that remains selective. The same gryphon may be gentle with its rider and dangerous to a stranger, with territorial instincts and an inconvenient appetite for horse flesh. A good rider listens when a partner refuses a landing or turns toward home. Care before and after flight sustains the bond beyond the boast of a daring crossing. Shared roost duties and provisioning for nesting gryphons make care a concern of the wider clan, including those who do not ride.",
       "requires": {
         "concept": "tradition_ep2_avid_falconers",
         "currentInterpretationContextAllOf": [
@@ -3749,7 +3749,7 @@
         ]
       },
       "replaces": "this_concept_reading_only",
-      "guard": "User-approved Titan adaptation. Requires a reviewed stable current practice/context facet; no such facet is currently exported. No unrelated tradition or faith is required. Replaces the generic bird-of-prey practice in this slot rather than adding a mount to the character or changing game mechanics.",
+      "guard": "Reviewed native current culture/parent lineage plus the currently adopted exact Falconry definition establishes this Titan interpretation. Other adopted hunting or kinship customs independently retain communal care. No character mount, profession or game mechanic is granted.",
       "contributorDefinitionHashes": {},
       "handbookEntries": [
         3,

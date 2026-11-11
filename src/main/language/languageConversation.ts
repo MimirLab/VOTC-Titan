@@ -155,7 +155,13 @@ export class LanguageConversation {
         const speakerKnowledge = characterLanguages(speaker), targetKnowledge = target ? characterLanguages(target) : undefined;
         // Pure voice-preview/legacy fixtures retain the old full-CLOSE API. Production always supplies current capture.
         const adaptive = this.requireVerifiedKnowledge || speakerKnowledge.learning !== undefined;
-        const spoken = message.spokenLanguageId ?? selectSpokenLanguage(speakerKnowledge, targetKnowledge, undefined, [],
+        const group = recipientId === undefined && targets && targets.length > 1 ? targets.map(id => {
+            const character = this.game.characters.get(id);
+            if (!character) throw new Error('Invalid addressed participants');
+            return characterLanguages(character);
+        }) : [];
+        const common = knownLanguages(speakerKnowledge).find(id => group.length && group.every(listener => knownLanguages(listener).includes(id)));
+        const spoken = message.spokenLanguageId ?? common ?? selectSpokenLanguage(speakerKnowledge, group.length ? undefined : targetKnowledge, undefined, [],
             adaptive ? this.renderer.close.profiles.routing : undefined);
         let utterance: import('./languageRendering').SpokenUtterance = Object.freeze({ ...recordUtterance(message.content, speakerKnowledge, targetKnowledge,
             spoken, spans), ...(message.proseEncoding ? { proseEncoding: message.proseEncoding } : {}) });
@@ -241,6 +247,26 @@ export class LanguageConversation {
         if (!previous) { message.content = content; return; }
         const controlled = !!message.utterance?.proseEncoding;
         const edited = controlled ? parseControlledProse(content) : undefined;
+        const hearingSpans = previous.variantSpans?.[previous.hearings[String(characterId)].variant];
+        const editorText = view.editableContent ?? (controlled && hearingSpans
+            ? controlledProseEditText({ content: view.content, ...hearingSpans }) : view.content);
+        const speech = (text: string) => controlled ? parseControlledProse(text).segments.filter(segment => segment.kind === 'speech')
+            .map(segment => ({ start: segment.start + 2, end: segment.end - 2 }))
+            : message.role === 'user' ? playerSpeechSpans(text) : quotedSpeechSpans(text);
+        const oldSpeech = speech(editorText), newSpeech = speech(content);
+        const unchangedSpeech = oldSpeech.length === newSpeech.length && oldSpeech.every((span, index) =>
+            editorText.slice(span.start, span.end) === content.slice(newSpeech[index].start, newSpeech[index].end));
+        const remapOpaque = (oldContent: string, oldSpans: readonly { start: number; end: number }[],
+            newContent: string, newSpans: readonly { start: number; end: number }[], opaque: readonly { start: number; end: number }[] = []) => {
+            if (!unchangedSpeech || oldSpans.length !== newSpans.length || !oldSpans.every((span, index) =>
+                oldContent.slice(span.start, span.end) === newContent.slice(newSpans[index].start, newSpans[index].end))) return [];
+            return opaque.map(span => {
+                const index = oldSpans.findIndex(speech => span.start >= speech.start && span.end <= speech.end);
+                if (index < 0) throw new Error('Opaque speech is outside its recorded speech span');
+                const delta = newSpans[index].start - oldSpans[index].start;
+                return { start: span.start + delta, end: span.end + delta };
+            });
+        };
         if (view.comprehensionMode !== 'CLEAR' || (controlled && purpose === 'knowledge' && characterId !== message.characterId)) {
             if (controlled) {
                 const record: HearingRecord = { ...previous, hearings: { ...previous.hearings }, variants: { ...previous.variants },
@@ -248,16 +274,22 @@ export class LanguageConversation {
                 const mode = view.comprehensionMode!;
                 const keepPrivate = characterId === message.characterId;
                 const { content: heard, ...spans } = controlledProseView(edited!, keepPrivate);
+                const oldHearing = previous.hearings[String(characterId)];
                 record.hearings[String(characterId)] = storeRendering(message, record,
                     { mode, spokenLanguageId: message.spokenLanguageId!, content: heard, spans,
-                        ...(previous.hearings[String(characterId)].plan ? { opaqueSpeechSpans: [] } : {}) }, keepPrivate, content);
+                        ...(oldHearing.mixedSpeech ? { mixedSpeech: true as const } : {}),
+                        opaqueSpeechSpans: remapOpaque(previous.variants[oldHearing.variant],
+                            previous.variantSpans?.[oldHearing.variant]?.speechSpans ?? [], heard, spans.speechSpans,
+                            previous.variantOpaqueSpeech?.[oldHearing.variant]) }, keepPrivate, content);
                 // A manual perception edit replaces only this delivered view; its own plan remains pinned.
                 record.hearings[String(characterId)].plan = previous.hearings[String(characterId)].plan;
                 if (purpose === 'reader') {
                     const { content: read, ...readerSpans } = controlledProseView(edited!, true);
                     record.reader = { characterId, hearing: storeRendering(message, record,
                         { mode, spokenLanguageId: message.spokenLanguageId!, content: read, spans: readerSpans,
-                            ...(previous.reader?.hearing.plan ? { opaqueSpeechSpans: [] } : {}) }, true, content) };
+                            ...(previous.reader?.hearing.mixedSpeech ? { mixedSpeech: true as const } : {}),
+                            opaqueSpeechSpans: remapOpaque(view.content, view.perceivedSpeechSpans ?? [], read, readerSpans.speechSpans,
+                                view.perceivedOpaqueSpeechSpans) }, true, content) };
                     record.reader.hearing.plan = previous.reader?.hearing.plan;
                 }
                 message.languageRecord = record;
@@ -270,7 +302,9 @@ export class LanguageConversation {
             if (hearing.plan) {
                 message.languageRecord.variantSpans = { ...previous.variantSpans,
                     [key]: { speechSpans: message.role === 'user' ? playerSpeechSpans(content) : quotedSpeechSpans(content), proseSpans: [] } };
-                message.languageRecord.variantOpaqueSpeech = { ...previous.variantOpaqueSpeech, [key]: [] };
+                message.languageRecord.variantOpaqueSpeech = { ...previous.variantOpaqueSpeech, [key]: remapOpaque(view.content,
+                    view.perceivedSpeechSpans ?? (message.role === 'user' ? playerSpeechSpans(view.content) : quotedSpeechSpans(view.content)),
+                    content, message.role === 'user' ? playerSpeechSpans(content) : quotedSpeechSpans(content), view.perceivedOpaqueSpeechSpans) };
             }
         } else {
             // Source edits keep the original tongue, attendance and each listener's historical comprehension.
@@ -278,6 +312,15 @@ export class LanguageConversation {
             // Unknown revisions still cannot be silently replaced by current sounds.
             const renderer = this.renderer.recordedProfile(previous.fingerprint);
             if (!renderer) throw new Error('Source edit requires the recorded sound profile');
+            // A bilingual editor may see translated echoes. Preserve the recorded source
+            // speech when only its surrounding narration changed.
+            if (unchangedSpeech && !/<<|>>/.test(message.utterance!.originalText)) {
+                const sourceSpeech = speech(message.utterance!.originalText);
+                if (sourceSpeech.length !== newSpeech.length) throw new Error('Edited speech boundaries differ from the source');
+                for (let index = newSpeech.length - 1; index >= 0; index--)
+                    content = content.slice(0, newSpeech[index].start) +
+                        message.utterance!.originalText.slice(sourceSpeech[index].start, sourceSpeech[index].end) + content.slice(newSpeech[index].end);
+            }
             const replacement = { ...message.utterance!, originalText: content,
                 speechSpans: !controlled && message.role === 'user' ? playerSpeechSpans(content) : undefined };
             const utterance = Object.freeze({ ...replacement, echoes: relocatedEchoes(message.utterance!, replacement) });

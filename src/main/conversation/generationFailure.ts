@@ -2,7 +2,7 @@
  * request prompts, credentials or arbitrary exception text to the renderer. */
 export interface GenerationFailure {
     code: 'service_unavailable' | 'service_busy' | 'access_refused' | 'request_rejected' |
-        'connection_failed' | 'timeout' | 'capture_not_ready' | 'unfinished_reply' | 'unknown';
+        'connection_failed' | 'timeout' | 'capture_not_ready' | 'unfinished_reply' | 'context_changed' | 'unknown';
     status?: number;
     message: string;
 }
@@ -30,6 +30,9 @@ export function generationFailure(error: unknown): GenerationFailure {
         message: 'The text service could not be reached. Check the connection and try again.' };
     if (message.startsWith('Current character age capture is not ready.')) return { code: 'capture_not_ready',
         message: 'The current character details are not ready. Reopen the encounter or retry the reply.' };
+    if (message.startsWith('Character sources changed') || message.startsWith('Character knowledge changed')) {
+        return { code: 'context_changed', message: 'The reply context changed during generation. Please retry.' };
+    }
     if (message === 'Incomplete native RP reply.') return { code: 'unfinished_reply',
         message: 'The text service returned an empty or unfinished reply. Please try again.' };
     return { code: 'unknown', message: 'An unexpected error occurred during generation.' };

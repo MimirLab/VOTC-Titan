@@ -64,6 +64,7 @@ npm ci
 npm run build
 npm test -- --runInBand
 python3 -m unittest discover -s tests/deployment -p 'test_*.py'
+node tests/helpers/renderer-integrity.cjs
 ```
 
 Historical listening tests retain explicit skips when their private evidence is
@@ -77,11 +78,6 @@ Keep application archives and their checksums in GitHub Releases. Keep source
 changes in ordinary Git. Do not add runtime recordings, paintings, model weights
 or player libraries to source history. Preserve separate software and asset
 notices and the provenance review described in `github-release-preparation.md`.
-
-Before packaging, fetch GitHub main and check the installed Titan build against
-the latest qualification receipts. Review parallel fixes and carry them into the
-candidate. Compare the candidate’s compiled modules with those receipts, run the
-release checks on the combined build, and push main as a fast-forward.
 
 After qualification, use a distinct Titan release tag and prepare a draft release
 with the exact verified archive and checksum. Review the draft's contents and

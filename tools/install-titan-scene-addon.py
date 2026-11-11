@@ -51,8 +51,18 @@ def active_playset(db, enabled):
 
 
 def register(db, playset, target, metadata):
-    if db.execute('SELECT 1 FROM mods WHERE gameRegistryId=?', (REGISTRY,)).fetchone():
-        raise ValueError('A previous Titan Scenes registration needs review.')
+    existing = db.execute('SELECT id,dirPath FROM mods WHERE gameRegistryId=?', (REGISTRY,)).fetchall()
+    if existing:
+        if len(existing) != 1 or Path(existing[0][1]).resolve() != target.resolve():
+            raise ValueError('The existing Titan Scenes registration points to another location.')
+        key = existing[0][0]
+        next_position = db.execute('SELECT COALESCE(MAX(position),-1)+1 FROM playsets_mods WHERE playsetId=?', (playset,)).fetchone()[0]
+        linked = db.execute('SELECT 1 FROM playsets_mods WHERE playsetId=? AND modId=?', (playset, key)).fetchone()
+        if linked:
+            db.execute('UPDATE playsets_mods SET enabled=1,position=? WHERE playsetId=? AND modId=?', (next_position, playset, key))
+        else:
+            db.execute('INSERT INTO playsets_mods(playsetId,modId,enabled,position) VALUES (?,?,1,?)', (playset, key, next_position))
+        return key
     key = str(uuid4())
     now = datetime.now(timezone.utc)
     name = metadata['name']
@@ -68,6 +78,54 @@ def register(db, playset, target, metadata):
     db.execute('INSERT INTO playsets_mods(playsetId,modId,enabled,position) VALUES (?,?,1,?)',
                (playset, key, next_position))
     return key
+
+
+def reenable(ck3, state, expected):
+    """Reuse a verified add-on; only its selected-playset membership can change."""
+    with deployment_lock(state):
+        ensure_closed()
+        registry = ck3 / REGISTRY
+        target = registry.with_suffix('')
+        temporary = target.with_name(target.name + '.installing')
+        if temporary.exists() or target.is_symlink() or registry.is_symlink() or not target.is_dir() or not registry.is_file():
+            raise ValueError('Check the existing Titan Scenes installation or pending installation.')
+        if mod_root(ck3, REGISTRY) != target.resolve() or tree_hash(target) != expected:
+            raise ValueError('The existing Titan Scenes installation differs from the verified add-on.')
+        metadata = json.loads((target / 'titan-scene-addon.json').read_text())
+        load_path = ck3 / 'dlc_load.json'
+        load_bytes = load_path.read_bytes()
+        load = json.loads(load_bytes)
+        enabled = load['enabled_mods']
+        if CE not in enabled or GOA not in enabled or 'mod/votc_titan.mod' in enabled:
+            raise ValueError('Select the playset with the stock CE and GoA Workshop entries.')
+        ce = mod_root(ck3, CE)
+        for relative, digest in metadata['cePins'].items():
+            if sha256((ce / relative).read_bytes()).hexdigest() != digest:
+                raise ValueError(f'Community Edition changed: {relative}')
+        with sqlite3.connect((ck3 / 'launcher-v2.sqlite').as_uri() + '?mode=rw', uri=True) as db:
+            playset = active_playset(db, enabled)
+            backup = state / 'scene-addon-deployments' / datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
+            backup.mkdir(parents=True, mode=0o700)
+            with sqlite3.connect(backup / 'launcher-v2.sqlite') as saved:
+                db.backup(saved)
+            (backup / 'dlc_load.json').write_bytes(load_bytes)
+            try:
+                key = register(db, playset, target, metadata)
+                load['enabled_mods'] = [entry for entry in enabled if entry != REGISTRY] + [REGISTRY]
+                active_playset(db, load['enabled_mods'])
+                if db.execute('PRAGMA integrity_check').fetchone()[0] != 'ok':
+                    raise ValueError('CK3 playset database integrity check failed.')
+                atomic_write(load_path, (json.dumps(load, indent=2) + '\n').encode())
+                db.commit()
+            except Exception:
+                db.rollback()
+                atomic_write(load_path, load_bytes)
+                raise
+        result = {'installed': True, 'reused': True, 'path': str(target), 'sha256': expected,
+                  'backup': str(backup), 'registryId': REGISTRY, 'playsetId': playset, 'modId': key}
+        (backup / 'receipt.json').write_text(json.dumps(result, indent=2) + '\n')
+        print(json.dumps(result, indent=2))
+        return result
 
 
 def install(stage, ck3, qualification, state):

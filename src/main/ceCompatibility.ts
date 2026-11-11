@@ -64,7 +64,7 @@ export class CeCompatibility {
         const [command, result, name, receipt] = ceLogRecord(line);
         if (command !== 'VOTC:CE_COMPAT') return;
         const file = this.written.get(name);
-        if (file?.receipt !== receipt) return;
+        if (!file || !receipt || file.receipt !== receipt) return;
         if (result === 'applied' || result === 'stale') {
             this.clear(file);
             this.written.delete(name);

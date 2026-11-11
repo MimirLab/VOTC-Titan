@@ -1,20 +1,26 @@
 jest.mock('../../src/main/characterDescription',()=>({getEffectiveCharacterDescription:jest.fn()}));
 jest.mock('../../src/main/culture/cultureRuntime',()=>({getCultureBackground:jest.fn()}));
-jest.mock('../../src/main/faith/faithRuntime',()=>({getFaithBackground:jest.fn(),getFaithLiveContext:jest.fn()}));
+jest.mock('../../src/main/faith/faithRuntime',()=>({getFaithBackground:jest.fn(),getFaithLiveContext:jest.fn(),bindFaithLiveContext:jest.fn()}));
 jest.mock('../../src/main/goa/goaRuntime',()=>({getVerifiedGoaSnapshot:jest.fn()}));
 import { getEffectiveCharacterDescription } from '../../src/main/characterDescription';
 import { getCultureBackground } from '../../src/main/culture/cultureRuntime';
-import { getFaithBackground,getFaithLiveContext } from '../../src/main/faith/faithRuntime';
+import { getFaithBackground,getFaithLiveContext,bindFaithLiveContext } from '../../src/main/faith/faithRuntime';
 import { getVerifiedGoaSnapshot } from '../../src/main/goa/goaRuntime';
 import { nativeLoreSourceCurrent,captureNativeLorePrompt } from '../../src/main/lorebook/lorebookNativeContext';
 
 function fixture(){
     const actor={id:2,fullName:'Mara',traits:['human']},player={id:1,fullName:'Visitor'};
-    const state:any={personal:{1:'Player portrait.',2:'Patient artisan.'},culture:'Ready culture.',faith:'Ready faith.',live:{},goa:{body:'human'}};
+    const state:any={personal:{1:'Player portrait.',2:'Patient artisan.'},culture:'Ready culture.',faith:'Ready faith.',live:{},liveVisible:true,goa:{body:'human'}};
     (getEffectiveCharacterDescription as jest.Mock).mockImplementation((_data,_player,id)=>state.personal[id]);
     (getCultureBackground as jest.Mock).mockImplementation(()=>state.culture);
     (getFaithBackground as jest.Mock).mockImplementation(()=>state.faith);
-    (getFaithLiveContext as jest.Mock).mockImplementation(()=>state.live);
+    (getFaithLiveContext as jest.Mock).mockImplementation(()=>state.liveVisible?state.live:undefined);
+    (bindFaithLiveContext as jest.Mock).mockImplementation(()=>{
+        const context=state.liveVisible?state.live:undefined;
+        const source=()=>state.live&&Object.keys(state.live).length?state.live:undefined;
+        const binding=JSON.stringify(source());
+        return {context,isCurrent:()=>JSON.stringify(source())===binding};
+    });
     (getVerifiedGoaSnapshot as jest.Mock).mockImplementation(()=>state.goa);
     const game:any={characters:new Map([[1,player],[2,actor]]),playerID:1,aiID:2,date:'582.12.31',gameDate:{totalDays:123},location:'Inn',scene:'Council',silencedCharacterIds:new Set()};
     const conv:any={gameData:game,config:{faithRoleplayEnabled:true},messages:[{role:'user',name:'Visitor',content:'Stay.'}],isOpen:true};
@@ -40,7 +46,7 @@ test.each(['actor','participant','history','personal','other-personal','culture'
     if(kind==='closed')f.conv.isOpen=false;
     expect(f.current()).toBe(false);
 });
-test('nonempty current faith context expiring invalidates the prior source',()=>{
+test('explicitly revoked nonempty faith evidence invalidates the prepared reply',()=>{
     const f=fixture();f.state.live={fervor:70};const current=nativeLoreSourceCurrent(f.conv,f.actor as any,'/tmp/synthetic-lore');
     f.state.live=undefined;expect(current()).toBe(false);
 });
@@ -56,4 +62,16 @@ test('changed source and mismatched account metadata cannot be captured as valid
     const f=fixture(),lore:any={role:'system',content:'Other account.'};
     expect(()=>captureNativeLorePrompt({},[lore],f.actor as any,{accounts:['Known fact.']}as any,[],lore,f.current)).toThrow('builder-owned');
     f.state.personal[2]='Changed.';expect(()=>captureNativeLorePrompt({},[],f.actor as any,{}as any,[],undefined,f.current)).toThrow('changed');
+});
+
+test('elapsed live-context visibility does not cancel an already prepared native reply',()=>{
+    const f=fixture();
+    f.state.live={fervor:70};
+    (f.actor as any).faithLiveContext=f.state.live;
+    const current=nativeLoreSourceCurrent(f.conv,f.actor as any,'/tmp/synthetic-lore');
+    f.state.liveVisible=false;
+    delete (f.actor as any).faithLiveContext;
+    expect(current()).toBe(true);
+    f.state.live={fervor:20};
+    expect(current()).toBe(false);
 });

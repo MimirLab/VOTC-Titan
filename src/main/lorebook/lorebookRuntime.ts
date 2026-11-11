@@ -5,6 +5,9 @@ import { bindObservedTurningContexts, rememberedTurningNotes } from './loreMutat
 import { prepareGameStateLoreContext } from './loreGameStateContext';
 import { bindCurrentStateAccounts, currentStateAccountNotes, currentWorldStateNotes } from './loreGameStateDisclosure';
 import { currentLoreGameStateCatalog } from './loreGameStateRuntime';
+import { loadCampaignStore } from '../campaignBusiness';
+import { requireCampaignIdentity } from '../campaignIdentityResolver';
+import { buildContextFromGameData, TimelineRegistry } from '../timelineManager';
 import fs from 'fs';
 import path from 'path';
 import { createHash } from 'crypto';
@@ -34,6 +37,18 @@ export function verifiedLoreVersion(config: Config): string {
 function reportPath(data: string, campaign: string, timeline: string, actor: string): string {
     const key = createHash('sha256').update(JSON.stringify([campaign, timeline, actor])).digest('hex');
     return path.join(data, 'lorebook', 'reports', key + '.json');
+}
+function reportLocation(data: string, game: GameData, actorId: number): { file: string; registry?: TimelineRegistry } {
+    const actual = encounterLoreIdentity(game, actorId);
+    const exact = reportPath(data, actual.campaign, actual.timeline, actual.actor);
+    const loaded = loadCampaignStore(path.dirname(data), requireCampaignIdentity(game));
+    const registry = loaded.status === 'found' ? loaded.store : undefined;
+    if (fs.existsSync(exact)) return { file: exact, registry };
+    for (const node of registry?.getVerifiedAncestors(actual.timeline, buildContextFromGameData(game).checkpointEpoch) ?? []) {
+        const file = reportPath(data, actual.campaign, node, actual.actor);
+        if (fs.existsSync(file)) return { file, registry };
+    }
+    return { file: exact, registry };
 }
 export async function lorebookStatus(): Promise<any> {
     try { return { ...await lorebookClient.request<ChronicleStatus>({ op: 'status' }), diagnostic: lastDiagnostic, semantic: lorebookVectors.status() }; }
@@ -100,12 +115,12 @@ export async function loreReportTemplate(game: GameData, actorId: number, config
     const edition = await lorebookClient.request<ChronicleStatus>({ op: 'status' });
     const actual = encounterLoreIdentity(game, actorId);
     if (data) {
-        const file = reportPath(data, actual.campaign, actual.timeline, actual.actor);
+        const { file, registry } = reportLocation(data, game, actorId);
         if (fs.existsSync(file)) {
             const saved = JSON.parse(fs.readFileSync(file, 'utf8'));
             if (saved.capture_digest === currentGoaCatalog()?.digest && saved.total_days <= game.gameDate!.totalDays &&
                 reportOwnerApplies(saved, game.characters.get(actorId)!))
-                return projectLoreReport(saved.report, game, actorId, edition.setting_sha256);
+                return projectLoreReport(saved.report, game, actorId, edition.setting_sha256, registry);
         }
     }
     return { origin: 'user_reported', campaign_id: actual.campaign, timeline_id: actual.timeline,
@@ -131,7 +146,8 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
         const actorSnapshot = actor && getVerifiedGoaSnapshot(actor);
         if (!actor || !actorSnapshot) return '';
         const snapshotBinding = JSON.stringify(actorSnapshot);
-        const actual = encounterLoreIdentity(game, actorId), file = reportPath(data, actual.campaign, actual.timeline, actual.actor);
+        const actual = encounterLoreIdentity(game, actorId);
+        const { file, registry } = reportLocation(data, game, actorId);
         const hasReport=fs.existsSync(file),reportBytes=hasReport?fs.readFileSync(file,'utf8'):undefined;
         let saved:any,observed:ObservedLoreTicket|undefined;
         if(hasReport){
@@ -147,7 +163,7 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
             verifiedLoreVersion(config);
             observed=prepareObservedLoreContext(game,actorId,config,edition.setting_sha256);
         }
-        const reported=hasReport?projectLoreReport(saved.report,game,actorId,edition.setting_sha256):undefined;
+        const reported=hasReport?projectLoreReport(saved.report,game,actorId,edition.setting_sha256,registry):undefined;
         const mutation=prepareMutationLoreContext(game,actorId,config,edition.setting_sha256,observed,reported);
         const gameState=prepareGameStateLoreContext(game,actorId,config,edition.setting_sha256,observed,reported);
         const context=gameState?.context??mutation?.context??reported??observed?.context;
@@ -157,7 +173,10 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
         const accountReport=hasReport?saved.report:{choices:[]};
         const captureDigest = currentGoaCatalog()!.digest, totalDays = game.gameDate!.totalDays;
         const binding = createHash('sha256').update(JSON.stringify([edition.manifest_sha256, gameState?.binding??mutation?.binding??context, captureDigest, totalDays, snapshotBinding])).digest('hex');
-        const session = spokenPublicationSessions.prepare(delivery, actorId, binding) ?? disclosureSessions.prepare(delivery, actorId, binding);
+        // Ordinary writers retain their established continuation cursor. Native writers
+        // commit only actual, listener-owned spoken publication.
+        const session = (delivery?.preparing || delivery?.preview
+            ? spokenPublicationSessions.prepare(delivery, actorId, binding) : undefined) ?? disclosureSessions.prepare(delivery, actorId, binding);
         let proposed: unknown, initialProposed: unknown, initiallyAdmitted = false, forgetInitial = false;
         if (delivery) delivery.commit = included => {
             initiallyAdmitted = included;
@@ -167,7 +186,7 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
             game.characters.get(actorId) === actor &&
             JSON.stringify(getVerifiedGoaSnapshot(actor)) === snapshotBinding && currentGoaCatalog()?.digest === captureDigest &&
             game.gameDate?.totalDays === totalDays && JSON.stringify(encounterLoreIdentity(game, actorId)) === JSON.stringify(actual) &&
-            (hasReport?fs.existsSync(file)&&fs.readFileSync(file,'utf8')===reportBytes&&verifiedLoreVersion(config)===saved.report.mod_version
+            (hasReport?reportLocation(data,game,actorId).file===file&&fs.existsSync(file)&&fs.readFileSync(file,'utf8')===reportBytes&&verifiedLoreVersion(config)===saved.report.mod_version
                 :!fs.existsSync(file)&&(observed?.isCurrent()===true||mutation?.isCurrent()===true||gameState?.isCurrent()===true)&&verifiedLoreVersion(config)==='0.6.5')&&
             (!mutation||mutation.isCurrent())&&(!gameState||gameState.isCurrent());
         if (delivery) delivery.isCurrent = () => {
@@ -237,6 +256,7 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
                         throw new Error('Deeper lore response does not match its actor or disclosure limit.');
                     if (next.passages.length) {
                         const contexts=bindReportedAccountContexts(next.passages,accountReport);
+                        spokenPublicationSessions.addToolResult(delivery, actorId, next);
                         delivered.push(...next.passages); usedWords += next.words; proposed = next.state;
                         delivery.accounts=delivered.map((p:any)=>p.heading+'\n'+p.text);delivery.accountWords=usedWords;
                         delivery.knowledge = { access: 'provided' };

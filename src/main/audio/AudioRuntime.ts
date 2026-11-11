@@ -38,6 +38,9 @@ import { CloneBanks, cloneIdentity, cloneDelivery, verifyCloneProfile } from './
 
 export const REFERENCE_TEXT = 'The road turns beyond the quiet hill. I have time to listen, and I will speak plainly when the moment comes.';
 export const DEFAULT_NARRATOR = 'A warm, clear storyteller with a smooth, resonant midrange voice, careful natural articulation and a measured intimate cadence. Subtle expressive phrasing, without theatrical exaggeration. Consistent neutral English pronunciation.';
+export const DEFAULT_NARRATOR_NAME = 'Medivh (HotS)';
+export const DEFAULT_NARRATOR_BANK = 'goa2-5000-hots-medivhbase/v0001';
+const DEFAULT_NARRATOR_MANIFEST = '9da4655e5127d3b927b635a732bc54c2321eec0ece5be7400c79f5cb4ccfc5a4';
 type Emit = (channel: string, ...args: any[]) => void;
 interface PlaybackJob { conv: Conversation; view: Message; actor: Character; settings: AudioSettings; age: string; cues: ReturnType<typeof audioCuesFor>; epoch: number;
     familyKey?: string; design?: ReturnType<typeof prepareVoiceDesign>; bodySnapshot?: GoaSnapshot; casting?: VoiceCasting; characterVoiceId?: string; narratorVoiceId?: string; historical?: boolean; replay?: boolean; prepareCasting?: boolean; cloneAgeYears?: number; prepareCloneAge?: boolean; maturity?: MaturityStage; voiceTraits?:readonly VoiceTrait[]; voiceStyle?:string; undeadFacts?:UndeadFacts; undead?:UndeadPerformance }
@@ -113,6 +116,21 @@ export class AudioRuntime {
     private ordinary(campaign: string, characterId: string): VoiceProfile | undefined {
         const active = this.store().get(campaign, characterId);
         return active && !cloneIdentity(active) ? active : this.store().list(campaign).find(p => p.characterId === characterId && !cloneIdentity(p));
+    }
+    private narratorVoice(reset = false): VoiceProfile {
+        const saved = this.store().get('__global__', '__narrator__');
+        if (saved && !reset) return saved;
+        // The default is the exact auditioned recording, independent of imported
+        // banks or character casting. Existing custom narrators remain overrides.
+        const bank = new CloneBanks(BUNDLED_CLONES).load(DEFAULT_NARRATOR_BANK);
+        if (bank.manifestHash !== DEFAULT_NARRATOR_MANIFEST) throw new Error('The default Medivh recording changed. Reinstall the intact voice bank.');
+        return this.store().importClone('__global__', '__narrator__', { ...bank, name: DEFAULT_NARRATOR_NAME });
+    }
+    useDefaultNarrator(): VoiceProfile {
+        this.discardNarratorDraft();
+        const profile = this.narratorVoice(true);
+        this.update(this.settings().enabled ? 'idle' : 'disabled', `${DEFAULT_NARRATOR_NAME} selected as storyteller.`);
+        return profile;
     }
     private performanceFamily(profile: VoiceProfile): DemonFamily | undefined {
         // Recorded performances supply their own physical character. Family metadata
@@ -234,6 +252,10 @@ export class AudioRuntime {
         }
     }
     async previewCharacter(conv: Conversation, characterId: number, text?: string, faithDeliveryId?: string): Promise<Buffer> {
+        if (this.settings().provider !== 'breeze') {
+            if (!conv.gameData.characters.has(characterId)) throw new Error('Select a character in the current encounter.');
+            return this.previewVoice(undefined, faithDeliveryId, text);
+        }
         const campaign = this.campaign(conv);
         this.stop(); const controller = new AbortController(); this.controller = controller;
         let profile: VoiceProfile | undefined, age: CloneAgeBand | undefined, ageDirection: string | undefined, maturity: MaturityStage | undefined, development:DevelopmentContext|undefined,undeadFacts:UndeadFacts|undefined;
@@ -258,7 +280,8 @@ export class AudioRuntime {
     }
     selectVoice(id: string): void {
         const profile = this.store().byId(id); if (!profile?.referenceFile) throw new Error('Preview this candidate to prepare its reference before selecting it.');
-        if (cloneIdentity(profile)) throw new Error('Assign this character’s reference using the Clone bank selector.');
+        if (cloneIdentity(profile) && profile.characterId !== '__narrator__') throw new Error('Assign this character’s reference using the Clone bank selector.');
+        verifyCloneProfile(profile);
         this.stop(); this.store().activate(profile);
         const casting = castingFromProvenance(profile.provenance); if (casting) this.store().bindForm(profile, casting.formKey);
         this.update(this.settings().enabled ? 'idle' : 'disabled', `${profile.label}'s saved reference is selected for future lines.`);
@@ -296,9 +319,7 @@ export class AudioRuntime {
                 await sideSpeech(settings, text, 'Speak naturally and clearly.', signal, async bytes => { chunks.push(bytes); });
                 const { pcmToWav } = await import('./pcm'); ready = true; return pcmToWav(Buffer.concat(chunks));
             }
-            let profile = id ? this.store().byId(id) : this.store().get('__global__', '__narrator__');
-            if (!profile && !id) profile = this.store().save('__global__', '__narrator__', 'Narrator',
-                DEFAULT_NARRATOR, 'Titan narrator default v1');
+            let profile = id ? this.store().byId(id) : this.narratorVoice();
             if (!profile) throw new Error('This voice profile is no longer available. Refresh Audio.');
             // An explicitly selected archived reference can still be previewed;
             // fresh encounter playback instead follows the current population policy.
@@ -320,7 +341,7 @@ export class AudioRuntime {
             const undead=undeadFacts?this.undeadPerformance(profile,undeadFacts):undefined;
             if (familyKey || !wav || text !== REFERENCE_TEXT || faithDeliveryId || ageDirection !== undefined || cloneAge !== undefined || undeadFacts!==undefined) {
                 const family = this.performanceFamily(profile), casting = castingFromProvenance(profile.provenance);
-                const delivery = cloneIdentity(profile) ? cloneDelivery({ kind: 'speech', text, passage: 0 }, '', family, cloneAge,undead)
+                const delivery = cloneIdentity(profile) ? cloneDelivery({ kind: 'speech', text, passage: 0 }, profile.characterId === '__narrator__' ? 'Speak naturally.' : '', family, cloneAge,undead)
                     : acousticDelivery({ kind: 'speech', text, passage: 0 }, ageDirection ?? 'Speak naturally and clearly.', { familyKey,faithDeliveryId,direction:style,undead,reviewedRaceDirection:reviewedRaceDirection(profile,casting),
                         ...(profile.characterId !== '__narrator__' && casting ? { voice: { anatomyId: casting.anatomyId, body: casting.body, sex: casting.presentation, cultureId: casting.cultureId } } : {}) });
                 wav = await provider.speech(delivery.renderText, delivery.instruction, profile, signal, undefined, { familyKey,deliveryKind: 'speech', demonFamily: family, cloneAge, maturity,undead:undead?.treatment==='damaged-throat' });
@@ -360,6 +381,13 @@ export class AudioRuntime {
                 profile && existingCasting ? this.individual(profile) : undefined), characterVoiceId: profile?.id });
         void this.drain();
     }
+    private savePlaybackPlan(job: PlaybackJob, pending: boolean, audioState: 'muted' | 'completed'): void {
+        if (!job.view.id) return;
+        this.store().savePlan(this.campaign(job.conv), String(job.conv.gameData.playerID), job.view.id, heardDigest(job.view),
+            { version: 2, age: job.age, cues: job.cues, casting: job.casting, characterVoiceId: job.characterVoiceId,
+                narratorVoiceId: job.narratorVoiceId, familyKey: job.familyKey, voiceStyle: job.voiceStyle, undead: job.undead,
+                provider: job.settings.provider, pending, audioState });
+    }
     replay(conv: Conversation, id: string): void {
         const current = conv.getHistory().find(message => message.id === id);
         const view = current ?? conv.historicalConversations.flatMap(history => history.messages).find(message => message.id === id);
@@ -370,21 +398,27 @@ export class AudioRuntime {
         if (characterId === undefined) throw new Error('This old reply has no verified character identity for voice playback.');
         const campaign = this.campaign(conv), saved = this.store().plan(campaign, String(conv.gameData.playerID), id, heardDigest(view));
         const original = saved ?? this.store().plan(campaign, String(conv.gameData.playerID), id);
-        if(!current&&original?.pending)throw new Error('This historical reply’s voice preparation did not finish. Open a current encounter to prepare its voice.');
-        if (!original?.pending && original?.characterVoiceId && !this.store().byId(original.characterVoiceId))
+        const needsCharacter = view.type !== 'scene' && projectAudioUtterances(view, { ...settings, narrator: true }, original?.cues ?? [])
+            .some(segment => segment.kind !== 'narration');
+        // Optional speech providers use their configured voice directly. Narration can
+        // use the global storyteller even if it was muted when this turn was received.
+        if(!current&&original?.pending&&settings.provider==='breeze'&&needsCharacter)
+            throw new Error('This historical reply’s voice preparation did not finish. Open a current encounter to prepare its voice.');
+        if (settings.provider === 'breeze' && needsCharacter && !original?.pending && original?.characterVoiceId && !this.store().byId(original.characterVoiceId))
             throw new Error('The saved voice for this replay was deleted. Play a new reply to prepare a current voice.');
         const actor = conv.getEncounterCharacter(characterId);
         const firstPlayback = !!current && (original?.pending===true||!original?.characterVoiceId && !original?.casting);
         const profile = firstPlayback ? this.boundClone(conv, characterId) ?? this.ordinary(campaign, String(characterId)) : original?.characterVoiceId ? this.store().byId(original.characterVoiceId) : original?.casting
             ? this.store().form(campaign, String(characterId), original.casting.formKey) : this.ordinary(campaign, String(characterId));
-        if (!actor && !profile) throw new Error('This character has no prepared voice. Open an encounter with them first.');
+        if (!actor && !profile && settings.provider === 'breeze' && needsCharacter)
+            throw new Error('This character has no prepared voice. Open an encounter with them first.');
         traceDelivery(view, characterId, conv.gameData.playerID, true);
         this.stop(); this.activeConv = conv;
         if (profile) verifyCloneProfile(profile);
         const observedBody = firstPlayback && actor && !(profile && cloneIdentity(profile)) ? getVerifiedGoaSnapshot(actor) : undefined;
         this.queue.push({ conv, view: structuredClone(view), settings, epoch: this.epoch,
             actor: actor ? Object.assign(Object.create(Object.getPrototypeOf(actor)), actor)
-                : { id: characterId, fullName: profile!.label, shortName: profile!.label } as Character,
+                : { id: characterId, fullName: profile?.label ?? view.name ?? 'Narrator', shortName: profile?.label ?? view.name ?? 'Narrator' } as Character,
             bodySnapshot: observedBody ? structuredClone(observedBody) : undefined,
             age: !original?.pending&&original?.age ? original.age : current&&actor?this.currentAge(conv,actor):'Use the established natural voice.',
             cues: saved?.cues ?? [], characterVoiceId: profile?.id, narratorVoiceId: original?.narratorVoiceId,
@@ -502,7 +536,7 @@ export class AudioRuntime {
         const recorded = narrator ? job.narratorVoiceId : job.characterVoiceId;
         if (recorded && !this.store().byId(recorded)) throw new Error('The saved voice for this replay was deleted. Play a new reply to prepare a current voice.');
         let profile = this.store().byId(recorded ?? '') ??
-            (!narrator && job.casting ? this.store().form(campaign, id, job.casting.formKey) : this.ordinary(campaign, id));
+            (narrator ? this.narratorVoice() : job.casting ? this.store().form(campaign, id, job.casting.formKey) : this.ordinary(campaign, id));
         if(!narrator && (!job.replay || job.prepareCasting)) {
             profile=this.familyVoice(campaign,id,job.actor.fullName,job.casting,profile);
             if(profile && eligibleFamilyProfile(profile))job.familyKey=familyPreset(castingFromProvenance(profile.provenance))?.key;
@@ -510,15 +544,14 @@ export class AudioRuntime {
         const current=!narrator&&job.maturity&&(!job.replay||job.prepareCloneAge||job.prepareCasting)?
             {conv:job.conv,actor:job.actor,maturity:job.maturity,traits:job.voiceTraits??observedVoiceTraits(job.actor),design:job.design}:undefined;
         if (!profile) {
-            this.update('preparing', narrator ? 'Preparing the narrator…' : `Designing ${job.actor.shortName}'s voice…`);
-            const preceding=narrator?undefined:this.ordinary(campaign,id);
-            const designed = narrator ? { instruction: DEFAULT_NARRATOR, provenance: 'Titan narrator default v1' }
-                : await designCharacterVoice(job.conv, job.actor, signal, current?updatePreparedVoiceDesign(
+            this.update('preparing', `Designing ${job.actor.shortName}'s voice…`);
+            const preceding=this.ordinary(campaign,id);
+            const designed = await designCharacterVoice(job.conv, job.actor, signal, current?updatePreparedVoiceDesign(
                     job.design??prepareVoiceDesign(job.conv,job.actor),job.casting,preceding?this.individual(preceding):undefined,
                     {phase:isAdultMaturity(current.maturity)?'adult':'provisional',traits:current.traits}):job.design);
-            signal.throwIfAborted(); profile = this.store().save(campaign, id, narrator ? 'Narrator' : job.actor.fullName, designed.instruction, designed.provenance,
+            signal.throwIfAborted(); profile = this.store().save(campaign, id, job.actor.fullName, designed.instruction, designed.provenance,
                 !!preceding&&!!retiredPopulationReference(preceding));
-            const casting = narrator ? undefined : job.casting ?? castingFromProvenance(profile.provenance);
+            const casting = job.casting ?? castingFromProvenance(profile.provenance);
             if (casting) this.store().bindForm(profile, casting.formKey);
         }
         if(!narrator && (!job.replay || job.prepareCasting) && eligibleFamilyProfile(profile))job.familyKey=familyPreset(castingFromProvenance(profile.provenance))?.key;
@@ -545,7 +578,8 @@ export class AudioRuntime {
                 try {
                     const segments = job.view.type === 'scene'
                         ? phraseAudioText(job.view.content, true).map(text => ({ kind: 'narration' as const, text, passage: -1 }))
-                        : projectAudioUtterances(job.view, job.settings, job.cues); if (!segments.length) continue;
+                        : projectAudioUtterances(job.view, job.settings, job.cues);
+                    if (!segments.length) { this.savePlaybackPlan(job, false, 'muted'); continue; }
                     // An existing current reply may be the player's first voice request after enabling Audio.
                     // Prepare its casting once; already recorded/historical replays retain their frozen identity.
                     const firstReplay = job.replay && !job.historical && job.prepareCasting;
@@ -632,7 +666,7 @@ export class AudioRuntime {
                         const cue = job.cues.find(c => c.passage === segment.passage)?.direction ?? job.cues.find(c => c.passage === undefined)?.direction ?? 'Speak naturally.';
                         const casting = profile ? castingFromProvenance(profile.provenance) : undefined;
                         const family = profile ? this.performanceFamily(profile) : undefined;
-                        const cloneAge = profile && cloneIdentity(profile) ? ageBeyondReference(recordedCloneAge(job.age),this.referenceAge(profile)) : undefined;
+                        const cloneAge = role === 'character' && profile && cloneIdentity(profile) ? ageBeyondReference(recordedCloneAge(job.age),this.referenceAge(profile)) : undefined;
                         const undead=role==='character'&&validUndeadPerformance(job.undead,profile?.id)?job.undead:undefined;
                         const delivery = profile && cloneIdentity(profile) ? cloneDelivery(segment, cue, family, cloneAge,undead) : acousticDelivery(segment, job.age, { familyKey:role==='character'?job.familyKey:undefined,undead,reviewedRaceDirection:role==='character'?reviewedRaceDirection(profile,casting):undefined,direction: role==='character'?[job.voiceStyle,cue].filter(Boolean).join(' '):cue,
                             ...(role === 'character' && profile ? { voice: { sex: casting?.presentation, anatomyId: casting?.anatomyId, body: casting?.body, cultureId: casting?.cultureId } } : {}) });
@@ -671,6 +705,7 @@ export class AudioRuntime {
                         if (this.finish?.id === id) { finishTimer = setTimeout(checkCompletion, audio.bytes / 48 + 60_000); finishTimer.unref?.(); }
                         await finished;
                     }
+                    this.savePlaybackPlan(job, false, 'completed');
                 } catch (error) {
                     const interrupted = signal.aborted; controller.abort();
                     this.finish?.reject(new Error('Audio delivery ended.')); this.finish = undefined;

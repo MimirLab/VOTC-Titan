@@ -515,7 +515,10 @@ export async function exportPlayerData(votcDataPath: string, outputZipPath: stri
 
     const directoriesToExport = [
         'conversation_summaries',
-        'compacted_memory',
+        'memories_compacted',
+        'compacted_memory', // Older archives and stores remain supported.
+        'campaigns',
+        'timeline_registry',
         'diary_history',
         'diary_summaries',
         'letter_history',
@@ -570,6 +573,7 @@ export async function importPlayerData(votcDataPath: string, inputZipPath: strin
     }
 
     const expectedDirectories = [
+        'campaigns',
         'conversation_summaries',
         'memories_compacted',
         'diary_history',
