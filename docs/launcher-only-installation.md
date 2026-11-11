@@ -1,7 +1,9 @@
 # Titan launcher distribution contract
 
-The supported user setup is CK3 at the compatible patch, the normal GoA2 and
-VOTC Community Edition Steam subscriptions, and the downloaded Titan launcher.
+The supported user setup is CK3 on GoA2's intentionally pinned branch, the normal
+GoA2 and VOTC Community Edition Steam subscriptions, and the downloaded Titan launcher.
+Titan communicates through CE's existing game bridge. CE's launcher-descriptor
+version label does not impose a separate CK3 upgrade requirement on this setup.
 Titan must not require a separate Workshop publication, a Titan game-component
 entry, edited Workshop/base-game scripts, or a custom Steam launch option.
 CE's ordinary command files in the CK3 user folder remain its existing bridge;
@@ -21,7 +23,7 @@ The old portable package stays withdrawn. The replacement native Linux package
 is `VOTC-Titan-Launcher`; run `./install.sh` from its extracted folder. Linux X11
 requires the ordinary `wmctrl` utility. Select the CK3 installation/user folders
 and configure the AI connection in Titan. Keep GoA2 and CE enabled in their normal
-load order, using a compatible game/mod patch combination. No Titan mod entry,
+load order on the CK3 branch required by GoA2. No Titan mod entry,
 Steam wrapper, additional subscription or helper installation is required.
 
 The revised installer installs only the native application and launcher shortcut.

@@ -7,7 +7,7 @@ and Steam addons, then use Titan as your launcher companion.
 
 | Component | Requirement |
 | --- | --- |
-| Game | [Crusader Kings III](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) with versions compatible with the subscribed addons |
+| Game | [Crusader Kings III](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) on the branch required by GoA2 |
 | World | [Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945), with its own required dependencies and load order |
 | Game bridge | [Voices of the Court 2.0 — Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139) Steam addon |
 | Titan | The Linux x64 public-preview download from this repository's Releases |
@@ -32,18 +32,21 @@ disabled entry without adding another copy of the mod.
 
 ## Versions and preview status
 
-The game bridge was tested with **CK3 1.19.0.6, GoA2 0.6.5 and CE 2.5**.
-CE 2.5 targets **CK3 1.20**. This mismatch remains a known issue, and the
-combination has not completed full gameplay testing. Match your game and addon
-versions using the upstream instructions before starting a campaign.
+GoA2 intentionally pins CK3 to an earlier branch. Use the CK3 version required
+by GoA2. Titan communicates with the in-game VOTC Community Edition addon through
+CE's command channels and debug log, and reads GoA2 game facts through that bridge.
+The working tested stack is **CK3 1.19.0.6, GoA2 0.6.5 and VOTC CE 2.5.0**.
+A newer CK3 label in CE's launcher descriptor is metadata, not evidence of a
+runtime incompatibility. Report an actual command, probe, log or script failure
+when identifying a bridge compatibility defect.
 
 Response speed depends on your text model, context length and optional voice
 synthesis. Model loading and first-time voice creation add startup time.
 
 ## Install
 
-1. Install CK3. Subscribe to GoA2 and VOTC CE, including any dependencies they
-   require. Enable the addons in a compatible playset and follow their order.
+1. Install CK3 on GoA2's required branch. Subscribe to GoA2 and VOTC CE,
+   including GoA2's dependencies, and follow the addon load order.
 2. Open [Titan Releases](https://github.com/MimirLab/VOTC-Titan/releases).
    Download `VOTC-Titan-Launcher-linux-x64.tar.gz` and its `.sha256` file into the
    same directory. GitHub's automatic Source code downloads are for developers.
@@ -99,7 +102,7 @@ character's knowledge. Scene paintings are displayed in Titan's interface.
 
 | Symptom | First check |
 | --- | --- |
-| No current encounter or stale game state | Correct CK3 user folder, active CE addon, compatible versions and a current RP encounter |
+| No current encounter or stale game state | Correct CK3 user folder, active CE addon, GoA2’s required CK3 branch and a current RP encounter; inspect the CE command/log bridge |
 | Provider error or an empty reply | Test the selected endpoint/model; check its availability, context and output allowances |
 | Voice model cannot start | Available VRAM, supported runtime/backend and interference from other GPU workloads |
 | A named character uses generated casting | Automatic bank selection, current identity/source compatibility, supported form and explicit per-character opt-outs |

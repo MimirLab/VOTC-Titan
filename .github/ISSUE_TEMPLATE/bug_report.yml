@@ -15,7 +15,7 @@ body:
     id: environment
     attributes:
       label: Game and system versions
-      description: "Include CK3 patch, GoA2 version, VOTC CE version, OS and relevant AI/voice backend."
+      description: "Include CK3 patch, GoA2 version, VOTC CE version, OS and relevant AI/voice backend. GoA2 intentionally pins CK3; a different CE descriptor label alone is not an incompatibility. Describe the observed bridge or script failure."
     validations:
       required: true
   - type: textarea

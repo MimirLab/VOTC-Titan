@@ -17,6 +17,16 @@ together for each release. Exact results and checksums ship in
 responses; narrator checks reuse retained audition PCM. No fresh natural campaign
 playtest or new model synthesis is claimed for these repairs.
 
+## Game and bridge
+
+GoA2 intentionally pins CK3 to an earlier branch. Use the CK3 version required
+by GoA2. Titan communicates with the in-game VOTC Community Edition addon through
+CE's command channels and debug log, and reads GoA2 game facts through that bridge.
+The working tested stack is **CK3 1.19.0.6, GoA2 0.6.5 and VOTC CE 2.5.0**.
+A newer CK3 label in CE's launcher descriptor is metadata, not evidence of a
+runtime incompatibility. Report an actual command, probe, log or script failure
+when identifying a bridge compatibility defect.
+
 ## Earlier foundations
 
 The preceding launcher-only release passed **3,507 tests in 150 suites**, four

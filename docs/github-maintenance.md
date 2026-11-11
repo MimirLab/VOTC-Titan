@@ -3,6 +3,14 @@
 The public home for Titan is `MimirLab/VOTC-Titan`. Titan remains a launcher-only
 project for the subscribed GoA2 and VOTC CE addons.
 
+GoA2 intentionally pins CK3 to an earlier branch. Use the CK3 version required
+by GoA2. Titan communicates with the in-game VOTC Community Edition addon through
+CE's command channels and debug log, and reads GoA2 game facts through that bridge.
+The working tested stack is **CK3 1.19.0.6, GoA2 0.6.5 and VOTC CE 2.5.0**.
+A newer CK3 label in CE's launcher descriptor is metadata, not evidence of a
+runtime incompatibility. Report an actual command, probe, log or script failure
+when identifying a bridge compatibility defect.
+
 ## Maintainer access
 
 GitHub CLI is installed for the maintainer's Linux user. Its browser login uses
@@ -81,6 +89,6 @@ notices and the provenance review described in `github-release-preparation.md`.
 
 After qualification, use a distinct Titan release tag and prepare a draft release
 with the exact verified archive and checksum. Review the draft's contents and
-supported versions before publishing it. Do not enable the inherited upstream
+GoA2 CK3 branch and working CE bridge before publishing it. Do not enable the inherited upstream
 Forge publisher. A GitHub release does not automatically replace the installed
 launcher; installation still follows the verified native deployment process.

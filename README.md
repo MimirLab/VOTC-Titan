@@ -72,7 +72,7 @@ Conversations continue through the VOTC foundation of letters, diaries, historie
 
 ## Install Titan
 
-1. Install **CK3** and select compatible game and addon versions.
+1. Install **CK3 on the branch required by GoA2**. GoA2 intentionally uses an earlier CK3 branch.
 2. Subscribe to **[Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945)** and **[VOTC Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139)**. Follow their dependency and load-order instructions.
 3. Download **[Titan](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11.2)**, verify its checksum, extract it and run `./install.sh`.
 4. Open Titan, select your CK3 installation and user folders, then configure your AI connection.
@@ -80,7 +80,7 @@ Conversations continue through the VOTC foundation of letters, diaries, historie
 
 All Titan additions run in the **launcher**. Installation adds the application and shortcut, leaving your game files, Workshop subscriptions, playset and Steam launch options alone. AI model weights are separate downloads.
 
-The game bridge was tested with **CK3 1.19.0.6, GoA2 0.6.5 and CE 2.5**. CE 2.5 targets CK3 1.20; this version mismatch remains a known issue. [See the setup guide](docs/getting-started.md#versions-and-preview-status) before choosing your versions.
+**Titan connects to VOTC CE, which provides the in-game bridge on GoA2’s intended CK3 branch.** The working tested stack is **CK3 1.19.0.6, GoA2 0.6.5 and VOTC CE 2.5.0**. CE’s newer launcher-descriptor label does not make this setup incompatible. [Setup details](docs/getting-started.md#versions-and-preview-status).
 
 ## Credits
 
