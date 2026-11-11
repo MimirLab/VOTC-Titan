@@ -16,6 +16,7 @@ beforeEach(() => {
     (app as any).getAppPath = () => path.resolve('.'); jest.clearAllMocks();
     actor = { id: 2, age: 35, sex: 'male' } as Character;
     (currentCastingCapture as jest.Mock).mockReturnValue(undefined);
+    (getAcousticCulture as jest.Mock).mockReturnValue(undefined);
 });
 function body(traitIds: string[], sex: 'male' | 'female' = 'male', currentBody?: string): void {
     (getVerifiedGoaSnapshot as jest.Mock).mockReturnValue({ version: 1, characterId: 2, digest: 'a'.repeat(64), traitIds, sex, currentBody, facts: {} } satisfies GoaSnapshot);
@@ -46,6 +47,24 @@ test('tauren resonance and Gilnean Cockney cadence are composed directly without
     expect(brief).toContain('cavernous bovine throat'); expect(brief).toContain('Cockney accent'); expect(brief).not.toContain('human throat');
     const line = 'The agreed price is twelve silver pieces.';
     expect(acousticDelivery({ kind: 'speech', text: line, passage: 0 }, 'A young adult voice.').renderText).toBe(line);
+});
+test('automatic Wildhammer dwarf women use the auditioned description without replacing their saved form', () => {
+    body(['creature_dwarf'], 'female');
+    (getAcousticCulture as jest.Mock).mockReturnValue({ version: 1, complete: true, cultureId: 'wildhammer' });
+    const c = castingCatalogue();
+    const earlier = resolveVoiceCasting(actor, { anatomyId: '002', cultureId: 'wildhammer' });
+    const automatic = resolveVoiceCasting(actor);
+    const audition = resolveVoiceCasting(actor, { anatomyId: '003', cultureId: 'wildhammer' });
+    const individual = 'Her measured cadence has a dry, warm grain.';
+    expect(composeVoiceDesign(automatic, individual)).toBe(composeVoiceDesign(audition, individual));
+    expect(automatic.formKey).toBe(earlier.formKey);
+    expect(earlier.anatomyCore).toBe(c.anatomy['002'].female);
+    expect(automatic.cultureCore).toBe(c.cultures.wildhammer);
+    expect(resolveVoiceCasting(actor, { cultureId: 'bronzebeard' }).anatomyCore).toBe(earlier.anatomyCore);
+    body(['creature_human'], 'female');
+    expect(resolveVoiceCasting(actor).anatomyCore).toBe(c.anatomy['001'].female);
+    body(['creature_dwarf'], 'male');
+    expect(resolveVoiceCasting(actor).anatomyCore).toBe(c.anatomy['002'].male);
 });
 test('naga presentations remain different under the identical Nazja culture; dryad/keeper and banshee restrictions stay distinct', () => {
     body(['creature_naga'], 'male'); const male = resolveVoiceCasting(actor, { cultureId: 'naga' });

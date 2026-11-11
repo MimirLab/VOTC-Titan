@@ -362,7 +362,7 @@ export class LetterManager {
         }
     }
 
-    public deliverLetter(storedLetter: StoredLetter, config: Config, gameDate: string, currentTimelineNodeId?: string) {
+    public deliverLetter(storedLetter: StoredLetter, config: Config, gameDate: string, currentTimelineNodeId?: string, receipt?: string) {
         const userFolderPath = config.userFolderPath;
         if (!userFolderPath) {
             console.error("Cannot deliver letter, user folder path is not set.");
@@ -389,8 +389,7 @@ export class LetterManager {
         const escapedReply = replyContent.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 
         let gameCommand = `debug_log = "[Localize('talk_event.9999.desc')]"
-remove_global_variable ?= votc_${letterId}
-create_artifact = {
+${receipt ? '' : `remove_global_variable ?= votc_${letterId}\n`}create_artifact = {
 \tname = votc_huixin_title${letterId.replace(/letter_/, "")}
 \tdescription = "${escapedReply}"
 \ttype = journal
@@ -409,8 +408,10 @@ if = {
 \t\tname = votc_latest_letter
 \t\tvalue = scope:votc_latest_letter
 \t}
-}
-trigger_event = message_event.362`;
+${receipt ? `\tremove_global_variable ?= votc_${letterId}
+\tdebug_log = "VOTC:CE_COMPAT/;/ordinary_letter/;/${receipt}"
+\ttrigger_event = message_event.362` : ''}
+}${receipt ? '' : '\ntrigger_event = message_event.362'}`;
 
         // Re-validate at delivery time: the reply may travel several in-game
         // days and conversations can advance the checkpoint meanwhile. The
@@ -447,6 +448,13 @@ trigger_event = message_event.362`;
             gameCommand += '\n' + appliedTimelineScript;
         }
 
+        if (receipt) {
+            // The runner may poll again before Titan has read the receipt.
+            gameCommand = `if = {
+    limit = { exists = global_var:votc_${letterId} }
+${gameCommand}
+}`;
+        }
         fs.writeFileSync(letterFilePath, '\uFEFF' + gameCommand, 'utf8');
         console.log(`Delivered letter ${letter.id} by writing to: ${letterFilePath}`);
     }

@@ -5,7 +5,7 @@ import { SCENE_CATALOGUE, SCENE_CATALOGUE_DIGEST as digest } from '../../src/sha
 import { SceneSnapshot } from '../../src/shared/scenes/types';
 import { eligibleScenes, sceneEligible, resolveScene } from '../../src/shared/scenes/sceneContext';
 import { SceneLogReader } from '../../src/shared/scenes/sceneLog';
-import { applySceneSnapshot, runActionWithScenePolicy, waitForSceneSelection, actionForScene } from '../../src/main/scenes/sceneRuntime';
+import { applySceneSnapshot, runActionWithScenePolicy, waitForSceneSelection, actionForScene, selectLauncherVenue } from '../../src/main/scenes/sceneRuntime';
 import { Action } from '../../src/main/ts/conversation_interfaces';
 import { parseCk3Script } from '../../src/main/culture/ck3Script';
 import { trimGoaPrompt } from '../../src/main/goa/goaPromptBudget';
@@ -101,6 +101,32 @@ test('actual CK3 clickable province markup becomes a clean location in scene/UI/
     expect(game.location).toBe("Zul'Farrak");
     expect(resolveScene(captured)?.packet).toContain("Observed location: Zul'Farrak. Terrain: desert.");
     expect(resolveScene(captured)?.packet).not.toMatch(/ONCLICK|TOOLTIP|\x15/);
+});
+
+test('native opening receipts leave unobserved historical conditions unknown', () => {
+    const historical = SCENE_CATALOGUE.worldStates.find(state => state.kind === 'historicalWindow')!;
+    const observed = SCENE_CATALOGUE.worldStates.map(state => state.id).filter(id => id !== historical.id);
+    const expected = snapshot({ presentation: 'native', observedWorldStates: observed });
+    const reader = new SceneLogReader();
+    const lines = records(expected).map(line => line.replace('begin/;/1/;/', 'begin/;/2/;/')
+        .replace(`world_state/;/${historical.id}=no`, `world_state/;/${historical.id}=unknown`));
+    expect(lines.map(line => reader.observeLine(line)).find(Boolean)).toEqual(expected);
+    const fabricated = { ...SCENE_CATALOGUE.scenes[0], conditions: { excludedWorldStates: [historical.id] } };
+    expect(sceneEligible(fabricated, expected)).toBe(false);
+});
+
+test('the chat gallery waits for the same native selection receipt as the opening picker', async () => {
+    const game = data(snapshot({ presentation: 'native' }));
+    const next = 'titan_region_tanaris_white_gold_dune_country';
+    const emit = jest.fn();
+    const chosen = selectLauncherVenue(game, next, emit);
+    expect(emit).toHaveBeenCalledWith(`root = { titan_select_${next}_effect = yes }`);
+    expect(game.scene).toBe('titan_farraki_court');
+    applySceneSnapshot(game, snapshot({ presentation: 'native', selected: next }));
+    await chosen;
+    expect(game.scene).toBe(next);
+    await expect(selectLauncherVenue(game, 'titan_human_inn', emit)).rejects.toThrow('unavailable');
+    expect(emit).toHaveBeenCalledTimes(1);
 });
 
 test('scene actions wait for engine receipt, preserve province, and revalidate approved/slash arguments', async () => {

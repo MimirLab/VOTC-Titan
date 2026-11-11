@@ -20,20 +20,32 @@ export async function updateLauncherSceneArt(game?: GameData): Promise<void> {
     panel.hidden = true;
     const snapshot = game?.sceneSnapshot;
     const scene = resolveScene(snapshot);
-    if (!scene || snapshot?.presentation !== 'launcher') return;
+    if (!scene || !snapshot?.presentation) return;
     try {
         const raw = await ipcRenderer.invoke('get-launcher-scene-art', scene.sceneId);
         if (!raw || current !== revision) return;
-        const { width, height, pixels } = decodeDxt1(new Uint8Array(raw));
         const canvas = panel.querySelector('canvas')!;
-        canvas.width = width; canvas.height = height;
         canvas.setAttribute('aria-label', scene.label);
-        const context = canvas.getContext('2d');
-        if (!context) return;
-        const image = context.createImageData(width, height);
-        image.data.set(pixels);
-        context.putImageData(image, 0, 0);
+        paintSceneArt(canvas, raw);
         panel.querySelector('summary')!.textContent = scene.label;
         panel.hidden = false;
     } catch { /* A missing painting never interrupts the RP controls or prose. */ }
+}
+
+export function paintSceneArt(canvas: HTMLCanvasElement, raw: Uint8Array, maxWidth?: number): void {
+    const { width, height, pixels } = decodeDxt1(new Uint8Array(raw));
+    const resize = maxWidth !== undefined && width > maxWidth;
+    const source = resize ? document.createElement('canvas') : canvas;
+    source.width = width;
+    source.height = height;
+    const context = source.getContext('2d');
+    if (!context) return;
+    const image = context.createImageData(width, height);
+    image.data.set(pixels);
+    context.putImageData(image, 0, 0);
+    if (resize) {
+        canvas.width = maxWidth;
+        canvas.height = Math.round(height * maxWidth / width);
+        canvas.getContext('2d')?.drawImage(source, 0, 0, canvas.width, canvas.height);
+    }
 }

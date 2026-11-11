@@ -6,41 +6,53 @@ import { GameData, Memory, Trait, OpinionModifier, Secret, Relative, KnownSecret
 import { Character } from "./Character";
 const fs = require('fs');
 
+const initMarker = 'VOTC:IN/;/init/;/';
+
+function backgroundInit(line: string): boolean {
+    const start = line.indexOf(initMarker);
+    if (start === -1) return false;
+    const scene = line.slice(start + initMarker.length).split('/;/')[5]?.trim();
+    return scene === 'flag:whisper_ledger' ||
+        (scene === 'flag:talk_letter' && line.includes('(votc_ce_initiative_letter)')) ||
+        (scene === '-' && line.includes('(votc_log_incoming_letter_gamedata_effect)'));
+}
+
 export async function parseLog(debugLogPath: string): Promise<GameData | undefined>{
 async function readLastRelevantBlock(filePath: string): Promise<string | undefined> {
     const CHUNK_SIZE = 512 * 1024; // 512KB chunks
-    const SEARCH_STRING = 'VOTC:IN/;/init';
-
     let handle;
     try {
         handle = await fs.promises.open(filePath, 'r');
         const { size } = await handle.stat();
-
-        let position = Math.max(0, size - CHUNK_SIZE);
-        let currentReadSize = size - position;
-
-        while (true) {
-            const buffer = Buffer.alloc(currentReadSize);
-            await handle.read(buffer, 0, currentReadSize, position);
-            const content = buffer.toString('utf8');
-
-            const lastIndex = content.lastIndexOf(SEARCH_STRING);
-            if (lastIndex !== -1) {
-                const lineStartIndex = content.lastIndexOf('\n', lastIndex);
-                const absoluteStart = position + (lineStartIndex === -1 ? 0 : Buffer.byteLength(content.substring(0, lineStartIndex + 1), 'utf8'));
-
-                const resultSize = size - absoluteStart;
-                const resultBuffer = Buffer.alloc(resultSize);
-                await handle.read(resultBuffer, 0, resultSize, absoluteStart);
-                return resultBuffer.toString('utf8');
+        let blockEnd = size;
+        let end = size;
+        while (end > 0) {
+            const position = Math.max(0, end - CHUNK_SIZE);
+            // Look past the chunk boundary so an init header split across
+            // chunks can still be classified by scene and CK3 effect.
+            const buffer = Buffer.alloc(Math.min(size, end + 8192) - position);
+            const { bytesRead } = await handle.read(buffer, 0, buffer.length, position);
+            let lastIndex = buffer.lastIndexOf(initMarker, end - position - 1);
+            while (lastIndex !== -1 && lastIndex < bytesRead) {
+                const lineStart = lastIndex === 0 ? 0 : buffer.lastIndexOf(10, lastIndex - 1) + 1;
+                const lineEnd = buffer.indexOf(10, lastIndex);
+                // A line starting outside this chunk is examined in the
+                // next chunk, where the effect prefix is also available.
+                if (!lineStart && position > 0) break;
+                const line = buffer.toString('utf8', lineStart, lineEnd < 0 ? bytesRead : lineEnd);
+                if (!backgroundInit(line)) {
+                    const absoluteStart = position + lineStart;
+                    const resultBuffer = Buffer.alloc(blockEnd - absoluteStart);
+                    const { bytesRead: resultBytes } = await handle.read(resultBuffer, 0, resultBuffer.length, absoluteStart);
+                    return resultBuffer.toString('utf8', 0, resultBytes);
+                }
+                blockEnd = position + lineStart;
+                if (!lineStart) break;
+                lastIndex = buffer.lastIndexOf(initMarker, lineStart - 1);
             }
-
-            if (position === 0) break;
-
-            // Move back another chunk, with overlap to ensure we don't miss the search string
-            const newPosition = Math.max(0, position - CHUNK_SIZE);
-            currentReadSize = position - newPosition + SEARCH_STRING.length;
-            position = newPosition;
+            // Overlap includes a possible partial init header on the
+            // preceding chunk. Progress remains bounded by CHUNK_SIZE.
+            end = position === 0 ? 0 : position + 8192;
         }
     } catch (err) {
         console.error(`Error reading log file efficiently: ${err}`);
@@ -75,30 +87,6 @@ async function readLastRelevantBlock(filePath: string): Promise<string | undefin
         }
         // console.log(`Attempt ${i + 1} to find relevant log block failed, retrying in 100ms...`);
         await new Promise(resolve => setTimeout(resolve, 100));
-    }
-
-    if (!relevantLogBlock) {
-        console.log("Chunked search failed. Attempting to read last 2MB of the log file as a fallback.");
-        let handle;
-        try {
-            handle = await fs.promises.open(debugLogPath, 'r');
-            const { size } = await handle.stat();
-            const fallbackReadSize = 2 * 1024 * 1024;
-            const position = Math.max(0, size - fallbackReadSize);
-            const readSize = size - position;
-            const buffer = Buffer.alloc(readSize);
-            await handle.read(buffer, 0, readSize, position);
-            const content = buffer.toString('utf8');
-            const lastIndex = content.lastIndexOf('VOTC:IN/;/init');
-            if (lastIndex !== -1) {
-                const lineStartIndex = content.lastIndexOf('\n', lastIndex);
-                relevantLogBlock = content.substring(lineStartIndex + 1);
-            }
-        } catch (err) {
-            console.error(`Error during fallback log read: ${err}`);
-        } finally {
-            if (handle) await handle.close();
-        }
     }
 
     if (!relevantLogBlock) {

@@ -39,7 +39,7 @@ export function launcherScenesEnabled(): boolean { return enabled; }
 export function observeLauncherSceneLine(line: string): void { reader.observe(line); probe?.observe(line); }
 export function clearLauncherScenes(): void { epoch++; reader.clear(); probe?.clear(); selections.clear(); }
 export function bindLauncherScene(game: GameData, nonce?: string, selected?: string, apply = true): SceneSnapshot | undefined {
-    if (!enabled || !nonce) return;
+    if (!enabled || !nonce || game.sceneSnapshot?.presentation === 'native') return;
     // Consume an exact acknowledged probe. Never attach a last-known scene from another turn/save.
     const snapshot = reader.consume(nonce, game.playerID, [...game.characters.keys()], campaignKey(game), selected);
     if (!snapshot) return;

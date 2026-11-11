@@ -1,4 +1,5 @@
 import { updateLauncherSceneArt } from './launcherSceneArt';
+import { updateLauncherSceneGallery } from './launcherSceneGallery';
 import { addAudioReplay } from './audioPlayback';
 import { installNativeInputRegions } from "./nativeInputRegion";
 import { parseControlledProse, controlledProseView } from '../shared/language/controlledProse';
@@ -1749,6 +1750,7 @@ if (document.readyState === 'loading') {
 }
 
 ipcRenderer.on('chat-show', () =>{
+    updateLauncherSceneGallery();
     if (chatMessages) {
         chatMessages.innerHTML = '';
     }
@@ -1801,6 +1803,7 @@ ipcRenderer.on('status-update', (e, textKey: string, vars: any) => {
 });
 
 ipcRenderer.on('chat-hide', () =>{
+    updateLauncherSceneGallery();
     void updateLauncherSceneArt();
     hideChat();
 })
@@ -1823,6 +1826,7 @@ ipcRenderer.on('scene-context-update', (_event, state) => {
     currentGameData.sceneSnapshot = state.sceneSnapshot;
     currentGameData.launcherSceneObservation = state.launcherSceneObservation;
     currentGameData.resolvedSceneContext = resolveScene(state.sceneSnapshot);
+    updateLauncherSceneGallery(currentGameData);
     void updateLauncherSceneArt(currentGameData);
     availableActions = state.actions;
     const header = document.querySelector('.current-conversation-header');
@@ -1858,6 +1862,7 @@ ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: 
     playerName = gameData.playerName;
     aiName = gameData.aiName;
     currentGameData = gameData;
+    updateLauncherSceneGallery(gameData);
     void updateLauncherSceneArt(gameData);
 
     // Load prompt history

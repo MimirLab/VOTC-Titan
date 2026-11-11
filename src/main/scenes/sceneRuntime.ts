@@ -25,12 +25,13 @@ export function applySceneSnapshot(data: GameData, snapshot: SceneSnapshot): boo
     if (snapshot.anchorId !== data.playerID || !resolveScene(snapshot)) return false;
     data.sceneSnapshot = snapshot;
     if (snapshot.presentation === 'launcher') data.launcherSceneObservation = snapshot;
+    if (snapshot.presentation === 'native') delete data.launcherSceneObservation;
     data.resolvedSceneContext = resolveScene(snapshot);
     data.scene = snapshot.selected;
     data.location = snapshot.location;
     data.locationController = snapshot.controller;
     const transition = pending.get(data);
-    if (transition) {
+    if (transition && snapshot.presentation !== 'launcher') {
         clearTimeout(transition.timer);
         transition.finish(transition.expected === snapshot.selected);
         // Keep the resolved result until the waiting generators have consumed it.
@@ -44,6 +45,15 @@ export async function waitForSceneSelection(data: GameData): Promise<void> {
     const ok = await transition.promise;
     if (pending.get(data) === transition) pending.delete(data);
     if (!ok) throw new Error('The game did not confirm this scene change. Reopen the conversation to refresh its location.');
+}
+
+export async function selectLauncherVenue(data: GameData, choice: unknown, emitNative?: (effect: string) => void): Promise<void> {
+    const census = data.launcherSceneObservation ?? data.sceneSnapshot;
+    if (census?.presentation !== 'launcher' && !(census?.presentation === 'native' && emitNative))
+        throw new Error('The current encounter has no verified Titan venues.');
+    if (typeof choice !== 'string') throw new Error('Choose a venue from the scene gallery.');
+    beginSceneSelection(data, census, [choice], emitNative ?? (() => {}));
+    await waitForSceneSelection(data);
 }
 
 export function actionForScene(action: Action, data: GameData): Action {
@@ -79,6 +89,10 @@ export function runActionWithScenePolicy(action: Action, data: GameData, emit: (
         if (action.signature === 'changeLocation') data.location = location;
         return;
     }
+    beginSceneSelection(data, census, args, emit);
+}
+
+function beginSceneSelection(data: GameData, census: SceneSnapshot, args: string[], emit: (effect: string) => void): void {
     if (pending.has(data)) throw new Error('Wait for the current scene change to be confirmed by CK3.');
     const choice = args[0]?.toLowerCase().trim();
     if (args.length !== 1 || !eligibleScenes(census).some(s => s.id === choice))
@@ -93,7 +107,11 @@ export function runActionWithScenePolicy(action: Action, data: GameData, emit: (
         if (census.presentation === 'launcher') {
             if (!launcherSelector) throw new Error('The launcher scene bridge is unavailable.');
             void launcherSelector(data, choice).then(snapshot => {
-                if (!timedOut && snapshot && pending.get(data)?.promise === promise && applySceneSnapshot(data, snapshot)) launcherChanged?.(data, snapshot);
+                if (!timedOut && snapshot?.selected === choice && pending.get(data)?.promise === promise && applySceneSnapshot(data, snapshot)) {
+                    clearTimeout(timer);
+                    finish(true);
+                    launcherChanged?.(data, snapshot);
+                }
                 else { clearTimeout(timer); finish(false); }
             }).catch(() => { clearTimeout(timer); finish(false); });
         } else emit(`root = { titan_select_${choice}_effect = yes }`);

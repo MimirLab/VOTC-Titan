@@ -130,18 +130,13 @@ const battleReportCompletedSignatures = new Set<string>();
 const latestBattleReportSignatureBySlot = new Map<string, string>();
 
 export class BattleReportGenerator {
-    private apiConnection: ApiConnection;
+    private apiConnection?: ApiConnection;
     private config: Config;
     private userDataPath: string;
 
     constructor(config: Config, userDataPath: string) {
         this.config = config;
         this.userDataPath = userDataPath;
-        this.apiConnection = new ApiConnection(
-            config.textGenerationApiConnectionConfig.connection,
-            config.textGenerationApiConnectionConfig.parameters,
-            null
-        );
     }
 
     public getStatuses(): BattleReportStatus[] {
@@ -223,6 +218,11 @@ export class BattleReportGenerator {
                         }
                     ];
 
+                    this.apiConnection ??= new ApiConnection(
+                        this.config.textGenerationApiConnectionConfig.connection,
+                        this.config.textGenerationApiConnectionConfig.parameters,
+                        null
+                    );
                     const response = await this.apiConnection.complete(messages, false, {
                         max_tokens: Math.min(this.config.maxTokens || 800, 900),
                         temperature: this.config.textGenerationApiConnectionConfig.parameters.temperature
@@ -267,13 +267,27 @@ export class BattleReportGenerator {
         }
     }
 
+    public prepareCompatibilityReports(log: string) {
+        return this.parseBattleReports(log).filter(battle =>
+            /^[1-9]\d{0,9}$/.test(battle.playerId) &&
+            /^battle_report_(?:[1-9]|1[0-5])$/.test(battle.slotId) &&
+            battle.location && battle.winnerName && battle.loserName
+        ).map(battle => ({
+            player: battle.playerId, date: battle.date, slot: this.getSlotNumber(battle.slotId),
+            legacySingleSlot: battle.legacySingleSlot, text: this.buildFallbackReport(battle, undefined),
+        }));
+    }
+
     private extractBattleReportData(debugLogPath: string): BattleReportData[] {
         if (!fs.existsSync(debugLogPath)) {
             console.error(`Debug log file not found at: ${debugLogPath}`);
             return [];
         }
 
-        const fileContent = fs.readFileSync(debugLogPath, "utf8");
+        return this.parseBattleReports(fs.readFileSync(debugLogPath, "utf8"));
+    }
+
+    private parseBattleReports(fileContent: string): BattleReportData[] {
         const lines = fileContent.split(/\r?\n/);
         const battles: BattleReportData[] = [];
         let currentBattleData: BattleReportData | null = null;
@@ -454,7 +468,7 @@ ${getEffectivePrompts(this.config, this.userDataPath, gameData!)?.battleReportPr
 
     private buildFallbackReport(battleData: BattleReportData, gameData: GameData | undefined): string {
         const player = gameData?.characters.get(Number(battleData.playerId)) || gameData?.getPlayer();
-        const playerName = this.getPlayerName(battleData, gameData, player);
+        const playerName = gameData && this.getPlayerName(battleData, gameData, player);
         const battlefield = this.getBattlefieldName(battleData);
         const winnerName = this.cleanBattleLogText(battleData.winnerName) || (this.config.language === "en" ? "the winning host" : "胜方军队");
         const loserName = this.cleanBattleLogText(battleData.loserName) || (this.config.language === "en" ? "the opposing host" : "敌方军队");

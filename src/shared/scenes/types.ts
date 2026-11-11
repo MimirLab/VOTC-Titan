@@ -86,9 +86,9 @@ export interface SceneSnapshot {
     riverside?: boolean;
     worldStates: string[];
     eligible: string[];
-    /** Launcher observation: absence from this census means unknown, not false. */
+    /** Absence from this census means unknown, not false. */
     observedWorldStates?: string[];
-    presentation?: 'launcher';
+    presentation?: 'launcher' | 'native';
     /** Stock CE venue selected at conversation start; retain it until an explicit launcher choice. */
     ceScene?: string;
 }

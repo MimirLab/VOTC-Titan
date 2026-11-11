@@ -27,13 +27,17 @@ export class SceneLogReader {
             const provinceIds = [...(rawLocation?.matchAll(/(?:ONCLICK|TOOLTIP):PROVINCE,(\d+)\b/g) ?? [])]
                 .map(match => Number(match[1]));
             const uniqueProvinces = new Set(provinceIds);
-            if (fields.length !== 7 || schema !== '1' || digest !== SCENE_CATALOGUE_DIGEST ||
+            if (fields.length !== 7 || !['1', '2'].includes(schema) || digest !== SCENE_CATALOGUE_DIGEST ||
                 !['core', 'goa'].includes(mode) || !/^\d+$/.test(anchor) || !Number.isSafeInteger(Number(anchor)) || !id.test(selected) ||
                 uniqueProvinces.size > 1 || provinceIds.some(n => !Number.isSafeInteger(n) || n <= 0) ||
                 !location || location.length > 300 || controller.length > 300 || /[\[\]\r\n]/.test(location + controller)) return undefined;
             this.pending = { schema: 1, catalogue: digest, mode: mode as 'core' | 'goa', anchorId: Number(anchor),
                 selected, location, controller, terrain: '', style: '', culture: 'unknown', regions: [], settled: false,
                 provinceId: provinceIds[0], camp: false, coastal: false, riverside: false, worldStates: [], eligible: [] };
+            if (schema === '2') {
+                this.pending.presentation = 'native';
+                this.pending.observedWorldStates = [];
+            }
             return undefined;
         }
         const p = this.pending;
@@ -75,9 +79,12 @@ export class SceneLogReader {
                 p.regions.push(value); break;
             case 'world_state': {
                 const [state, present, ...extra] = value.split('=');
-                if (extra.length || !SCENE_CATALOGUE.worldStates.some(s => s.id === state) ||
-                    !['yes', 'no'].includes(present) || this.seen.has('world_state:' + state)) this.invalid = true;
+                const definition = SCENE_CATALOGUE.worldStates.find(s => s.id === state);
+                const unknown = p.presentation === 'native' && definition?.kind === 'historicalWindow' && present === 'unknown';
+                if (extra.length || !definition || (!unknown && !['yes', 'no'].includes(present)) ||
+                    this.seen.has('world_state:' + state)) this.invalid = true;
                 this.seen.add('world_state:' + state);
+                if (!unknown) p.observedWorldStates?.push(state);
                 if (present === 'yes') p.worldStates.push(state);
                 break;
             }

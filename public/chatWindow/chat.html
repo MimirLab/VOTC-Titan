@@ -57,6 +57,7 @@
   <div class="chat-box">
   <div class="drag-handle"></div>
     <div class="chat-header">
+      <button type="button" class="scene-gallery-open" aria-haspopup="dialog" hidden>Scenes</button>
       <div class="search-container" data-tooltip="Search messages">
         <div class="search-icon">🔍</div>
         <div class="search-dropdown">
@@ -131,6 +132,18 @@
     </div>
     <div id="slash-command-container" class="slash-command-container" style="display: none;"></div>
   </div>
+
+  <dialog class="scene-gallery" aria-labelledby="scene-gallery-title">
+    <div class="scene-gallery-header">
+      <div>
+        <h2 id="scene-gallery-title">Choose a scene</h2>
+        <p class="scene-gallery-location"></p>
+      </div>
+      <button type="button" class="scene-gallery-close" autofocus>Close</button>
+    </div>
+    <p class="scene-gallery-status" role="status"></p>
+    <div class="scene-gallery-grid"></div>
+  </dialog>
 
   <script>require("../../dist/shared/LocalizationManager.js")</script>
   <script>

@@ -1,13 +1,15 @@
 import { openTitanHelp } from './projectHelp';
-import { readLauncherSceneArt } from './scenes/launcherSceneArt';
+import { readLauncherSceneArt, readLauncherScenePreview } from './scenes/launcherSceneArt';
 import { setLauncherScenePublisher } from './scenes/launcherSceneRuntime';
 import { ceCommandFile, initializeCeCommandFiles } from './ceBridge';
 import './appIdentity';
+import { CeCompatibility } from './ceCompatibility';
+import { ceLogRecord } from './ceRequestLog';
 import { AudioRuntime, setAudioRuntime } from './audio/AudioRuntime';
 import { registerAudioIpc } from './audio/audioIpc';
 import { requestBackgroundLibraryPurge } from './background/backgroundLibraryPurge';
 import { clearFaithLibrary } from './faith/faithRuntime';
-import { observeSceneLine, applySceneSnapshot, resetSceneReader, runActionWithScenePolicy, sceneUiState } from './scenes/sceneRuntime';
+import { observeSceneLine, applySceneSnapshot, resetSceneReader, runActionWithScenePolicy, sceneUiState, selectLauncherVenue } from './scenes/sceneRuntime';
 import { textProviderLane } from '../shared/providerActivity';
 import { observeEncounterLine } from './culture/cultureRuntime';
 import { setLanguageRoutingEnabled } from './language';
@@ -220,6 +222,8 @@ let currentSessionPlayerId: string | null = null;
 let currentTotalDays: number = 0;
 const storedLetters: Map<string, StoredLetter> = new Map();
 let lastLetterSentToGame: StoredLetter | null = null;
+let ordinaryLetterReceipt: string | undefined;
+const ceCompatibility = new CeCompatibility();
 let lastLetterSentToGameTime: number = 0;
 // Replies rejected by the campaign delivery gate remember the campaign they
 // were rejected under, so a foreign-campaign reply is not re-evaluated (and
@@ -415,6 +419,7 @@ export async function checkAndDeliverLetters() {
     if (lastLetterSentToGame && Date.now() - lastLetterSentToGameTime > LETTER_DELIVERY_TIMEOUT_MS) {
         console.warn(`Letter delivery timed out for letter ${lastLetterSentToGame.originalLetter.id} Ã¢â‚¬â€ no VOTC:LETTER_ACCEPTED received. Clearing to allow future deliveries.`);
         lastLetterSentToGame = null;
+        ordinaryLetterReceipt = undefined;
         // The timed-out reply is still sitting in run/letters.txt and the
         // mod-side letters_runner executes that file unconditionally on the
         // next write-letter interaction — without this the old reply fires
@@ -500,7 +505,9 @@ export async function checkAndDeliverLetters() {
             // a rollback, so the node must come from game evidence).
             const currentTimelineNodeId = resolveCurrentTimelineNodeId(gameData);
             // The letter is being sent to the game, but not yet confirmed as delivered.
-            letterManager.deliverLetter(storedLetter, config, currentDateString, currentTimelineNodeId);
+            const receipt = randomUUID();
+            letterManager.deliverLetter(storedLetter, config, currentDateString, currentTimelineNodeId, receipt);
+            ordinaryLetterReceipt = receipt;
             lastLetterSentToGame = storedLetter; // Track the letter sent
             lastLetterSentToGameTime = Date.now();
             storedLetters.delete(letterId); // Remove from pending queue
@@ -826,9 +833,22 @@ function dispatchTrigger(keyword: string): void {
 }
 
 function processLogLine(line: string) {
+    if (clipboardListener?.isListening && line.includes('VOTC:INCOMING_LETTER/;/clipboard/;/')) {
+        const [command, kind, ...payload] = ceLogRecord(line);
+        // Several CE slots can emit a clipboard token during one poll interval.
+        if (command === 'VOTC:INCOMING_LETTER' && kind === 'clipboard') {
+            void ceCompatibility.dispatch(command, payload, config, votcDataPath);
+        }
+    }
+    if (line.includes('VOTC:CE_COMPAT/;/')) {
+        const [channel, result, receipt] = ceLogRecord(line);
+        if (channel === 'VOTC:CE_COMPAT' && result === 'ordinary_letter' &&
+            ordinaryLetterReceipt && ordinaryLetterReceipt === receipt) clipboardListener?.emit('VOTC:ORDINARY_LETTER_RECEIPT');
+        ceCompatibility.observeLog(line);
+    }
     // Save-load identity from the mod's load relay: the earliest identity signal
     // of a session, and the only one available before the first conversation.
-    if (line.includes('VOTC:CAMPAIGN/;/loaded/;/')) { cancelConversationBackgrounds(); clearCultureObservations(); clearFaithObservations(); clearGoaObservations(); resetSceneReader(); }
+    if (line.includes('VOTC:CAMPAIGN/;/loaded/;/')) { ceCompatibility.reset(); cancelConversationBackgrounds(); clearCultureObservations(); clearFaithObservations(); clearGoaObservations(); resetSceneReader(); }
     observeCampaignLoadLine(line);
     observeCultureLine(line);
     observeFaithLine(line);
@@ -898,6 +918,7 @@ function handleLogFileChange(curr: fs.Stats, prev: fs.Stats) {
     const debugLogPath = path.join(config.userFolderPath, 'logs', 'debug.log');
     if (curr.size < lastSize || (prev.ino && curr.ino !== prev.ino)) {
         lastSize = 0;
+        ceCompatibility.reset();
         cancelConversationBackgrounds();
         logLineFramer.reset();
         clearCultureObservations();
@@ -1023,6 +1044,7 @@ app.on('ready',  async () => {
             console.log(`Created CK3 run folder at: ${runFolderPath}`);
         }
         initializeCeCommandFiles(config.userFolderPath);
+        ceCompatibility.resume(config.userFolderPath);
         const lettersFilePath = path.join(runFolderPath, ceCommandFile(config.userFolderPath, 'letters.txt'));
         // Always (re)initialize letters.txt to the blank placeholder. The
         // mod-side letters_runner executes this file unconditionally on
@@ -1861,8 +1883,21 @@ ipcMain.on('clear-summaries', ()=>{
 })
 
 let conversation: Conversation;
+function chooseSceneVenue(current: Conversation, sceneId: unknown): Promise<void> {
+    return selectLauncherVenue(current.gameData, sceneId, effect => {
+        current.runFileManager.writeWhenIdle(effect + '\nroot = { trigger_event = mcc_event_v2.9003 }');
+    });
+}
 ipcMain.handle('get-launcher-scene-art', (_event, sceneId: unknown) =>
     conversation?.isOpen ? readLauncherSceneArt(conversation.gameData.sceneSnapshot, sceneId) : undefined);
+ipcMain.handle('get-launcher-scene-preview', (event, sceneId: unknown) =>
+    conversation?.isOpen && event.sender === chatWindow.window.webContents
+        ? readLauncherScenePreview(conversation.gameData.launcherSceneObservation ?? conversation.gameData.sceneSnapshot, sceneId) : undefined);
+ipcMain.handle('select-launcher-venue', async (event, sceneId: unknown) => {
+    if (!conversation?.isOpen || event.sender !== chatWindow.window.webContents)
+        throw new Error('Open a conversation in CK3 to choose a venue.');
+    await chooseSceneVenue(conversation, sceneId);
+});
 applyLiveScene = (scene) => {
     if (conversation?.isOpen) {
         const previous = conversation.gameData.resolvedSceneContext?.revision;
@@ -2060,8 +2095,9 @@ clipboardListener.on('VOTC:EFFECT_ACCEPTED', () =>{
 
 })
 
-clipboardListener.on('VOTC:LETTER_ACCEPTED', async () => {
-    console.log('ClipboardListener: VOTC:LETTER_ACCEPTED event detected.');
+function confirmOrdinaryLetter(): void {
+    if (!lastLetterSentToGame) return;
+    ordinaryLetterReceipt = undefined;
     try {
         LetterManager.getInstance().clearLettersFile(config);
         if (lastLetterSentToGame) {
@@ -2098,8 +2134,15 @@ clipboardListener.on('VOTC:LETTER_ACCEPTED', async () => {
             console.log('VOTC:LETTER_ACCEPTED received, but no letter was pending game confirmation.');
         }
     } catch (error) {
-        console.error(`Failed to handle LETTER_ACCEPTED event: ${error}`);
+        console.error(`Failed to confirm an ordinary letter: ${error}`);
     }
+}
+
+clipboardListener.on('VOTC:ORDINARY_LETTER_RECEIPT', confirmOrdinaryLetter);
+clipboardListener.on('VOTC:LETTER_ACCEPTED', () => {
+    // CE opens the same parchment for all letter lanes. Ordinary replies
+    // written by Titan carry a receipt in their own run script.
+    if (!ordinaryLetterReceipt) confirmOrdinaryLetter();
 });
 
 clipboardListener.on('VOTC:LETTER_EFFECT_ACCEPTED', () => {
@@ -2199,11 +2242,18 @@ clipboardListener.on('VOTC:CONVERSATION_HISTORY', async (payloads?: string[]) =>
     }
 })
 
+for (const command of ['VOTC:WHISPER', 'VOTC:INCOMING_LETTER', 'VOTC:BATTLE_REPORT']) {
+    clipboardListener.on(command, (payload: string[]) => {
+        void ceCompatibility.dispatch(command, payload, config, votcDataPath);
+    });
+}
+
 clipboardListener.on('VOTC:LETTER', async () => {
     console.log('ClipboardListener: VOTC:LETTER event detected.');
     try {
-        LetterManager.getInstance().clearLettersFile(config);
         await sleep(250); // Wait for log to flush
+        if (await ceCompatibility.dispatch('VOTC:LETTER', [], config, votcDataPath)) return;
+        if (!lastLetterSentToGame) LetterManager.getInstance().clearLettersFile(config);
 
         const gameData = await parseLog(path.join(config.userFolderPath, 'logs', 'debug.log'));
         if (!gameData) {
@@ -2550,6 +2600,10 @@ ipcMain.on('config-change', (e, confID: string, newValue: any) =>{
     }
 
     config.export();
+    if (confID === 'userFolderPath') {
+        ceCompatibility.reset();
+        ceCompatibility.resume(config.userFolderPath);
+    }
     if (confID === 'cultureGameInstallPath' || confID === 'userFolderPath') {
         refreshCultureCapture();
         if (confID === 'userFolderPath' && watchedLogPath) {
@@ -2845,11 +2899,28 @@ ipcMain.on('execute-approved-action', (event, messageId: string, actionName: str
     }
 });
 
-ipcMain.on('execute-action', (event, signature: string, args: any[]) => {
+ipcMain.on('execute-action', async (event, signature: string, args: any[]) => {
     console.log(`IPC: Received execute-action event for ${signature} with args:`, args);
     if (conversation) {
         const action = conversation.actions.find(a => a.signature === signature);
         if (action) {
+            if (signature === 'changeLocation' &&
+                (conversation.gameData.launcherSceneObservation ?? conversation.gameData.sceneSnapshot)?.presentation) {
+                const current = conversation;
+                try {
+                    if (args.length !== 3) throw new Error('Choose one scene venue.');
+                    await chooseSceneVenue(current, args[2]);
+                    if (conversation === current && current.isOpen && typeof action.chatMessage === 'function') {
+                        const chatMessage = formatActionNotice(action, args.slice(2), current.gameData, null, null, current.config.language);
+                        if (chatMessage) event.sender.send('actions-receive', [{
+                            actionName: action.signature, chatMessage, chatMessageClass: action.chatMessageClass
+                        }], '');
+                    }
+                } catch (error) {
+                    event.sender.send('error-message', String(error));
+                }
+                return;
+            }
             const originalPlayerId = conversation.gameData.playerID;
             const originalAiId = conversation.gameData.aiID;
             const originalAiName = conversation.gameData.aiName;

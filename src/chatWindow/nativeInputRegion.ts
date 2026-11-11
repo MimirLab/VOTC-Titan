@@ -10,7 +10,8 @@ export function installNativeInputRegions(): void {
         scheduled = false;
         const nodes = document.querySelectorAll<HTMLElement>(
             'body > :not(script), .suggestions-container, .custom-select-options, .search-dropdown, #slash-command-container');
-        const rects = dragging ? [{ x: 0, y: 0, width: innerWidth, height: innerHeight }] :
+        const modal = document.querySelector('.scene-gallery[open]');
+        const rects = dragging || modal ? [{ x: 0, y: 0, width: innerWidth, height: innerHeight }] :
             [...nodes].flatMap(node => {
                 const style = getComputedStyle(node);
                 const r = node.getBoundingClientRect();

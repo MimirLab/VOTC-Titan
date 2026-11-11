@@ -1,9 +1,12 @@
 # VOTC Titan Edition
 Titan is the MimirLab-maintained GoA2 roleplay launcher.
 
-Keep all runtime changes in the launcher. Users install compatible CK3, GoA2 and
-VOTC Community Edition through Steam, then install Titan. Never require a Titan
-game fork, edited Workshop/base files or a Steam launch wrapper.
+Users install compatible CK3, GoA2 and VOTC Community Edition through Steam,
+then install Titan. Runtime changes belong in the launcher. The optional Titan
+Scenes add-on is limited to the native venue picker and builds from the user's
+Workshop files. Keep a stock Steam setup usable with the launcher alone.
+Before publishing, compare GitHub main and the qualified local launcher.
+Carry forward verified fixes from parallel work and use fast-forward updates.
 Preserve upstream attribution and the software license. Third-party assets keep
 their own terms; source attribution alone is not a redistribution grant.
 

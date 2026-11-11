@@ -59,6 +59,10 @@ export function resolveVoiceCasting(actor: Character, choices: CastingChoices = 
         throw new Error('Current culture capture is not ready for voice casting. Reopen the encounter or select its accent in Audio.');
     const cultureId = choices.cultureId !== undefined ? choices.cultureId || undefined : established?.cultureId ?? observed?.cultureId;
     const cultureCore = cultureId ? c.cultures[cultureId] ?? '' : 'Use clear neutral English pronunciation. Do not infer a new named accent from culture names or faith.';
+    // Match the Wildhammer women's audition without re-keying existing voices.
+    // The generic dwarf route otherwise sends the longer Ironforge refinement.
+    if (!choices.anatomyId && body === 'creature_dwarf' && presentation === 'female' && cultureId === 'wildhammer')
+        anatomyCore = c.anatomy['003'].female ?? anatomyCore;
     return { version: c.version, sourceSha256: c.sourceSha256, ...(anatomyId ? { anatomyId } : {}), ...(body ? { body } : {}),
         ...(presentation ? { presentation } : {}), ...(cultureId ? { cultureId } : {}), anatomyCore, cultureCore,
         formKey: createHash('sha256').update(JSON.stringify([anatomyId ?? body ?? '', presentation ?? '', cultureId ?? ''])).digest('hex'),

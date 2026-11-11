@@ -11,7 +11,7 @@ and Steam addons, then use Titan as your launcher companion.
 | World | [Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945), with its own required dependencies and load order |
 | Game bridge | [Voices of the Court 2.0 — Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139) Steam addon |
 | Titan | The Linux x64 public-preview download from this repository's Releases |
-| Desktop | Linux x64, an X11 desktop session and `wmctrl`; the installer also uses Python 3 |
+| Desktop | Linux x64, an X11 desktop session and `wmctrl`; the installer also uses Python 3.10 or newer |
 | Native libraries | A glibc-based Linux system with **glibc 2.38 or newer**; tested on EndeavourOS/Arch |
 | Text AI | A configured supported provider/API or a running local model endpoint; model weights and API credit are not included |
 | Optional speech | A configured Breeze endpoint, or an explicitly downloaded local Breeze runtime/model with suitable GPU support |
@@ -55,9 +55,23 @@ synthesis. Model loading and first-time voice creation add startup time.
 7. Start CK3 with the normal subscribed addons. Open an RP encounter through
    VOTC CE and use Titan's conversation interface.
 
-The installer places the native companion and its shortcut. It does not edit
-Workshop files, replace CK3 scripts, enable another mod, rewrite your playset or
-change Steam launch options. No separate Titan Workshop subscription is needed.
+`./install.sh` installs the native companion and its shortcut. It works with the
+stock Steam playset.
+
+### CK3’s native venue picker
+
+For Titan’s regional venue choices inside CK3, select your GoA2 and CE playset.
+Close CK3, the Paradox launcher and Titan, then run this from the extracted folder.
+
+```sh
+./install-scenes.sh
+```
+
+The command builds **VOTC Titan Scenes** from your installed Workshop files and
+Titan’s bundled paintings. It enables the add-on after CE in the active playset.
+The installer backs up the playset before enabling the add-on. The picker build checks the GoA2 0.6.5 and CE 2.5.0 files used in testing with
+CK3 1.19.0.6.
+For a custom CK3 user folder, pass `--ck3-user "/path/to/Crusader Kings III"`.
 
 ## Optional character audio
 
@@ -83,7 +97,7 @@ adding optional speech.
 
 Titan reads current encounter state through CE when roleplay needs it. A lore
 passage describes the world; a character's access to it still depends on that
-character's knowledge. Scene paintings are displayed in Titan's interface.
+character's knowledge. The **Scenes** button in Titan opens the painted venue gallery during an encounter.
 
 ## If something goes wrong
 

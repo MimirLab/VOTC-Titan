@@ -38,6 +38,13 @@ export class RunFileManager {
         fs.writeFileSync(this.path, UTF8_BOM + content, 'utf-8');
     }
 
+    writeWhenIdle(text: string): void {
+        if (!this.path || this.readCurrent().trim()) {
+            throw new Error('CK3 is processing another command. Try the scene choice again.');
+        }
+        this.writeUtf8Bom(text);
+    }
+
     write(text: string): void {
         if (!this.path) {
             console.warn('RunFileManager: Cannot write - path is not configured.');

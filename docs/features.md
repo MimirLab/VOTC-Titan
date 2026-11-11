@@ -84,7 +84,7 @@ personal voice libraries stay in your private data.
 
 ## Illustrated encounters
 
-Titan has **868 scenes**, including **855 custom scenes and 851 paintings**.
+Titan has **868 scenes**, including **855 custom scenes and 851 paintings**. The optional Titan Scenes add-on puts the regional choices in CK3’s conversation picker.
 Venue selection uses current encounter facts and participant checks. Existing CE
 venues carry through to Titan; custom venues are available through the scene
 selector. Changing scene refreshes eligibility first.
@@ -115,6 +115,6 @@ user-data directory. Titan releases are maintained in **MimirLab/VOTC-Titan**.
 | Casting and playback | `src/main/audio/`, `public/audio/clone-banks/catalog.json`, `public/audio/race-selections/manifest.json`, `public/audio/goa-casting.json` |
 | Scenes | `src/main/scenes/launcherScene*.ts`, authored JSON in `game_mod/scenes/`, runtime paintings in `public/scene-art/` |
 
-`game_mod/scenes` is a source-data directory. It is not an installed game addon.
+`game_mod/scenes` holds the source data for the launcher gallery and the optional native picker.
 
 </details>

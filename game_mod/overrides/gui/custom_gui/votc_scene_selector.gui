@@ -1,0 +1,145 @@
+﻿window = {
+    name = "votc_scene_selector"
+    visible = "[GetVariableSystem.Exists('votc_scene_selector_opened')]"
+    size = { 100% 100% }
+    parentanchor = center
+    movable = no
+    layer = top
+    using = Background_Letter_No_Frame
+    background = {
+        using = Background_Area_Dark
+        alpha = 0.8
+        modify_texture = {
+            texture = "gfx/interface/component_masks/mask_fade_horizontal_extended.dds"
+            blend_mode = alphamultiply
+        }
+    }
+
+    vbox = {
+        layoutpolicy_horizontal = expanding
+        layoutpolicy_vertical = expanding
+        header_standard = {
+            layoutpolicy_horizontal = expanding
+            blockoverride "header_text" { text = "titan_scene_picker_title" }
+            text_single = {
+                parentanchor = top|left
+                position = { 20 30 }
+                text = "VOTC Titan Edition"
+                default_format = "#low"
+                using = Font_Size_Small
+                max_width = 230
+            }
+            blockoverride "button_close" {
+                onclick = "[GetVariableSystem.Clear('votc_scene_selector_opened')]"
+            }
+        }
+
+        widget = {
+            name = "titan_scene_picker_location"
+            size = { 100% 48 }
+            text_single = {
+                parentanchor = center
+                text = "titan_scene_picker_location"
+                using = Font_Type_Flavor
+                using = Font_Size_Medium
+                align = center
+                max_width = 1160
+                fontsize_min = 16
+            }
+        }
+
+        scrollbox = {
+            name = "votc_select_start_scene"
+            layoutpolicy_horizontal = expanding
+            layoutpolicy_vertical = expanding
+            margin = { 16 8 }
+            blockoverride "scrollbox_content" {
+                hbox = {
+                    layoutpolicy_horizontal = expanding
+                    expand = {}
+                    dynamicgridbox = {
+                        datamodel = "[GetPlayer.MakeScope.GetList('talk_scene_flags')]"
+                        datamodel_wrap = 4
+                        flipdirection = yes
+                        setitemsizefromcell = no
+                        item = {
+                            # Four 300px cells fit a 1280px-wide viewport at 100% UI scale.
+                            container = {
+                                size = { 300 224 }
+                                background = {
+                                    name = "votc_scene_card_border"
+                                    parentanchor = center
+                                    texture = "gfx/interface/skinned/frame_border.dds"
+                                    color = { 0.8 0.7 0.5 0.6 }
+                                    framesize = { 4 4 }
+                                    size = { 296 220 }
+                                    alpha = 0.6
+                                }
+                                button_standard_clean = {
+                                    parentanchor = center
+                                    size = { 292 216 }
+                                    tooltip = "[Localize(Concatenate(Scope.GetFlagName, '_title'))]"
+                                    onclick = "[GetScriptedGui('votc_select_talk_scene').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_scene', MakeScopeFlag(Scope.GetFlagName)).End)]"
+                                    onclick = "[GetVariableSystem.Clear('votc_scene_selector_opened')]"
+                                    state = {
+                                        name = hover
+                                        trigger_on_hover_start = yes
+                                        on_finish = "[SetWidgetColor('votc_scene_card_border', 1.0, 0.9, 0.7, 0.8)]"
+                                    }
+                                    state = {
+                                        name = unhover
+                                        trigger_on_hover_end = yes
+                                        on_finish = "[SetWidgetColor('votc_scene_card_border', 0.8, 0.7, 0.5, 0.6)]"
+                                    }
+                                    icon = {
+                                        name = "votc_scene_background"
+                                        alwaystransparent = yes
+                                        parentanchor = top|hcenter
+                                        size = { 292 156 }
+                                        texture = "[GetIllustration(Scope.GetFlagName).GetTexture( GetPlayer.MakeScope )]"
+                                        using = Mask_Rough_Edges
+                                        fittype = centercrop
+                                    }
+                                    widget = {
+                                        name = "titan_scene_caption_band"
+                                        alwaystransparent = yes
+                                        parentanchor = bottom|hcenter
+                                        size = { 292 60 }
+                                        background = {
+                                            using = Background_Area_Dark
+                                            alpha = 0.95
+                                        }
+                                        text_multi = {
+                                            name = "titan_scene_caption"
+                                            parentanchor = center
+                                            size = { 264 52 }
+                                            max_width = 264
+                                            maximumsize = { 264 52 }
+                                            autoresize = no
+                                            text = "[Localize(Concatenate(Scope.GetFlagName, '_title'))]"
+                                            default_format = "#high"
+                                            using = Font_Type_Flavor
+                                            fontsize = 18
+                                            align = center|nobaseline
+                                            alwaystransparent = yes
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    expand = {}
+                }
+            }
+        }
+        text_single = {
+            layoutpolicy_horizontal = expanding
+            text = "VOTC Titan Edition"
+            default_format = "#low"
+            using = Font_Size_Small
+            align = center
+            alpha = 0.5
+            margin_bottom = 8
+        }
+    }
+}

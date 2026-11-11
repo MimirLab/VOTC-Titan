@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "addonSha256": "5f50b95fd93a02f208135621448e2c47ce21670f21656790c2fa6724e309b900",
+  "ck3": "1.19.0.6",
+  "goa": "0.6.5",
+  "communityEdition": "2.5.0",
+  "verified": [
+    "native conversation picker",
+    "region eligibility",
+    "explicit venue changes",
+    "group revalidation",
+    "NPC invitations"
+  ]
+}

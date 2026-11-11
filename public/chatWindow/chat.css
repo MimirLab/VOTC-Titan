@@ -1426,3 +1426,61 @@ html{
 .launcher-scene-art summary { cursor: pointer; padding: 5px 8px; color: #cfbb86; font-size: 12px; }
 .launcher-scene-art canvas { width: 100%; height: 150px; display: block; object-fit: contain; }
 @media (max-height: 650px) { .launcher-scene-art canvas { height: 100px; } }
+
+.scene-gallery-open { color: var(--titan-gold); padding: 4px 10px; }
+.scene-gallery {
+    width: min(1080px, calc(100vw - 28px));
+    max-width: none;
+    max-height: calc(100vh - 28px);
+    box-sizing: border-box;
+    padding: 0;
+    background: var(--titan-bg);
+    color: var(--titan-text);
+    border: 1px solid var(--titan-border);
+    border-radius: 6px;
+    box-shadow: 0 18px 60px #000c;
+    font-family: Gitan, serif;
+    overflow: hidden;
+}
+.scene-gallery[open] { display: flex; flex-direction: column; }
+.scene-gallery::backdrop { background: #08090588; }
+.scene-gallery-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--titan-border);
+    background: var(--titan-panel);
+}
+.scene-gallery-header h2 { font-size: 22px; margin: 0; }
+.scene-gallery-location { color: var(--titan-muted); margin: 4px 0 0; }
+.scene-gallery-location:empty, .scene-gallery-status:empty { display: none; }
+.scene-gallery-status { color: var(--titan-gold); margin: 12px 20px 0; }
+.scene-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+    gap: 10px;
+    padding: 14px;
+    overflow-y: auto;
+}
+.scene-gallery-card {
+    position: relative;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+    background: var(--titan-panel);
+}
+.scene-gallery-card[aria-current="true"] { border-color: var(--titan-gold); color: var(--titan-gold); opacity: 1; }
+.scene-gallery-card:focus-visible, .scene-gallery-close:focus-visible { outline: 2px solid var(--titan-gold); outline-offset: -2px; }
+.scene-gallery-card canvas { display: block; width: 100%; height: auto; aspect-ratio: 1.875; object-fit: cover; background: #10120e; }
+.scene-gallery-card span {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 8px 10px;
+    font-size: 15px;
+    color: #f6e9cb;
+    background: #10120eea;
+}
+.scene-gallery-card[aria-current="true"] span { color: var(--titan-gold); }

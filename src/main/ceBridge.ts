@@ -47,7 +47,7 @@ export function initializeCeCommandFiles(userFolder: string): void {
     fs.mkdirSync(run, { recursive: true });
     for (const name of ceRunnerFiles(userFolder)) {
         const file = path.join(run, name);
-        if (!fs.existsSync(file)) fs.writeFileSync(file, '', { flag: 'wx' });
+        if (!fs.existsSync(file)) fs.writeFileSync(file, '\uFEFF', { flag: 'wx' });
     }
 }
 

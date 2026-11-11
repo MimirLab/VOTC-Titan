@@ -2,8 +2,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { createHash } from 'crypto';
-import { readLauncherSceneArt } from '../../src/main/scenes/launcherSceneArt';
-import { LauncherSceneReader, sceneStatePredicate } from '../../src/main/scenes/launcherSceneCapture';
+import { readLauncherSceneArt, readLauncherScenePreview } from '../../src/main/scenes/launcherSceneArt';
 import { SCENE_CATALOGUE as C, SCENE_CATALOGUE_DIGEST as D } from '../../src/shared/scenes/catalogue.generated';
 import { sceneEligible } from '../../src/shared/scenes/sceneContext';
 import { SceneSnapshot } from '../../src/shared/scenes/types';
@@ -41,4 +40,14 @@ test('a changed or escaping painting is rejected', () => {
     fs.unlinkSync(path.join(root, scene.asset));
     fs.symlinkSync('/etc/hostname', path.join(root, scene.asset));
     expect(() => readLauncherSceneArt(snapshot, snapshot.selected, root)).toThrow('path');
+});
+
+test('gallery previews use verified eligibility even when the current scene is a stock CE venue', () => {
+    const snapshot = fixture();
+    const venue = snapshot.selected;
+    snapshot.selected = '';
+    expect(readLauncherSceneArt(snapshot, venue, root)).toBeUndefined();
+    expect(readLauncherScenePreview(snapshot, venue, root)?.toString()).toBe('retained synthetic texture bytes');
+    expect(readLauncherScenePreview({ ...snapshot, eligible: [] }, venue, root)).toBeUndefined();
+    expect(readLauncherScenePreview({ ...snapshot, mode: 'core' }, 'titan_city_stormwind_the_lion_throne_hall', root)).toBeUndefined();
 });

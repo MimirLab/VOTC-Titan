@@ -3,7 +3,7 @@ import path from 'path';
 import { GameData } from '../../src/shared/gameData/GameData';
 import { Config } from '../../src/shared/Config';
 import { configureLauncherScenes, observeLauncherSceneLine, bindLauncherScene, setLauncherScenePublisher } from '../../src/main/scenes/launcherSceneRuntime';
-import { actionForScene, runActionWithScenePolicy, waitForSceneSelection } from '../../src/main/scenes/sceneRuntime';
+import { actionForScene, runActionWithScenePolicy, selectLauncherVenue, waitForSceneSelection } from '../../src/main/scenes/sceneRuntime';
 import { EncounterCapture } from '../../src/main/background/EncounterCapture';
 import { Action } from '../../src/main/ts/conversation_interfaces';
 jest.mock('../../src/main/scenes/launcherSceneSources', () => ({ validateLauncherSceneSources: () => true }));
@@ -54,4 +54,28 @@ test('explicit launcher choice waits for a fresh acknowledged query and publishe
 test('an unrelated actor or unacknowledged nonce cannot bind the retained fixture', () => {
     const data=game('bedchamber');observe();expect(bindLauncherScene(data,'ffffffffffffffffffffffff')).toBeUndefined();
     data.playerID=99;expect(bindLauncherScene(data,nonce)).toBeUndefined();expect(data.sceneSnapshot).toBeUndefined();
+});
+
+test('the gallery rejects out-of-area venues and can retry an unacknowledged choice', async () => {
+    const data = game('bedchamber');
+    observe();
+    const census = bindLauncherScene(data, nonce)!;
+    const venue = census.eligible.find(id => id.includes('pig_and_whistle'))!;
+    const capture = jest.spyOn(EncounterCapture.prototype, 'capture').mockResolvedValueOnce(false)
+        .mockImplementationOnce(async function(this: EncounterCapture) {
+            observe();
+            this.lastAcknowledgedNonce = nonce;
+            return true;
+        });
+    const publish = jest.fn();
+    setLauncherScenePublisher(publish);
+
+    await expect(selectLauncherVenue(data, 'titan_farraki_court')).rejects.toThrow('unavailable');
+    expect(capture).not.toHaveBeenCalled();
+    await expect(selectLauncherVenue(data, venue)).rejects.toThrow('did not confirm');
+    expect(data.scene).toBe('bedchamber');
+    expect(publish).not.toHaveBeenCalled();
+    await selectLauncherVenue(data, venue);
+    expect(data.scene).toBe(venue);
+    expect(publish).toHaveBeenCalledTimes(1);
 });

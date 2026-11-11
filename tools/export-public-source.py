@@ -28,6 +28,9 @@ TOOLS = {
  'lorebook_campaign_clock.py', 'lorebook_observed.py', 'lorebook-observed-bindings.json',
  'lorebook_mutations.py', 'lorebook_game_state.py', 'lorebook-game-state-catalogue.json',
  'launcher-scene-policy.json',
+ 'enable-titan-scenes.py', 'build-titan-scene-addon.py', 'install-titan-scene-addon.py',
+ 'build-game-mod.py', 'goa_timeline_audit.py', 'world_art_provenance.py', 'scene_admission.py',
+ 'scene_presentation_contract.py', 'world_scene_contract.py', 'titan-scenes-qualification.json',
 }
 PY_TESTS = {
  'test_native_build.py', 'test_launcher_only_install.py', 'test_launcher_package.py',
@@ -36,9 +39,12 @@ PY_TESTS = {
 PUBLIC_AGENTS = """# VOTC Titan Edition
 Titan is the MimirLab-maintained GoA2 roleplay launcher.
 
-Keep all runtime changes in the launcher. Users install compatible CK3, GoA2 and
-VOTC Community Edition through Steam, then install Titan. Never require a Titan
-game fork, edited Workshop/base files or a Steam launch wrapper.
+Users install compatible CK3, GoA2 and VOTC Community Edition through Steam,
+then install Titan. Runtime changes belong in the launcher. The optional Titan
+Scenes add-on is limited to the native venue picker and builds from the user's
+Workshop files. Keep a stock Steam setup usable with the launcher alone.
+Before publishing, compare GitHub main and the qualified local launcher.
+Carry forward verified fixes from parallel work and use fast-forward updates.
 Preserve upstream attribution and the software license. Third-party assets keep
 their own terms; source attribution alone is not a redistribution grant.
 
@@ -68,6 +74,8 @@ def selected(name):
         return True
     if p.parts[0] == 'default_userdata':
         return len(p.parts)>1 and p.parts[1] in {'configs','scripts'}
+    if name == 'game_mod/overrides/gui/custom_gui/votc_scene_selector.gui':
+        return True
     if p.parts[0] == 'game_mod':
         return len(p.parts)==3 and p.parts[1]=='scenes' and p.suffix=='.json'
     if p.parts[0] == 'docs':
