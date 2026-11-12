@@ -3,6 +3,7 @@ import { CultureSnapshot } from '../../shared/gameData/CultureSnapshot';
 import { FaithSnapshot } from '../../shared/gameData/FaithSnapshot';
 import { containsReligiousSteering, projectCultureEvidence, cultureSourceId } from '../culture/cultureEvidence';
 import { isAuthoredConceptReading } from './authoredConceptBank';
+import { projectedFaithRelationship } from './faithRelationshipBank';
 
 type Domain = 'culture' | 'faith';
 interface Card { id: string; source: string; kind: string; readings: string[]; scope: string; required: boolean }
@@ -69,6 +70,9 @@ export function meaningPlan(domain: Domain, snapshot: CultureSnapshot | FaithSna
                 key === 'faith' ? 'This faith\'s account and teachings; retain subjects and negation. A founder of an empire is not necessarily founder of the religion.' :
                     'Broader roots contextualize this faith; current observed teachings and classifications take precedence over inherited defaults.', !!f.description.trim());
         }
+        const parent = projectedFaithRelationship(snapshot as FaithSnapshot)?.parent;
+        if (parent) add('description:parent_faith', 'originating faith account', [parent.text],
+            'An originating faith account provides inherited context; current teachings take precedence, and present rituals and personal adherence are not established.', true);
         const morals = facts.filter(f => ['virtue','sin'].includes(f.kind)).sort((a,b) => a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
         if (morals.length) add('description:effective_morality', 'current religious valuations',
             ['Esteemed dispositions: ' + morals.filter(f => f.kind === 'virtue').map(f => (f.name || f.key).replace(/_/gu, ' ')).join(', ') + '.',

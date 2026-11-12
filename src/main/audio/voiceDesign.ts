@@ -14,7 +14,9 @@ import { castingUndeadCoverage, undeadNeutralIndividual } from './undeadVoice';
 function captureVoiceDesignContext(conv: Conversation, actor: Character,
     persona = characterPromptDescription(conv.gameData, actor, conv.config, conv.votcDataPath)): readonly string[] {
     const lore = composeGoaContext(persona, actor, conv.config, conv.gameData);
-    const background = getRoleplayBackgroundPlacement(actor, conv.config);
+    // Inherited worldview belongs to roleplay; keep existing individual voice
+    // design inputs stable when no adopted cultural practice changed.
+    const background = getRoleplayBackgroundPlacement(actor, conv.config, { culturalRoots: false });
     const authored = getEffectiveCharacterDescription(conv.votcDataPath, String(conv.gameData.playerID), String(actor.id));
     return [finishGoaContext(lore.description, lore), ...[authored && 'Player-authored portrayal:\n' + authored,
         background.early, background.faith].filter((value): value is string => !!value)];

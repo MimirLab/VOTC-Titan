@@ -17,7 +17,7 @@ test.each<SummaryKind>(['conversations','letters','diaries'])('%s stale editor c
 test('a fresh edit changes only visible records, preserves hidden branch records, and supports subsequent edits',async()=>{
  const file=write('conversations','2',[{content:'visible'},{content:'hidden',votcTimelineNodeId:'9-9'}]);
  const snapshot=await edits.read('1','conversations',async()=>[{content:'visible',characterId:'2',characterName:'Actor'}]);
- edits.save('1','conversations',[{content:'edited',characterId:'2'}],snapshot.revision);
+ edits.save('1','conversations',[{...snapshot.data[0],content:'edited'}],snapshot.revision);
  expect(JSON.parse(fs.readFileSync(file,'utf8')).map((r:any)=>r.content)).toEqual(['edited','hidden']);
  edits.save('1','conversations',[],snapshot.revision);
  expect(JSON.parse(fs.readFileSync(file,'utf8')).map((r:any)=>r.content)).toEqual(['hidden']);

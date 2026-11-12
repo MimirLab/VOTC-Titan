@@ -57,6 +57,23 @@ await test('browsing presets never activates or writes a preset',async()=>{
 await test('rejected preset write keeps the draft and dirty state',async()=>{
  const status=[];let dirty=false;const c=context('',{promptPresetNameInput:{value:'New',focus(){}},characterFilterSelect:{value:'global'},defaultPrompts:{prompts:{},mod_prompt_sets:{}},promptPresets:{global:{}},promptKeys:['mainPrompt'],promptTextareas:{mainPrompt:{textarea:{value:'Draft'}}},showStatusMessage:(...a)=>status.push(a),setSaveButtonState:v=>dirty=v,populatePresetSelector:async()=>{},ipcRenderer:{invoke:async channel=>channel==='get-config'?{}:{success:false,error:'fixture denied'}}});functions(c,prompts,['saveCurrentPreset']);await c.saveCurrentPreset();assert.equal(dirty,true);assert.equal(status.at(-1)[1],'error');assert.equal(c.promptTextareas.mainPrompt.textarea.value,'Draft');assert(!c.promptPresets.global.New);
 });
+await test('chat edits render the authoritative acceptance or rejection and ignore an old encounter acknowledgement',async()=>{
+ const errors=[],pending=deferred();let authority='gate',delay=false;
+ const c=context('<div id="messages"></div>',{chatSessionGeneration:1,currentEncounterId:'server-1',currentGameData:undefined,
+ addAudioReplay(){},renderReadingProse:async content=>content,parseControlledProse:content=>content,controlledProseView:content=>({content}),
+ updateRegenerateButtonState(){},displayErrorMessage:message=>errors.push(message),
+ ipcRenderer:{send(_channel,payload){if(!payload.newContent.includes('UNRECORDED'))authority=payload.newContent;},async invoke(channel,payload){assert.equal(channel,'edit-message-authoritative');assert.equal(payload.encounterId,'server-1');if(delay)return pending.promise;
+ if(payload.newContent.includes('UNRECORDED'))return{success:false,error:'Unrecorded phonetic marker',message:{id:'one',content:authority,editableContent:authority}};
+ authority=payload.newContent;return{success:true,message:{id:'one',content:authority,editableContent:authority}};}}});
+ c.chatMessages=c.document.getElementById('messages');functions(c,chat,['displayMessage']);
+ const message={id:'one',role:'user',name:'Player',content:'gate',editableContent:'gate'};await c.displayMessage(message);
+ const bubble=c.document.querySelector('.message-content');
+ const edit=async text=>{bubble.dispatchEvent(new c.window.MouseEvent('dblclick'));bubble.innerText=text;bubble.dispatchEvent(new c.window.KeyboardEvent('keydown',{key:'Enter'}));await tick();};
+ await edit('well');assert.equal(bubble.textContent,'well');assert.equal(message.content,authority);
+ await edit('river UNRECORDED');assert.equal(bubble.textContent,'well');assert.equal(message.content,'well');assert.match(errors.at(-1),/Unrecorded/);
+ delay=true;await edit('older edit');c.chatSessionGeneration++;c.chatMessages.innerHTML='<div id="new">New encounter</div>';
+ pending.resolve({success:true,message:{id:'one',content:'older edit',editableContent:'older edit'}});await tick();assert.equal(c.document.getElementById('new').textContent,'New encounter');assert.equal(message.content,'well');
+});
 return {passed:true,checks:passed.length,scenarios:passed};
 };
 if(require.main===module)module.exports().then(result=>console.log(JSON.stringify(result))).catch(error=>{console.error(error);process.exitCode=1;});

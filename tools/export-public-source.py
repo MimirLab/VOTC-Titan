@@ -101,6 +101,11 @@ def selected(name):
     if name == 'tests/helpers/renderer-integrity.cjs':
         return True
     if p.parts[0] == 'tests':
+        if len(p.parts) == 3 and p.parts[1] == 'lorebook' and p.name in {
+            'test_campaign_clock.py', 'test_combined_reader.py', 'test_disclosure.py',
+            'test_game_state_reader.py', 'test_observed_lineage.py',
+        }:
+            return True
         return p.suffix in {'.ts','.json','.txt','.log'} or p.name in PY_TESTS
     return False
 

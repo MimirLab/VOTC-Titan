@@ -830,6 +830,12 @@ async function saveCurrentTabData() {
         const result = await ipcRenderer.invoke(channels[tab], player, data, editRevisions[tab]);
         if (!owns()) return;
         if (!result?.success) throw new Error(result?.error || 'Unable to save summaries.');
+        if (result.data) {
+            if (tab === 'conversations') allSummaries = result.data;
+            else if (tab === 'letters') allLetters = result.data;
+            else allDiaries = result.data;
+            filterCurrentTabData();
+        }
         showStatusMessage(window.LocalizationManager.getTranslation('summary_manager.save_success', 'Summaries saved successfully'), 'success');
 
         hasUnsavedChanges = false;

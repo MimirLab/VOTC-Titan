@@ -27,6 +27,10 @@ roleplay, Titan reads current game state through CE and selects the applicable
 history. Public world events and personal knowledge have separate access rules.
 A change of controlling mind also changes whose private experiences apply.
 
+Reviewed parent-culture knowledge can combine with an imported report in the same
+conversation. Nested lookups retain each source's access rules, and cached
+navigation metadata reduces routing work without adding a model step.
+
 The current adapter reads **18 world-state predicates and nine character-owned
 traces**. It cannot recover choices the game has stopped recording. Those choices
 stay unknown. An attempted action and its outcome are separate records, as are
@@ -50,6 +54,16 @@ identity. Speech profiles add **166 cultural registers**, **35 devotional
 registers covering 42 faiths**, and **12 role or training profiles**. Role guidance
 requires evidence of that role. Personality and conviction remain part of the
 character's portrayal.
+
+Hybrid and descendant cultures retain reviewed parent roots, connected to the
+customs they currently practice. Wildhammer gryphon care, Jinyu watersmithing,
+Mantid kypari stewardship and other selected traditions give those customs their
+Warcraft meaning. A custom does not establish an individual's body or abilities.
+
+When GoA2 records a faith's original source, Titan can carry its reviewed account
+and selected inherited tenet perspectives into roleplay. Current teachings take
+precedence. The original source does not establish every intermediate reform or
+an individual's compliance with its teachings.
 
 The language engine works out what each listener understands. Known languages,
 related tongues, cultural contact and Learning affect comprehension. Each

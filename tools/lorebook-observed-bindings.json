@@ -297,5 +297,472 @@
     "selected branches",
     "northern/southern/tharian names",
     "ambiguous dwarf/highborne subgroups"
-  ]
+  ],
+  "lineageBindings": [
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "alteraci",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"048eff80c55244f37c21bc16ef0c1e801d17e6c371c147a2d07958f31bdf4cc1\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "arathi",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"0be84b404b31799dd9585053bc496f194cdf8bf7ef724b98e91ffdf023d2acd2\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "arathorian",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"1158d019358b65952098655ff42edbd4acb6bce215bf5fc89ce87faa076aff09\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "azerothian",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"2d9712a62312002525d9b7c393527d17ea5d0368133d1516f3781183e2e832a3\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "baradin",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"3a07d23c119f6620678d639dc90a2626131ab83cacb605af119c30cdc74dac0c\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "blackwater",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"6a8447c28bc60e201cfada89cb1bb3a2f46209c0a6efd05c6cc07be90d079359\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:010"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "bronzebeard",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"5a8d00a5fe00da344223e5d9fc85c36247b9b722b9137d80b23a18cb2c3f430e\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:002"
+      ],
+      "queryAliases": [
+        "bronzebeard"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "dalaranian",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"4b39a4e8a0b73cda74360ab3a4137cc14e5fcacedc27a49c34054368f4dbddb7\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "fisher_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"449ed9e699c700adce8a91216bc0f7cfe092ea060c10d1bd8f1e4a96a88ec533\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "forest_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"38734772bc23cb75c0a3ea6dc560993541084a065111f4c6cf6511b0f11275aa\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "gilnean",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"599de2b5b29a8b903b69d9ab8e672dfcfa1ef1d9e1629d1e57fc3301c4dca8e3\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "gnome",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"140edb4c445c8ece944e4cfcdea9d337be3da21673e788c7bc19569289361696\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:008"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "goblin",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"d7ca1babedfd82a04a4c1d1d38c34757c3c397012cc954c82b96f659b4141e6d\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:010"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "hillsbrad",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"787356fd180a3490137118d32e3273571ce684634cb8375d47d51e44a9158cfd\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "illidari",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"5277c605e162c695b8d72238ca098cfa71e8990e188d9dfaa819e52f3c02de29\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:007"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "leper_gnome",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"994d2cf7d28e7c6de39cd9cfa8f0b8a8735c2f4e113ad3fe235da28b886b91d7\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:008"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "lordaeronian",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"c78dab2a04196dadd814d4e5b1dc41e57c7f7fadda41736f21f5e29570bd16a3\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "mainland_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"8a1b4e81ed0df472cce8f61d78d4cb2adb709bb1d19c361486dd4b8974e1f759\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "mechagnome",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"4b0c8f0e304ebee6058b16e3276455e8a9fb29c9bd176fe575df4204a2901fa9\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:008"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "mechagonian",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"ddcebcbb7ac5f820c1e088f0d20fff5b5c5c086572ca1d656f336a5ba893d475\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:008"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "mountain_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"7f6866f1bdc3e8203478a4338eacf040b3b6914d65049ddf852440a55b362efa\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "naga",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"541a938d75ec7ab976e9d9cd45a2f015f825bdae77c2fdb91c159f70a5f5569c\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:030"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "night_elf",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"272a57fa9e1c1eb96012616cfb095fa1deee6c3a472d295b19cdcbbd60bed621\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:007"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "nightborne",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"aeddc52bb1d9271664f6bb26a1b7b5c600b24861e1984b49305685bd4714cfb3\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:184"
+      ],
+      "queryAliases": [
+        "nightborne"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "northsea",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"cfb579ee9f333398d4ae048a1132721b9a7935d546a49329bd126eb731775931\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "old_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"6c51b7876148e2e35588b20e1c641d2acdd32484a5a772d3fe69e278f1c77260\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "ping",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"351ad92a0473ab9addd652ef4f4f4a275837b5fcf8d9155b7492d9cf78ed14cf\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "protector",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"faf4d9144f7ffc77bf02da2e7fb33072cec8c5f5ea5524f61aae5186db95206a\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:007"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "spiritual_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"3a0627896122967caa112fc64cba0d4da4816e97ec671f400da5a458e3027543\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "theramore",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"54ddcf52b7ec0994e4e11920590d7589f199b1dfc873580685f4f61feac1b506\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "tirassian",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"7af515b3e3e40c8b3dc3004d4f4667fa82dd4a97179ae213b8df6eeb01487643\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:001"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "tortollan",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"b8a0aebd83bf15bf070dd5fa13f23b93ef2db2375be83fe4aa1f6b18638857a3\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:193"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "tuskarr",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"6a41b2a3bc6d42f0e05c251a20f135946ee903ab9a41ab31e70466944ab0c27b\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:029"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "wandering_pandaren",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"8d2f3d996d4763067753b565a0a8558c52959303180cbdd3411134136d2fb35d\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:028"
+      ]
+    },
+    {
+      "lineageFact": {
+        "kind": "lineage",
+        "key": "wildhammer",
+        "category": "source_culture",
+        "name": "",
+        "description": "",
+        "rules": "{\"sourceDefinitionHash\":\"fa232830a155b0e6f8bd90a5e41bd9d35c03727d5abd3ea1c223d98187335fe0\",\"version\":1}"
+      },
+      "subjectIds": [
+        "expanded:people:003"
+      ],
+      "queryAliases": [
+        "wildhammer"
+      ]
+    }
+  ],
+  "lineageSource": "Exact inspected effective culture definitions; parenthood is observed separately by the game engine. These mappings admit only previously qualified common knowledge for their source subjects."
 }

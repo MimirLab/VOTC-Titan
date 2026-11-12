@@ -20,11 +20,11 @@
           "definitionHash": "b628f7665f3c7b291226e3c1ecb325ab2a33da4fad4e034987fbfba1553e4101"
         }
       ],
-      "text": "Shared roost work teaches companionship before command. Hunters provide for nesting gryphons, and a gryphon's care and deeds belong to clan life alongside those of dwarven companions. The wider community sustains these bonds even when its members do not ride.",
+      "text": "Shared roost work teaches companionship before command. Hunting parties share good meat with nesting gryphons, whose care and deeds belong to clan life alongside those of dwarven companions. The wider community sustains these bonds even when its members do not ride.",
       "coveredReadingIds": [
         "falconry_wildhammer_gryphon"
       ],
-      "rationale": "Approved finding G02. A retained Wildhammer gryphon-care practice plus an actually adopted relevant hunting or kinship custom; resolve one combined meaning if both qualify. Do not require Falconry for all gryphon custom. Keep care for companions separate from a particular person's ownership, birth-year group, marriage or present hunt. Preserve the practice through unrelated reforms and renaming."
+      "rationale": "Approved finding G02. A retained Wildhammer gryphon-care practice plus an actually adopted relevant hunting or kinship custom; resolve one combined meaning if both qualify. Do not require Falconry for all gryphon custom. Keep care for companions separate from a particular person's ownership, birth-year group, marriage or present hunt. Preserve the practice through unrelated reforms and renaming. Local lorebook expanded:expanded:people:003:chapter:3 specifies that hunting parties owe a portion of good meat to nesting gryphons. This is shared provision, not evidence of a current meal, a particular character's occupation or mount."
     },
     {
       "id": "retained_dark_iron_forge_practice",
@@ -150,6 +150,192 @@
       "text": "A personal candle is a tool, comfort and token of dependable company. Borrowing it calls for permission and a plan for its return; contributing wax or useful salvage helps another person trust the newcomer sharing the shelter.",
       "coveredReadingIds": [],
       "rationale": "Approved finding G10. Retained warren candle-care practice in a relevant mining, borrowing or hospitality context. Review whether a short mining refinement or topic-selected local custom is the better route. Do not infer candle worship, religious sacrifice, ownership of a candle or the location of the current scene from Murine heritage. Do not append this passage to every mining discussion."
+    },
+    {
+      "id": "retained_jinyu_water_forging_practice",
+      "cultureDefinitions": {
+        "jinyu": "8819d4e89dc3040d6eb776eaa56de7ab7d877ba82d60f9d21909137731e0931e",
+        "ankoan": "bf51fb22ce78622f375b00d9bfde442e059a292713cadb38e0afbe2decd7e6b8"
+      },
+      "anchors": [
+        {
+          "key": "tradition_sorcerous_metallurgy",
+          "definitionHash": "22f4b4aa04d8db5b39bda22f2a6f10a12ce158303b72e181b898f1f49df52a62"
+        },
+        {
+          "key": "tradition_metal_craftsmanship",
+          "definitionHash": "48d80f02672931c10a3a1debc5d6955c8d333cec5c8ee8a24c9ba8caca8df9a9"
+        },
+        {
+          "key": "tradition_artisans",
+          "definitionHash": "17d64721ca204a9b6d4b4983e3472b791f7d9d0a91848c6ef2c9b22edcfa9516"
+        }
+      ],
+      "requiresInnovations": [
+        {
+          "key": "innovation_watersmithing",
+          "definitionHash": "5b35c6a9d264f794f58870ab1dd6b81ae951cc0201b1285179bf1c56117670e8"
+        }
+      ],
+      "text": "Water-shaped stonework prizes careful material choice and controlled change. Seamless-looking walls and arms as hard as forged steel earn esteem through the discipline behind their making; a smooth surface still has to withstand use.",
+      "coveredReadingIds": [
+        "jinyu_metalwork_the_current_shapes_the_edge",
+        "jinyu_sorcerous_metallurgy_the_discipline_of_moving_water"
+      ],
+      "rationale": "Current or inherited Jinyu/Ankoan culture, a currently adopted relevant craft and actually discovered exact Watersmithing are all required. Current GoA Watersmithing explicitly shapes rock and stone, makes steel-hard arms and seamless-looking walls. Local lorebook people176 chapter6 supplies controlled change/material identity. No personal water magic, waterspeaker role, manufacture, equipment or metallurgical substitution follows. Innovation alone establishes no adopted social custom."
+    },
+    {
+      "id": "retained_argussian_elekk_husbandry",
+      "cultureDefinitions": {
+        "draenei": "a0d8f64081229d5ee48a7c1d6d71c641d5ac307a7837332f5acbec19a4b7d5bf",
+        "lightforged_draenei": "fc01b614dd90f36264d9fe75c1655c82e3fe96652c831b0c2228c84e02b0e25f",
+        "broken": "f7458ab98c5cdf0b9a1c66591599ea58e0c90bedfd277868f45e6733bec352d5"
+      },
+      "anchors": [
+        {
+          "key": "tradition_lords_of_the_elephant",
+          "definitionHash": "d162afa372683efef57325338fbefe4a1ae4ed55235850b35a7478057ee7330f"
+        }
+      ],
+      "text": "Mighty elekk carry the royal prestige of this great-beast tradition. Capturing, training and caring for them, including their use in war, earn esteem through patient handling; a ruler's display depends on keepers whose work continues after the crowd leaves. No personal mount, office or handling skill follows.",
+      "coveredReadingIds": [
+        "argussian_elekk_patient_husbandry"
+      ],
+      "rationale": "Current GoA draenei, Lightforged and Broken source cultures adopt Lords of the Elephant. GoA exarch_flavor explicitly describes draenei riding mighty elekk into battle; this gives their inherited great-beast tradition a concrete local expression. Royal esteem and husbandry come from the actual adopted tradition. Scope remains current/parent native culture plus actual adoption, including renamed or mixed descendants. No Exodar, O'ros, alternate-Draenor history, intelligence/bond equivalent to gryphons, actor mount or personal profession is inferred."
+    },
+    {
+      "id": "retained_harpy_nest_standing",
+      "cultureDefinitions": {
+        "harpy": "b9f164cd6e5b0100a831361aa871c4da78ffa6e014565b0d90f70e999f202b41"
+      },
+      "anchors": [
+        {
+          "key": "tradition_nubian_warrior_queens",
+          "definitionHash": "f8b42246038a37ba19a3576aa8985a2d34fc0a8e9384e7bb8e9ad4163756cbd2"
+        },
+        {
+          "key": "tradition_female_only_inheritance",
+          "definitionHash": "f673a03099417b21d457921d06b3f1d8024a9fab353ea61fcbac045432674438"
+        }
+      ],
+      "text": "Nest standing is contested before familiar clanmates: a matriarch's share of food and ornaments and a rival's display can express both deference and challenge. Approval, envy and ridicule can build temporary unity while rivalry persists.",
+      "coveredReadingIds": [
+        "harpy_female_preeminence_nest_standing"
+      ],
+      "rationale": "Local lorebook expanded:expanded:people:042:chapter:3 and chapter:4 describe matriarchal shares, trophy ornaments and rivalry within guarded nests. Current GoA Harpy adopts Warrior Queens; its maternal descent and female martial authority provide an actual relevant custom, while later Female-Only Inheritance also qualifies. This is social culture, not proof of a character body, flying ability, sex, captive, matriarch, food or personal opinion. The existing combined appearance-bias reading does not fully cover trophy and nest rivalry, so only the complete ordinary nest reading suppresses this clause."
+    },
+    {
+      "id": "retained_warsong_wolf_tactics",
+      "cultureDefinitions": {
+        "warsong": "a5570c48e06c30f5318952de8e20b0b7d27a3f34e4b2edf117271c54ff1f07f5"
+      },
+      "anchors": [
+        {
+          "key": "tradition_warrior_culture",
+          "definitionHash": "a7041a280fdddfc7971af0c9bf64679e0f1ca5698e5ad168896e8ac54c21960f"
+        },
+        {
+          "key": "tradition_hit_and_run",
+          "definitionHash": "10310e8867b6f3340d38907196715845540446c5f2cacc24bffb46420fdef68c"
+        }
+      ],
+      "text": "Warsong wolf riders are remembered for swift strikes and withdrawals; the strengths of wolf and rider together give those tactics their force. A wolf is a partner in the fighting tradition, not merely a means of transport.",
+      "coveredReadingIds": [],
+      "rationale": "Current GoA wolfrider flavor describes an orc-wolf bond. Ungated lorebook base:editorial-passage_596407c2ad47e0669cf6d75f and base:editorial-passage_0204c8fc93e9cc394ef869a0 describe Warsong wolf riders and their swift hit-and-run tactics against the ogres. Current GoA Warsong adopts Warrior Culture. The separate source about selectively breeding wolves is event-gated; no such breeding, current wolf, rider, skill or historical event is asserted. Frostwolf household tending remains a separate aspect of an inherited bond."
+    },
+    {
+      "id": "retained_centaur_mobile_warfare",
+      "cultureDefinitions": {
+        "centaur": "82355c390fe293f19d0c56c1b4cbd672614f81f75edce404dc7ef5e2acb92eba"
+      },
+      "anchors": [
+        {
+          "key": "tradition_horse_lords",
+          "definitionHash": "cf6df7cec1441f5379ed52c3c3b4536f6e8c7be79083f526ce4288b9f70cca4d"
+        }
+      ],
+      "text": "Centaur tribes prize swift movement in war: route knowledge, endurance and well-secured equipment help warriors choose where to strike or withdraw. Care of legs and hooves supports that mobility. Horse handling is also esteemed when riding is practiced; the custom establishes neither a person's body nor a present mount or personal skill.",
+      "coveredReadingIds": [
+        "centaur_mobile_warfare_and_horsecraft"
+      ],
+      "rationale": "GoA current centaur culture adopts Horse Lords; GoA creature_centaur description and local lorebook expanded:expanded:people:047 chapters 2, 3 and 6 describe centaur tribal mobility, route knowledge, care of legs and hooves and equipment secured for speed. The adopted source tradition also explicitly values horses and mounted warfare, retained for cultures with riders. Scope is an actual native current/parent culture plus the exact adopted tradition, not an individual body or assumed player identity. No raid, horse, individual skill or current terrain follows."
+    },
+    {
+      "id": "retained_blue_stewardship_practice",
+      "cultureDefinitions": {
+        "blue_dragon": "69c4ec2b8bc679e72219a8768cc64cdf5d01ee9d8fe99c7b7426847eda042bc5"
+      },
+      "anchors": [
+        {
+          "key": "tradition_scholar_officials",
+          "definitionHash": "e8af36a9d07cdf2f9fc4d606160ca26a9171e9c53c56d14b6b5b72d61348d93d"
+        },
+        {
+          "key": "tradition_philosopher_culture",
+          "definitionHash": "ece3d11ce4bece28391fc23be3d7d43de0d16d676c08e5a4b8bd0e551de632ec"
+        },
+        {
+          "key": "tradition_hard_working",
+          "definitionHash": "8573697a213e19577e238b95dc5eaed7d2dda86f556fccb92a61ad5831fe35d8"
+        }
+      ],
+      "text": "Careful inquiry preserves mistakes as well as successes for future learners. Independent questions deserve a hearing beside established authority; guarding knowledge from misuse can become an excuse to silence a useful challenge.",
+      "coveredReadingIds": [
+        "blue_stewardship_scholars_record_the_failed_attempt"
+      ],
+      "rationale": "Local lorebook expanded:expanded:people:067:chapter:3 describes inquiry, archives and elders attentive to concealed mistakes; chapter:4 commemorates discovery with records of collaborators and trusted demonstrations. Current GoA blue_dragon culture adopts Philosopher Culture and Hard Working. Later Scholar Officials selects the existing complete blue stewardship reading; changed-heritage descendants retain the standalone practice. Cultural inquiry supplies no Malygos/Titan faith, personal body, age, archive, role, magical power, education or discovery."
+    },
+    {
+      "id": "retained_lost_one_marsh_scouting",
+      "cultureDefinitions": {
+        "lost_one": "3eb8b1f469b12909b41c2332cb1672315db65ed3bf67caf533210c3baf28f216"
+      },
+      "anchors": [
+        {
+          "key": "tradition_hit_and_run",
+          "definitionHash": "10310e8867b6f3340d38907196715845540446c5f2cacc24bffb46420fdef68c"
+        }
+      ],
+      "text": "Marsh scouts attend to displaced reeds and birds’ alarms. Hidden markers and routes divided among guides can protect a refuge if one guide is captured.",
+      "coveredReadingIds": [],
+      "rationale": "Local lorebook expanded:expanded:people:179:chapter:3 describes teachers adapting old techniques to reeds, timber and hides; chapter:6 describes displaced reeds, bird alarms, hidden markers and guides holding separate parts of a route. The exact current or parent Lost One culture and actually adopted supporting custom are required. No present refuge, scout, captive, craft skill, faith, ancestry or individual body follows. Current GoA Lost One adopts Hit and Run; the additional detail is route knowledge that makes a mobile tactic distinctive."
+    },
+    {
+      "id": "retained_lost_one_craft_memory",
+      "cultureDefinitions": {
+        "lost_one": "3eb8b1f469b12909b41c2332cb1672315db65ed3bf67caf533210c3baf28f216"
+      },
+      "anchors": [
+        {
+          "key": "tradition_artisans",
+          "definitionHash": "17d64721ca204a9b6d4b4983e3472b791f7d9d0a91848c6ef2c9b22edcfa9516"
+        },
+        {
+          "key": "tradition_diasporic",
+          "definitionHash": "a1b7327938289635f9aecf508215b7fbc79262329a724b1fb5f7895aac1ef0df"
+        }
+      ],
+      "text": "Old techniques can be taught through work with unfamiliar reeds, timber and hides; a pupil can preserve a method by changing it for the materials at hand.",
+      "coveredReadingIds": [
+        "lost_one_diaspora_teaching_a_future_beyond_loss",
+        "lost_one_artisans_remembered_skill_new_materials"
+      ],
+      "rationale": "Local lorebook expanded:expanded:people:179:chapter:3 describes teachers adapting old techniques to reeds, timber and hides; chapter:6 describes displaced reeds, bird alarms, hidden markers and guides holding separate parts of a route. The exact current or parent Lost One culture and actually adopted supporting custom are required. No present refuge, scout, captive, craft skill, faith, ancestry or individual body follows. These traditions are not adopted by the initial source culture. They select reviewed craft or diaspora readings when actually adopted; no starting membership is presumed."
+    },
+    {
+      "id": "retained_mantid_kypari_care",
+      "cultureDefinitions": {
+        "mantid": "c0d3bae92d107c7e26893efaa83155bf6a0eb6a4cf2926114969bf3d64f20f84"
+      },
+      "anchors": [
+        {
+          "key": "tradition_sacred_groves",
+          "definitionHash": "b08fc4e64d3ae7f798ab75421a72874753a293c64d18815c7e7425015e882499"
+        }
+      ],
+      "text": "Kypari trees have sustained whole communities, yielding sap worked into amber for structures and preservation. Tending their roots and reckoning what can be taken help protect the life and work that depend on them.",
+      "coveredReadingIds": [],
+      "rationale": "The current Mantid source culture adopts Sacred Groves. Local lorebook expanded:expanded:people:181:chapter:1 and chapter:2:chapter:1 describes kypari trees sustaining settlements, separate sap-tending and amber-shaping work, and damage to roots affecting the community. Chapter:3 and chapter:6 describe preservation; place:5.1.1.2:chapter:0 describes amber in construction. The exact current or parent Mantid culture and actually adopted Sacred Groves are required. Keep the independent living-woodland care meaning; no current kypari, amber, location, occupation, faith, personal ability or actor body follows."
     }
   ]
 }

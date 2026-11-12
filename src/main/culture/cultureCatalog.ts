@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import AdmZip from 'adm-zip';
 import { CultureFact, CultureFactKind } from '../../shared/gameData/CultureSnapshot';
-import { canonicalJsonStringify, logicalRequestHash } from '../promptWorkbench/canonicalJson';
+import { canonicalJsonStringify, logicalRequestHash, sha256Hex } from '../promptWorkbench/canonicalJson';
 import { parseCk3Script, ScriptEntry, scriptString, scriptStrings } from './ck3Script';
 import { staticLocalizationText } from './staticLocalization';
 import { getCulturePracticeBank } from '../background/culturePracticeBank';
@@ -136,6 +136,9 @@ export function catalogFromFiles(files: Map<string, string>): CultureCatalog {
         return selected ? label(selected, depth + 1) : child.replace(/_/g, ' ');
     });
     const definitions = new Map<string, { group: string; entries: ScriptEntry[] }>();
+    // Keep the same raw source binding used by authored practice rules, before
+    // resolving local script variables for the rest of the catalogue.
+    const lineageDefinitions = new Map<string, string>();
     const constants = new Map<string, string | ScriptEntry[]>();
     const graphics = new Map<string, Set<string>>();
     const exporterPath = 'common/scripted_effects/log_character_v2_effect.txt';
@@ -143,6 +146,11 @@ export function catalogFromFiles(files: Map<string, string>): CultureCatalog {
     const exporter = originalExporter ? { relative: exporterPath, source: originalExporter } : undefined;
     for (const file of [...files.keys()].filter(f => f.startsWith('common/') && !f.startsWith('common/scripted_effects/')).sort()) {
         const entries = parseCk3Script(files.get(file)!);
+        if (file.startsWith('common/culture/cultures/')) for (const entry of entries) {
+            if (!entry.key || entry.key.startsWith('@') || !Array.isArray(entry.value)) continue;
+            if (!/^[A-Za-z_][A-Za-z0-9_]*$/u.test(entry.key)) throw new Error('An unsafe culture lineage identifier was found.');
+            lineageDefinitions.set(entry.key, sha256Hex(canonicalJsonStringify({ key: entry.key, definition: entry.value })));
+        }
         const variables = new Map(entries.filter(e => e.key?.startsWith('@') && typeof e.value === 'string')
             .map(e => [e.key!, e.value as string]));
         const substitute = (values: ScriptEntry[]): void => {
@@ -268,6 +276,10 @@ export function catalogFromFiles(files: Map<string, string>): CultureCatalog {
         if (!safeKey.test(key)) throw new Error('An aesthetic identifier cannot safely be captured.');
         facts.push({ kind: 'aesthetic', key: `${category}:${key}`, category, name: key.replace(/_/g, ' '), description: '', rules: '' });
     }
+    facts.push(...[...lineageDefinitions].map(([key, sourceDefinitionHash]): CultureFact => ({
+        kind: 'lineage', key, category: 'source_culture', name: '', description: '',
+        rules: canonicalJsonStringify({ version: 1, sourceDefinitionHash })
+    })));
     facts.push(...getCulturePracticeBank().catalogueFacts(files, facts));
     facts.sort((a, b) => `${a.kind}:${a.key}` < `${b.kind}:${b.key}` ? -1 : 1);
     eras.sort((a, b) => a.key < b.key ? -1 : 1);

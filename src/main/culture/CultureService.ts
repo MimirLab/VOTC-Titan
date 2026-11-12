@@ -1,10 +1,12 @@
 import { ProfileState } from '../background/profileReadiness';
 import { BackgroundQueue } from '../background/BackgroundQueue';
-import { CultureSnapshot } from '../../shared/gameData/CultureSnapshot';
+import { CultureFact, CultureSnapshot, validateCultureSnapshot } from '../../shared/gameData/CultureSnapshot';
 import { Character } from '../../shared/gameData/Character';
 import { CultureInput, CultureGenerationResult, cultureInput } from './cultureIdentity';
 import { CultureLibrary } from './CultureLibrary';
 import { CultureObservation } from './cultureLog';
+import { getCulturalRootBank } from '../background/culturalRootBank';
+import { getCulturePracticeBank } from '../background/culturePracticeBank';
 
 export type CultureGenerator = (input: CultureInput, signal: AbortSignal) => Promise<CultureGenerationResult>;
 
@@ -39,9 +41,10 @@ export class CultureService {
     /** Observation itself remains nonblocking; dialogue can explicitly await prepare(). */
     observe(observation: CultureObservation): void {
         if (!this.options.enabled() || this.stopped || this.purging) return;
-        const input = cultureInput(observation.snapshot, this.options.language());
+        const observed = validateCultureSnapshot(observation.snapshot);
+        const input = cultureInput(observed, this.options.language());
         const hash = this.library.encounter(input, this.now());
-        this.observations.set(observation.characterId, { snapshot: input.snapshot, seenAt: this.now() });
+        this.observations.set(observation.characterId, { snapshot: observed, seenAt: this.now() });
         if (!this.library.ready(hash)) this.enqueue(hash);
     }
     clearObservations(): void {
@@ -54,13 +57,13 @@ export class CultureService {
         this.revisions.set(characterId, (this.revisions.get(characterId) ?? 0) + 1);
     }
 
-    backgroundFor(character: Character): string | undefined {
+    backgroundFor(character: Character, includeCulturalRoots = true): string | undefined {
         if (!this.options.enabled() || this.stopped || this.purging) return;
         // Bind facts to the Character snapshot used by this conversation. This keeps a long
         // conversation consistent with its own game facts, without trusting stale numeric ids
         // when a new Character object (or campaign) is encountered.
         const bound = this.bindings.get(character);
-        if (bound && bound.epoch !== this.epoch) { delete character.cultureSnapshot; return; }
+        if (bound && bound.epoch !== this.epoch) { delete character.cultureSnapshot; delete (character as Character & { cultureLineage?: CultureFact[] }).cultureLineage; return; }
         const observation = this.observations.get(character.id);
         const revision = this.revisions.get(character.id) ?? 0;
         let snapshot: CultureSnapshot | undefined;
@@ -70,14 +73,28 @@ export class CultureService {
         } else if (bound && bound.revision === revision) snapshot = bound.snapshot;
         if (!snapshot) {
             delete character.cultureSnapshot;
+            delete (character as Character & { cultureLineage?: CultureFact[] }).cultureLineage;
             return;
         }
         const input = cultureInput(snapshot, this.options.language());
         character.cultureSnapshot = input.snapshot;
+        // Live parent evidence belongs to this bound observation, not to an
+        // archived prompt snapshot that older launcher versions cannot read.
+        Object.defineProperty(character, 'cultureLineage', { configurable: true, enumerable: false, writable: true,
+            value: snapshot.facts.filter(f => f.kind === 'lineage').map(f => ({ ...f })) });
         const hash = this.library.encounter(input, this.now());
         const paragraph = this.library.ready(hash);
         if (!paragraph) this.enqueue(hash);
-        return paragraph;
+        if (!paragraph || !includeCulturalRoots || !snapshot.facts.some(f => f.kind === 'lineage')) return paragraph;
+        try {
+            const covered = getCulturePracticeBank().resolve(snapshot).map(p => p.id);
+            const roots = getCulturalRootBank().resolve(snapshot, covered);
+            return roots.length ? paragraph + '\nInherited cultural outlooks, open to reinterpretation through current customs and personal beliefs: ' +
+                roots.map(root => root.text).join(' ') : paragraph;
+        } catch {
+            // Optional inherited context cannot make a ready cultural profile unavailable.
+            return paragraph;
+        }
     }
 
     private enqueue(hash: string): void {

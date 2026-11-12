@@ -72,6 +72,7 @@ npm ci
 npm run build
 npm test -- --runInBand
 python3 -m unittest discover -s tests/deployment -p 'test_*.py'
+python3 -B -m unittest discover -s tests/lorebook -p 'test_*.py'
 node tests/helpers/renderer-integrity.cjs
 ```
 

@@ -10,6 +10,8 @@ export interface CulturePracticeRule {
     id: string;
     cultureDefinitions: Record<string, string>;
     anchors: PracticeAnchor[];
+    /** Discovered capabilities qualify a craft only alongside an adopted custom. */
+    requiresInnovations?: PracticeAnchor[];
     text: string;
     coveredReadingIds: string[];
     rationale: string;
@@ -27,13 +29,17 @@ export class CulturePracticeBank {
             !Array.isArray(asset.rules) || asset.rules.length > 64) throw new Error('Invalid cultural practice bank');
         const ids = new Set<string>();
         this.rules = asset.rules.map(r => {
-            if (!r || Object.keys(r).sort().join() !== 'anchors,coveredReadingIds,cultureDefinitions,id,rationale,text' ||
+            const keys = r && Object.keys(r).filter(k => k !== 'requiresInnovations').sort().join();
+            if (!r || keys !== 'anchors,coveredReadingIds,cultureDefinitions,id,rationale,text' ||
                 !identifier(r.id) || ids.has(r.id) || !r.cultureDefinitions || Array.isArray(r.cultureDefinitions) ||
                 !Object.keys(r.cultureDefinitions).length || Object.keys(r.cultureDefinitions).length > 16 ||
                 Object.entries(r.cultureDefinitions).some(([k, v]) => !identifier(k) || !hash(v)) ||
                 !Array.isArray(r.anchors) || !r.anchors.length || r.anchors.length > 16 ||
                 new Set(r.anchors.map(a => a.key)).size !== r.anchors.length ||
                 r.anchors.some(a => !a || Object.keys(a).sort().join() !== 'definitionHash,key' || !identifier(a.key) || !hash(a.definitionHash)) ||
+                (r.requiresInnovations !== undefined && (!Array.isArray(r.requiresInnovations) || !r.requiresInnovations.length ||
+                    r.requiresInnovations.length > 8 || new Set(r.requiresInnovations.map(a => a?.key)).size !== r.requiresInnovations.length ||
+                    r.requiresInnovations.some(a => !a || Object.keys(a).sort().join() !== 'definitionHash,key' || !identifier(a.key) || !hash(a.definitionHash)))) ||
                 typeof r.text !== 'string' || !r.text.trim() || r.text.length > 1200 ||
                 typeof r.rationale !== 'string' || !r.rationale.trim() || r.rationale.length > 6000 ||
                 !Array.isArray(r.coveredReadingIds) || r.coveredReadingIds.length > 64 ||
@@ -46,6 +52,7 @@ export class CulturePracticeBank {
     private fact(rule: CulturePracticeRule, anchor: PracticeAnchor, cultures = Object.keys(rule.cultureDefinitions).sort()): CultureFact {
         return { kind: 'practice', key: rule.id + ':' + anchor.key, category: 'adopted_custom_interpretation', name: '', description: '',
             rules: canonicalJsonStringify({ version: 1, id: rule.id, anchor, cultures,
+                ...(rule.requiresInnovations && { requiresInnovations: rule.requiresInnovations }),
                 sourceDefinitions: Object.fromEntries(cultures.map(k => [k, rule.cultureDefinitions[k]])) }) };
     }
     /** Source hashes qualify the native anchors; template membership never predicts live membership. */
@@ -57,6 +64,8 @@ export class CulturePracticeBank {
         return this.rules.flatMap(rule => {
             const cultures = Object.keys(rule.cultureDefinitions).filter(k => definitions.get(k) === rule.cultureDefinitions[k]).sort();
             if (!cultures.length) return [];
+            if (rule.requiresInnovations?.some(a => !concepts.some(f => f.kind === 'innovation' && f.key === a.key &&
+                conceptDefinitionHash('culture', f) === a.definitionHash))) return [];
             return rule.anchors.filter(a => concepts.some(f => f.kind === 'tradition' && f.key === a.key &&
                 conceptDefinitionHash('culture', f) === a.definitionHash)).map(a => this.fact(rule, a, cultures));
         });
@@ -79,13 +88,17 @@ export class CulturePracticeBank {
         const match = this.match(fact);
         if (!match) throw new Error('Missing cultural practice evidence');
         const lineage = match.cultures.map(k => `this = culture:${k} any_parent_culture_or_above = { this = culture:${k} }`).join(' ');
-        return `OR = { ${lineage} } has_cultural_tradition = ${match.anchor.key}`;
+        return `OR = { ${lineage} } has_cultural_tradition = ${match.anchor.key}` +
+            (match.rule.requiresInnovations?.map(a => ` has_innovation = ${a.key}`).join('') ?? '');
     }
     resolve(snapshot: CultureSnapshot, covered: readonly string[] = []): ResolvedCulturePractice[] {
         const matches = snapshot.facts.filter(f => f.kind === 'practice').map(fact => ({ fact, ...this.match(fact)! }));
         // Captured true records cannot outlive the exact contributing custom in a snapshot/import.
         for (const m of matches) if (!snapshot.facts.some(f => f.kind === 'tradition' && f.key === m.anchor.key &&
             conceptDefinitionHash('culture', f) === m.anchor.definitionHash)) throw new Error('Cultural practice lost its adopted contributor');
+        for (const m of matches) if (m.rule.requiresInnovations?.some(a => !snapshot.facts.some(f => f.kind === 'innovation' &&
+            f.key === a.key && conceptDefinitionHash('culture', f) === a.definitionHash)))
+            throw new Error('Cultural practice lost its discovered capability');
         return this.rules.flatMap(rule => {
             if (rule.coveredReadingIds.some(id => covered.includes(id))) return [];
             const chosen = rule.anchors.map(a => matches.find(m => m.rule.id === rule.id && m.anchor.key === a.key)).find(Boolean);

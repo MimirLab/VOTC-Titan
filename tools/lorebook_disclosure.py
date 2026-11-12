@@ -89,6 +89,23 @@ def refers_back(query):
                 (re.search(r'\b(it|that)\b',query,re.I)and len(words(query))<=1))
 
 
+def anchor_index(pack):
+    cached=getattr(pack,'_disclosure_anchor_index',None)
+    if cached is not None:return cached
+    routes={}
+    with closing(pack.bundle.connect()) as c:
+        # The same explicit aliases and unique place headings as the prior SQL.
+        # Cache navigation metadata only, never admitted bodies or actor state.
+        rows=c.execute("SELECT lower(a.name)name,n.entry_node_id root,length(a.name)width FROM aliases a JOIN nodes n ON n.id=a.target_id WHERE a.kind!=? UNION ALL SELECT lower(title)name,entry_node_id root,length(title)width FROM nodes WHERE family=? AND id LIKE ? AND lower(title) IN (SELECT lower(title) FROM nodes WHERE family=? GROUP BY lower(title) HAVING count(DISTINCT entry_node_id)=1)",('context_route','expanded','expanded:place:%','expanded'))
+        for row in rows:
+            choices=routes.setdefault(row['name'],{})
+            choices[row['root']]=max(choices.get(row['root'],0),row['width'])
+        slots=','.join('?'for _ in CONTEXT_TOPICS)
+        topics={row['id']:dict(row)for row in c.execute('SELECT id,family,canonical_id,parent_id,title FROM nodes WHERE id IN ('+slots+')',tuple(CONTEXT_TOPICS))}
+    pack._disclosure_anchor_index=(routes,topics)
+    return routes,topics
+
+
 def anchors(pack, query, contextual_topics=False):
     tokens = re.findall(r'\w+', query)[:40]
     phrases = {' '.join(tokens[i:i+n]).casefold() for n in range(1, min(8, len(tokens))+1) for i in range(len(tokens)-n+1)
@@ -101,27 +118,25 @@ def anchors(pack, query, contextual_topics=False):
         phrases.discard('order')
     if not phrases:
         return []
-    with closing(pack.bundle.connect()) as c:
-        slots=','.join('?'for _ in phrases)
-        # An exact, unique composed section title (Lakeshire under Redridge)
-        # can focus navigation without inventing an identity alias or a grant.
-        # Repeated generic chapter titles are deliberately excluded.
-        rows = c.execute('SELECT root,max(width)width FROM (SELECT n.entry_node_id root,length(a.name)width FROM aliases a JOIN nodes n ON n.id=a.target_id WHERE lower(a.name) IN ('+slots+') AND a.kind!=? UNION ALL SELECT entry_node_id root,length(title)width FROM nodes WHERE family=? AND id LIKE ? AND lower(title)IN('+slots+') AND lower(title) IN (SELECT lower(title) FROM nodes WHERE family=? GROUP BY lower(title) HAVING count(DISTINCT entry_node_id)=1)) GROUP BY root ORDER BY width DESC,root LIMIT ?', (*sorted(phrases),'context_route','expanded','expanded:place:%',*sorted(phrases),'expanded',2+len(CONTEXT_TOPICS) if contextual_topics else 2)).fetchall()
-        result=[]
-        for row in rows:
-            root=row['root'];soft=False
-            # These inspected abstract topics are routing roles, never grants
-            # or equivalences between identities. Bind the role to its exact
-            # canonical catalogue row; unknown/changed editions stay strict.
-            if contextual_topics and root in CONTEXT_TOPICS:
-                node=c.execute('SELECT * FROM nodes WHERE id=?',(root,)).fetchone()
-                if node and node['family']=='base' and node['canonical_id']==root and node['parent_id'] is None and node['title']==CONTEXT_TOPICS[root]:
-                    if node['title']=='The Light':
-                        soft=bool(re.search(r'\b(?:your|our|this)\s+(?:neighbou?rs|community|people|culture|town|village|faith)\b',query,re.I))
-                    else:
-                        mentions=list(re.finditer(r'\bcoins?\b',query,re.I))
-                        soft=bool(mentions) and all(m.group()==m.group().lower() for m in mentions) and len(tokens)>5 and 'coinage and payment' not in normalize(query)
-            if not soft:result.append(root)
+    routes,topics=anchor_index(pack)
+    matched={}
+    for name in phrases:
+        for root,width in routes.get(name,{}).items():matched[root]=max(matched.get(root,0),width)
+    result=[]
+    for root,width in sorted(matched.items(),key=lambda item:(-item[1],item[0]))[:2+len(CONTEXT_TOPICS)if contextual_topics else 2]:
+        soft=False
+        # These inspected abstract topics are routing roles, never grants
+        # or equivalences between identities. Bind the role to its exact
+        # canonical catalogue row; unknown/changed editions stay strict.
+        if contextual_topics and root in CONTEXT_TOPICS:
+            node=topics.get(root)
+            if node and node['family']=='base' and node['canonical_id']==root and node['parent_id'] is None and node['title']==CONTEXT_TOPICS[root]:
+                if node['title']=='The Light':
+                    soft=bool(re.search(r'\b(?:your|our|this)\s+(?:neighbou?rs|community|people|culture|town|village|faith)\b',query,re.I))
+                else:
+                    mentions=list(re.finditer(r'\bcoins?\b',query,re.I))
+                    soft=bool(mentions) and all(m.group()==m.group().lower() for m in mentions) and len(tokens)>5 and 'coinage and payment' not in normalize(query)
+        if not soft:result.append(root)
     return result[:2]
 
 
@@ -202,8 +217,19 @@ class Disclosure:
                         disclosure=dict(version=VERSION,mode='empty',probes=0,access='not_requested',intent='none'),state={})
         if automatic:query=active_query(query)
         named = anchors(self.pack, query,contextual_topics=semantic_relevance)
+        turnings = []
         if hasattr(reader, 'named_turnings'):
-            named = reader.named_turnings(query) or named
+            turnings = reader.named_turnings(query)
+            named = turnings or named
+        if not turnings and hasattr(reader, 'named_subjects'):
+            inherited = reader.named_subjects(query)
+            if inherited:
+                comparison = bool(re.search(r'\b(compare|contrast|difference|differences|between|versus|unlike)\b',query,re.I))
+                named_place = any(any(node.startswith('expanded:place:') for node in [root]+self.canonical.get(root,[])) for root in named)
+                if not named_place:
+                    # The explicitly named culture is the subject; other
+                    # named things (such as gryphons) remain topical words.
+                    named = list(dict.fromkeys(inherited + named))[:2] if comparison else inherited
         terms = query_words(query)
         shorthand=bool(terms or named)and len(re.findall(r'\w+',query))<=4 and not re.search(r'\b(i|you|we|me|us|my|your|our|am|is|are|was|were|have|has|had|do|does|did)\b',query,re.I)
         direct_inquiry=bool(re.search(r'\b(who|what|where|when|why|how|which|tell|explain|describe|teach|discuss|advise|compare|contrast)\b',query,re.I))

@@ -273,7 +273,7 @@ test('the real close entry point retains compaction context after immediate main
     const pending = new Promise<void>(resolve => { release = resolve; });
     conv.closingWorkCount = 0; conv.compactorReleaseRequested = false;
     conv.cancelBackgroundPreparation = jest.fn(); conv.cancelGeneration = jest.fn();
-    conv.runFileManager = { write: jest.fn(), clear: jest.fn() };
+    conv.runFileManager = { writeAfterPending: jest.fn().mockResolvedValue(true), clear: jest.fn() };
     conv._saveHistoryToFile = jest.fn();
     conv._generateSummariesAndDiariesInBackground = jest.fn(async () => {
         await pending;
@@ -299,12 +299,12 @@ test.each([false, true])('a superseded close cannot write or later clear another
     conv.closeEffectAllowed = () => allowed;
     conv.closingWorkCount = 0; conv.compactorReleaseRequested = false;
     conv.cancelBackgroundPreparation = jest.fn(); conv.cancelGeneration = jest.fn();
-    conv.runFileManager = { write: jest.fn(), clear: jest.fn() };
+    conv.runFileManager = { writeAfterPending: jest.fn().mockResolvedValue(true), clear: jest.fn() };
     conv._saveHistoryToFile = jest.fn(); conv._generateSummariesAndDiariesInBackground = jest.fn(async () => {});
     jest.useFakeTimers();
     try {
         await conv.saveHistoryAndTriggerSummarization();
-        expect(conv.runFileManager.write).toHaveBeenCalledTimes(allowedInitially ? 1 : 0);
+        expect(conv.runFileManager.writeAfterPending).toHaveBeenCalledTimes(allowedInitially ? 1 : 0);
         allowed = false; // Replacement can happen after the close wrote, before its old cleanup timer fires.
         jest.runOnlyPendingTimers();
         expect(conv.runFileManager.clear).not.toHaveBeenCalled();

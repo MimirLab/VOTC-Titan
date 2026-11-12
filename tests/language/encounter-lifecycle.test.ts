@@ -48,7 +48,7 @@ test.each(['parseLog', 'loadHistory', 'initialize', 'queued-invalid'])('setup bo
     const instances: any[] = [];
     class FakeConversation {
         isOpen = true; actions = []; letterManager = { importLettersFromLog: async () => {} };
-        constructor(public gameData: any, _config: any, public chatWindow: any) { instances.push(this); chatWindow.conversation = this; }
+        constructor(public gameData: any, _config: any, public chatWindow: any, _path: any, _encoder: any, sharedMemory: any) { expect(sharedMemory).toBe(ctx.memoryManager); instances.push(this); chatWindow.conversation = this; }
         retireWithoutGame() { this.isOpen = false; }
         loadHistory() { return phase === 'loadHistory' && this.gameData === old ? gate : Promise.resolve(); }
         initialize() { return ['initialize', 'queued-invalid'].includes(phase) && this.gameData === old ? gate : Promise.resolve(); }
@@ -62,7 +62,7 @@ test.each(['parseLog', 'loadHistory', 'initialize', 'queued-invalid'])('setup bo
         sleep: async () => {}, parseLog: async () => ++parses === 1 ? phase === 'parseLog' ? gate : old : next,
         currentSessionPlayerId: '1', setCachedGameData: jest.fn(), broadcastCurrentSessionPlayer: jest.fn(), processQueuedApprovals: jest.fn(),
         updateCurrentDate: jest.fn(), Conversation: FakeConversation, votcDataPath: '/tmp/not-userdata', tiktokenEncoder: null,
-        sendMemoriesChanged: jest.fn(), setLogPollInterval: jest.fn(), sceneUiState: (_: unknown, actions: unknown) => ({ actions }) });
+        memoryManager: {}, sendMemoriesChanged: jest.fn(), setLogPollInterval: jest.fn(), sceneUiState: (_: unknown, actions: unknown) => ({ actions }) });
     const start = vm.runInContext(handler('clipboardListener', 'VOTC:IN'), ctx);
     const ready = () => { const callback = ctx.pendingChatSetup; ctx.ipcMain.removeListener('chat-window-ready', callback); return callback(); };
     await start(); const pending = ready();

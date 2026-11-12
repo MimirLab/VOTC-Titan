@@ -1,3 +1,4 @@
+import { parseActionResponse } from '../conversation/actionResponse';
 import { composeGoaContext, finishGoaContext } from '../goa/goaRuntime';
 import { lorebookPrompt } from '../lorebook/lorebookRuntime';
 import { LoreDelivery,loreKnowledgeBoundary } from '../lorebook/lorebookDisclosure';
@@ -439,12 +440,12 @@ export class LetterReplyGenerator {
         }
         response = response.replace(/(\r\n|\n|\r)/gm, "");
 
-        if (!response.match(/<rationale>(.*?)<\/?rationale>/) || !response.match(/<actions>(.*?)<\/?actions>/)) {
-            console.warn("Letter action warning: rationale or action couldn't be extracted from LLM response. Response: " + response);
+        const parsed = parseActionResponse(response);
+        if (!parsed) {
+            console.warn('Letter action warning: malformed classifier response; no actions selected.');
             return { playerActions: [], aiActions: [] };
         }
-
-        const actionsString = response.match(/<actions>(.*?)<\/actions>/)![1];
+        const actionsString = parsed.actions;
         if (actionsString.trim().toLowerCase().startsWith("noop")) {
             console.log('[LetterReplyGenerator] LLM returned "noop()", no letter actions triggered.');
             return { playerActions: [], aiActions: [] };
@@ -702,7 +703,12 @@ export class LetterReplyGenerator {
 
             // Generate letter actions via LLM (like conversations)
             console.log('[LetterReplyGenerator] Generating letter actions via LLM...');
-            const { playerActions, aiActions } = await this.generateLetterActions(gameData, latestLetter, escapedResponse);
+            let playerActions: LetterAssociatedAction[] = [], aiActions: LetterAssociatedAction[] = [];
+            try { ({ playerActions, aiActions } = await this.generateLetterActions(gameData, latestLetter, escapedResponse)); }
+            catch (error) {
+                if ((error as Error)?.name === 'AbortError') throw error;
+                console.error('[LetterReplyGenerator] Action classification failed; retaining the reply without actions:', error);
+            }
             console.log(`[LetterReplyGenerator] Generated ${playerActions.length} player actions and ${aiActions.length} AI letter actions.`);
 
             // Attach player-triggered actions to the original (sent) letter so they appear on

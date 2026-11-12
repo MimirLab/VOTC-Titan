@@ -114,8 +114,8 @@ export function beginCultureForeground(): () => void {
     const faith = beginFaithForeground();
     return () => { culture(); faith(); };
 }
-export function getCultureBackground(character: Character): string | undefined {
-    try { refreshLog?.(); return service?.backgroundFor(character); } catch { return; }
+export function getCultureBackground(character: Character, includeCulturalRoots = true): string | undefined {
+    try { refreshLog?.(); return service?.backgroundFor(character, includeCulturalRoots); } catch { return; }
 }
 /** Also observes the probe receipt on the same authoritative debug-log tail. */
 export function observeEncounterLine(line: string): void { encounter?.observe(line); observeLanguageLine(line); observeDialogueLine(line); observeCastingLine(line); observeDevelopmentLine(line); observeLoreGameStateLine(line); observeLauncherSceneLine(line); }

@@ -1,20 +1,22 @@
 {
   "version": 1,
   "source": "out/steering-gnomish-company-authoring-20261012",
-  "richConditionals": 363,
-  "essentialReadings": 619,
-  "compositions": 29,
+  "richConditionals": 365,
+  "essentialReadings": 621,
+  "compositions": 31,
   "sourceReceiptFilesVerified": 197,
   "relationshipSource": "out/steering-education-scope-model-20261012/builds/education/public/backgroundConcepts/relationships.json",
   "files": {
-    "relationships.json": "0a22921fd3886c63daa30fbe945791662f82b91bbfc846a19426b8145ff7eedf",
-    "essential.json": "cd20e7ec49e5be3615e981f263cdb8c5100b8a47716b9f0097972121efeddd2f",
-    "compositions.json": "ebaf94466a4687124ecbd88cb4050f9d934e860f579940615228c437b8d176ca",
-    "authored.json": "66e834e22a69c8a019b46ebce5d445fca4cafb9702b7ab1dd6a72ea4eba2be44",
-    "practices.json": "5e07916c5cb92dc3f3d356be03eedd33d18c2a871bcf0d383fe8e9bc94ecb84b"
+    "relationships.json": "931e249631f1efb3dabab8ebcb3063ecf09f47dcc539d494ff5354c1cb08cfa5",
+    "essential.json": "d3f9047b8bdd518b097e751ff649f2c3d6bc3eff351f11cb23bef807b5b8df7c",
+    "compositions.json": "61b09da911dea389b99b3cd2395a921f367c915f4945bbf404cc5fd9757982b2",
+    "authored.json": "03ffd77dfc803806c457730e39672d79527efd6e16b9fc22350475c7f8f020f9",
+    "practices.json": "b4342fb022807bbff489e551e984a33a0836c61915e525c68dc9a2b3f7fafb3f",
+    "cultural-roots.json": "ccb806825b04450213879ccf9a640c2748a4a4966f54702b85b5b2b9c7804cb7"
   },
-  "status": "Ten approved targeted guidance findings; native deployment tracked separately.",
+  "status": "Reviewed inherited cultural outlooks; broader lore guidance review in progress.",
   "baseEntries": 270,
-  "additionalSource": "out/lore-guidance-expansion-20261111",
-  "practiceRules": 6
+  "additionalSource": "out/lore-guidance-exhaustive-20261111",
+  "practiceRules": 15,
+  "culturalRootOutlooks": 11
 }

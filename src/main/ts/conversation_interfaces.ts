@@ -72,6 +72,8 @@ export interface Setting {
 export interface Summary{
     date: string,
     content: string,
+    /** Explicit campaign provenance on new records; absent on historical summaries. */
+    votcCampaignId?: string,
     /** Timeline v2 protocol: checkpoint epoch / node id stamped on summaries written after a close. */
     votcCheckpointEpoch?: number,
     votcTimelineNodeId?: string,

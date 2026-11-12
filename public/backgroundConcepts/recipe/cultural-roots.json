@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "roots": [
+    {
+      "id": "wildhammer_outlook",
+      "cultureDefinitions": { "wildhammer": "fa232830a155b0e6f8bd90a5e41bd9d35c03727d5abd3ea1c223d98187335fe0" },
+      "coveredPracticeId": "wildhammer_gryphon_falconry",
+      "text": "Wildhammer roots value gryphon companionship as trust built through shared care and work.",
+      "evidence": [{ "passageId": "expanded:expanded:people:003:chapter:3", "bodySha256": "0ade5712fdaef4ddbb238f248ded94d9ed7c1c793d53d2f92b49c1429cef85d4" }]
+    },
+    {
+      "id": "frostwolf_outlook",
+      "cultureDefinitions": { "frostwolf": "35cf17b5a7aa1059c7e4d5b4f8f6adb9bd6bb9576ef08659a13870ccd425d03f" },
+      "coveredPracticeId": "retained_frostwolf_wolf_partnership",
+      "text": "Frostwolf roots value wolves as companions rather than merely as mounts.",
+      "evidence": [{ "passageId": "base:chronology-variant-v10_459c9f3abdb32b6d8269a0b0", "bodySha256": "a7897623f7c1bcc27db1bb88e05b57865c9b0515b77ce5eab905977e3f0e06c7" }]
+    },
+    {
+      "id": "mantid_outlook",
+      "cultureDefinitions": { "mantid": "c0d3bae92d107c7e26893efaa83155bf6a0eb6a4cf2926114969bf3d64f20f84" },
+      "coveredPracticeId": "retained_mantid_kypari_care",
+      "text": "Mantid roots connect community life and enduring craft to kypari trees and their amber.",
+      "evidence": [{ "passageId": "expanded:expanded:people:181:chapter:1", "bodySha256": "bd3bd233b602156a9e63587f5f52b6a1fd2031f658aa25a5e1b5f0122f081b25" }]
+    },
+    {
+      "id": "kobold_outlook",
+      "cultureDefinitions": { "kobold": "2e99deeacb71141e5e1235e4e4fbec504b658e67678ffa26db75b2133cb654c6" },
+      "coveredPracticeId": "retained_kobold_candle_care",
+      "text": "Kobold roots regard personal candles as tools, comfort and signs of trust between companions.",
+      "evidence": [{ "passageId": "expanded:expanded:people:043:chapter:4", "bodySha256": "3696d2474de3e799a363d107b7d75400b40f126e77a1d0367cd5aa5144f39481" }]
+    },
+    {
+      "id": "blue_dragon_outlook",
+      "cultureDefinitions": { "blue_dragon": "69c4ec2b8bc679e72219a8768cc64cdf5d01ee9d8fe99c7b7426847eda042bc5" },
+      "coveredPracticeId": "retained_blue_stewardship_practice",
+      "text": "Blue dragon roots connect inquiry with stewardship of magic, guarding against abuse without hoarding it.",
+      "evidence": [{ "passageId": "base:editorial-passage_5995a95a51eb5a3a8b2b4c5a", "bodySha256": "5d3611a15975dc5c586ec4fa48010691560643dd6fdbfee2d483daa97202faea" }]
+    },
+    {
+      "id": "jinyu_outlook",
+      "cultureDefinitions": { "jinyu": "8819d4e89dc3040d6eb776eaa56de7ab7d877ba82d60f9d21909137731e0931e" },
+      "coveredPracticeId": "retained_jinyu_water_forging_practice",
+      "text": "Jinyu roots remember settlements distinguished by water-shaped stonework.",
+      "evidence": [{ "passageId": "expanded:expanded:people:176:chapter:1", "bodySha256": "913921a4e9b063bf762b5a3073dc2c08861b07557c9a58c5c1e8c68f303b67a4" }]
+    },
+    {
+      "id": "draenei_outlook",
+      "cultureDefinitions": { "draenei": "a0d8f64081229d5ee48a7c1d6d71c641d5ac307a7837332f5acbec19a4b7d5bf" },
+      "coveredPracticeId": "retained_argussian_elekk_husbandry",
+      "text": "Draenei roots value the strength and patience of elekk.",
+      "evidence": [{ "passageId": "base:chronology-variant-v10_a71360a309a26925e0075136", "bodySha256": "d4eb8043905a97df8a26d3377f971b6b34bfc8af1c63cd2e929e8a39f6ae349a" }]
+    },
+    {
+      "id": "warsong_outlook",
+      "cultureDefinitions": { "warsong": "a5570c48e06c30f5318952de8e20b0b7d27a3f34e4b2edf117271c54ff1f07f5" },
+      "coveredPracticeId": "retained_warsong_wolf_tactics",
+      "text": "Warsong roots associate wolf riders with swift strikes and withdrawals.",
+      "evidence": [{ "passageId": "base:editorial-passage_0204c8fc93e9cc394ef869a0", "bodySha256": "1422c7953a2b2e067644102e5eb230e4360f3a5105d7474fb9ccbd4ce02e3cc6" }]
+    },
+    {
+      "id": "harpy_outlook",
+      "cultureDefinitions": { "harpy": "b9f164cd6e5b0100a831361aa871c4da78ffa6e014565b0d90f70e999f202b41" },
+      "coveredPracticeId": "retained_harpy_nest_standing",
+      "text": "Harpy roots remember nest standing as a contested relationship: gifts and ornaments can show both respect and challenge.",
+      "evidence": [{ "passageId": "expanded:expanded:people:042:chapter:4", "bodySha256": "c973a384f59641777f07357bdae393686d32e2ac877ec958c4a4390ffe6b6438" }]
+    },
+    {
+      "id": "centaur_outlook",
+      "cultureDefinitions": { "centaur": "82355c390fe293f19d0c56c1b4cbd672614f81f75edce404dc7ef5e2acb92eba" },
+      "coveredPracticeId": "retained_centaur_mobile_warfare",
+      "text": "Centaur roots value mobility supported by shared work: caring for one another and maintaining equipment help a community travel and fight.",
+      "evidence": [{ "passageId": "expanded:expanded:people:047:chapter:3", "bodySha256": "779dab9d4f5f674ea99e3b4efaf553ef72664cbf784665f46db6370d7aa4b311" }, { "passageId": "expanded:expanded:people:047:chapter:6", "bodySha256": "d71adf1460540c46a252d3a2be207ffae6895d7ad5e6e04efd340ea50010e46d" }]
+    },
+    {
+      "id": "lost_one_craft_outlook",
+      "cultureDefinitions": { "lost_one": "3eb8b1f469b12909b41c2332cb1672315db65ed3bf67caf533210c3baf28f216" },
+      "coveredPracticeId": "retained_lost_one_craft_memory",
+      "text": "Lost One roots remember preserving inherited skills by teaching and adapting them to unfamiliar materials.",
+      "evidence": [{ "passageId": "expanded:expanded:people:179:chapter:3", "bodySha256": "d332123ad23252bcb364d63941f7d0c714534dcf306ad32300270974e0a248eb" }]
+    }
+  ]
+}

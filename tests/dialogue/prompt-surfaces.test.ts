@@ -268,3 +268,16 @@ test('a young host never overrides the final verified controller policy', async 
     const last = (await buildChatPrompt(conversation(50000), game.getAi())).at(-1)!.content;
     expect(last.indexOf('Host age does not establish')).toBeLessThan(last.lastIndexOf('controll'));
 });
+
+test.each(['<rationale>Wait.</rationale><actions>noop()<actions>', 'unstructured', '<rationale>Wait.</rationale><actions>noop()</actions>'])('chat action classification safely withholds malformed or noop output: %s', async response => {
+    const conv = conversation(50000);
+    conv.actions = [{ signature:'noop', description:'Wait.', check:()=>true, args:[], run:()=>'' }];
+    conv.actionsApiConnection = {isChat:()=>true,complete:jest.fn().mockResolvedValue(response)};
+    await expect(checkActions(conv,2,1)).resolves.toEqual([]);
+});
+test('chat retains its existing provider failure policy', async () => {
+    const conv = conversation(50000);
+    conv.actions = [{ signature:'noop', description:'Wait.', check:()=>true, args:[], run:()=>'' }];
+    conv.actionsApiConnection = {isChat:()=>true,complete:jest.fn().mockRejectedValue(Error('provider offline'))};
+    await expect(checkActions(conv,2,1)).rejects.toThrow('provider offline');
+});

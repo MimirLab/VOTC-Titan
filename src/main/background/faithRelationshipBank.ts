@@ -29,6 +29,7 @@ export interface FaithRelationshipAsset {
 export interface ResolvedFaithRelationship {
     account?: FaithRelationshipReading;
     root?: FaithRootRelationshipReading;
+    parent?: FaithRelationshipReading;
     vocabularyRoles?: readonly FaithVocabularyRoleReading[];
     revision: string;
 }
@@ -108,6 +109,23 @@ export class FaithRelationshipBank {
         const selected = matches[0], inherited = this.roots.get(rootHash);
         if (selected?.vocabulary === 'hold' || inherited?.hold)
             throw new FaithRelationshipUnavailable('Observed faith relationship is a source placeholder');
+        // The engine records an originating source faith, not its current
+        // doctrines. Match the original account against its own source religion
+        // and vocabulary, never against the descendant's current vocabulary.
+        const parentFact = snapshot.facts.find(f => f.kind === 'description' && f.key === 'parent_faith');
+        let parent: FaithRelationshipReading | undefined;
+        if (parentFact?.description && sha256Hex(parentFact.description) !== accountHash) {
+            try {
+                const evidence = JSON.parse(parentFact.rules);
+                if (evidence.version === 1 && digest.test(evidence.sourceReligionHash) &&
+                    evidence.sourceWorship && typeof evidence.sourceWorship === 'object' && !Array.isArray(evidence.sourceWorship)) {
+                    const candidates = this.accounts.filter(entry => entry.accountHash === sha256Hex(parentFact.description) &&
+                        entry.rootHash === evidence.sourceReligionHash && entry.vocabulary !== 'hold' &&
+                        Object.entries(entry.worship).every(([key, value]) => evidence.sourceWorship[key] === value));
+                    if (candidates.length === 1) parent = candidates[0];
+                }
+            } catch { /* An unreadable origin supplies no inherited account. */ }
+        }
         // Teaching facets select separately hashed authored clauses. Unused adapter
         // metadata does not change this account's rendered relationship wording.
         const vocabularyRoles = selected?.vocabularyRoles?.filter(role => observed.get(role.key) === role.value)
@@ -116,8 +134,10 @@ export class FaithRelationshipBank {
         if (selected) { const { teachingContext, vocabularyRoles, ...meaning } = selected; accountMeaning = meaning; }
         const result = { ...(selected ? { account: structuredClone(selected) } : {}),
             ...(inherited ? { root: { ...inherited } } : {}),
+            ...(parent ? { parent: structuredClone(parent) } : {}),
             ...(vocabularyRoles.length ? { vocabularyRoles } : {}),
             revision: sha256Hex(canonicalJsonStringify({ version: 1, account: accountMeaning, root: inherited || null,
+                ...(parent ? { parent: { accountHash: parent.accountHash, rootHash: parent.rootHash, text: parent.text } } : {}),
                 ...(vocabularyRoles.length ? { vocabularyRoles: vocabularyRoles.map(role => {
                     const { teachingContext, ...meaning } = role; return meaning;
                 }) } : {}) })) };
@@ -131,12 +151,26 @@ export class FaithRelationshipBank {
         if (context.length > 64) throw new FaithRelationshipUnavailable('Too many reviewed faith teaching facets');
         return context;
     }
+    /** Origin facets describe an inherited perspective, never current teaching. */
+    parentTeachingContext(snapshot: FaithSnapshot): readonly string[] {
+        const parent = this.resolve(snapshot).parent;
+        const fact = snapshot.facts.find(f => f.kind === 'description' && f.key === 'parent_faith');
+        if (!parent || !fact) return [];
+        let observed: Record<string, string>;
+        try { observed = JSON.parse(fact.rules).sourceWorship; } catch { return []; }
+        const roles = (parent.vocabularyRoles ?? []).filter(role => observed?.[role.key] === role.value);
+        const context = [...new Set([...(parent.teachingContext ?? []),
+            ...roles.flatMap(role => role.teachingContext ?? [])])];
+        if (context.length > 64) throw new FaithRelationshipUnavailable('Too many inherited faith facets');
+        return context;
+    }
     /** Preserve raw identity and every adopted doctrine; reinterpret only exact matched descriptive accounts. */
     project(snapshot: FaithSnapshot): FaithSnapshot {
         const selected = this.resolve(snapshot);
         const result = { ...snapshot, facts: snapshot.facts.map(f => {
             if (f.kind !== 'description') return f;
-            const text = f.key === 'faith' ? selected.account?.text : f.key === 'religion' ? selected.root?.text : undefined;
+            const text = f.key === 'faith' ? selected.account?.text : f.key === 'religion' ? selected.root?.text :
+                f.key === 'parent_faith' ? selected.parent?.text : undefined;
             return text === undefined ? f : { ...f, description: text };
         }) };
         projected.set(result, { value: selected, fingerprint: sha256Hex(canonicalJsonStringify(result)) });

@@ -5,6 +5,7 @@ import Database from 'better-sqlite3';
 import { CultureLibrary } from '../../src/main/culture/CultureLibrary';
 import { CultureService } from '../../src/main/culture/CultureService';
 import { CultureGenerationResult, cultureInput } from '../../src/main/culture/cultureIdentity';
+import { characterToSnapshot } from '../../src/main/promptWorkbench/GameDataSnapshotCodec';
 import { snapshot, paragraph, character, result } from './fixtures';
 
 let temporary: string;
@@ -23,6 +24,26 @@ test('ready guidance survives closing/reopening and reuses the same composition 
     expect(library.claim(hash, 2)).toBeUndefined();
     expect(library.stats()).toEqual({ ready: 1, pending: 0, failed: 0 });
     library.close();
+});
+
+test('lineage remains available to the character while unchanged cultural guidance reuses its ready profile', async () => {
+    const library = new CultureLibrary(':memory:');
+    const hash = library.encounter(cultureInput(snapshot(), 'en'), 0), job = library.claim(hash, 0)!;
+    library.finish(job, result(), 1);
+    const generate = jest.fn().mockResolvedValue(result());
+    const service = new CultureService(library, generate, { enabled: () => true, language: () => 'en', foregroundBusy: () => false, now: () => 2 });
+    const inherited = snapshot(); inherited.facts.push({ kind: 'lineage', key: 'wildhammer', category: 'source_culture',
+        name: '', description: '', rules: JSON.stringify({ sourceDefinitionHash: 'a'.repeat(64), version: 1 }) });
+    service.observe({ characterId: 10, cultureId: 100, snapshot: inherited });
+    const person = character(10, 'Synthetic hybrid');
+    expect(service.backgroundFor(person)).toBe(paragraph);
+    expect(person.cultureSnapshot!.facts.some(f => f.kind === 'lineage')).toBe(false);
+    expect((person as any).cultureLineage.some((f: any) => f.kind === 'lineage' && f.key === 'wildhammer')).toBe(true);
+    expect(Object.keys(person)).not.toContain('cultureLineage');
+    expect(JSON.stringify(characterToSnapshot(person))).not.toContain('wildhammer');
+    expect(library.stats()).toEqual({ ready: 1, pending: 0, failed: 0 });
+    await service.tick(); expect(generate).not.toHaveBeenCalled();
+    await service.close();
 });
 
 test('only one lease can claim a hash and an expired crashed lease is recoverable', () => {

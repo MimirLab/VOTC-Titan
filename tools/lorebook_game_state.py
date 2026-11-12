@@ -16,7 +16,7 @@ def encoded(value):
 def game_state_reader(pack, context, catalogue_path=None):
     from lorebank.goa_reader import UNAVAILABLE
     from lorebook_campaign_clock import bind_campaign_clock
-    from lorebook_observed import observed_reader
+    from lorebook_observed import observed_reader, combined_reader
     policy = json.loads(Path(catalogue_path or Path(__file__).with_name('lorebook-game-state-catalogue.json')).read_text())
     digest = policy.pop('digest')
     if policy['format'] != 'titan_lore_game_state_v1' or hashlib.sha256(encoded(policy).encode()).hexdigest() != digest:
@@ -53,7 +53,9 @@ def game_state_reader(pack, context, catalogue_path=None):
         actor = nested.get('actor_id', nested.get('lore_knowledge', {}).get('actor_id'))
         if any(nested.get(k) != context[k] for k in ['campaign_id', 'timeline_id', 'as_of']) or actor != context['actor_id']:
             raise ValueError('Current-state knowledge belongs to another context')
-    if reported:
+    if reported and common:
+        primary = combined_reader(pack, reported, common)
+    elif reported:
         primary = bind_campaign_clock(pack.reader(state=reported))
     elif common:
         primary = observed_reader(pack, common)
@@ -172,8 +174,13 @@ def game_state_reader(pack, context, catalogue_path=None):
             with goa.connect() as db:
                 matches = [r[0] for r in db.execute('SELECT node_id FROM search WHERE search MATCH ? ORDER BY rank LIMIT 100', (expression,))]
             with closing(pack.bundle.connect()) as db:
-                return [r[0] for node in matches if node in active for r in db.execute(
+                result = [r[0] for node in matches if node in active for r in db.execute(
                     "SELECT id FROM passages WHERE family='goa' AND node_id=? ORDER BY id LIMIT 1", (node,))][:10]
+            inherited = primary.candidate_ids(query) if hasattr(primary, 'candidate_ids') else []
+            return list(dict.fromkeys(result + inherited))
+
+        def named_subjects(self, query):
+            return primary.named_subjects(query) if hasattr(primary, 'named_subjects') else []
 
         def named_turnings(self, query):
             normal = lambda text: ' '.join(re.findall(r'\w+', text.casefold()))

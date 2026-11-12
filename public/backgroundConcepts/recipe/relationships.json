@@ -9,7 +9,10 @@
         "CreatorName": "Elune"
       },
       "text": "Agamaggan, the Great Boar and an Ancient Guardian, is revered for mighty strength. The tradition's shamans and geomancers seek his help in battle and ritual; ordinary followers can honor that patron without being those specialists.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_agamaggan_teaching"
+      ]
     },
     {
       "accountHash": "8fe16a847d158f37e1c0f4f4d1ed0f93b781f0ab85d941c05bdf739bfa94eb01",
@@ -39,7 +42,10 @@
         "CreatorName": "Eonar"
       },
       "text": "The Red Dragonflight is revered for its entrusted guardianship of life, natural order and justice. Its Queen Mother embodies that mission; protecting the vulnerable and cherishing life give devotion its ordinary meaning, while Eonar appears in the tradition's divine vocabulary.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_red_life_charge_teaching"
+      ]
     },
     {
       "accountHash": "f388f6d3a3b1caa832260d406ff5a1617b9cc84675b286857337aeab3da4e000",
@@ -112,7 +118,10 @@
         "CreatorName": "Shaohao"
       },
       "text": "Chi-Ji, Niuzao, Xuen and Yu'lon, the four August Celestials, are revered as teachers of meditation, mastery of negative emotion and spiritual connection with the world. Their temples train monks; ordinary followers may respect the teaching without having monastic training.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_chi_harmony_teaching"
+      ]
     },
     {
       "accountHash": "c701951b850ec023c26de5e2ae274f829e3257f9428e766d4b8524a26a7b4e5a",
@@ -368,7 +377,10 @@
         "CreatorName": "Shadow"
       },
       "text": "The Forgotten Shadow regards dark energy as necessary alongside the Light, pursuing balance while warning against corruption. Its specialists seek to use shadow without losing themselves in it; devotion is not surrender to the Old Gods.",
-      "vocabulary": "force"
+      "vocabulary": "force",
+      "teachingContext": [
+        "affirmed_forgotten_shadow_teaching"
+      ]
     },
     {
       "accountHash": "c1f90b5f40183b7adf64e0324e39e8726490741d947511856cb18dc49f2f90c8",
@@ -388,7 +400,11 @@
         "CreatorName": "The Deepmother"
       },
       "text": "Sea powers and the mighty creatures within the waters receive reverence through attempts to commune with them. The local pantheon can change as creatures appear, die or depart; even a formidable shark or swift fish may become a living sacred symbol.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_changeable_aquatic_patrons_teaching",
+        "affirmed_deep_mother_teaching"
+      ]
     },
     {
       "accountHash": "49a62ce63efb463854027593a138ec23e3726c58c6beee6a6d37e88531fa1584",
@@ -562,7 +578,10 @@
         "CreatorName": "Norgannon"
       },
       "text": "The Blue Dragonflight is revered as guardian of arcane energies and knowledge. Its entrusted mission gives responsible magical understanding a sacred purpose; Norgannon belongs to the divine inheritance, while the dragons' Nexus connection is their own.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_blue_stewardship_teaching"
+      ]
     },
     {
       "accountHash": "e1d3b56fe1178814fba270ea8a4038f7ce355d9c54a510ab13ac48236eb2529e",
@@ -602,7 +621,10 @@
         "CreatorName": "Khaz'goroth"
       },
       "text": "The Titanic Pantheon, led by Aman'Thul, is revered through guardianship of Azeroth's world soul and the Makers' works. The inherited tradition claims a special duty to defend titan complexes while awaiting the Titans' return.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_titan_world_shaping_teaching"
+      ]
     },
     {
       "accountHash": "4ad74863a8a19783059fc72d12aa6b82b08cbde07876210886484a32a4cd0c89",
@@ -632,7 +654,10 @@
         "CreatorName": "Aman'Thul"
       },
       "text": "The Bronze Dragonflight is revered for safeguarding chronological and causal integrity through its entrusted mission. Mortal followers, unable to fully understand its workings, often interpret them as fate and predestination; Aman'Thul belongs to the divine inheritance.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_temporal_charge_teaching"
+      ]
     },
     {
       "accountHash": "326b32982c7952248cd75e61eec626fba39ef53a9623c07c3ec94acbee6a89a4",
@@ -725,7 +750,10 @@
         "CreatorName": "Lord Rhyolith"
       },
       "text": "Ragnaros, Firelord, is revered and feared as a merciless master whose flame is believed to purify. The inherited tradition approaches him through a sacred intercessor and seeks favor through submission, making divine power both an aspiration and a threat.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_ragnaros_teaching"
+      ]
     },
     {
       "accountHash": "f36b381d237426a8418c8c759c3f427ae228dcef0c233d2a2bf8a25a7337b308",
@@ -1082,7 +1110,10 @@
         "CreatorName": "Eonar"
       },
       "text": "The Green Dragonflight is revered as guardian of living balance through its entrusted mission. The Emerald Dream gives the dragons' work a sacred realm; Eonar belongs to the divine inheritance, while chosen followers may be reached through dreams.",
-      "vocabulary": "named"
+      "vocabulary": "named",
+      "teachingContext": [
+        "affirmed_emerald_dream_teaching"
+      ]
     },
     {
       "accountHash": "ded60d86a6ba6ab5a3aa23a965d160e83de28f3076748b74ffeae7f9ed79a80d",

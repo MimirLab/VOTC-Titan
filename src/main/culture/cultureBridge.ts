@@ -17,6 +17,13 @@ export function cultureCaptureEffect(catalog: CultureCatalog): string {
         `\t\tdebug_log = "VOTC:CULTURE/;/begin/;/2/;/${catalog.digest}/;/[THIS.Char.GetID]/;/[THIS.Char.GetCulture.GetID]/;/[GetDataModelSize(THIS.Char.GetCulture.GetTraditions)]/;/[THIS.Char.GetCulture.GetNumberOfDiscoveredInnovations]"`
     ];
     for (const fact of catalog.facts) {
+        if (fact.kind === 'lineage') {
+            // Both the current source culture and any native ancestor count;
+            // log false as well so an incomplete census cannot impersonate one.
+            const predicate = `OR = { this = culture:${fact.key} any_parent_culture_or_above = { this = culture:${fact.key} } }`;
+            lines.push(`\t\tif = { limit = { culture = { ${predicate} } } debug_log = "VOTC:CULTURE/;/ancestor/;/${fact.key}/;/1" } else = { debug_log = "VOTC:CULTURE/;/ancestor/;/${fact.key}/;/0" }`);
+            continue;
+        }
         if (fact.kind === 'practice') {
             const predicate = getCulturePracticeBank().capturePredicate(fact);
             lines.push(`\t\tif = { limit = { culture = { ${predicate} } } debug_log = "VOTC:CULTURE/;/practice/;/${fact.key}/;/1" } else = { debug_log = "VOTC:CULTURE/;/practice/;/${fact.key}/;/0" }`);

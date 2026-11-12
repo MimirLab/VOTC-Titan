@@ -175,6 +175,7 @@ let currentGameData: GameData | null = null; // Store current game data for scen
 
 // Store initial window state
 let chatSessionGeneration = 0;
+let currentEncounterId: string | undefined;
 let chatSessionLoading = false;
 let initialWindowState = {
     width: '',
@@ -286,6 +287,7 @@ async function displayMessage(message: Message, isHistorical: boolean = false): 
             }
         });
 
+        let editRequest = 0;
         const finishEditing = async () => {
             if (contentSpan.contentEditable === 'true') {
                 const newContent = contentSpan.innerText;
@@ -296,16 +298,23 @@ async function displayMessage(message: Message, isHistorical: boolean = false): 
                 }
                 messageDiv.classList.remove('is-editing');
                 contentSpan.contentEditable = 'false';
-                // Re-apply markdown parsing for display
-                contentSpan.innerHTML = await renderReadingProse(displayContent,
-                    message.editableContent !== undefined ? newContent : undefined);
-
-                // Only send update if content has actually changed
+                const request = ++editRequest;
                 if (newContent !== (message.editableContent ?? message.content)) {
-                    message.content = displayContent;
-                    if (message.editableContent !== undefined) message.editableContent = newContent;
-                    ipcRenderer.send('edit-message', { messageId: message.id, newContent });
+                    try {
+                        const result = await ipcRenderer.invoke('edit-message-authoritative', {
+                            encounterId: currentEncounterId, messageId: message.id, newContent
+                        });
+                        if (generation !== chatSessionGeneration || request !== editRequest) return;
+                        if (result?.message) Object.assign(message, result.message);
+                        if (!result?.success) displayErrorMessage(result?.error || 'Unable to save this edit.');
+                    } catch (error) {
+                        if (generation !== chatSessionGeneration || request !== editRequest) return;
+                        displayErrorMessage(error instanceof Error ? error.message : String(error));
+                    }
                 }
+                if (generation !== chatSessionGeneration || request !== editRequest) return;
+                contentSpan.innerHTML = await renderReadingProse(message.content, message.editableContent);
+
             }
         };
 
@@ -1845,8 +1854,9 @@ ipcRenderer.on('chat-ready', () => {
     chatInput.focus();
 });
 
-ipcRenderer.on('chat-start', async (e, payload: { gameData: GameData, messages: Message[], narratives: [number, string[]][], historicalMetadata: any[], actions: any[], basePromptTokens: number }) => {
+ipcRenderer.on('chat-start', async (e, payload: { encounterId?: string, gameData: GameData, messages: Message[], narratives: [number, string[]][], historicalMetadata: any[], actions: any[], basePromptTokens: number }) => {
     const generation = ++chatSessionGeneration;
+    currentEncounterId = payload.encounterId;
     chatSessionLoading = true;
     chatInput.disabled = true;
     const owns = () => generation === chatSessionGeneration;

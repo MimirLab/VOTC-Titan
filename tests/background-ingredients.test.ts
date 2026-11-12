@@ -96,7 +96,7 @@ test('the actual bundled production ingredient assets load without test fixture 
     const root=path.join(process.cwd(),'public/backgroundConcepts/recipe');
     const manifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
     for(const [name,hash] of Object.entries(manifest.files))expect(sha256Hex(fs.readFileSync(path.join(root,name)))).toBe(hash);
-    expect(manifest.richConditionals).toBe(363);expect(manifest.essentialReadings).toBe(619);
+    expect(manifest.richConditionals).toBe(365);expect(manifest.essentialReadings).toBe(621);
     expect(manifest.baseEntries).toBe(270);
-    expect(manifest.compositions).toBe(29);
+    expect(manifest.compositions).toBe(31);
 });

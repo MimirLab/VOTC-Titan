@@ -7490,7 +7490,7 @@
       "conceptKey": "tradition_metal_craftsmanship",
       "definitionHash": "48d80f02672931c10a3a1debc5d6955c8d333cec5c8ee8a24c9ba8caca8df9a9",
       "label": "The Current Shapes the Edge",
-      "description": "Generations of ironworking give durable weapons and armor a reputation worth defending. Retained Jinyu water-forging makes pressure and controlled currents part of that standard: metal can take its intended shape through moving water, with the maker's judgment beginning in the choice of material. The old eye for a well-polished river stone becomes an eye for what a finished piece can bear. A smooth surface deserves admiration when the edge, fastening, and protection hold under use. Elegance and strength belong to the same claim of quality; an impressive finish cannot excuse a flaw that endangers the person depending on it.",
+      "description": "Generations of ironworking prize durable weapons and armor. Discovered Watersmithing adds an admired parallel craft: controlled water shapes rock and stone into seamless-looking structures and arms as hard as forged steel. Careful material choice and disciplined shaping invite admiration without making every water-shaped object metal. A fine surface earns its reputation through what it can withstand; a flaw concealed by polish still endangers the person depending on it.",
       "requires": {
         "concept": "tradition_metal_craftsmanship",
         "heritageAnyOf": [
@@ -7501,10 +7501,10 @@
         ]
       },
       "replaces": "this_concept_reading_only",
-      "guard": "Requires an affirmative current retained water-forging facet, not simply Jinyu/Ankoan identity. Retains iron, inherited quality and durable arms/armor. Supplies no actor water magic, waterspeaker office, caste, faith, current river/forge, personal equipment, demonstrated skill or actual successful manufacture. Technique is cultural material; the current adapter is absent, so selection stays dormant.",
+      "guard": "Observed native current/parent Jinyu or Ankoan lineage, a current exact adopted craft, and actually discovered exact Watersmithing are required. Stone shaped by water is not asserted to be metal. No personal spellcasting, waterspeaker/divination office, equipment, current production or successful transmutation follows. Changed heritage can retain the separately captured craft interpretation without inferring body or faith.",
       "contributorDefinitionHashes": {},
       "handbookEntries": [],
-      "evidenceBasis": "Effective adopted concept definition; Watersmithing, actual Mists of Pandaria readable-object text, transcribed at https://warcraft.wiki.gg/wiki/Watersmithing (object215779/214154). Pressure/current shaping of stone and metal, selected materials, magical development, durable arms/armor and seamless-looking masonry support the technique. Expanded packet176 is compatible lower-priority authorial support. The preferred153-entry handbook has no Jinyu entry. Specific current retained water-forging must be affirmatively evidenced; heritage/name/body alone is insufficient.",
+      "evidenceBasis": "Current GoA innovation_watersmithing and its localization explicitly describe water-shaped rock/stone, steel-hard arms and seamless-looking walls. Local lorebook expanded:expanded:people:176:chapter:6 adds controlled change and preserving material identity. The adopted primary concept retains its own ironworking or alchemical meaning. Earlier stronger metal-through-water claim is replaced by the available local evidence.",
       "heritageDefinitionHashes": {
         "heritage_jinyu": "fc8cd4a4699764cd7d141478216861b909884a06df945d7c4225bb77a27b1f52"
       }
@@ -7515,7 +7515,7 @@
       "conceptKey": "tradition_sorcerous_metallurgy",
       "definitionHash": "22f4b4aa04d8db5b39bda22f2a6f10a12ce158303b72e181b898f1f49df52a62",
       "label": "The Discipline of Moving Water",
-      "description": "Attempts to turn base metal to gold are as familiar as weapon-forging, and magical production is accepted as useful work. Retained Jinyu water-forging gives that acceptance a distinctive expression: pressures and currents shape metal and stone, with controlled water magic carrying an old talent for choosing fine materials into ambitious construction. A seemingly unbroken surface or a well-shaped piece of armor invites admiration for the discipline behind it. The person commissioning a result may praise its elegance while overlooking the patient control that made it possible. Familiarity with magical craft gives experimentation an audience; a promise of gold still has to answer for its own result.",
+      "description": "Attempts to turn base metal to gold are familiar beside weapon-forging, and magical production is accepted as useful work. Discovered Watersmithing gives that acceptance a distinctive neighboring craft: controlled water shapes rock and stone into seamless-looking structures and arms as hard as forged steel. The person commissioning a smooth surface may overlook the patient control and material judgment behind it. Admiration for magical craft gives experiments an audience; a promise of gold still has to answer for its own result.",
       "requires": {
         "concept": "tradition_sorcerous_metallurgy",
         "heritageAnyOf": [
@@ -7526,10 +7526,10 @@
         ]
       },
       "replaces": "this_concept_reading_only",
-      "guard": "The adopted tenet-independent cultural concept supplies gold-transmutation attempts; Watersmithing supplies water-forging, not a claim that water creates gold. No actor spellcasting, successful transmutation, waterspeaker/divination office, caste hierarchy, faith, current edifice/equipment or river setting is supplied. Affirmative retained-practice facet required; current adapter absent, so dormant.",
+      "guard": "Observed native current/parent Jinyu or Ankoan lineage, a current exact adopted craft, and actually discovered exact Watersmithing are required. Stone shaped by water is not asserted to be metal. No personal spellcasting, waterspeaker/divination office, equipment, current production or successful transmutation follows. Changed heritage can retain the separately captured craft interpretation without inferring body or faith.",
       "contributorDefinitionHashes": {},
       "handbookEntries": [],
-      "evidenceBasis": "Effective adopted concept definition; Watersmithing, actual Mists of Pandaria readable-object text, transcribed at https://warcraft.wiki.gg/wiki/Watersmithing (object215779/214154). Pressure/current shaping of stone and metal, selected materials, magical development, durable arms/armor and seamless-looking masonry support the technique. Expanded packet176 is compatible lower-priority authorial support. The preferred153-entry handbook has no Jinyu entry. Specific current retained water-forging must be affirmatively evidenced; heritage/name/body alone is insufficient.",
+      "evidenceBasis": "Current GoA innovation_watersmithing and its localization explicitly describe water-shaped rock/stone, steel-hard arms and seamless-looking walls. Local lorebook expanded:expanded:people:176:chapter:6 adds controlled change and preserving material identity. The adopted primary concept retains its own ironworking or alchemical meaning. Earlier stronger metal-through-water claim is replaced by the available local evidence.",
       "heritageDefinitionHashes": {
         "heritage_jinyu": "fc8cd4a4699764cd7d141478216861b909884a06df945d7c4225bb77a27b1f52"
       }
@@ -12700,6 +12700,44 @@
         8
       ],
       "evidenceBasis": "Complete independent primary reading with every declared culinary/festive/courteous contributor. Preferred Gnomes008 supplies extended household company, small-occasion presents, music/parties/fireworks, unusual culinary experiments, inventions answering a guest’s inconvenience and affectionate disagreement. No Artisans/learning/philosophy/enterprise prerequisite; these cultural possibilities do not establish an actor body, profession, current scene or personal history. Every practical current source meaning retained; no provider/model/runtime acceptance."
+    },
+    {
+      "id": "argussian_elekk_patient_husbandry",
+      "domain": "culture",
+      "conceptKey": "tradition_lords_of_the_elephant",
+      "definitionHash": "d162afa372683efef57325338fbefe4a1ae4ed55235850b35a7478057ee7330f",
+      "label": "Elekk Prestige and Patient Husbandry",
+      "description": "Mighty elekk carry the royal prestige of this great-beast tradition. Capturing, training and caring for them, including their use in war, earn esteem through patient handling; a ruler's display depends on keepers whose work continues after the crowd leaves. No personal mount, office or handling skill follows.",
+      "requires": {
+        "concept": "tradition_lords_of_the_elephant",
+        "currentInterpretationContextAllOf": [
+          "retained_argussian_elekk_husbandry"
+        ]
+      },
+      "replaces": "this_concept_reading_only",
+      "guard": "Current GoA draenei, Lightforged and Broken source cultures adopt Lords of the Elephant. GoA exarch_flavor explicitly describes draenei riding mighty elekk into battle; this gives their inherited great-beast tradition a concrete local expression. Royal esteem and husbandry come from the actual adopted tradition. Scope remains current/parent native culture plus actual adoption, including renamed or mixed descendants. No Exodar, O'ros, alternate-Draenor history, intelligence/bond equivalent to gryphons, actor mount or personal profession is inferred.",
+      "contributorDefinitionHashes": {},
+      "handbookEntries": [],
+      "evidenceBasis": "Current GoA draenei, Lightforged and Broken source cultures adopt Lords of the Elephant. GoA exarch_flavor explicitly describes draenei riding mighty elekk into battle; this gives their inherited great-beast tradition a concrete local expression. Royal esteem and husbandry come from the actual adopted tradition. Scope remains current/parent native culture plus actual adoption, including renamed or mixed descendants. No Exodar, O'ros, alternate-Draenor history, intelligence/bond equivalent to gryphons, actor mount or personal profession is inferred."
+    },
+    {
+      "id": "centaur_mobile_warfare_and_horsecraft",
+      "domain": "culture",
+      "conceptKey": "tradition_horse_lords",
+      "definitionHash": "cf6df7cec1441f5379ed52c3c3b4536f6e8c7be79083f526ce4288b9f70cca4d",
+      "label": "Swift Tribal Warfare and Horsecraft",
+      "description": "Centaur tribes prize swift movement in war: route knowledge, endurance and well-secured equipment help warriors choose where to strike or withdraw. Care of legs and hooves supports that mobility. Horse handling is also esteemed when riding is practiced; the custom establishes neither a person's body nor a present mount or personal skill.",
+      "requires": {
+        "concept": "tradition_horse_lords",
+        "currentInterpretationContextAllOf": [
+          "retained_centaur_mobile_warfare"
+        ]
+      },
+      "replaces": "this_concept_reading_only",
+      "guard": "GoA current centaur culture adopts Horse Lords; GoA creature_centaur description and local lorebook expanded:expanded:people:047 chapters 2, 3 and 6 describe centaur tribal mobility, route knowledge, care of legs and hooves and equipment secured for speed. The adopted source tradition also explicitly values horses and mounted warfare, retained for cultures with riders. Scope is an actual native current/parent culture plus the exact adopted tradition, not an individual body or assumed player identity. No raid, horse, individual skill or current terrain follows.",
+      "contributorDefinitionHashes": {},
+      "handbookEntries": [],
+      "evidenceBasis": "GoA current centaur culture adopts Horse Lords; GoA creature_centaur description and local lorebook expanded:expanded:people:047 chapters 2, 3 and 6 describe centaur tribal mobility, route knowledge, care of legs and hooves and equipment secured for speed. The adopted source tradition also explicitly values horses and mounted warfare, retained for cultures with riders. Scope is an actual native current/parent culture plus the exact adopted tradition, not an individual body or assumed player identity. No raid, horse, individual skill or current terrain follows."
     }
   ],
   "conditionalReadingSupersessions": {

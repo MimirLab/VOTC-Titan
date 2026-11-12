@@ -1,3 +1,4 @@
+import { conversationSummariesDir as campaignConversationSummariesDir } from './campaignDataPaths';
 import { openTitanHelp } from './projectHelp';
 import { readLauncherSceneArt, readLauncherScenePreview } from './scenes/launcherSceneArt';
 import { setLauncherScenePublisher } from './scenes/launcherSceneRuntime';
@@ -2006,7 +2007,7 @@ clipboardListener.on('VOTC:IN', async () =>{
             }
             let current: Conversation | undefined;
             const scopedChat = bindEncounterChatWindow(chatWindow, () => generation === conversationGeneration && current?.isOpen !== false);
-            current = new Conversation(gameData, config, scopedChat, votcDataPath, tiktokenEncoder);
+            current = new Conversation(gameData, config, scopedChat, votcDataPath, tiktokenEncoder, memoryManager);
             current.closeEffectAllowed = () => generation === conversationGeneration;
             conversation = current;
             // Wire the memory-insertion callback so main broadcasts a Memories-tab refresh
@@ -2021,6 +2022,7 @@ clipboardListener.on('VOTC:IN', async () =>{
 
             const payload = {
                 gameData: current.gameData,
+                encounterId: String(generation),
                 messages: current.getHistory(),
                 narratives: (current as any).narratives ? Array.from((current as any).narratives) : [],
                 historicalMetadata: current.historicalConversations || [],
@@ -2083,6 +2085,7 @@ clipboardListener.on('VOTC:IN', async () =>{
 
 clipboardListener.on('VOTC:EFFECT_ACCEPTED', () =>{
     console.log('ClipboardListener: VOTC:EFFECT_ACCEPTED event detected.');
+    RunFileManager.acknowledgePendingCloses();
     if(conversation){
         conversation.runFileManager.clear();
         console.log('Conversation active, run file manager cleared.');
@@ -2247,12 +2250,16 @@ for (const command of ['VOTC:WHISPER', 'VOTC:INCOMING_LETTER', 'VOTC:BATTLE_REPO
 
 clipboardListener.on('VOTC:LETTER', async () => {
     console.log('ClipboardListener: VOTC:LETTER event detected.');
+    const generation = conversationGeneration;
+    const owns = () => generation === conversationGeneration;
     try {
-        await sleep(250); // Wait for log to flush
+        await sleep(250);
+        if (!owns()) return; // Wait for log to flush
         if (await ceCompatibility.dispatch('VOTC:LETTER', [], config, votcDataPath)) return;
         if (!lastLetterSentToGame) LetterManager.getInstance().clearLettersFile(config);
 
         const gameData = await parseLog(path.join(config.userFolderPath, 'logs', 'debug.log'));
+        if (!owns()) return;
         if (!gameData) {
             console.error('Failed to parse game data from debug.log for letter event.');
             return;
@@ -2354,13 +2361,18 @@ clipboardListener.on('VOTC:LETTER', async () => {
         // END NEW LOGIC
 
         // Check if this letter already has a reply that is not in the future
-        const hasReply = allPlayerLetters.some(l =>
+        const archivedReply = allPlayerLetters.find(l =>
             l.replyToId === latestLetter.id &&
-            l.totalDays <= gameData.totalDays &&
+            (l.totalDays <= gameData.totalDays || (l.status === 'pending' && l.delivered === false)) &&
             l.sender.id === latestLetter.recipient.id &&
             l.recipient.id === latestLetter.sender.id
         );
-        if (hasReply) {
+        if (archivedReply) {
+            if (owns() && archivedReply.status === 'pending' && archivedReply.delivered === false && !storedLetters.has(latestLetter.id)) {
+                storedLetters.set(latestLetter.id, { letter: archivedReply, originalLetter: latestLetter,
+                    expectedDeliveryDay: latestLetter.totalDays + latestLetter.delay });
+                checkAndDeliverLetters();
+            }
             console.log(`Letter ${latestLetter.id} already has a reply that is not in the future. No new reply will be generated.`);
             return;
         }
@@ -2377,25 +2389,12 @@ clipboardListener.on('VOTC:LETTER', async () => {
 
         const letterReplyGenerator = new LetterReplyGenerator(config, votcDataPath, tiktokenEncoder);
         const replyLetter = await letterReplyGenerator.generateLetterReply(gameData, latestLetter);
+        if (!owns()) return;
 
-        // Diary entry for player sending a letter
-        if (config.diaryGenerationChance > 0 && Math.random() < (config.diaryGenerationChance / 100)) {
-            const playerCharacter = gameData.getCharacter(gameData.playerID);
-            if (playerCharacter) {
-                const newEntry = await diaryGenerator.generateDiaryEntryForLetter(gameData, playerCharacter, latestLetter.content, 'sent');
-                if (newEntry) {
-                    await saveDiaryFile(String(gameData.playerID), String(playerCharacter.id), newEntry);
-                    const summaryResult = await diaryGenerator.summarizeDiaryEntry(newEntry, gameData);
-                    if (summaryResult) {
-                        const summaries = await readDiarySummaries(String(gameData.playerID), String(playerCharacter.id));
-                        summaries.unshift({ id: randomUUID(), ...summaryResult });
-                        await saveDiarySummaries(String(gameData.playerID), String(playerCharacter.id), summaries);
-                    }
-                }
-            }
-        }
 
         if (!replyLetter) {
+            letterManager.updateLetterStatus(playerId, recipientId, latestLetter.id, 'failed');
+            configWindow?.window?.webContents.send('letter-status-changed');
             console.error(`Failed to generate a reply for letter ${latestLetter.id}. The LLM may have returned an empty response.`);
             return;
         }
@@ -2416,24 +2415,51 @@ clipboardListener.on('VOTC:LETTER', async () => {
         if (!config.manualLetterActionApproval && replyLetter.associatedAction?.triggerOn === 'send') {
           LetterActionTrigger.executeLetterAction(replyLetter, replyLetter.associatedAction, config);
         }
+        // Delivery is committed before optional diary work, including a stalled provider.
+        checkAndDeliverLetters();
+        void (async () => {
+        // Diary entry for player sending a letter
+        if (config.diaryGenerationChance > 0 && Math.random() < (config.diaryGenerationChance / 100)) {
+            const playerCharacter = gameData.getCharacter(gameData.playerID);
+            if (playerCharacter) {
+                const newEntry = await diaryGenerator.generateDiaryEntryForLetter(gameData, playerCharacter, latestLetter.content, 'sent');
+                if (newEntry) {
+                    if (!owns()) return;
+                    await saveDiaryFile(String(gameData.playerID), String(playerCharacter.id), newEntry);
+                    const summaryResult = await diaryGenerator.summarizeDiaryEntry(newEntry, gameData);
+                    if (summaryResult) {
+                        if (!owns()) return;
+                        const summaries = await readDiarySummaries(String(gameData.playerID), String(playerCharacter.id));
+                        summaries.unshift({ id: randomUUID(), ...summaryResult });
+                        if (!owns()) return;
+                        await saveDiarySummaries(String(gameData.playerID), String(playerCharacter.id), summaries);
+                    }
+                }
+            }
+        }
+
         // Diary entry for AI receiving a letter and replying
         if (config.diaryGenerationChance > 0 && Math.random() < (config.diaryGenerationChance / 100)) {
             const aiCharacter = gameData.getCharacter(replyLetter.sender.id);
             if (aiCharacter) {
                 const newEntry = await diaryGenerator.generateDiaryEntryForLetter(gameData, aiCharacter, replyLetter.content, 'received');
                 if (newEntry) {
+                    if (!owns()) return;
                     await saveDiaryFile(String(gameData.playerID), String(aiCharacter.id), newEntry);
                     const summaryResult = await diaryGenerator.summarizeDiaryEntry(newEntry, gameData);
                     if (summaryResult) {
+                        if (!owns()) return;
                         const summaries = await readDiarySummaries(String(gameData.playerID), String(aiCharacter.id));
                         summaries.unshift({ id: randomUUID(), ...summaryResult });
+                        if (!owns()) return;
                         await saveDiarySummaries(String(gameData.playerID), String(aiCharacter.id), summaries);
                     }
                 }
             }
         }
 
-        checkAndDeliverLetters();
+        })().catch(error => console.error('Optional ordinary-letter diary failed:', error));
+
 
     } catch (error) {
         console.error('Error processing VOTC:LETTER event:', error);
@@ -2873,6 +2899,18 @@ ipcMain.on('resume-conversation', () => {
     console.log('IPC: Received resume-conversation event.');
     if (conversation) {
         conversation.resume();
+    }
+});
+
+ipcMain.handle('edit-message-authoritative', (event, { encounterId, messageId, newContent }) => {
+    if (!conversation?.isOpen || encounterId !== String(conversationGeneration))
+        return { success: false, error: 'This encounter has ended.' };
+    try {
+        conversation.editMessage(messageId, newContent);
+        return { success: true, message: conversation.getHistory().find(message => message.id === messageId) };
+    } catch (error) {
+        return { success: false, error: error instanceof Error ? error.message : String(error),
+            message: conversation.getHistory().find(message => message.id === messageId) };
     }
 });
 
@@ -3317,12 +3355,18 @@ async function readConversationSummaryRecords(playerId: string, checkpointEpoch?
 ipcMain.handle('read-summary-file', (event, playerId, checkpointEpoch) => readConversationSummaryRecords(playerId, checkpointEpoch));
 const summaryEdits = new SummaryEdits(votcDataPath);
 ipcMain.handle('read-summary-edit-snapshot', async (event, playerId: string, kind: SummaryKind) => {
+    let sources: string[] | undefined;
+    if (kind === 'conversations') {
+        const { identity } = await resolveTimelineWindowRequest(undefined, playerId);
+        const legacy = path.join(votcDataPath, 'conversation_summaries', playerId);
+        sources = identity ? [campaignConversationSummariesDir(app.getPath('userData'), identity), legacy] : [legacy];
+    }
     return summaryEdits.read(playerId, kind, async () => {
         if (kind === 'conversations') return readConversationSummaryRecords(playerId);
         if (kind === 'letters') return LetterManager.getInstance().getAllLetterSummaries(playerId);
         if (kind === 'diaries') return getAllDiarySummaries(playerId);
         throw new Error('Invalid summary kind.');
-    });
+    }, sources);
 });
 
 ipcMain.handle('save-summary-file', (event, playerId: string, data: any[], revision: string) => {

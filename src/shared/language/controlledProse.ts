@@ -92,6 +92,12 @@ export function normalizeControlledProseFormatting(source: string, proseLanguage
     const connector = /^\s*[,;:]?\s*(?:and|or|but|nor|yet|so|as|while|when|where|before|after|then|to show)\s*$/i;
     return segments.map((segment, index) => {
         const previous = segments[index - 1], next = segments[index + 1];
+        // Only an entire bare speech-attribution gap gains observable controls.
+        // Qualifiers and cognitive clauses still require normal recovery.
+        const attribution = segment.kind === 'gap' && /^\s*((?:he|she|they)\s+(?:says?|said|asks?|asked|replies|replied|answers?|answered))\s*[,;:.]?\s*$/i.exec(segment.text);
+        if (attribution && previous?.kind === 'speech' && next?.kind === 'action' &&
+            !/\r?\n[\t ]*\r?\n/.test(segment.text))
+            return segment.text.replace(attribution[1], words => '**' + words + '**');
         if (segment.kind !== 'gap' || !previous || !next || previous.kind !== next.kind ||
             !['action', 'private'].includes(previous.kind) || !connector.test(segment.text) ||
             /\r?\n[\t ]*\r?\n/.test(segment.text)) return quoted.slice(segment.start, segment.end);

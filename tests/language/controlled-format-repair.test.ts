@@ -1,5 +1,46 @@
 import { normalizeControlledProseFormatting, parseControlledProse, controlledProseView } from '../../src/shared/language/controlledProse';
 import { repairControlledPhoneticGaps, repairControlledPrivateClauses, validateControlledSpeechLabels, validateControlledSourceSpeech } from '../../src/main/language/controlledWriter';
+import path from 'path';
+import { loadLanguageEngine } from '../../src/main/language/languageEngine';
+
+test.each(['she says,', 'they asked;', 'She answered.'])('bare speech attribution keeps the original words and existing audible/private boundaries: %s', attribution => {
+    const source = `**Mara nods.** ""I will stay."" ${attribution} **her voice gentle.** ~~The hidden opal stays under my sleeve.~~`;
+    const words = attribution.replace(/[,;.]$/, '');
+    const expected = source.replace(attribution, '**' + words + '**' + attribution.slice(words.length));
+    const repaired = normalizeControlledProseFormatting(source);
+    expect(repaired).toBe(expected); expect(normalizeControlledProseFormatting(repaired)).toBe(repaired);
+    validateControlledSpeechLabels(repaired); validateControlledSourceSpeech(repairControlledPrivateClauses(repaired));
+    const engine = loadLanguageEngine(path.resolve('public/languages'));
+    for (const keepPrivate of [false, true]) {
+        const actual = controlledProseView(parseControlledProse(repaired), keepPrivate);
+        const explicit = controlledProseView(parseControlledProse(expected), keepPrivate);
+        expect(actual).toEqual(explicit); expect(actual.content.includes('hidden opal')).toBe(keepPrivate);
+        expect(actual.speechSpans.map(span => actual.content.slice(span.start, span.end))).toEqual(['I will stay.']);
+        for (const mode of ['CLEAR', 'CLOSE', 'FAR'] as const) {
+            const render = (view: typeof actual) => engine.renderer.forMode({ spokenLanguageId: 'language_common', originalText: view.content, speechSpans: view.speechSpans }, mode);
+            expect(render(actual)).toEqual(render(explicit));
+        }
+    }
+});
+
+test.each([
+    '""Wait."" she remembers, **her eyes close.**',
+    '""Wait."" she says, remembering the hidden opal, **her eyes close.**',
+    '""Wait."" she says in her mind, **her eyes close.**',
+    '""Wait."" she lies, **her eyes close.**',
+    '""Wait.""\n\nshe says, **her eyes close.**',
+    '""Wait."" she says,',
+    '~~I should wait.~~ she says, **her eyes close.**'
+])('bare-attribution repair leaves private, ambiguous and unbound clauses for bounded recovery: %s', source => {
+    expect(() => parseControlledProse(normalizeControlledProseFormatting(source))).toThrow();
+});
+
+test('attribution repair leaves non-English and existing written/private quotations untouched', () => {
+    const raw = '""Wait."" she says, **her eyes close.**';
+    expect(normalizeControlledProseFormatting(raw, 'fr')).toBe(raw);
+    for (const source of ['~~"Wait," she says in her mind.~~', '**She points at the written "Home".**'])
+        expect(normalizeControlledProseFormatting(source)).toBe(source);
+});
 
 test.each([
     ['**She nods.** "I heard you." ~~She doubts it.~~', '**She nods.** ""I heard you."" ~~She doubts it.~~'],

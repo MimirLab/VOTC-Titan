@@ -181,6 +181,14 @@ export class MemoryManager {
                 );
             `);
 
+            // Repair compatible base rows left unindexed by older builds. A real
+            // dimension mismatch still requires an explicit full reindex.
+            this.db.transaction(() => {
+                const rows = this.db.prepare('SELECT id, embedding FROM memories WHERE length(embedding)=?').all(this.embeddingDimension * 4) as {id:string;embedding:Buffer}[];
+                const exists = this.db.prepare('SELECT 1 FROM memory_vectors WHERE memory_id=?');
+                const insert = this.db.prepare('INSERT INTO memory_vectors (memory_id,embedding) VALUES (?,?)');
+                for (const row of rows) if (!exists.get(row.id)) insert.run(row.id,row.embedding);
+            })();
             console.log('MemoryManager: sqlite-vec extension loaded successfully.');
         } catch (error: any) {
             console.warn(
@@ -211,6 +219,7 @@ export class MemoryManager {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `);
 
+        this.db.transaction(() => {
         stmt.run(
             memory.id,
             memory.characterId,
@@ -230,6 +239,7 @@ export class MemoryManager {
         if (this.vecAvailable && memory.vector) {
             this.insertVectorIndex(memory.id, memory.vector);
         }
+        })();
     }
 
     /**
@@ -598,6 +608,7 @@ export class MemoryManager {
     private normalizeVector(vector: Float32Array | number[]): Float32Array {
         const arr = vector instanceof Float32Array ? vector : new Float32Array(vector);
         if (arr.length === this.embeddingDimension) return arr;
+        if (arr.length > 0 && this.vecAvailable) throw new Error('Embedding dimension changed; refresh the embedding provider before inserting memories.');
         const out = new Float32Array(this.embeddingDimension);
         out.set(arr.subarray(0, this.embeddingDimension));
         return out;
@@ -641,14 +652,8 @@ export class MemoryManager {
     private insertVectorIndex(memoryId: string, vector: Float32Array | number[]): void {
         if (!this.vecAvailable) return;
 
-        try {
-            const vecBlob = this.vectorToBlob(vector);
-            this.db.prepare(
-                'INSERT INTO memory_vectors (memory_id, embedding) VALUES (?, ?)'
-            ).run(memoryId, vecBlob);
-        } catch (error: any) {
-            console.warn(`MemoryManager: Failed to insert vector index for ${memoryId}: ${error?.message}`);
-        }
+        const vecBlob = this.vectorToBlob(vector);
+        this.db.prepare('INSERT INTO memory_vectors (memory_id, embedding) VALUES (?, ?)').run(memoryId, vecBlob);
     }
 
     /**

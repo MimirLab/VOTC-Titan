@@ -19,13 +19,15 @@ import { EmbeddingProvider } from '../../src/shared/apiConnection';
 import { defaultLanguageEngine } from '../../src/main/language/languageRuntime';
 import { parseControlledProse } from '../../src/shared/language/controlledProse';
 import { ProviderLane } from '../../src/shared/providerActivity';
+import { TimelineRegistry } from '../../src/main/timelineManager';
 
 jest.mock('../../src/main/culture/cultureRuntime', () => ({ getCultureBackground: jest.fn(), formatCultureBackground: jest.fn(),
     captureRoleplayEncounter: jest.fn(), prepareRoleplayBackground: jest.fn() }));
 jest.mock('../../src/main/faith/faithRuntime', () => ({ getFaithBackground: jest.fn(), getFaithLiveContext: jest.fn(), getFaithZealous: jest.fn() }));
 jest.mock('../../src/main/letter/LetterManager', () => ({ LetterManager: { getInstance: () => ({ getLetterSummaries: () => [] }) } }));
 jest.mock('../../src/main/diaryManager', () => ({ readDiarySummaries: async () => [], saveDiaryFile: jest.fn(), saveDiarySummaries: jest.fn() }));
-jest.mock('../../src/main/summaryManager', () => ({ readSummaryFile: async () => [], saveSummaryFile: jest.fn() }));
+jest.mock('../../src/main/summaryManager', () => ({ readSummaryFile: async () => [], saveSummaryFile: jest.fn(),
+    filterSummariesForCheckpoint: jest.requireActual('../../src/main/summaryManager').filterSummariesForCheckpoint }));
 
 let root: string, data: string, config: Config, game: GameData;
 const source = '*She sets down the cup.* "Bring water to the gate before dawn."\n\n*Her hands tremble.*';
@@ -144,6 +146,7 @@ function echoConversation(): { conv: any; echo: Message } {
 
 test.each([
     ['**She nods.** "Wait here." ~~She remembers "a secret".~~', ['Wait here.']],
+    ['**She nods.** ""Wait here."" she says, **her voice clear.** ~~She remembers "a secret".~~', ['Wait here.']],
     ['**She sets down the cloth** and **waits** before **raising her eyes**. “We have time.”', ['We have time.']]
 ])('ordinary quote/connector cleanup delivers the original reply with one writer request: %s', async (raw, expectedSpeech) => {
     const conv = conversation(); conv.textGenApiConnection.complete.mockResolvedValueOnce(raw);
@@ -979,4 +982,40 @@ test('clearing summaries while a close summary is pending neither resurrects old
     conv.messages=[{id:'player',role:'user',characterId:1,content:'Hello.'},{id:'npc',role:'assistant',characterId:2,content:'Good morning.'}];
     await conv._generateSummariesAndDiariesInBackground();
     const stored=fs.readFileSync(path.join(data,'conversation_summaries/1/2.json'),'utf8');expect(stored).toContain('ONLY_NEW_SUMMARY');expect(stored).not.toContain('CLEARED_OLD_CACHE');
+});
+
+test.each([true, false])('native close stamps an available campaign and preserves legacy summary writing (%s)', async hasCampaign => {
+    const conv = conversation(); config.diaryGenerationChance = 0; config.embeddingApiConnectionConfig = undefined as any;
+    conv.campaignIdentity = hasCampaign ? { campaignId: '1-2-3-4', playerId: '1' } : undefined;
+    conv.memoryCompactor = undefined; conv.actionInvolvedCharacterIds = new Set();
+    conv.summaryFileWatcher = { pauseWatcher: jest.fn(), resumeWatcher: jest.fn() };
+    conv.messages = [{ id: 'opening', role: 'user', name: 'Player', characterId: 1, content: 'Hello.' },
+        { id: 'answer', role: 'assistant', name: 'Speaker', characterId: 2, content: 'Good morning.' }];
+    conv.generateEncounterSummary = jest.fn(async () => 'An exchange of greetings.');
+    await conv._generateSummariesAndDiariesInBackground({ checkpointEpoch: 1, timelineNodeId: '9-10' });
+    const rows = JSON.parse(fs.readFileSync(path.join(data, 'conversation_summaries/1/2.json'), 'utf8'));
+    expect(rows).toHaveLength(1); expect(rows[0].content).toBe('An exchange of greetings.');
+    expect(rows[0].votcTimelineNodeId).toBe('9-10'); expect(rows[0].votcCheckpointEpoch).toBe(1);
+    if (hasCampaign) expect(rows[0].votcCampaignId).toBe('1-2-3-4');
+    else expect(rows[0]).not.toHaveProperty('votcCampaignId');
+});
+
+test('a current campaign stamp leaves the ordinary prompt exact while a foreign stamp withholds its text', async () => {
+    const conv = conversation(); config.lorebookEnabled = false;
+    game.votcCheckpointEpoch = 1;
+    game.timelineSnapshotResult = { status: 'valid', snapshot: { source: 'init', playerId: '1', epoch: 1, nodeA: 9, nodeB: 10,
+        protocol: { protocolSchema: 2, campaignSchema: 1, campaignIdA: 1, campaignIdB: 2, campaignIdC: 3,
+            campaignIdD: 4, campaignBootstrapKind: 1, playerTimelineSchema: 1 } } } as any;
+    conv.campaignIdentity = { campaignId: '1-2-3-4', playerId: '1' };
+    conv.timelineReadContext = { currentNodeId: '9-10', registry: new TimelineRegistry('1', { version: 1, playerId: '1', nodes: {
+        '9-10': { parentId: null, epoch: 1, source: 'conversation', eventKey: 'fixture', createdAt: '2026-01-01' }
+    } }) };
+    conv.branchFilterLogged = new Set(); conv.getBranchVisibleSummaries = Conversation.prototype.getBranchVisibleSummaries;
+    const summary = { date: '1066.9.14', content: 'CAMPAIGN_SCOPED_KNOWLEDGE', votcTimelineNodeId: '9-10', votcCheckpointEpoch: 1 };
+    conv.summaries = new Map([[2, [summary]]]);
+    const before = await buildChatPrompt(conv, game.getAi()); expect(JSON.stringify(before)).toContain(summary.content);
+    conv.summaries.set(2, [{ ...summary, votcCampaignId: '1-2-3-4' }]);
+    expect(await buildChatPrompt(conv, game.getAi())).toEqual(before);
+    conv.summaries.set(2, [{ ...summary, votcCampaignId: '1-2-3-5' }]);
+    expect(JSON.stringify(await buildChatPrompt(conv, game.getAi()))).not.toContain(summary.content);
 });

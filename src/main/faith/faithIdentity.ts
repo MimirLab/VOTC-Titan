@@ -2,7 +2,7 @@ import { ingredientRevision, ingredientView, ingredientInterpretations } from '.
 import { FaithSnapshot, validateFaithSnapshot } from '../../shared/gameData/FaithSnapshot';
 import { Message } from '../ts/conversation_interfaces';
 import { canonicalJsonStringify, sha256Hex } from '../promptWorkbench/canonicalJson';
-import { extractionEvidence, extractionFormat, renderExtraction, SOURCE_SELECTION_INSTRUCTIONS, PassageBudget } from '../background/sourceReference';
+import { extractionEvidence, extractionFormat, renderExtraction, SOURCE_SELECTION_INSTRUCTIONS, PassageBudget, faithReferenceLimits } from '../background/sourceReference';
 
 export const FAITH_PROMPT_VERSION = 7;
 export interface FaithInput { domain: 'faith'; version: 1; promptVersion: number; ingredientRevision?: string; language: string; snapshot: FaithSnapshot }
@@ -26,10 +26,12 @@ function currentView(input: FaithInput): FaithSnapshot {
 
 export const FAITH_GENERATION_INSTRUCTIONS = SOURCE_SELECTION_INSTRUCTIONS.replace('{DOMAIN}', 'faith').replace('250-word', '380-word') + " Further protected teachings, when present, are retained automatically alongside supplied office restrictions. Select complementary meanings without repeating them. Current authored core-tenet names, their complete reviewed meanings and supplied high-god/creator vocabulary are retained automatically. Choose complete passages that explain distinctive meanings or qualifications beyond those labels. Preserve the actual subject, conditions and limits; vocabulary does not establish cosmic fact or personal devotion.";
 export function buildFaithGenerationMessages(input: FaithInput): Message[] {
+    const view = currentView(input);
+    const maximumWords = faithReferenceLimits(view).maximumWords;
     return [
-        { role: 'system', content: FAITH_GENERATION_INSTRUCTIONS },
+        { role: 'system', content: maximumWords > 380 ? FAITH_GENERATION_INSTRUCTIONS.replace('380-word', maximumWords + '-word') : FAITH_GENERATION_INSTRUCTIONS },
         { role: 'user', content: 'Current readable religious evidence:\n' +
-            canonicalJsonStringify({ ...extractionEvidence('faith', currentView(input)), upstreamInterpretations: ingredientInterpretations('faith', input.snapshot) }) + '\n\nSelect complementary passage IDs.' }
+            canonicalJsonStringify({ ...extractionEvidence('faith', view), upstreamInterpretations: ingredientInterpretations('faith', input.snapshot) }) + '\n\nSelect complementary passage IDs.' }
     ];
 }
 export function faithResponseFormat(input: FaithInput): object { return extractionFormat('faith', currentView(input)); }

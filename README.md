@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11.2"><img src="docs/media/download-titan.svg" alt="Download Titan" width="300"></a>
+  <a href="https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.12"><img src="docs/media/download-titan.svg" alt="Download Titan" width="300"></a>
 </p>
 
 <p align="center">
@@ -60,6 +60,8 @@ Dialogue, whispered thoughts and narration have separate delivery. Titan prepare
 
 A character's upbringing and beliefs affect how they speak and what matters to them. Titan supplies current culture and faith backgrounds, **166 cultural speech profiles**, and **35 devotional profiles covering 42 faiths**. Their traits and convictions shape how those influences come through in conversation.
 
+Hybrid and descendant cultures carry reviewed parent roots into their current customs. Wildhammer-descended gryphon traditions retain their care and partnership; a reformed faith can carry its recorded origin's perspective while its current teachings take precedence.
+
 Languages affect what each person hears. Known languages, related tongues, cultural contact and Learning govern comprehension. Two listeners can understand different amounts of the same speech, and their memories retain what each received.
 
 [Culture, faith and language →](docs/features.md#culture-faith-and-language)
@@ -74,7 +76,7 @@ Conversations continue through the VOTC foundation of letters, diaries, historie
 
 1. Install **CK3 on the branch required by GoA2**. GoA2 intentionally uses an earlier CK3 branch.
 2. Subscribe to **[Guardians of Azeroth 2](https://steamcommunity.com/sharedfiles/filedetails/?id=2949767945)** and **[VOTC Community Edition](https://steamcommunity.com/sharedfiles/filedetails/?id=3654567139)**. Follow their dependency and load-order instructions.
-3. Download **[Titan](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.11.2)**, verify its checksum, extract it and run `./install.sh`.
+3. Download **[Titan](https://github.com/MimirLab/VOTC-Titan/releases/tag/titan-preview-2026.11.12)**, verify its checksum, extract it and run `./install.sh`.
 4. Open Titan, select your CK3 installation and user folders, then configure your AI connection.
 5. Start CK3 with the subscribed addons and open a conversation. Configure Breeze in Audio to enable speech.
 

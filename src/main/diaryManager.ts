@@ -1,3 +1,4 @@
+import { normalizeDiarySummaries } from './summaryRecords';
 
 
 import fs from 'fs';
@@ -36,32 +37,7 @@ export async function readDiarySummaries(playerId: string, characterId: string):
     try {
         const data = JSON.parse(fileContent);
 
-        if (Array.isArray(data)) {
-            // New format (array of summaries).
-            return data.reduce((acc: DiarySummary[], s: any) => {
-                if (typeof s === 'object' && s !== null && s.summary && typeof s.date !== 'undefined') {
-                    acc.push({
-                        ...s, // Preserve campaign/checkpoint/node stamps through reads and updates.
-                        id: s.id || randomUUID(),
-                        diaryEntryId: s.diaryEntryId || '',
-                        date: s.date,
-                        summary: s.summary,
-                        characterId: characterId
-                    });
-                }
-                return acc;
-            }, []);
-        } else if (typeof data === 'object' && data !== null && data.summary) {
-            // Old format (single summary object), possibly without a date.
-            return [{
-                ...data,
-                id: data.id || randomUUID(),
-                diaryEntryId: '',
-                date: data.date || '', // Provide empty string if date is missing
-                summary: data.summary,
-                characterId: characterId
-            }];
-        }
+        return normalizeDiarySummaries(data, characterId);
     } catch (error) {
         console.error(`Error parsing diary summary file ${summaryPath}:`, error);
     }

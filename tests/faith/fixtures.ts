@@ -26,6 +26,7 @@ export function result(input = faithInput(snapshot(), 'en')) {
 export function records(characterId = 2, faithId = 123, data = capture()): string[] {
     const c = catalog(), prefix = 'VOTC:FAITH/;/';
     const lines = [prefix + 'begin/;/1/;/' + c.digest + '/;/' + characterId + '/;/' + faithId,
+        prefix + 'parent_state/;/absent',
         prefix + 'fact/;/religion/;/' + data.religion];
     for (const [kind, keys] of [['doctrine', data.doctrines], ['virtue', data.virtues], ['sin', data.sins], ['holy_site', data.holySites]] as const)
         keys.forEach(key => lines.push(prefix + 'fact/;/' + kind + '/;/' + key));

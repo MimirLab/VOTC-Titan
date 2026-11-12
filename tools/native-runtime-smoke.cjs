@@ -76,8 +76,11 @@ const pause=ms=>new Promise(r=>setTimeout(r,ms));
    const message={id:'controlled-editor-probe',role:'assistant',name:'Speaker',characterId:2,proseEncoding:'controls-v1',content:'**She offers the cup.** ~~She remembers the hidden opal.~~ ""Bring water before dawn.""'+String.fromCharCode(10,10)+'**She waits by the door.** ""I will stay here.""'};
    session.record(message);const before=message.content,reader=session.forRecipient(message,1,'reader');
    const w=e.BrowserWindow.getAllWindows().find(w=>w.getTitle().endsWith(' - Chat'));const received=[];
-   const handler=(event,payload)=>{if(payload.messageId!==message.id)return;received.push(payload);session.editForRecipient(message,1,payload.newContent,'reader');};
-   e.ipcMain.prependListener('edit-message',handler);
+   const handler=(event,payload)=>{if(payload.messageId!==message.id)throw Error('Wrong synthetic edit owner');received.push(payload);
+    try{session.editForRecipient(message,1,payload.newContent,'reader');return {success:true,message:session.forRecipient(message,1,'reader')};}
+    catch(error){return {success:false,error:error.message,message:session.forRecipient(message,1,'reader')};}};
+   e.ipcMain.handle('native-controlled-editor-edit',handler);
+   await w.webContents.executeJavaScript("(()=>{const ipc=require('electron').ipcRenderer;global.nativeEditorInvoke=ipc.invoke;ipc.invoke=function(channel,...args){if(channel==='edit-message-authoritative'&&args[0]?.messageId==='controlled-editor-probe')return global.nativeEditorInvoke.call(this,'native-controlled-editor-edit',...args);return global.nativeEditorInvoke.call(this,channel,...args);};return true})()");
    try{
     w.webContents.send('message-receive',reader,false);await new Promise(r=>setTimeout(r,150));
     const displayed=await w.webContents.executeJavaScript("document.querySelector('#message-controlled-editor-probe .message-content').innerText");
@@ -91,8 +94,8 @@ const pause=ms=>new Promise(r=>setTimeout(r,ms));
      readerKeepsThought:session.forRecipient(message,1,'reader').content.includes('hidden opal'),
      playerKnowledgeExcludesThought:!session.forRecipient(message,1).content.includes('opal'),
      observerUnchanged:!session.forRecipient(message,3).content.includes('My heard spelling'),
-     ipcBridge:'Isolated edit listener; actual renderer/parser and backend language edit, no live Conversation or model request.'};
-   }finally{e.ipcMain.removeListener('edit-message',handler);await w.webContents.executeJavaScript("document.getElementById('message-controlled-editor-probe')?.remove()");}
+     ipcBridge:'Isolated acknowledged edit IPC; actual renderer/parser and backend language edit, no live Conversation or model request.'};
+   }finally{e.ipcMain.removeHandler('native-controlled-editor-edit');await w.webContents.executeJavaScript("(()=>{require('electron').ipcRenderer.invoke=global.nativeEditorInvoke;delete global.nativeEditorInvoke;document.getElementById('message-controlled-editor-probe')?.remove();return true})()");}
   })()`);
   assert(report.controlledLanguageEditor.displayed.includes('hidden opal'));assert(!report.controlledLanguageEditor.displayed.includes('~~'));
   assert(report.controlledLanguageEditor.displayed.includes('\n\n'));assert(report.controlledLanguageEditor.editing.includes('\n\n'));assert(report.controlledLanguageEditor.cleaned.includes('\n\n'));
@@ -179,7 +182,7 @@ const pause=ms=>new Promise(r=>setTimeout(r,ms));
    conv.timelineReadContext.currentNodeId='2-2';const originalBranchHasPrivate=createCompactedMemoryString(conv,{},game.characters.get(98)).includes('emerald');
    conv.campaignIdentity=buildIdentityFromParts({a:21,b:22,c:23,d:24},'99');const differentCampaignHidden=createCompactedMemoryString(conv,{},game.characters.get(98))==='';conv.campaignIdentity=buildIdentityFromParts({a:11,b:12,c:13,d:14},'99');
    let release;const pending=new Promise(resolve=>{release=resolve;});let contextAtBackgroundEnd=false;
-   conv.closingWorkCount=0;conv.compactorReleaseRequested=false;conv.cancelGeneration=()=>{};conv.cancelBackgroundPreparation=()=>{};conv.runFileManager={write:()=>{},clear:()=>{}};conv._saveHistoryToFile=()=>{};
+   conv.closingWorkCount=0;conv.compactorReleaseRequested=false;conv.cancelGeneration=()=>{};conv.cancelBackgroundPreparation=()=>{};conv.runFileManager={writeAfterPending:async()=>true,clear:()=>{}};conv._saveHistoryToFile=()=>{};
    conv._generateSummariesAndDiariesInBackground=async()=>{await pending;contextAtBackgroundEnd=createCompactedMemoryString(conv,{},game.characters.get(98)).includes('emerald');};
    const closing=conv.saveHistoryAndTriggerSummarization();conv.cleanup();await closing;const retainedUntilBackgroundDone=restored.getAllCompactedMemories().length>0;
    release();await pending;await Promise.resolve();await Promise.resolve();await Promise.resolve();

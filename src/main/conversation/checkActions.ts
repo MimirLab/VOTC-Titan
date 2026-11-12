@@ -1,3 +1,4 @@
+import { parseActionResponse } from './actionResponse';
 import { randomUUID } from 'crypto';
 import { scenePacket, actionForScene, runActionWithScenePolicy, waitForSceneSelection } from '../scenes/sceneRuntime';
 import { composeGoaContext, finishGoaContext } from '../goa/goaRuntime';
@@ -61,13 +62,12 @@ export async function checkActions(conv: Conversation, sourceId: number, targetI
         (sourceRevision !== undefined && sourceRevision !== conv.getEncounterRevision?.())) return [];
     response = response.replace(/(\r\n|\n|\r)/gm, "");
 
-    if(!response.match(/<rationale>(.*?)<\/?rationale>/) || !response.match(/<actions>(.*?)<\/?actions>/)){
-        console.warn("Action warning: rationale or action couldn't be extracted from LLM response. Response: "+ response);
+    const parsed = parseActionResponse(response);
+    if (!parsed) {
+        console.warn('Action warning: malformed classifier response; no actions selected.');
         return [];
     }
-
-    const rationale = response.match(/<rationale>(.*?)<\/rationale>/)![1];
-    const actionsString = response.match(/<actions>(.*?)<\/actions>/)![1];
+    const { rationale, actions: actionsString } = parsed;
     console.log(`Extracted rationale: ${rationale}`);
     console.log(`Extracted actions string: ${actionsString}`);
 

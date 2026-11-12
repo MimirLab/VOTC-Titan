@@ -1,5 +1,5 @@
 /** Shared, versioned cultural facts. Contains no character, campaign or account identity. */
-export type CultureFactKind = 'pillar' | 'tradition' | 'innovation' | 'naming' | 'aesthetic' | 'era' | 'court_ideal' | 'trait_valuation' | 'practice';
+export type CultureFactKind = 'pillar' | 'tradition' | 'innovation' | 'naming' | 'aesthetic' | 'era' | 'court_ideal' | 'trait_valuation' | 'practice' | 'lineage';
 
 export interface CultureFact {
     kind: CultureFactKind;
@@ -18,7 +18,7 @@ export interface CultureSnapshot {
     facts: CultureFact[];
 }
 
-const kinds: CultureFactKind[] = ['pillar', 'tradition', 'innovation', 'naming', 'aesthetic', 'era', 'court_ideal', 'trait_valuation', 'practice'];
+const kinds: CultureFactKind[] = ['pillar', 'tradition', 'innovation', 'naming', 'aesthetic', 'era', 'court_ideal', 'trait_valuation', 'practice', 'lineage'];
 
 /** Also used when reading archives and the persistent library: fail closed on malformed facts. */
 export function validateCultureSnapshot(value: unknown): CultureSnapshot {
@@ -32,7 +32,7 @@ export function validateCultureSnapshot(value: unknown): CultureSnapshot {
         if (!value || typeof value !== 'object') throw new Error('Invalid culture fact');
         const fact = value as Record<string, unknown>;
         if (!kinds.includes(fact.kind as CultureFactKind)) throw new Error('Invalid culture fact kind');
-        if (input.version === 1 && ['court_ideal', 'trait_valuation', 'practice'].includes(fact.kind as string))
+        if (input.version === 1 && ['court_ideal', 'trait_valuation', 'practice', 'lineage'].includes(fact.kind as string))
             throw new Error('Unsupported legacy culture fact');
         const result = {} as CultureFact;
         result.kind = fact.kind as CultureFactKind;

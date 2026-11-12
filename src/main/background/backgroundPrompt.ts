@@ -6,8 +6,9 @@ import { canonicalJsonStringify } from '../promptWorkbench/canonicalJson';
 import { BACKGROUND_BODY_BOUNDARY } from './backgroundBodyBoundary';
 
 /** One secondary wrapper keeps two independent profiles from adding two large instruction blocks. */
-export function getRoleplayBackground(character: Character, config: Config, scope: { culture?: boolean; faith?: boolean } = {}): string | undefined {
-    const culture = config.cultureRoleplayEnabled && scope.culture !== false ? getCultureBackground(character) : undefined;
+export function getRoleplayBackground(character: Character, config: Config, scope: { culture?: boolean; faith?: boolean; culturalRoots?: boolean } = {}): string | undefined {
+    const culture = config.cultureRoleplayEnabled && scope.culture !== false ?
+        (scope.culturalRoots === false ? getCultureBackground(character, false) : getCultureBackground(character)) : undefined;
     const faith = config.faithRoleplayEnabled && scope.faith !== false ? getFaithBackground(character) : undefined;
     const live = config.faithRoleplayEnabled && scope.faith !== false ? getFaithLiveContext(character) : undefined;
     if (!faith && (!live || !Object.keys(live).length)) return culture ? formatCultureBackground(character, culture) : undefined;
@@ -29,12 +30,12 @@ export function getRoleplayBackground(character: Character, config: Config, scop
 }
 
 /** Bind ready Zealous faith near the reply; ordinary/shared output retains its old position. */
-export function getRoleplayBackgroundPlacement(character: Character, config: Config): { early?: string; faith?: string } {
+export function getRoleplayBackgroundPlacement(character: Character, config: Config, options: { culturalRoots?: boolean } = {}): { early?: string; faith?: string } {
     const faith = config.faithRoleplayEnabled ? getFaithBackground(character) : undefined;
     const zealous = !!faith && (getFaithZealous(character) ?? character.hasTrait('Zealous'));
-    if (!zealous) return { early: getRoleplayBackground(character, config) };
+    if (!zealous) return { early: getRoleplayBackground(character, config, options) };
     return {
-        early: getRoleplayBackground(character, config, { faith: false }),
+        early: getRoleplayBackground(character, config, { faith: false, ...options }),
         faith: getRoleplayBackground(character, config, { culture: false })
     };
 }

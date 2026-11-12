@@ -42,6 +42,8 @@ jobs:
         run: node tests/helpers/renderer-integrity.cjs
       - name: Check asset import, native build and launcher-only installation
         run: python3 -m unittest discover -s tests/deployment -p 'test_*.py'
+      - name: Check nested lore disclosure
+        run: python3 -B -m unittest discover -s tests/lorebook -p 'test_disclosure.py'
 
 # Full runtime tests and desktop/game acceptance also require the verified asset
 # bundle and an appropriate local environment; see docs/github-maintenance.md.

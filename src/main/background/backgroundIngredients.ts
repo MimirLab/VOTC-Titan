@@ -12,6 +12,7 @@ import { CulturePracticeBank, ResolvedCulturePractice } from './culturePracticeB
 
 type Snapshot = CultureSnapshot | FaithSnapshot;
 interface Passage { source: string; kind: string; text: string; required: boolean; subject?: string; contributors?: string[] }
+interface InheritedFaithPerspective { key: string; readingId: string; text: string; subject: string }
 
 /** Current composition selects meanings; no character, provider or campaign enters this bank. */
 export class BackgroundIngredientBank {
@@ -20,15 +21,42 @@ export class BackgroundIngredientBank {
     readonly compositions: ConceptCompositionBank;
     readonly relationships: FaithRelationshipBank;
     readonly practices: CulturePracticeBank;
-    private views = new WeakMap<Snapshot, { fingerprint: string; rows: ConceptComposition[]; practices: ResolvedCulturePractice[] }>();
+    private readonly inheritedAuthored: AuthoredConceptBank;
+    private readonly inheritedReadingIds: Set<string>;
+    private views = new WeakMap<Snapshot, { fingerprint: string; rows: ConceptComposition[]; practices: ResolvedCulturePractice[]; inherited: InheritedFaithPerspective[] }>();
 
     constructor(assets: { authored: unknown; essential: unknown; compositions: unknown; relationships: unknown; practices?: unknown }) {
         this.relationships = new FaithRelationshipBank(assets.relationships);
         this.practices = new CulturePracticeBank(assets.practices);
         this.authored = new AuthoredConceptBank(assets.authored, (domain, snapshot) =>
             domain === 'faith' ? this.relationships.teachingContext(snapshot as FaithSnapshot) : this.practices.context(snapshot as CultureSnapshot));
+        this.inheritedAuthored = new AuthoredConceptBank(assets.authored, (domain, snapshot) =>
+            domain === 'faith' ? this.relationships.parentTeachingContext(snapshot as FaithSnapshot) : []);
+        const asset = assets.authored as { conditionalReadings?: { id: string; domain: string; requires: { currentInterpretationContextAllOf?: string[] } }[] };
+        this.inheritedReadingIds = new Set((asset.conditionalReadings ?? []).filter(r => r.domain === 'faith' &&
+            !!r.requires.currentInterpretationContextAllOf?.length).map(r => r.id));
         this.essential = new EssentialConceptBank(assets.essential);
         this.compositions = new ConceptCompositionBank(assets.compositions);
+    }
+
+    /** Optional origin-framed perspectives never replace observed current teachings. */
+    private inheritedFaith(snapshot: FaithSnapshot, current: ReturnType<EssentialConceptBank['resolve']>): InheritedFaithPerspective[] {
+        if (!snapshot.facts.some(f => f.kind === 'description' && f.key === 'parent_faith')) return [];
+        try {
+            if (!this.relationships.parentTeachingContext(snapshot).length) return [];
+            return this.essential.resolve('faith', snapshot, this.inheritedAuthored).flatMap(concept => {
+                const direct = current.find(item => item.key === concept.key);
+                if (!concept.readingId || !this.inheritedReadingIds.has(concept.readingId) || direct?.readingId === concept.readingId) return [];
+                const fact = snapshot.facts.find(f => f.kind === 'doctrine' && f.key === concept.key);
+                if (!fact?.name.trim() || /context-dependent wording|unresolved|Get[A-Z]|\w_\w|\x15/u.test(fact.name)) return [];
+                return [{ key: concept.key, readingId: concept.readingId, text: concept.essentialText, subject: fact.name }];
+            });
+        } catch (error) {
+            // An ambiguous or unreviewed inherited interpretation must not block current teachings.
+            if (error instanceof AuthoredConceptUnavailable || error instanceof EssentialConceptUnavailable ||
+                error instanceof FaithRelationshipUnavailable) return [];
+            throw error;
+        }
     }
 
     /** Unknown meanings still have a durable encounter identity; generation holds before transport. */
@@ -36,10 +64,12 @@ export class BackgroundIngredientBank {
         try {
             const meanings = this.essential.resolve(domain, snapshot, this.authored);
             const practices = domain === 'culture' ? this.practices.resolve(snapshot as CultureSnapshot, meanings.flatMap(m => m.readingId ? [m.readingId] : [])) : [];
+            const inherited = domain === 'faith' ? this.inheritedFaith(snapshot as FaithSnapshot, meanings) : [];
             return sha256Hex(canonicalJsonStringify({ version: 1, domain,
                 essential: this.essential.revision(domain, snapshot, this.authored),
                 compositions: this.compositions.revision(domain, meanings),
                 ...(practices.length && { practices: practices.map(({ id, anchor, text }) => ({ id, anchor, text })) }),
+                ...(inherited.length && { inheritedFaithPerspectives: inherited }),
                 ...(domain === 'faith' && { relationships: this.relationships.resolve(snapshot as FaithSnapshot).revision }) }));
         } catch (error) {
             if (!(error instanceof AuthoredConceptUnavailable || error instanceof EssentialConceptUnavailable ||
@@ -58,8 +88,16 @@ export class BackgroundIngredientBank {
             : this.relationships.project(this.essential.project('faith', snapshot as FaithSnapshot, this.authored));
         this.views.set(projected, { fingerprint: sha256Hex(canonicalJsonStringify(projected)),
             rows: this.compositions.resolve(domain, meanings), practices: domain === 'culture'
-                ? this.practices.resolve(snapshot as CultureSnapshot, meanings.flatMap(m => m.readingId ? [m.readingId] : [])) : [] });
+                ? this.practices.resolve(snapshot as CultureSnapshot, meanings.flatMap(m => m.readingId ? [m.readingId] : [])) : [],
+            inherited: domain === 'faith' ? this.inheritedFaith(snapshot as FaithSnapshot, meanings) : [] });
         return projected;
+    }
+
+    inheritedFaithPerspectives(snapshot: FaithSnapshot): InheritedFaithPerspective[] {
+        const view = this.views.get(snapshot);
+        if (!view) return [];
+        if (view.fingerprint !== sha256Hex(canonicalJsonStringify(snapshot))) throw new Error('Changed ingredient projection');
+        return structuredClone(view.inherited);
     }
 
     /** Bind complete authored unions before presentation; every source contributor survives. */
@@ -119,4 +157,7 @@ export function ingredientInterpretations(domain: ConceptDomain, snapshot: Snaps
 }
 export function combineIngredientPassages<T extends Passage>(domain: ConceptDomain, snapshot: Snapshot, passages: T[]): T[] {
     return getBackgroundIngredients().combine(domain, snapshot, passages);
+}
+export function inheritedFaithPerspectives(snapshot: FaithSnapshot): InheritedFaithPerspective[] {
+    return getBackgroundIngredients().inheritedFaithPerspectives(snapshot);
 }

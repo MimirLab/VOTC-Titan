@@ -141,7 +141,7 @@ def run(pack, body):
     if op == 'qualified-documents':
         after=str(body.get('after',''))
         return[r for r in qualified_documents(pack)if r['id']>after][:64]
-    if op in {'observed-disclose', 'mutation-disclose', 'game-state-disclose'}:
+    if op in {'observed-disclose', 'combined-disclose', 'mutation-disclose', 'game-state-disclose'}:
         # Separate host-observed provenance. Never relabel an observation as a
         # user report or enable the all-possibilities reference reader.
         if op in {'mutation-disclose', 'game-state-disclose'}:
@@ -156,9 +156,18 @@ def run(pack, body):
                 raise ValueError('Invalid mutation disclosure candidates')
             candidates=list(dict.fromkeys(reader.candidate_ids(str(body['query'])[:1000])+candidates))[:100]
         else:
-            from lorebook_observed import observed_reader
-            reader = observed_reader(pack, body['context'])
+            from lorebook_observed import observed_reader, combined_reader
+            if op == 'combined-disclose':
+                context=body['context']
+                if not isinstance(context,dict) or set(context)!={'origin','reported_context','common_context'} or context['origin']!='verified_report_and_culture':
+                    raise ValueError('Verified combined context required')
+                reader=combined_reader(pack,context['reported_context'],context['common_context'])
+            else:
+                reader = observed_reader(pack, body['context'])
             candidates=body.get('candidate_ids',[])
+            if not isinstance(candidates,list) or len(candidates)>100 or any(not isinstance(x,str) for x in candidates):
+                raise ValueError('Invalid observed disclosure candidates')
+            candidates=list(dict.fromkeys(reader.candidate_ids(str(body['query'])[:1000])+candidates))[:100]
         return disclosure.deliver(reader, str(body['query'])[:1000], candidates,
             previous=body.get('previous'), max_words=body.get('max_words',350), existing=str(body.get('existing',''))[:100000],
             semantic_ids=body.get('semantic_ids',[])[:40], max_accounts=body.get('max_accounts',3), prior_subjects=body.get('prior_subjects',[]),automatic=body.get('automatic',True),recall_current=body.get('recall_current',False),scene_relevance=body.get('scene_relevance',False),semantic_relevance=body.get('semantic_relevance',False),semantic_matches=body.get('semantic_matches',[]),semantic_complete=semantic_coverage(pack,body))

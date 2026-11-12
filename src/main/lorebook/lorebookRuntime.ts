@@ -159,17 +159,17 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
             if(saved.capture_digest!==currentGoaCatalog()?.digest)throw new Error('Warcraft definitions changed; review the knowledge report.');
         }
         const edition = await lorebookClient.request<ChronicleStatus>({ op: 'status' });
-        if(!hasReport){
-            verifiedLoreVersion(config);
+        if(verifiedLoreVersion(config)==='0.6.5'){
             observed=prepareObservedLoreContext(game,actorId,config,edition.setting_sha256);
         }
         const reported=hasReport?projectLoreReport(saved.report,game,actorId,edition.setting_sha256,registry):undefined;
         const mutation=prepareMutationLoreContext(game,actorId,config,edition.setting_sha256,observed,reported);
         const gameState=prepareGameStateLoreContext(game,actorId,config,edition.setting_sha256,observed,reported);
-        const context=gameState?.context??mutation?.context??reported??observed?.context;
+        const combined=reported&&observed?{origin:'verified_report_and_culture',reported_context:reported,common_context:observed.context}:undefined;
+        const context=gameState?.context??mutation?.context??combined??reported??observed?.context;
         if(!context){lastDiagnostic='No current mapped cultural context or applicable knowledge report for this character.';return '';}
         if(delivery)delivery.required=true;
-        const disclosureOp=gameState?'game-state-disclose':mutation?'mutation-disclose':hasReport?'disclose':'observed-disclose';
+        const disclosureOp=gameState?'game-state-disclose':mutation?'mutation-disclose':combined?'combined-disclose':hasReport?'disclose':'observed-disclose';
         const accountReport=hasReport?saved.report:{choices:[]};
         const captureDigest = currentGoaCatalog()!.digest, totalDays = game.gameDate!.totalDays;
         const binding = createHash('sha256').update(JSON.stringify([edition.manifest_sha256, gameState?.binding??mutation?.binding??context, captureDigest, totalDays, snapshotBinding])).digest('hex');
@@ -188,6 +188,7 @@ export async function lorebookPrompt(game: GameData, actorId: number, config: Co
             game.gameDate?.totalDays === totalDays && JSON.stringify(encounterLoreIdentity(game, actorId)) === JSON.stringify(actual) &&
             (hasReport?reportLocation(data,game,actorId).file===file&&fs.existsSync(file)&&fs.readFileSync(file,'utf8')===reportBytes&&verifiedLoreVersion(config)===saved.report.mod_version
                 :!fs.existsSync(file)&&(observed?.isCurrent()===true||mutation?.isCurrent()===true||gameState?.isCurrent()===true)&&verifiedLoreVersion(config)==='0.6.5')&&
+            (!observed||observed.isCurrent())&&
             (!mutation||mutation.isCurrent())&&(!gameState||gameState.isCurrent());
         if (delivery) delivery.isCurrent = () => {
             try { return session.isCurrent() && !!stillCurrent(); } catch { return false; }

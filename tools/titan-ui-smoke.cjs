@@ -39,7 +39,7 @@ if (require.main === module) (async()=>{
    };
    assert.equal((await banner()).visible,false,'Empty store has no dimension warning');
    const originalConfig=await c.eval(`require('electron').ipcRenderer.invoke('get-embedding-config')`);
-   const added=await c.eval(`require('electron').ipcRenderer.invoke('add-memory',{characterId:'synthetic-dimension-check',text:'Synthetic memory for dimension notice',vector:[1]})`);
+   const added=await c.eval(`require('electron').ipcRenderer.invoke('add-memory',{characterId:'synthetic-dimension-check',text:'Synthetic memory for dimension notice',vector:Array.from({length:1536},(_,i)=>i===0?1:0)})`);
    assert(added.success);
    const dimensions=await c.eval(`require('electron').ipcRenderer.invoke('get-memory-embedding-dimensions')`);
    assert.deepEqual(dimensions.storedDimensions,[1536]);

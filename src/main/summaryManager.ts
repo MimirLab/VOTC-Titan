@@ -1,3 +1,4 @@
+import { conversationSummaryIdentity } from './summaryRecords';
 import fs from 'fs';
 import path from 'path';
 import { app } from 'electron';
@@ -30,15 +31,6 @@ function getSummaryCheckpointEpoch(summary: any): number | undefined {
  * node stamping keep the pre-timeline key (character/date/text), which is
  * exactly the set they could be distinguished by.
  */
-function getSummaryIdentityKey(summary: any, characterId: string): string {
-    const nodeId = summary?.votcTimelineNodeId;
-    return [
-        characterId,
-        summary?.date ?? '',
-        typeof nodeId === 'string' ? nodeId : '',
-        summary?.content ?? ''
-    ].join('\u001f');
-}
 
 export function splitSummariesForCheckpoint<T extends { votcCheckpointEpoch?: number }>(summaries: T[], checkpointEpoch: number): { visibleSummaries: T[], futureSummaries: T[] } {
     const visibleSummaries: T[] = [];
@@ -299,7 +291,8 @@ export async function readSummaryFile(
                     // Add character ID info to each summary
                     const characterId = path.basename(file, '.json');
                     for (const summary of summaries) {
-                        const key = getSummaryIdentityKey(summary, characterId);
+                        if (summary.votcCampaignId && identity && summary.votcCampaignId !== identity.campaignId) continue;
+                        const key = conversationSummaryIdentity(summary, characterId);
                         if (seenSummaryKeys.has(key)) {
                             continue;
                         }

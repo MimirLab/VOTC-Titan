@@ -6,16 +6,32 @@ catalogues. Source metadata and the exact release checksum identify the edition.
 
 ## Current update
 
-This edition carries both defect-repair passes, the default Medivh narrator,
-targeted cultural and religious guidance, and the approved Sand/Atal’ai Troll
-casting descriptions. Installer recovery, XDG integration and dependency-receipt
-repairs are included in the downloadable package.
+This edition brings the qualified local updates into the public launcher:
+reviewed parent-culture roots, original-faith context and inherited tenet
+perspectives; expanded Warcraft practice guidance; combined report and cultural
+lore access; and cached lore navigation.
+
+Memory and delivery repairs retain campaign provenance on new summaries, preserve
+hidden records during editing, drain accepted actions before closing a chat, and
+deliver letters independently of optional diary generation. A narrow English
+speech-attribution repair accepts an otherwise valid dialogue form without
+changing spoken words or private thoughts.
+
+The default Medivh narrator, approved Troll and Wildhammer casting, scene picker,
+installer recovery and XDG integration remain included. Voice recordings,
+paintings and the 37,026-passage corpus retain their existing asset hashes.
 
 The source, compiled runtime, desktop checks and extracted installers are tested
 together for each release. Exact results and checksums ship in
 `release-validation.json` beside the download. Provider regressions use synthetic
 responses; narrator checks reuse retained audition PCM. No fresh natural campaign
 playtest or new model synthesis is claimed for these repairs.
+
+The public source candidate passes **3,767 tests in 168 suites**, with the same
+ten explicit private-evidence skips, plus **38 packaging and installer tests**.
+The release checks also compare compiled modules against the qualified local
+launcher. The separate graded lore-access research prototype is not part of this
+release.
 
 ## Game and bridge
 

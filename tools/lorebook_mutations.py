@@ -32,7 +32,7 @@ def calendar(value):
 def mutation_reader(pack, context, catalogue_path=None):
     from lorebank.goa_reader import UNAVAILABLE
     from lorebook_campaign_clock import bind_campaign_clock
-    from lorebook_observed import observed_reader
+    from lorebook_observed import observed_reader, combined_reader
 
     path = Path(catalogue_path or Path(__file__).with_name('lorebook-mutation-catalogue.json'))
     raw = path.read_bytes()
@@ -93,7 +93,9 @@ def mutation_reader(pack, context, catalogue_path=None):
         actor = inner.get('actor_id', inner.get('lore_knowledge', {}).get('actor_id'))
         if any(inner.get(key) != context[key] for key in ['campaign_id', 'timeline_id', 'as_of']) or actor != context['actor_id']:
             raise ValueError('Nested knowledge belongs to another actor, campaign or clock')
-    if reported:
+    if reported and common:
+        primary = combined_reader(pack, reported, common)
+    elif reported:
         primary = bind_campaign_clock(pack.reader(state=reported))
     elif common:
         primary = observed_reader(pack, common)
@@ -232,6 +234,9 @@ def mutation_reader(pack, context, catalogue_path=None):
             result['related'] = [n for n in result['related'] if not self._withheld(n['node_id'])]
             return result
 
+        def named_subjects(self, query):
+            return primary.named_subjects(query) if hasattr(primary, 'named_subjects') else []
+
         def observed_turning(self, node_id, text):
             node = self.nodes.get(node_id)
             if not node or node['branch_id'] not in latest:
@@ -264,7 +269,8 @@ def mutation_reader(pack, context, catalogue_path=None):
                 result = []
                 for node in matches[:10]:
                     result.extend(row[0] for row in db.execute("SELECT id FROM passages WHERE family='goa' AND node_id=? ORDER BY id LIMIT 1", (node,)))
-            return result
+            inherited = primary.candidate_ids(query) if hasattr(primary, 'candidate_ids') else []
+            return list(dict.fromkeys(result + inherited))
 
         def named_turnings(self, query):
             # Exact names of this actor's admitted accounts take precedence

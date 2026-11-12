@@ -1,3 +1,4 @@
+import { snapshotActionCache } from './actionCache';
 import type { Conversation } from './Conversation';
 import type { Action, ActionResponse } from '../ts/conversation_interfaces';
 import { ActionEffectWriter } from './ActionEffectWriter';
@@ -27,14 +28,17 @@ export async function executeSlashAction(conv: Conversation, action: Action, val
     conv.runFileManager.assertIdle();
     const chatMessage = action.chatMessageClass != null
         ? formatActionNotice(action, args, conv.gameData, sourceId, targetId, conv.config.language) : '';
-    let body = '';
-    runActionWithScenePolicy(action, conv.gameData, text => { body += text; }, args, sourceId!, targetId!);
-    if (!body.trim()) {
-        if (action.signature.toLowerCase() === 'noop') return undefined;
-        throw new Error('The action produced no game effect.');
-    }
-    conv.runFileManager.writeWhenIdle(ActionEffectWriter.composeFullEffect(conv.gameData, sourceId, targetId, body)
-        + '\nroot = { trigger_event = mcc_event_v2.9003 }');
+    const rollback = snapshotActionCache(conv.gameData);
+    try {
+        let body = '';
+        runActionWithScenePolicy(action, conv.gameData, text => { body += text; }, args, sourceId!, targetId!);
+        if (!body.trim()) {
+            if (action.signature.toLowerCase() === 'noop') { rollback(); return undefined; }
+            throw new Error('The action produced no game effect.');
+        }
+        conv.runFileManager.writeActionWhenIdle(ActionEffectWriter.composeFullEffect(conv.gameData, sourceId, targetId, body)
+            + '\nroot = { trigger_event = mcc_event_v2.9003 }');
+    } catch (error) { rollback(); throw error; }
     if (sourceId !== null) conv.actionInvolvedCharacterIds.add(sourceId);
     if (targetId !== null) conv.actionInvolvedCharacterIds.add(targetId);
     await waitForSceneSelection(conv.gameData);

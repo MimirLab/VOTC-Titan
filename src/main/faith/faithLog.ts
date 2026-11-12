@@ -1,6 +1,6 @@
 import { FaithFact, FaithSnapshot, FaithLiveContext, validateFaithSnapshot, validateFaithLiveContext } from '../../shared/gameData/FaithSnapshot';
 import { FaithCatalog } from './faithCatalog';
-import { canonicalJsonStringify } from '../promptWorkbench/canonicalJson';
+import { canonicalJsonStringify, sha256Hex } from '../promptWorkbench/canonicalJson';
 
 export interface FaithObservation {
     characterId: number; faithId: number; snapshot: FaithSnapshot; liveContext: FaithLiveContext;
@@ -10,6 +10,8 @@ export interface FaithObservation {
 export interface FaithCapture {
     religion: string; doctrines: string[]; virtues: string[]; sins: string[]; holySites: string[];
     texts: Record<string, string>;
+    /** Exact source-template root, only after a complete positive native census. */
+    parentFaith?: string;
 }
 const normalizeText = (value: string): string => value.replace(/#(?:[A-Za-z_][A-Za-z_0-9]*|!)\s?/g, '')
     .replace(/@[^!\s]+!/g, '').replace(/\s+/gu, ' ').trim();
@@ -25,6 +27,19 @@ export function sealFaithSnapshot(catalog: FaithCatalog, capture: FaithCapture):
         { kind: 'description', key: 'effective_morality', name: '', description: 'Completed current faith-wide moral census, independent of any particular character.',
             rules: canonicalJsonStringify({ virtues: [...capture.virtues].sort(), sins: [...capture.sins].sort(),
                 interpretation: 'Only these observed traits currently have these faith valuations. An unlisted known trait has neither classification. Parent and doctrine trait definitions do not override this census.' }) }];
+    if (capture.parentFaith !== undefined) {
+        const parent = catalog.templates.find(t => t.key === capture.parentFaith);
+        if (!parent) throw new Error('Unknown source faith root');
+        const parentReligion = catalog.religions.find(r => r.key === parent.religion);
+        if (!parentReligion) throw new Error('Unknown source faith religion');
+        facts.push({ kind: 'description', key: 'parent_faith', name: '', description: normalizeText(parent.description),
+            rules: canonicalJsonStringify({ version: 1, sourceFaithKey: parent.key,
+                sourceDefinitionHash: sha256Hex(canonicalJsonStringify(parent)),
+                sourceReligionHash: sha256Hex(parentReligion.description),
+                sourceWorship: Object.fromEntries(Object.entries(parent.worship).flatMap(([key, values]) =>
+                    values.length ? [[key, values[0]]] : [])),
+                interpretation: 'Source faith account, not proof of current doctrines, present rituals or an individual\'s compliance.' }) });
+    }
     for (const key of capture.doctrines) {
         const f = catalog.doctrines.find(d => d.key === key);
         if (!f) throw new Error('Unknown current doctrine');
@@ -69,6 +84,7 @@ interface Pending {
     capture: FaithCapture; seen: Set<string>; censuses: Set<string>; live: FaithLiveContext;
     text?: { key: string; lines: string[]; length: number };
     characterZealous?: boolean;
+    parentState?: 'present' | 'absent'; parentRecords: Set<string>; parentMatch?: string;
 }
 /** Atomic census + bounded multiline fields. An incomplete transaction never schedules a profile. */
 export class FaithLogReader {
@@ -103,7 +119,7 @@ export class FaithLogReader {
                 fields.slice(3).some(v => !/^\d+$/.test(v) || !Number.isSafeInteger(Number(v)))) return;
             this.pending = { characterId: Number(fields[3]), faithId: Number(fields[4]), started: this.now(), invalid: false,
                 capture: { religion: '', doctrines: [], virtues: [], sins: [], holySites: [], texts: {} },
-                seen: new Set(), censuses: new Set(), live: {} };
+                seen: new Set(), censuses: new Set(), live: {}, parentRecords: new Set() };
             return;
         }
         if (!active) return;
@@ -111,7 +127,21 @@ export class FaithLogReader {
             if (active.seen.has(id)) { active.invalid = true; return true; }
             active.seen.add(id); return false;
         };
-        if (fields[0] === 'fact') {
+        if (fields[0] === 'parent_state') {
+            if (fields.length !== 2 || !['present', 'absent'].includes(fields[1]) || active.parentState !== undefined) active.invalid = true;
+            else active.parentState = fields[1] as 'present' | 'absent';
+        } else if (fields[0] === 'ancestor') {
+            const key = fields[1];
+            if (fields.length !== 3 || active.parentState !== 'present' || !['0', '1'].includes(fields[2]) ||
+                !this.catalog.templates.some(t => t.key === key) || active.parentRecords.has(key)) active.invalid = true;
+            else {
+                active.parentRecords.add(key);
+                if (fields[2] === '1') {
+                    if (active.parentMatch !== undefined) active.invalid = true;
+                    else active.parentMatch = key;
+                }
+            }
+        } else if (fields[0] === 'fact') {
             if (fields.length !== 3 || duplicate(fields[1] + ':' + fields[2])) { active.invalid = true; return; }
             const key = fields[2];
             if (fields[1] === 'religion' && this.catalog.religions.some(r => r.key === key) && !active.capture.religion)
@@ -148,7 +178,10 @@ export class FaithLogReader {
         } else if (fields[0] === 'end') {
             this.reset();
             if (fields.length !== 4 || fields[1] !== this.catalog.digest || fields[2] !== String(active.characterId) ||
-                fields[3] !== String(active.faithId) || active.invalid || active.censuses.size !== 5) return;
+                fields[3] !== String(active.faithId) || active.invalid || active.censuses.size !== 5 ||
+                active.parentState === undefined || (active.parentState === 'present' && active.parentRecords.size !== this.catalog.templates.length) ||
+                (active.parentState === 'absent' && active.parentRecords.size !== 0)) return;
+            if (active.parentMatch) active.capture.parentFaith = active.parentMatch;
             try { return { characterId: active.characterId, faithId: active.faithId,
                 snapshot: sealFaithSnapshot(this.catalog, active.capture), liveContext: validateFaithLiveContext(active.live),
                 ...(active.characterZealous === undefined ? {} : { characterZealous: active.characterZealous }) }; }

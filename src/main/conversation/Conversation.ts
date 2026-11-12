@@ -594,11 +594,13 @@ export class Conversation{
      */
     getBranchVisibleSummaries(characterId: number): Summary[] {
         const all = this.summaries.get(characterId) || [];
+        const campaignSummaries = all.filter(summary => !summary.votcCampaignId ||
+            summary.votcCampaignId === this.campaignIdentity?.campaignId);
         const context = this.resolveTimelineReadContext();
         if (!context) {
-            return all;
+            return campaignSummaries;
         }
-        const visible = filterSummariesForCheckpoint(all, this.gameData.votcCheckpointEpoch)
+        const visible = filterSummariesForCheckpoint(campaignSummaries, this.gameData.votcCheckpointEpoch)
             .filter((summary) => isRecordVisibleForContext(
                 context.registry,
                 context.currentNodeId,
@@ -608,7 +610,7 @@ export class Conversation{
         const hiddenCount = all.length - visible.length;
         if (hiddenCount > 0 && !this.branchFilterLogged.has(characterId)) {
             this.branchFilterLogged.add(characterId);
-            console.log(`Timeline visibility hid ${hiddenCount} of ${all.length} summaries for AI ID ${characterId} (other branches).`);
+            console.log(`Timeline visibility hid ${hiddenCount} of ${all.length} summaries for AI ID ${characterId} (other branches or campaigns).`);
         }
         return visible;
     }
@@ -2345,8 +2347,10 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
             const runFilePath = path.join(this.config.userFolderPath, 'run', ceCommandFile(this.config.userFolderPath, 'votc.txt'));
             let offset = 0;
             try { offset = fs.statSync(gameLogPath).size; } catch { /* The receipt watcher reports unavailable. */ }
-            this.runFileManager.write(command);
-            if (timeline) {
+            const published = await this.runFileManager.writeAfterPending(command, () => this.closeEffectAllowed?.() !== false)
+                .catch(error => { console.error('Could not publish conversation close:', error); return false; });
+            if (!published) console.warn('Conversation close withheld: the pending command was not consumed or this encounter was superseded.');
+            if (published && timeline) {
                 closeStamp = {checkpointEpoch: nextCheckpointEpoch, timelineNodeId: timeline.nodeId};
                 const started = Date.now();
                 const allowed = () => this.closeEffectAllowed?.() !== false;
@@ -2375,9 +2379,9 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
                         else clearOwnedCommand();
                     }
                 }).catch(error => console.error('Conversation close receipt check failed:', error));
-            } else {
+            } else if (published) {
                 setTimeout(() => {
-                    if (this.closeEffectAllowed?.() === false) return;
+                    if (!ownsCloseCommand(runFilePath, command, () => this.closeEffectAllowed?.() !== false)) return;
                     this.runFileManager.clear();
                     console.log('Run file cleared after conversation end event.');
                 }, 500);
@@ -2649,6 +2653,7 @@ ${receiptNonce ? closeCheckpointReceiptEffect(receiptNonce) : ''}
                 const newSummary: Summary = {
                     date: this.gameData.date,
                     content: summaryContent,
+                    ...(this.campaignIdentity ? { votcCampaignId: this.campaignIdentity.campaignId } : {}),
                     ...(closeStamp
                         ? {
                             votcCheckpointEpoch: closeStamp.checkpointEpoch,

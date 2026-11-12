@@ -18,6 +18,10 @@ export interface CultureInput {
 export function cultureInput(snapshot: CultureSnapshot, language: string): CultureInput {
     const normalized = validateCultureSnapshot(snapshot);
     if (normalized.version !== 2) throw new Error('Legacy culture snapshots require a fresh capture');
+    // Source-lineage facts feed the separately freshness-bound lore reader;
+    // they do not change this adopted-custom profile by themselves. Keep an
+    // existing ready profile instead of scheduling an identical generation.
+    normalized.facts = normalized.facts.filter(f => f.kind !== 'lineage');
     normalized.facts.sort((a, b) => {
         const left = `${a.kind}:${a.category}:${a.key}`;
         const right = `${b.kind}:${b.category}:${b.key}`;

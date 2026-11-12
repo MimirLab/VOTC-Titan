@@ -107,6 +107,18 @@ test('voice design uses the selected persona, authored portrayal and ready backg
     expect(prompt).toContain('Travelers are welcomed'); expect(prompt).toContain('Protection of the helpless');
     expect(prompt).toContain('age-neutral'); expect(prompt).not.toContain('Voice design for Mimir');
 });
+test('heritage roleplay context reaches dialogue without changing individual voice design input', async () => {
+    const conv = conversation(), actor = game.getAi(), culture = require('../../src/main/culture/cultureRuntime');
+    culture.getCultureBackground.mockImplementation((_person: unknown, includeRoots?: boolean) =>
+        'Existing cultural guidance.' + (includeRoots === false ? '' : ' Inherited gryphon context.'));
+    culture.formatCultureBackground.mockImplementation((_person: unknown, text: string) => text);
+    require('../../src/main/faith/faithRuntime').getFaithBackground.mockReturnValue(undefined);
+    const voice = JSON.stringify(voiceDesignPrompt(conv, actor));
+    expect(voice).toContain('Existing cultural guidance.');
+    expect(voice).not.toContain('Inherited gryphon context.');
+    expect(culture.getCultureBackground).toHaveBeenCalledWith(actor, false);
+    expect(JSON.stringify(await buildChatPrompt(conv, actor))).toContain('Inherited gryphon context.');
+});
 test('the questioning writer names the actual interlocutor and keeps role labels out of private thoughts', async () => {
     const conv = conversation(); game.getPlayer().fullName = "Matron Cassia 'the Slitherqueen'";
     game.getAi().fullName = 'Tide Lord Rapja';

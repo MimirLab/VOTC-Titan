@@ -5,6 +5,7 @@ import { createHash } from 'crypto';
 import { lorebookClient } from '../../src/main/lorebook/lorebookClient';
 import { lorebookPrompt, lorebookVectors } from '../../src/main/lorebook/lorebookRuntime';
 import { currentGoaCatalog, getVerifiedGoaSnapshot } from '../../src/main/goa/goaRuntime';
+import * as observedCulture from '../../src/main/lorebook/lorebookObservedContext';
 
 jest.mock('../../src/main/goa/goaRuntime', () => ({
     getVerifiedGoaSnapshot: jest.fn(() => ({ version: 1, digest: 'a'.repeat(64), characterId: 2, traitIds: [], facts: {} })), currentGoaCatalog: jest.fn(() => ({ digest: 'capture' }))
@@ -81,4 +82,34 @@ test('ordinary writers retain their admitted topic under the shipped spoken-expo
         const candidates=request.mock.calls.filter(([input])=>input.op==='candidates');
         expect(candidates.at(-1)![0]).toMatchObject({query:'Tell me more.',previous:state});
     }finally{request.mockRestore();if(previous===undefined)delete process.env.VOTC_LORE_SPOKEN_EXPOSURE_STUDY;else process.env.VOTC_LORE_SPOKEN_EXPOSURE_STUDY=previous;fs.rmSync(root,{recursive:true,force:true});}
+});
+
+test.each([false,true])('an imported report and observed parent culture are combined, with revocation=%s',async revoke=>{
+    const root=fs.mkdtempSync(path.join(os.tmpdir(),'titan-combined-lore-'));
+    const game:any={playerID:1,votcCheckpointEpoch:1,characters:new Map([[2,{id:2}]]),gameDate:{year:583,month:2,day:2,totalDays:200000,display:'583.2.2'},
+        timelineSnapshotResult:{status:'valid',snapshot:{source:'init',playerId:'1',epoch:1,nodeA:9,nodeB:10,protocol:{protocolSchema:2,campaignSchema:1,campaignIdA:1,campaignIdB:2,campaignIdC:3,campaignIdD:4,campaignBootstrapKind:1,playerTimelineSchema:1}}}};
+    const config:any={userFolderPath:path.join(root,'user'),lorebookEnabled:true,goaLoreEnabled:true};
+    const report={origin:'user_reported',campaign_id:'1-2-3-4',timeline_id:'9-10',start_date:'0583-01-01',as_of:'0583-02-01',mod_version:'0.6.5',choices:[],lore_knowledge:{actor_id:'2',as_of:'0583-02-01',setting_sha256:'setting',known_subjects:['reported']}};
+    const key=createHash('sha256').update(JSON.stringify(['1-2-3-4','9-10','2'])).digest('hex'),file=path.join(root,'lorebook/reports',key+'.json');
+    fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,JSON.stringify({report,capture_digest:'capture',total_days:199999}));
+    fs.mkdirSync(config.userFolderPath,{recursive:true});fs.writeFileSync(path.join(config.userFolderPath,'dlc_load.json'),JSON.stringify({enabled_mods:['goa.mod']}));
+    fs.writeFileSync(path.join(config.userFolderPath,'goa.mod'),'remote_file_id="2949767945"\nversion="0.6.5"');
+    let current=true;
+    const context:any={origin:'verified_current_culture',campaign_id:'1-2-3-4',timeline_id:'9-10',actor_id:'2',as_of:'0583-02-02',setting_sha256:'setting',culture_heritage:{},culture_lineage:[]};
+    const observed=jest.spyOn(observedCulture,'prepareObservedLoreContext').mockReturnValue({context,isCurrent:()=>current});
+    const recall=jest.spyOn(lorebookVectors,'recall').mockResolvedValue({ids:[],matches:[]} as any);
+    const warning=jest.spyOn(console,'warn').mockImplementation(()=>{});
+    const request=jest.spyOn(lorebookClient,'request').mockImplementation(async(input:any)=>{
+        if(input.op==='status')return{manifest_sha256:'edition',setting_sha256:'setting'}as any;
+        if(input.op==='candidates'){if(revoke)current=false;return{ids:['fixture']}as any;}
+        if(input.op==='combined-disclose')return{actor_id:'2',context_fingerprint:'reader',passages:[{node_id:'fixture',subject_id:'fixture',heading:'Parent custom',text:'Shared gryphon care.'}],words:3,state:{},trace:[],disclosure:{mode:'focused',access:'provided'}}as any;
+        throw new Error('Unexpected operation '+input.op);
+    });
+    try{
+        const result=await lorebookPrompt(game,2,config,root,'How do your people care for gryphons?');
+        const combined=request.mock.calls.filter(([body])=>body.op==='combined-disclose');
+        if(revoke){expect(result).toBe('');expect(combined).toHaveLength(0);}
+        else{expect(result).toContain('Shared gryphon care.');expect(combined).toHaveLength(1);
+            expect(combined[0][0].context).toMatchObject({origin:'verified_report_and_culture',common_context:context,reported_context:{origin:'user_reported',as_of:'0583-02-02'}});}
+    }finally{observed.mockRestore();recall.mockRestore();warning.mockRestore();request.mockRestore();fs.rmSync(root,{recursive:true,force:true});}
 });

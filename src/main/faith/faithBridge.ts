@@ -8,6 +8,17 @@ export function faithCaptureEffect(catalog: FaithCatalog): string {
         '\t\tfaith = { save_temporary_scope_as = mimir_faith }',
         '\t\tdebug_log = "VOTC:FAITH/;/begin/;/1/;/' + catalog.digest + '/;/[THIS.Char.GetID]/;/[THIS.Char.GetFaith.GetID]"'];
     const log = (record: string) => 'debug_log = "VOTC:FAITH/;/' + record + '"';
+    // GoA records the original source faith when a faith is created. Only
+    // compare the engine's actual reference against safely keyed source
+    // templates; an absent or non-template parent is never guessed by name.
+    lines.push('\t\tif = { limit = { faith = { has_variable = parent_faith } }',
+        '\t\t\t' + log('parent_state/;/present'));
+    for (const t of catalog.templates) {
+        if (!/^[A-Za-z_][A-Za-z0-9_]*$/u.test(t.key)) throw new Error('Unsafe source faith identifier');
+        lines.push('\t\t\tif = { limit = { faith = { var:parent_faith = faith:' + t.key + ' } } ' + log('ancestor/;/' + t.key + '/;/1') + ' }',
+            '\t\t\telse = { ' + log('ancestor/;/' + t.key + '/;/0') + ' }');
+    }
+    lines.push('\t\t}', '\t\telse = { ' + log('parent_state/;/absent') + ' }');
     // Personal disposition travels alongside the encounter, never inside the shared faith snapshot.
     if (catalog.traits.some(t => t.key === 'zealous'))
         lines.push('\t\tif = { limit = { has_trait = zealous } ' + log('personal/;/zealous/;/yes') + ' }',
